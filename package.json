@@ -1,0 +1,98 @@
+{
+  "name": "angular-draggable-droppable",
+  "version": "0.0.0",
+  "description": "Drag and drop for angular 2.0+",
+  "main": "./dist/umd/angular-draggable-droppable.js",
+  "module": "./dist/esm/src/index.js",
+  "typings": "./dist/esm/src/index.d.ts",
+  "scripts": {
+    "start": "concurrently --raw \"webpack-dev-server --open\" \"npm run test:watch\"",
+    "build:demo": "webpack -p",
+    "build:umd": "webpack --config webpack.config.umd.js",
+    "build:ngc": "ngc -p tsconfig-ngc.json",
+    "build:dist": "npm run build:umd && npm run build:ngc",
+    "build:clean": "rm -rf dist",
+    "test": "karma start",
+    "test:watch": "karma start --watch",
+    "commit": "git-cz",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "typedoc": "typedoc --options typedoc.json angular-draggable-droppable.ts src/*.ts",
+    "gh-pages": "git checkout gh-pages && git merge master && npm run build:demo && npm run typedoc && git add . && git commit -m 'chore: build demo and docs' && git push && git checkout master",
+    "prerelease": "npm test",
+    "release": "standard-version --first-release && git push --follow-tags origin master && npm run build:dist && npm publish",
+    "postrelease": "npm run build:clean && npm run gh-pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattlewis92/angular-draggable-droppable.git"
+  },
+  "keywords": [
+    "angular2",
+    "angular"
+  ],
+  "author": "Matt Lewis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattlewis92/angular-draggable-droppable/issues"
+  },
+  "homepage": "https://github.com/mattlewis92/angular-draggable-droppable#readme",
+  "devDependencies": {
+    "@angular/common": "^2.1.0",
+    "@angular/compiler": "^2.1.0",
+    "@angular/compiler-cli": "^2.1.0",
+    "@angular/core": "^2.1.0",
+    "@angular/platform-browser": "^2.1.0",
+    "@angular/platform-browser-dynamic": "^2.1.0",
+    "@types/chai": "^3.4.30",
+    "@types/core-js": "^0.9.32",
+    "@types/jasmine": "^2.2.33",
+    "@types/sinon": "^1.16.27",
+    "@types/sinon-chai": "^2.7.26",
+    "awesome-typescript-loader": "^2.2.4",
+    "chai": "^3.5.0",
+    "commitizen": "^2.8.1",
+    "concurrently": "^3.0.0",
+    "conventional-changelog": "^1.1.0",
+    "conventional-changelog-cli": "^1.2.0",
+    "core-js": "^2.4.1",
+    "cz-conventional-changelog": "^1.2.0",
+    "ghooks": "^1.3.2",
+    "imports-loader": "^0.6.5",
+    "jasmine-core": "^2.5.0",
+    "karma": "^1.3.0",
+    "karma-coverage": "^1.1.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-remap-istanbul": "^0.2.1",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.8.0",
+    "phantomjs-prebuilt": "^2.1.7",
+    "rxjs": "5.0.0-beta.12",
+    "sinon": "^1.17.4",
+    "sinon-chai": "^2.8.0",
+    "sourcemap-istanbul-instrumenter-loader": "^0.2.0",
+    "standard-version": "^3.0.0",
+    "tslint": "^3.15.1",
+    "tslint-loader": "^2.1.4",
+    "typedoc": "^0.5.0",
+    "typescript": "^2.0.3",
+    "validate-commit-msg": "^2.8.0",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.16.1",
+    "zone.js": "^0.6.12"
+  },
+  "peerDependencies": {
+    "@angular/core": "^2.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "config": {
+    "ghooks": {
+      "commit-msg": "validate-commit-msg"
+    },
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
+}
