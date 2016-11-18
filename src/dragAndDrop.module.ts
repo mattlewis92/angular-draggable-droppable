@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {HelloWorld} from './helloWorld.component';
+import {Draggable} from './draggable.directive';
 
 @NgModule({
   declarations: [
-    HelloWorld
+    Draggable
   ],
-  imports: [CommonModule],
-  exports: [HelloWorld]
+  exports: [
+    Draggable
+  ]
 })
 export class DragAndDropModule {}

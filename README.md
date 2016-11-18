@@ -31,15 +31,27 @@ npm install --save angular-draggable-droppable
 Then use it in your app like so:
 
 ```typescript
-import {Component} from '@angular/core';
-import {HelloWorld} from 'angular-draggable-droppable';
+import {Component, NgModule} from '@angular/core';
+import {DragAndDropModule} from 'angular-draggable-droppable';
+
+@NgModule({
+  declarations: [DemoApp],
+  imports: [DragAndDropModule],
+  bootstrap: [DemoApp]
+})
+class DemoModule {}
 
 @Component({
   selector: 'demo-app',
-  directives: [HelloWorld],
-  template: '<hello-world></hello-world>'
+  template: '<div mwlDraggable (dragEnd)="dragEnd($event)">Drag me!</div>'
 })
-export class DemoApp {}
+class DemoApp {
+
+  dragEnd(event) {
+    console.log('Element was dragged', event);
+  }
+
+}
 ```
 
 You may also find it useful to view the [demo source](https://github.com/mattlewis92/angular-draggable-droppable/blob/master/demo/demo.ts).
