@@ -43,9 +43,19 @@ class DemoModule {}
 
 @Component({
   selector: 'demo-app',
-  template: '<div mwlDraggable (dragEnd)="dragEnd($event)">Drag me!</div>'
+  template: `
+    <div mwlDraggable (dragEnd)="dragEnd($event)">Drag me!</div>
+    <div
+      mwlDroppable
+      (drop)="this.droppedData = $event.dropData">
+      <span [hidden]="droppedData">Drop here</span>
+      <span [hidden]="!droppedData">Item dropped here with data: "{{ droppedData }}"!</span>
+    </div>
+  `
 })
 class DemoApp {
+
+  droppedData: string;
 
   dragEnd(event) {
     console.log('Element was dragged', event);
@@ -54,7 +64,7 @@ class DemoApp {
 }
 ```
 
-You may also find it useful to view the [demo source](https://github.com/mattlewis92/angular-draggable-droppable/blob/master/demo/demo.ts).
+You may also find it useful to view the [demo source](https://github.com/mattlewis92/angular-draggable-droppable/blob/master/demo/demo.component.ts).
 
 ### Usage without a module bundler
 ```

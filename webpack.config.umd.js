@@ -27,6 +27,12 @@ module.exports = {
       commonjs2: 'rxjs/Subject',
       amd: 'rxjs/Subject'
     },
+    'rxjs/Subscription': {
+      root: ['rx', 'Subscription'],
+      commonjs: 'rxjs/Subscription',
+      commonjs2: 'rxjs/Subscription',
+      amd: 'rxjs/Subscription'
+    },
     'rxjs/Observable': {
       root: ['rx', 'Observable'],
       commonjs: 'rxjs/Observable',
@@ -62,6 +68,24 @@ module.exports = {
       commonjs: 'rxjs/add/operator/takeLast',
       commonjs2: 'rxjs/add/operator/takeLast',
       amd: 'rxjs/add/operator/takeLast'
+    },
+    'rxjs/add/operator/distinctUntilChanged': {
+      root: ['rx', 'Observable'],
+      commonjs: 'rxjs/add/operator/distinctUntilChanged',
+      commonjs2: 'rxjs/add/operator/distinctUntilChanged',
+      amd: 'rxjs/add/operator/distinctUntilChanged'
+    },
+    'rxjs/add/operator/pairwise': {
+      root: ['rx', 'Observable'],
+      commonjs: 'rxjs/add/operator/pairwise',
+      commonjs2: 'rxjs/add/operator/pairwise',
+      amd: 'rxjs/add/operator/pairwise'
+    },
+    'rxjs/add/operator/filter': {
+      root: ['rx', 'Observable'],
+      commonjs: 'rxjs/add/operator/filter',
+      commonjs2: 'rxjs/add/operator/filter',
+      amd: 'rxjs/add/operator/filter'
     }
   },
   devtool: 'source-map',

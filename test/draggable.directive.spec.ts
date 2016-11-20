@@ -2,15 +2,9 @@ import {Component, ViewChild} from '@angular/core';
 import {TestBed, ComponentFixture} from '@angular/core/testing';
 import {expect} from 'chai';
 import * as sinon from 'sinon';
+import {triggerDomEvent} from './util';
 import {DragAndDropModule} from '../src/index';
 import {Draggable} from '../src/draggable.directive';
-
-const triggerDomEvent: Function = (eventType: string, target: HTMLElement | Element, eventData: Object = {}) => {
-  const event: Event = document.createEvent('Event');
-  Object.assign(event, eventData);
-  event.initEvent(eventType, true, true);
-  target.dispatchEvent(event);
-};
 
 describe('draggable directive', () => {
 
