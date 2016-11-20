@@ -1,4 +1,4 @@
-import {Directive, HostListener, OnInit, ElementRef, Renderer, Output, EventEmitter, Input} from '@angular/core';
+import {Directive, HostListener, OnInit, ElementRef, Renderer, Output, EventEmitter, Input, OnDestroy} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/merge';
@@ -13,7 +13,7 @@ type Coordinates = {x: number, y: number};
 @Directive({
   selector: '[mwlDraggable]'
 })
-export class Draggable implements OnInit {
+export class Draggable implements OnInit, OnDestroy {
 
   @Input() dropData: any;
 
@@ -61,13 +61,18 @@ export class Draggable implements OnInit {
 
     });
 
-    // TODO - unsubscribe from this on destroy
     mouseDrag.subscribe(({x, y, currentDrag}) => {
       this.dragging.next({x, y});
       this.setCssTransform(`translate(${x}px, ${y}px)`);
       currentDrag.next({rectangle: this.element.nativeElement.getBoundingClientRect(), dropData: this.dropData});
     });
 
+  }
+
+  ngOnDestroy(): void {
+    this.mouseDown.complete();
+    this.mouseMove.complete();
+    this.mouseUp.complete();
   }
 
   /**

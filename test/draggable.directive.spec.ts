@@ -59,4 +59,25 @@ describe('draggable directive', () => {
     expect(draggableElement.style.transform).to.equal('');
   });
 
+  it('should end the mouseUp observable when the component is destroyed', () => {
+    const complete: sinon.SinonSpy = sinon.spy();
+    fixture.componentInstance.draggable.mouseUp.subscribe({complete});
+    fixture.destroy();
+    expect(complete).to.have.been.calledOnce;
+  });
+
+  it('should end the mouseDown observable when the component is destroyed', () => {
+    const complete: sinon.SinonSpy = sinon.spy();
+    fixture.componentInstance.draggable.mouseDown.subscribe({complete});
+    fixture.destroy();
+    expect(complete).to.have.been.calledOnce;
+  });
+
+  it('should end the mouseMove observable when the component is destroyed', () => {
+    const complete: sinon.SinonSpy = sinon.spy();
+    fixture.componentInstance.draggable.mouseMove.subscribe({complete});
+    fixture.destroy();
+    expect(complete).to.have.been.calledOnce;
+  });
+
 });
