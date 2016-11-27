@@ -28,7 +28,11 @@
   },
   "keywords": [
     "angular2",
-    "angular"
+    "angular",
+    "draggable",
+    "droppable",
+    "drag",
+    "drop"
   ],
   "author": "Matt Lewis",
   "license": "MIT",
