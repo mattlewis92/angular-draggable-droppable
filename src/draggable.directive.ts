@@ -10,12 +10,16 @@ import {DraggableHelper} from './draggableHelper.provider';
 
 type Coordinates = {x: number, y: number};
 
+type DragAxis = {x: boolean, y: boolean};
+
 @Directive({
   selector: '[mwlDraggable]'
 })
 export class Draggable implements OnInit, OnDestroy {
 
   @Input() dropData: any;
+
+  @Input() dragAxis: DragAxis = {x: true, y: true};
 
   @Output() dragStart: EventEmitter<Coordinates> = new EventEmitter<Coordinates>();
 
@@ -48,6 +52,15 @@ export class Draggable implements OnInit, OnDestroy {
             x: mouseMoveEvent.clientX - mouseDownEvent.clientX,
             y: mouseMoveEvent.clientY - mouseDownEvent.clientY
           };
+        })
+        .map((moveData: Coordinates) => {
+          if (!this.dragAxis.x) {
+            moveData.x = 0;
+          }
+          if (!this.dragAxis.y) {
+            moveData.y = 0;
+          }
+          return moveData;
         })
         .takeUntil(Observable.merge(this.mouseUp, this.mouseDown));
 
