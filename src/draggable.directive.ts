@@ -12,6 +12,8 @@ type Coordinates = {x: number, y: number};
 
 type DragAxis = {x: boolean, y: boolean};
 
+type SnapGrid = {x?: number, y?: number};
+
 @Directive({
   selector: '[mwlDraggable]'
 })
@@ -20,6 +22,8 @@ export class Draggable implements OnInit, OnDestroy {
   @Input() dropData: any;
 
   @Input() dragAxis: DragAxis = {x: true, y: true};
+
+  @Input() snapGrid: SnapGrid = {};
 
   @Output() dragStart: EventEmitter<Coordinates> = new EventEmitter<Coordinates>();
 
@@ -58,12 +62,27 @@ export class Draggable implements OnInit, OnDestroy {
 
         })
         .map((moveData: Coordinates) => {
+
+          if (this.snapGrid.x) {
+            moveData.x = Math.floor(moveData.x / this.snapGrid.x) * this.snapGrid.x;
+          }
+
+          if (this.snapGrid.y) {
+            moveData.y = Math.floor(moveData.y / this.snapGrid.y) * this.snapGrid.y;
+          }
+
+          return moveData;
+        })
+        .map((moveData: Coordinates) => {
+
           if (!this.dragAxis.x) {
             moveData.x = 0;
           }
+
           if (!this.dragAxis.y) {
             moveData.y = 0;
           }
+
           return moveData;
         })
         .takeUntil(Observable.merge(this.mouseUp, this.mouseDown));

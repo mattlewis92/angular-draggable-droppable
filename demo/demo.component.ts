@@ -6,8 +6,8 @@ import {Component} from '@angular/core';
     <div mwlDraggable dropData="foo">
       Drag me!
     </div>
-    <div mwlDraggable dropData="bar">
-      Or drag me!
+    <div mwlDraggable dropData="bar" [snapGrid]="{x: 100, y: 100}">
+      I snap to a 100x100 grid
     </div>
     <div
       [class.dropOverActive]="dropOverActive"

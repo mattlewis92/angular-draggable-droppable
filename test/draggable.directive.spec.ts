@@ -13,6 +13,7 @@ describe('draggable directive', () => {
       <div 
         mwlDraggable
         [dragAxis]="dragAxis"
+        [snapGrid]="snapGrid"
         (dragStart)="dragStart($event)" 
         (dragging)="dragging($event)"
         (dragEnd)="dragEnd($event)">
@@ -26,6 +27,7 @@ describe('draggable directive', () => {
     public dragging: sinon.SinonSpy = sinon.spy();
     public dragEnd: sinon.SinonSpy = sinon.spy();
     public dragAxis: any = {x: true, y: true};
+    public snapGrid: any = {};
 
   }
 
@@ -116,6 +118,40 @@ describe('draggable directive', () => {
     expect(draggableElement.style.transform).to.equal('translate(0px, 0px)');
     triggerDomEvent('mouseup', draggableElement, {clientX: 7, clientY: 12});
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({x: 0, y: 0});
+  });
+
+  it('should snap all horizontal drags to a grid', () => {
+    fixture.componentInstance.snapGrid = {x: 10};
+    fixture.detectChanges();
+    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, {clientX: 5, clientY: 10});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 7, clientY: 12});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 0, y: 2});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 14, clientY: 18});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 0, y: 8});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 15, clientY: 20});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 10, y: 10});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 16, clientY: 22});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 10, y: 12});
+    triggerDomEvent('mouseup', draggableElement, {clientX: 16, clientY: 22});
+    expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({x: 10, y: 12});
+  });
+
+  it('should snap all vertical drags to a grid', () => {
+    fixture.componentInstance.snapGrid = {y: 10};
+    fixture.detectChanges();
+    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, {clientX: 10, clientY: 5});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 12, clientY: 7});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 2, y: 0});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 18, clientY: 14});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 8, y: 0});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 20, clientY: 15});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 10, y: 10});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 22, clientY: 16});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 12, y: 10});
+    triggerDomEvent('mouseup', draggableElement, {clientX: 22, clientY: 16});
+    expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({x: 12, y: 10});
   });
 
 });
