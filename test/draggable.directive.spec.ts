@@ -14,6 +14,7 @@ describe('draggable directive', () => {
         mwlDraggable
         [dragAxis]="dragAxis"
         [snapGrid]="snapGrid"
+        [ghostDragEnabled]="ghostDragEnabled"
         (dragStart)="dragStart($event)" 
         (dragging)="dragging($event)"
         (dragEnd)="dragEnd($event)">
@@ -28,6 +29,7 @@ describe('draggable directive', () => {
     public dragEnd: sinon.SinonSpy = sinon.spy();
     public dragAxis: any = {x: true, y: true};
     public snapGrid: any = {};
+    public ghostDragEnabled: boolean = true;
 
   }
 
@@ -152,6 +154,40 @@ describe('draggable directive', () => {
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 12, y: 10});
     triggerDomEvent('mouseup', draggableElement, {clientX: 22, clientY: 16});
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({x: 12, y: 10});
+  });
+
+  it('should snap all vertical and horizontal drags to a grid', () => {
+    fixture.componentInstance.snapGrid = {y: 10, x: 10};
+    fixture.detectChanges();
+    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, {clientX: 10, clientY: 5});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 12, clientY: 7});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 0, y: 0});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 18, clientY: 14});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 0, y: 0});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 20, clientY: 15});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 10, y: 10});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 22, clientY: 16});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 10, y: 10});
+    triggerDomEvent('mouseup', draggableElement, {clientX: 22, clientY: 16});
+    expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({x: 10, y: 10});
+  });
+
+  it('should disable the ghost dragging effect', () => {
+    fixture.componentInstance.ghostDragEnabled = false;
+    fixture.detectChanges();
+    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, {clientX: 5, clientY: 10});
+    expect(fixture.componentInstance.dragStart).to.have.been.calledWith({x: 0, y: 0});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 7, clientY: 10});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 2, y: 0});
+    expect(draggableElement.style.transform).not.to.ok;
+    triggerDomEvent('mousemove', draggableElement, {clientX: 7, clientY: 8});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 2, y: -2});
+    expect(draggableElement.style.transform).not.to.ok;
+    triggerDomEvent('mouseup', draggableElement, {clientX: 7, clientY: 8});
+    expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({x: 2, y: -2});
+    expect(draggableElement.style.transform).not.to.ok;
   });
 
 });

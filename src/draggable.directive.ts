@@ -25,6 +25,8 @@ export class Draggable implements OnInit, OnDestroy {
 
   @Input() snapGrid: SnapGrid = {};
 
+  @Input() ghostDragEnabled: boolean = true;
+
   @Output() dragStart: EventEmitter<Coordinates> = new EventEmitter<Coordinates>();
 
   @Output() dragging: EventEmitter<Coordinates> = new EventEmitter<Coordinates>();
@@ -136,11 +138,13 @@ export class Draggable implements OnInit, OnDestroy {
   }
 
   private setCssTransform(value: string): void {
-    this.renderer.setElementStyle(this.element.nativeElement, 'transform', value);
-    this.renderer.setElementStyle(this.element.nativeElement, '-webkit-transform', value);
-    this.renderer.setElementStyle(this.element.nativeElement, '-ms-transform', value);
-    this.renderer.setElementStyle(this.element.nativeElement, '-moz-transform', value);
-    this.renderer.setElementStyle(this.element.nativeElement, '-o-transform', value);
+    if (this.ghostDragEnabled) {
+      this.renderer.setElementStyle(this.element.nativeElement, 'transform', value);
+      this.renderer.setElementStyle(this.element.nativeElement, '-webkit-transform', value);
+      this.renderer.setElementStyle(this.element.nativeElement, '-ms-transform', value);
+      this.renderer.setElementStyle(this.element.nativeElement, '-moz-transform', value);
+      this.renderer.setElementStyle(this.element.nativeElement, '-o-transform', value);
+    }
   }
 
 }
