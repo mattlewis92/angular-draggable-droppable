@@ -47,11 +47,15 @@ export class Draggable implements OnInit, OnDestroy {
 
       const mouseMove: Observable<Coordinates> = this.mouseMove
         .map((mouseMoveEvent: MouseEvent) => {
+
+          mouseMoveEvent.preventDefault();
+
           return {
             currentDrag,
             x: mouseMoveEvent.clientX - mouseDownEvent.clientX,
             y: mouseMoveEvent.clientY - mouseDownEvent.clientY
           };
+
         })
         .map((moveData: Coordinates) => {
           if (!this.dragAxis.x) {
