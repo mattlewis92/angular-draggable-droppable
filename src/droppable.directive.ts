@@ -16,7 +16,7 @@ function isOverlapping(rect1: ClientRect, rect2: ClientRect): boolean {
   );
 }
 
-type DropData = {dropData: any};
+export type DropData = {dropData: any};
 
 @Directive({
   selector: '[mwlDroppable]'

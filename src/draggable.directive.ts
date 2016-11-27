@@ -8,11 +8,11 @@ import 'rxjs/add/operator/takeUntil';
 import 'rxjs/add/operator/takeLast';
 import {DraggableHelper} from './draggableHelper.provider';
 
-type Coordinates = {x: number, y: number};
+export type Coordinates = {x: number, y: number};
 
-type DragAxis = {x: boolean, y: boolean};
+export type DragAxis = {x: boolean, y: boolean};
 
-type SnapGrid = {x?: number, y?: number};
+export type SnapGrid = {x?: number, y?: number};
 
 @Directive({
   selector: '[mwlDraggable]'
