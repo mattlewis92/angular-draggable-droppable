@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.1.0...v0.1.1) (2016-12-09)
+
+
+### Bug Fixes
+
+* **draggable:** disable pointer events on the element when dragging ([f29b424](https://github.com/mattlewis92/angular-draggable-droppable/commit/f29b424))
+
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (2016-11-27)
 
