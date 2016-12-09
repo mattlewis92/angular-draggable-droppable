@@ -47,6 +47,10 @@ export class Draggable implements OnInit, OnDestroy {
 
       this.dragStart.next({x: 0, y: 0});
 
+      if (this.ghostDragEnabled) {
+        this.renderer.setElementStyle(this.element.nativeElement, 'pointerEvents', 'none');
+      }
+
       const currentDrag: Subject<any> = new Subject();
 
       this.draggableHelper.currentDrag.next(currentDrag);
@@ -93,6 +97,9 @@ export class Draggable implements OnInit, OnDestroy {
         this.dragEnd.next({x, y});
         currentDrag.complete();
         this.setCssTransform('');
+        if (this.ghostDragEnabled) {
+          this.renderer.setElementStyle(this.element.nativeElement, 'pointerEvents', 'auto');
+        }
       });
 
       return mouseMove;
