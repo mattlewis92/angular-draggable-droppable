@@ -19,7 +19,7 @@
     "typedoc": "typedoc --options typedoc.json src/*.ts",
     "gh-pages": "git checkout gh-pages && git merge master && npm run build:demo && npm run typedoc && git add . && git commit -m 'chore: build demo and docs' && git push && git checkout master",
     "prerelease": "npm test",
-    "release": "standard-version --first-release && git push --follow-tags origin master && npm run build:dist && npm publish",
+    "release": "git add package.json && standard-version --first-release && git push --follow-tags origin master && npm run build:dist && npm publish",
     "postrelease": "npm run build:clean && npm run gh-pages"
   },
   "repository": {
@@ -75,7 +75,7 @@
     "sinon": "^1.17.4",
     "sinon-chai": "^2.8.0",
     "sourcemap-istanbul-instrumenter-loader": "^0.2.0",
-    "standard-version": "^3.0.0",
+    "standard-version": "^4.0.0",
     "tslint": "^4.0.2",
     "tslint-loader": "^3.2.0",
     "typedoc": "^0.5.0",
