@@ -16,6 +16,8 @@ export type DragAxis = {x: boolean, y: boolean};
 
 export type SnapGrid = {x?: number, y?: number};
 
+export type ValidateDrag = (coordinates: Coordinates) => boolean;
+
 const MOVE_CURSOR: string = 'move';
 
 @Directive({
@@ -30,6 +32,8 @@ export class Draggable implements OnInit, OnDestroy {
   @Input() dragSnapGrid: SnapGrid = {};
 
   @Input() ghostDragEnabled: boolean = true;
+
+  @Input() validateDrag: ValidateDrag;
 
   @Output() dragStart: EventEmitter<Coordinates> = new EventEmitter<Coordinates>();
 
@@ -113,7 +117,8 @@ export class Draggable implements OnInit, OnDestroy {
 
         return mouseMove;
 
-      });
+      })
+      .filter(({x, y}) => !this.validateDrag || this.validateDrag({x, y}));
 
     mouseDrag.subscribe(({x, y, currentDrag, clientX, clientY}) => {
       this.setCssTransform(`translate(${x}px, ${y}px)`);

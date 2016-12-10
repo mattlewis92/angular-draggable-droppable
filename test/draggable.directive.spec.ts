@@ -4,7 +4,7 @@ import {expect} from 'chai';
 import * as sinon from 'sinon';
 import {triggerDomEvent} from './util';
 import {DragAndDropModule} from '../src/index';
-import {Draggable} from '../src/draggable.directive';
+import {Draggable, ValidateDrag} from '../src/draggable.directive';
 
 describe('draggable directive', () => {
 
@@ -15,6 +15,7 @@ describe('draggable directive', () => {
         [dragAxis]="dragAxis"
         [dragSnapGrid]="dragSnapGrid"
         [ghostDragEnabled]="ghostDragEnabled"
+        [validateDrag]="validateDrag"
         (dragStart)="dragStart($event)" 
         (dragging)="dragging($event)"
         (dragEnd)="dragEnd($event)">
@@ -30,6 +31,7 @@ describe('draggable directive', () => {
     public dragAxis: any = {x: true, y: true};
     public dragSnapGrid: any = {};
     public ghostDragEnabled: boolean = true;
+    public validateDrag: ValidateDrag;
 
   }
 
@@ -225,6 +227,20 @@ describe('draggable directive', () => {
     triggerDomEvent('mousemove', draggableElement, {clientX: 12, clientY: 15});
     expect(fixture.componentInstance.dragging).to.have.been.calledOnce;
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 0, y: 10});
+  });
+
+  it('should allow drags to be validated', () => {
+    fixture.componentInstance.validateDrag = ({x, y}) => x > 0 && y > 0;
+    fixture.detectChanges();
+    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, {clientX: 5, clientY: 10});
+    expect(fixture.componentInstance.dragStart).to.have.been.calledWith({x: 0, y: 0});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 3, clientY: 10});
+    expect(fixture.componentInstance.dragging).not.to.have.been.calledWith({x: -2, y: 0});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 7, clientY: 8});
+    expect(fixture.componentInstance.dragging).not.to.have.been.calledWith({x: 2, y: -2});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 7, clientY: 12});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 2, y: 2});
   });
 
 });
