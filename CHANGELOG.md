@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.2.0...v0.2.1) (2016-12-10)
+
+
+### Bug Fixes
+
+* revert duplicate dragging fix as it caused worse errors ([7476301](https://github.com/mattlewis92/angular-draggable-droppable/commit/7476301))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.1.1...v0.2.0) (2016-12-10)
 
