@@ -212,12 +212,11 @@ describe('draggable directive', () => {
     fixture.detectChanges();
     const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
     triggerDomEvent('mousedown', draggableElement, {clientX: 10, clientY: 5});
-    triggerDomEvent('mousemove', draggableElement, {clientX: 12, clientY: 7});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 12, clientY: 15});
     expect(fixture.componentInstance.dragging).to.have.been.calledOnce;
-    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 0, y: 0});
-    triggerDomEvent('mousemove', draggableElement, {clientX: 18, clientY: 14});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 0, y: 10});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 18, clientY: 18});
     expect(fixture.componentInstance.dragging).to.have.been.calledOnce;
-    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 0, y: 0});
   });
 
 });
