@@ -86,6 +86,12 @@ module.exports = {
       commonjs: 'rxjs/add/operator/filter',
       commonjs2: 'rxjs/add/operator/filter',
       amd: 'rxjs/add/operator/filter'
+    },
+    'rxjs/add/operator/take': {
+      root: ['rx', 'Observable'],
+      commonjs: 'rxjs/add/operator/take',
+      commonjs2: 'rxjs/add/operator/take',
+      amd: 'rxjs/add/operator/take'
     }
   },
   devtool: 'source-map',

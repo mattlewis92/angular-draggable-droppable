@@ -5,7 +5,9 @@ import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/takeUntil';
+import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/takeLast';
+import 'rxjs/add/operator/pairwise';
 import {DraggableHelper} from './draggableHelper.provider';
 
 export type Coordinates = {x: number, y: number};
@@ -112,9 +114,22 @@ export class Draggable implements OnInit, OnDestroy {
       });
 
     mouseDrag.subscribe(({x, y, currentDrag}) => {
-      this.dragging.next({x, y});
       this.setCssTransform(`translate(${x}px, ${y}px)`);
       currentDrag.next({rectangle: this.element.nativeElement.getBoundingClientRect(), dropData: this.dropData});
+    });
+
+    Observable.merge(
+      mouseDrag.take(1).map(value => [, value]),
+      mouseDrag.pairwise()
+    ).filter(([previous, next]) => {
+      if (!previous) {
+        return true;
+      }
+      return previous.x !== next.x || previous.y !== next.y;
+    })
+    .map(([previous, next]) => next)
+    .subscribe(({x, y}) => {
+      this.dragging.next({x, y});
     });
 
   }
