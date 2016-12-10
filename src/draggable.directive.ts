@@ -43,68 +43,70 @@ export class Draggable implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    const mouseDrag: Observable<any> = this.mouseDown.flatMap((mouseDownEvent: MouseEvent) => {
+    const mouseDrag: Observable<any> = this.mouseDown
+      .filter(() => this.canDrag())
+      .flatMap((mouseDownEvent: MouseEvent) => {
 
-      this.dragStart.next({x: 0, y: 0});
+        this.dragStart.next({x: 0, y: 0});
 
-      if (this.ghostDragEnabled) {
-        this.renderer.setElementStyle(this.element.nativeElement, 'pointerEvents', 'none');
-      }
-
-      const currentDrag: Subject<any> = new Subject();
-
-      this.draggableHelper.currentDrag.next(currentDrag);
-
-      const mouseMove: Observable<Coordinates> = this.mouseMove
-        .map((mouseMoveEvent: MouseEvent) => {
-
-          mouseMoveEvent.preventDefault();
-
-          return {
-            currentDrag,
-            x: mouseMoveEvent.clientX - mouseDownEvent.clientX,
-            y: mouseMoveEvent.clientY - mouseDownEvent.clientY
-          };
-
-        })
-        .map((moveData: Coordinates) => {
-
-          if (this.dragSnapGrid.x) {
-            moveData.x = Math.floor(moveData.x / this.dragSnapGrid.x) * this.dragSnapGrid.x;
-          }
-
-          if (this.dragSnapGrid.y) {
-            moveData.y = Math.floor(moveData.y / this.dragSnapGrid.y) * this.dragSnapGrid.y;
-          }
-
-          return moveData;
-        })
-        .map((moveData: Coordinates) => {
-
-          if (!this.dragAxis.x) {
-            moveData.x = 0;
-          }
-
-          if (!this.dragAxis.y) {
-            moveData.y = 0;
-          }
-
-          return moveData;
-        })
-        .takeUntil(Observable.merge(this.mouseUp, this.mouseDown));
-
-      mouseMove.takeLast(1).subscribe(({x, y}) => {
-        this.dragEnd.next({x, y});
-        currentDrag.complete();
-        this.setCssTransform('');
         if (this.ghostDragEnabled) {
-          this.renderer.setElementStyle(this.element.nativeElement, 'pointerEvents', 'auto');
+          this.renderer.setElementStyle(this.element.nativeElement, 'pointerEvents', 'none');
         }
+
+        const currentDrag: Subject<any> = new Subject();
+
+        this.draggableHelper.currentDrag.next(currentDrag);
+
+        const mouseMove: Observable<Coordinates> = this.mouseMove
+          .map((mouseMoveEvent: MouseEvent) => {
+
+            mouseMoveEvent.preventDefault();
+
+            return {
+              currentDrag,
+              x: mouseMoveEvent.clientX - mouseDownEvent.clientX,
+              y: mouseMoveEvent.clientY - mouseDownEvent.clientY
+            };
+
+          })
+          .map((moveData: Coordinates) => {
+
+            if (this.dragSnapGrid.x) {
+              moveData.x = Math.floor(moveData.x / this.dragSnapGrid.x) * this.dragSnapGrid.x;
+            }
+
+            if (this.dragSnapGrid.y) {
+              moveData.y = Math.floor(moveData.y / this.dragSnapGrid.y) * this.dragSnapGrid.y;
+            }
+
+            return moveData;
+          })
+          .map((moveData: Coordinates) => {
+
+            if (!this.dragAxis.x) {
+              moveData.x = 0;
+            }
+
+            if (!this.dragAxis.y) {
+              moveData.y = 0;
+            }
+
+            return moveData;
+          })
+          .takeUntil(Observable.merge(this.mouseUp, this.mouseDown));
+
+        mouseMove.takeLast(1).subscribe(({x, y}) => {
+          this.dragEnd.next({x, y});
+          currentDrag.complete();
+          this.setCssTransform('');
+          if (this.ghostDragEnabled) {
+            this.renderer.setElementStyle(this.element.nativeElement, 'pointerEvents', 'auto');
+          }
+        });
+
+        return mouseMove;
+
       });
-
-      return mouseMove;
-
-    });
 
     mouseDrag.subscribe(({x, y, currentDrag}) => {
       this.dragging.next({x, y});
@@ -152,6 +154,10 @@ export class Draggable implements OnInit, OnDestroy {
       this.renderer.setElementStyle(this.element.nativeElement, '-moz-transform', value);
       this.renderer.setElementStyle(this.element.nativeElement, '-o-transform', value);
     }
+  }
+
+  private canDrag(): boolean {
+    return this.dragAxis.x || this.dragAxis.y;
   }
 
 }

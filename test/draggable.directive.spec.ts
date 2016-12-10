@@ -116,10 +116,11 @@ describe('draggable directive', () => {
     const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
     triggerDomEvent('mousedown', draggableElement, {clientX: 5, clientY: 10});
     triggerDomEvent('mousemove', draggableElement, {clientX: 7, clientY: 12});
-    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 0, y: 0});
-    expect(draggableElement.style.transform).to.equal('translate(0px, 0px)');
+    expect(fixture.componentInstance.dragStart).not.to.have.been.called;
+    expect(fixture.componentInstance.dragging).not.to.have.been.called;
+    expect(draggableElement.style.transform).not.to.be.ok;
     triggerDomEvent('mouseup', draggableElement, {clientX: 7, clientY: 12});
-    expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({x: 0, y: 0});
+    expect(fixture.componentInstance.dragEnd).not.to.have.been.called;
   });
 
   it('should snap all horizontal drags to a grid', () => {
