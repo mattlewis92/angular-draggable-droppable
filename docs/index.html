@@ -931,8 +931,14 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-type-alias">
 			<a href="globals.html#snapgrid" class="tsd-kind-icon">Snap<wbr>Grid</a>
 		</li>
+		<li class=" tsd-kind-type-alias">
+			<a href="globals.html#validatedrag" class="tsd-kind-icon">Validate<wbr>Drag</a>
+		</li>
+		<li class=" tsd-kind-variable tsd-is-not-exported">
+			<a href="globals.html#move_cursor" class="tsd-kind-icon">MOVE_<wbr>CURSOR</a>
+		</li>
 		<li class=" tsd-kind-function tsd-is-not-exported">
-			<a href="globals.html#isoverlapping" class="tsd-kind-icon">is<wbr>Overlapping</a>
+			<a href="globals.html#iscoordinatewithinrectangle" class="tsd-kind-icon">is<wbr>Coordinate<wbr>Within<wbr>Rectangle</a>
 		</li>
 	</ul>
 </nav>
@@ -1043,12 +1049,19 @@ img { max-width: 100%; }
 							<li class="tsd-kind-type-alias"><a href="globals.html#dragaxis" class="tsd-kind-icon">Drag<wbr>Axis</a></li>
 							<li class="tsd-kind-type-alias"><a href="globals.html#dropdata" class="tsd-kind-icon">Drop<wbr>Data</a></li>
 							<li class="tsd-kind-type-alias"><a href="globals.html#snapgrid" class="tsd-kind-icon">Snap<wbr>Grid</a></li>
+							<li class="tsd-kind-type-alias"><a href="globals.html#validatedrag" class="tsd-kind-icon">Validate<wbr>Drag</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section tsd-is-not-exported">
+						<h3>Variables</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#move_cursor" class="tsd-kind-icon">MOVE_<wbr>CURSOR</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section tsd-is-not-exported">
 						<h3>Functions</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#isoverlapping" class="tsd-kind-icon">is<wbr>Overlapping</a></li>
+							<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#iscoordinatewithinrectangle" class="tsd-kind-icon">is<wbr>Coordinate<wbr>Within<wbr>Rectangle</a></li>
 						</ul>
 					</section>
 				</div>
@@ -1062,7 +1075,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Coordinates<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/d70523f/src/draggable.directive.ts#L11">draggable.directive.ts:11</a></li>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/fb6d65e/src/draggable.directive.ts#L13">draggable.directive.ts:13</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1083,7 +1096,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Drag<wbr>Axis<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/d70523f/src/draggable.directive.ts#L13">draggable.directive.ts:13</a></li>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/fb6d65e/src/draggable.directive.ts#L15">draggable.directive.ts:15</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1104,7 +1117,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Drop<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/d70523f/src/droppable.directive.ts#L19">droppable.directive.ts:19</a></li>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/fb6d65e/src/droppable.directive.ts#L14">droppable.directive.ts:14</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1122,7 +1135,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">Snap<wbr>Grid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/d70523f/src/draggable.directive.ts#L15">draggable.directive.ts:15</a></li>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/fb6d65e/src/draggable.directive.ts#L17">draggable.directive.ts:17</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-type-declaration">
@@ -1137,29 +1150,76 @@ img { max-width: 100%; }
 					</ul>
 				</div>
 			</section>
+			<section class="tsd-panel tsd-member tsd-kind-type-alias">
+				<a name="validatedrag" class="tsd-anchor"></a>
+				<h3>Validate<wbr>Drag</h3>
+				<div class="tsd-signature tsd-kind-icon">Validate<wbr>Drag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/fb6d65e/src/draggable.directive.ts#L19">draggable.directive.ts:19</a></li>
+					</ul>
+				</aside>
+				<div class="tsd-type-declaration">
+					<h4>Type declaration</h4>
+					<ul class="tsd-parameters">
+						<li class="tsd-parameter-siganture">
+							<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias tsd-is-not-exported">
+								<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>coordinates<span class="tsd-signature-symbol">: </span><a href="globals.html#coordinates" class="tsd-signature-type">Coordinates</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+							</ul>
+							<ul class="tsd-descriptions">
+								<li class="tsd-description">
+									<h4 class="tsd-parameters-title">Parameters</h4>
+									<ul class="tsd-parameters">
+										<li>
+											<h5>coordinates: <a href="globals.html#coordinates" class="tsd-signature-type">Coordinates</a></h5>
+										</li>
+									</ul>
+									<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<h2>Variables</h2>
+			<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+				<a name="move_cursor" class="tsd-anchor"></a>
+				<h3>MOVE_<wbr>CURSOR</h3>
+				<div class="tsd-signature tsd-kind-icon">MOVE_<wbr>CURSOR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;move&quot;</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/fb6d65e/src/draggable.directive.ts#L21">draggable.directive.ts:21</a></li>
+					</ul>
+				</aside>
+			</section>
 		</section>
 		<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 			<h2>Functions</h2>
 			<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
-				<a name="isoverlapping" class="tsd-anchor"></a>
-				<h3>is<wbr>Overlapping</h3>
+				<a name="iscoordinatewithinrectangle" class="tsd-anchor"></a>
+				<h3>is<wbr>Coordinate<wbr>Within<wbr>Rectangle</h3>
 				<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
-					<li class="tsd-signature tsd-kind-icon">is<wbr>Overlapping<span class="tsd-signature-symbol">(</span>rect1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ClientRect</span>, rect2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ClientRect</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					<li class="tsd-signature tsd-kind-icon">is<wbr>Coordinate<wbr>Within<wbr>Rectangle<span class="tsd-signature-symbol">(</span>clientX<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, clientY<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rect<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ClientRect</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/d70523f/src/droppable.directive.ts#L10">droppable.directive.ts:10</a></li>
+								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/fb6d65e/src/droppable.directive.ts#L10">droppable.directive.ts:10</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>rect1: <span class="tsd-signature-type">ClientRect</span></h5>
+								<h5>clientX: <span class="tsd-signature-type">number</span></h5>
 							</li>
 							<li>
-								<h5>rect2: <span class="tsd-signature-type">ClientRect</span></h5>
+								<h5>clientY: <span class="tsd-signature-type">number</span></h5>
+							</li>
+							<li>
+								<h5>rect: <span class="tsd-signature-type">ClientRect</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
