@@ -6,8 +6,8 @@ import {Component} from '@angular/core';
     <div mwlDraggable dropData="foo">
       Drag me!
     </div>
-    <div mwlDraggable dropData="bar" [snapGrid]="{x: 100, y: 100}">
-      I snap to a 100x100 grid
+    <div mwlDraggable dropData="bar" [dragSnapGrid]="{x: 100, y: 100}">
+      I snap to a 100 x 100 grid
     </div>
     <div
       [class.dropOverActive]="dropOverActive"
@@ -24,7 +24,6 @@ import {Component} from '@angular/core';
       background-color: red;
       width: 200px;
       height: 200px;
-      cursor: move;
       position: relative;
       z-index: 1;
       float: left;
