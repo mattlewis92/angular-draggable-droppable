@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.1.1...v0.2.0) (2016-12-10)
+
+
+### Bug Fixes
+
+* completely remove applied styled after dragging ([3445337](https://github.com/mattlewis92/angular-draggable-droppable/commit/3445337))
+* **draggable:** dont fire duplicate dragging events with the same coordinates ([222914b](https://github.com/mattlewis92/angular-draggable-droppable/commit/222914b)), closes [#6](https://github.com/mattlewis92/angular-draggable-droppable/issues/6)
+* **draggable:** when dragging is disabled, no drag events should be emitted ([729f24e](https://github.com/mattlewis92/angular-draggable-droppable/commit/729f24e))
+* **droppable:** only allow dropping of events when the cursor is inside ([652d632](https://github.com/mattlewis92/angular-draggable-droppable/commit/652d632)), closes [#5](https://github.com/mattlewis92/angular-draggable-droppable/issues/5)
+
+
+### Features
+
+* **draggable:** auto change the cursor to the move icon on hover ([50d1962](https://github.com/mattlewis92/angular-draggable-droppable/commit/50d1962)), closes [#9](https://github.com/mattlewis92/angular-draggable-droppable/issues/9)
+* **snapGrid:** rename to dragSnapGrid ([a77d07a](https://github.com/mattlewis92/angular-draggable-droppable/commit/a77d07a)), closes [#7](https://github.com/mattlewis92/angular-draggable-droppable/issues/7)
+* **validateDrag:** add the validate drag input ([9e5ac95](https://github.com/mattlewis92/angular-draggable-droppable/commit/9e5ac95)), closes [#8](https://github.com/mattlewis92/angular-draggable-droppable/issues/8)
+
+
+### BREAKING CHANGES
+
+* droppable: the drag enter, leave and drop events will not fire until cursor is inside the droppable element. This is to mimic how native drag and drop works
+* snapGrid: The snapGrid input has been renamed to dragSnapGrid
+
+
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.1.0...v0.1.1) (2016-12-09)
 
