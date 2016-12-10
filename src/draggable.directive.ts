@@ -23,7 +23,7 @@ export class Draggable implements OnInit, OnDestroy {
 
   @Input() dragAxis: DragAxis = {x: true, y: true};
 
-  @Input() snapGrid: SnapGrid = {};
+  @Input() dragSnapGrid: SnapGrid = {};
 
   @Input() ghostDragEnabled: boolean = true;
 
@@ -69,12 +69,12 @@ export class Draggable implements OnInit, OnDestroy {
         })
         .map((moveData: Coordinates) => {
 
-          if (this.snapGrid.x) {
-            moveData.x = Math.floor(moveData.x / this.snapGrid.x) * this.snapGrid.x;
+          if (this.dragSnapGrid.x) {
+            moveData.x = Math.floor(moveData.x / this.dragSnapGrid.x) * this.dragSnapGrid.x;
           }
 
-          if (this.snapGrid.y) {
-            moveData.y = Math.floor(moveData.y / this.snapGrid.y) * this.snapGrid.y;
+          if (this.dragSnapGrid.y) {
+            moveData.y = Math.floor(moveData.y / this.dragSnapGrid.y) * this.dragSnapGrid.y;
           }
 
           return moveData;

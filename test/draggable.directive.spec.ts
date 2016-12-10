@@ -13,7 +13,7 @@ describe('draggable directive', () => {
       <div 
         mwlDraggable
         [dragAxis]="dragAxis"
-        [snapGrid]="snapGrid"
+        [dragSnapGrid]="dragSnapGrid"
         [ghostDragEnabled]="ghostDragEnabled"
         (dragStart)="dragStart($event)" 
         (dragging)="dragging($event)"
@@ -28,7 +28,7 @@ describe('draggable directive', () => {
     public dragging: sinon.SinonSpy = sinon.spy();
     public dragEnd: sinon.SinonSpy = sinon.spy();
     public dragAxis: any = {x: true, y: true};
-    public snapGrid: any = {};
+    public dragSnapGrid: any = {};
     public ghostDragEnabled: boolean = true;
 
   }
@@ -123,7 +123,7 @@ describe('draggable directive', () => {
   });
 
   it('should snap all horizontal drags to a grid', () => {
-    fixture.componentInstance.snapGrid = {x: 10};
+    fixture.componentInstance.dragSnapGrid = {x: 10};
     fixture.detectChanges();
     const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
     triggerDomEvent('mousedown', draggableElement, {clientX: 5, clientY: 10});
@@ -140,7 +140,7 @@ describe('draggable directive', () => {
   });
 
   it('should snap all vertical drags to a grid', () => {
-    fixture.componentInstance.snapGrid = {y: 10};
+    fixture.componentInstance.dragSnapGrid = {y: 10};
     fixture.detectChanges();
     const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
     triggerDomEvent('mousedown', draggableElement, {clientX: 10, clientY: 5});
@@ -157,7 +157,7 @@ describe('draggable directive', () => {
   });
 
   it('should snap all vertical and horizontal drags to a grid', () => {
-    fixture.componentInstance.snapGrid = {y: 10, x: 10};
+    fixture.componentInstance.dragSnapGrid = {y: 10, x: 10};
     fixture.detectChanges();
     const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
     triggerDomEvent('mousedown', draggableElement, {clientX: 10, clientY: 5});
