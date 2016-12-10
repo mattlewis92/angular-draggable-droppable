@@ -205,7 +205,7 @@ describe('draggable directive', () => {
     expect(draggableElement.style.cursor).not.to.be.ok;
   });
 
-  it('should not call the dragging event multiple times with the same values', () => {
+  xit('should not call the dragging event multiple times with the same values', () => {
     fixture.componentInstance.dragSnapGrid = {y: 10, x: 10};
     fixture.detectChanges();
     const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
