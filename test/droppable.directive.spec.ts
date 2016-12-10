@@ -99,4 +99,17 @@ describe('droppable directive', () => {
     expect(fixture.componentInstance.drop).to.have.been.calledWith({dropData: {foo: 'bar'}});
   });
 
+  it('should not fire the drag enter event until the mouse cursor is within the element', () => {
+    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, {clientX: 5, clientY: 10});
+    expect(fixture.componentInstance.dragEvent).not.to.have.been.called;
+    triggerDomEvent('mousemove', draggableElement, {clientX: 5, clientY: 50});
+    expect(fixture.componentInstance.dragEvent).not.to.have.been.called;
+    triggerDomEvent('mousemove', draggableElement, {clientX: 5, clientY: 99});
+    expect(fixture.componentInstance.dragEvent).not.to.have.been.called;
+    triggerDomEvent('mousemove', draggableElement, {clientX: 5, clientY: 100});
+    expect(fixture.componentInstance.dragEvent.getCall(0).args).to.deep.equal(['enter', {dropData: {foo: 'bar'}}]);
+    expect(fixture.componentInstance.dragEvent.getCall(1).args).to.deep.equal(['over', {dropData: {foo: 'bar'}}]);
+  });
+
 });

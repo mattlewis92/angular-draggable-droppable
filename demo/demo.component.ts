@@ -7,7 +7,7 @@ import {Component} from '@angular/core';
       Drag me!
     </div>
     <div mwlDraggable dropData="bar" [dragSnapGrid]="{x: 100, y: 100}">
-      I snap to a 100x100 grid
+      I snap to a 100 x 100 grid
     </div>
     <div
       [class.dropOverActive]="dropOverActive"

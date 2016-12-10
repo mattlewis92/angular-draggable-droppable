@@ -70,7 +70,9 @@ export class Draggable implements OnInit, OnDestroy {
             return {
               currentDrag,
               x: mouseMoveEvent.clientX - mouseDownEvent.clientX,
-              y: mouseMoveEvent.clientY - mouseDownEvent.clientY
+              y: mouseMoveEvent.clientY - mouseDownEvent.clientY,
+              clientX: mouseMoveEvent.clientX,
+              clientY: mouseMoveEvent.clientY
             };
 
           })
@@ -113,24 +115,31 @@ export class Draggable implements OnInit, OnDestroy {
 
       });
 
-    mouseDrag.subscribe(({x, y, currentDrag}) => {
+    mouseDrag.subscribe(({x, y, currentDrag, clientX, clientY}) => {
       this.setCssTransform(`translate(${x}px, ${y}px)`);
-      currentDrag.next({rectangle: this.element.nativeElement.getBoundingClientRect(), dropData: this.dropData});
+      currentDrag.next({
+        clientX,
+        clientY,
+        dropData: this.dropData
+      });
     });
 
-    Observable.merge(
-      mouseDrag.take(1).map(value => [, value]),
-      mouseDrag.pairwise()
-    ).filter(([previous, next]) => {
-      if (!previous) {
-        return true;
-      }
-      return previous.x !== next.x || previous.y !== next.y;
-    })
-    .map(([previous, next]) => next)
-    .subscribe(({x, y}) => {
-      this.dragging.next({x, y});
-    });
+    Observable
+      .merge(
+        mouseDrag.take(1).map(value => [, value]),
+        mouseDrag.pairwise()
+      )
+      .filter(([previous, next]) => {
+        if (!previous) {
+          return true;
+        }
+        return previous.x !== next.x || previous.y !== next.y;
+      })
+      .map(([previous, next]) => next)
+      .filter(({x, y}) => x !== 0 || y !== 0)
+      .subscribe(({x, y}) => {
+        this.dragging.next({x, y});
+      });
 
   }
 
