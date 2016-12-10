@@ -98,9 +98,9 @@ export class Draggable implements OnInit, OnDestroy {
         mouseMove.takeLast(1).subscribe(({x, y}) => {
           this.dragEnd.next({x, y});
           currentDrag.complete();
-          this.setCssTransform('');
+          this.setCssTransform(null);
           if (this.ghostDragEnabled) {
-            this.renderer.setElementStyle(this.element.nativeElement, 'pointerEvents', 'auto');
+            this.renderer.setElementStyle(this.element.nativeElement, 'pointerEvents', null);
           }
         });
 
