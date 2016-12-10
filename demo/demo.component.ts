@@ -24,7 +24,6 @@ import {Component} from '@angular/core';
       background-color: red;
       width: 200px;
       height: 200px;
-      cursor: move;
       position: relative;
       z-index: 1;
       float: left;

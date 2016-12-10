@@ -191,4 +191,20 @@ describe('draggable directive', () => {
     expect(draggableElement.style.transform).not.to.ok;
   });
 
+  it('should auto set the mouse cursor to the move icon on hover', () => {
+    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mouseenter', draggableElement);
+    expect(draggableElement.style.cursor).to.equal('move');
+    triggerDomEvent('mouseleave', draggableElement);
+    expect(draggableElement.style.cursor).not.to.be.ok;
+  });
+
+  it('should not set the mouse cursor when the element cant be dragged', () => {
+    fixture.componentInstance.dragAxis = {x: false, y: false};
+    fixture.detectChanges();
+    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mouseenter', draggableElement);
+    expect(draggableElement.style.cursor).not.to.be.ok;
+  });
+
 });

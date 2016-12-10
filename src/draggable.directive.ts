@@ -14,6 +14,8 @@ export type DragAxis = {x: boolean, y: boolean};
 
 export type SnapGrid = {x?: number, y?: number};
 
+const MOVE_CURSOR: string = 'move';
+
 @Directive({
   selector: '[mwlDraggable]'
 })
@@ -48,6 +50,7 @@ export class Draggable implements OnInit, OnDestroy {
       .flatMap((mouseDownEvent: MouseEvent) => {
 
         this.dragStart.next({x: 0, y: 0});
+        this.setCursor(MOVE_CURSOR);
 
         if (this.ghostDragEnabled) {
           this.renderer.setElementStyle(this.element.nativeElement, 'pointerEvents', 'none');
@@ -146,6 +149,24 @@ export class Draggable implements OnInit, OnDestroy {
     this.mouseUp.next(event);
   }
 
+  /**
+   * @private
+   */
+  @HostListener('mouseenter')
+  onMouseEnter(): void {
+    if (this.canDrag()) {
+      this.setCursor(MOVE_CURSOR);
+    }
+  }
+
+  /**
+   * @private
+   */
+  @HostListener('mouseleave')
+  onMouseLeave(): void {
+    this.setCursor(null);
+  }
+
   private setCssTransform(value: string): void {
     if (this.ghostDragEnabled) {
       this.renderer.setElementStyle(this.element.nativeElement, 'transform', value);
@@ -158,6 +179,10 @@ export class Draggable implements OnInit, OnDestroy {
 
   private canDrag(): boolean {
     return this.dragAxis.x || this.dragAxis.y;
+  }
+
+  private setCursor(value: string): void {
+    this.renderer.setElementStyle(this.element.nativeElement, 'cursor', value);
   }
 
 }
