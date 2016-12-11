@@ -217,18 +217,6 @@ describe('draggable directive', () => {
     expect(fixture.componentInstance.dragging).to.have.been.calledOnce;
   });
 
-  it('should not call the dragging event with {x: 0, y: 0}', () => {
-    fixture.componentInstance.dragSnapGrid = {y: 10, x: 10};
-    fixture.detectChanges();
-    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
-    triggerDomEvent('mousedown', draggableElement, {clientX: 10, clientY: 5});
-    triggerDomEvent('mousemove', draggableElement, {clientX: 12, clientY: 7});
-    expect(fixture.componentInstance.dragging).not.to.have.been.called;
-    triggerDomEvent('mousemove', draggableElement, {clientX: 12, clientY: 15});
-    expect(fixture.componentInstance.dragging).to.have.been.calledOnce;
-    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 0, y: 10});
-  });
-
   it('should allow drags to be validated', () => {
     fixture.componentInstance.validateDrag = ({x, y}) => x > 0 && y > 0;
     fixture.detectChanges();

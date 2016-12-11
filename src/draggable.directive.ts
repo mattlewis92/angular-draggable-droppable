@@ -134,7 +134,6 @@ export class Draggable implements OnInit, OnDestroy {
         return previous.x !== next.x || previous.y !== next.y;
       })
       .map(([previous, next]) => next)
-      .filter(({x, y}) => x !== 0 || y !== 0)
       .subscribe(({x, y, currentDrag, clientX, clientY}) => {
         this.dragging.next({x, y});
         this.setCssTransform(`translate(${x}px, ${y}px)`);
