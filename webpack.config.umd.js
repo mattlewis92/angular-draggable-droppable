@@ -92,6 +92,12 @@ module.exports = {
       commonjs: 'rxjs/add/operator/take',
       commonjs2: 'rxjs/add/operator/take',
       amd: 'rxjs/add/operator/take'
+    },
+    'rxjs/add/operator/share': {
+      root: ['rx', 'Observable'],
+      commonjs: 'rxjs/add/operator/share',
+      commonjs2: 'rxjs/add/operator/share',
+      amd: 'rxjs/add/operator/share'
     }
   },
   devtool: 'source-map',

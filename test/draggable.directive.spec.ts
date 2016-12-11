@@ -205,7 +205,7 @@ describe('draggable directive', () => {
     expect(draggableElement.style.cursor).not.to.be.ok;
   });
 
-  xit('should not call the dragging event multiple times with the same values', () => {
+  it('should not call the dragging event multiple times with the same values', () => {
     fixture.componentInstance.dragSnapGrid = {y: 10, x: 10};
     fixture.detectChanges();
     const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
@@ -241,6 +241,14 @@ describe('draggable directive', () => {
     expect(fixture.componentInstance.dragging).not.to.have.been.calledWith({x: 2, y: -2});
     triggerDomEvent('mousemove', draggableElement, {clientX: 7, clientY: 12});
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 2, y: 2});
+  });
+
+  it('should only call the dragEnd event once', () => {
+    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, {clientX: 5, clientY: 10});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 7, clientY: 8});
+    triggerDomEvent('mouseup', draggableElement, {clientX: 7, clientY: 8});
+    expect(fixture.componentInstance.dragEnd).to.have.been.calledOnce;
   });
 
 });
