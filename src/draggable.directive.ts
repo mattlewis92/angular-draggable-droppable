@@ -120,15 +120,29 @@ export class Draggable implements OnInit, OnDestroy {
       })
       .filter(({x, y}) => !this.validateDrag || this.validateDrag({x, y}));
 
-    mouseDrag
+    mouseDrag.subscribe(({x, y, currentDrag, clientX, clientY}) => {
+      this.setCssTransform(`translate(${x}px, ${y}px)`);
+      currentDrag.next({
+        clientX,
+        clientY,
+        dropData: this.dropData
+      });
+    });
+
+    Observable
+      .merge(
+        mouseDrag.take(1).map(value => [, value]),
+        mouseDrag.pairwise()
+      )
+      .filter(([previous, next]) => {
+        if (!previous) {
+          return true;
+        }
+        return previous.x !== next.x || previous.y !== next.y;
+      })
+      .map(([previous, next]) => next)
       .filter(({x, y}) => x !== 0 || y !== 0)
-      .subscribe(({x, y, currentDrag, clientX, clientY}) => {
-        this.setCssTransform(`translate(${x}px, ${y}px)`);
-        currentDrag.next({
-          clientX,
-          clientY,
-          dropData: this.dropData
-        });
+      .subscribe(({x, y}) => {
         this.dragging.next({x, y});
       });
 
