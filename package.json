@@ -1,6 +1,6 @@
 {
   "name": "angular-draggable-droppable",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Drag and drop for angular 2.0+",
   "main": "./dist/umd/angular-draggable-droppable.js",
   "module": "./dist/esm/src/index.js",
