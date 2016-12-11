@@ -8,6 +8,7 @@ import 'rxjs/add/operator/takeUntil';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/takeLast';
 import 'rxjs/add/operator/pairwise';
+import 'rxjs/add/operator/share';
 import {DraggableHelper} from './draggableHelper.provider';
 
 export type Coordinates = {x: number, y: number};
@@ -118,16 +119,8 @@ export class Draggable implements OnInit, OnDestroy {
         return mouseMove;
 
       })
-      .filter(({x, y}) => !this.validateDrag || this.validateDrag({x, y}));
-
-    mouseDrag.subscribe(({x, y, currentDrag, clientX, clientY}) => {
-      this.setCssTransform(`translate(${x}px, ${y}px)`);
-      currentDrag.next({
-        clientX,
-        clientY,
-        dropData: this.dropData
-      });
-    });
+      .filter(({x, y}) => !this.validateDrag || this.validateDrag({x, y}))
+      .share();
 
     Observable
       .merge(
@@ -142,8 +135,14 @@ export class Draggable implements OnInit, OnDestroy {
       })
       .map(([previous, next]) => next)
       .filter(({x, y}) => x !== 0 || y !== 0)
-      .subscribe(({x, y}) => {
+      .subscribe(({x, y, currentDrag, clientX, clientY}) => {
         this.dragging.next({x, y});
+        this.setCssTransform(`translate(${x}px, ${y}px)`);
+        currentDrag.next({
+          clientX,
+          clientY,
+          dropData: this.dropData
+        });
       });
 
   }
