@@ -917,6 +917,9 @@ img { max-width: 100%; }
 					<a href="draggable.html#constructor" class="tsd-kind-icon">constructor</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class">
+					<a href="draggable.html#dragcontainer" class="tsd-kind-icon">drag<wbr>Container</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class">
 					<a href="draggable.html#dragend" class="tsd-kind-icon">drag<wbr>End</a>
 				</li>
 				<li class=" tsd-kind-property tsd-parent-kind-class">
@@ -1002,6 +1005,9 @@ img { max-width: 100%; }
 		<li class=" tsd-kind-function tsd-is-not-exported">
 			<a href="../globals.html#iscoordinatewithinrectangle" class="tsd-kind-icon">is<wbr>Coordinate<wbr>Within<wbr>Rectangle</a>
 		</li>
+		<li class=" tsd-kind-function tsd-is-not-exported">
+			<a href="../globals.html#isinside" class="tsd-kind-icon">is<wbr>Inside</a>
+		</li>
 	</ul>
 </nav>
 <div class="container container-main">
@@ -1036,6 +1042,7 @@ img { max-width: 100%; }
 					<section class="tsd-index-section ">
 						<h3>Properties</h3>
 						<ul class="tsd-index-list">
+							<li class="tsd-kind-property tsd-parent-kind-class"><a href="draggable.html#dragcontainer" class="tsd-kind-icon">drag<wbr>Container</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class"><a href="draggable.html#dragend" class="tsd-kind-icon">drag<wbr>End</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class"><a href="draggable.html#dragsnapgrid" class="tsd-kind-icon">drag<wbr>Snap<wbr>Grid</a></li>
 							<li class="tsd-kind-property tsd-parent-kind-class"><a href="draggable.html#dragstart" class="tsd-kind-icon">drag<wbr>Start</a></li>
@@ -1082,7 +1089,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L49">draggable.directive.ts:49</a></li>
+								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L62">draggable.directive.ts:62</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1105,12 +1112,22 @@ img { max-width: 100%; }
 		<section class="tsd-panel-group tsd-member-group ">
 			<h2>Properties</h2>
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<a name="dragcontainer" class="tsd-anchor"></a>
+				<h3>drag<wbr>Container</h3>
+				<div class="tsd-signature tsd-kind-icon">drag<wbr>Container<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLElement</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L50">draggable.directive.ts:50</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 				<a name="dragend" class="tsd-anchor"></a>
 				<h3>drag<wbr>End</h3>
 				<div class="tsd-signature tsd-kind-icon">drag<wbr>End<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#coordinates" class="tsd-signature-type">Coordinates</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;Coordinates&gt;()</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L43">draggable.directive.ts:43</a></li>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L56">draggable.directive.ts:56</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1120,7 +1137,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">drag<wbr>Snap<wbr>Grid<span class="tsd-signature-symbol">:</span> <a href="../globals.html#snapgrid" class="tsd-signature-type">SnapGrid</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L33">draggable.directive.ts:33</a></li>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L44">draggable.directive.ts:44</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1130,7 +1147,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">drag<wbr>Start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#coordinates" class="tsd-signature-type">Coordinates</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;Coordinates&gt;()</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L39">draggable.directive.ts:39</a></li>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L52">draggable.directive.ts:52</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1140,7 +1157,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">dragging<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">EventEmitter</span><span class="tsd-signature-symbol">&lt;</span><a href="../globals.html#coordinates" class="tsd-signature-type">Coordinates</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new EventEmitter&lt;Coordinates&gt;()</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L41">draggable.directive.ts:41</a></li>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L54">draggable.directive.ts:54</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1150,7 +1167,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">drop<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L29">draggable.directive.ts:29</a></li>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L40">draggable.directive.ts:40</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1160,7 +1177,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">element<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ElementRef</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L51">draggable.directive.ts:51</a></li>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L64">draggable.directive.ts:64</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1170,7 +1187,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">ghost<wbr>Drag<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L35">draggable.directive.ts:35</a></li>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L46">draggable.directive.ts:46</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1180,7 +1197,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">mouse<wbr>Down<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Subject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Subject()</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L45">draggable.directive.ts:45</a></li>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L58">draggable.directive.ts:58</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1190,7 +1207,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">mouse<wbr>Move<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Subject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Subject()</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L47">draggable.directive.ts:47</a></li>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L60">draggable.directive.ts:60</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1200,7 +1217,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">mouse<wbr>Up<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Subject</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Subject()</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L49">draggable.directive.ts:49</a></li>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L62">draggable.directive.ts:62</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1210,7 +1227,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">validate<wbr>Drag<span class="tsd-signature-symbol">:</span> <a href="../globals.html#validatedrag" class="tsd-signature-type">ValidateDrag</a></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L37">draggable.directive.ts:37</a></li>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L48">draggable.directive.ts:48</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -1227,7 +1244,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L149">draggable.directive.ts:149</a></li>
+								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L179">draggable.directive.ts:179</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1244,7 +1261,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L53">draggable.directive.ts:53</a></li>
+								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L66">draggable.directive.ts:66</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1261,7 +1278,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L159">draggable.directive.ts:159</a></li>
+								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L189">draggable.directive.ts:189</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1286,7 +1303,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L183">draggable.directive.ts:183</a></li>
+								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L213">draggable.directive.ts:213</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1305,7 +1322,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L193">draggable.directive.ts:193</a></li>
+								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L223">draggable.directive.ts:223</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1324,7 +1341,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L167">draggable.directive.ts:167</a></li>
+								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L197">draggable.directive.ts:197</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1349,7 +1366,7 @@ img { max-width: 100%; }
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L175">draggable.directive.ts:175</a></li>
+								<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L205">draggable.directive.ts:205</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-comment tsd-typography">
@@ -1373,7 +1390,7 @@ img { max-width: 100%; }
 				<div class="tsd-signature tsd-kind-icon">drag<wbr>Axis<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L31">draggable.directive.ts:31</a></li>
+						<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L42">draggable.directive.ts:42</a></li>
 					</ul>
 				</aside>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1382,7 +1399,7 @@ img { max-width: 100%; }
 					<div class="tsd-signature tsd-kind-icon">x<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L31">draggable.directive.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L42">draggable.directive.ts:42</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1392,7 +1409,7 @@ img { max-width: 100%; }
 					<div class="tsd-signature tsd-kind-icon">y<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/0bcf0a2/src/draggable.directive.ts#L31">draggable.directive.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/5caedf5/src/draggable.directive.ts#L42">draggable.directive.ts:42</a></li>
 						</ul>
 					</aside>
 				</section>
