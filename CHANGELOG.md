@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.3.1...v0.4.0) (2016-12-18)
+
+
+### Features
+
+* **draggable:** remove the dragContainer option ([5aca67d](https://github.com/mattlewis92/angular-draggable-droppable/commit/5aca67d))
+
+
+### BREAKING CHANGES
+
+* draggable: the dragContainer option has been removed as it didn't work in all cases and can be
+
+implemented yourself with the validateDrag option
+
+
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.3.0...v0.3.1) (2016-12-18)
 
