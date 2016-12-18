@@ -249,6 +249,10 @@ describe('draggable directive', () => {
     expect(fixture.componentInstance.dragging).not.to.have.been.calledWith({x: 2, y: -2});
     triggerDomEvent('mousemove', draggableElement, {clientX: 7, clientY: 12});
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 2, y: 2});
+    triggerDomEvent('mousemove', draggableElement, {clientX: 3, clientY: 10});
+    expect(fixture.componentInstance.dragging).not.to.have.been.calledWith({x: -2, y: 0});
+    triggerDomEvent('mouseup', draggableElement, {clientX: 3, clientY: 10});
+    expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({x: 2, y: 2});
   });
 
   it('should only call the dragEnd event once', () => {

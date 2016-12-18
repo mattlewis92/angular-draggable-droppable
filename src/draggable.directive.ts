@@ -135,6 +135,7 @@ export class Draggable implements OnInit, OnDestroy {
             return isInside(this.dragContainer.getBoundingClientRect(), newRect);
 
           })
+          .filter(({x, y}) => !this.validateDrag || this.validateDrag({x, y}))
           .takeUntil(Observable.merge(this.mouseUp, this.mouseDown));
 
         mouseMove.takeLast(1).subscribe(({x, y}) => {
@@ -149,7 +150,6 @@ export class Draggable implements OnInit, OnDestroy {
         return mouseMove;
 
       })
-      .filter(({x, y}) => !this.validateDrag || this.validateDrag({x, y}))
       .share();
 
     Observable

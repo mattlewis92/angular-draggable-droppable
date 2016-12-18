@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.3.1"></a>
+## [0.3.1](https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.3.0...v0.3.1) (2016-12-18)
+
+
+### Bug Fixes
+
+* **draggable:** make the dragEnd output respect the validateDrag input ([26cfa7e](https://github.com/mattlewis92/angular-draggable-droppable/commit/26cfa7e))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.2.3...v0.3.0) (2016-12-12)
 
