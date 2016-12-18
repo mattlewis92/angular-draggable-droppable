@@ -21,17 +21,6 @@ export type ValidateDrag = (coordinates: Coordinates) => boolean;
 
 const MOVE_CURSOR: string = 'move';
 
-function isInside(outer: ClientRect, inner: ClientRect): boolean {
-  return outer.left <= inner.left &&
-    inner.left <= outer.right &&
-    outer.left <= inner.right &&
-    inner.right <= outer.right &&
-    outer.top <= inner.top &&
-    inner.top <= outer.bottom &&
-    outer.top <= inner.bottom &&
-    inner.bottom <= outer.bottom;
-}
-
 @Directive({
   selector: '[mwlDraggable]'
 })
@@ -46,8 +35,6 @@ export class Draggable implements OnInit, OnDestroy {
   @Input() ghostDragEnabled: boolean = true;
 
   @Input() validateDrag: ValidateDrag;
-
-  @Input() dragContainer: HTMLElement;
 
   @Output() dragStart: EventEmitter<Coordinates> = new EventEmitter<Coordinates>();
 
@@ -71,7 +58,6 @@ export class Draggable implements OnInit, OnDestroy {
 
         this.dragStart.next({x: 0, y: 0});
         this.setCursor(MOVE_CURSOR);
-        const startPosition: ClientRect = this.element.nativeElement.getBoundingClientRect();
 
         if (this.ghostDragEnabled) {
           this.renderer.setElementStyle(this.element.nativeElement, 'pointerEvents', 'none');
@@ -118,22 +104,6 @@ export class Draggable implements OnInit, OnDestroy {
             }
 
             return moveData;
-          })
-          .filter((moveData: Coordinates) => {
-
-            if (!this.dragContainer) {
-              return true;
-            }
-
-            const newRect: ClientRect = Object.assign({}, startPosition, {
-              left: startPosition.left + moveData.x,
-              right: startPosition.right + moveData.x,
-              top: startPosition.top + moveData.y,
-              bottom: startPosition.bottom + moveData.y
-            });
-
-            return isInside(this.dragContainer.getBoundingClientRect(), newRect);
-
           })
           .filter(({x, y}) => !this.validateDrag || this.validateDrag({x, y}))
           .takeUntil(Observable.merge(this.mouseUp, this.mouseDown));

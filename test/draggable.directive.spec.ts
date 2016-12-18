@@ -16,30 +16,11 @@ describe('draggable directive', () => {
         [dragSnapGrid]="dragSnapGrid"
         [ghostDragEnabled]="ghostDragEnabled"
         [validateDrag]="validateDrag"
-        [dragContainer]="dragContainer"
         (dragStart)="dragStart($event)" 
         (dragging)="dragging($event)"
         (dragEnd)="dragEnd($event)">
         Drag me!
-      </div>
-      <div class="drag-container"></div>
-    `,
-    styles: [`
-       [mwlDraggable] {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 5px;
-          height: 5px;
-       }
-       .drag-container {
-         position: absolute;
-         top: 0;
-         left: 0;
-         width: 10px;
-         height: 10px;
-       }
-    `]
+      </div>`,
   })
   class TestCmp {
 
@@ -51,7 +32,6 @@ describe('draggable directive', () => {
     public dragSnapGrid: any = {};
     public ghostDragEnabled: boolean = true;
     public validateDrag: ValidateDrag;
-    public dragContainer: HTMLElement;
 
   }
 
@@ -261,23 +241,6 @@ describe('draggable directive', () => {
     triggerDomEvent('mousemove', draggableElement, {clientX: 7, clientY: 8});
     triggerDomEvent('mouseup', draggableElement, {clientX: 7, clientY: 8});
     expect(fixture.componentInstance.dragEnd).to.have.been.calledOnce;
-  });
-
-  it('should constrain dragging within the drag container', () => {
-    const dragContainer: HTMLElement = fixture.nativeElement.querySelector('.drag-container');
-    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
-    fixture.componentInstance.dragContainer = dragContainer;
-    fixture.detectChanges();
-    triggerDomEvent('mousedown', draggableElement, {clientX: 1, clientY: 1});
-    triggerDomEvent('mousemove', draggableElement, {clientX: 5, clientY: 5});
-    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 4, y: 4});
-    triggerDomEvent('mousemove', draggableElement, {clientX: 6, clientY: 6});
-    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 5, y: 5});
-    triggerDomEvent('mousemove', draggableElement, {clientX: 7, clientY: 7});
-    expect(fixture.componentInstance.dragging).not.to.have.been.calledWith({x: 6, y: 6});
-    triggerDomEvent('mousemove', draggableElement, {clientX: 8, clientY: 8});
-    triggerDomEvent('mouseup', draggableElement, {clientX: 8, clientY: 8});
-    expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({x: 5, y: 5});
   });
 
 });
