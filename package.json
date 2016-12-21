@@ -71,7 +71,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.8.0",
     "phantomjs-prebuilt": "^2.1.7",
-    "rxjs": "5.0.0-rc.4",
+    "rxjs": "^5.0.1",
     "sinon": "^1.17.4",
     "sinon-chai": "^2.8.0",
     "sourcemap-istanbul-instrumenter-loader": "^0.2.0",
