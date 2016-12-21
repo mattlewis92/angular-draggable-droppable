@@ -36,7 +36,7 @@ import {DragAndDropModule} from 'angular-draggable-droppable';
 
 @NgModule({
   declarations: [DemoApp],
-  imports: [DragAndDropModule],
+  imports: [DragAndDropModule.forRoot()],
   bootstrap: [DemoApp]
 })
 class DemoModule {}

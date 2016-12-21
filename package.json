@@ -1,6 +1,6 @@
 {
   "name": "angular-draggable-droppable",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Drag and drop for angular 2.0+",
   "main": "./dist/umd/angular-draggable-droppable.js",
   "module": "./dist/esm/src/index.js",
@@ -20,7 +20,8 @@
     "gh-pages": "git checkout gh-pages && git merge master --no-edit && npm run build:demo && npm run typedoc && git add . && git commit -m 'chore: build demo and docs' && git push && git checkout master",
     "prerelease": "npm test",
     "release": "git add package.json && git commit -m 'chore: bump version number' && standard-version --first-release && git push --follow-tags origin master && npm run build:dist && npm publish",
-    "postrelease": "npm run build:clean && npm run gh-pages"
+    "postrelease": "npm run build:clean && npm run gh-pages",
+    "commitmsg": "validate-commit-msg"
   },
   "repository": {
     "type": "git",
@@ -60,18 +61,17 @@
     "conventional-changelog-cli": "^1.2.0",
     "core-js": "^2.4.1",
     "cz-conventional-changelog": "^1.2.0",
-    "ghooks": "^1.3.2",
+    "husky": "^0.12.0",
     "imports-loader": "^0.7.0",
     "jasmine-core": "^2.5.0",
     "karma": "^1.3.0",
-    "karma-coverage": "^1.1.0",
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.0",
-    "karma-remap-istanbul": "^0.2.1",
+    "karma-remap-istanbul": "^0.3.2",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.8.0",
     "phantomjs-prebuilt": "^2.1.7",
-    "rxjs": "5.0.0-rc.4",
+    "rxjs": "^5.0.1",
     "sinon": "^1.17.4",
     "sinon-chai": "^2.8.0",
     "sourcemap-istanbul-instrumenter-loader": "^0.2.0",
@@ -92,9 +92,6 @@
     "dist"
   ],
   "config": {
-    "ghooks": {
-      "commit-msg": "validate-commit-msg"
-    },
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }

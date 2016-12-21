@@ -36,7 +36,7 @@ describe('draggable directive', () => {
   }
 
   beforeEach(() => {
-    TestBed.configureTestingModule({imports: [DragAndDropModule], declarations: [TestCmp]});
+    TestBed.configureTestingModule({imports: [DragAndDropModule.forRoot()], declarations: [TestCmp]});
   });
 
   let fixture: ComponentFixture<TestCmp>;
