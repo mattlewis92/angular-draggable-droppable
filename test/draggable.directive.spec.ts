@@ -243,4 +243,18 @@ describe('draggable directive', () => {
     expect(fixture.componentInstance.dragEnd).to.have.been.calledOnce;
   });
 
+  it('should only unregister the mouse move listener if it exists', () => {
+    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mouseup', draggableElement, {clientX: 7, clientY: 8});
+    expect(fixture.componentInstance.draggable['mouseMoveEventListenerUnsubscribe']).not.to.be.ok;
+  });
+
+  it('should not register multiple mouse move listeners', () => {
+    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, {clientX: 7, clientY: 8});
+    const mouseMoveUnsubscribe: Function = fixture.componentInstance.draggable['mouseMoveEventListenerUnsubscribe'];
+    triggerDomEvent('mousedown', draggableElement, {clientX: 7, clientY: 8});
+    expect(fixture.componentInstance.draggable['mouseMoveEventListenerUnsubscribe']).to.equal(mouseMoveUnsubscribe);
+  });
+
 });

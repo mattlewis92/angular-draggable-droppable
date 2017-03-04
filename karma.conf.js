@@ -1,7 +1,6 @@
 'use strict';
 
 const webpack = require('webpack');
-const WATCH = process.argv.indexOf('--watch') > -1;
 
 module.exports = function(config) {
   config.set({
@@ -16,10 +15,6 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'test/entry.ts'
-    ],
-
-    // list of files to exclude
-    exclude: [
     ],
 
     // preprocess matching files before serving them to the browser
@@ -47,11 +42,11 @@ module.exports = function(config) {
         postLoaders: [{
           test: /src\/.+\.ts$/,
           exclude: /(test|node_modules)/,
-          loader: 'sourcemap-istanbul-instrumenter-loader?force-sourcemap=true'
+          loader: 'istanbul-instrumenter-loader'
         }]
       },
       tslint: {
-        emitErrors: !WATCH,
+        emitErrors: config.singleRun,
         failOnHint: false
       },
       plugins: [
@@ -59,40 +54,25 @@ module.exports = function(config) {
           filename: null,
           test: /\.(ts|js)($|\?)/i
         })
-      ].concat(WATCH ? [] : [new webpack.NoErrorsPlugin()])
+      ].concat(config.singleRun ? [new webpack.NoErrorsPlugin()] : [])
     },
 
-    remapIstanbulReporter: {
-      reports: {
-        html: 'coverage/html',
-        'text-summary': null
-      }
+    coverageIstanbulReporter: {
+      reports: ['text-summary', 'html', 'lcovonly'],
+      fixWebpackSourcePaths: true
     },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'karma-remap-istanbul'],
-
-    // web server port
-    port: 9876,
-
-    // enable / disable colors in the output (reporters and logs)
-    colors: true,
+    reporters: ['progress', 'coverage-istanbul'],
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_INFO,
 
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: WATCH,
-
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
-
-    // Continuous Integration mode
-    // if true, Karma captures browsers, runs the tests and exits
-    singleRun: !WATCH
+    browsers: ['PhantomJS']
   });
 };
