@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "experimentalDecorators": true
+  },
+  "files": [
+    "src/dragAndDrop.module.ts",
+    "src/draggable.directive.ts",
+    "src/droppable.directive.ts"
+  ]
+}

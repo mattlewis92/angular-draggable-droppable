@@ -42,12 +42,24 @@ export class Draggable implements OnInit, OnDestroy {
 
   @Output() dragEnd: EventEmitter<Coordinates> = new EventEmitter<Coordinates>();
 
-  public mouseDown: Subject<any> = new Subject();
+  /**
+   * @hidden
+   */
+  mouseDown: Subject<any> = new Subject();
 
-  public mouseMove: Subject<any> = new Subject();
+  /**
+   * @hidden
+   */
+  mouseMove: Subject<any> = new Subject();
 
-  public mouseUp: Subject<any> = new Subject();
+  /**
+   * @hidden
+   */
+  mouseUp: Subject<any> = new Subject();
 
+  /**
+   * @hidden
+   */
   constructor(public element: ElementRef, private renderer: Renderer, private draggableHelper: DraggableHelper) {}
 
   ngOnInit(): void {
@@ -152,7 +164,7 @@ export class Draggable implements OnInit, OnDestroy {
   }
 
   /**
-   * @private
+   * @hidden
    */
   @HostListener('mousedown', ['$event'])
   onMouseDown(event: MouseEvent): void {
@@ -160,7 +172,7 @@ export class Draggable implements OnInit, OnDestroy {
   }
 
   /**
-   * @private
+   * @hidden
    */
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent): void {
@@ -168,7 +180,7 @@ export class Draggable implements OnInit, OnDestroy {
   }
 
   /**
-   * @private
+   * @hidden
    */
   @HostListener('document:mouseup', ['$event'])
   onMouseUp(event: MouseEvent): void {
@@ -176,7 +188,7 @@ export class Draggable implements OnInit, OnDestroy {
   }
 
   /**
-   * @private
+   * @hidden
    */
   @HostListener('mouseenter')
   onMouseEnter(): void {
@@ -186,7 +198,7 @@ export class Draggable implements OnInit, OnDestroy {
   }
 
   /**
-   * @private
+   * @hidden
    */
   @HostListener('mouseleave')
   onMouseLeave(): void {
