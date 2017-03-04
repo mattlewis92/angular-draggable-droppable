@@ -1,4 +1,4 @@
-import {Directive, OnInit, ElementRef, OnDestroy, Output, EventEmitter} from '@angular/core';
+import {Directive, OnInit, ElementRef, OnDestroy, Output, EventEmitter, NgZone} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 import {Subscription} from 'rxjs/Subscription';
 import {Observable} from 'rxjs/Observable';
@@ -28,7 +28,7 @@ export class Droppable implements OnInit, OnDestroy {
 
   currentDragSubscription: Subscription;
 
-  constructor(private element: ElementRef, private draggableHelper: DraggableHelper) {}
+  constructor(private element: ElementRef, private draggableHelper: DraggableHelper, private zone: NgZone) {}
 
   ngOnInit(): void {
 
@@ -54,14 +54,18 @@ export class Droppable implements OnInit, OnDestroy {
 
       overlapsChanged.filter(overlapsNow => overlapsNow).subscribe(() => {
         dragOverActive = true;
-        this.dragEnter.next({
-          dropData: currentDragDropData
+        this.zone.run(() => {
+          this.dragEnter.next({
+            dropData: currentDragDropData
+          });
         });
       });
 
       overlaps.filter(overlapsNow => overlapsNow).subscribe(() => {
-        this.dragOver.next({
-          dropData: currentDragDropData
+        this.zone.run(() => {
+          this.dragOver.next({
+            dropData: currentDragDropData
+          });
         });
       });
 
@@ -70,16 +74,20 @@ export class Droppable implements OnInit, OnDestroy {
         .filter(([didOverlap, overlapsNow]) => didOverlap && !overlapsNow)
         .subscribe(() => {
           dragOverActive = false;
-          this.dragLeave.next({
-            dropData: currentDragDropData
+          this.zone.run(() => {
+            this.dragLeave.next({
+              dropData: currentDragDropData
+            });
           });
         });
 
       drag.flatMap(() => overlaps).subscribe({
         complete: () => {
           if (dragOverActive) {
-            this.drop.next({
-              dropData: currentDragDropData
+            this.zone.run(() => {
+              this.drop.next({
+                dropData: currentDragDropData
+              });
             });
           }
         }

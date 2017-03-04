@@ -7,7 +7,8 @@ import {
   Output,
   EventEmitter,
   Input,
-  OnDestroy
+  OnDestroy,
+  NgZone
 } from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
@@ -72,7 +73,12 @@ export class Draggable implements OnInit, OnDestroy {
   /**
    * @hidden
    */
-  constructor(public element: ElementRef, private renderer: Renderer, private draggableHelper: DraggableHelper) {}
+  constructor(
+    public element: ElementRef,
+    private renderer: Renderer,
+    private draggableHelper: DraggableHelper,
+    private zone: NgZone
+  ) {}
 
   ngOnInit(): void {
 
@@ -80,7 +86,10 @@ export class Draggable implements OnInit, OnDestroy {
       .filter(() => this.canDrag())
       .flatMap((mouseDownEvent: MouseEvent) => {
 
-        this.dragStart.next({x: 0, y: 0});
+        this.zone.run(() => {
+          this.dragStart.next({x: 0, y: 0});
+        });
+
         this.setCursor(MOVE_CURSOR);
 
         const currentDrag: Subject<any> = new Subject();
@@ -129,7 +138,9 @@ export class Draggable implements OnInit, OnDestroy {
           .takeUntil(Observable.merge(this.mouseUp, this.mouseDown));
 
         mouseMove.takeLast(1).subscribe(({x, y}) => {
-          this.dragEnd.next({x, y});
+          this.zone.run(() => {
+            this.dragEnd.next({x, y});
+          });
           currentDrag.complete();
           this.setCssTransform(null);
           if (this.ghostDragEnabled) {
@@ -155,7 +166,9 @@ export class Draggable implements OnInit, OnDestroy {
       })
       .map(([previous, next]) => next)
       .subscribe(({x, y, currentDrag, clientX, clientY}) => {
-        this.dragging.next({x, y});
+        this.zone.run(() => {
+          this.dragging.next({x, y});
+        });
         if (this.ghostDragEnabled) {
           this.renderer.setElementStyle(this.element.nativeElement, 'pointerEvents', 'none');
         }
@@ -183,12 +196,14 @@ export class Draggable implements OnInit, OnDestroy {
    */
   @HostListener('mousedown', ['$event'])
   onMouseDown(event: MouseEvent): void {
-    if (!this.mouseMoveEventListenerUnsubscribe) {
-      this.mouseMoveEventListenerUnsubscribe = this.renderer.listenGlobal('document', 'mousemove', (event: MouseEvent) => {
-        this.mouseMove.next(event);
-      });
-    }
-    this.mouseDown.next(event);
+    this.zone.runOutsideAngular(() => {
+      if (!this.mouseMoveEventListenerUnsubscribe) {
+        this.mouseMoveEventListenerUnsubscribe = this.renderer.listenGlobal('document', 'mousemove', (event: MouseEvent) => {
+          this.mouseMove.next(event);
+        });
+      }
+      this.mouseDown.next(event);
+    });
   }
 
   /**
@@ -196,11 +211,13 @@ export class Draggable implements OnInit, OnDestroy {
    */
   @HostListener('document:mouseup', ['$event'])
   onMouseUp(event: MouseEvent): void {
-    if (this.mouseMoveEventListenerUnsubscribe) {
-      this.mouseMoveEventListenerUnsubscribe();
-      this.mouseMoveEventListenerUnsubscribe = null;
-    }
-    this.mouseUp.next(event);
+    this.zone.runOutsideAngular(() => {
+      if (this.mouseMoveEventListenerUnsubscribe) {
+        this.mouseMoveEventListenerUnsubscribe();
+        this.mouseMoveEventListenerUnsubscribe = null;
+      }
+      this.mouseUp.next(event);
+    });
   }
 
   /**
@@ -208,9 +225,11 @@ export class Draggable implements OnInit, OnDestroy {
    */
   @HostListener('mouseenter')
   onMouseEnter(): void {
-    if (this.canDrag()) {
-      this.setCursor(MOVE_CURSOR);
-    }
+    this.zone.runOutsideAngular(() => {
+      if (this.canDrag()) {
+        this.setCursor(MOVE_CURSOR);
+      }
+    });
   }
 
   /**
@@ -218,7 +237,9 @@ export class Draggable implements OnInit, OnDestroy {
    */
   @HostListener('mouseleave')
   onMouseLeave(): void {
-    this.setCursor(null);
+    this.zone.runOutsideAngular(() => {
+      this.setCursor(null);
+    });
   }
 
   private setCssTransform(value: string): void {
