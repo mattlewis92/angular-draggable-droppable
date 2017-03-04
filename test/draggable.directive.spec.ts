@@ -113,8 +113,10 @@ describe('draggable directive', () => {
   });
 
   it('should disable dragging', () => {
+    expect(Object.keys(fixture.componentInstance.draggable['eventListenerSubscriptions']).length).to.equal(4);
     fixture.componentInstance.dragAxis = {x: false, y: false};
     fixture.detectChanges();
+    expect(Object.keys(fixture.componentInstance.draggable['eventListenerSubscriptions']).length).to.equal(0);
     const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
     triggerDomEvent('mousedown', draggableElement, {clientX: 5, clientY: 10});
     triggerDomEvent('mousemove', draggableElement, {clientX: 7, clientY: 12});
@@ -246,15 +248,15 @@ describe('draggable directive', () => {
   it('should only unregister the mouse move listener if it exists', () => {
     const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
     triggerDomEvent('mouseup', draggableElement, {clientX: 7, clientY: 8});
-    expect(fixture.componentInstance.draggable['mouseMoveEventListenerUnsubscribe']).not.to.be.ok;
+    expect(fixture.componentInstance.draggable['eventListenerSubscriptions'].mousemove).not.to.be.ok;
   });
 
   it('should not register multiple mouse move listeners', () => {
     const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
     triggerDomEvent('mousedown', draggableElement, {clientX: 7, clientY: 8});
-    const mouseMoveUnsubscribe: Function = fixture.componentInstance.draggable['mouseMoveEventListenerUnsubscribe'];
+    const mouseMoveUnsubscribe: Function = fixture.componentInstance.draggable['eventListenerSubscriptions'].mousemove;
     triggerDomEvent('mousedown', draggableElement, {clientX: 7, clientY: 8});
-    expect(fixture.componentInstance.draggable['mouseMoveEventListenerUnsubscribe']).to.equal(mouseMoveUnsubscribe);
+    expect(fixture.componentInstance.draggable['eventListenerSubscriptions'].mousemove).to.equal(mouseMoveUnsubscribe);
   });
 
 });
