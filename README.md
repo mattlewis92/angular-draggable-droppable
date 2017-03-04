@@ -19,7 +19,7 @@ https://mattlewis92.github.io/angular-draggable-droppable/demo/
 
 ## About
 
-Drag and drop for angular 2.0+. Please note this is a WIP!
+Observable powered drag and drop for angular 2.0+
 
 ## Installation
 
