@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.3"></a>
+## [0.5.3](https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.2...v0.5.3) (2017-03-04)
+
+
+### Bug Fixes
+
+* move dependencies to dev ([17a2ccc](https://github.com/mattlewis92/angular-draggable-droppable/commit/17a2ccc))
+
+
+
 <a name="0.5.2"></a>
 ## [0.5.2](https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.1...v0.5.2) (2017-03-04)
 
