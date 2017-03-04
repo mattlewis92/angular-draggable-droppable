@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.4"></a>
+## [0.5.4](https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.3...v0.5.4) (2017-03-04)
+
+
+### Performance Improvements
+
+* **draggable:** lazily create all mouse event listeners ([3c99d40](https://github.com/mattlewis92/angular-draggable-droppable/commit/3c99d40))
+
+
+
 <a name="0.5.3"></a>
 ## [0.5.3](https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.2...v0.5.3) (2017-03-04)
 
