@@ -1,4 +1,14 @@
-import {Directive, HostListener, OnInit, ElementRef, Renderer, Output, EventEmitter, Input, OnDestroy} from '@angular/core';
+import {
+  Directive,
+  HostListener,
+  OnInit,
+  ElementRef,
+  Renderer,
+  Output,
+  EventEmitter,
+  Input,
+  OnDestroy
+} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/merge';
@@ -56,6 +66,8 @@ export class Draggable implements OnInit, OnDestroy {
    * @hidden
    */
   mouseUp: Subject<any> = new Subject();
+
+  private mouseMoveEventListenerUnsubscribe: Function;
 
   /**
    * @hidden
@@ -158,6 +170,9 @@ export class Draggable implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    if (this.mouseMoveEventListenerUnsubscribe) {
+      this.mouseMoveEventListenerUnsubscribe();
+    }
     this.mouseDown.complete();
     this.mouseMove.complete();
     this.mouseUp.complete();
@@ -168,15 +183,12 @@ export class Draggable implements OnInit, OnDestroy {
    */
   @HostListener('mousedown', ['$event'])
   onMouseDown(event: MouseEvent): void {
+    if (!this.mouseMoveEventListenerUnsubscribe) {
+      this.mouseMoveEventListenerUnsubscribe = this.renderer.listenGlobal('document', 'mousemove', (event: MouseEvent) => {
+        this.mouseMove.next(event);
+      });
+    }
     this.mouseDown.next(event);
-  }
-
-  /**
-   * @hidden
-   */
-  @HostListener('document:mousemove', ['$event'])
-  onMouseMove(event: MouseEvent): void {
-    this.mouseMove.next(event);
   }
 
   /**
@@ -184,6 +196,10 @@ export class Draggable implements OnInit, OnDestroy {
    */
   @HostListener('document:mouseup', ['$event'])
   onMouseUp(event: MouseEvent): void {
+    if (this.mouseMoveEventListenerUnsubscribe) {
+      this.mouseMoveEventListenerUnsubscribe();
+      this.mouseMoveEventListenerUnsubscribe = null;
+    }
     this.mouseUp.next(event);
   }
 
