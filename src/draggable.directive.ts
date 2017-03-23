@@ -31,6 +31,12 @@ export type SnapGrid = {x?: number, y?: number};
 
 export type ValidateDrag = (coordinates: Coordinates) => boolean;
 
+export interface PointerEvent {
+  clientX: number;
+  clientY: number;
+  event: MouseEvent;
+}
+
 const MOVE_CURSOR: string = 'move';
 
 @Directive({
@@ -57,17 +63,17 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
   /**
    * @hidden
    */
-  pointerDown: Subject<any> = new Subject();
+  pointerDown: Subject<PointerEvent> = new Subject();
 
   /**
    * @hidden
    */
-  pointerMove: Subject<any> = new Subject();
+  pointerMove: Subject<PointerEvent> = new Subject();
 
   /**
    * @hidden
    */
-  pointerUp: Subject<any> = new Subject();
+  pointerUp: Subject<PointerEvent> = new Subject();
 
   private eventListenerSubscriptions: {
     mousemove?: Function,
@@ -93,7 +99,7 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
 
     const pointerDrag: Observable<any> = this.pointerDown
       .filter(() => this.canDrag())
-      .flatMap((pointerDownEvent: MouseEvent) => {
+      .flatMap((pointerDownEvent: PointerEvent) => {
 
         this.zone.run(() => {
           this.dragStart.next({x: 0, y: 0});
@@ -106,9 +112,9 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
         this.draggableHelper.currentDrag.next(currentDrag);
 
         const pointerMove: Observable<Coordinates> = this.pointerMove
-          .map((pointerMoveEvent: MouseEvent) => {
+          .map((pointerMoveEvent: PointerEvent) => {
 
-            pointerMoveEvent.preventDefault();
+            pointerMoveEvent.event.preventDefault();
 
             return {
               currentDrag,
@@ -240,10 +246,10 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
   private onPointerDown(event: MouseEvent): void {
     if (!this.eventListenerSubscriptions.mousemove) {
       this.eventListenerSubscriptions.mousemove = this.renderer.listenGlobal('document', 'mousemove', (event: MouseEvent) => {
-        this.pointerMove.next(event);
+        this.pointerMove.next({event, clientX: event.clientX, clientY: event.clientY});
       });
     }
-    this.pointerDown.next(event);
+    this.pointerDown.next({event, clientX: event.clientX, clientY: event.clientY});
   }
 
   private onPointerUp(event: MouseEvent): void {
@@ -251,7 +257,7 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
       this.eventListenerSubscriptions.mousemove();
       delete this.eventListenerSubscriptions.mousemove;
     }
-    this.pointerUp.next(event);
+    this.pointerUp.next({event, clientX: event.clientX, clientY: event.clientY});
   }
 
   private onMouseEnter(): void {
