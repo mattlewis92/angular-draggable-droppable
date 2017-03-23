@@ -34,7 +34,7 @@ export type ValidateDrag = (coordinates: Coordinates) => boolean;
 export interface PointerEvent {
   clientX: number;
   clientY: number;
-  event: MouseEvent;
+  event: MouseEvent | TouchEvent;
 }
 
 const MOVE_CURSOR: string = 'move';
@@ -80,7 +80,11 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
     mousedown?: Function,
     mouseup?: Function,
     mouseenter?: Function,
-    mouseleave?: Function
+    mouseleave?: Function,
+    touchstart?: Function,
+    touchmove?: Function,
+    touchend?: Function,
+    touchcancel?: Function
   } = {};
 
   /**
@@ -220,11 +224,23 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
       this.zone.runOutsideAngular(() => {
 
         this.eventListenerSubscriptions.mousedown = this.renderer.listen(this.element.nativeElement, 'mousedown', (event: MouseEvent) => {
-          this.onPointerDown(event);
+          this.onMouseDown(event);
         });
 
         this.eventListenerSubscriptions.mouseup = this.renderer.listenGlobal('document', 'mouseup', (event: MouseEvent) => {
-          this.onPointerUp(event);
+          this.onMouseUp(event);
+        });
+
+        this.eventListenerSubscriptions.touchstart = this.renderer.listen(this.element.nativeElement, 'touchstart', (event: TouchEvent) => {
+          this.onTouchStart(event);
+        });
+
+        this.eventListenerSubscriptions.touchend = this.renderer.listenGlobal('document', 'touchend', (event: TouchEvent) => {
+          this.onTouchEnd(event);
+        });
+
+        this.eventListenerSubscriptions.touchcancel = this.renderer.listenGlobal('document', 'touchcancel', (event: TouchEvent) => {
+          this.onTouchEnd(event);
         });
 
         this.eventListenerSubscriptions.mouseenter = this.renderer.listen(this.element.nativeElement, 'mouseenter', () => {
@@ -243,7 +259,7 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
 
   }
 
-  private onPointerDown(event: MouseEvent): void {
+  private onMouseDown(event: MouseEvent): void {
     if (!this.eventListenerSubscriptions.mousemove) {
       this.eventListenerSubscriptions.mousemove = this.renderer.listenGlobal('document', 'mousemove', (event: MouseEvent) => {
         this.pointerMove.next({event, clientX: event.clientX, clientY: event.clientY});
@@ -252,12 +268,29 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
     this.pointerDown.next({event, clientX: event.clientX, clientY: event.clientY});
   }
 
-  private onPointerUp(event: MouseEvent): void {
+  private onMouseUp(event: MouseEvent): void {
     if (this.eventListenerSubscriptions.mousemove) {
       this.eventListenerSubscriptions.mousemove();
       delete this.eventListenerSubscriptions.mousemove;
     }
     this.pointerUp.next({event, clientX: event.clientX, clientY: event.clientY});
+  }
+
+  private onTouchStart(event: TouchEvent): void {
+    if (!this.eventListenerSubscriptions.touchmove) {
+      this.eventListenerSubscriptions.touchmove = this.renderer.listenGlobal('document', 'touchmove', (event: TouchEvent) => {
+        this.pointerMove.next({event, clientX: event.targetTouches[0].clientX, clientY: event.targetTouches[0].clientY});
+      });
+    }
+    this.pointerDown.next({event, clientX: event.touches[0].clientX, clientY: event.touches[0].clientY});
+  }
+
+  private onTouchEnd(event: TouchEvent): void {
+    if (this.eventListenerSubscriptions.touchmove) {
+      this.eventListenerSubscriptions.touchmove();
+      delete this.eventListenerSubscriptions.touchmove;
+    }
+    this.pointerUp.next({event, clientX: event.changedTouches[0].clientX, clientY: event.changedTouches[0].clientY});
   }
 
   private onMouseEnter(): void {
