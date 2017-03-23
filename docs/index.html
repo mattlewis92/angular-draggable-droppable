@@ -91,6 +91,22 @@
             
             
             
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-interfaces-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="interfaces/PointerEvent.html" >PointerEvent</a>
+                                </li>
+                        </ul>
+                    </li>
             
             
                     <li class="chapter">
@@ -186,6 +202,22 @@
                    
                    
                    
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#interfaces-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="interfaces/PointerEvent.html" >PointerEvent</a>
+                                       </li>
+                               </ul>
+                           </li>
                    
                    
                            <li class="chapter">
@@ -223,7 +255,7 @@
 <h2 id="installation">Installation</h2>
 <p>Install through npm:</p>
 <pre><code class="hljs undefined">npm install --save angular-draggable-droppable</code></pre><p>Then use it in your app like so:</p>
-<pre><code class="hljs typescript"><span class="hljs-keyword">import</span> {Component, NgModule} from <span class="hljs-string">'@angular/core'</span>;<br><span class="hljs-keyword">import</span> {DragAndDropModule} from <span class="hljs-string">'angular-draggable-droppable'</span>;<br><br><span class="hljs-meta">@NgModule</span>({<br>  declarations: [DemoApp],<br>  imports: [DragAndDropModule.forRoot()],<br>  bootstrap: [DemoApp]<br>})<br><span class="hljs-keyword">class</span> DemoModule {}<br><br><span class="hljs-meta">@Component</span>({<br>  selector: <span class="hljs-string">'demo-app'</span>,<br>  template: <span class="hljs-string">`<br>    &lt;div mwlDraggable (dragEnd)="dragEnd($event)"&gt;Drag me!&lt;/div&gt;<br>    &lt;div<br>      mwlDroppable<br>      (drop)="this.droppedData = $event.dropData"&gt;<br>      &lt;span [hidden]="droppedData"&gt;Drop here&lt;/span&gt;<br>      &lt;span [hidden]="!droppedData"&gt;Item dropped here with data: "{{ droppedData }}"!&lt;/span&gt;<br>    &lt;/div&gt;<br>  `</span><br>})<br><span class="hljs-keyword">class</span> DemoApp {<br><br>  droppedData: <span class="hljs-built_in">string</span>;<br><br>  dragEnd(event) {<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Element was dragged'</span>, event);<br>  }<br><br>}</code></pre><p>You may also find it useful to view the <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/master/demo/demo.component.ts">demo source</a>.</p>
+<pre><code class="hljs typescript"><span class="hljs-keyword">import</span> {Component, NgModule} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;<br><span class="hljs-keyword">import</span> {DragAndDropModule} <span class="hljs-keyword">from</span> <span class="hljs-string">'angular-draggable-droppable'</span>;<br><br><span class="hljs-meta">@NgModule</span>({<br>  declarations: [DemoApp],<br>  imports: [DragAndDropModule.forRoot()],<br>  bootstrap: [DemoApp]<br>})<br><span class="hljs-keyword">class</span> DemoModule {}<br><br><span class="hljs-meta">@Component</span>({<br>  selector: <span class="hljs-string">'demo-app'</span>,<br>  template: <span class="hljs-string">`<br>    &lt;div mwlDraggable (dragEnd)="dragEnd($event)"&gt;Drag me!&lt;/div&gt;<br>    &lt;div<br>      mwlDroppable<br>      (drop)="this.droppedData = $event.dropData"&gt;<br>      &lt;span [hidden]="droppedData"&gt;Drop here&lt;/span&gt;<br>      &lt;span [hidden]="!droppedData"&gt;Item dropped here with data: "{{ droppedData }}"!&lt;/span&gt;<br>    &lt;/div&gt;<br>  `</span><br>})<br><span class="hljs-keyword">class</span> DemoApp {<br><br>  droppedData: <span class="hljs-built_in">string</span>;<br><br>  dragEnd(event) {<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Element was dragged'</span>, event);<br>  }<br><br>}</code></pre><p>You may also find it useful to view the <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/master/demo/demo.component.ts">demo source</a>.</p>
 <h3 id="usage-without-a-module-bundler">Usage without a module bundler</h3>
 <pre><code class="hljs undefined"><script src="node_modules/dist/umd/angular-draggable-droppable/angular-draggable-droppable.js"></script><br><script><br>    // everything is exported angularDraggableDroppable namespace<br></script></code></pre><h2 id="documentation">Documentation</h2>
 <p>All documentation is auto-generated from the source and can be viewed here:<br><a href="https://mattlewis92.github.io/angular-draggable-droppable/docs/">https://mattlewis92.github.io/angular-draggable-droppable/docs/</a></p>
@@ -238,10 +270,7 @@
 <h3 id="testing">Testing</h3>
 <p>Run <code>npm test</code> to run tests once or <code>npm run test:watch</code> to continually run tests.</p>
 <h3 id="release">Release</h3>
-<ul>
-<li>Bump the version in package.json (once the module hits 1.0 this will become automatic)<pre><code class="hljs bash">npm run release</code></pre></li>
-</ul>
-<h2 id="license">License</h2>
+<pre><code class="hljs bash">npm run release</code></pre><h2 id="license">License</h2>
 <p>MIT</p>
 
 
