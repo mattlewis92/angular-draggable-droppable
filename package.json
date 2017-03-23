@@ -80,7 +80,7 @@
     "validate-commit-msg": "^2.8.0",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.16.1",
-    "zone.js": "^0.7.2"
+    "zone.js": "^0.8.5"
   },
   "peerDependencies": {
     "@angular/core": ">=2.0.0 <5.0.0"
