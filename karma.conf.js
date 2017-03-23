@@ -25,10 +25,7 @@ module.exports = function(config) {
 
     webpack: {
       resolve: {
-        extensions: ['', '.ts', '.js'],
-        alias: {
-          sinon: 'sinon/pkg/sinon'
-        }
+        extensions: ['', '.ts', '.js']
       },
       module: {
         preLoaders: [{
@@ -36,8 +33,6 @@ module.exports = function(config) {
         }],
         loaders: [{
           test: /\.ts$/, loader: 'awesome-typescript-loader', exclude: /node_modules/
-        }, {
-          test: /sinon.js$/, loader: 'imports-loader?define=>false,require=>false'
         }],
         postLoaders: [{
           test: /src\/.+\.ts$/,
