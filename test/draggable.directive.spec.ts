@@ -67,23 +67,23 @@ describe('draggable directive', () => {
     expect(draggableElement.style.transform).to.equal('');
   });
 
-  it('should end the mouseUp observable when the component is destroyed', () => {
+  it('should end the pointerUp observable when the component is destroyed', () => {
     const complete: sinon.SinonSpy = sinon.spy();
-    fixture.componentInstance.draggable.mouseUp.subscribe({complete});
+    fixture.componentInstance.draggable.pointerUp.subscribe({complete});
     fixture.destroy();
     expect(complete).to.have.been.calledOnce;
   });
 
-  it('should end the mouseDown observable when the component is destroyed', () => {
+  it('should end the pointerDown observable when the component is destroyed', () => {
     const complete: sinon.SinonSpy = sinon.spy();
-    fixture.componentInstance.draggable.mouseDown.subscribe({complete});
+    fixture.componentInstance.draggable.pointerDown.subscribe({complete});
     fixture.destroy();
     expect(complete).to.have.been.calledOnce;
   });
 
-  it('should end the mouseMove observable when the component is destroyed', () => {
+  it('should end the pointerMove observable when the component is destroyed', () => {
     const complete: sinon.SinonSpy = sinon.spy();
-    fixture.componentInstance.draggable.mouseMove.subscribe({complete});
+    fixture.componentInstance.draggable.pointerMove.subscribe({complete});
     fixture.destroy();
     expect(complete).to.have.been.calledOnce;
   });
@@ -113,7 +113,7 @@ describe('draggable directive', () => {
   });
 
   it('should disable dragging', () => {
-    expect(Object.keys(fixture.componentInstance.draggable['eventListenerSubscriptions']).length).to.equal(4);
+    expect(Object.keys(fixture.componentInstance.draggable['eventListenerSubscriptions']).length).to.equal(7);
     fixture.componentInstance.dragAxis = {x: false, y: false};
     fixture.detectChanges();
     expect(Object.keys(fixture.componentInstance.draggable['eventListenerSubscriptions']).length).to.equal(0);
@@ -257,6 +257,50 @@ describe('draggable directive', () => {
     const mouseMoveUnsubscribe: Function = fixture.componentInstance.draggable['eventListenerSubscriptions'].mousemove;
     triggerDomEvent('mousedown', draggableElement, {clientX: 7, clientY: 8});
     expect(fixture.componentInstance.draggable['eventListenerSubscriptions'].mousemove).to.equal(mouseMoveUnsubscribe);
+  });
+
+  it('should work with touch events', () => {
+    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('touchstart', draggableElement, {touches: [{clientX: 5, clientY: 10}]});
+    expect(fixture.componentInstance.dragStart).to.have.been.calledWith({x: 0, y: 0});
+    triggerDomEvent('touchmove', draggableElement, {targetTouches: [{clientX: 7, clientY: 10}]});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 2, y: 0});
+    expect(draggableElement.style.transform).to.equal('translate(2px, 0px)');
+    triggerDomEvent('touchmove', draggableElement, {targetTouches: [{clientX: 7, clientY: 8}]});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 2, y: -2});
+    expect(draggableElement.style.transform).to.equal('translate(2px, -2px)');
+    triggerDomEvent('touchend', draggableElement, {changedTouches: [{clientX: 7, clientY: 8}]});
+    expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({x: 2, y: -2});
+    expect(draggableElement.style.transform).to.equal('');
+  });
+
+  it('should work use the touch cancel event to end the drag', () => {
+    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('touchstart', draggableElement, {touches: [{clientX: 5, clientY: 10}]});
+    expect(fixture.componentInstance.dragStart).to.have.been.calledWith({x: 0, y: 0});
+    triggerDomEvent('touchmove', draggableElement, {targetTouches: [{clientX: 7, clientY: 10}]});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 2, y: 0});
+    expect(draggableElement.style.transform).to.equal('translate(2px, 0px)');
+    triggerDomEvent('touchmove', draggableElement, {targetTouches: [{clientX: 7, clientY: 8}]});
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({x: 2, y: -2});
+    expect(draggableElement.style.transform).to.equal('translate(2px, -2px)');
+    triggerDomEvent('touchcancel', draggableElement, {changedTouches: [{clientX: 7, clientY: 8}]});
+    expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({x: 2, y: -2});
+    expect(draggableElement.style.transform).to.equal('');
+  });
+
+  it('should only unregister the touch move listener if it exists', () => {
+    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('touchend', draggableElement, {changedTouches: [{clientX: 7, clientY: 8}]});
+    expect(fixture.componentInstance.draggable['eventListenerSubscriptions'].touchmove).not.to.be.ok;
+  });
+
+  it('should not register multiple touch move listeners', () => {
+    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('touchstart', draggableElement, {touches: [{clientX: 7, clientY: 8}]});
+    const touchMoveUnsubscribe: Function = fixture.componentInstance.draggable['eventListenerSubscriptions'].touchmove;
+    triggerDomEvent('touchstart', draggableElement, {touches: [{clientX: 7, clientY: 8}]});
+    expect(fixture.componentInstance.draggable['eventListenerSubscriptions'].touchmove).to.equal(touchMoveUnsubscribe);
   });
 
 });

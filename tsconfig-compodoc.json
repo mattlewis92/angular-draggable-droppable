@@ -3,7 +3,8 @@
     "target": "ES5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "lib": ["dom", "es2015"]
   },
   "files": [
     "src/dragAndDrop.module.ts",

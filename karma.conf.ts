@@ -1,8 +1,6 @@
-'use strict';
+import * as webpack from 'webpack';
 
-const webpack = require('webpack');
-
-module.exports = function(config) {
+export default function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -25,41 +23,61 @@ module.exports = function(config) {
 
     webpack: {
       resolve: {
-        extensions: ['', '.ts', '.js'],
-        alias: {
-          sinon: 'sinon/pkg/sinon'
-        }
+        extensions: ['.ts', '.js']
       },
       module: {
-        preLoaders: [{
-          test: /\.ts$/, loader: 'tslint-loader', exclude: /node_modules/
-        }],
-        loaders: [{
-          test: /\.ts$/, loader: 'awesome-typescript-loader', exclude: /node_modules/
+        rules: [{
+          test: /\.ts$/,
+          loader: 'tslint-loader',
+          exclude: /node_modules/,
+          enforce: 'pre',
+          options: {
+            emitErrors: config.singleRun,
+            failOnHint: false
+          }
         }, {
-          test: /sinon.js$/, loader: 'imports-loader?define=>false,require=>false'
-        }],
-        postLoaders: [{
+          test: /\.ts$/,
+          loader: 'awesome-typescript-loader',
+          exclude: /node_modules/
+        }, {
           test: /src\/.+\.ts$/,
           exclude: /(test|node_modules)/,
-          loader: 'istanbul-instrumenter-loader'
+          loader: 'istanbul-instrumenter-loader',
+          enforce: 'post'
         }]
-      },
-      tslint: {
-        emitErrors: config.singleRun,
-        failOnHint: false
       },
       plugins: [
         new webpack.SourceMapDevToolPlugin({
           filename: null,
           test: /\.(ts|js)($|\?)/i
-        })
-      ].concat(config.singleRun ? [new webpack.NoErrorsPlugin()] : [])
+        }),
+        new webpack.ContextReplacementPlugin(
+          /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+          __dirname + '/src'
+        ),
+        ...(config.singleRun ? [new webpack.NoEmitOnErrorsPlugin()] : [])
+      ]
     },
 
     coverageIstanbulReporter: {
       reports: ['text-summary', 'html', 'lcovonly'],
-      fixWebpackSourcePaths: true
+      fixWebpackSourcePaths: true,
+      thresholds: {
+        statements: 100,
+        lines: 100,
+        branches: 100,
+        functions: 100
+      }
+    },
+
+    phantomjsLauncher: {
+      // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
+      exitOnResourceError: true
+    },
+
+    browserConsoleLogOptions: {
+      terminal: true,
+      level: 'log'
     },
 
     // test results reporter to use
