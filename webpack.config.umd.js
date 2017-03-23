@@ -102,14 +102,18 @@ module.exports = {
   },
   devtool: 'source-map',
   module: {
-    preLoaders: [{
-      test: /\.ts$/, loader: 'tslint-loader?emitErrors=true&failOnHint=true', exclude: /node_modules/
-    }],
-    loaders: [{
-      test: /\.ts$/, loader: 'awesome-typescript-loader', exclude: /node_modules/
+    rules: [{
+      test: /\.ts$/,
+      loader: 'tslint-loader?emitErrors=true&failOnHint=true',
+      exclude: /node_modules/,
+      enforce: 'pre'
+    }, {
+      test: /\.ts$/,
+      loader: 'awesome-typescript-loader',
+      exclude: /node_modules/
     }]
   },
   resolve: {
-    extensions: ['', '.ts', '.js']
+    extensions: ['.ts', '.js']
   }
 };

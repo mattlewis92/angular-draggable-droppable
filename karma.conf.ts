@@ -23,31 +23,39 @@ module.exports = function(config) {
 
     webpack: {
       resolve: {
-        extensions: ['', '.ts', '.js']
+        extensions: ['.ts', '.js']
       },
       module: {
-        preLoaders: [{
-          test: /\.ts$/, loader: 'tslint-loader', exclude: /node_modules/
-        }],
-        loaders: [{
-          test: /\.ts$/, loader: 'awesome-typescript-loader', exclude: /node_modules/
-        }],
-        postLoaders: [{
+        rules: [{
+          test: /\.ts$/,
+          loader: 'tslint-loader',
+          exclude: /node_modules/,
+          enforce: 'pre',
+          options: {
+            emitErrors: config.singleRun,
+            failOnHint: false
+          }
+        }, {
+          test: /\.ts$/,
+          loader: 'awesome-typescript-loader',
+          exclude: /node_modules/
+        }, {
           test: /src\/.+\.ts$/,
           exclude: /(test|node_modules)/,
-          loader: 'istanbul-instrumenter-loader'
+          loader: 'istanbul-instrumenter-loader',
+          enforce: 'post'
         }]
-      },
-      tslint: {
-        emitErrors: config.singleRun,
-        failOnHint: false
       },
       plugins: [
         new webpack.SourceMapDevToolPlugin({
           filename: null,
           test: /\.(ts|js)($|\?)/i
-        })
-      ].concat(config.singleRun ? [new webpack.NoErrorsPlugin()] : [])
+        }),
+        new webpack.ContextReplacementPlugin(
+          /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+          __dirname + '/src'
+        )
+      ].concat(config.singleRun ? [new webpack.NoEmitOnErrorsPlugin()] : [])
     },
 
     coverageIstanbulReporter: {
