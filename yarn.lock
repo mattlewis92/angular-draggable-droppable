@@ -2980,6 +2980,10 @@ lodash.bind@^4.1.4:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/lodash.bind/-/lodash.bind-4.2.1.tgz#7ae3017e939622ac31b7d7d7dcb1b34db1690d35"
 
+lodash.camelcase@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
+
 lodash.defaults@^4.0.1:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
@@ -4900,6 +4904,12 @@ wbuf@^1.1.0, wbuf@^1.4.0:
   dependencies:
     minimalistic-assert "^1.0.0"
 
+webpack-angular-externals@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/webpack-angular-externals/-/webpack-angular-externals-1.0.2.tgz#cdcfe9496a3c5f46551441e9fcd3223c4be802d2"
+  dependencies:
+    lodash.camelcase "^4.3.0"
+
 webpack-dev-middleware@^1.0.11, webpack-dev-middleware@^1.9.0:
   version "1.10.1"
   resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-1.10.1.tgz#c6b4cf428139cf1aefbe06a0c00fdb4f8da2f893"
@@ -4930,6 +4940,10 @@ webpack-dev-server@^2.4.2:
     supports-color "^3.1.1"
     webpack-dev-middleware "^1.9.0"
     yargs "^6.0.0"
+
+webpack-rxjs-externals@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/webpack-rxjs-externals/-/webpack-rxjs-externals-1.0.0.tgz#aeb3a8d87c77be611856f47d0fade02e86247bbc"
 
 webpack-sources@^0.2.0:
   version "0.2.0"
