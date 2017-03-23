@@ -1,6 +1,6 @@
-const path = require('path');
+import * as path from 'path';
 
-module.exports = {
+export default {
   entry: './src/index.ts',
   output: {
     path: path.join(__dirname, 'dist', 'umd'),

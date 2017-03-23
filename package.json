@@ -53,6 +53,7 @@
     "@types/node": "^7.0.10",
     "@types/sinon": "^1.16.27",
     "@types/sinon-chai": "^2.7.26",
+    "@types/webpack": "^2.2.12",
     "awesome-typescript-loader": "^3.0.8",
     "chai": "^3.5.0",
     "codecov-lite": "^0.1.3",

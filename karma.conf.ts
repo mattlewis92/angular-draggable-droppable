@@ -1,6 +1,6 @@
-const webpack = require('webpack');
+import * as webpack from 'webpack';
 
-module.exports = function(config) {
+export default function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -54,8 +54,9 @@ module.exports = function(config) {
         new webpack.ContextReplacementPlugin(
           /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
           __dirname + '/src'
-        )
-      ].concat(config.singleRun ? [new webpack.NoEmitOnErrorsPlugin()] : [])
+        ),
+        ...(config.singleRun ? [new webpack.NoEmitOnErrorsPlugin()] : [])
+      ]
     },
 
     coverageIstanbulReporter: {
