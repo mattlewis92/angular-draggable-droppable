@@ -359,7 +359,7 @@
   Directive,
   OnInit,
   ElementRef,
-  Renderer,
+  Renderer2,
   Output,
   EventEmitter,
   Input,
@@ -449,7 +449,7 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
    */
   constructor(
     public element: ElementRef,
-    private renderer: Renderer,
+    private renderer: Renderer2,
     private draggableHelper: DraggableHelper,
     private zone: NgZone
   ) {}
@@ -520,7 +520,7 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
           currentDrag.complete();
           this.setCssTransform(null);
           if (this.ghostDragEnabled) {
-            this.renderer.setElementStyle(this.element.nativeElement, &#x27;pointerEvents&#x27;, null);
+            this.renderer.setStyle(this.element.nativeElement, &#x27;pointerEvents&#x27;, null);
           }
         });
 
@@ -546,7 +546,7 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
           this.dragging.next({x, y});
         });
         if (this.ghostDragEnabled) {
-          this.renderer.setElementStyle(this.element.nativeElement, &#x27;pointerEvents&#x27;, &#x27;none&#x27;);
+          this.renderer.setStyle(this.element.nativeElement, &#x27;pointerEvents&#x27;, &#x27;none&#x27;);
         }
         this.setCssTransform(&#x60;translate(${x}px, ${y}px)&#x60;);
         currentDrag.next({
@@ -584,7 +584,7 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
           this.onMouseDown(event);
         });
 
-        this.eventListenerSubscriptions.mouseup &#x3D; this.renderer.listenGlobal(&#x27;document&#x27;, &#x27;mouseup&#x27;, (event: MouseEvent) &#x3D;&gt; {
+        this.eventListenerSubscriptions.mouseup &#x3D; this.renderer.listen(&#x27;document&#x27;, &#x27;mouseup&#x27;, (event: MouseEvent) &#x3D;&gt; {
           this.onMouseUp(event);
         });
 
@@ -592,11 +592,11 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
           this.onTouchStart(event);
         });
 
-        this.eventListenerSubscriptions.touchend &#x3D; this.renderer.listenGlobal(&#x27;document&#x27;, &#x27;touchend&#x27;, (event: TouchEvent) &#x3D;&gt; {
+        this.eventListenerSubscriptions.touchend &#x3D; this.renderer.listen(&#x27;document&#x27;, &#x27;touchend&#x27;, (event: TouchEvent) &#x3D;&gt; {
           this.onTouchEnd(event);
         });
 
-        this.eventListenerSubscriptions.touchcancel &#x3D; this.renderer.listenGlobal(&#x27;document&#x27;, &#x27;touchcancel&#x27;, (event: TouchEvent) &#x3D;&gt; {
+        this.eventListenerSubscriptions.touchcancel &#x3D; this.renderer.listen(&#x27;document&#x27;, &#x27;touchcancel&#x27;, (event: TouchEvent) &#x3D;&gt; {
           this.onTouchEnd(event);
         });
 
@@ -618,7 +618,7 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
 
   private onMouseDown(event: MouseEvent): void {
     if (!this.eventListenerSubscriptions.mousemove) {
-      this.eventListenerSubscriptions.mousemove &#x3D; this.renderer.listenGlobal(&#x27;document&#x27;, &#x27;mousemove&#x27;, (event: MouseEvent) &#x3D;&gt; {
+      this.eventListenerSubscriptions.mousemove &#x3D; this.renderer.listen(&#x27;document&#x27;, &#x27;mousemove&#x27;, (event: MouseEvent) &#x3D;&gt; {
         this.pointerMove.next({event, clientX: event.clientX, clientY: event.clientY});
       });
     }
@@ -635,7 +635,7 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
 
   private onTouchStart(event: TouchEvent): void {
     if (!this.eventListenerSubscriptions.touchmove) {
-      this.eventListenerSubscriptions.touchmove &#x3D; this.renderer.listenGlobal(&#x27;document&#x27;, &#x27;touchmove&#x27;, (event: TouchEvent) &#x3D;&gt; {
+      this.eventListenerSubscriptions.touchmove &#x3D; this.renderer.listen(&#x27;document&#x27;, &#x27;touchmove&#x27;, (event: TouchEvent) &#x3D;&gt; {
         this.pointerMove.next({event, clientX: event.targetTouches[0].clientX, clientY: event.targetTouches[0].clientY});
       });
     }
@@ -660,11 +660,11 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
 
   private setCssTransform(value: string): void {
     if (this.ghostDragEnabled) {
-      this.renderer.setElementStyle(this.element.nativeElement, &#x27;transform&#x27;, value);
-      this.renderer.setElementStyle(this.element.nativeElement, &#x27;-webkit-transform&#x27;, value);
-      this.renderer.setElementStyle(this.element.nativeElement, &#x27;-ms-transform&#x27;, value);
-      this.renderer.setElementStyle(this.element.nativeElement, &#x27;-moz-transform&#x27;, value);
-      this.renderer.setElementStyle(this.element.nativeElement, &#x27;-o-transform&#x27;, value);
+      this.renderer.setStyle(this.element.nativeElement, &#x27;transform&#x27;, value);
+      this.renderer.setStyle(this.element.nativeElement, &#x27;-webkit-transform&#x27;, value);
+      this.renderer.setStyle(this.element.nativeElement, &#x27;-ms-transform&#x27;, value);
+      this.renderer.setStyle(this.element.nativeElement, &#x27;-moz-transform&#x27;, value);
+      this.renderer.setStyle(this.element.nativeElement, &#x27;-o-transform&#x27;, value);
     }
   }
 
@@ -673,7 +673,7 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
   }
 
   private setCursor(value: string): void {
-    this.renderer.setElementStyle(this.element.nativeElement, &#x27;cursor&#x27;, value);
+    this.renderer.setStyle(this.element.nativeElement, &#x27;cursor&#x27;, value);
   }
 
   private unsubscribeEventListeners(): void {
