@@ -1,7 +1,7 @@
 {
   "name": "angular-draggable-droppable",
   "version": "0.6.0",
-  "description": "Drag and drop for angular 2.0+",
+  "description": "Drag and drop for angular 4.0+",
   "main": "./dist/umd/angular-draggable-droppable.js",
   "module": "./dist/esm/src/index.js",
   "typings": "./dist/esm/src/index.d.ts",
@@ -29,6 +29,7 @@
   },
   "keywords": [
     "angular2",
+    "angular4",
     "angular",
     "draggable",
     "droppable",
@@ -42,14 +43,14 @@
   },
   "homepage": "https://github.com/mattlewis92/angular-draggable-droppable#readme",
   "devDependencies": {
-    "@angular/common": "^2.2.0",
-    "@angular/compiler": "^2.2.0",
-    "@angular/compiler-cli": "^2.2.0",
-    "@angular/core": "^2.2.0",
-    "@angular/platform-browser": "^2.2.0",
-    "@angular/platform-browser-dynamic": "^2.2.0",
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/compiler-cli": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
     "@types/chai": "^3.4.30",
-    "@types/jasmine": "2.2.33",
+    "@types/jasmine": "^2.5.46",
     "@types/node": "^7.0.10",
     "@types/sinon": "^1.16.27",
     "@types/sinon-chai": "^2.7.26",
@@ -79,7 +80,7 @@
     "ts-node": "^3.0.2",
     "tslint": "^4.0.2",
     "tslint-loader": "^3.2.0",
-    "typescript": "~2.0.3",
+    "typescript": "~2.2.1",
     "validate-commit-msg": "^2.8.0",
     "webpack": "^2.3.1",
     "webpack-angular-externals": "^1.0.2",
@@ -88,7 +89,7 @@
     "zone.js": "^0.8.5"
   },
   "peerDependencies": {
-    "@angular/core": ">=2.0.0 <5.0.0"
+    "@angular/core": "^4.0.0"
   },
   "files": [
     "dist"

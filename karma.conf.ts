@@ -52,7 +52,7 @@ export default function(config) {
           test: /\.(ts|js)($|\?)/i
         }),
         new webpack.ContextReplacementPlugin(
-          /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+          /angular(\\|\/)core(\\|\/)@angular/,
           __dirname + '/src'
         ),
         ...(config.singleRun ? [new webpack.NoEmitOnErrorsPlugin()] : [])
