@@ -1,4 +1,4 @@
-# angular 2.0+ drag and drop
+# angular 4.0+ drag and drop
 [![Build Status](https://travis-ci.org/mattlewis92/angular-draggable-droppable.svg?branch=master)](https://travis-ci.org/mattlewis92/angular-draggable-droppable)
 [![codecov](https://codecov.io/gh/mattlewis92/angular-draggable-droppable/branch/master/graph/badge.svg)](https://codecov.io/gh/mattlewis92/angular-draggable-droppable)
 [![npm version](https://badge.fury.io/js/angular-draggable-droppable.svg)](http://badge.fury.io/js/angular-draggable-droppable)
@@ -20,7 +20,7 @@ https://mattlewis92.github.io/angular-draggable-droppable/demo/
 
 ## About
 
-Observable powered drag and drop for angular 2.0+
+Observable powered drag and drop for angular 4.0+
 
 ## Installation
 

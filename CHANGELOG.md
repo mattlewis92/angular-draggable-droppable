@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.6.0...v1.0.0) (2017-03-24)
+
+
+### Features
+
+* **ng4:** upgrade to angular 4 ([42631bc](https://github.com/mattlewis92/angular-draggable-droppable/commit/42631bc))
+
+
+### BREAKING CHANGES
+
+* **ng4:** angular 4.0 or higher is now required to use this library. The [upgrade](http://angularjs.blogspot.co.uk/2017/03/angular-400-now-available.html) should be seamless for most users
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.4...v0.6.0) (2017-03-23)
 

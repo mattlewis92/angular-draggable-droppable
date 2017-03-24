@@ -64,7 +64,7 @@ describe('draggable directive', () => {
     expect(draggableElement.style.transform).to.equal('translate(2px, -2px)');
     triggerDomEvent('mouseup', draggableElement, {clientX: 7, clientY: 8});
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({x: 2, y: -2});
-    expect(draggableElement.style.transform).to.equal('');
+    expect(draggableElement.style.transform).not.to.be.ok;
   });
 
   it('should end the pointerUp observable when the component is destroyed', () => {
@@ -271,7 +271,7 @@ describe('draggable directive', () => {
     expect(draggableElement.style.transform).to.equal('translate(2px, -2px)');
     triggerDomEvent('touchend', draggableElement, {changedTouches: [{clientX: 7, clientY: 8}]});
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({x: 2, y: -2});
-    expect(draggableElement.style.transform).to.equal('');
+    expect(draggableElement.style.transform).not.to.be.ok;
   });
 
   it('should work use the touch cancel event to end the drag', () => {
@@ -286,7 +286,7 @@ describe('draggable directive', () => {
     expect(draggableElement.style.transform).to.equal('translate(2px, -2px)');
     triggerDomEvent('touchcancel', draggableElement, {changedTouches: [{clientX: 7, clientY: 8}]});
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({x: 2, y: -2});
-    expect(draggableElement.style.transform).to.equal('');
+    expect(draggableElement.style.transform).not.to.be.ok;
   });
 
   it('should only unregister the touch move listener if it exists', () => {
