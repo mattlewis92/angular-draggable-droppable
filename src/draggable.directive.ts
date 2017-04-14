@@ -105,6 +105,8 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
       .filter(() => this.canDrag())
       .flatMap((pointerDownEvent: PointerEvent) => {
 
+        pointerDownEvent.event.preventDefault();
+
         this.zone.run(() => {
           this.dragStart.next({x: 0, y: 0});
         });
