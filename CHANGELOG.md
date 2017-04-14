@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.0.0...v1.0.1) (2017-04-14)
+
+
+### Bug Fixes
+
+* **draggable:** prevent text from being highlighted in firefox ([7d859c1](https://github.com/mattlewis92/angular-draggable-droppable/commit/7d859c1))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.6.0...v1.0.0) (2017-03-24)
 
