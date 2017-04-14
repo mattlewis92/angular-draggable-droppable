@@ -50,6 +50,7 @@
                         </ul>
                     </li>
             
+            
                     <li class="chapter">
                         <a data-type="chapter-link" href="./modules.html" >
                             <span class="fa fa-archive"></span>
@@ -62,7 +63,7 @@
                                 id="xs-modules-links"
                             >
                                 <li class="link">
-                                    <a href="modules/DragAndDropModule.html" >DragAndDropModule</a>
+                                    <a href="./modules/DragAndDropModule.html" >DragAndDropModule</a>
                                 </li>
                         </ul>
                     </li>
@@ -80,14 +81,13 @@
                                 id="xs-directives-links"
                             >
                                 <li class="link">
-                                    <a href="directives/Draggable.html" >Draggable</a>
+                                    <a href="./directives/Draggable.html" >Draggable</a>
                                 </li>
                                 <li class="link">
-                                    <a href="directives/Droppable.html" >Droppable</a>
+                                    <a href="./directives/Droppable.html" >Droppable</a>
                                 </li>
                         </ul>
                     </li>
-            
             
             
             
@@ -103,10 +103,11 @@
                                 id="xs-interfaces-links"
                             >
                                 <li class="link">
-                                    <a href="interfaces/PointerEvent.html" >PointerEvent</a>
+                                    <a href="./interfaces/PointerEvent.html" >PointerEvent</a>
                                 </li>
                         </ul>
                     </li>
+            
             
             
                     <li class="chapter">
@@ -116,7 +117,7 @@
             
                     <li class="divider"></li>
                     <li class="copyright">
-                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                            Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
                                         <img src=".//images/compodoc-vectorise.svg" class="img-responsive">
                             </a>
                     </li>
@@ -161,6 +162,7 @@
                                </ul>
                            </li>
                    
+                   
                            <li class="chapter">
                                <a data-type="chapter-link" href="./modules.html" >
                                    <span class="fa fa-archive"></span>
@@ -173,7 +175,7 @@
                                        id="modules-links"
                    >
                                        <li class="link">
-                                           <a href="modules/DragAndDropModule.html" >DragAndDropModule</a>
+                                           <a href="./modules/DragAndDropModule.html" >DragAndDropModule</a>
                                        </li>
                                </ul>
                            </li>
@@ -191,14 +193,13 @@
                                        id="directives-links"
                    >
                                        <li class="link">
-                                           <a href="directives/Draggable.html" >Draggable</a>
+                                           <a href="./directives/Draggable.html" >Draggable</a>
                                        </li>
                                        <li class="link">
-                                           <a href="directives/Droppable.html" >Droppable</a>
+                                           <a href="./directives/Droppable.html" >Droppable</a>
                                        </li>
                                </ul>
                            </li>
-                   
                    
                    
                    
@@ -214,10 +215,11 @@
                                        id="interfaces-links"
                    >
                                        <li class="link">
-                                           <a href="interfaces/PointerEvent.html" >PointerEvent</a>
+                                           <a href="./interfaces/PointerEvent.html" >PointerEvent</a>
                                        </li>
                                </ul>
                            </li>
+                   
                    
                    
                            <li class="chapter">
@@ -227,7 +229,7 @@
                    
                            <li class="divider"></li>
                            <li class="copyright">
-                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                   Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
                                                <img src=".//images/compodoc-vectorise.svg" class="img-responsive">
                                    </a>
                            </li>
@@ -254,10 +256,43 @@
 <p>Observable powered drag and drop for angular 4.0+</p>
 <h2 id="installation">Installation</h2>
 <p>Install through npm:</p>
-<pre><code class="hljs undefined">npm install --save angular-draggable-droppable</code></pre><p>Then use it in your app like so:</p>
-<pre><code class="hljs typescript"><span class="hljs-keyword">import</span> {Component, NgModule} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;<br><span class="hljs-keyword">import</span> {DragAndDropModule} <span class="hljs-keyword">from</span> <span class="hljs-string">'angular-draggable-droppable'</span>;<br><br><span class="hljs-meta">@NgModule</span>({<br>  declarations: [DemoApp],<br>  imports: [DragAndDropModule.forRoot()],<br>  bootstrap: [DemoApp]<br>})<br><span class="hljs-keyword">class</span> DemoModule {}<br><br><span class="hljs-meta">@Component</span>({<br>  selector: <span class="hljs-string">'demo-app'</span>,<br>  template: <span class="hljs-string">`<br>    &lt;div mwlDraggable (dragEnd)="dragEnd($event)"&gt;Drag me!&lt;/div&gt;<br>    &lt;div<br>      mwlDroppable<br>      (drop)="this.droppedData = $event.dropData"&gt;<br>      &lt;span [hidden]="droppedData"&gt;Drop here&lt;/span&gt;<br>      &lt;span [hidden]="!droppedData"&gt;Item dropped here with data: "{{ droppedData }}"!&lt;/span&gt;<br>    &lt;/div&gt;<br>  `</span><br>})<br><span class="hljs-keyword">class</span> DemoApp {<br><br>  droppedData: <span class="hljs-built_in">string</span>;<br><br>  dragEnd(event) {<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Element was dragged'</span>, event);<br>  }<br><br>}</code></pre><p>You may also find it useful to view the <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/master/demo/demo.component.ts">demo source</a>.</p>
+<pre class="line-numbers"><code class="language-none">npm install --save angular-draggable-droppable</code></pre><p>Then use it in your app like so:</p>
+<pre class="line-numbers"><code class="language-typescript">import {Component, NgModule} from '@angular/core';
+import {DragAndDropModule} from 'angular-draggable-droppable';
+
+@NgModule({
+  declarations: [DemoApp],
+  imports: [DragAndDropModule.forRoot()],
+  bootstrap: [DemoApp]
+})
+class DemoModule {}
+
+@Component({
+  selector: 'demo-app',
+  template: `
+    <div mwlDraggable (dragEnd)="dragEnd($event)">Drag me!</div>
+    <div
+      mwlDroppable
+      (drop)="this.droppedData = $event.dropData">
+      <span [hidden]="droppedData">Drop here</span>
+      <span [hidden]="!droppedData">Item dropped here with data: "{{ droppedData }}"!</span>
+    </div>
+  `
+})
+class DemoApp {
+
+  droppedData: string;
+
+  dragEnd(event) {
+    console.log('Element was dragged', event);
+  }
+
+}</code></pre><p>You may also find it useful to view the <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/master/demo/demo.component.ts">demo source</a>.</p>
 <h3 id="usage-without-a-module-bundler">Usage without a module bundler</h3>
-<pre><code class="hljs undefined"><script src="node_modules/dist/umd/angular-draggable-droppable/angular-draggable-droppable.js"></script><br><script><br>    // everything is exported angularDraggableDroppable namespace<br></script></code></pre><h2 id="documentation">Documentation</h2>
+<pre class="line-numbers"><code class="language-none"><script src="node_modules/dist/umd/angular-draggable-droppable/angular-draggable-droppable.js"></script>
+<script>
+    // everything is exported angularDraggableDroppable namespace
+</script></code></pre><h2 id="documentation">Documentation</h2>
 <p>All documentation is auto-generated from the source and can be viewed here:<br><a href="https://mattlewis92.github.io/angular-draggable-droppable/docs/">https://mattlewis92.github.io/angular-draggable-droppable/docs/</a></p>
 <h2 id="development">Development</h2>
 <h3 id="prepare-your-environment">Prepare your environment</h3>
@@ -270,7 +305,7 @@
 <h3 id="testing">Testing</h3>
 <p>Run <code>npm test</code> to run tests once or <code>npm run test:watch</code> to continually run tests.</p>
 <h3 id="release">Release</h3>
-<pre><code class="hljs bash">npm run release</code></pre><h2 id="license">License</h2>
+<pre class="line-numbers"><code class="language-bash">npm run release</code></pre><h2 id="license">License</h2>
 <p>MIT</p>
 
 
@@ -306,20 +341,16 @@
 
        <script src="./js/compodoc.js"></script>
 
+       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 0;</script>
+
        <script src="./js/search/search.js"></script>
        <script src="./js/search/lunr.min.js"></script>
        <script src="./js/search/search-lunr.js"></script>
 
        <script src="./js/menu.js"></script>
-       <script src="./js/libs/highlight.pack.js"></script>
-       <script src="./js/libs/highlightjs-line-numbers.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
        <script src="./js/search/search_index.js"></script>
-       <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                hljs.initHighlightingOnLoad();
-                hljs.initLineNumbersOnLoad();
-            });
-       </script>
 
     </body>
 </html>
