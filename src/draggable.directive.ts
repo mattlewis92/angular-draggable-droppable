@@ -14,6 +14,7 @@ import {
 import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/merge';
+import 'rxjs/add/observable/interval';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/operator/takeUntil';
@@ -122,6 +123,8 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
 
             pointerMoveEvent.event.preventDefault();
 
+            console.log(pointerMoveEvent.clientY);
+
             return {
               currentDrag,
               x: pointerMoveEvent.clientX - pointerDownEvent.clientX,
@@ -174,6 +177,14 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
       })
       .share();
 
+    const dragScroll = Observable
+      .interval(1)
+      .map(() => window.scrollBy(0, 1))
+      .takeUntil(this.pointerUp)
+      .share();
+
+    let dragScrollSubscription;
+
     Observable
       .merge(
         pointerDrag.take(1).map(value => [, value]),
@@ -199,6 +210,18 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
           clientY,
           dropData: this.dropData
         });
+
+        if (clientY > (window.innerHeight - 50)) {
+          if (!dragScrollSubscription) {
+            dragScrollSubscription = dragScroll.subscribe();
+          }
+        } else {
+          if (dragScrollSubscription) {
+            dragScrollSubscription.unsubscribe();
+            dragScrollSubscription = null;
+          }
+        }
+
       });
 
   }
