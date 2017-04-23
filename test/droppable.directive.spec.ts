@@ -11,10 +11,10 @@ describe('droppable directive', () => {
   @Component({
     template: `
       <div mwlDraggable [dropData]="dropData">Drag me!</div>
-      <div 
-        mwlDroppable 
-        (dragEnter)="dragEvent('enter', $event)" 
-        (dragOver)="dragEvent('over', $event)" 
+      <div
+        mwlDroppable
+        (dragEnter)="dragEvent('enter', $event)"
+        (dragOver)="dragEvent('over', $event)"
         (dragLeave)="dragEvent('leave', $event)"
         (drop)="drop($event)">
         Drop here

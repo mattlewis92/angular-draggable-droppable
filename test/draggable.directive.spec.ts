@@ -10,13 +10,13 @@ describe('draggable directive', () => {
 
   @Component({
     template: `
-      <div 
+      <div
         mwlDraggable
         [dragAxis]="dragAxis"
         [dragSnapGrid]="dragSnapGrid"
         [ghostDragEnabled]="ghostDragEnabled"
         [validateDrag]="validateDrag"
-        (dragStart)="dragStart($event)" 
+        (dragStart)="dragStart($event)"
         (dragging)="dragging($event)"
         (dragEnd)="dragEnd($event)">
         Drag me!
