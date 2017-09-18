@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'demo-app',
+  selector: 'mwl-demo-app',
   template: `
     <div mwlDraggable dropData="foo">
       Drag me!
@@ -53,7 +53,7 @@ import { Component } from '@angular/core';
   `
   ]
 })
-export class Demo {
+export class DemoComponent {
   dropOverActive: boolean = false;
 
   droppedData: string = '';
