@@ -1,0 +1,497 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-draggable-droppable documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	    <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">angular-draggable-droppable documentation</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="./index.html">angular-draggable-droppable documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="./overview.html" 
+                                         href="./overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                                <li class="link">
+                                  <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./changelog.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
+                                <li class="link">
+                                    <a href="./license.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>LICENSE
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-directives-links"
+                            >
+                            <span class="fa fa-code"></span>
+                            <span>Directives</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-directives-links"
+                            >
+                                <li class="link">
+                                    <a href="./directives/DraggableDirective.html" >DraggableDirective</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./directives/DroppableDirective.html" >DroppableDirective</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-interfaces-links"
+                            >
+                            <span class="fa fa-info"></span>
+                            <span>Interfaces</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-interfaces-links"
+                            >
+                                <li class="link">
+                                    <a href="./interfaces/Coordinates.html" >Coordinates</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./interfaces/DragAxis.html" >DragAxis</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./interfaces/DropData.html" >DropData</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./interfaces/PointerEvent.html" >PointerEvent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./interfaces/SnapGrid.html" >SnapGrid</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="./miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                </li>
+                                <li class="link">
+                                  <a href="./miscellaneous/typealiases.html" data-type="entity-link" >Type aliases</a>
+                                </li>
+                                <li class="link">
+                                  <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
+                                        <img src=".//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="./index.html">angular-draggable-droppable documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="./overview.html" 
+                                                href="./overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./changelog.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>CHANGELOG
+                                           </a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./license.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>LICENSE
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#directives-links"
+                   >
+                                   <span class="fa fa-code"></span>
+                                   <span>Directives</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="directives-links"
+                   >
+                                       <li class="link">
+                                           <a href="./directives/DraggableDirective.html" >DraggableDirective</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./directives/DroppableDirective.html" >DroppableDirective</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#interfaces-links"
+                   >
+                                   <span class="fa fa-info"></span>
+                                   <span>Interfaces</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="interfaces-links"
+                   >
+                                       <li class="link">
+                                           <a href="./interfaces/Coordinates.html" >Coordinates</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./interfaces/DragAxis.html" >DragAxis</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./interfaces/DropData.html" >DropData</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./interfaces/PointerEvent.html" >PointerEvent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./interfaces/SnapGrid.html" >SnapGrid</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="./miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="./miscellaneous/typealiases.html" data-type="entity-link" >Type aliases</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
+                                               <img src=".//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="change-log">Change Log</h1>
+<p>All notable changes to this project will be documented in this file. See <a href="https://github.com/conventional-changelog/standard-version">standard-version</a> for commit guidelines.</p>
+<p><a name="1.0.2"></a></p>
+<h2 id="-1-0-2-https-github-com-mattlewis92-angular-draggable-droppable-compare-v1-0-1-v1-0-2-2017-09-18-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.0.1...v1.0.2">1.0.2</a> (2017-09-18)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>draggable:</strong> fire dragEnd event when the event was not dragged (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/73d65d7">73d65d7</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/17">#17</a></li>
+</ul>
+<p><a name="1.0.1"></a></p>
+<h2 id="-1-0-1-https-github-com-mattlewis92-angular-draggable-droppable-compare-v1-0-0-v1-0-1-2017-04-14-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.0.0...v1.0.1">1.0.1</a> (2017-04-14)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>draggable:</strong> prevent text from being highlighted in firefox (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/7d859c1">7d859c1</a>)</li>
+</ul>
+<p><a name="1.0.0"></a></p>
+<h1 id="-1-0-0-https-github-com-mattlewis92-angular-draggable-droppable-compare-v0-6-0-v1-0-0-2017-03-24-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.6.0...v1.0.0">1.0.0</a> (2017-03-24)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>ng4:</strong> upgrade to angular 4 (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/42631bc">42631bc</a>)</li>
+</ul>
+<h3 id="breaking-changes">BREAKING CHANGES</h3>
+<ul>
+<li><strong>ng4:</strong> angular 4.0 or higher is now required to use this library. The <a href="http://angularjs.blogspot.co.uk/2017/03/angular-400-now-available.html">upgrade</a> should be seamless for most users</li>
+</ul>
+<p><a name="0.6.0"></a></p>
+<h1 id="-0-6-0-https-github-com-mattlewis92-angular-draggable-droppable-compare-v0-5-4-v0-6-0-2017-03-23-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.4...v0.6.0">0.6.0</a> (2017-03-23)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>draggable:</strong> make dragging work on touch devices (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/dc0f863">dc0f863</a>)</li>
+</ul>
+<p><a name="0.5.4"></a></p>
+<h2 id="-0-5-4-https-github-com-mattlewis92-angular-draggable-droppable-compare-v0-5-3-v0-5-4-2017-03-04-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.3...v0.5.4">0.5.4</a> (2017-03-04)</h2>
+<h3 id="performance-improvements">Performance Improvements</h3>
+<ul>
+<li><strong>draggable:</strong> lazily create all mouse event listeners (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/3c99d40">3c99d40</a>)</li>
+</ul>
+<p><a name="0.5.3"></a></p>
+<h2 id="-0-5-3-https-github-com-mattlewis92-angular-draggable-droppable-compare-v0-5-2-v0-5-3-2017-03-04-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.2...v0.5.3">0.5.3</a> (2017-03-04)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>move dependencies to dev (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/17a2ccc">17a2ccc</a>)</li>
+</ul>
+<p><a name="0.5.2"></a></p>
+<h2 id="-0-5-2-https-github-com-mattlewis92-angular-draggable-droppable-compare-v0-5-1-v0-5-2-2017-03-04-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.1...v0.5.2">0.5.2</a> (2017-03-04)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>loosen peer dependency to allow angular 4 (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/bcc9080">bcc9080</a>)</li>
+</ul>
+<h3 id="performance-improvements">Performance Improvements</h3>
+<ul>
+<li><strong>draggable:</strong> lazily create the mouse move listener (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/bebd925">bebd925</a>)</li>
+<li>run all event listeners outside of angulars zone (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/d7c9256">d7c9256</a>)</li>
+</ul>
+<p><a name="0.5.1"></a></p>
+<h2 id="-0-5-1-https-github-com-mattlewis92-angular-draggable-droppable-compare-v0-5-0-v0-5-1-2017-01-06-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.0...v0.5.1">0.5.1</a> (2017-01-06)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>draggable:</strong> allow draggable events to be clicked (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/44ea67e">44ea67e</a>)</li>
+</ul>
+<p><a name="0.5.0"></a></p>
+<h1 id="-0-5-0-https-github-com-mattlewis92-angular-draggable-droppable-compare-v0-4-0-v0-5-0-2016-12-21-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.4.0...v0.5.0">0.5.0</a> (2016-12-21)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>dragAndDropModule:</strong> add forRoot method (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/00f6989">00f6989</a>)</li>
+</ul>
+<h3 id="breaking-changes">BREAKING CHANGES</h3>
+<ul>
+<li>dragAndDropModule: You must now import the DragAndDropModule with the forRoot method</li>
+</ul>
+<p><a name="0.4.0"></a></p>
+<h1 id="-0-4-0-https-github-com-mattlewis92-angular-draggable-droppable-compare-v0-3-1-v0-4-0-2016-12-18-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.3.1...v0.4.0">0.4.0</a> (2016-12-18)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>draggable:</strong> remove the dragContainer option (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/5aca67d">5aca67d</a>)</li>
+</ul>
+<h3 id="breaking-changes">BREAKING CHANGES</h3>
+<ul>
+<li>draggable: the dragContainer option has been removed as it didn&#39;t work in all cases and can be</li>
+</ul>
+<p>implemented yourself with the validateDrag option</p>
+<p><a name="0.3.1"></a></p>
+<h2 id="-0-3-1-https-github-com-mattlewis92-angular-draggable-droppable-compare-v0-3-0-v0-3-1-2016-12-18-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.3.0...v0.3.1">0.3.1</a> (2016-12-18)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>draggable:</strong> make the dragEnd output respect the validateDrag input (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/26cfa7e">26cfa7e</a>)</li>
+</ul>
+<p><a name="0.3.0"></a></p>
+<h1 id="-0-3-0-https-github-com-mattlewis92-angular-draggable-droppable-compare-v0-2-3-v0-3-0-2016-12-12-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.2.3...v0.3.0">0.3.0</a> (2016-12-12)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>draggable:</strong> add dragContainer option (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/fb75711">fb75711</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/10">#10</a></li>
+</ul>
+<p><a name="0.2.3"></a></p>
+<h2 id="-0-2-3-https-github-com-mattlewis92-angular-draggable-droppable-compare-v0-2-2-v0-2-3-2016-12-11-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.2.2...v0.2.3">0.2.3</a> (2016-12-11)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>draggable:</strong> allow events to be dragged back into their original positions (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/7831903">7831903</a>)</li>
+</ul>
+<p><a name="0.2.2"></a></p>
+<h2 id="-0-2-2-https-github-com-mattlewis92-angular-draggable-droppable-compare-v0-2-1-v0-2-2-2016-12-11-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.2.1...v0.2.2">0.2.2</a> (2016-12-11)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>draggable:</strong> only emit the dragEnd event once (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/52e9a22">52e9a22</a>)</li>
+</ul>
+<p><a name="0.2.1"></a></p>
+<h2 id="-0-2-1-https-github-com-mattlewis92-angular-draggable-droppable-compare-v0-2-0-v0-2-1-2016-12-10-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.2.0...v0.2.1">0.2.1</a> (2016-12-10)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>revert duplicate dragging fix as it caused worse errors (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/7476301">7476301</a>)</li>
+</ul>
+<p><a name="0.2.0"></a></p>
+<h1 id="-0-2-0-https-github-com-mattlewis92-angular-draggable-droppable-compare-v0-1-1-v0-2-0-2016-12-10-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.1.1...v0.2.0">0.2.0</a> (2016-12-10)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>completely remove applied styled after dragging (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/3445337">3445337</a>)</li>
+<li><strong>draggable:</strong> dont fire duplicate dragging events with the same coordinates (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/222914b">222914b</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/6">#6</a></li>
+<li><strong>draggable:</strong> when dragging is disabled, no drag events should be emitted (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/729f24e">729f24e</a>)</li>
+<li><strong>droppable:</strong> only allow dropping of events when the cursor is inside (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/652d632">652d632</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/5">#5</a></li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>draggable:</strong> auto change the cursor to the move icon on hover (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/50d1962">50d1962</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/9">#9</a></li>
+<li><strong>snapGrid:</strong> rename to dragSnapGrid (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/a77d07a">a77d07a</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/7">#7</a></li>
+<li><strong>validateDrag:</strong> add the validate drag input (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/9e5ac95">9e5ac95</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/8">#8</a></li>
+</ul>
+<h3 id="breaking-changes">BREAKING CHANGES</h3>
+<ul>
+<li>droppable: the drag enter, leave and drop events will not fire until cursor is inside the droppable element. This is to mimic how native drag and drop works</li>
+<li>snapGrid: The snapGrid input has been renamed to dragSnapGrid</li>
+</ul>
+<p><a name="0.1.1"></a></p>
+<h2 id="-0-1-1-https-github-com-mattlewis92-angular-draggable-droppable-compare-v0-1-0-v0-1-1-2016-12-09-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.1.0...v0.1.1">0.1.1</a> (2016-12-09)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>draggable:</strong> disable pointer events on the element when dragging (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/f29b424">f29b424</a>)</li>
+</ul>
+<p><a name="0.1.0"></a></p>
+<h1 id="0-1-0-2016-11-27-">0.1.0 (2016-11-27)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>draggable:</strong> dispose of observables when the component is destroyed (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/710c7f7">710c7f7</a>)</li>
+<li>prevent the default move move interaction on dragging (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/d2fdcde">d2fdcde</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>dragAxix:</strong> allow the drag axis to be locked to just x and y (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/38fd4b5">38fd4b5</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/2">#2</a></li>
+<li><strong>draggable:</strong> add mwlDraggable directive (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/c6771eb">c6771eb</a>)</li>
+<li><strong>droppable:</strong> add the mwlDroppable directive (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/6016f12">6016f12</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/1">#1</a></li>
+<li><strong>ghostDragEnabled:</strong> add option to disable the ghost dragging effect (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/709327c">709327c</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/3">#3</a></li>
+<li><strong>snapGrid:</strong> implement draggable snap grids (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/16a3df8">16a3df8</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/4">#4</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 0;</script>
+
+       <script src="./js/search/search.js"></script>
+       <script src="./js/search/lunr.min.js"></script>
+       <script src="./js/search/search-lunr.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+       <script src="./js/search/search_index.js"></script>
+
+    </body>
+</html>

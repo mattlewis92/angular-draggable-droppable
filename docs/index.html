@@ -26,65 +26,61 @@
                 <ul class="list">
             
                     <li class="title">
-                        <a href="./">angular-draggable-droppable documentation</a>
+                        <a href="./index.html">angular-draggable-droppable documentation</a>
                     </li>
             
                     <li class="divider"></li>
             
             
                     <li class="chapter">
-                        <a data-type="chapter-link" href="./"><span class="fa fa-home"></span>Getting started</a>
+                        <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
                         <ul class="links">
                                 <li class="link">
-                                    <a href="./"  class="active" ><span class="fa fa-file-text-o"></span>README</a>
-                                </li>
-                                <li class="link">
-                                    <a  href="./overview.html" 
+                                    <a 
                                         
                                          href="./overview.html" 
-                                        
+                                         href="./overview.html" 
                                         >
                                         <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                                <li class="link">
+                                  <a href="./index.html"  class="active" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./changelog.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
+                                <li class="link">
+                                    <a href="./license.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>LICENSE
                                     </a>
                                 </li>
                         </ul>
                     </li>
             
             
+            
+            
                     <li class="chapter">
-                        <a data-type="chapter-link" href="./modules.html" >
-                            <span class="fa fa-archive"></span>
-                            <span>Modules</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-modules-links"
-                            ></span>
-                        </a>
-                        <ul class="links collapse in"
-                                id="xs-modules-links"
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-directives-links"
                             >
-                                <li class="link">
-                                    <a href="./modules/DragAndDropModule.html" >DragAndDropModule</a>
-                                </li>
-                        </ul>
-                    </li>
-            
-            
-                    <li class="chapter">
-                        <div class="simple">
                             <span class="fa fa-code"></span>
                             <span>Directives</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-directives-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-directives-links"
                             >
                                 <li class="link">
-                                    <a href="./directives/Draggable.html" >Draggable</a>
+                                    <a href="./directives/DraggableDirective.html" >DraggableDirective</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./directives/Droppable.html" >Droppable</a>
+                                    <a href="./directives/DroppableDirective.html" >DroppableDirective</a>
                                 </li>
                         </ul>
                     </li>
@@ -92,27 +88,58 @@
             
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-interfaces-links"
+                            >
                             <span class="fa fa-info"></span>
                             <span>Interfaces</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-interfaces-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-interfaces-links"
                             >
                                 <li class="link">
+                                    <a href="./interfaces/Coordinates.html" >Coordinates</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./interfaces/DragAxis.html" >DragAxis</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./interfaces/DropData.html" >DropData</a>
+                                </li>
+                                <li class="link">
                                     <a href="./interfaces/PointerEvent.html" >PointerEvent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./interfaces/SnapGrid.html" >SnapGrid</a>
                                 </li>
                         </ul>
                     </li>
             
             
-            
                     <li class="chapter">
-                        <a data-type="chapter-link" href="./miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="./miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                </li>
+                                <li class="link">
+                                  <a href="./miscellaneous/typealiases.html" data-type="entity-link" >Type aliases</a>
+                                </li>
+                                <li class="link">
+                                  <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                </li>
+                        </ul>
                     </li>
+            
             
             
                     <li class="divider"></li>
@@ -135,7 +162,7 @@
                        <ul class="list">
                    
                            <li class="title">
-                               <a href="./">angular-draggable-droppable documentation</a>
+                               <a href="./index.html">angular-draggable-droppable documentation</a>
                            </li>
                    
                            <li class="divider"></li>
@@ -145,58 +172,54 @@
                                </div>
                    
                            <li class="chapter">
-                               <a data-type="chapter-link" href="./"><span class="fa fa-home"></span>Getting started</a>
+                               <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
                                <ul class="links">
                                        <li class="link">
-                                           <a href="./"  class="active" ><span class="fa fa-file-text-o"></span>README</a>
-                                       </li>
-                                       <li class="link">
-                                           <a  href="./overview.html" 
+                                           <a 
                                                
                                                 href="./overview.html" 
-                                               
+                                                href="./overview.html" 
                                                >
                                                <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="./index.html"  class="active" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./changelog.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>CHANGELOG
+                                           </a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./license.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>LICENSE
                                            </a>
                                        </li>
                                </ul>
                            </li>
                    
                    
+                   
+                   
                            <li class="chapter">
-                               <a data-type="chapter-link" href="./modules.html" >
-                                   <span class="fa fa-archive"></span>
-                                   <span>Modules</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#modules-links"
-                                   ></span>
-                               </a>
-                               <ul class="links collapse in"
-                                       id="modules-links"
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#directives-links"
                    >
-                                       <li class="link">
-                                           <a href="./modules/DragAndDropModule.html" >DragAndDropModule</a>
-                                       </li>
-                               </ul>
-                           </li>
-                   
-                   
-                           <li class="chapter">
-                               <div class="simple">
                                    <span class="fa fa-code"></span>
                                    <span>Directives</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#directives-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="directives-links"
                    >
                                        <li class="link">
-                                           <a href="./directives/Draggable.html" >Draggable</a>
+                                           <a href="./directives/DraggableDirective.html" >DraggableDirective</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./directives/Droppable.html" >Droppable</a>
+                                           <a href="./directives/DroppableDirective.html" >DroppableDirective</a>
                                        </li>
                                </ul>
                            </li>
@@ -204,27 +227,58 @@
                    
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#interfaces-links"
+                   >
                                    <span class="fa fa-info"></span>
                                    <span>Interfaces</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#interfaces-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="interfaces-links"
                    >
                                        <li class="link">
+                                           <a href="./interfaces/Coordinates.html" >Coordinates</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./interfaces/DragAxis.html" >DragAxis</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./interfaces/DropData.html" >DropData</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./interfaces/PointerEvent.html" >PointerEvent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./interfaces/SnapGrid.html" >SnapGrid</a>
                                        </li>
                                </ul>
                            </li>
                    
                    
-                   
                            <li class="chapter">
-                               <a data-type="chapter-link" href="./miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="./miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="./miscellaneous/typealiases.html" data-type="entity-link" >Type aliases</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                       </li>
+                               </ul>
                            </li>
+                   
                    
                    
                            <li class="divider"></li>
@@ -238,10 +292,17 @@
                    
                    </nav>
                </div>
-               <div class="content readme">
+               <div class="content getting-started">
                    <div class="content-data">
+
 <h1 id="angular-4-0-drag-and-drop">angular 4.0+ drag and drop</h1>
-<p><a href="https://travis-ci.org/mattlewis92/angular-draggable-droppable"><img src="https://travis-ci.org/mattlewis92/angular-draggable-droppable.svg?branch=master" alt="Build Status" class="img-responsive"></a><br><a href="https://codecov.io/gh/mattlewis92/angular-draggable-droppable"><img src="https://codecov.io/gh/mattlewis92/angular-draggable-droppable/branch/master/graph/badge.svg" alt="codecov" class="img-responsive"></a><br><a href="http://badge.fury.io/js/angular-draggable-droppable"><img src="https://badge.fury.io/js/angular-draggable-droppable.svg" alt="npm version" class="img-responsive"></a><br><a href="https://david-dm.org/mattlewis92/angular-draggable-droppable#info=devDependencies"><img src="https://david-dm.org/mattlewis92/angular-draggable-droppable/dev-status.svg" alt="devDependency Status" class="img-responsive"></a><br><a href="https://github.com/mattlewis92/angular-draggable-droppable/issues"><img src="https://img.shields.io/github/issues/mattlewis92/angular-draggable-droppable.svg" alt="GitHub issues" class="img-responsive"></a><br><a href="https://github.com/mattlewis92/angular-draggable-droppable/stargazers"><img src="https://img.shields.io/github/stars/mattlewis92/angular-draggable-droppable.svg" alt="GitHub stars" class="img-responsive"></a><br><a href="https://raw.githubusercontent.com/mattlewis92/angular-draggable-droppable/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license" class="img-responsive"></a></p>
+<p><a href="https://travis-ci.org/mattlewis92/angular-draggable-droppable"><img src="https://travis-ci.org/mattlewis92/angular-draggable-droppable.svg?branch=master" alt="Build Status" class="img-responsive"></a>
+<a href="https://codecov.io/gh/mattlewis92/angular-draggable-droppable"><img src="https://codecov.io/gh/mattlewis92/angular-draggable-droppable/branch/master/graph/badge.svg" alt="codecov" class="img-responsive"></a>
+<a href="http://badge.fury.io/js/angular-draggable-droppable"><img src="https://badge.fury.io/js/angular-draggable-droppable.svg" alt="npm version" class="img-responsive"></a>
+<a href="https://david-dm.org/mattlewis92/angular-draggable-droppable#info=devDependencies"><img src="https://david-dm.org/mattlewis92/angular-draggable-droppable/dev-status.svg" alt="devDependency Status" class="img-responsive"></a>
+<a href="https://github.com/mattlewis92/angular-draggable-droppable/issues"><img src="https://img.shields.io/github/issues/mattlewis92/angular-draggable-droppable.svg" alt="GitHub issues" class="img-responsive"></a>
+<a href="https://github.com/mattlewis92/angular-draggable-droppable/stargazers"><img src="https://img.shields.io/github/stars/mattlewis92/angular-draggable-droppable.svg" alt="GitHub stars" class="img-responsive"></a>
+<a href="https://raw.githubusercontent.com/mattlewis92/angular-draggable-droppable/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license" class="img-responsive"></a></p>
 <h2 id="demo">Demo</h2>
 <p><a href="https://mattlewis92.github.io/angular-draggable-droppable/demo/">https://mattlewis92.github.io/angular-draggable-droppable/demo/</a></p>
 <h2 id="table-of-contents">Table of contents</h2>
@@ -257,26 +318,26 @@
 <h2 id="installation">Installation</h2>
 <p>Install through npm:</p>
 <pre class="line-numbers"><code class="language-none">npm install --save angular-draggable-droppable</code></pre><p>Then use it in your app like so:</p>
-<pre class="line-numbers"><code class="language-typescript">import {Component, NgModule} from '@angular/core';
-import {DragAndDropModule} from 'angular-draggable-droppable';
+<pre class="line-numbers"><code class="language-typescript">import {Component, NgModule} from &#39;&#64;angular/core&#39;;
+import {DragAndDropModule} from &#39;angular-draggable-droppable&#39;;
 
-@NgModule({
+&#64;NgModule({
   declarations: [DemoApp],
   imports: [DragAndDropModule.forRoot()],
   bootstrap: [DemoApp]
 })
 class DemoModule {}
 
-@Component({
-  selector: 'demo-app',
+&#64;Component({
+  selector: &#39;demo-app&#39;,
   template: `
-    <div mwlDraggable (dragEnd)="dragEnd($event)">Drag me!</div>
-    <div
+    &lt;div mwlDraggable (dragEnd)=&quot;dragEnd($event)&quot;&gt;Drag me!&lt;/div&gt;
+    &lt;div
       mwlDroppable
-      (drop)="this.droppedData = $event.dropData">
-      <span [hidden]="droppedData">Drop here</span>
-      <span [hidden]="!droppedData">Item dropped here with data: "{{ droppedData }}"!</span>
-    </div>
+      (drop)=&quot;this.droppedData = $event.dropData&quot;&gt;
+      &lt;span [hidden]=&quot;droppedData&quot;&gt;Drop here&lt;/span&gt;
+      &lt;span [hidden]=&quot;!droppedData&quot;&gt;Item dropped here with data: &quot;{{ droppedData }}&quot;!&lt;/span&gt;
+    &lt;/div&gt;
   `
 })
 class DemoApp {
@@ -284,16 +345,17 @@ class DemoApp {
   droppedData: string;
 
   dragEnd(event) {
-    console.log('Element was dragged', event);
+    console.log(&#39;Element was dragged&#39;, event);
   }
 
 }</code></pre><p>You may also find it useful to view the <a href="https://github.com/mattlewis92/angular-draggable-droppable/blob/master/demo/demo.component.ts">demo source</a>.</p>
 <h3 id="usage-without-a-module-bundler">Usage without a module bundler</h3>
-<pre class="line-numbers"><code class="language-none"><script src="node_modules/dist/umd/angular-draggable-droppable/angular-draggable-droppable.js"></script>
-<script>
+<pre class="line-numbers"><code class="language-none">&lt;script src=&quot;node_modules/dist/umd/angular-draggable-droppable/angular-draggable-droppable.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
     // everything is exported angularDraggableDroppable namespace
-</script></code></pre><h2 id="documentation">Documentation</h2>
-<p>All documentation is auto-generated from the source and can be viewed here:<br><a href="https://mattlewis92.github.io/angular-draggable-droppable/docs/">https://mattlewis92.github.io/angular-draggable-droppable/docs/</a></p>
+&lt;/script&gt;</code></pre><h2 id="documentation">Documentation</h2>
+<p>All documentation is auto-generated from the source and can be viewed here:
+<a href="https://mattlewis92.github.io/angular-draggable-droppable/docs/">https://mattlewis92.github.io/angular-draggable-droppable/docs/</a></p>
 <h2 id="development">Development</h2>
 <h3 id="prepare-your-environment">Prepare your environment</h3>
 <ul>
@@ -307,6 +369,7 @@ class DemoApp {
 <h3 id="release">Release</h3>
 <pre class="line-numbers"><code class="language-bash">npm run release</code></pre><h2 id="license">License</h2>
 <p>MIT</p>
+
 
 
 
@@ -347,6 +410,7 @@ class DemoApp {
        <script src="./js/search/lunr.min.js"></script>
        <script src="./js/search/search-lunr.js"></script>
 
+       <script src="./js/tabs.js"></script>
        <script src="./js/menu.js"></script>
        <script src="./js/libs/prism.js"></script>
        <script src="./js/sourceCode.js"></script>
