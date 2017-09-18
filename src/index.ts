@@ -1,2 +1,2 @@
-export * from './dragAndDrop.module';
-export * from './draggableHelper.provider';
+export * from './drag-and-drop.module';
+export * from './draggable-helper.provider';
