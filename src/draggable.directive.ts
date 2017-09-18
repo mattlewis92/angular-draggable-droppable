@@ -169,6 +169,8 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
           }
         });
 
+        this.pointerMove.next(pointerDownEvent);
+
         return pointerMove;
 
       })

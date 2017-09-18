@@ -303,4 +303,13 @@ describe('draggable directive', () => {
     expect(fixture.componentInstance.draggable['eventListenerSubscriptions'].touchmove).to.equal(touchMoveUnsubscribe);
   });
 
+  it('should fire the dragEnd event when starting a drag but not actually moving it', () => {
+    const draggableElement: HTMLElement = fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, {clientX: 5, clientY: 10});
+    expect(fixture.componentInstance.dragStart).to.have.been.calledWith({x: 0, y: 0});
+    triggerDomEvent('mouseup', draggableElement, {clientX: 5, clientY: 10});
+    expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({x: 0, y: 0});
+    expect(draggableElement.style.transform).not.to.be.ok;
+  });
+
 });
