@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.0.1...v1.0.2) (2017-09-18)
+
+
+### Bug Fixes
+
+* **draggable:** fire dragEnd event when the event was not dragged ([73d65d7](https://github.com/mattlewis92/angular-draggable-droppable/commit/73d65d7)), closes [#17](https://github.com/mattlewis92/angular-draggable-droppable/issues/17)
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.0.0...v1.0.1) (2017-04-14)
 
