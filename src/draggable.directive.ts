@@ -21,7 +21,7 @@ import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/takeLast';
 import 'rxjs/add/operator/pairwise';
 import 'rxjs/add/operator/share';
-import { DraggableHelper } from './draggableHelper.provider';
+import { DraggableHelper } from './draggable-helper.provider';
 
 export interface Coordinates {
   x: number;

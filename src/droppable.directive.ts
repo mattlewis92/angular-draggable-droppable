@@ -13,7 +13,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/pairwise';
 import 'rxjs/add/operator/filter';
-import { DraggableHelper } from './draggableHelper.provider';
+import { DraggableHelper } from './draggable-helper.provider';
 
 function isCoordinateWithinRectangle(
   clientX: number,

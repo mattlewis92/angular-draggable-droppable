@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { DraggableDirective } from './draggable.directive';
 import { DroppableDirective } from './droppable.directive';
-import { DraggableHelper } from './draggableHelper.provider';
+import { DraggableHelper } from './draggable-helper.provider';
 
 @NgModule({
   declarations: [DraggableDirective, DroppableDirective],
