@@ -1,4 +1,4 @@
-/// <reference types="jasmine" />
+/// <reference types="mocha" />
 
 import 'core-js';
 import 'zone.js/dist/zone';
@@ -7,7 +7,7 @@ import 'zone.js/dist/async-test';
 import 'zone.js/dist/fake-async-test';
 import 'zone.js/dist/sync-test';
 import 'zone.js/dist/proxy';
-import 'zone.js/dist/jasmine-patch';
+import 'zone.js/dist/mocha-patch';
 import 'rxjs/Observable';
 import {use} from 'chai';
 import * as sinonChai from 'sinon-chai';
@@ -18,6 +18,6 @@ use(sinonChai);
 
 TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
 
-declare var require: any;
+declare const require: any;
 const testsContext: any = require.context('./', true, /\.spec/);
 testsContext.keys().forEach(testsContext);

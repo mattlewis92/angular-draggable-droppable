@@ -51,7 +51,6 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@compodoc/compodoc": "^1.0.0-beta.3",
     "@types/chai": "^4.0.4",
-    "@types/jasmine": "^2.5.46",
     "@types/node": "^8.0.28",
     "@types/sinon": "^2.1.2",
     "@types/sinon-chai": "^2.7.26",
@@ -65,11 +64,9 @@
     "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.14.3",
     "istanbul-instrumenter-loader": "^3.0.0",
-    "jasmine-core": "^2.5.0",
     "karma": "^1.3.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage-istanbul-reporter": "^1.0.0",
-    "karma-jasmine": "^1.0.2",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.2",
     "rxjs": "^5.0.1",
@@ -97,5 +94,10 @@
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "@types/mocha": "^2.2.43",
+    "karma-mocha": "^1.3.0",
+    "mocha": "^3.5.3"
   }
 }
