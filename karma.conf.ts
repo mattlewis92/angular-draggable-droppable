@@ -70,14 +70,8 @@ export default function(config) {
       }
     },
 
-    phantomjsLauncher: {
-      // Have phantomjs exit if a ResourceError is encountered (useful if karma exits without killing phantom)
-      exitOnResourceError: true
-    },
-
-    browserConsoleLogOptions: {
-      terminal: true,
-      level: 'log'
+    mime: {
+      'text/x-typescript': ['ts']
     },
 
     // test results reporter to use
@@ -85,12 +79,8 @@ export default function(config) {
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress', 'coverage-istanbul'],
 
-    // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
-
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS']
+    browsers: ['ChromeHeadless']
   });
 };
