@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import * as sinon from 'sinon';
 import { triggerDomEvent } from './util';
 import { DragAndDropModule } from '../src/index';
-import { Draggable, ValidateDrag } from '../src/draggable.directive';
+import { DraggableDirective, ValidateDrag } from '../src/draggable.directive';
 
 describe('draggable directive', () => {
   @Component({
@@ -21,8 +21,8 @@ describe('draggable directive', () => {
         Drag me!
       </div>`
   })
-  class TestCmp {
-    @ViewChild(Draggable) public draggable: Draggable;
+  class TestComponent {
+    @ViewChild(DraggableDirective) public draggable: DraggableDirective;
     public dragStart: sinon.SinonSpy = sinon.spy();
     public dragging: sinon.SinonSpy = sinon.spy();
     public dragEnd: sinon.SinonSpy = sinon.spy();
@@ -35,14 +35,14 @@ describe('draggable directive', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [DragAndDropModule.forRoot()],
-      declarations: [TestCmp]
+      declarations: [TestComponent]
     });
   });
 
-  let fixture: ComponentFixture<TestCmp>;
+  let fixture: ComponentFixture<TestComponent>;
   beforeEach(() => {
     document.body.style.margin = '0px';
-    fixture = TestBed.createComponent(TestCmp);
+    fixture = TestBed.createComponent(TestComponent);
     fixture.detectChanges();
     document.body.appendChild(fixture.nativeElement.children[0]);
   });
@@ -406,7 +406,7 @@ describe('draggable directive', () => {
     const draggableElement: HTMLElement =
       fixture.componentInstance.draggable.element.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 7, clientY: 8 });
-    const mouseMoveUnsubscribe: Function =
+    const mouseMoveUnsubscribe =
       fixture.componentInstance.draggable['eventListenerSubscriptions']
         .mousemove;
     triggerDomEvent('mousedown', draggableElement, { clientX: 7, clientY: 8 });
@@ -506,7 +506,7 @@ describe('draggable directive', () => {
     triggerDomEvent('touchstart', draggableElement, {
       touches: [{ clientX: 7, clientY: 8 }]
     });
-    const touchMoveUnsubscribe: Function =
+    const touchMoveUnsubscribe =
       fixture.componentInstance.draggable['eventListenerSubscriptions']
         .touchmove;
     triggerDomEvent('touchstart', draggableElement, {

@@ -23,11 +23,20 @@ import 'rxjs/add/operator/pairwise';
 import 'rxjs/add/operator/share';
 import { DraggableHelper } from './draggableHelper.provider';
 
-export type Coordinates = { x: number; y: number };
+export interface Coordinates {
+  x: number;
+  y: number;
+}
 
-export type DragAxis = { x: boolean; y: boolean };
+export interface DragAxis {
+  x: boolean;
+  y: boolean;
+}
 
-export type SnapGrid = { x?: number; y?: number };
+export interface SnapGrid {
+  x?: number;
+  y?: number;
+}
 
 export type ValidateDrag = (coordinates: Coordinates) => boolean;
 
@@ -42,7 +51,7 @@ const MOVE_CURSOR: string = 'move';
 @Directive({
   selector: '[mwlDraggable]'
 })
-export class Draggable implements OnInit, OnChanges, OnDestroy {
+export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   @Input() dropData: any;
 
   @Input() dragAxis: DragAxis = { x: true, y: true };
@@ -78,15 +87,15 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
   pointerUp: Subject<PointerEvent> = new Subject();
 
   private eventListenerSubscriptions: {
-    mousemove?: Function;
-    mousedown?: Function;
-    mouseup?: Function;
-    mouseenter?: Function;
-    mouseleave?: Function;
-    touchstart?: Function;
-    touchmove?: Function;
-    touchend?: Function;
-    touchcancel?: Function;
+    mousemove?: () => void;
+    mousedown?: () => void;
+    mouseup?: () => void;
+    mouseenter?: () => void;
+    mouseleave?: () => void;
+    touchstart?: () => void;
+    touchmove?: () => void;
+    touchend?: () => void;
+    touchcancel?: () => void;
   } = {};
 
   /**
@@ -298,11 +307,11 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
       this.eventListenerSubscriptions.mousemove = this.renderer.listen(
         'document',
         'mousemove',
-        (event: MouseEvent) => {
+        (mouseMoveEvent: MouseEvent) => {
           this.pointerMove.next({
-            event,
-            clientX: event.clientX,
-            clientY: event.clientY
+            event: mouseMoveEvent,
+            clientX: mouseMoveEvent.clientX,
+            clientY: mouseMoveEvent.clientY
           });
         }
       );
@@ -331,11 +340,11 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
       this.eventListenerSubscriptions.touchmove = this.renderer.listen(
         'document',
         'touchmove',
-        (event: TouchEvent) => {
+        (touchMoveEvent: TouchEvent) => {
           this.pointerMove.next({
-            event,
-            clientX: event.targetTouches[0].clientX,
-            clientY: event.targetTouches[0].clientY
+            event: touchMoveEvent,
+            clientX: touchMoveEvent.targetTouches[0].clientX,
+            clientY: touchMoveEvent.targetTouches[0].clientY
           });
         }
       );

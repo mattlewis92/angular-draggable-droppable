@@ -1,11 +1,11 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { Draggable } from './draggable.directive';
-import { Droppable } from './droppable.directive';
+import { DraggableDirective } from './draggable.directive';
+import { DroppableDirective } from './droppable.directive';
 import { DraggableHelper } from './draggableHelper.provider';
 
 @NgModule({
-  declarations: [Draggable, Droppable],
-  exports: [Draggable, Droppable]
+  declarations: [DraggableDirective, DroppableDirective],
+  exports: [DraggableDirective, DroppableDirective]
 })
 export class DragAndDropModule {
   static forRoot(): ModuleWithProviders {

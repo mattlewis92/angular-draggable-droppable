@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import * as sinon from 'sinon';
 import { triggerDomEvent } from './util';
 import { DragAndDropModule } from '../src/index';
-import { Draggable } from '../src/draggable.directive';
+import { DraggableDirective } from '../src/draggable.directive';
 
 describe('droppable directive', () => {
   @Component({
@@ -38,8 +38,8 @@ describe('droppable directive', () => {
     `
     ]
   })
-  class TestCmp {
-    @ViewChild(Draggable) public draggable: Draggable;
+  class TestComponent {
+    @ViewChild(DraggableDirective) public draggable: DraggableDirective;
     public dragEvent: sinon.SinonSpy = sinon.spy();
     public drop: sinon.SinonSpy = sinon.spy();
 
@@ -51,14 +51,14 @@ describe('droppable directive', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [DragAndDropModule.forRoot()],
-      declarations: [TestCmp]
+      declarations: [TestComponent]
     });
   });
 
-  let fixture: ComponentFixture<TestCmp>;
+  let fixture: ComponentFixture<TestComponent>;
   beforeEach(() => {
     document.body.style.margin = '0px';
-    fixture = TestBed.createComponent(TestCmp);
+    fixture = TestBed.createComponent(TestComponent);
     fixture.detectChanges();
     fixture.componentInstance.draggable.dropData = { foo: 'bar' };
     document.body.appendChild(fixture.nativeElement.children[0]);

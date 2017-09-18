@@ -28,12 +28,14 @@ function isCoordinateWithinRectangle(
   );
 }
 
-export type DropData = { dropData: any };
+export interface DropData {
+  dropData: any;
+}
 
 @Directive({
   selector: '[mwlDroppable]'
 })
-export class Droppable implements OnInit, OnDestroy {
+export class DroppableDirective implements OnInit, OnDestroy {
   @Output() dragEnter: EventEmitter<DropData> = new EventEmitter<DropData>();
 
   @Output() dragLeave: EventEmitter<DropData> = new EventEmitter<DropData>();
