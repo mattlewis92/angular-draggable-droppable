@@ -1,7 +1,7 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {DragAndDropModule} from '../src';
-import {Demo} from './demo.component';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { DragAndDropModule } from '../src';
+import { Demo } from './demo.component';
 
 @NgModule({
   declarations: [Demo],

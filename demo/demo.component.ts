@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'demo-app',
@@ -19,7 +19,8 @@ import {Component} from '@angular/core';
       <span [hidden]="!droppedData">Item dropped here with data: "{{ droppedData }}"!</span>
     </div>
   `,
-  styles: [`
+  styles: [
+    `
     [mwlDraggable] {
       background-color: red;
       width: 200px;
@@ -49,20 +50,19 @@ import {Component} from '@angular/core';
       border: dashed 1px black;
       background-color: lightgreen;
     }
-  `]
+  `
+  ]
 })
 export class Demo {
-
   dropOverActive: boolean = false;
 
   droppedData: string = '';
 
-  onDrop({dropData}: {dropData: any}): void {
+  onDrop({ dropData }: { dropData: any }): void {
     this.dropOverActive = false;
     this.droppedData = dropData;
     setTimeout(() => {
       this.droppedData = '';
     }, 2000);
   }
-
 }
