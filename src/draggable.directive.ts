@@ -62,6 +62,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
   @Input() validateDrag: ValidateDrag;
 
+  @Input() dragCursor = MOVE_CURSOR;
+
   @Output()
   dragStart: EventEmitter<Coordinates> = new EventEmitter<Coordinates>();
 
@@ -120,7 +122,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           this.dragStart.next({ x: 0, y: 0 });
         });
 
-        this.setCursor(MOVE_CURSOR);
+        this.setCursor(this.dragCursor);
 
         const currentDrag: Subject<any> = new Subject();
 
@@ -369,7 +371,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   private onMouseEnter(): void {
-    this.setCursor(MOVE_CURSOR);
+    this.setCursor(this.dragCursor);
   }
 
   private onMouseLeave(): void {

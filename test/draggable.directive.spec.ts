@@ -15,6 +15,7 @@ describe('draggable directive', () => {
         [dragSnapGrid]="dragSnapGrid"
         [ghostDragEnabled]="ghostDragEnabled"
         [validateDrag]="validateDrag"
+        [dragCursor]="dragCursor"
         (dragStart)="dragStart($event)"
         (dragging)="dragging($event)"
         (dragEnd)="dragEnd($event)">
@@ -22,14 +23,15 @@ describe('draggable directive', () => {
       </div>`
   })
   class TestComponent {
-    @ViewChild(DraggableDirective) public draggable: DraggableDirective;
-    public dragStart: sinon.SinonSpy = sinon.spy();
-    public dragging: sinon.SinonSpy = sinon.spy();
-    public dragEnd: sinon.SinonSpy = sinon.spy();
-    public dragAxis: any = { x: true, y: true };
-    public dragSnapGrid: any = {};
-    public ghostDragEnabled: boolean = true;
-    public validateDrag: ValidateDrag;
+    @ViewChild(DraggableDirective) draggable: DraggableDirective;
+    dragStart: sinon.SinonSpy = sinon.spy();
+    dragging: sinon.SinonSpy = sinon.spy();
+    dragEnd: sinon.SinonSpy = sinon.spy();
+    dragAxis: any = { x: true, y: true };
+    dragSnapGrid: any = {};
+    ghostDragEnabled: boolean = true;
+    validateDrag: ValidateDrag;
+    dragCursor = 'move';
   }
 
   beforeEach(() => {
@@ -532,5 +534,16 @@ describe('draggable directive', () => {
       y: 0
     });
     expect(draggableElement.style.transform).not.to.be.ok;
+  });
+
+  it('should disable the mouse move cursor', () => {
+    fixture.componentInstance.dragCursor = '';
+    fixture.detectChanges();
+    const draggableElement: HTMLElement =
+      fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mouseenter', draggableElement);
+    expect(draggableElement.style.cursor).not.to.be.ok;
+    triggerDomEvent('mouseleave', draggableElement);
+    expect(draggableElement.style.cursor).not.to.be.ok;
   });
 });
