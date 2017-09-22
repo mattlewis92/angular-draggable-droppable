@@ -386,6 +386,9 @@
                                         <a href="#dragAxis">dragAxis</a>
                                     </li>
                                     <li>
+                                        <a href="#dragCursor">dragCursor</a>
+                                    </li>
+                                    <li>
                                         <a href="#dragSnapGrid">dragSnapGrid</a>
                                     </li>
                                     <li>
@@ -444,6 +447,26 @@
                                     <tr>
                                         <td class="col-md-2" colspan="2">
                                             <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/draggable.directive.ts:57</a></div>
+                                        </td>
+                                    </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-2">
+                                    <a name="dragCursor"></a>
+                                    <code>dragCursor</code>
+                                </td>
+                                <td class="col-md-10">
+                                    <p>
+                                      <em>Default value: </em><code>MOVE_CURSOR</code>
+                                    </p>
+                                </td>
+                            </tr>
+                                    <tr>
+                                        <td class="col-md-2" colspan="2">
+                                            <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/draggable.directive.ts:65</a></div>
                                         </td>
                                     </tr>
                         </tbody>
@@ -553,7 +576,7 @@
                             </tr>
                                     <tr>
                                         <td class="col-md-2" colspan="2">
-                                            <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/draggable.directive.ts:72</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/draggable.directive.ts:74</a></div>
                                         </td>
                                     </tr>
                         </tbody>
@@ -572,7 +595,7 @@
                             </tr>
                                     <tr>
                                         <td class="col-md-2" colspan="2">
-                                            <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/draggable.directive.ts:69</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/draggable.directive.ts:71</a></div>
                                         </td>
                                     </tr>
                         </tbody>
@@ -591,7 +614,7 @@
                             </tr>
                                     <tr>
                                         <td class="col-md-2" colspan="2">
-                                            <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/draggable.directive.ts:66</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/draggable.directive.ts:68</a></div>
                                         </td>
                                     </tr>
                         </tbody>
@@ -622,7 +645,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="224" class="link-to-prism">src/draggable.directive.ts:224</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="226" class="link-to-prism">src/draggable.directive.ts:226</a></div>
                                         </td>
                                     </tr>
             
@@ -683,7 +706,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="230" class="link-to-prism">src/draggable.directive.ts:230</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="232" class="link-to-prism">src/draggable.directive.ts:232</a></div>
                                         </td>
                                     </tr>
             
@@ -715,7 +738,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/draggable.directive.ts:111</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="113" class="link-to-prism">src/draggable.directive.ts:113</a></div>
                                         </td>
                                     </tr>
             
@@ -801,6 +824,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
   @Input() validateDrag: ValidateDrag;
 
+  @Input() dragCursor &#x3D; MOVE_CURSOR;
+
   @Output()
   dragStart: EventEmitter&lt;Coordinates&gt; &#x3D; new EventEmitter&lt;Coordinates&gt;();
 
@@ -859,7 +884,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           this.dragStart.next({ x: 0, y: 0 });
         });
 
-        this.setCursor(MOVE_CURSOR);
+        this.setCursor(this.dragCursor);
 
         const currentDrag: Subject&lt;any&gt; &#x3D; new Subject();
 
@@ -1108,7 +1133,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   private onMouseEnter(): void {
-    this.setCursor(MOVE_CURSOR);
+    this.setCursor(this.dragCursor);
   }
 
   private onMouseLeave(): void {
