@@ -4,23 +4,29 @@ import {expect} from 'chai';
 import * as sinon from 'sinon';
 import {triggerDomEvent} from './util';
 import {DragAndDropModule} from '../src/index';
-import {Draggable, ValidateDrag} from '../src/draggable.directive';
+import {Draggable, DragScrollDirection, ValidateDrag} from '../src/draggable.directive';
+import {DraggableHelper} from "../src/draggableHelper.provider";
 
 describe('draggable directive', () => {
 
   @Component({
     template: `
-      <div 
-        mwlDraggable
-        [dragAxis]="dragAxis"
-        [dragSnapGrid]="dragSnapGrid"
-        [ghostDragEnabled]="ghostDragEnabled"
-        [validateDrag]="validateDrag"
-        (dragStart)="dragStart($event)" 
-        (dragging)="dragging($event)"
-        (dragEnd)="dragEnd($event)">
-        Drag me!
-      </div>`,
+        <div style="height:300px; overflow: scroll;">
+            <div style="height:1000px">
+                <div
+                        mwlDraggable
+                        [dragAxis]="dragAxis"
+                        [dragSnapGrid]="dragSnapGrid"
+                        [ghostDragEnabled]="ghostDragEnabled"
+                        [validateDrag]="validateDrag"
+                        (dragStart)="dragStart($event)"
+                        (dragging)="dragging($event)"
+                        (dragEnd)="dragEnd($event)">
+                    Drag me!
+                </div>
+            </div>
+        </div>
+    `,
   })
   class TestCmp {
 
@@ -40,10 +46,12 @@ describe('draggable directive', () => {
   });
 
   let fixture: ComponentFixture<TestCmp>;
+  let dragHelper: DraggableHelper;
   beforeEach(() => {
     document.body.style.margin = '0px';
     fixture = TestBed.createComponent(TestCmp);
     fixture.detectChanges();
+    dragHelper = new DraggableHelper;
     document.body.appendChild(fixture.nativeElement.children[0]);
   });
 
@@ -66,6 +74,30 @@ describe('draggable directive', () => {
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({x: 2, y: -2});
     expect(draggableElement.style.transform).not.to.be.ok;
   });
+
+  it('should scroll the parent container', (done) => {
+    const draggable: Draggable = fixture.componentInstance.draggable;
+    const draggableElement: HTMLElement = draggable.element.nativeElement;
+
+    triggerDomEvent('mousedown', draggableElement, {clientX: 5, clientY: 10});
+    expect(fixture.componentInstance.dragStart).to.have.been.calledWith({x: 0, y: 0});
+
+    // Expect the draggable helper to get the parent element.
+    triggerDomEvent('mousemove', draggableElement, {clientX: 5, clientY: 285});
+    expect(draggable.scroll.y).to.eq(DragScrollDirection.DOWN);
+    expect(draggable.scroll.container).to.not.be.null;
+
+    triggerDomEvent('mousemove', draggableElement, {clientX: 5, clientY: 175});
+    expect(draggable.scroll.y).to.be.null;
+
+    triggerDomEvent('mousemove', draggableElement, {clientX: 5, clientY: 25});
+    expect(draggable.scroll.y).to.eq(DragScrollDirection.UP);
+
+    done();
+
+  });
+
+
 
   it('should end the pointerUp observable when the component is destroyed', () => {
     const complete: sinon.SinonSpy = sinon.spy();
