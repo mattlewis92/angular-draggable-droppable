@@ -23,12 +23,13 @@ import 'rxjs/add/operator/takeLast';
 import 'rxjs/add/operator/pairwise';
 import 'rxjs/add/operator/share';
 import {DraggableHelper} from './draggableHelper.provider';
+import {Subscription} from 'rxjs/Subscription';
 
-export type Coordinates = {x: number, y: number};
+export type Coordinates = { x: number, y: number };
 
-export type DragAxis = {x: boolean, y: boolean};
+export type DragAxis = { x: boolean, y: boolean };
 
-export type SnapGrid = {x?: number, y?: number};
+export type SnapGrid = { x?: number, y?: number };
 
 export type ValidateDrag = (coordinates: Coordinates) => boolean;
 
@@ -36,6 +37,13 @@ export interface PointerEvent {
   clientX: number;
   clientY: number;
   event: MouseEvent | TouchEvent;
+}
+
+export class DragScrollDirection {
+  static UP: number = -1;
+  static DOWN: number = 1;
+  static LEFT: number = -1;
+  static RIGHT: number = 1;
 }
 
 const MOVE_CURSOR: string = 'move';
@@ -76,6 +84,12 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
    */
   pointerUp: Subject<PointerEvent> = new Subject();
 
+  scroll: {
+    container: any;
+    y: number;
+    x: number;
+  };
+
   private eventListenerSubscriptions: {
     mousemove?: Function,
     mousedown?: Function,
@@ -91,14 +105,22 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
   /**
    * @hidden
    */
-  constructor(
-    public element: ElementRef,
-    private renderer: Renderer2,
-    private draggableHelper: DraggableHelper,
-    private zone: NgZone
-  ) {}
+  constructor(public element: ElementRef,
+              private renderer: Renderer2,
+              private draggableHelper: DraggableHelper,
+              private zone: NgZone) {
+  }
 
   ngOnInit(): void {
+
+    this.scroll = {
+      container: null,
+      y: 0,
+      x: 0
+    };
+
+    let startingScrollTop: number = 0;
+    let startingScrollLeft: number = 0;
 
     this.checkEventListeners();
 
@@ -112,6 +134,15 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
           this.dragStart.next({x: 0, y: 0});
         });
 
+        if (!this.scroll.container) {
+          this.scroll.container = this.draggableHelper.getScrollParent(this.element.nativeElement);
+        }
+
+        if (this.scroll.container) {
+          startingScrollTop = this.scroll.container.scrollTop;
+          startingScrollLeft = this.scroll.container.scrollLeft;
+        }
+
         this.setCursor(MOVE_CURSOR);
 
         const currentDrag: Subject<any> = new Subject();
@@ -123,16 +154,24 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
 
             pointerMoveEvent.event.preventDefault();
 
-            console.log(pointerMoveEvent.clientY);
+            let scrollOffsetTop: number = 0;
+            let scrollOffsetLeft: number = 0;
+
+            // If we have a scroll element calculate it's offset including the scroll
+            if (this.scroll.container) {
+              if (typeof this.scroll.container.offsetTop !== 'undefined') {
+                scrollOffsetTop = this.scroll.container.clientTop + (this.scroll.container.scrollTop - startingScrollTop);
+                scrollOffsetLeft = this.scroll.container.clientLeft + (this.scroll.container.scrollLeft - startingScrollLeft);
+              }
+            }
 
             return {
               currentDrag,
-              x: pointerMoveEvent.clientX - pointerDownEvent.clientX,
-              y: pointerMoveEvent.clientY - pointerDownEvent.clientY,
-              clientX: pointerMoveEvent.clientX,
-              clientY: pointerMoveEvent.clientY
+              x: pointerMoveEvent.clientX - pointerDownEvent.clientX + scrollOffsetLeft,
+              y: pointerMoveEvent.clientY - pointerDownEvent.clientY + scrollOffsetTop,
+              clientX: pointerMoveEvent.clientX + scrollOffsetLeft,
+              clientY: pointerMoveEvent.clientY + scrollOffsetTop
             };
-
           })
           .map((moveData: Coordinates) => {
 
@@ -177,13 +216,37 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
       })
       .share();
 
-    const dragScroll = Observable
+    const dragScroll: any = Observable
       .interval(1)
-      .map(() => window.scrollBy(0, 1))
+      .map(() => {
+        if (typeof this.scroll.container === 'undefined' || !this.scroll.y && !this.scroll.x) return;
+
+        let x: number = 0;
+        let y: number = 0;
+
+        if (this.scroll.y === DragScrollDirection.DOWN) {
+          y = 5;
+        } else if (this.scroll.y === DragScrollDirection.UP) {
+          y = -5;
+        } else {
+          y = 0;
+        }
+
+        if (this.scroll.x === DragScrollDirection.LEFT) {
+          x = -5;
+        } else if (this.scroll.x === DragScrollDirection.RIGHT) {
+          x = 5;
+        } else {
+          x = 0;
+        }
+        if (typeof this.scroll.container.scrollBy === 'function') {
+          this.scroll.container.scrollBy(x, y);
+        }
+      })
       .takeUntil(this.pointerUp)
       .share();
 
-    let dragScrollSubscription;
+    let dragScrollSubscription: Subscription;
 
     Observable
       .merge(
@@ -211,19 +274,31 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
           dropData: this.dropData
         });
 
-        if (clientY > (window.innerHeight - 50)) {
-          if (!dragScrollSubscription) {
-            dragScrollSubscription = dragScroll.subscribe();
-          }
-        } else {
-          if (dragScrollSubscription) {
-            dragScrollSubscription.unsubscribe();
-            dragScrollSubscription = null;
+        if (this.scroll.container) {
+          let containerTop: number = this.scroll.container.offsetTop || this.scroll.container.pageYOffset || 0;
+          let containerBottom: number = this.scroll.container.offsetTop + this.scroll.container.clientHeight;
+          let containerScrollTop: number = this.scroll.container.scrollTop || this.scroll.container.scrollY || 0;
+
+          if (clientY > containerBottom + (containerScrollTop - startingScrollTop) - 50) {
+            this.scroll.y = DragScrollDirection.DOWN;
+            if (!dragScrollSubscription) {
+              dragScrollSubscription = dragScroll.subscribe();
+            }
+          } else if (clientY < containerTop + (containerScrollTop - startingScrollTop) + 50) {
+            this.scroll.y = DragScrollDirection.UP;
+
+            if (!dragScrollSubscription) {
+              dragScrollSubscription = dragScroll.subscribe();
+            }
+          } else {
+            if (dragScrollSubscription) {
+              dragScrollSubscription.unsubscribe();
+              dragScrollSubscription = null;
+              this.scroll.y = null;
+            }
           }
         }
-
       });
-
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -248,33 +323,40 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
 
       this.zone.runOutsideAngular(() => {
 
-        this.eventListenerSubscriptions.mousedown = this.renderer.listen(this.element.nativeElement, 'mousedown', (event: MouseEvent) => {
-          this.onMouseDown(event);
-        });
+        this.eventListenerSubscriptions.mousedown = this.renderer.listen(this.element.nativeElement,
+          'mousedown', (event: MouseEvent) => {
+            this.onMouseDown(event);
+          });
 
-        this.eventListenerSubscriptions.mouseup = this.renderer.listen('document', 'mouseup', (event: MouseEvent) => {
-          this.onMouseUp(event);
-        });
+        this.eventListenerSubscriptions.mouseup = this.renderer.listen('document',
+          'mouseup', (event: MouseEvent) => {
+            this.onMouseUp(event);
+          });
 
-        this.eventListenerSubscriptions.touchstart = this.renderer.listen(this.element.nativeElement, 'touchstart', (event: TouchEvent) => {
-          this.onTouchStart(event);
-        });
+        this.eventListenerSubscriptions.touchstart = this.renderer.listen(this.element.nativeElement,
+          'touchstart', (event: TouchEvent) => {
+            this.onTouchStart(event);
+          });
 
-        this.eventListenerSubscriptions.touchend = this.renderer.listen('document', 'touchend', (event: TouchEvent) => {
-          this.onTouchEnd(event);
-        });
+        this.eventListenerSubscriptions.touchend = this.renderer.listen('document',
+          'touchend', (event: TouchEvent) => {
+            this.onTouchEnd(event);
+          });
 
-        this.eventListenerSubscriptions.touchcancel = this.renderer.listen('document', 'touchcancel', (event: TouchEvent) => {
-          this.onTouchEnd(event);
-        });
+        this.eventListenerSubscriptions.touchcancel = this.renderer.listen('document',
+          'touchcancel', (event: TouchEvent) => {
+            this.onTouchEnd(event);
+          });
 
-        this.eventListenerSubscriptions.mouseenter = this.renderer.listen(this.element.nativeElement, 'mouseenter', () => {
-          this.onMouseEnter();
-        });
+        this.eventListenerSubscriptions.mouseenter = this.renderer.listen(this.element.nativeElement,
+          'mouseenter', () => {
+            this.onMouseEnter();
+          });
 
-        this.eventListenerSubscriptions.mouseleave = this.renderer.listen(this.element.nativeElement, 'mouseleave', () => {
-          this.onMouseLeave();
-        });
+        this.eventListenerSubscriptions.mouseleave = this.renderer.listen(this.element.nativeElement,
+          'mouseleave', () => {
+            this.onMouseLeave();
+          });
 
       });
 
@@ -286,9 +368,10 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
 
   private onMouseDown(event: MouseEvent): void {
     if (!this.eventListenerSubscriptions.mousemove) {
-      this.eventListenerSubscriptions.mousemove = this.renderer.listen('document', 'mousemove', (event: MouseEvent) => {
-        this.pointerMove.next({event, clientX: event.clientX, clientY: event.clientY});
-      });
+      this.eventListenerSubscriptions.mousemove = this.renderer.listen('document',
+        'mousemove', (event: MouseEvent) => {
+          this.pointerMove.next({event, clientX: event.clientX, clientY: event.clientY});
+        });
     }
     this.pointerDown.next({event, clientX: event.clientX, clientY: event.clientY});
   }
@@ -304,7 +387,11 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
   private onTouchStart(event: TouchEvent): void {
     if (!this.eventListenerSubscriptions.touchmove) {
       this.eventListenerSubscriptions.touchmove = this.renderer.listen('document', 'touchmove', (event: TouchEvent) => {
-        this.pointerMove.next({event, clientX: event.targetTouches[0].clientX, clientY: event.targetTouches[0].clientY});
+        this.pointerMove.next({
+          event,
+          clientX: event.targetTouches[0].clientX,
+          clientY: event.targetTouches[0].clientY
+        });
       });
     }
     this.pointerDown.next({event, clientX: event.touches[0].clientX, clientY: event.touches[0].clientY});
@@ -315,7 +402,11 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
       this.eventListenerSubscriptions.touchmove();
       delete this.eventListenerSubscriptions.touchmove;
     }
-    this.pointerUp.next({event, clientX: event.changedTouches[0].clientX, clientY: event.changedTouches[0].clientY});
+    this.pointerUp.next({
+      event,
+      clientX: event.changedTouches[0].clientX,
+      clientY: event.changedTouches[0].clientY
+    });
   }
 
   private onMouseEnter(): void {
@@ -350,5 +441,4 @@ export class Draggable implements OnInit, OnChanges, OnDestroy {
       delete this.eventListenerSubscriptions[type];
     });
   }
-
 }
