@@ -13,14 +13,15 @@ import {
 } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/merge';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
-import 'rxjs/add/operator/takeUntil';
-import 'rxjs/add/operator/take';
-import 'rxjs/add/operator/takeLast';
-import 'rxjs/add/operator/pairwise';
-import 'rxjs/add/operator/share';
+import { merge } from 'rxjs/observable/merge';
+import { map } from 'rxjs/operators/map';
+import { mergeMap } from 'rxjs/operators/mergeMap';
+import { takeUntil } from 'rxjs/operators/takeUntil';
+import { take } from 'rxjs/operators/take';
+import { takeLast } from 'rxjs/operators/takeLast';
+import { pairwise } from 'rxjs/operators/pairwise';
+import { share } from 'rxjs/operators/share';
+import { filter } from 'rxjs/operators/filter';
 import { DraggableHelper } from './draggable-helper.provider';
 
 export interface Coordinates {
@@ -114,96 +115,108 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     this.checkEventListeners();
 
     const pointerDrag: Observable<any> = this.pointerDown
-      .filter(() => this.canDrag())
-      .flatMap((pointerDownEvent: PointerEvent) => {
-        const currentDrag: Subject<any> = new Subject();
+      .pipe(filter(() => this.canDrag()))
+      .pipe(
+        mergeMap((pointerDownEvent: PointerEvent) => {
+          const currentDrag: Subject<any> = new Subject();
 
-        const pointerMove: Observable<Coordinates> = this.pointerMove
-          .map((pointerMoveEvent: PointerEvent) => {
-            pointerMoveEvent.event.preventDefault();
+          const pointerMove: Observable<Coordinates> = this.pointerMove
+            .pipe(
+              map((pointerMoveEvent: PointerEvent) => {
+                pointerMoveEvent.event.preventDefault();
 
-            return {
-              currentDrag,
-              x: pointerMoveEvent.clientX - pointerDownEvent.clientX,
-              y: pointerMoveEvent.clientY - pointerDownEvent.clientY,
-              clientX: pointerMoveEvent.clientX,
-              clientY: pointerMoveEvent.clientY
-            };
-          })
-          .map((moveData: Coordinates) => {
-            if (this.dragSnapGrid.x) {
-              moveData.x =
-                Math.floor(moveData.x / this.dragSnapGrid.x) *
-                this.dragSnapGrid.x;
-            }
+                return {
+                  currentDrag,
+                  x: pointerMoveEvent.clientX - pointerDownEvent.clientX,
+                  y: pointerMoveEvent.clientY - pointerDownEvent.clientY,
+                  clientX: pointerMoveEvent.clientX,
+                  clientY: pointerMoveEvent.clientY
+                };
+              })
+            )
+            .pipe(
+              map((moveData: Coordinates) => {
+                if (this.dragSnapGrid.x) {
+                  moveData.x =
+                    Math.floor(moveData.x / this.dragSnapGrid.x) *
+                    this.dragSnapGrid.x;
+                }
 
-            if (this.dragSnapGrid.y) {
-              moveData.y =
-                Math.floor(moveData.y / this.dragSnapGrid.y) *
-                this.dragSnapGrid.y;
-            }
+                if (this.dragSnapGrid.y) {
+                  moveData.y =
+                    Math.floor(moveData.y / this.dragSnapGrid.y) *
+                    this.dragSnapGrid.y;
+                }
 
-            return moveData;
-          })
-          .map((moveData: Coordinates) => {
-            if (!this.dragAxis.x) {
-              moveData.x = 0;
-            }
+                return moveData;
+              })
+            )
+            .pipe(
+              map((moveData: Coordinates) => {
+                if (!this.dragAxis.x) {
+                  moveData.x = 0;
+                }
 
-            if (!this.dragAxis.y) {
-              moveData.y = 0;
-            }
+                if (!this.dragAxis.y) {
+                  moveData.y = 0;
+                }
 
-            return moveData;
-          })
-          .filter(
-            ({ x, y }) => !this.validateDrag || this.validateDrag({ x, y })
-          )
-          .takeUntil(Observable.merge(this.pointerUp, this.pointerDown))
-          .share();
+                return moveData;
+              })
+            )
+            .pipe(
+              filter(
+                ({ x, y }) => !this.validateDrag || this.validateDrag({ x, y })
+              )
+            )
+            .pipe(takeUntil(merge(this.pointerUp, this.pointerDown)))
+            .pipe(share());
 
-        pointerMove.take(1).subscribe(() => {
-          pointerDownEvent.event.preventDefault();
+          pointerMove.pipe(take(1)).subscribe(() => {
+            pointerDownEvent.event.preventDefault();
 
-          this.zone.run(() => {
-            this.dragStart.next({ x: 0, y: 0 });
+            this.zone.run(() => {
+              this.dragStart.next({ x: 0, y: 0 });
+            });
+
+            this.setCursor(this.dragCursor);
+
+            this.draggableHelper.currentDrag.next(currentDrag);
           });
 
-          this.setCursor(this.dragCursor);
-
-          this.draggableHelper.currentDrag.next(currentDrag);
-        });
-
-        pointerMove.takeLast(1).subscribe(({ x, y }) => {
-          this.zone.run(() => {
-            this.dragEnd.next({ x, y });
+          pointerMove.pipe(takeLast(1)).subscribe(({ x, y }) => {
+            this.zone.run(() => {
+              this.dragEnd.next({ x, y });
+            });
+            currentDrag.complete();
+            this.setCssTransform(null);
+            if (this.ghostDragEnabled) {
+              this.renderer.setStyle(
+                this.element.nativeElement,
+                'pointerEvents',
+                null
+              );
+            }
           });
-          currentDrag.complete();
-          this.setCssTransform(null);
-          if (this.ghostDragEnabled) {
-            this.renderer.setStyle(
-              this.element.nativeElement,
-              'pointerEvents',
-              null
-            );
-          }
-        });
 
-        return pointerMove;
-      })
-      .share();
+          return pointerMove;
+        })
+      )
+      .pipe(share());
 
-    Observable.merge(
-      pointerDrag.take(1).map(value => [, value]),
-      pointerDrag.pairwise()
+    merge(
+      pointerDrag.pipe(take(1)).pipe(map(value => [, value])),
+      pointerDrag.pipe(pairwise())
     )
-      .filter(([previous, next]) => {
-        if (!previous) {
-          return true;
-        }
-        return previous.x !== next.x || previous.y !== next.y;
-      })
-      .map(([previous, next]) => next)
+      .pipe(
+        filter(([previous, next]) => {
+          if (!previous) {
+            return true;
+          }
+          return previous.x !== next.x || previous.y !== next.y;
+        })
+      )
+      .pipe(map(([previous, next]) => next))
       .subscribe(({ x, y, currentDrag, clientX, clientY }) => {
         this.zone.run(() => {
           this.dragging.next({ x, y });
