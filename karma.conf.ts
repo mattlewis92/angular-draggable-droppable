@@ -1,6 +1,6 @@
 import * as webpack from 'webpack';
 
-export default function(config) {
+export default function(config: any) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -37,7 +37,7 @@ export default function(config) {
           }
         }, {
           test: /\.ts$/,
-          loader: 'awesome-typescript-loader',
+          loader: 'ts-loader',
           exclude: /node_modules/
         }, {
           test: /src\/.+\.ts$/,
@@ -52,7 +52,7 @@ export default function(config) {
           test: /\.(ts|js)($|\?)/i
         }),
         new webpack.ContextReplacementPlugin(
-          /angular(\\|\/)core(\\|\/)@angular/,
+          /angular(\\|\/)core(\\|\/)esm5/,
           __dirname + '/src'
         ),
         ...(config.singleRun ? [new webpack.NoEmitOnErrorsPlugin()] : [])

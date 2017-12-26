@@ -1,4 +1,4 @@
-# angular 4.0+ drag and drop
+# angular 5.0+ drag and drop
 [![Build Status](https://travis-ci.org/mattlewis92/angular-draggable-droppable.svg?branch=master)](https://travis-ci.org/mattlewis92/angular-draggable-droppable)
 [![codecov](https://codecov.io/gh/mattlewis92/angular-draggable-droppable/branch/master/graph/badge.svg)](https://codecov.io/gh/mattlewis92/angular-draggable-droppable)
 [![npm version](https://badge.fury.io/js/angular-draggable-droppable.svg)](http://badge.fury.io/js/angular-draggable-droppable)
@@ -6,10 +6,6 @@
 [![GitHub issues](https://img.shields.io/github/issues/mattlewis92/angular-draggable-droppable.svg)](https://github.com/mattlewis92/angular-draggable-droppable/issues)
 [![GitHub stars](https://img.shields.io/github/stars/mattlewis92/angular-draggable-droppable.svg)](https://github.com/mattlewis92/angular-draggable-droppable/stargazers)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/mattlewis92/angular-draggable-droppable/master/LICENSE)
-
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/uSyax6FrP6eVdiUSuyThrNTG/mattlewis92/angular-draggable-droppable'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/uSyax6FrP6eVdiUSuyThrNTG/mattlewis92/angular-draggable-droppable.svg' />
-</a>
 
 ## Demo
 https://mattlewis92.github.io/angular-draggable-droppable/demo/
@@ -24,7 +20,7 @@ https://mattlewis92.github.io/angular-draggable-droppable/demo/
 
 ## About
 
-Observable powered drag and drop for angular 4.0+
+Observable powered drag and drop for angular 5.0+
 
 ## Installation
 
@@ -36,8 +32,8 @@ npm install --save angular-draggable-droppable
 Then use it in your app like so:
 
 ```typescript
-import {Component, NgModule} from '@angular/core';
-import {DragAndDropModule} from 'angular-draggable-droppable';
+import { Component, NgModule } from '@angular/core';
+import { DragAndDropModule } from 'angular-draggable-droppable';
 
 @NgModule({
   declarations: [DemoApp],
@@ -70,14 +66,6 @@ class DemoApp {
 ```
 
 You may also find it useful to view the [demo source](https://github.com/mattlewis92/angular-draggable-droppable/blob/master/demo/demo.component.ts).
-
-### Usage without a module bundler
-```
-<script src="node_modules/dist/umd/angular-draggable-droppable/angular-draggable-droppable.js"></script>
-<script>
-    // everything is exported angularDraggableDroppable namespace
-</script>
-```
 
 ## Documentation
 All documentation is auto-generated from the source and can be viewed here:

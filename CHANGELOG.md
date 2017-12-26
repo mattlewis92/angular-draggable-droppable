@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.1.1...v2.0.0) (2017-12-26)
+
+
+### Bug Fixes
+
+* only call drag start and end outputs when the element is actually dragged ([45c6b5f](https://github.com/mattlewis92/angular-draggable-droppable/commit/45c6b5f)), closes [#21](https://github.com/mattlewis92/angular-draggable-droppable/issues/21) [#20](https://github.com/mattlewis92/angular-draggable-droppable/issues/20)
+
+
+### Features
+
+* upgrade to angular 5 ([4159ce2](https://github.com/mattlewis92/angular-draggable-droppable/commit/4159ce2))
+* use lettable rxjs operators ([9fca12a](https://github.com/mattlewis92/angular-draggable-droppable/commit/9fca12a))
+* use ng-packagr for building the package ([57dd436](https://github.com/mattlewis92/angular-draggable-droppable/commit/57dd436))
+* **dragPointerDown:** add a new output to repliate the old dragStart behaviour ([4a58c61](https://github.com/mattlewis92/angular-draggable-droppable/commit/4a58c61))
+
+
+### BREAKING CHANGES
+
+* The UMD module path has changed from
+`angular-draggable-droppable/dist/umd/angular-draggable-droppable.js` to
+`angular-draggable-droppable/bundles/angular-draggable-droppable.umd.js`. System.js users will need
+to update their config.
+* rxjs operators will now no longer be added to the observable prototype. Also rxjs
+>= 5.5.x or higher is required
+* Angular 5 or higher is now required to use this package
+* drag start and end events are now only called when the element is actually dragged,
+use regular mousedown and mouseup events to get the old behaviour
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.1.0...v1.1.1) (2017-10-21)
 

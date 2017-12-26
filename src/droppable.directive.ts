@@ -10,9 +10,11 @@ import {
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/pairwise';
-import 'rxjs/add/operator/filter';
+import { distinctUntilChanged } from 'rxjs/operators/distinctUntilChanged';
+import { pairwise } from 'rxjs/operators/pairwise';
+import { filter } from 'rxjs/operators/filter';
+import { map } from 'rxjs/operators/map';
+import { mergeMap } from 'rxjs/operators/mergeMap';
 import { DraggableHelper } from './draggable-helper.provider';
 
 function isCoordinateWithinRectangle(
@@ -36,13 +38,25 @@ export interface DropData {
   selector: '[mwlDroppable]'
 })
 export class DroppableDirective implements OnInit, OnDestroy {
-  @Output() dragEnter: EventEmitter<DropData> = new EventEmitter<DropData>();
+  /**
+   * Called when a draggable element starts overlapping the element
+   */
+  @Output() dragEnter = new EventEmitter<DropData>();
 
-  @Output() dragLeave: EventEmitter<DropData> = new EventEmitter<DropData>();
+  /**
+   * Called when a draggable element stops overlapping the element
+   */
+  @Output() dragLeave = new EventEmitter<DropData>();
 
-  @Output() dragOver: EventEmitter<DropData> = new EventEmitter<DropData>();
+  /**
+   * Called when a draggable element is moved over the element
+   */
+  @Output() dragOver = new EventEmitter<DropData>();
 
-  @Output() drop: EventEmitter<DropData> = new EventEmitter<DropData>();
+  /**
+   * Called when a draggable element is dropped on this element
+   */
+  @Output() drop = new EventEmitter<DropData>();
 
   currentDragSubscription: Subscription;
 
@@ -64,33 +78,33 @@ export class DroppableDirective implements OnInit, OnDestroy {
         const droppableRectangle: ClientRect = this.element.nativeElement.getBoundingClientRect();
 
         let currentDragDropData: any;
-        const overlaps: Observable<
-          boolean
-        > = drag.map(({ clientX, clientY, dropData }) => {
-          currentDragDropData = dropData;
-          return isCoordinateWithinRectangle(
-            clientX,
-            clientY,
-            droppableRectangle
-          );
-        });
+        const overlaps = drag.pipe(
+          map(({ clientX, clientY, dropData }) => {
+            currentDragDropData = dropData;
+            return isCoordinateWithinRectangle(
+              clientX,
+              clientY,
+              droppableRectangle
+            );
+          })
+        );
 
-        const overlapsChanged: Observable<
-          boolean
-        > = overlaps.distinctUntilChanged();
+        const overlapsChanged = overlaps.pipe(distinctUntilChanged());
 
         let dragOverActive: boolean; // TODO - see if there's a way of doing this via rxjs
 
-        overlapsChanged.filter(overlapsNow => overlapsNow).subscribe(() => {
-          dragOverActive = true;
-          this.zone.run(() => {
-            this.dragEnter.next({
-              dropData: currentDragDropData
+        overlapsChanged
+          .pipe(filter(overlapsNow => overlapsNow))
+          .subscribe(() => {
+            dragOverActive = true;
+            this.zone.run(() => {
+              this.dragEnter.next({
+                dropData: currentDragDropData
+              });
             });
           });
-        });
 
-        overlaps.filter(overlapsNow => overlapsNow).subscribe(() => {
+        overlaps.pipe(filter(overlapsNow => overlapsNow)).subscribe(() => {
           this.zone.run(() => {
             this.dragOver.next({
               dropData: currentDragDropData
@@ -99,8 +113,10 @@ export class DroppableDirective implements OnInit, OnDestroy {
         });
 
         overlapsChanged
-          .pairwise()
-          .filter(([didOverlap, overlapsNow]) => didOverlap && !overlapsNow)
+          .pipe(pairwise())
+          .pipe(
+            filter(([didOverlap, overlapsNow]) => didOverlap && !overlapsNow)
+          )
           .subscribe(() => {
             dragOverActive = false;
             this.zone.run(() => {
@@ -110,7 +126,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
             });
           });
 
-        drag.flatMap(() => overlaps).subscribe({
+        drag.pipe(mergeMap(() => overlaps)).subscribe({
           complete: () => {
             if (dragOverActive) {
               this.zone.run(() => {
