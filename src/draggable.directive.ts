@@ -116,17 +116,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     const pointerDrag: Observable<any> = this.pointerDown
       .filter(() => this.canDrag())
       .flatMap((pointerDownEvent: PointerEvent) => {
-        pointerDownEvent.event.preventDefault();
-
-        this.zone.run(() => {
-          this.dragStart.next({ x: 0, y: 0 });
-        });
-
-        this.setCursor(this.dragCursor);
-
         const currentDrag: Subject<any> = new Subject();
-
-        this.draggableHelper.currentDrag.next(currentDrag);
 
         const pointerMove: Observable<Coordinates> = this.pointerMove
           .map((pointerMoveEvent: PointerEvent) => {
@@ -169,7 +159,20 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           .filter(
             ({ x, y }) => !this.validateDrag || this.validateDrag({ x, y })
           )
-          .takeUntil(Observable.merge(this.pointerUp, this.pointerDown));
+          .takeUntil(Observable.merge(this.pointerUp, this.pointerDown))
+          .share();
+
+        pointerMove.take(1).subscribe(() => {
+          pointerDownEvent.event.preventDefault();
+
+          this.zone.run(() => {
+            this.dragStart.next({ x: 0, y: 0 });
+          });
+
+          this.setCursor(this.dragCursor);
+
+          this.draggableHelper.currentDrag.next(currentDrag);
+        });
 
         pointerMove.takeLast(1).subscribe(({ x, y }) => {
           this.zone.run(() => {
@@ -185,8 +188,6 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             );
           }
         });
-
-        this.pointerMove.next(pointerDownEvent);
 
         return pointerMove;
       })
