@@ -32,8 +32,8 @@ npm install --save angular-draggable-droppable
 Then use it in your app like so:
 
 ```typescript
-import {Component, NgModule} from '@angular/core';
-import {DragAndDropModule} from 'angular-draggable-droppable';
+import { Component, NgModule } from '@angular/core';
+import { DragAndDropModule } from 'angular-draggable-droppable';
 
 @NgModule({
   declarations: [DemoApp],
