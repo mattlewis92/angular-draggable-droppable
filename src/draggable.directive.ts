@@ -378,7 +378,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     this.setCursor(null);
   }
 
-  private setCssTransform(value: string): void {
+  private setCssTransform(value: string | null): void {
     if (this.ghostDragEnabled) {
       this.renderer.setStyle(this.element.nativeElement, 'transform', value);
       this.renderer.setStyle(
@@ -404,14 +404,14 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     return this.dragAxis.x || this.dragAxis.y;
   }
 
-  private setCursor(value: string): void {
+  private setCursor(value: string | null): void {
     this.renderer.setStyle(this.element.nativeElement, 'cursor', value);
   }
 
   private unsubscribeEventListeners(): void {
-    Object.keys(this.eventListenerSubscriptions).forEach((type: string) => {
-      this.eventListenerSubscriptions[type]();
-      delete this.eventListenerSubscriptions[type];
+    Object.keys(this.eventListenerSubscriptions).forEach(type => {
+      (this as any).eventListenerSubscriptions[type]();
+      delete (this as any).eventListenerSubscriptions[type];
     });
   }
 }
