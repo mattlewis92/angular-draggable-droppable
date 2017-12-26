@@ -48,14 +48,14 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./changelog.html"
-                                        >
+                                        <a href="../changelog.html"
+                                    >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
                                 <li class="link">
-                                    <a href="./license.html"
-                                        >
+                                        <a href="../license.html"
+                                    >
                                         <span class="fa fa-file-text-o"></span>LICENSE
                                     </a>
                                 </li>
@@ -63,6 +63,24 @@
                     </li>
             
             
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../modules.html" >
+                            <div class="menu-toggler linked" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-down"></span>
+                            </div>
+                        </a>
+                        <ul class="links collapse "
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/DragAndDropModule.html" >DragAndDropModule</a>
+                                </li>
+                        </ul>
+                    </li>
             
             
                     <li class="chapter">
@@ -84,6 +102,7 @@
                                 </li>
                         </ul>
                     </li>
+            
             
             
             
@@ -187,14 +206,14 @@
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./changelog.html"
-                                               >
+                                               <a href="../changelog.html"
+                                           >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
                                        <li class="link">
-                                           <a href="./license.html"
-                                               >
+                                               <a href="../license.html"
+                                           >
                                                <span class="fa fa-file-text-o"></span>LICENSE
                                            </a>
                                        </li>
@@ -202,6 +221,24 @@
                            </li>
                    
                    
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../modules.html" >
+                                   <div class="menu-toggler linked" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-down"></span>
+                                   </div>
+                               </a>
+                               <ul class="links collapse "
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/DragAndDropModule.html" >DragAndDropModule</a>
+                                       </li>
+                               </ul>
+                           </li>
                    
                    
                            <li class="chapter">
@@ -223,6 +260,7 @@
                                        </li>
                                </ul>
                            </li>
+                   
                    
                    
                    
@@ -317,7 +355,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="info">
+    <div class="tab-pane fade active in" id="c-info">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -330,9 +368,9 @@
                 <h3>Implements</h3>
             </p>
             <p class="comment">
-                        <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnInit-interface.html" target="_blank" >OnInit</a></code>
-                        <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnChanges-interface.html" target="_blank" >OnChanges</a></code>
-                        <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnDestroy-interface.html" target="_blank" >OnDestroy</a></code>
+                        <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                        <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                        <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
             </p>
 
 
@@ -354,26 +392,6 @@
                 <h3 id="index">Index</h3>
                 <table class="table table-sm table-bordered index-table">
                     <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <h6><b>Methods</b></h6>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <ul class="index-list">
-                                    <li>
-                                         <a href="#ngOnChanges">ngOnChanges</a>
-                                    </li>
-                                    <li>
-                                         <a href="#ngOnDestroy">ngOnDestroy</a>
-                                    </li>
-                                    <li>
-                                         <a href="#ngOnInit">ngOnInit</a>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
                         <tr>
                             <td class="col-md-4">
                                 <h6><b>Inputs</b></h6>
@@ -418,6 +436,9 @@
                                         <a href="#dragging">dragging</a>
                                     </li>
                                     <li>
+                                        <a href="#dragPointerDown">dragPointerDown</a>
+                                    </li>
+                                    <li>
                                         <a href="#dragStart">dragStart</a>
                                     </li>
                                 </ul>
@@ -438,15 +459,20 @@
                                     <code>dragAxis</code>
                                 </td>
                                 <td class="col-md-10">
+                                    <div><p>The axis along which the element is draggable</p>
+</div>
                                       <p>
                                         <em>Type:</em>    <code><a href="../interfaces/DragAxis.html" target="_self" >DragAxis</a></code>
 
                                       </p>
+                                    <p>
+                                      <em>Default value: </em><code>{ x: true, y: true }</code>
+                                    </p>
                                 </td>
                             </tr>
                                     <tr>
                                         <td class="col-md-2" colspan="2">
-                                            <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/draggable.directive.ts:57</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/draggable.directive.ts:64</a></div>
                                         </td>
                                     </tr>
                         </tbody>
@@ -459,6 +485,8 @@
                                     <code>dragCursor</code>
                                 </td>
                                 <td class="col-md-10">
+                                    <div><p>The cursor to use when dragging the element</p>
+</div>
                                     <p>
                                       <em>Default value: </em><code>MOVE_CURSOR</code>
                                     </p>
@@ -466,7 +494,7 @@
                             </tr>
                                     <tr>
                                         <td class="col-md-2" colspan="2">
-                                            <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/draggable.directive.ts:65</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/draggable.directive.ts:84</a></div>
                                         </td>
                                     </tr>
                         </tbody>
@@ -479,8 +507,36 @@
                                     <code>dragSnapGrid</code>
                                 </td>
                                 <td class="col-md-10">
+                                    <div><p>Snap all drags to an x / y grid</p>
+</div>
                                       <p>
                                         <em>Type:</em>    <code><a href="../interfaces/SnapGrid.html" target="_self" >SnapGrid</a></code>
+
+                                      </p>
+                                    <p>
+                                      <em>Default value: </em><code>{}</code>
+                                    </p>
+                                </td>
+                            </tr>
+                                    <tr>
+                                        <td class="col-md-2" colspan="2">
+                                            <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/draggable.directive.ts:69</a></div>
+                                        </td>
+                                    </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-2">
+                                    <a name="dropData"></a>
+                                    <code>dropData</code>
+                                </td>
+                                <td class="col-md-10">
+                                    <div><p>an object of data you can pass to the drop event</p>
+</div>
+                                      <p>
+                                        <em>Type:</em>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                                       </p>
                                 </td>
@@ -496,31 +552,12 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-2">
-                                    <a name="dropData"></a>
-                                    <code>dropData</code>
-                                </td>
-                                <td class="col-md-10">
-                                      <p>
-                                        <em>Type:</em>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                                      </p>
-                                </td>
-                            </tr>
-                                    <tr>
-                                        <td class="col-md-2" colspan="2">
-                                            <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/draggable.directive.ts:55</a></div>
-                                        </td>
-                                    </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-2">
                                     <a name="ghostDragEnabled"></a>
                                     <code>ghostDragEnabled</code>
                                 </td>
                                 <td class="col-md-10">
+                                    <div><p>Show a ghost element that shows the drag when dragging</p>
+</div>
                                       <p>
                                         <em>Type:</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
 
@@ -532,7 +569,7 @@
                             </tr>
                                     <tr>
                                         <td class="col-md-2" colspan="2">
-                                            <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/draggable.directive.ts:61</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/draggable.directive.ts:74</a></div>
                                         </td>
                                     </tr>
                         </tbody>
@@ -545,6 +582,8 @@
                                     <code>validateDrag</code>
                                 </td>
                                 <td class="col-md-10">
+                                    <div><p>Allow custom behaviour to control when the element is dragged</p>
+</div>
                                       <p>
                                         <em>Type:</em>    <code><a href="../miscellaneous/typealiases.html#ValidateDrag" target="_self" >ValidateDrag</a></code>
 
@@ -553,7 +592,7 @@
                             </tr>
                                     <tr>
                                         <td class="col-md-2" colspan="2">
-                                            <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/draggable.directive.ts:63</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="79" class="link-to-prism">src/draggable.directive.ts:79</a></div>
                                         </td>
                                     </tr>
                         </tbody>
@@ -570,13 +609,15 @@
                                     <code>dragEnd</code>
                                 </td>
                                 <td class="col-md-10">
-                                    <em><code>$event</code> type:</em>    <code><a href="../interfaces/Coordinates.html" target="_self" >EventEmitter&lt;Coordinates&gt;</a></code>
+                                    <div><p>Called after the element is dragged</p>
+</div>
+                                    <em><code>$event</code> type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
 
                                 </td>
                             </tr>
                                     <tr>
                                         <td class="col-md-2" colspan="2">
-                                            <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/draggable.directive.ts:74</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/draggable.directive.ts:105</a></div>
                                         </td>
                                     </tr>
                         </tbody>
@@ -589,13 +630,36 @@
                                     <code>dragging</code>
                                 </td>
                                 <td class="col-md-10">
-                                    <em><code>$event</code> type:</em>    <code><a href="../interfaces/Coordinates.html" target="_self" >EventEmitter&lt;Coordinates&gt;</a></code>
+                                    <div><p>Called when the element is being dragged</p>
+</div>
+                                    <em><code>$event</code> type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
 
                                 </td>
                             </tr>
                                     <tr>
                                         <td class="col-md-2" colspan="2">
-                                            <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/draggable.directive.ts:71</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/draggable.directive.ts:100</a></div>
+                                        </td>
+                                    </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-2">
+                                    <a name="dragPointerDown"></a>
+                                    <code>dragPointerDown</code>
+                                </td>
+                                <td class="col-md-10">
+                                    <div><p>Called when the element can be dragged along one axis and has the mouse or pointer device pressed on it</p>
+</div>
+                                    <em><code>$event</code> type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                                </td>
+                            </tr>
+                                    <tr>
+                                        <td class="col-md-2" colspan="2">
+                                            <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/draggable.directive.ts:89</a></div>
                                         </td>
                                     </tr>
                         </tbody>
@@ -608,13 +672,16 @@
                                     <code>dragStart</code>
                                 </td>
                                 <td class="col-md-10">
-                                    <em><code>$event</code> type:</em>    <code><a href="../interfaces/Coordinates.html" target="_self" >EventEmitter&lt;Coordinates&gt;</a></code>
+                                    <div><p>Called when the element has started to be dragged.
+Only called after at least one mouse or touch move event</p>
+</div>
+                                    <em><code>$event</code> type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
 
                                 </td>
                             </tr>
                                     <tr>
                                         <td class="col-md-2" colspan="2">
-                                            <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/draggable.directive.ts:68</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/draggable.directive.ts:95</a></div>
                                         </td>
                                     </tr>
                         </tbody>
@@ -623,143 +690,13 @@
 
 
 
-            <section>
-                
-                    <h3 id="methods">
-                        Methods
-                    </h3>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="ngOnChanges"></a>
-                                    <span class="name"><b> ngOnChanges</b><a href="#ngOnChanges"><span class="fa fa-link"></span></a></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>ngOnChanges(changes: <a href="https://angular.io/docs/ts/latest/api/core/index/SimpleChanges-interface.html" target="_blank">SimpleChanges</a>)</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="226" class="link-to-prism">src/draggable.directive.ts:226</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                                <b>Parameters :</b>
-                                                <table class="params">
-                                                    <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Type</td>
-                                                            <td>Optional</td>
-                                                            <td>Description</td>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                            <tr>
-                                                              <td>changes</td>
-                                                              <td>
-                                                                      <code><a href="https://angular.io/docs/ts/latest/api/core/index/SimpleChanges-interface.html" target="_blank" >SimpleChanges</a></code>
-                                                              </td>
-                                                              <td>
-                                                              </td>
-                                                              <td></td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>
-                                        </div>
-                                        <div>
-                                        </div>
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                            <div class="io-description">
-                                                
-                                            </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="ngOnDestroy"></a>
-                                    <span class="name"><b> ngOnDestroy</b><a href="#ngOnDestroy"><span class="fa fa-link"></span></a></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>ngOnDestroy()</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="232" class="link-to-prism">src/draggable.directive.ts:232</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="ngOnInit"></a>
-                                    <span class="name"><b> ngOnInit</b><a href="#ngOnInit"><span class="fa fa-link"></span></a></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>ngOnInit()</code>
-                                </td>
-                            </tr>
-            
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="113" class="link-to-prism">src/draggable.directive.ts:113</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-            </section>
+
 
 
     </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="source">
+    <div class="tab-pane fade tab-source-code" id="c-source">
         <pre class="line-numbers"><code class="language-typescript">import {
   Directive,
   OnInit,
@@ -775,14 +712,15 @@
 } from &#x27;@angular/core&#x27;;
 import { Subject } from &#x27;rxjs/Subject&#x27;;
 import { Observable } from &#x27;rxjs/Observable&#x27;;
-import &#x27;rxjs/add/observable/merge&#x27;;
-import &#x27;rxjs/add/operator/map&#x27;;
-import &#x27;rxjs/add/operator/mergeMap&#x27;;
-import &#x27;rxjs/add/operator/takeUntil&#x27;;
-import &#x27;rxjs/add/operator/take&#x27;;
-import &#x27;rxjs/add/operator/takeLast&#x27;;
-import &#x27;rxjs/add/operator/pairwise&#x27;;
-import &#x27;rxjs/add/operator/share&#x27;;
+import { merge } from &#x27;rxjs/observable/merge&#x27;;
+import { map } from &#x27;rxjs/operators/map&#x27;;
+import { mergeMap } from &#x27;rxjs/operators/mergeMap&#x27;;
+import { takeUntil } from &#x27;rxjs/operators/takeUntil&#x27;;
+import { take } from &#x27;rxjs/operators/take&#x27;;
+import { takeLast } from &#x27;rxjs/operators/takeLast&#x27;;
+import { pairwise } from &#x27;rxjs/operators/pairwise&#x27;;
+import { share } from &#x27;rxjs/operators/share&#x27;;
+import { filter } from &#x27;rxjs/operators/filter&#x27;;
 import { DraggableHelper } from &#x27;./draggable-helper.provider&#x27;;
 
 export interface Coordinates {
@@ -814,26 +752,56 @@ const MOVE_CURSOR: string &#x3D; &#x27;move&#x27;;
   selector: &#x27;[mwlDraggable]&#x27;
 })
 export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
+  /**
+   * an object of data you can pass to the drop event
+   */
   @Input() dropData: any;
 
+  /**
+   * The axis along which the element is draggable
+   */
   @Input() dragAxis: DragAxis &#x3D; { x: true, y: true };
 
+  /**
+   * Snap all drags to an x / y grid
+   */
   @Input() dragSnapGrid: SnapGrid &#x3D; {};
 
+  /**
+   * Show a ghost element that shows the drag when dragging
+   */
   @Input() ghostDragEnabled: boolean &#x3D; true;
 
+  /**
+   * Allow custom behaviour to control when the element is dragged
+   */
   @Input() validateDrag: ValidateDrag;
 
+  /**
+   * The cursor to use when dragging the element
+   */
   @Input() dragCursor &#x3D; MOVE_CURSOR;
 
-  @Output()
-  dragStart: EventEmitter&lt;Coordinates&gt; &#x3D; new EventEmitter&lt;Coordinates&gt;();
+  /**
+   * Called when the element can be dragged along one axis and has the mouse or pointer device pressed on it
+   */
+  @Output() dragPointerDown &#x3D; new EventEmitter&lt;Coordinates&gt;();
 
-  @Output()
-  dragging: EventEmitter&lt;Coordinates&gt; &#x3D; new EventEmitter&lt;Coordinates&gt;();
+  /**
+   * Called when the element has started to be dragged.
+   * Only called after at least one mouse or touch move event
+   */
+  @Output() dragStart &#x3D; new EventEmitter&lt;Coordinates&gt;();
 
-  @Output()
-  dragEnd: EventEmitter&lt;Coordinates&gt; &#x3D; new EventEmitter&lt;Coordinates&gt;();
+  /**
+   * Called when the element is being dragged
+   */
+  @Output() dragging &#x3D; new EventEmitter&lt;Coordinates&gt;();
+
+  /**
+   * Called after the element is dragged
+   */
+  @Output() dragEnd &#x3D; new EventEmitter&lt;Coordinates&gt;();
 
   /**
    * @hidden
@@ -876,95 +844,112 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     this.checkEventListeners();
 
     const pointerDrag: Observable&lt;any&gt; &#x3D; this.pointerDown
-      .filter(() &#x3D;&gt; this.canDrag())
-      .flatMap((pointerDownEvent: PointerEvent) &#x3D;&gt; {
-        pointerDownEvent.event.preventDefault();
+      .pipe(filter(() &#x3D;&gt; this.canDrag()))
+      .pipe(
+        mergeMap((pointerDownEvent: PointerEvent) &#x3D;&gt; {
+          const currentDrag: Subject&lt;any&gt; &#x3D; new Subject();
 
-        this.zone.run(() &#x3D;&gt; {
-          this.dragStart.next({ x: 0, y: 0 });
-        });
-
-        this.setCursor(this.dragCursor);
-
-        const currentDrag: Subject&lt;any&gt; &#x3D; new Subject();
-
-        this.draggableHelper.currentDrag.next(currentDrag);
-
-        const pointerMove: Observable&lt;Coordinates&gt; &#x3D; this.pointerMove
-          .map((pointerMoveEvent: PointerEvent) &#x3D;&gt; {
-            pointerMoveEvent.event.preventDefault();
-
-            return {
-              currentDrag,
-              x: pointerMoveEvent.clientX - pointerDownEvent.clientX,
-              y: pointerMoveEvent.clientY - pointerDownEvent.clientY,
-              clientX: pointerMoveEvent.clientX,
-              clientY: pointerMoveEvent.clientY
-            };
-          })
-          .map((moveData: Coordinates) &#x3D;&gt; {
-            if (this.dragSnapGrid.x) {
-              moveData.x &#x3D;
-                Math.floor(moveData.x / this.dragSnapGrid.x) *
-                this.dragSnapGrid.x;
-            }
-
-            if (this.dragSnapGrid.y) {
-              moveData.y &#x3D;
-                Math.floor(moveData.y / this.dragSnapGrid.y) *
-                this.dragSnapGrid.y;
-            }
-
-            return moveData;
-          })
-          .map((moveData: Coordinates) &#x3D;&gt; {
-            if (!this.dragAxis.x) {
-              moveData.x &#x3D; 0;
-            }
-
-            if (!this.dragAxis.y) {
-              moveData.y &#x3D; 0;
-            }
-
-            return moveData;
-          })
-          .filter(
-            ({ x, y }) &#x3D;&gt; !this.validateDrag || this.validateDrag({ x, y })
-          )
-          .takeUntil(Observable.merge(this.pointerUp, this.pointerDown));
-
-        pointerMove.takeLast(1).subscribe(({ x, y }) &#x3D;&gt; {
           this.zone.run(() &#x3D;&gt; {
-            this.dragEnd.next({ x, y });
+            this.dragPointerDown.next({ x: 0, y: 0 });
           });
-          currentDrag.complete();
-          this.setCssTransform(null);
-          if (this.ghostDragEnabled) {
-            this.renderer.setStyle(
-              this.element.nativeElement,
-              &#x27;pointerEvents&#x27;,
-              null
-            );
-          }
-        });
 
-        this.pointerMove.next(pointerDownEvent);
+          const pointerMove: Observable&lt;Coordinates&gt; &#x3D; this.pointerMove
+            .pipe(
+              map((pointerMoveEvent: PointerEvent) &#x3D;&gt; {
+                pointerMoveEvent.event.preventDefault();
 
-        return pointerMove;
-      })
-      .share();
+                return {
+                  currentDrag,
+                  x: pointerMoveEvent.clientX - pointerDownEvent.clientX,
+                  y: pointerMoveEvent.clientY - pointerDownEvent.clientY,
+                  clientX: pointerMoveEvent.clientX,
+                  clientY: pointerMoveEvent.clientY
+                };
+              })
+            )
+            .pipe(
+              map((moveData: Coordinates) &#x3D;&gt; {
+                if (this.dragSnapGrid.x) {
+                  moveData.x &#x3D;
+                    Math.floor(moveData.x / this.dragSnapGrid.x) *
+                    this.dragSnapGrid.x;
+                }
 
-    Observable.merge(
-      pointerDrag.take(1).map(value &#x3D;&gt; [, value]),
-      pointerDrag.pairwise()
+                if (this.dragSnapGrid.y) {
+                  moveData.y &#x3D;
+                    Math.floor(moveData.y / this.dragSnapGrid.y) *
+                    this.dragSnapGrid.y;
+                }
+
+                return moveData;
+              })
+            )
+            .pipe(
+              map((moveData: Coordinates) &#x3D;&gt; {
+                if (!this.dragAxis.x) {
+                  moveData.x &#x3D; 0;
+                }
+
+                if (!this.dragAxis.y) {
+                  moveData.y &#x3D; 0;
+                }
+
+                return moveData;
+              })
+            )
+            .pipe(
+              filter(
+                ({ x, y }) &#x3D;&gt; !this.validateDrag || this.validateDrag({ x, y })
+              )
+            )
+            .pipe(takeUntil(merge(this.pointerUp, this.pointerDown)))
+            .pipe(share());
+
+          pointerMove.pipe(take(1)).subscribe(() &#x3D;&gt; {
+            pointerDownEvent.event.preventDefault();
+
+            this.zone.run(() &#x3D;&gt; {
+              this.dragStart.next({ x: 0, y: 0 });
+            });
+
+            this.setCursor(this.dragCursor);
+
+            this.draggableHelper.currentDrag.next(currentDrag);
+          });
+
+          pointerMove.pipe(takeLast(1)).subscribe(({ x, y }) &#x3D;&gt; {
+            this.zone.run(() &#x3D;&gt; {
+              this.dragEnd.next({ x, y });
+            });
+            currentDrag.complete();
+            this.setCssTransform(null);
+            if (this.ghostDragEnabled) {
+              this.renderer.setStyle(
+                this.element.nativeElement,
+                &#x27;pointerEvents&#x27;,
+                null
+              );
+            }
+          });
+
+          return pointerMove;
+        })
+      )
+      .pipe(share());
+
+    merge(
+      pointerDrag.pipe(take(1)).pipe(map(value &#x3D;&gt; [, value])),
+      pointerDrag.pipe(pairwise())
     )
-      .filter(([previous, next]) &#x3D;&gt; {
-        if (!previous) {
-          return true;
-        }
-        return previous.x !&#x3D;&#x3D; next.x || previous.y !&#x3D;&#x3D; next.y;
-      })
-      .map(([previous, next]) &#x3D;&gt; next)
+      .pipe(
+        filter(([previous, next]) &#x3D;&gt; {
+          if (!previous) {
+            return true;
+          }
+          return previous.x !&#x3D;&#x3D; next.x || previous.y !&#x3D;&#x3D; next.y;
+        })
+      )
+      .pipe(map(([previous, next]) &#x3D;&gt; next))
       .subscribe(({ x, y, currentDrag, clientX, clientY }) &#x3D;&gt; {
         this.zone.run(() &#x3D;&gt; {
           this.dragging.next({ x, y });
@@ -1140,25 +1125,22 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     this.setCursor(null);
   }
 
-  private setCssTransform(value: string): void {
+  private setCssTransform(value: string | null): void {
     if (this.ghostDragEnabled) {
-      this.renderer.setStyle(this.element.nativeElement, &#x27;transform&#x27;, value);
-      this.renderer.setStyle(
-        this.element.nativeElement,
+      const transformAttributes &#x3D; [
+        &#x27;transform&#x27;,
         &#x27;-webkit-transform&#x27;,
-        value
-      );
-      this.renderer.setStyle(
-        this.element.nativeElement,
         &#x27;-ms-transform&#x27;,
-        value
-      );
-      this.renderer.setStyle(
-        this.element.nativeElement,
         &#x27;-moz-transform&#x27;,
-        value
-      );
-      this.renderer.setStyle(this.element.nativeElement, &#x27;-o-transform&#x27;, value);
+        &#x27;-o-transform&#x27;
+      ];
+      transformAttributes.forEach(transformAttribute &#x3D;&gt; {
+        this.renderer.setStyle(
+          this.element.nativeElement,
+          transformAttribute,
+          value
+        );
+      });
     }
   }
 
@@ -1166,14 +1148,14 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     return this.dragAxis.x || this.dragAxis.y;
   }
 
-  private setCursor(value: string): void {
+  private setCursor(value: string | null): void {
     this.renderer.setStyle(this.element.nativeElement, &#x27;cursor&#x27;, value);
   }
 
   private unsubscribeEventListeners(): void {
-    Object.keys(this.eventListenerSubscriptions).forEach((type: string) &#x3D;&gt; {
-      this.eventListenerSubscriptions[type]();
-      delete this.eventListenerSubscriptions[type];
+    Object.keys(this.eventListenerSubscriptions).forEach(type &#x3D;&gt; {
+      (this as any).eventListenerSubscriptions[type]();
+      delete (this as any).eventListenerSubscriptions[type];
     });
   }
 }
@@ -1181,6 +1163,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     </div>
 
 </div>
+
 
 
 

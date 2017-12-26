@@ -48,14 +48,14 @@
                                   <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./changelog.html"
-                                        >
+                                        <a href="./changelog.html"
+                                    >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
                                 <li class="link">
-                                    <a href="./license.html"
-                                        >
+                                        <a href="./license.html"
+                                    >
                                         <span class="fa fa-file-text-o"></span>LICENSE
                                     </a>
                                 </li>
@@ -63,6 +63,24 @@
                     </li>
             
             
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <div class="menu-toggler linked" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-down"></span>
+                            </div>
+                        </a>
+                        <ul class="links collapse "
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="./modules/DragAndDropModule.html" >DragAndDropModule</a>
+                                </li>
+                        </ul>
+                    </li>
             
             
                     <li class="chapter">
@@ -84,6 +102,7 @@
                                 </li>
                         </ul>
                     </li>
+            
             
             
             
@@ -187,14 +206,14 @@
                                          <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./changelog.html"
-                                               >
+                                               <a href="./changelog.html"
+                                           >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
                                        <li class="link">
-                                           <a href="./license.html"
-                                               >
+                                               <a href="./license.html"
+                                           >
                                                <span class="fa fa-file-text-o"></span>LICENSE
                                            </a>
                                        </li>
@@ -202,6 +221,24 @@
                            </li>
                    
                    
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <div class="menu-toggler linked" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-down"></span>
+                                   </div>
+                               </a>
+                               <ul class="links collapse "
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="./modules/DragAndDropModule.html" >DragAndDropModule</a>
+                                       </li>
+                               </ul>
+                           </li>
                    
                    
                            <li class="chapter">
@@ -223,6 +260,7 @@
                                        </li>
                                </ul>
                            </li>
+                   
                    
                    
                    
@@ -297,6 +335,33 @@
 
 <h1 id="change-log">Change Log</h1>
 <p>All notable changes to this project will be documented in this file. See <a href="https://github.com/conventional-changelog/standard-version">standard-version</a> for commit guidelines.</p>
+<p><a name="2.0.0"></a></p>
+<h1 id="-2-0-0-https-github-com-mattlewis92-angular-draggable-droppable-compare-v1-1-1-v2-0-0-2017-12-26-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.1.1...v2.0.0">2.0.0</a> (2017-12-26)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>only call drag start and end outputs when the element is actually dragged (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/45c6b5f">45c6b5f</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/21">#21</a> <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/20">#20</a></li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li>upgrade to angular 5 (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/4159ce2">4159ce2</a>)</li>
+<li>use lettable rxjs operators (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/9fca12a">9fca12a</a>)</li>
+<li>use ng-packagr for building the package (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/57dd436">57dd436</a>)</li>
+<li><strong>dragPointerDown:</strong> add a new output to repliate the old dragStart behaviour (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/4a58c61">4a58c61</a>)</li>
+</ul>
+<h3 id="breaking-changes">BREAKING CHANGES</h3>
+<ul>
+<li>The UMD module path has changed from
+<code>angular-draggable-droppable/dist/umd/angular-draggable-droppable.js</code> to
+<code>angular-draggable-droppable/bundles/angular-draggable-droppable.umd.js</code>. System.js users will need
+to update their config.</li>
+<li>rxjs operators will now no longer be added to the observable prototype. Also rxjs<blockquote>
+<p>= 5.5.x or higher is required</p>
+</blockquote>
+</li>
+<li>Angular 5 or higher is now required to use this package</li>
+<li>drag start and end events are now only called when the element is actually dragged,
+use regular mousedown and mouseup events to get the old behaviour</li>
+</ul>
 <p><a name="1.1.1"></a></p>
 <h2 id="-1-1-1-https-github-com-mattlewis92-angular-draggable-droppable-compare-v1-1-0-v1-1-1-2017-10-21-"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.1.0...v1.1.1">1.1.1</a> (2017-10-21)</h2>
 <h3 id="bug-fixes">Bug Fixes</h3>
@@ -458,6 +523,7 @@
 <li><strong>ghostDragEnabled:</strong> add option to disable the ghost dragging effect (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/709327c">709327c</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/3">#3</a></li>
 <li><strong>snapGrid:</strong> implement draggable snap grids (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/16a3df8">16a3df8</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/4">#4</a></li>
 </ul>
+
 
 
 
