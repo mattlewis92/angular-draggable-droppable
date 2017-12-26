@@ -380,23 +380,20 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
   private setCssTransform(value: string | null): void {
     if (this.ghostDragEnabled) {
-      this.renderer.setStyle(this.element.nativeElement, 'transform', value);
-      this.renderer.setStyle(
-        this.element.nativeElement,
+      const transformAttributes = [
+        'transform',
         '-webkit-transform',
-        value
-      );
-      this.renderer.setStyle(
-        this.element.nativeElement,
         '-ms-transform',
-        value
-      );
-      this.renderer.setStyle(
-        this.element.nativeElement,
         '-moz-transform',
-        value
-      );
-      this.renderer.setStyle(this.element.nativeElement, '-o-transform', value);
+        '-o-transform'
+      ];
+      transformAttributes.forEach(transformAttribute => {
+        this.renderer.setStyle(
+          this.element.nativeElement,
+          transformAttribute,
+          value
+        );
+      });
     }
   }
 
