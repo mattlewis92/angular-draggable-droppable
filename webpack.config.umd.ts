@@ -6,7 +6,7 @@ const webpackRxjsExternals = require('webpack-rxjs-externals');
 export default {
   entry: './src/index.ts',
   output: {
-    path: path.join(__dirname, 'dist', 'umd'),
+    path: path.join(__dirname, 'dist', 'dist', 'umd'),
     filename: './angular-draggable-droppable.js',
     libraryTarget: 'umd',
     library: 'angularDraggableDroppable'
