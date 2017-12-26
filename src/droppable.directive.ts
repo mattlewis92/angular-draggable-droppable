@@ -38,13 +38,25 @@ export interface DropData {
   selector: '[mwlDroppable]'
 })
 export class DroppableDirective implements OnInit, OnDestroy {
-  @Output() dragEnter: EventEmitter<DropData> = new EventEmitter<DropData>();
+  /**
+   * Called when a draggable element starts overlapping the element
+   */
+  @Output() dragEnter = new EventEmitter<DropData>();
 
-  @Output() dragLeave: EventEmitter<DropData> = new EventEmitter<DropData>();
+  /**
+   * Called when a draggable element stops overlapping the element
+   */
+  @Output() dragLeave = new EventEmitter<DropData>();
 
-  @Output() dragOver: EventEmitter<DropData> = new EventEmitter<DropData>();
+  /**
+   * Called when a draggable element is moved over the element
+   */
+  @Output() dragOver = new EventEmitter<DropData>();
 
-  @Output() drop: EventEmitter<DropData> = new EventEmitter<DropData>();
+  /**
+   * Called when a draggable element is dropped on this element
+   */
+  @Output() drop = new EventEmitter<DropData>();
 
   currentDragSubscription: Subscription;
 

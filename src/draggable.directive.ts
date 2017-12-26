@@ -53,24 +53,55 @@ const MOVE_CURSOR: string = 'move';
   selector: '[mwlDraggable]'
 })
 export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
+  /**
+   * an object of data you can pass to the drop event
+   */
   @Input() dropData: any;
 
+  /**
+   * The axis along which the element is draggable
+   */
   @Input() dragAxis: DragAxis = { x: true, y: true };
 
+  /**
+   * Snap all drags to an x / y grid
+   */
   @Input() dragSnapGrid: SnapGrid = {};
 
+  /**
+   * Show a ghost element that shows the drag when dragging
+   */
   @Input() ghostDragEnabled: boolean = true;
 
+  /**
+   * Allow custom behaviour to control when the element is dragged
+   */
   @Input() validateDrag: ValidateDrag;
 
+  /**
+   * The cursor to use when dragging the element
+   */
   @Input() dragCursor = MOVE_CURSOR;
 
+  /**
+   * Called when the element can be dragged along one axis and has the mouse or pointer device pressed on it
+   */
   @Output() dragPointerDown = new EventEmitter<Coordinates>();
 
+  /**
+   * Called when the element has started to be dragged.
+   * Only called after at least one mouse or touch move event
+   */
   @Output() dragStart = new EventEmitter<Coordinates>();
 
+  /**
+   * Called when the element is being dragged
+   */
   @Output() dragging = new EventEmitter<Coordinates>();
 
+  /**
+   * Called after the element is dragged
+   */
   @Output() dragEnd = new EventEmitter<Coordinates>();
 
   /**
