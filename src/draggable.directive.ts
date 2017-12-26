@@ -65,17 +65,13 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
   @Input() dragCursor = MOVE_CURSOR;
 
-  @Output()
-  dragPointerDown: EventEmitter<Coordinates> = new EventEmitter<Coordinates>();
+  @Output() dragPointerDown = new EventEmitter<Coordinates>();
 
-  @Output()
-  dragStart: EventEmitter<Coordinates> = new EventEmitter<Coordinates>();
+  @Output() dragStart = new EventEmitter<Coordinates>();
 
-  @Output()
-  dragging: EventEmitter<Coordinates> = new EventEmitter<Coordinates>();
+  @Output() dragging = new EventEmitter<Coordinates>();
 
-  @Output()
-  dragEnd: EventEmitter<Coordinates> = new EventEmitter<Coordinates>();
+  @Output() dragEnd = new EventEmitter<Coordinates>();
 
   /**
    * @hidden
