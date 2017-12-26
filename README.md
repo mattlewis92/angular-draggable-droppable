@@ -67,14 +67,6 @@ class DemoApp {
 
 You may also find it useful to view the [demo source](https://github.com/mattlewis92/angular-draggable-droppable/blob/master/demo/demo.component.ts).
 
-### Usage without a module bundler
-```
-<script src="node_modules/dist/umd/angular-draggable-droppable/angular-draggable-droppable.js"></script>
-<script>
-    // everything is exported angularDraggableDroppable namespace
-</script>
-```
-
 ## Documentation
 All documentation is auto-generated from the source and can be viewed here:
 https://mattlewis92.github.io/angular-draggable-droppable/docs/
