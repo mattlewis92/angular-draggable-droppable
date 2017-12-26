@@ -66,6 +66,9 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   @Input() dragCursor = MOVE_CURSOR;
 
   @Output()
+  dragPointerDown: EventEmitter<Coordinates> = new EventEmitter<Coordinates>();
+
+  @Output()
   dragStart: EventEmitter<Coordinates> = new EventEmitter<Coordinates>();
 
   @Output()
@@ -119,6 +122,10 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
       .pipe(
         mergeMap((pointerDownEvent: PointerEvent) => {
           const currentDrag: Subject<any> = new Subject();
+
+          this.zone.run(() => {
+            this.dragPointerDown.next({ x: 0, y: 0 });
+          });
 
           const pointerMove: Observable<Coordinates> = this.pointerMove
             .pipe(

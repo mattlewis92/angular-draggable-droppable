@@ -16,6 +16,7 @@ describe('draggable directive', () => {
         [ghostDragEnabled]="ghostDragEnabled"
         [validateDrag]="validateDrag"
         [dragCursor]="dragCursor"
+        (dragPointerDown)="dragPointerDown($event)"
         (dragStart)="dragStart($event)"
         (dragging)="dragging($event)"
         (dragEnd)="dragEnd($event)">
@@ -24,9 +25,10 @@ describe('draggable directive', () => {
   })
   class TestComponent {
     @ViewChild(DraggableDirective) draggable: DraggableDirective;
-    dragStart: sinon.SinonSpy = sinon.spy();
-    dragging: sinon.SinonSpy = sinon.spy();
-    dragEnd: sinon.SinonSpy = sinon.spy();
+    dragPointerDown = sinon.spy();
+    dragStart = sinon.spy();
+    dragging = sinon.spy();
+    dragEnd = sinon.spy();
     dragAxis: any = { x: true, y: true };
     dragSnapGrid: any = {};
     ghostDragEnabled: boolean = true;
@@ -58,6 +60,10 @@ describe('draggable directive', () => {
     const draggableElement: HTMLElement =
       fixture.componentInstance.draggable.element.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    expect(fixture.componentInstance.dragPointerDown).to.have.been.calledWith({
+      x: 0,
+      y: 0
+    });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
     expect(fixture.componentInstance.dragStart).to.have.been.calledWith({
       x: 0,
@@ -537,6 +543,7 @@ describe('draggable directive', () => {
     const draggableElement: HTMLElement =
       fixture.componentInstance.draggable.element.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    expect(fixture.componentInstance.dragPointerDown).to.have.been.calledOnce;
     expect(fixture.componentInstance.dragStart).not.to.have.been.called;
     expect(fixture.componentInstance.dragging).not.to.have.been.called;
     triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 10 });
@@ -551,6 +558,7 @@ describe('draggable directive', () => {
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
     triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 8 });
     sinon.assert.callOrder(
+      fixture.componentInstance.dragPointerDown,
       fixture.componentInstance.dragStart,
       fixture.componentInstance.dragging,
       fixture.componentInstance.dragEnd
