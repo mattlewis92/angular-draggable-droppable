@@ -1,4 +1,6913 @@
 var COMPODOC_SEARCH_INDEX = {
-    "index": {"version":"2.1.6","fields":["title","body"],"fieldVectors":[["title/interfaces/Coordinates.html",[0,0.619,1,1.311]],["body/interfaces/Coordinates.html",[0,0.718,1,1.638,2,0.47,3,0.391,4,0.324,5,0.564,6,0.266,7,0.929,8,2.629,9,2.629,10,1.933,11,0.824,12,0.074,13,0.929,14,1.078,15,1.078,16,1.187,17,0.535,18,0.929,19,0.929,20,1.383,21,1.269,22,1.522,23,2.095,24,0.929,25,1.383,26,0.929,27,1.383,28,0.324,29,1.564,30,0.564,31,0.824,32,0.564,33,1.123,34,0.839,35,0.564,36,0.564,37,0.564,38,0.564,39,0.839,40,0.839,41,0.839,42,0.839,43,0.839,44,0.839,45,0.564,46,0.564,47,0.839,48,0.839,49,0.929,50,0.564,51,0.988,52,0.535,53,0.47,54,1.98,55,1.434,56,1.733,57,1.123,58,1.186,59,2.266,60,1.611,61,1.611,62,1.455,63,2.438,64,2.579,65,1.733,66,1.123,67,1.186,68,0.646,69,0.564,70,0.681,71,0.564,72,0.681,73,0.564,74,0.839,75,0.681,76,0.839,77,0.391,78,0.775,79,1.123,80,1.383,81,1.564,82,1.376,83,0.681,84,1.343,85,0.681,86,0.681,87,1.383,88,0.681,89,0.681,90,0.681,91,0.839,92,0.681,93,0.839,94,1.123,95,0.47,96,0.839,97,1.269,98,1.383,99,1.123,100,0.681,101,0.681,102,0.839,103,0.681,104,1.509,105,0.266,106,0.681,107,0.681,108,0.681,109,0.681,110,2.048,111,0.839,112,1.765,113,0.839,114,2.125,115,0.839,116,1.383,117,2.267,118,1.123,119,1.123,120,1.383,121,1.383,122,1.383,123,1.383,124,1.383,125,1.383,126,0.564,127,0.839,128,0.839,129,0.47,130,0.564,131,1.383,132,0.839,133,1.383,134,0.839,135,1.383,136,1.638,137,0.839,138,1.765,139,1.376,140,0.839,141,2.579,142,0.839,143,0.839,144,0.839,145,1.444,146,1.383,147,0.839,148,1.383,149,0.839,150,1.383,151,1.765,152,1.383,153,0.839,154,1.765,155,1.383,156,0.839,157,1.383,158,1.383,159,1.383,160,1.383,161,0.839,162,1.383,163,0.839,164,0.839,165,0.839,166,1.383,167,0.839,168,0.839,169,0.839,170,0.839,171,0.839,172,1.765,173,1.765,174,2.579,175,1.765,176,0.839,177,1.434,178,0.839,179,0.839,180,1.765,181,0.839,182,0.839,183,0.839,184,0.839,185,0.839,186,0.839,187,0.564,188,0.839,189,0.839,190,0.839,191,0.839,192,0.839,193,0.839,194,0.839,195,0.839,196,0.564,197,1.383,198,0.839,199,0.839,200,0.839,201,0.839,202,2.048,203,1.765,204,0.839,205,0.839,206,0.839,207,2.794,208,0.839,209,0.839,210,1.269,211,0.839,212,0.839,213,0.839,214,0.839,215,1.383,216,0.839,217,0.839,218,0.839,219,0.839,220,0.839,221,0.839,222,2.266,223,1.383,224,1.383,225,0.839,226,0.839,227,1.383,228,1.383,229,1.383,230,0.839,231,1.765,232,1.383,233,0.839,234,2.266,235,1.383,236,0.839,237,0.839,238,0.839,239,0.839,240,0.839,241,0.839,242,0.839,243,0.839,244,0.839,245,0.839,246,0.839,247,1.383,248,2.266,249,0.839,250,0.839,251,0.839,252,0.839,253,0.839,254,0.839,255,0.839,256,0.839,257,0.839,258,1.383,259,0.026,260,0.026]],["title/modules/DragAndDropModule.html",[261,0.911,262,1.093]],["body/modules/DragAndDropModule.html",[2,1.44,3,1.2,4,0.995,12,0.072,16,1.346,28,0.995,51,1.743,52,0.995,53,1.44,54,2.719,71,1.728,72,2.893,145,1.44,259,0.059,260,0.059,261,1.2,262,1.874,263,3.304,264,3.304,265,3.112,266,2.893,267,3.347,268,4,269,3.304,270,3.304,271,3.304,272,2.571,273,2.571]],["title/interfaces/DragAxis.html",[0,0.619,55,1.585]],["body/interfaces/DragAxis.html",[0,0.718,1,1.522,2,0.47,3,0.391,4,0.324,5,0.564,6,0.266,7,0.929,8,2.629,9,2.629,10,1.638,11,0.824,12,0.074,13,0.929,16,1.187,17,0.535,18,0.929,19,0.929,20,1.383,21,1.269,22,1.522,23,2.095,24,0.929,25,1.383,26,0.929,27,1.383,28,0.324,29,1.564,30,0.564,31,0.824,32,0.564,33,1.123,34,0.839,35,0.564,36,0.564,37,0.564,38,0.564,39,0.839,40,0.839,41,0.839,42,0.839,43,0.839,44,0.839,45,0.564,46,0.564,47,0.839,48,0.839,49,0.929,50,0.564,51,0.988,52,0.535,53,0.47,54,1.98,55,1.663,56,1.982,57,1.123,58,1.186,59,2.266,60,1.611,61,1.611,62,1.455,63,2.438,64,2.579,65,1.733,66,1.123,67,1.186,68,0.646,69,0.564,70,0.681,71,0.564,72,0.681,73,0.564,74,0.839,75,0.681,76,0.839,77,0.391,78,0.775,79,1.123,80,1.383,81,1.564,82,1.376,83,0.681,84,1.343,85,0.681,86,0.681,87,1.383,88,0.681,89,0.681,90,0.681,91,0.839,92,0.681,93,0.839,94,1.123,95,0.47,96,0.839,97,1.269,98,1.383,99,1.123,100,0.681,101,0.681,102,0.839,103,0.681,104,1.509,105,0.266,106,0.681,107,0.681,108,0.681,109,0.681,110,2.048,111,0.839,112,1.765,113,0.839,114,2.125,115,0.839,116,1.383,117,2.267,118,1.123,119,1.123,120,1.383,121,1.383,122,1.383,123,1.383,124,1.383,125,1.383,126,0.564,127,0.839,128,0.839,129,0.47,130,0.564,131,1.383,132,0.839,133,1.383,134,0.839,135,1.383,136,1.638,137,0.839,138,1.765,139,1.376,140,0.839,141,2.579,142,0.839,143,0.839,144,0.839,145,1.444,146,1.383,147,0.839,148,1.383,149,0.839,150,1.383,151,1.765,152,1.383,153,0.839,154,1.765,155,1.383,156,0.839,157,1.383,158,1.383,159,1.383,160,1.383,161,0.839,162,1.383,163,0.839,164,0.839,165,0.839,166,1.383,167,0.839,168,0.839,169,0.839,170,0.839,171,0.839,172,1.765,173,1.765,174,2.579,175,1.765,176,0.839,177,1.434,178,0.839,179,0.839,180,1.765,181,0.839,182,0.839,183,0.839,184,0.839,185,0.839,186,0.839,187,0.564,188,0.839,189,0.839,190,0.839,191,0.839,192,0.839,193,0.839,194,0.839,195,0.839,196,0.564,197,1.383,198,0.839,199,0.839,200,0.839,201,0.839,202,2.048,203,1.765,204,0.839,205,0.839,206,0.839,207,2.794,208,0.839,209,0.839,210,1.269,211,0.839,212,0.839,213,0.839,214,0.839,215,1.383,216,0.839,217,0.839,218,0.839,219,0.839,220,0.839,221,0.839,222,2.266,223,1.383,224,1.383,225,0.839,226,0.839,227,1.383,228,1.383,229,1.383,230,0.839,231,1.765,232,1.383,233,0.839,234,2.266,235,1.383,236,0.839,237,0.839,238,0.839,239,0.839,240,0.839,241,0.839,242,0.839,243,0.839,244,0.839,245,0.839,246,0.839,247,1.383,248,2.266,249,0.839,250,0.839,251,0.839,252,0.839,253,0.839,254,0.839,255,0.839,256,0.839,257,0.839,258,1.383,259,0.026,260,0.026,274,1.078,275,1.078]],["title/interfaces/DropData.html",[0,0.619,78,1.093]],["body/interfaces/DropData.html",[0,0.74,2,0.929,3,0.774,4,0.642,6,0.526,7,1.569,10,1.971,11,0.774,12,0.074,13,1.114,16,1.34,17,0.642,18,1.114,19,1.569,21,1.642,22,1.971,24,1.114,26,1.569,28,0.642,29,1.307,30,1.114,31,0.774,32,1.114,35,1.569,36,1.114,37,1.114,38,1.114,45,1.114,46,1.114,49,1.114,50,1.114,51,1.513,52,1.134,53,0.929,56,1.569,60,1.795,61,1.731,65,1.816,68,0.774,77,1.09,78,1.962,81,1.844,82,1.114,84,0.774,97,1.513,104,1.513,114,1.816,117,1.569,126,1.114,129,0.929,130,1.114,136,1.114,139,1.971,145,1.307,187,1.569,196,1.114,259,0.044,260,0.044,276,1.347,277,2.131,278,2.335,279,1.658,280,1.658,281,1.658,282,0.929,283,1.896,284,1.347,285,2.335,286,1.658,287,1.658,288,1.658,289,2.335,290,1.658,291,1.658,292,1.658,293,1.658,294,1.658,295,1.658,296,1.658,297,2.335,298,1.658,299,3.206,300,1.658,301,2.702,302,1.658,303,2.933,304,1.658,305,1.347,306,1.658,307,1.658,308,1.658,309,1.658,310,1.347,311,1.658,312,2.702,313,1.658,314,1.658,315,1.658,316,1.658,317,1.658,318,1.658,319,1.658,320,1.658,321,1.658,322,1.658,323,1.658,324,1.347,325,1.658,326,1.658]],["title/directives/DroppableDirective.html",[17,0.755,266,1.585]],["body/directives/DroppableDirective.html",[0,0.469,2,0.829,3,0.691,4,0.573,6,0.469,7,1.446,10,1.871,11,1.441,12,0.073,13,2.074,16,1.308,17,0.833,18,1.446,19,1.871,21,1.728,22,2.193,24,1.446,26,1.871,28,0.573,29,1.205,30,0.995,31,0.691,32,0.995,35,1.446,36,0.995,37,0.995,38,0.995,45,0.995,46,0.995,49,0.995,50,0.995,51,1.784,52,1.263,53,0.829,56,1.446,60,1.728,61,1.656,62,1.3,65,1.704,68,1.005,69,0.995,73,0.995,77,1.381,78,1.784,81,1.999,82,0.995,84,0.691,97,1.784,104,1.42,105,0.469,114,1.704,117,1.446,126,1.446,129,1.42,130,0.995,136,0.995,139,1.871,145,1.205,187,1.446,196,0.995,259,0.041,260,0.041,266,1.202,276,1.202,278,2.784,279,1.48,280,1.48,281,1.48,282,0.829,283,1.748,284,1.202,285,2.152,286,1.48,287,1.48,288,2.152,289,2.784,290,2.536,291,2.152,292,2.536,293,2.784,294,1.48,295,1.48,296,1.48,297,2.152,298,1.48,299,3.087,300,1.48,301,2.536,302,1.48,303,2.784,304,1.48,305,1.202,306,1.48,307,1.48,308,1.48,309,1.48,310,1.202,311,1.48,312,2.536,313,1.48,314,1.48,315,1.48,316,1.48,317,1.48,318,1.48,319,1.48,320,1.48,321,1.48,322,1.48,323,1.48,324,1.202,325,1.48,326,1.48,327,1.902,328,1.48,329,2.766,330,1.902,331,2.766,332,1.48,333,1.48,334,1.202,335,1.902,336,1.902,337,1.902,338,1.902]],["title/changelog.html",[105,0.525,339,1.345,340,2.128]],["body/changelog.html",[1,0.831,4,0.478,8,1.004,9,1.004,12,0.043,16,0.478,17,0.728,21,1.276,23,1.851,31,0.878,52,1.407,57,2.069,58,1.531,62,1.591,68,1.28,70,1.004,73,1.265,77,1.064,79,1.004,81,1.427,83,1.004,84,1.65,85,1.004,86,1.529,88,1.004,89,1.004,90,2.439,92,1.529,94,2.069,95,1.535,97,1.054,99,1.529,100,1.004,101,1.004,103,1.004,104,0.692,105,0.597,106,1.004,107,1.004,108,1.004,109,1.851,118,1.004,119,1.004,129,0.692,210,0.692,259,0.036,260,0.036,261,0.577,262,1.276,272,1.882,305,1.004,310,1.851,324,1.004,328,1.236,334,2.227,341,4.075,342,1.589,343,1.589,344,1.589,345,1.589,346,1.589,347,1.589,348,1.589,349,1.589,350,4.225,351,4.225,352,1.589,353,4.381,354,4.421,355,2.419,356,2.419,357,1.589,358,4.284,359,2.929,360,1.589,361,4.075,362,2.929,363,3.171,364,2.548,365,1.589,366,1.589,367,2.419,368,1.589,369,1.589,370,1.589,371,1.589,372,1.882,373,1.589,374,3.859,375,1.589,376,2.419,377,1.589,378,3.523,379,1.589,380,1.589,381,1.589,382,1.589,383,1.589,384,1.589,385,1.589,386,2.419,387,1.589,388,1.589,389,1.589,390,3.523,391,1.589,392,1.589,393,1.589,394,1.589,395,2.929,396,2.929,397,1.589,398,1.589,399,3.274,400,1.882,401,1.531,402,1.589,403,1.589,404,2.929,405,1.589,406,1.589,407,1.589,408,1.589,409,2.929,410,2.929,411,1.589,412,1.589,413,1.589,414,3.274,415,1.589,416,2.419,417,1.589,418,1.589,419,1.589,420,1.589,421,1.589,422,3.523,423,1.589,424,2.419,425,2.929,426,1.589,427,1.589,428,1.589,429,1.589,430,1.589,431,1.589,432,2.419,433,2.929,434,1.589,435,1.589,436,2.419,437,2.419,438,2.419,439,2.419,440,2.929,441,1.589,442,1.589,443,1.236,444,1.589,445,1.589,446,1.589,447,1.589,448,1.589,449,1.236,450,1.589,451,1.589,452,1.589,453,1.589,454,1.589,455,1.589,456,1.589,457,1.589,458,3.234,459,2.419,460,1.589,461,1.589,462,2.929,463,2.929,464,1.589,465,1.589,466,1.589,467,1.589,468,1.589,469,1.589,470,1.589,471,1.589,472,1.589,473,1.589,474,2.929,475,1.589,476,1.589,477,1.589,478,1.589,479,1.589,480,2.419,481,1.236,482,1.589,483,1.589,484,1.589,485,2.419,486,1.589,487,1.589,488,1.589,489,1.589,490,1.589,491,1.589,492,1.589,493,1.589,494,1.589,495,1.589,496,1.589,497,1.589,498,2.929,499,1.589,500,2.548,501,2.419,502,1.589,503,1.236,504,1.589,505,1.589,506,1.589,507,1.589,508,2.419,509,1.589,510,1.589,511,1.589,512,1.589,513,1.589,514,1.589,515,1.589,516,1.589,517,1.589,518,1.589,519,1.589,520,1.589,521,1.589,522,1.589,523,1.589,524,1.236,525,1.589,526,1.589,527,1.236,528,1.589,529,1.589,530,1.589,531,1.589,532,1.589,533,1.236,534,1.589,535,1.589,536,1.236,537,1.589,538,1.589,539,1.589,540,1.589]],["title/dependencies.html",[372,1.656,401,1.567]],["body/dependencies.html",[12,0.067,28,1.139,259,0.064,260,0.064,400,2.944,401,1.978,541,3.784]],["title/miscellaneous/functions.html",[282,1.306,542,0.773]],["body/miscellaneous/functions.html",[6,0.898,12,0.066,60,1.586,61,1.846,259,0.062,260,0.062,276,2.3,282,1.586,283,2.677,284,2.677,332,2.832,333,2.832,334,2.3,542,1.322,543,3.64,544,3.64,545,4.481]],["title/index.html",[6,0.525,105,0.525,339,1.345]],["body/index.html",[3,1.294,12,0.071,16,1.19,28,0.827,31,0.998,52,1.259,62,0.998,67,1.437,69,1.437,71,1.863,75,1.737,77,1.519,84,1.519,95,1.552,105,0.879,210,1.723,259,0.052,260,0.052,262,1.197,265,2.138,267,2.772,363,3.255,401,1.437,443,2.138,449,3.456,481,2.138,500,2.138,503,2.772,524,2.772,546,3.563,547,3.954,548,3.563,549,2.748,550,2.748,551,2.748,552,4.521,553,4.183,554,1.737,555,2.748,556,2.748,557,4.582,558,2.748,559,2.748,560,3.563,561,3.954,562,2.748,563,2.748,564,2.748,565,2.748,566,3.954,567,2.748,568,3.563,569,2.748,570,2.748,571,2.748,572,3.563,573,2.748,574,2.748,575,2.748,576,2.748,577,2.748,578,2.748,579,2.748,580,2.748,581,2.748,582,2.748,583,3.563,584,2.748,585,2.748,586,2.748,587,4.334,588,2.748,589,2.748,590,2.748,591,2.748,592,2.138]],["title/license.html",[105,0.525,339,1.345,554,1.345]],["body/license.html",[4,0.922,12,0.056,29,1.335,33,1.937,62,1.113,95,1.664,210,1.335,259,0.056,260,0.056,273,2.385,458,2.385,554,1.937,592,2.972,593,4.16,594,3.064,595,3.064,596,3.064,597,3.819,598,3.064,599,3.064,600,3.064,601,3.064,602,3.819,603,3.064,604,4.355,605,4.723,606,3.064,607,3.819,608,4.16,609,3.064,610,4.16,611,3.819,612,3.064,613,3.064,614,3.064,615,3.064,616,3.064,617,3.064,618,3.064,619,3.064,620,3.064,621,3.064,622,3.064,623,3.064,624,3.819,625,3.819,626,3.064,627,3.064,628,3.819,629,3.064,630,3.064,631,3.064,632,3.064,633,3.064,634,3.064,635,3.064,636,3.064,637,3.064,638,3.064,639,3.064,640,3.064,641,3.064,642,3.064,643,3.064,644,3.064,645,3.064,646,3.064,647,3.064,648,3.064,649,3.064,650,3.064]],["title/modules.html",[261,1.218]],["body/modules.html",[12,0.064,259,0.064,260,0.064,261,1.381,262,1.657,651,3.804]],["title/overview.html",[652,2.611]],["body/overview.html",[0,0.928,12,0.064,17,1.133,259,0.064,260,0.064,261,1.367,364,2.929,533,2.929,536,2.929,652,2.929]],["title/miscellaneous/typealiases.html",[542,0.773,653,2.997]],["body/miscellaneous/typealiases.html",[5,1.953,6,0.921,11,1.356,12,0.063,58,2.367,259,0.063,260,0.063,282,1.627,542,1.356,654,3.734,655,2.906]],["title/miscellaneous/variables.html",[542,0.773,656,2.332]],["body/miscellaneous/variables.html",[5,1.923,6,0.907,11,1.335,12,0.068,66,2.844,67,2.228,68,1.335,177,2.324,259,0.063,260,0.063,527,2.861,542,1.335,655,2.861,656,2.861]]],"invertedIndex":[["",{"_index":12,"title":{},"body":{"interfaces/Coordinates.html":{},"modules/DragAndDropModule.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{},"dependencies.html":{},"miscellaneous/functions.html":{},"index.html":{},"license.html":{},"modules.html":{},"overview.html":{},"miscellaneous/typealiases.html":{},"miscellaneous/variables.html":{}}}],["0",{"_index":141,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["0.1.0",{"_index":521,"title":{},"body":{"changelog.html":{}}}],["0.1.1",{"_index":519,"title":{},"body":{"changelog.html":{}}}],["0.2.0",{"_index":490,"title":{},"body":{"changelog.html":{}}}],["0.2.1",{"_index":483,"title":{},"body":{"changelog.html":{}}}],["0.2.2",{"_index":479,"title":{},"body":{"changelog.html":{}}}],["0.2.3",{"_index":473,"title":{},"body":{"changelog.html":{}}}],["0.3.0",{"_index":471,"title":{},"body":{"changelog.html":{}}}],["0.3.1",{"_index":468,"title":{},"body":{"changelog.html":{}}}],["0.4.0",{"_index":461,"title":{},"body":{"changelog.html":{}}}],["0.5.0",{"_index":457,"title":{},"body":{"changelog.html":{}}}],["0.5.1",{"_index":452,"title":{},"body":{"changelog.html":{}}}],["0.5.2",{"_index":445,"title":{},"body":{"changelog.html":{}}}],["0.5.3",{"_index":442,"title":{},"body":{"changelog.html":{}}}],["0.5.4",{"_index":435,"title":{},"body":{"changelog.html":{}}}],["0.6.0",{"_index":430,"title":{},"body":{"changelog.html":{}}}],["00f6989",{"_index":460,"title":{},"body":{"changelog.html":{}}}],["01",{"_index":453,"title":{},"body":{"changelog.html":{}}}],["03",{"_index":422,"title":{},"body":{"changelog.html":{}}}],["04",{"_index":414,"title":{},"body":{"changelog.html":{}}}],["06",{"_index":454,"title":{},"body":{"changelog.html":{}}}],["09",{"_index":404,"title":{},"body":{"changelog.html":{}}}],["1",{"_index":536,"title":{},"body":{"changelog.html":{},"overview.html":{}}}],["1.0.0",{"_index":421,"title":{},"body":{"changelog.html":{}}}],["1.0.1",{"_index":413,"title":{},"body":{"changelog.html":{}}}],["1.0.2",{"_index":408,"title":{},"body":{"changelog.html":{}}}],["1.1.0",{"_index":403,"title":{},"body":{"changelog.html":{}}}],["1.1.1",{"_index":398,"title":{},"body":{"changelog.html":{}}}],["10",{"_index":399,"title":{},"body":{"changelog.html":{}}}],["11",{"_index":474,"title":{},"body":{"changelog.html":{}}}],["12",{"_index":351,"title":{},"body":{"changelog.html":{}}}],["1265bee",{"_index":402,"title":{},"body":{"changelog.html":{}}}],["14",{"_index":415,"title":{},"body":{"changelog.html":{}}}],["16a3df8",{"_index":540,"title":{},"body":{"changelog.html":{}}}],["17",{"_index":412,"title":{},"body":{"changelog.html":{}}}],["17a2ccc",{"_index":444,"title":{},"body":{"changelog.html":{}}}],["18",{"_index":409,"title":{},"body":{"changelog.html":{}}}],["2",{"_index":533,"title":{},"body":{"changelog.html":{},"overview.html":{}}}],["2.0.0",{"_index":349,"title":{},"body":{"changelog.html":{}}}],["20",{"_index":360,"title":{},"body":{"changelog.html":{}}}],["2016",{"_index":458,"title":{},"body":{"changelog.html":{},"license.html":{}}}],["2017",{"_index":350,"title":{},"body":{"changelog.html":{}}}],["21",{"_index":359,"title":{},"body":{"changelog.html":{}}}],["22",{"_index":405,"title":{},"body":{"changelog.html":{}}}],["222914b",{"_index":496,"title":{},"body":{"changelog.html":{}}}],["23",{"_index":431,"title":{},"body":{"changelog.html":{}}}],["24",{"_index":423,"title":{},"body":{"changelog.html":{}}}],["26",{"_index":352,"title":{},"body":{"changelog.html":{}}}],["26cfa7e",{"_index":470,"title":{},"body":{"changelog.html":{}}}],["27",{"_index":522,"title":{},"body":{"changelog.html":{}}}],["3",{"_index":539,"title":{},"body":{"changelog.html":{}}}],["3445337",{"_index":493,"title":{},"body":{"changelog.html":{}}}],["38fd4b5",{"_index":532,"title":{},"body":{"changelog.html":{}}}],["3c99d40",{"_index":441,"title":{},"body":{"changelog.html":{}}}],["4",{"_index":425,"title":{},"body":{"changelog.html":{}}}],["4.0",{"_index":427,"title":{},"body":{"changelog.html":{}}}],["4159ce2",{"_index":365,"title":{},"body":{"changelog.html":{}}}],["42631bc",{"_index":426,"title":{},"body":{"changelog.html":{}}}],["44ea67",{"_index":456,"title":{},"body":{"changelog.html":{}}}],["45c6b5f",{"_index":357,"title":{},"body":{"changelog.html":{}}}],["4a58c61",{"_index":377,"title":{},"body":{"changelog.html":{}}}],["5",{"_index":364,"title":{},"body":{"changelog.html":{},"overview.html":{}}}],["5.0",{"_index":546,"title":{},"body":{"index.html":{}}}],["5.0.0",{"_index":541,"title":{},"body":{"dependencies.html":{}}}],["5.5.x",{"_index":394,"title":{},"body":{"changelog.html":{}}}],["50d1962",{"_index":506,"title":{},"body":{"changelog.html":{}}}],["52e9a22",{"_index":482,"title":{},"body":{"changelog.html":{}}}],["57dd436",{"_index":373,"title":{},"body":{"changelog.html":{}}}],["5aca67d",{"_index":464,"title":{},"body":{"changelog.html":{}}}],["6",{"_index":497,"title":{},"body":{"changelog.html":{}}}],["6016f12",{"_index":535,"title":{},"body":{"changelog.html":{}}}],["652d632",{"_index":502,"title":{},"body":{"changelog.html":{}}}],["7",{"_index":510,"title":{},"body":{"changelog.html":{}}}],["709327c",{"_index":538,"title":{},"body":{"changelog.html":{}}}],["710c7f7",{"_index":526,"title":{},"body":{"changelog.html":{}}}],["729f24e",{"_index":499,"title":{},"body":{"changelog.html":{}}}],["73d65d7",{"_index":411,"title":{},"body":{"changelog.html":{}}}],["7476301",{"_index":489,"title":{},"body":{"changelog.html":{}}}],["7831903",{"_index":478,"title":{},"body":{"changelog.html":{}}}],["7d859c1",{"_index":420,"title":{},"body":{"changelog.html":{}}}],["8",{"_index":513,"title":{},"body":{"changelog.html":{}}}],["8000",{"_index":585,"title":{},"body":{"index.html":{}}}],["897b3fe",{"_index":407,"title":{},"body":{"changelog.html":{}}}],["9",{"_index":507,"title":{},"body":{"changelog.html":{}}}],["9e5ac95",{"_index":512,"title":{},"body":{"changelog.html":{}}}],["9fca12a",{"_index":368,"title":{},"body":{"changelog.html":{}}}],["a77d07a",{"_index":509,"title":{},"body":{"changelog.html":{}}}],["abov",{"_index":623,"title":{},"body":{"license.html":{}}}],["action",{"_index":644,"title":{},"body":{"license.html":{}}}],["actual",{"_index":356,"title":{},"body":{"changelog.html":{}}}],["ad",{"_index":392,"title":{},"body":{"changelog.html":{}}}],["add",{"_index":374,"title":{},"body":{"changelog.html":{}}}],["alias",{"_index":654,"title":{},"body":{"miscellaneous/typealiases.html":{}}}],["allow",{"_index":90,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["along",{"_index":80,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["and/or",{"_index":617,"title":{},"body":{"license.html":{}}}],["angular",{"_index":363,"title":{},"body":{"changelog.html":{},"index.html":{}}}],["angular/cor",{"_index":28,"title":{},"body":{"interfaces/Coordinates.html":{},"modules/DragAndDropModule.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"dependencies.html":{},"index.html":{}}}],["any).eventlistenersubscriptions[typ",{"_index":258,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["app",{"_index":560,"title":{},"body":{"index.html":{}}}],["appli",{"_index":491,"title":{},"body":{"changelog.html":{}}}],["aris",{"_index":648,"title":{},"body":{"license.html":{}}}],["associ",{"_index":606,"title":{},"body":{"license.html":{}}}],["author",{"_index":637,"title":{},"body":{"license.html":{}}}],["auto",{"_index":503,"title":{},"body":{"changelog.html":{},"index.html":{}}}],["axi",{"_index":79,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["back",{"_index":475,"title":{},"body":{"changelog.html":{}}}],["bcc9080",{"_index":447,"title":{},"body":{"changelog.html":{}}}],["be",{"_index":108,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["bebd925",{"_index":448,"title":{},"body":{"changelog.html":{}}}],["behaviour",{"_index":92,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["boolean",{"_index":56,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["bootstrap",{"_index":563,"title":{},"body":{"index.html":{}}}],["break",{"_index":378,"title":{},"body":{"changelog.html":{}}}],["brows",{"_index":651,"title":{},"body":{"modules.html":{}}}],["bug",{"_index":353,"title":{},"body":{"changelog.html":{}}}],["build",{"_index":371,"title":{},"body":{"changelog.html":{}}}],["c",{"_index":594,"title":{},"body":{"license.html":{}}}],["c6771eb",{"_index":534,"title":{},"body":{"changelog.html":{}}}],["call",{"_index":97,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{}}}],["candrag",{"_index":202,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["case",{"_index":466,"title":{},"body":{"changelog.html":{}}}],["caus",{"_index":486,"title":{},"body":{"changelog.html":{}}}],["chang",{"_index":341,"title":{},"body":{"changelog.html":{}}}],["changelog",{"_index":340,"title":{"changelog.html":{}},"body":{}}],["changes['dragaxi",{"_index":195,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["charg",{"_index":601,"title":{},"body":{"license.html":{}}}],["checkeventlisten",{"_index":201,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["claim",{"_index":640,"title":{},"body":{"license.html":{}}}],["class",{"_index":71,"title":{},"body":{"interfaces/Coordinates.html":{},"modules/DragAndDropModule.html":{},"interfaces/DragAxis.html":{},"index.html":{}}}],["click",{"_index":455,"title":{},"body":{"changelog.html":{}}}],["clienti",{"_index":61,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"miscellaneous/functions.html":{}}}],["clientrect",{"_index":285,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["clientx",{"_index":60,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"miscellaneous/functions.html":{}}}],["close",{"_index":358,"title":{},"body":{"changelog.html":{}}}],["come",{"_index":578,"title":{},"body":{"index.html":{}}}],["commit",{"_index":347,"title":{},"body":{"changelog.html":{}}}],["complet",{"_index":324,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{}}}],["compon",{"_index":524,"title":{},"body":{"changelog.html":{},"index.html":{}}}],["condit",{"_index":622,"title":{},"body":{"license.html":{}}}],["config",{"_index":389,"title":{},"body":{"changelog.html":{}}}],["connect",{"_index":650,"title":{},"body":{"license.html":{}}}],["console.log('el",{"_index":570,"title":{},"body":{"index.html":{}}}],["const",{"_index":65,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["constructor",{"_index":126,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["constructor(el",{"_index":330,"title":{},"body":{"directives/DroppableDirective.html":{}}}],["content",{"_index":551,"title":{},"body":{"index.html":{}}}],["continu",{"_index":589,"title":{},"body":{"index.html":{}}}],["contract",{"_index":645,"title":{},"body":{"license.html":{}}}],["control",{"_index":93,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["coordin",{"_index":1,"title":{"interfaces/Coordinates.html":{}},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["copi",{"_index":604,"title":{},"body":{"license.html":{}}}],["copyright",{"_index":593,"title":{},"body":{"license.html":{}}}],["creat",{"_index":439,"title":{},"body":{"changelog.html":{}}}],["current",{"_index":580,"title":{},"body":{"index.html":{}}}],["currentdrag",{"_index":138,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["currentdrag.complet",{"_index":170,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["currentdrag.next",{"_index":192,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["currentdragdata",{"_index":294,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["currentdragdropdata",{"_index":299,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["currentdragsubscript",{"_index":293,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["cursor",{"_index":94,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["custom",{"_index":91,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["customis",{"_index":406,"title":{},"body":{"changelog.html":{}}}],["d2fdcde",{"_index":529,"title":{},"body":{"changelog.html":{}}}],["d7c9256",{"_index":451,"title":{},"body":{"changelog.html":{}}}],["damag",{"_index":641,"title":{},"body":{"license.html":{}}}],["data",{"_index":75,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"index.html":{}}}],["dc0f863",{"_index":434,"title":{},"body":{"changelog.html":{}}}],["deal",{"_index":607,"title":{},"body":{"license.html":{}}}],["declar",{"_index":265,"title":{},"body":{"modules/DragAndDropModule.html":{},"index.html":{}}}],["default",{"_index":527,"title":{},"body":{"changelog.html":{},"miscellaneous/variables.html":{}}}],["defin",{"_index":13,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["delet",{"_index":231,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["demo",{"_index":547,"title":{},"body":{"index.html":{}}}],["demoapp",{"_index":561,"title":{},"body":{"index.html":{}}}],["demomodul",{"_index":564,"title":{},"body":{"index.html":{}}}],["depend",{"_index":401,"title":{"dependencies.html":{}},"body":{"changelog.html":{},"dependencies.html":{},"index.html":{}}}],["destroy",{"_index":525,"title":{},"body":{"changelog.html":{}}}],["dev",{"_index":443,"title":{},"body":{"changelog.html":{},"index.html":{}}}],["develop",{"_index":553,"title":{},"body":{"index.html":{}}}],["devic",{"_index":101,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["didn't",{"_index":465,"title":{},"body":{"changelog.html":{}}}],["didoverlap",{"_index":319,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["direct",{"_index":17,"title":{"directives/DroppableDirective.html":{}},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{},"overview.html":{}}}],["directori",{"_index":581,"title":{},"body":{"index.html":{}}}],["disabl",{"_index":498,"title":{},"body":{"changelog.html":{}}}],["dispos",{"_index":523,"title":{},"body":{"changelog.html":{}}}],["distinctuntilchang",{"_index":280,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["distribut",{"_index":615,"title":{},"body":{"license.html":{}}}],["do",{"_index":308,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["document",{"_index":210,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{},"index.html":{},"license.html":{}}}],["dont",{"_index":494,"title":{},"body":{"changelog.html":{}}}],["drag",{"_index":84,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{},"index.html":{}}}],["drag.pip",{"_index":300,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["drag.pipe(mergemap",{"_index":322,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["draganddropmodul",{"_index":262,"title":{"modules/DragAndDropModule.html":{}},"body":{"modules/DragAndDropModule.html":{},"changelog.html":{},"index.html":{},"modules.html":{}}}],["draganddropmodule.forroot",{"_index":562,"title":{},"body":{"index.html":{}}}],["dragaxi",{"_index":55,"title":{"interfaces/DragAxis.html":{}},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["dragaxix",{"_index":530,"title":{},"body":{"changelog.html":{}}}],["dragcontain",{"_index":463,"title":{},"body":{"changelog.html":{}}}],["dragcursor",{"_index":96,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["dragend",{"_index":109,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["dragend(ev",{"_index":569,"title":{},"body":{"index.html":{}}}],["dragent",{"_index":329,"title":{},"body":{"directives/DroppableDirective.html":{}}}],["draggabl",{"_index":52,"title":{},"body":{"interfaces/Coordinates.html":{},"modules/DragAndDropModule.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{},"index.html":{}}}],["draggable.direct",{"_index":269,"title":{},"body":{"modules/DragAndDropModule.html":{}}}],["draggabledirect",{"_index":72,"title":{},"body":{"interfaces/Coordinates.html":{},"modules/DragAndDropModule.html":{},"interfaces/DragAxis.html":{}}}],["draggablehelp",{"_index":51,"title":{},"body":{"interfaces/Coordinates.html":{},"modules/DragAndDropModule.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["dragleav",{"_index":290,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["dragov",{"_index":292,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["dragoveract",{"_index":303,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["dragpointerdown",{"_index":103,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["dragsnapgrid",{"_index":86,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["dragstart",{"_index":107,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["drop",{"_index":77,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{},"index.html":{}}}],["drop.module.t",{"_index":264,"title":{},"body":{"modules/DragAndDropModule.html":{}}}],["dropdata",{"_index":78,"title":{"interfaces/DropData.html":{}},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["droppabl",{"_index":500,"title":{},"body":{"changelog.html":{},"index.html":{}}}],["droppable.direct",{"_index":270,"title":{},"body":{"modules/DragAndDropModule.html":{}}}],["droppable.j",{"_index":382,"title":{},"body":{"changelog.html":{}}}],["droppable.umd.j",{"_index":384,"title":{},"body":{"changelog.html":{}}}],["droppable/bundles/angular",{"_index":383,"title":{},"body":{"changelog.html":{}}}],["droppable/demo",{"_index":549,"title":{},"body":{"index.html":{}}}],["droppable/dist/umd/angular",{"_index":381,"title":{},"body":{"changelog.html":{}}}],["droppable/doc",{"_index":574,"title":{},"body":{"index.html":{}}}],["droppabledirect",{"_index":266,"title":{"directives/DroppableDirective.html":{}},"body":{"modules/DragAndDropModule.html":{},"directives/DroppableDirective.html":{}}}],["droppablerectangl",{"_index":297,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["droppablethen",{"_index":559,"title":{},"body":{"index.html":{}}}],["droppeddata",{"_index":568,"title":{},"body":{"index.html":{}}}],["duplic",{"_index":485,"title":{},"body":{"changelog.html":{}}}],["effect",{"_index":537,"title":{},"body":{"changelog.html":{}}}],["element",{"_index":81,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{}}}],["elementref",{"_index":19,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["emit",{"_index":480,"title":{},"body":{"changelog.html":{}}}],["end",{"_index":355,"title":{},"body":{"changelog.html":{}}}],["enter",{"_index":514,"title":{},"body":{"changelog.html":{}}}],["environ",{"_index":576,"title":{},"body":{"index.html":{}}}],["error",{"_index":488,"title":{},"body":{"changelog.html":{}}}],["event",{"_index":62,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"directives/DroppableDirective.html":{},"changelog.html":{},"index.html":{},"license.html":{}}}],["event.changedtouches[0].clienti",{"_index":242,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["event.changedtouches[0].clientx",{"_index":241,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["event.clienti",{"_index":229,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["event.clientx",{"_index":228,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["event.touches[0].clienti",{"_index":239,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["event.touches[0].clientx",{"_index":238,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["eventemitt",{"_index":22,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["eventlistenersubscript",{"_index":115,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["export",{"_index":54,"title":{},"body":{"interfaces/Coordinates.html":{},"modules/DragAndDropModule.html":{},"interfaces/DragAxis.html":{}}}],["express",{"_index":630,"title":{},"body":{"license.html":{}}}],["f29b424",{"_index":520,"title":{},"body":{"changelog.html":{}}}],["fals",{"_index":320,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["fb75711",{"_index":472,"title":{},"body":{"changelog.html":{}}}],["featur",{"_index":361,"title":{},"body":{"changelog.html":{}}}],["file",{"_index":4,"title":{},"body":{"interfaces/Coordinates.html":{},"modules/DragAndDropModule.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{},"license.html":{}}}],["filter",{"_index":49,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["filter(([didoverlap",{"_index":318,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["filter(([previ",{"_index":179,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["find",{"_index":571,"title":{},"body":{"index.html":{}}}],["fire",{"_index":410,"title":{},"body":{"changelog.html":{}}}],["firefox",{"_index":419,"title":{},"body":{"changelog.html":{}}}],["fit",{"_index":633,"title":{},"body":{"license.html":{}}}],["fix",{"_index":354,"title":{},"body":{"changelog.html":{}}}],["follow",{"_index":621,"title":{},"body":{"license.html":{}}}],["forroot",{"_index":272,"title":{},"body":{"modules/DragAndDropModule.html":{},"changelog.html":{}}}],["free",{"_index":600,"title":{},"body":{"license.html":{}}}],["function",{"_index":282,"title":{"miscellaneous/functions.html":{}},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"miscellaneous/functions.html":{},"miscellaneous/typealiases.html":{}}}],["furnish",{"_index":620,"title":{},"body":{"license.html":{}}}],["gener",{"_index":573,"title":{},"body":{"index.html":{}}}],["get",{"_index":339,"title":{"changelog.html":{},"index.html":{},"license.html":{}},"body":{}}],["ghost",{"_index":88,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["ghostdragen",{"_index":89,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["grant",{"_index":599,"title":{},"body":{"license.html":{}}}],["grid",{"_index":85,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["guidelin",{"_index":348,"title":{},"body":{"changelog.html":{}}}],["haseventlisten",{"_index":203,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["helper.provid",{"_index":53,"title":{},"body":{"interfaces/Coordinates.html":{},"modules/DragAndDropModule.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["here",{"_index":566,"title":{},"body":{"index.html":{}}}],["herebi",{"_index":598,"title":{},"body":{"license.html":{}}}],["hidden",{"_index":110,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["higher",{"_index":395,"title":{},"body":{"changelog.html":{}}}],["highlight",{"_index":418,"title":{},"body":{"changelog.html":{}}}],["holder",{"_index":638,"title":{},"body":{"license.html":{}}}],["hover",{"_index":505,"title":{},"body":{"changelog.html":{}}}],["https://mattlewis92.github.io/angular",{"_index":548,"title":{},"body":{"index.html":{}}}],["icon",{"_index":504,"title":{},"body":{"changelog.html":{}}}],["implement",{"_index":73,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"directives/DroppableDirective.html":{},"changelog.html":{}}}],["impli",{"_index":631,"title":{},"body":{"license.html":{}}}],["import",{"_index":16,"title":{},"body":{"interfaces/Coordinates.html":{},"modules/DragAndDropModule.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{},"index.html":{}}}],["improv",{"_index":437,"title":{},"body":{"changelog.html":{}}}],["includ",{"_index":610,"title":{},"body":{"license.html":{}}}],["index",{"_index":6,"title":{"index.html":{}},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"miscellaneous/functions.html":{},"miscellaneous/typealiases.html":{},"miscellaneous/variables.html":{}}}],["info",{"_index":2,"title":{},"body":{"interfaces/Coordinates.html":{},"modules/DragAndDropModule.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["input",{"_index":23,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["insid",{"_index":501,"title":{},"body":{"changelog.html":{}}}],["instal",{"_index":552,"title":{},"body":{"index.html":{}}}],["interact",{"_index":528,"title":{},"body":{"changelog.html":{}}}],["interfac",{"_index":0,"title":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{}},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"overview.html":{}}}],["iscoordinatewithinrectangl",{"_index":283,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"miscellaneous/functions.html":{}}}],["iscoordinatewithinrectangle(clientx",{"_index":544,"title":{},"body":{"miscellaneous/functions.html":{}}}],["item",{"_index":567,"title":{},"body":{"index.html":{}}}],["kind",{"_index":629,"title":{},"body":{"license.html":{}}}],["lazili",{"_index":438,"title":{},"body":{"changelog.html":{}}}],["leav",{"_index":515,"title":{},"body":{"changelog.html":{}}}],["lettabl",{"_index":366,"title":{},"body":{"changelog.html":{}}}],["lewi",{"_index":596,"title":{},"body":{"license.html":{}}}],["liabil",{"_index":642,"title":{},"body":{"license.html":{}}}],["liabl",{"_index":639,"title":{},"body":{"license.html":{}}}],["librari",{"_index":428,"title":{},"body":{"changelog.html":{}}}],["licens",{"_index":554,"title":{"license.html":{}},"body":{"index.html":{},"license.html":{}}}],["limit",{"_index":611,"title":{},"body":{"license.html":{}}}],["listen",{"_index":440,"title":{},"body":{"changelog.html":{}}}],["local",{"_index":579,"title":{},"body":{"index.html":{}}}],["lock",{"_index":531,"title":{},"body":{"changelog.html":{}}}],["log",{"_index":342,"title":{},"body":{"changelog.html":{}}}],["longer",{"_index":391,"title":{},"body":{"changelog.html":{}}}],["loosen",{"_index":446,"title":{},"body":{"changelog.html":{}}}],["make",{"_index":432,"title":{},"body":{"changelog.html":{}}}],["map",{"_index":35,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["map((movedata",{"_index":150,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["map((pointermoveev",{"_index":143,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["match",{"_index":260,"title":{},"body":{"interfaces/Coordinates.html":{},"modules/DragAndDropModule.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{},"dependencies.html":{},"miscellaneous/functions.html":{},"index.html":{},"license.html":{},"modules.html":{},"overview.html":{},"miscellaneous/typealiases.html":{},"miscellaneous/variables.html":{}}}],["math.floor(movedata.i",{"_index":156,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["math.floor(movedata.x",{"_index":153,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["matt",{"_index":595,"title":{},"body":{"license.html":{}}}],["merchant",{"_index":632,"title":{},"body":{"license.html":{}}}],["merg",{"_index":33,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"license.html":{}}}],["mergemap",{"_index":37,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["mergemap((pointerdownev",{"_index":137,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["metadata",{"_index":327,"title":{},"body":{"directives/DroppableDirective.html":{}}}],["method",{"_index":459,"title":{},"body":{"changelog.html":{}}}],["mimic",{"_index":517,"title":{},"body":{"changelog.html":{}}}],["miscellan",{"_index":542,"title":{"miscellaneous/functions.html":{},"miscellaneous/typealiases.html":{},"miscellaneous/variables.html":{}},"body":{"miscellaneous/functions.html":{},"miscellaneous/typealiases.html":{},"miscellaneous/variables.html":{}}}],["mit",{"_index":592,"title":{},"body":{"index.html":{},"license.html":{}}}],["modifi",{"_index":613,"title":{},"body":{"license.html":{}}}],["modul",{"_index":261,"title":{"modules/DragAndDropModule.html":{},"modules.html":{}},"body":{"modules/DragAndDropModule.html":{},"changelog.html":{},"modules.html":{},"overview.html":{}}}],["modulewithprovid",{"_index":268,"title":{},"body":{"modules/DragAndDropModule.html":{}}}],["mous",{"_index":99,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["mousedown",{"_index":118,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["mouseent",{"_index":120,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["mouseev",{"_index":63,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["mouseleav",{"_index":121,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["mousemov",{"_index":116,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["mousemoveev",{"_index":223,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["mousemoveevent.clienti",{"_index":226,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["mousemoveevent.clientx",{"_index":225,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["mouseup",{"_index":119,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["move",{"_index":68,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{},"miscellaneous/variables.html":{}}}],["move_cursor",{"_index":66,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"miscellaneous/variables.html":{}}}],["movedata",{"_index":157,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["movedata.i",{"_index":155,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["movedata.x",{"_index":152,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["moz",{"_index":251,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["ms",{"_index":250,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["mwldraggabl",{"_index":70,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["mwldroppabl",{"_index":328,"title":{},"body":{"directives/DroppableDirective.html":{},"changelog.html":{}}}],["name",{"_index":333,"title":{},"body":{"directives/DroppableDirective.html":{},"miscellaneous/functions.html":{}}}],["nativ",{"_index":518,"title":{},"body":{"changelog.html":{}}}],["need",{"_index":387,"title":{},"body":{"changelog.html":{}}}],["new",{"_index":104,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{}}}],["next",{"_index":180,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["next.i",{"_index":185,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["next.x",{"_index":183,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["ng",{"_index":369,"title":{},"body":{"changelog.html":{}}}],["ng4",{"_index":424,"title":{},"body":{"changelog.html":{}}}],["ngmodul",{"_index":267,"title":{},"body":{"modules/DragAndDropModule.html":{},"index.html":{}}}],["ngonchanges(chang",{"_index":194,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["ngondestroy",{"_index":196,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["ngoninit",{"_index":130,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["ngzone",{"_index":26,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["node.j",{"_index":577,"title":{},"body":{"index.html":{}}}],["none",{"_index":189,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["noninfring",{"_index":636,"title":{},"body":{"license.html":{}}}],["notabl",{"_index":343,"title":{},"body":{"changelog.html":{}}}],["notic",{"_index":624,"title":{},"body":{"license.html":{}}}],["now",{"_index":390,"title":{},"body":{"changelog.html":{}}}],["npm",{"_index":557,"title":{},"body":{"index.html":{}}}],["null",{"_index":175,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["number",{"_index":10,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["o",{"_index":252,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["object",{"_index":74,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["object.keys(this.eventlistenersubscriptions).foreach(typ",{"_index":257,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["object.keys(this.eventlistenersubscriptions).length",{"_index":204,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["observ",{"_index":31,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{},"index.html":{}}}],["obtain",{"_index":603,"title":{},"body":{"license.html":{}}}],["old",{"_index":376,"title":{},"body":{"changelog.html":{}}}],["on",{"_index":98,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["onc",{"_index":481,"title":{},"body":{"changelog.html":{},"index.html":{}}}],["onchang",{"_index":25,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["ondestroy",{"_index":24,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["oninit",{"_index":18,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["onmousedown(ev",{"_index":221,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["onmouseent",{"_index":243,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["onmouseleav",{"_index":244,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["onmouseup(ev",{"_index":230,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["ontouchend(ev",{"_index":240,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["ontouchstart(ev",{"_index":233,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["oper",{"_index":367,"title":{},"body":{"changelog.html":{}}}],["option",{"_index":334,"title":{},"body":{"directives/DroppableDirective.html":{},"changelog.html":{},"miscellaneous/functions.html":{}}}],["origin",{"_index":476,"title":{},"body":{"changelog.html":{}}}],["otherwis",{"_index":647,"title":{},"body":{"license.html":{}}}],["out",{"_index":649,"title":{},"body":{"license.html":{}}}],["output",{"_index":21,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{}}}],["outsid",{"_index":450,"title":{},"body":{"changelog.html":{}}}],["over",{"_index":291,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["overlap",{"_index":289,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["overlaps)).subscrib",{"_index":323,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["overlaps.pipe(distinctuntilchang",{"_index":302,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["overlaps.pipe(filter(overlapsnow",{"_index":314,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["overlapschang",{"_index":301,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["overlapsnow",{"_index":312,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["overlapsnow)).subscrib",{"_index":315,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["overview",{"_index":652,"title":{"overview.html":{}},"body":{"overview.html":{}}}],["packag",{"_index":372,"title":{"dependencies.html":{}},"body":{"changelog.html":{}}}],["packagr",{"_index":370,"title":{},"body":{"changelog.html":{}}}],["pairwis",{"_index":45,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["paramet",{"_index":332,"title":{},"body":{"directives/DroppableDirective.html":{},"miscellaneous/functions.html":{}}}],["particular",{"_index":634,"title":{},"body":{"license.html":{}}}],["pass",{"_index":76,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["path",{"_index":380,"title":{},"body":{"changelog.html":{}}}],["peer",{"_index":400,"title":{},"body":{"changelog.html":{},"dependencies.html":{}}}],["perform",{"_index":436,"title":{},"body":{"changelog.html":{}}}],["permiss",{"_index":597,"title":{},"body":{"license.html":{}}}],["permit",{"_index":619,"title":{},"body":{"license.html":{}}}],["person",{"_index":602,"title":{},"body":{"license.html":{}}}],["pipe",{"_index":136,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["pipe(filt",{"_index":134,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pipe(filter(overlapsnow",{"_index":311,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["pipe(map(([previ",{"_index":186,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pipe(pairwis",{"_index":317,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["pipe(shar",{"_index":162,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pipe(takeuntil(merge(this.pointerup",{"_index":161,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pointer",{"_index":100,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["pointerdown",{"_index":111,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pointerdownevent.clienti",{"_index":149,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pointerdownevent.clientx",{"_index":147,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pointerdownevent.event.preventdefault",{"_index":164,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pointerdrag",{"_index":132,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pointerdrag.pipe(pairwis",{"_index":178,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pointerdrag.pipe(take(1)).pipe(map(valu",{"_index":176,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pointerev",{"_index":59,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pointermov",{"_index":112,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pointermove.pipe(take(1)).subscrib",{"_index":163,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pointermove.pipe(takelast(1)).subscrib",{"_index":168,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pointermoveevent.clienti",{"_index":148,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pointermoveevent.clientx",{"_index":146,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pointermoveevent.event.preventdefault",{"_index":144,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["pointerup",{"_index":113,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["port",{"_index":584,"title":{},"body":{"index.html":{}}}],["portion",{"_index":627,"title":{},"body":{"license.html":{}}}],["posit",{"_index":477,"title":{},"body":{"changelog.html":{}}}],["power",{"_index":555,"title":{},"body":{"index.html":{}}}],["prepar",{"_index":575,"title":{},"body":{"index.html":{}}}],["press",{"_index":102,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["prevent",{"_index":416,"title":{},"body":{"changelog.html":{}}}],["previou",{"_index":181,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["previous.i",{"_index":184,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["previous.x",{"_index":182,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["privat",{"_index":114,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["project",{"_index":344,"title":{},"body":{"changelog.html":{}}}],["properti",{"_index":7,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["prototyp",{"_index":393,"title":{},"body":{"changelog.html":{}}}],["provid",{"_index":273,"title":{},"body":{"modules/DragAndDropModule.html":{},"license.html":{}}}],["public",{"_index":127,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["publish",{"_index":614,"title":{},"body":{"license.html":{}}}],["purpos",{"_index":635,"title":{},"body":{"license.html":{}}}],["rect",{"_index":284,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"miscellaneous/functions.html":{}}}],["rect.left",{"_index":286,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["rect.top",{"_index":287,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["regular",{"_index":397,"title":{},"body":{"changelog.html":{}}}],["releas",{"_index":590,"title":{},"body":{"index.html":{}}}],["releaselicens",{"_index":591,"title":{},"body":{"index.html":{}}}],["reload",{"_index":586,"title":{},"body":{"index.html":{}}}],["remov",{"_index":462,"title":{},"body":{"changelog.html":{}}}],["renam",{"_index":508,"title":{},"body":{"changelog.html":{}}}],["render",{"_index":128,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["renderer2",{"_index":20,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["repliat",{"_index":375,"title":{},"body":{"changelog.html":{}}}],["repo",{"_index":582,"title":{},"body":{"index.html":{}}}],["requir",{"_index":396,"title":{},"body":{"changelog.html":{}}}],["respect",{"_index":469,"title":{},"body":{"changelog.html":{}}}],["restrict",{"_index":609,"title":{},"body":{"license.html":{}}}],["result",{"_index":259,"title":{},"body":{"interfaces/Coordinates.html":{},"modules/DragAndDropModule.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{},"dependencies.html":{},"miscellaneous/functions.html":{},"index.html":{},"license.html":{},"modules.html":{},"overview.html":{},"miscellaneous/typealiases.html":{},"miscellaneous/variables.html":{}}}],["return",{"_index":145,"title":{},"body":{"interfaces/Coordinates.html":{},"modules/DragAndDropModule.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["revert",{"_index":484,"title":{},"body":{"changelog.html":{}}}],["right",{"_index":612,"title":{},"body":{"license.html":{}}}],["run",{"_index":449,"title":{},"body":{"changelog.html":{},"index.html":{}}}],["rxj",{"_index":310,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{}}}],["rxjs/observ",{"_index":32,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["rxjs/observable/merg",{"_index":34,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["rxjs/operators/distinctuntilchang",{"_index":281,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["rxjs/operators/filt",{"_index":50,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["rxjs/operators/map",{"_index":36,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["rxjs/operators/mergemap",{"_index":38,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["rxjs/operators/pairwis",{"_index":46,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["rxjs/operators/shar",{"_index":48,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["rxjs/operators/tak",{"_index":42,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["rxjs/operators/takelast",{"_index":44,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["rxjs/operators/takeuntil",{"_index":40,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["rxjs/subject",{"_index":30,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["rxjs/subscript",{"_index":279,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["same",{"_index":495,"title":{},"body":{"changelog.html":{}}}],["save",{"_index":558,"title":{},"body":{"index.html":{}}}],["seamless",{"_index":429,"title":{},"body":{"changelog.html":{}}}],["see",{"_index":305,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{}}}],["selector",{"_index":69,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"directives/DroppableDirective.html":{},"index.html":{}}}],["sell",{"_index":618,"title":{},"body":{"license.html":{}}}],["server",{"_index":583,"title":{},"body":{"index.html":{}}}],["setcsstransform(valu",{"_index":246,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["setcursor(valu",{"_index":254,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["shall",{"_index":625,"title":{},"body":{"license.html":{}}}],["share",{"_index":47,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["show",{"_index":87,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["simplechang",{"_index":27,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["snap",{"_index":83,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["snapgrid",{"_index":57,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["softwar",{"_index":605,"title":{},"body":{"license.html":{}}}],["sourc",{"_index":3,"title":{},"body":{"interfaces/Coordinates.html":{},"modules/DragAndDropModule.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"index.html":{}}}],["src/.../draggable.directive.t",{"_index":655,"title":{},"body":{"miscellaneous/typealiases.html":{},"miscellaneous/variables.html":{}}}],["src/.../droppable.directive.t",{"_index":543,"title":{},"body":{"miscellaneous/functions.html":{}}}],["src/drag",{"_index":263,"title":{},"body":{"modules/DragAndDropModule.html":{}}}],["src/draggable.directive.t",{"_index":5,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"miscellaneous/typealiases.html":{},"miscellaneous/variables.html":{}}}],["src/draggable.directive.ts:28",{"_index":14,"title":{},"body":{"interfaces/Coordinates.html":{}}}],["src/draggable.directive.ts:29",{"_index":15,"title":{},"body":{"interfaces/Coordinates.html":{}}}],["src/draggable.directive.ts:33",{"_index":274,"title":{},"body":{"interfaces/DragAxis.html":{}}}],["src/draggable.directive.ts:34",{"_index":275,"title":{},"body":{"interfaces/DragAxis.html":{}}}],["src/droppable.directive.t",{"_index":276,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"miscellaneous/functions.html":{}}}],["src/droppable.directive.ts:34",{"_index":277,"title":{},"body":{"interfaces/DropData.html":{}}}],["src/droppable.directive.ts:44",{"_index":335,"title":{},"body":{"directives/DroppableDirective.html":{}}}],["src/droppable.directive.ts:49",{"_index":336,"title":{},"body":{"directives/DroppableDirective.html":{}}}],["src/droppable.directive.ts:54",{"_index":337,"title":{},"body":{"directives/DroppableDirective.html":{}}}],["src/droppable.directive.ts:59",{"_index":338,"title":{},"body":{"directives/DroppableDirective.html":{}}}],["src/droppable.directive.ts:61",{"_index":331,"title":{},"body":{"directives/DroppableDirective.html":{}}}],["standard",{"_index":345,"title":{},"body":{"changelog.html":{}}}],["start",{"_index":105,"title":{"changelog.html":{},"index.html":{},"license.html":{}},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"directives/DroppableDirective.html":{},"changelog.html":{},"index.html":{}}}],["static",{"_index":271,"title":{},"body":{"modules/DragAndDropModule.html":{}}}],["stop",{"_index":288,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["string",{"_index":67,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"index.html":{},"miscellaneous/variables.html":{}}}],["style",{"_index":492,"title":{},"body":{"changelog.html":{}}}],["subject",{"_index":29,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"license.html":{}}}],["sublicens",{"_index":616,"title":{},"body":{"license.html":{}}}],["subscrib",{"_index":187,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["subscript",{"_index":278,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["substanti",{"_index":626,"title":{},"body":{"license.html":{}}}],["system.j",{"_index":385,"title":{},"body":{"changelog.html":{}}}],["tabl",{"_index":550,"title":{},"body":{"index.html":{}}}],["take",{"_index":41,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["takelast",{"_index":43,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["takeuntil",{"_index":39,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["templat",{"_index":565,"title":{},"body":{"index.html":{}}}],["test",{"_index":587,"title":{},"body":{"index.html":{}}}],["test:watch",{"_index":588,"title":{},"body":{"index.html":{}}}],["text",{"_index":417,"title":{},"body":{"changelog.html":{}}}],["there'",{"_index":306,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["this.candrag",{"_index":135,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.checkeventlisten",{"_index":131,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.currentdragsubscript",{"_index":295,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["this.currentdragsubscription.unsubscrib",{"_index":326,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["this.dragaxis.i",{"_index":159,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.dragaxis.x",{"_index":158,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.dragend.next",{"_index":169,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.dragenter.next",{"_index":313,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["this.draggablehelper.currentdrag.next(currentdrag",{"_index":167,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.draggablehelper.currentdrag.subscrib",{"_index":296,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["this.dragging.next",{"_index":188,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.dragleave.next",{"_index":321,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["this.dragover.next",{"_index":316,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["this.dragpointerdown.next",{"_index":140,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.dragsnapgrid.i",{"_index":154,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.dragsnapgrid.x",{"_index":151,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.dragstart.next",{"_index":165,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.drop.next",{"_index":325,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["this.dropdata",{"_index":193,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.element.nativeel",{"_index":174,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.element.nativeelement.getboundingclientrect",{"_index":298,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["this.eventlistenersubscriptions.mousedown",{"_index":206,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.eventlistenersubscriptions.mouseent",{"_index":217,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.eventlistenersubscriptions.mouseleav",{"_index":219,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.eventlistenersubscriptions.mousemov",{"_index":222,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.eventlistenersubscriptions.mouseup",{"_index":209,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.eventlistenersubscriptions.touchcancel",{"_index":216,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.eventlistenersubscriptions.touchend",{"_index":214,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.eventlistenersubscriptions.touchmov",{"_index":234,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.eventlistenersubscriptions.touchstart",{"_index":212,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.ghostdragen",{"_index":172,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.onmousedown(ev",{"_index":208,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.onmouseent",{"_index":218,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.onmouseleav",{"_index":220,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.onmouseup(ev",{"_index":211,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.ontouchend(ev",{"_index":215,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.ontouchstart(ev",{"_index":213,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.pointerdown",{"_index":133,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.pointerdown.complet",{"_index":198,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.pointerdown.next",{"_index":227,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.pointermov",{"_index":142,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.pointermove.complet",{"_index":199,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.pointermove.next",{"_index":224,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.pointerup.complet",{"_index":200,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.pointerup.next",{"_index":232,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.renderer.listen",{"_index":207,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.renderer.setstyl",{"_index":173,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.renderer.setstyle(this.element.nativeel",{"_index":255,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.setcsstransform(`translate(${x}px",{"_index":190,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.setcsstransform(nul",{"_index":171,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.setcursor(nul",{"_index":245,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.setcursor(this.dragcursor",{"_index":166,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.unsubscribeeventlisten",{"_index":197,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.validatedrag",{"_index":160,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["this.zone.run",{"_index":139,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["this.zone.runoutsideangular",{"_index":205,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["through",{"_index":556,"title":{},"body":{"index.html":{}}}],["todo",{"_index":304,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["tort",{"_index":646,"title":{},"body":{"license.html":{}}}],["touch",{"_index":106,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["touchcancel",{"_index":125,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["touchend",{"_index":124,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["touchev",{"_index":64,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["touchmov",{"_index":123,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["touchmoveev",{"_index":235,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["touchmoveevent.targettouches[0].clienti",{"_index":237,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["touchmoveevent.targettouches[0].clientx",{"_index":236,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["touchstart",{"_index":122,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["transform",{"_index":248,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["transformattribut",{"_index":247,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["transformattributes.foreach(transformattribut",{"_index":253,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["true",{"_index":82,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["type",{"_index":11,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"miscellaneous/typealiases.html":{},"miscellaneous/variables.html":{}}}],["typealias",{"_index":653,"title":{"miscellaneous/typealiases.html":{}},"body":{}}],["umd",{"_index":379,"title":{},"body":{"changelog.html":{}}}],["undefin",{"_index":545,"title":{},"body":{"miscellaneous/functions.html":{}}}],["unsubscribeeventlisten",{"_index":256,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["until",{"_index":516,"title":{},"body":{"changelog.html":{}}}],["updat",{"_index":388,"title":{},"body":{"changelog.html":{}}}],["upgrad",{"_index":362,"title":{},"body":{"changelog.html":{}}}],["us",{"_index":95,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{},"index.html":{},"license.html":{}}}],["user",{"_index":386,"title":{},"body":{"changelog.html":{}}}],["valid",{"_index":511,"title":{},"body":{"changelog.html":{}}}],["validatedrag",{"_index":58,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{},"miscellaneous/typealiases.html":{}}}],["valu",{"_index":177,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"miscellaneous/variables.html":{}}}],["variabl",{"_index":656,"title":{"miscellaneous/variables.html":{}},"body":{"miscellaneous/variables.html":{}}}],["version",{"_index":346,"title":{},"body":{"changelog.html":{}}}],["via",{"_index":309,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["view",{"_index":572,"title":{},"body":{"index.html":{}}}],["void",{"_index":117,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["warranti",{"_index":628,"title":{},"body":{"license.html":{}}}],["way",{"_index":307,"title":{},"body":{"interfaces/DropData.html":{},"directives/DroppableDirective.html":{}}}],["webkit",{"_index":249,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["whether",{"_index":643,"title":{},"body":{"license.html":{}}}],["without",{"_index":608,"title":{},"body":{"license.html":{}}}],["work",{"_index":433,"title":{},"body":{"changelog.html":{}}}],["wors",{"_index":487,"title":{},"body":{"changelog.html":{}}}],["x",{"_index":8,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["y",{"_index":9,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"changelog.html":{}}}],["yourself",{"_index":467,"title":{},"body":{"changelog.html":{}}}],["y}px",{"_index":191,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{}}}],["zone",{"_index":129,"title":{},"body":{"interfaces/Coordinates.html":{},"interfaces/DragAxis.html":{},"interfaces/DropData.html":{},"directives/DroppableDirective.html":{},"changelog.html":{}}}]],"pipeline":["stemmer"]},
-    "store": {"interfaces/Coordinates.html":{"url":"interfaces/Coordinates.html","title":"interface - Coordinates","body":"\n                   \n\n\n\n\n\n\n\n\n\n\n\n  Interfaces\n  Coordinates\n\n\n\n    \n        Info\n    \n\n\n    \n        Source\n    \n\n\n\n    \n        \n            File\n        \n        \n            src/draggable.directive.ts\n        \n\n\n\n        \n            Index\n            \n                \n                    \n                        \n                            Properties\n                        \n                    \n                    \n                        \n                            \n                                \n                                        x\n                                \n                                \n                                        y\n                                \n                            \n                        \n                    \n                \n            \n        \n\n\n\n            \n                Properties\n                    \n                        \n                                \n                                    \n                                        \n                                        x\n                                    \n                                \n                                \n                                    \n                                        x:     number\n\n                                    \n                                \n\n\n                                    \n                                        \n                                            Type :     number\n\n                                        \n                                    \n\n\n\n\n                                    \n                                        \n                                            Defined in src/draggable.directive.ts:28\n                                        \n                                    \n\n                        \n                    \n                    \n                        \n                                \n                                    \n                                        \n                                        y\n                                    \n                                \n                                \n                                    \n                                        y:     number\n\n                                    \n                                \n\n\n                                    \n                                        \n                                            Type :     number\n\n                                        \n                                    \n\n\n\n\n                                    \n                                        \n                                            Defined in src/draggable.directive.ts:29\n                                        \n                                    \n\n                        \n                    \n            \n    \n\n\n    \n        import {\n  Directive,\n  OnInit,\n  ElementRef,\n  Renderer2,\n  Output,\n  EventEmitter,\n  Input,\n  OnDestroy,\n  OnChanges,\n  NgZone,\n  SimpleChanges\n} from '@angular/core';\nimport { Subject } from 'rxjs/Subject';\nimport { Observable } from 'rxjs/Observable';\nimport { merge } from 'rxjs/observable/merge';\nimport { map } from 'rxjs/operators/map';\nimport { mergeMap } from 'rxjs/operators/mergeMap';\nimport { takeUntil } from 'rxjs/operators/takeUntil';\nimport { take } from 'rxjs/operators/take';\nimport { takeLast } from 'rxjs/operators/takeLast';\nimport { pairwise } from 'rxjs/operators/pairwise';\nimport { share } from 'rxjs/operators/share';\nimport { filter } from 'rxjs/operators/filter';\nimport { DraggableHelper } from './draggable-helper.provider';\n\nexport interface Coordinates {\n  x: number;\n  y: number;\n}\n\nexport interface DragAxis {\n  x: boolean;\n  y: boolean;\n}\n\nexport interface SnapGrid {\n  x?: number;\n  y?: number;\n}\n\nexport type ValidateDrag = (coordinates: Coordinates) => boolean;\n\nexport interface PointerEvent {\n  clientX: number;\n  clientY: number;\n  event: MouseEvent | TouchEvent;\n}\n\nconst MOVE_CURSOR: string = 'move';\n\n@Directive({\n  selector: '[mwlDraggable]'\n})\nexport class DraggableDirective implements OnInit, OnChanges, OnDestroy {\n  /**\n   * an object of data you can pass to the drop event\n   */\n  @Input() dropData: any;\n\n  /**\n   * The axis along which the element is draggable\n   */\n  @Input() dragAxis: DragAxis = { x: true, y: true };\n\n  /**\n   * Snap all drags to an x / y grid\n   */\n  @Input() dragSnapGrid: SnapGrid = {};\n\n  /**\n   * Show a ghost element that shows the drag when dragging\n   */\n  @Input() ghostDragEnabled: boolean = true;\n\n  /**\n   * Allow custom behaviour to control when the element is dragged\n   */\n  @Input() validateDrag: ValidateDrag;\n\n  /**\n   * The cursor to use when dragging the element\n   */\n  @Input() dragCursor = MOVE_CURSOR;\n\n  /**\n   * Called when the element can be dragged along one axis and has the mouse or pointer device pressed on it\n   */\n  @Output() dragPointerDown = new EventEmitter();\n\n  /**\n   * Called when the element has started to be dragged.\n   * Only called after at least one mouse or touch move event\n   */\n  @Output() dragStart = new EventEmitter();\n\n  /**\n   * Called when the element is being dragged\n   */\n  @Output() dragging = new EventEmitter();\n\n  /**\n   * Called after the element is dragged\n   */\n  @Output() dragEnd = new EventEmitter();\n\n  /**\n   * @hidden\n   */\n  pointerDown: Subject = new Subject();\n\n  /**\n   * @hidden\n   */\n  pointerMove: Subject = new Subject();\n\n  /**\n   * @hidden\n   */\n  pointerUp: Subject = new Subject();\n\n  private eventListenerSubscriptions: {\n    mousemove?: () => void;\n    mousedown?: () => void;\n    mouseup?: () => void;\n    mouseenter?: () => void;\n    mouseleave?: () => void;\n    touchstart?: () => void;\n    touchmove?: () => void;\n    touchend?: () => void;\n    touchcancel?: () => void;\n  } = {};\n\n  /**\n   * @hidden\n   */\n  constructor(\n    public element: ElementRef,\n    private renderer: Renderer2,\n    private draggableHelper: DraggableHelper,\n    private zone: NgZone\n  ) {}\n\n  ngOnInit(): void {\n    this.checkEventListeners();\n\n    const pointerDrag: Observable = this.pointerDown\n      .pipe(filter(() => this.canDrag()))\n      .pipe(\n        mergeMap((pointerDownEvent: PointerEvent) => {\n          const currentDrag: Subject = new Subject();\n\n          this.zone.run(() => {\n            this.dragPointerDown.next({ x: 0, y: 0 });\n          });\n\n          const pointerMove: Observable = this.pointerMove\n            .pipe(\n              map((pointerMoveEvent: PointerEvent) => {\n                pointerMoveEvent.event.preventDefault();\n\n                return {\n                  currentDrag,\n                  x: pointerMoveEvent.clientX - pointerDownEvent.clientX,\n                  y: pointerMoveEvent.clientY - pointerDownEvent.clientY,\n                  clientX: pointerMoveEvent.clientX,\n                  clientY: pointerMoveEvent.clientY\n                };\n              })\n            )\n            .pipe(\n              map((moveData: Coordinates) => {\n                if (this.dragSnapGrid.x) {\n                  moveData.x =\n                    Math.floor(moveData.x / this.dragSnapGrid.x) *\n                    this.dragSnapGrid.x;\n                }\n\n                if (this.dragSnapGrid.y) {\n                  moveData.y =\n                    Math.floor(moveData.y / this.dragSnapGrid.y) *\n                    this.dragSnapGrid.y;\n                }\n\n                return moveData;\n              })\n            )\n            .pipe(\n              map((moveData: Coordinates) => {\n                if (!this.dragAxis.x) {\n                  moveData.x = 0;\n                }\n\n                if (!this.dragAxis.y) {\n                  moveData.y = 0;\n                }\n\n                return moveData;\n              })\n            )\n            .pipe(\n              filter(\n                ({ x, y }) => !this.validateDrag || this.validateDrag({ x, y })\n              )\n            )\n            .pipe(takeUntil(merge(this.pointerUp, this.pointerDown)))\n            .pipe(share());\n\n          pointerMove.pipe(take(1)).subscribe(() => {\n            pointerDownEvent.event.preventDefault();\n\n            this.zone.run(() => {\n              this.dragStart.next({ x: 0, y: 0 });\n            });\n\n            this.setCursor(this.dragCursor);\n\n            this.draggableHelper.currentDrag.next(currentDrag);\n          });\n\n          pointerMove.pipe(takeLast(1)).subscribe(({ x, y }) => {\n            this.zone.run(() => {\n              this.dragEnd.next({ x, y });\n            });\n            currentDrag.complete();\n            this.setCssTransform(null);\n            if (this.ghostDragEnabled) {\n              this.renderer.setStyle(\n                this.element.nativeElement,\n                'pointerEvents',\n                null\n              );\n            }\n          });\n\n          return pointerMove;\n        })\n      )\n      .pipe(share());\n\n    merge(\n      pointerDrag.pipe(take(1)).pipe(map(value => [, value])),\n      pointerDrag.pipe(pairwise())\n    )\n      .pipe(\n        filter(([previous, next]) => {\n          if (!previous) {\n            return true;\n          }\n          return previous.x !== next.x || previous.y !== next.y;\n        })\n      )\n      .pipe(map(([previous, next]) => next))\n      .subscribe(({ x, y, currentDrag, clientX, clientY }) => {\n        this.zone.run(() => {\n          this.dragging.next({ x, y });\n        });\n        if (this.ghostDragEnabled) {\n          this.renderer.setStyle(\n            this.element.nativeElement,\n            'pointerEvents',\n            'none'\n          );\n        }\n        this.setCssTransform(`translate(${x}px, ${y}px)`);\n        currentDrag.next({\n          clientX,\n          clientY,\n          dropData: this.dropData\n        });\n      });\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    if (changes['dragAxis']) {\n      this.checkEventListeners();\n    }\n  }\n\n  ngOnDestroy(): void {\n    this.unsubscribeEventListeners();\n    this.pointerDown.complete();\n    this.pointerMove.complete();\n    this.pointerUp.complete();\n  }\n\n  private checkEventListeners(): void {\n    const canDrag: boolean = this.canDrag();\n    const hasEventListeners: boolean =\n      Object.keys(this.eventListenerSubscriptions).length > 0;\n\n    if (canDrag && !hasEventListeners) {\n      this.zone.runOutsideAngular(() => {\n        this.eventListenerSubscriptions.mousedown = this.renderer.listen(\n          this.element.nativeElement,\n          'mousedown',\n          (event: MouseEvent) => {\n            this.onMouseDown(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.mouseup = this.renderer.listen(\n          'document',\n          'mouseup',\n          (event: MouseEvent) => {\n            this.onMouseUp(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.touchstart = this.renderer.listen(\n          this.element.nativeElement,\n          'touchstart',\n          (event: TouchEvent) => {\n            this.onTouchStart(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.touchend = this.renderer.listen(\n          'document',\n          'touchend',\n          (event: TouchEvent) => {\n            this.onTouchEnd(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.touchcancel = this.renderer.listen(\n          'document',\n          'touchcancel',\n          (event: TouchEvent) => {\n            this.onTouchEnd(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.mouseenter = this.renderer.listen(\n          this.element.nativeElement,\n          'mouseenter',\n          () => {\n            this.onMouseEnter();\n          }\n        );\n\n        this.eventListenerSubscriptions.mouseleave = this.renderer.listen(\n          this.element.nativeElement,\n          'mouseleave',\n          () => {\n            this.onMouseLeave();\n          }\n        );\n      });\n    } else if (!canDrag && hasEventListeners) {\n      this.unsubscribeEventListeners();\n    }\n  }\n\n  private onMouseDown(event: MouseEvent): void {\n    if (!this.eventListenerSubscriptions.mousemove) {\n      this.eventListenerSubscriptions.mousemove = this.renderer.listen(\n        'document',\n        'mousemove',\n        (mouseMoveEvent: MouseEvent) => {\n          this.pointerMove.next({\n            event: mouseMoveEvent,\n            clientX: mouseMoveEvent.clientX,\n            clientY: mouseMoveEvent.clientY\n          });\n        }\n      );\n    }\n    this.pointerDown.next({\n      event,\n      clientX: event.clientX,\n      clientY: event.clientY\n    });\n  }\n\n  private onMouseUp(event: MouseEvent): void {\n    if (this.eventListenerSubscriptions.mousemove) {\n      this.eventListenerSubscriptions.mousemove();\n      delete this.eventListenerSubscriptions.mousemove;\n    }\n    this.pointerUp.next({\n      event,\n      clientX: event.clientX,\n      clientY: event.clientY\n    });\n  }\n\n  private onTouchStart(event: TouchEvent): void {\n    if (!this.eventListenerSubscriptions.touchmove) {\n      this.eventListenerSubscriptions.touchmove = this.renderer.listen(\n        'document',\n        'touchmove',\n        (touchMoveEvent: TouchEvent) => {\n          this.pointerMove.next({\n            event: touchMoveEvent,\n            clientX: touchMoveEvent.targetTouches[0].clientX,\n            clientY: touchMoveEvent.targetTouches[0].clientY\n          });\n        }\n      );\n    }\n    this.pointerDown.next({\n      event,\n      clientX: event.touches[0].clientX,\n      clientY: event.touches[0].clientY\n    });\n  }\n\n  private onTouchEnd(event: TouchEvent): void {\n    if (this.eventListenerSubscriptions.touchmove) {\n      this.eventListenerSubscriptions.touchmove();\n      delete this.eventListenerSubscriptions.touchmove;\n    }\n    this.pointerUp.next({\n      event,\n      clientX: event.changedTouches[0].clientX,\n      clientY: event.changedTouches[0].clientY\n    });\n  }\n\n  private onMouseEnter(): void {\n    this.setCursor(this.dragCursor);\n  }\n\n  private onMouseLeave(): void {\n    this.setCursor(null);\n  }\n\n  private setCssTransform(value: string | null): void {\n    if (this.ghostDragEnabled) {\n      const transformAttributes = [\n        'transform',\n        '-webkit-transform',\n        '-ms-transform',\n        '-moz-transform',\n        '-o-transform'\n      ];\n      transformAttributes.forEach(transformAttribute => {\n        this.renderer.setStyle(\n          this.element.nativeElement,\n          transformAttribute,\n          value\n        );\n      });\n    }\n  }\n\n  private canDrag(): boolean {\n    return this.dragAxis.x || this.dragAxis.y;\n  }\n\n  private setCursor(value: string | null): void {\n    this.renderer.setStyle(this.element.nativeElement, 'cursor', value);\n  }\n\n  private unsubscribeEventListeners(): void {\n    Object.keys(this.eventListenerSubscriptions).forEach(type => {\n      (this as any).eventListenerSubscriptions[type]();\n      delete (this as any).eventListenerSubscriptions[type];\n    });\n  }\n}\n\n    \n\n\n\n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"},"modules/DragAndDropModule.html":{"url":"modules/DragAndDropModule.html","title":"module - DragAndDropModule","body":"\n                   \n\n\n\n\n  Modules\n  DragAndDropModule\n\n\n\n\n    \n        Info\n    \n\n\n    \n        Source\n    \n\n\n\n    \n\n        \n            File\n        \n        \n            src/drag-and-drop.module.ts\n        \n\n\n        \n\n        \n            \n                \n                    Declarations\n                    \n                            \n                                DraggableDirective\n                            \n                            \n                                DroppableDirective\n                            \n                    \n                \n                \n                    Exports\n                    \n                            \n                                    DraggableDirective\n                            \n                            \n                                    DroppableDirective\n                            \n                    \n                \n            \n        \n    \n\n\n    \n        import { NgModule, ModuleWithProviders } from '@angular/core';\nimport { DraggableDirective } from './draggable.directive';\nimport { DroppableDirective } from './droppable.directive';\nimport { DraggableHelper } from './draggable-helper.provider';\n\n@NgModule({\n  declarations: [DraggableDirective, DroppableDirective],\n  exports: [DraggableDirective, DroppableDirective]\n})\nexport class DragAndDropModule {\n  static forRoot(): ModuleWithProviders {\n    return {\n      ngModule: DragAndDropModule,\n      providers: [DraggableHelper]\n    };\n  }\n}\n\n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"},"interfaces/DragAxis.html":{"url":"interfaces/DragAxis.html","title":"interface - DragAxis","body":"\n                   \n\n\n\n\n\n\n\n\n\n\n\n  Interfaces\n  DragAxis\n\n\n\n    \n        Info\n    \n\n\n    \n        Source\n    \n\n\n\n    \n        \n            File\n        \n        \n            src/draggable.directive.ts\n        \n\n\n\n        \n            Index\n            \n                \n                    \n                        \n                            Properties\n                        \n                    \n                    \n                        \n                            \n                                \n                                        x\n                                \n                                \n                                        y\n                                \n                            \n                        \n                    \n                \n            \n        \n\n\n\n            \n                Properties\n                    \n                        \n                                \n                                    \n                                        \n                                        x\n                                    \n                                \n                                \n                                    \n                                        x:     boolean\n\n                                    \n                                \n\n\n                                    \n                                        \n                                            Type :     boolean\n\n                                        \n                                    \n\n\n\n\n                                    \n                                        \n                                            Defined in src/draggable.directive.ts:33\n                                        \n                                    \n\n                        \n                    \n                    \n                        \n                                \n                                    \n                                        \n                                        y\n                                    \n                                \n                                \n                                    \n                                        y:     boolean\n\n                                    \n                                \n\n\n                                    \n                                        \n                                            Type :     boolean\n\n                                        \n                                    \n\n\n\n\n                                    \n                                        \n                                            Defined in src/draggable.directive.ts:34\n                                        \n                                    \n\n                        \n                    \n            \n    \n\n\n    \n        import {\n  Directive,\n  OnInit,\n  ElementRef,\n  Renderer2,\n  Output,\n  EventEmitter,\n  Input,\n  OnDestroy,\n  OnChanges,\n  NgZone,\n  SimpleChanges\n} from '@angular/core';\nimport { Subject } from 'rxjs/Subject';\nimport { Observable } from 'rxjs/Observable';\nimport { merge } from 'rxjs/observable/merge';\nimport { map } from 'rxjs/operators/map';\nimport { mergeMap } from 'rxjs/operators/mergeMap';\nimport { takeUntil } from 'rxjs/operators/takeUntil';\nimport { take } from 'rxjs/operators/take';\nimport { takeLast } from 'rxjs/operators/takeLast';\nimport { pairwise } from 'rxjs/operators/pairwise';\nimport { share } from 'rxjs/operators/share';\nimport { filter } from 'rxjs/operators/filter';\nimport { DraggableHelper } from './draggable-helper.provider';\n\nexport interface Coordinates {\n  x: number;\n  y: number;\n}\n\nexport interface DragAxis {\n  x: boolean;\n  y: boolean;\n}\n\nexport interface SnapGrid {\n  x?: number;\n  y?: number;\n}\n\nexport type ValidateDrag = (coordinates: Coordinates) => boolean;\n\nexport interface PointerEvent {\n  clientX: number;\n  clientY: number;\n  event: MouseEvent | TouchEvent;\n}\n\nconst MOVE_CURSOR: string = 'move';\n\n@Directive({\n  selector: '[mwlDraggable]'\n})\nexport class DraggableDirective implements OnInit, OnChanges, OnDestroy {\n  /**\n   * an object of data you can pass to the drop event\n   */\n  @Input() dropData: any;\n\n  /**\n   * The axis along which the element is draggable\n   */\n  @Input() dragAxis: DragAxis = { x: true, y: true };\n\n  /**\n   * Snap all drags to an x / y grid\n   */\n  @Input() dragSnapGrid: SnapGrid = {};\n\n  /**\n   * Show a ghost element that shows the drag when dragging\n   */\n  @Input() ghostDragEnabled: boolean = true;\n\n  /**\n   * Allow custom behaviour to control when the element is dragged\n   */\n  @Input() validateDrag: ValidateDrag;\n\n  /**\n   * The cursor to use when dragging the element\n   */\n  @Input() dragCursor = MOVE_CURSOR;\n\n  /**\n   * Called when the element can be dragged along one axis and has the mouse or pointer device pressed on it\n   */\n  @Output() dragPointerDown = new EventEmitter();\n\n  /**\n   * Called when the element has started to be dragged.\n   * Only called after at least one mouse or touch move event\n   */\n  @Output() dragStart = new EventEmitter();\n\n  /**\n   * Called when the element is being dragged\n   */\n  @Output() dragging = new EventEmitter();\n\n  /**\n   * Called after the element is dragged\n   */\n  @Output() dragEnd = new EventEmitter();\n\n  /**\n   * @hidden\n   */\n  pointerDown: Subject = new Subject();\n\n  /**\n   * @hidden\n   */\n  pointerMove: Subject = new Subject();\n\n  /**\n   * @hidden\n   */\n  pointerUp: Subject = new Subject();\n\n  private eventListenerSubscriptions: {\n    mousemove?: () => void;\n    mousedown?: () => void;\n    mouseup?: () => void;\n    mouseenter?: () => void;\n    mouseleave?: () => void;\n    touchstart?: () => void;\n    touchmove?: () => void;\n    touchend?: () => void;\n    touchcancel?: () => void;\n  } = {};\n\n  /**\n   * @hidden\n   */\n  constructor(\n    public element: ElementRef,\n    private renderer: Renderer2,\n    private draggableHelper: DraggableHelper,\n    private zone: NgZone\n  ) {}\n\n  ngOnInit(): void {\n    this.checkEventListeners();\n\n    const pointerDrag: Observable = this.pointerDown\n      .pipe(filter(() => this.canDrag()))\n      .pipe(\n        mergeMap((pointerDownEvent: PointerEvent) => {\n          const currentDrag: Subject = new Subject();\n\n          this.zone.run(() => {\n            this.dragPointerDown.next({ x: 0, y: 0 });\n          });\n\n          const pointerMove: Observable = this.pointerMove\n            .pipe(\n              map((pointerMoveEvent: PointerEvent) => {\n                pointerMoveEvent.event.preventDefault();\n\n                return {\n                  currentDrag,\n                  x: pointerMoveEvent.clientX - pointerDownEvent.clientX,\n                  y: pointerMoveEvent.clientY - pointerDownEvent.clientY,\n                  clientX: pointerMoveEvent.clientX,\n                  clientY: pointerMoveEvent.clientY\n                };\n              })\n            )\n            .pipe(\n              map((moveData: Coordinates) => {\n                if (this.dragSnapGrid.x) {\n                  moveData.x =\n                    Math.floor(moveData.x / this.dragSnapGrid.x) *\n                    this.dragSnapGrid.x;\n                }\n\n                if (this.dragSnapGrid.y) {\n                  moveData.y =\n                    Math.floor(moveData.y / this.dragSnapGrid.y) *\n                    this.dragSnapGrid.y;\n                }\n\n                return moveData;\n              })\n            )\n            .pipe(\n              map((moveData: Coordinates) => {\n                if (!this.dragAxis.x) {\n                  moveData.x = 0;\n                }\n\n                if (!this.dragAxis.y) {\n                  moveData.y = 0;\n                }\n\n                return moveData;\n              })\n            )\n            .pipe(\n              filter(\n                ({ x, y }) => !this.validateDrag || this.validateDrag({ x, y })\n              )\n            )\n            .pipe(takeUntil(merge(this.pointerUp, this.pointerDown)))\n            .pipe(share());\n\n          pointerMove.pipe(take(1)).subscribe(() => {\n            pointerDownEvent.event.preventDefault();\n\n            this.zone.run(() => {\n              this.dragStart.next({ x: 0, y: 0 });\n            });\n\n            this.setCursor(this.dragCursor);\n\n            this.draggableHelper.currentDrag.next(currentDrag);\n          });\n\n          pointerMove.pipe(takeLast(1)).subscribe(({ x, y }) => {\n            this.zone.run(() => {\n              this.dragEnd.next({ x, y });\n            });\n            currentDrag.complete();\n            this.setCssTransform(null);\n            if (this.ghostDragEnabled) {\n              this.renderer.setStyle(\n                this.element.nativeElement,\n                'pointerEvents',\n                null\n              );\n            }\n          });\n\n          return pointerMove;\n        })\n      )\n      .pipe(share());\n\n    merge(\n      pointerDrag.pipe(take(1)).pipe(map(value => [, value])),\n      pointerDrag.pipe(pairwise())\n    )\n      .pipe(\n        filter(([previous, next]) => {\n          if (!previous) {\n            return true;\n          }\n          return previous.x !== next.x || previous.y !== next.y;\n        })\n      )\n      .pipe(map(([previous, next]) => next))\n      .subscribe(({ x, y, currentDrag, clientX, clientY }) => {\n        this.zone.run(() => {\n          this.dragging.next({ x, y });\n        });\n        if (this.ghostDragEnabled) {\n          this.renderer.setStyle(\n            this.element.nativeElement,\n            'pointerEvents',\n            'none'\n          );\n        }\n        this.setCssTransform(`translate(${x}px, ${y}px)`);\n        currentDrag.next({\n          clientX,\n          clientY,\n          dropData: this.dropData\n        });\n      });\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    if (changes['dragAxis']) {\n      this.checkEventListeners();\n    }\n  }\n\n  ngOnDestroy(): void {\n    this.unsubscribeEventListeners();\n    this.pointerDown.complete();\n    this.pointerMove.complete();\n    this.pointerUp.complete();\n  }\n\n  private checkEventListeners(): void {\n    const canDrag: boolean = this.canDrag();\n    const hasEventListeners: boolean =\n      Object.keys(this.eventListenerSubscriptions).length > 0;\n\n    if (canDrag && !hasEventListeners) {\n      this.zone.runOutsideAngular(() => {\n        this.eventListenerSubscriptions.mousedown = this.renderer.listen(\n          this.element.nativeElement,\n          'mousedown',\n          (event: MouseEvent) => {\n            this.onMouseDown(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.mouseup = this.renderer.listen(\n          'document',\n          'mouseup',\n          (event: MouseEvent) => {\n            this.onMouseUp(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.touchstart = this.renderer.listen(\n          this.element.nativeElement,\n          'touchstart',\n          (event: TouchEvent) => {\n            this.onTouchStart(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.touchend = this.renderer.listen(\n          'document',\n          'touchend',\n          (event: TouchEvent) => {\n            this.onTouchEnd(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.touchcancel = this.renderer.listen(\n          'document',\n          'touchcancel',\n          (event: TouchEvent) => {\n            this.onTouchEnd(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.mouseenter = this.renderer.listen(\n          this.element.nativeElement,\n          'mouseenter',\n          () => {\n            this.onMouseEnter();\n          }\n        );\n\n        this.eventListenerSubscriptions.mouseleave = this.renderer.listen(\n          this.element.nativeElement,\n          'mouseleave',\n          () => {\n            this.onMouseLeave();\n          }\n        );\n      });\n    } else if (!canDrag && hasEventListeners) {\n      this.unsubscribeEventListeners();\n    }\n  }\n\n  private onMouseDown(event: MouseEvent): void {\n    if (!this.eventListenerSubscriptions.mousemove) {\n      this.eventListenerSubscriptions.mousemove = this.renderer.listen(\n        'document',\n        'mousemove',\n        (mouseMoveEvent: MouseEvent) => {\n          this.pointerMove.next({\n            event: mouseMoveEvent,\n            clientX: mouseMoveEvent.clientX,\n            clientY: mouseMoveEvent.clientY\n          });\n        }\n      );\n    }\n    this.pointerDown.next({\n      event,\n      clientX: event.clientX,\n      clientY: event.clientY\n    });\n  }\n\n  private onMouseUp(event: MouseEvent): void {\n    if (this.eventListenerSubscriptions.mousemove) {\n      this.eventListenerSubscriptions.mousemove();\n      delete this.eventListenerSubscriptions.mousemove;\n    }\n    this.pointerUp.next({\n      event,\n      clientX: event.clientX,\n      clientY: event.clientY\n    });\n  }\n\n  private onTouchStart(event: TouchEvent): void {\n    if (!this.eventListenerSubscriptions.touchmove) {\n      this.eventListenerSubscriptions.touchmove = this.renderer.listen(\n        'document',\n        'touchmove',\n        (touchMoveEvent: TouchEvent) => {\n          this.pointerMove.next({\n            event: touchMoveEvent,\n            clientX: touchMoveEvent.targetTouches[0].clientX,\n            clientY: touchMoveEvent.targetTouches[0].clientY\n          });\n        }\n      );\n    }\n    this.pointerDown.next({\n      event,\n      clientX: event.touches[0].clientX,\n      clientY: event.touches[0].clientY\n    });\n  }\n\n  private onTouchEnd(event: TouchEvent): void {\n    if (this.eventListenerSubscriptions.touchmove) {\n      this.eventListenerSubscriptions.touchmove();\n      delete this.eventListenerSubscriptions.touchmove;\n    }\n    this.pointerUp.next({\n      event,\n      clientX: event.changedTouches[0].clientX,\n      clientY: event.changedTouches[0].clientY\n    });\n  }\n\n  private onMouseEnter(): void {\n    this.setCursor(this.dragCursor);\n  }\n\n  private onMouseLeave(): void {\n    this.setCursor(null);\n  }\n\n  private setCssTransform(value: string | null): void {\n    if (this.ghostDragEnabled) {\n      const transformAttributes = [\n        'transform',\n        '-webkit-transform',\n        '-ms-transform',\n        '-moz-transform',\n        '-o-transform'\n      ];\n      transformAttributes.forEach(transformAttribute => {\n        this.renderer.setStyle(\n          this.element.nativeElement,\n          transformAttribute,\n          value\n        );\n      });\n    }\n  }\n\n  private canDrag(): boolean {\n    return this.dragAxis.x || this.dragAxis.y;\n  }\n\n  private setCursor(value: string | null): void {\n    this.renderer.setStyle(this.element.nativeElement, 'cursor', value);\n  }\n\n  private unsubscribeEventListeners(): void {\n    Object.keys(this.eventListenerSubscriptions).forEach(type => {\n      (this as any).eventListenerSubscriptions[type]();\n      delete (this as any).eventListenerSubscriptions[type];\n    });\n  }\n}\n\n    \n\n\n\n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"},"interfaces/DropData.html":{"url":"interfaces/DropData.html","title":"interface - DropData","body":"\n                   \n\n\n\n\n\n\n\n\n\n\n\n  Interfaces\n  DropData\n\n\n\n    \n        Info\n    \n\n\n    \n        Source\n    \n\n\n\n    \n        \n            File\n        \n        \n            src/droppable.directive.ts\n        \n\n\n\n        \n            Index\n            \n                \n                    \n                        \n                            Properties\n                        \n                    \n                    \n                        \n                            \n                                \n                                        dropData\n                                \n                            \n                        \n                    \n                \n            \n        \n\n\n\n            \n                Properties\n                    \n                        \n                                \n                                    \n                                        \n                                        dropData\n                                    \n                                \n                                \n                                    \n                                        dropData:     any\n\n                                    \n                                \n\n\n                                    \n                                        \n                                            Type :     any\n\n                                        \n                                    \n\n\n\n\n                                    \n                                        \n                                            Defined in src/droppable.directive.ts:34\n                                        \n                                    \n\n                        \n                    \n            \n    \n\n\n    \n        import {\n  Directive,\n  OnInit,\n  ElementRef,\n  OnDestroy,\n  Output,\n  EventEmitter,\n  NgZone\n} from '@angular/core';\nimport { Subject } from 'rxjs/Subject';\nimport { Subscription } from 'rxjs/Subscription';\nimport { Observable } from 'rxjs/Observable';\nimport { distinctUntilChanged } from 'rxjs/operators/distinctUntilChanged';\nimport { pairwise } from 'rxjs/operators/pairwise';\nimport { filter } from 'rxjs/operators/filter';\nimport { map } from 'rxjs/operators/map';\nimport { mergeMap } from 'rxjs/operators/mergeMap';\nimport { DraggableHelper } from './draggable-helper.provider';\n\nfunction isCoordinateWithinRectangle(\n  clientX: number,\n  clientY: number,\n  rect: ClientRect\n): boolean {\n  return (\n    clientX >= rect.left &&\n    clientX = rect.top &&\n    clientY ();\n\n  /**\n   * Called when a draggable element stops overlapping the element\n   */\n  @Output() dragLeave = new EventEmitter();\n\n  /**\n   * Called when a draggable element is moved over the element\n   */\n  @Output() dragOver = new EventEmitter();\n\n  /**\n   * Called when a draggable element is dropped on this element\n   */\n  @Output() drop = new EventEmitter();\n\n  currentDragSubscription: Subscription;\n\n  constructor(\n    private element: ElementRef,\n    private draggableHelper: DraggableHelper,\n    private zone: NgZone\n  ) {}\n\n  ngOnInit(): void {\n    interface CurrentDragData {\n      clientX: number;\n      clientY: number;\n      dropData: any;\n    }\n\n    this.currentDragSubscription = this.draggableHelper.currentDrag.subscribe(\n      (drag: Subject) => {\n        const droppableRectangle: ClientRect = this.element.nativeElement.getBoundingClientRect();\n\n        let currentDragDropData: any;\n        const overlaps = drag.pipe(\n          map(({ clientX, clientY, dropData }) => {\n            currentDragDropData = dropData;\n            return isCoordinateWithinRectangle(\n              clientX,\n              clientY,\n              droppableRectangle\n            );\n          })\n        );\n\n        const overlapsChanged = overlaps.pipe(distinctUntilChanged());\n\n        let dragOverActive: boolean; // TODO - see if there's a way of doing this via rxjs\n\n        overlapsChanged\n          .pipe(filter(overlapsNow => overlapsNow))\n          .subscribe(() => {\n            dragOverActive = true;\n            this.zone.run(() => {\n              this.dragEnter.next({\n                dropData: currentDragDropData\n              });\n            });\n          });\n\n        overlaps.pipe(filter(overlapsNow => overlapsNow)).subscribe(() => {\n          this.zone.run(() => {\n            this.dragOver.next({\n              dropData: currentDragDropData\n            });\n          });\n        });\n\n        overlapsChanged\n          .pipe(pairwise())\n          .pipe(\n            filter(([didOverlap, overlapsNow]) => didOverlap && !overlapsNow)\n          )\n          .subscribe(() => {\n            dragOverActive = false;\n            this.zone.run(() => {\n              this.dragLeave.next({\n                dropData: currentDragDropData\n              });\n            });\n          });\n\n        drag.pipe(mergeMap(() => overlaps)).subscribe({\n          complete: () => {\n            if (dragOverActive) {\n              this.zone.run(() => {\n                this.drop.next({\n                  dropData: currentDragDropData\n                });\n              });\n            }\n          }\n        });\n      }\n    );\n  }\n\n  ngOnDestroy(): void {\n    this.currentDragSubscription.unsubscribe();\n  }\n}\n\n    \n\n\n\n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"},"directives/DroppableDirective.html":{"url":"directives/DroppableDirective.html","title":"directive - DroppableDirective","body":"\n                   \n\n\n\n\n\n\n  Directives\n  DroppableDirective\n\n\n\n    \n        Info\n    \n\n\n    \n        Source\n    \n\n\n\n\n    \n        \n            File\n        \n        \n            src/droppable.directive.ts\n        \n\n\n            \n                Implements\n            \n            \n                        OnInit\n                        OnDestroy\n            \n\n\n        \n            Metadata\n            \n                \n\n                    \n                        selector\n                        [mwlDroppable]\n                    \n\n                \n            \n        \n\n            \n    Index\n    \n        \n                \n                    \n                        Properties\n                    \n                \n                \n                    \n                        \n                            \n                                currentDragSubscription\n                            \n                        \n                    \n                \n\n\n\n                \n                    \n                        Outputs\n                    \n                \n                \n                    \n                        \n                            \n                                dragEnter\n                            \n                            \n                                dragLeave\n                            \n                            \n                                dragOver\n                            \n                            \n                                drop\n                            \n                        \n                    \n                \n\n\n\n        \n    \n\n\n            \n    Constructor\n        \n            \n                \n                    \nconstructor(element: ElementRef, draggableHelper: DraggableHelper, zone: NgZone)\n                    \n                \n                        \n                            \n                                Defined in src/droppable.directive.ts:61\n                            \n                        \n\n                \n                    \n                            \n                                    Parameters :\n                                    \n                                        \n                                            \n                                                Name\n                                                    Type\n                                                Optional\n                                            \n                                        \n                                        \n                                                \n                                                    element\n                                                  \n                                                        \n                                                                    ElementRef\n                                                        \n                                                  \n                                                    \n                                                            no\n                                                    \n                                                    \n                                                \n                                                \n                                                    draggableHelper\n                                                  \n                                                        \n                                                                    DraggableHelper\n                                                        \n                                                  \n                                                    \n                                                            no\n                                                    \n                                                    \n                                                \n                                                \n                                                    zone\n                                                  \n                                                        \n                                                                    NgZone\n                                                        \n                                                  \n                                                    \n                                                            no\n                                                    \n                                                    \n                                                \n                                        \n                                    \n                            \n                    \n                \n            \n        \n\n\n\n            \n    Outputs\n        \n            \n                \n                    \n                        \n                        dragEnter\n                    \n                    \n                        Called when a draggable element starts overlapping the element\n\n                        $event type:    EventEmitter\n\n                    \n                \n                        \n                            \n                                    Defined in src/droppable.directive.ts:44\n                            \n                        \n            \n        \n        \n            \n                \n                    \n                        \n                        dragLeave\n                    \n                    \n                        Called when a draggable element stops overlapping the element\n\n                        $event type:    EventEmitter\n\n                    \n                \n                        \n                            \n                                    Defined in src/droppable.directive.ts:49\n                            \n                        \n            \n        \n        \n            \n                \n                    \n                        \n                        dragOver\n                    \n                    \n                        Called when a draggable element is moved over the element\n\n                        $event type:    EventEmitter\n\n                    \n                \n                        \n                            \n                                    Defined in src/droppable.directive.ts:54\n                            \n                        \n            \n        \n        \n            \n                \n                    \n                        \n                        drop\n                    \n                    \n                        Called when a draggable element is dropped on this element\n\n                        $event type:    EventEmitter\n\n                    \n                \n                        \n                            \n                                    Defined in src/droppable.directive.ts:59\n                            \n                        \n            \n        \n\n\n\n\n            \n    \n        \n            Properties\n        \n        \n            \n                \n                    \n                        \n                        \n                            \n                            currentDragSubscription\n                            \n                            \n                        \n                    \n                \n                \n                    \n                        currentDragSubscription:     Subscription\n\n                    \n                \n                    \n                        \n                            Type :     Subscription\n\n                        \n                    \n                        \n                            \n                                    Defined in src/droppable.directive.ts:61\n                            \n                        \n\n\n            \n        \n\n\n\n    \n\n\n    \n        import {\n  Directive,\n  OnInit,\n  ElementRef,\n  OnDestroy,\n  Output,\n  EventEmitter,\n  NgZone\n} from '@angular/core';\nimport { Subject } from 'rxjs/Subject';\nimport { Subscription } from 'rxjs/Subscription';\nimport { Observable } from 'rxjs/Observable';\nimport { distinctUntilChanged } from 'rxjs/operators/distinctUntilChanged';\nimport { pairwise } from 'rxjs/operators/pairwise';\nimport { filter } from 'rxjs/operators/filter';\nimport { map } from 'rxjs/operators/map';\nimport { mergeMap } from 'rxjs/operators/mergeMap';\nimport { DraggableHelper } from './draggable-helper.provider';\n\nfunction isCoordinateWithinRectangle(\n  clientX: number,\n  clientY: number,\n  rect: ClientRect\n): boolean {\n  return (\n    clientX >= rect.left &&\n    clientX = rect.top &&\n    clientY ();\n\n  /**\n   * Called when a draggable element stops overlapping the element\n   */\n  @Output() dragLeave = new EventEmitter();\n\n  /**\n   * Called when a draggable element is moved over the element\n   */\n  @Output() dragOver = new EventEmitter();\n\n  /**\n   * Called when a draggable element is dropped on this element\n   */\n  @Output() drop = new EventEmitter();\n\n  currentDragSubscription: Subscription;\n\n  constructor(\n    private element: ElementRef,\n    private draggableHelper: DraggableHelper,\n    private zone: NgZone\n  ) {}\n\n  ngOnInit(): void {\n    interface CurrentDragData {\n      clientX: number;\n      clientY: number;\n      dropData: any;\n    }\n\n    this.currentDragSubscription = this.draggableHelper.currentDrag.subscribe(\n      (drag: Subject) => {\n        const droppableRectangle: ClientRect = this.element.nativeElement.getBoundingClientRect();\n\n        let currentDragDropData: any;\n        const overlaps = drag.pipe(\n          map(({ clientX, clientY, dropData }) => {\n            currentDragDropData = dropData;\n            return isCoordinateWithinRectangle(\n              clientX,\n              clientY,\n              droppableRectangle\n            );\n          })\n        );\n\n        const overlapsChanged = overlaps.pipe(distinctUntilChanged());\n\n        let dragOverActive: boolean; // TODO - see if there's a way of doing this via rxjs\n\n        overlapsChanged\n          .pipe(filter(overlapsNow => overlapsNow))\n          .subscribe(() => {\n            dragOverActive = true;\n            this.zone.run(() => {\n              this.dragEnter.next({\n                dropData: currentDragDropData\n              });\n            });\n          });\n\n        overlaps.pipe(filter(overlapsNow => overlapsNow)).subscribe(() => {\n          this.zone.run(() => {\n            this.dragOver.next({\n              dropData: currentDragDropData\n            });\n          });\n        });\n\n        overlapsChanged\n          .pipe(pairwise())\n          .pipe(\n            filter(([didOverlap, overlapsNow]) => didOverlap && !overlapsNow)\n          )\n          .subscribe(() => {\n            dragOverActive = false;\n            this.zone.run(() => {\n              this.dragLeave.next({\n                dropData: currentDragDropData\n              });\n            });\n          });\n\n        drag.pipe(mergeMap(() => overlaps)).subscribe({\n          complete: () => {\n            if (dragOverActive) {\n              this.zone.run(() => {\n                this.drop.next({\n                  dropData: currentDragDropData\n                });\n              });\n            }\n          }\n        });\n      }\n    );\n  }\n\n  ngOnDestroy(): void {\n    this.currentDragSubscription.unsubscribe();\n  }\n}\n\n    \n\n\n\n\n\n\n\n\n\n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"},"changelog.html":{"url":"changelog.html","title":"getting-started - changelog","body":"\n                   \n\nChange Log\nAll notable changes to this project will be documented in this file. See standard-version for commit guidelines.\n\n2.0.0 (2017-12-26)\nBug Fixes\n\nonly call drag start and end outputs when the element is actually dragged (45c6b5f), closes #21 #20\n\nFeatures\n\nupgrade to angular 5 (4159ce2)\nuse lettable rxjs operators (9fca12a)\nuse ng-packagr for building the package (57dd436)\ndragPointerDown: add a new output to repliate the old dragStart behaviour (4a58c61)\n\nBREAKING CHANGES\n\nThe UMD module path has changed from\nangular-draggable-droppable/dist/umd/angular-draggable-droppable.js to\nangular-draggable-droppable/bundles/angular-draggable-droppable.umd.js. System.js users will need\nto update their config.\nrxjs operators will now no longer be added to the observable prototype. Also rxjs\n= 5.5.x or higher is required\n\n\nAngular 5 or higher is now required to use this package\ndrag start and end events are now only called when the element is actually dragged,\nuse regular mousedown and mouseup events to get the old behaviour\n\n\n1.1.1 (2017-10-21)\nBug Fixes\n\nallow angular 5 peer dependency (1265bee)\n\n\n1.1.0 (2017-09-22)\nFeatures\n\ndraggable: allow the draggable cursor to be customised (897b3fe)\n\n\n1.0.2 (2017-09-18)\nBug Fixes\n\ndraggable: fire dragEnd event when the event was not dragged (73d65d7), closes #17\n\n\n1.0.1 (2017-04-14)\nBug Fixes\n\ndraggable: prevent text from being highlighted in firefox (7d859c1)\n\n\n1.0.0 (2017-03-24)\nFeatures\n\nng4: upgrade to angular 4 (42631bc)\n\nBREAKING CHANGES\n\nng4: angular 4.0 or higher is now required to use this library. The upgrade should be seamless for most users\n\n\n0.6.0 (2017-03-23)\nFeatures\n\ndraggable: make dragging work on touch devices (dc0f863)\n\n\n0.5.4 (2017-03-04)\nPerformance Improvements\n\ndraggable: lazily create all mouse event listeners (3c99d40)\n\n\n0.5.3 (2017-03-04)\nBug Fixes\n\nmove dependencies to dev (17a2ccc)\n\n\n0.5.2 (2017-03-04)\nBug Fixes\n\nloosen peer dependency to allow angular 4 (bcc9080)\n\nPerformance Improvements\n\ndraggable: lazily create the mouse move listener (bebd925)\nrun all event listeners outside of angulars zone (d7c9256)\n\n\n0.5.1 (2017-01-06)\nBug Fixes\n\ndraggable: allow draggable events to be clicked (44ea67e)\n\n\n0.5.0 (2016-12-21)\nFeatures\n\ndragAndDropModule: add forRoot method (00f6989)\n\nBREAKING CHANGES\n\ndragAndDropModule: You must now import the DragAndDropModule with the forRoot method\n\n\n0.4.0 (2016-12-18)\nFeatures\n\ndraggable: remove the dragContainer option (5aca67d)\n\nBREAKING CHANGES\n\ndraggable: the dragContainer option has been removed as it didn't work in all cases and can be\n\nimplemented yourself with the validateDrag option\n\n0.3.1 (2016-12-18)\nBug Fixes\n\ndraggable: make the dragEnd output respect the validateDrag input (26cfa7e)\n\n\n0.3.0 (2016-12-12)\nFeatures\n\ndraggable: add dragContainer option (fb75711), closes #10\n\n\n0.2.3 (2016-12-11)\nBug Fixes\n\ndraggable: allow events to be dragged back into their original positions (7831903)\n\n\n0.2.2 (2016-12-11)\nBug Fixes\n\ndraggable: only emit the dragEnd event once (52e9a22)\n\n\n0.2.1 (2016-12-10)\nBug Fixes\n\nrevert duplicate dragging fix as it caused worse errors (7476301)\n\n\n0.2.0 (2016-12-10)\nBug Fixes\n\ncompletely remove applied styled after dragging (3445337)\ndraggable: dont fire duplicate dragging events with the same coordinates (222914b), closes #6\ndraggable: when dragging is disabled, no drag events should be emitted (729f24e)\ndroppable: only allow dropping of events when the cursor is inside (652d632), closes #5\n\nFeatures\n\ndraggable: auto change the cursor to the move icon on hover (50d1962), closes #9\nsnapGrid: rename to dragSnapGrid (a77d07a), closes #7\nvalidateDrag: add the validate drag input (9e5ac95), closes #8\n\nBREAKING CHANGES\n\ndroppable: the drag enter, leave and drop events will not fire until cursor is inside the droppable element. This is to mimic how native drag and drop works\nsnapGrid: The snapGrid input has been renamed to dragSnapGrid\n\n\n0.1.1 (2016-12-09)\nBug Fixes\n\ndraggable: disable pointer events on the element when dragging (f29b424)\n\n\n0.1.0 (2016-11-27)\nBug Fixes\n\ndraggable: dispose of observables when the component is destroyed (710c7f7)\nprevent the default move move interaction on dragging (d2fdcde)\n\nFeatures\n\ndragAxix: allow the drag axis to be locked to just x and y (38fd4b5), closes #2\ndraggable: add mwlDraggable directive (c6771eb)\ndroppable: add the mwlDroppable directive (6016f12), closes #1\nghostDragEnabled: add option to disable the ghost dragging effect (709327c), closes #3\nsnapGrid: implement draggable snap grids (16a3df8), closes #4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"},"dependencies.html":{"url":"dependencies.html","title":"package-dependencies - dependencies","body":"\n                   \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n        Peer Dependencies\n    \n    \n        \n            @angular/core : >=5.0.0 \n    \n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"},"miscellaneous/functions.html":{"url":"miscellaneous/functions.html","title":"miscellaneous-functions - functions","body":"\n                   \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Miscellaneous\n  Functions\n\n\n\n    Index\n    \n        \n            \n                \n                    \n                        \n                            isCoordinateWithinRectangle   (src/.../droppable.directive.ts)\n                        \n                    \n                \n            \n        \n    \n\n\n    src/droppable.directive.ts\n    \n            \n            \n                \n                    \n                        \n                        \n                            \n                            isCoordinateWithinRectangle\n                            \n                            \n                        \n                    \n                \n                \n                    \nisCoordinateWithinRectangle(clientX: undefined, clientY: undefined, rect: undefined)\n                    \n                \n\n\n\n                \n                    \n\n                            \n                                    Parameters :\n                                    \n                                        \n                                            \n                                                Name\n                                                Optional\n                                            \n                                        \n                                        \n                                                \n                                                        clientX\n                                                    \n                                                    \n                                                            no\n                                                    \n                                                    \n\n                                                \n                                                \n                                                        clientY\n                                                    \n                                                    \n                                                            no\n                                                    \n                                                    \n\n                                                \n                                                \n                                                        rect\n                                                    \n                                                    \n                                                            no\n                                                    \n                                                    \n\n                                                \n                                        \n                                    \n                            \n                            \n                            \n                    \n                \n            \n        \n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"},"index.html":{"url":"index.html","title":"getting-started - index","body":"\n                   \n\nangular 5.0+ drag and drop\n\n\n\n\n\n\n\nDemo\nhttps://mattlewis92.github.io/angular-draggable-droppable/demo/\nTable of contents\n\nAbout\nInstallation\nDocumentation\nDevelopment\nLicense\n\nAbout\nObservable powered drag and drop for angular 5.0+\nInstallation\nInstall through npm:\nnpm install --save angular-draggable-droppableThen use it in your app like so:\nimport { Component, NgModule } from '@angular/core';\nimport { DragAndDropModule } from 'angular-draggable-droppable';\n\n@NgModule({\n  declarations: [DemoApp],\n  imports: [DragAndDropModule.forRoot()],\n  bootstrap: [DemoApp]\n})\nclass DemoModule {}\n\n@Component({\n  selector: 'demo-app',\n  template: `\n    Drag me!\n    \n      Drop here\n      Item dropped here with data: \"{{ droppedData }}\"!\n    \n  `\n})\nclass DemoApp {\n\n  droppedData: string;\n\n  dragEnd(event) {\n    console.log('Element was dragged', event);\n  }\n\n}You may also find it useful to view the demo source.\nDocumentation\nAll documentation is auto-generated from the source and can be viewed here:\nhttps://mattlewis92.github.io/angular-draggable-droppable/docs/\nDevelopment\nPrepare your environment\n\nInstall Node.js and NPM (should come with)\nInstall local dev dependencies: npm install while current directory is this repo\n\nDevelopment server\nRun npm start to start a development server on port 8000 with auto reload + tests.\nTesting\nRun npm test to run tests once or npm run test:watch to continually run tests.\nRelease\nnpm run releaseLicense\nMIT\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"},"license.html":{"url":"license.html","title":"getting-started - license","body":"\n                   \n\nThe MIT License (MIT)\nCopyright (c) 2016 Matt Lewis\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"},"modules.html":{"url":"modules.html","title":"modules - modules","body":"\n                   \n\n\n\n\n    Modules\n\n\n    \n            \n                \n                    \n                        DragAndDropModule\n                    \n                    \n                        \n                            Browse\n                        \n                    \n                \n            \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"},"overview.html":{"url":"overview.html","title":"overview - overview","body":"\n                   \n\n\n\n    Overview\n\n\n    \n            \n                \n                    \n                        \n                        \n                            1 module\n                        \n                    \n                \n            \n            \n                \n                    \n                        \n                        2 directives\n                    \n                \n            \n            \n                \n                    \n                        \n                        5 interfaces\n                    \n                \n            \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"},"miscellaneous/typealiases.html":{"url":"miscellaneous/typealiases.html","title":"miscellaneous-typealiases - typealiases","body":"\n                   \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Miscellaneous\n  Type aliases\n\n\n\n    Index\n    \n        \n            \n                \n                    \n                        \n                            ValidateDrag   (src/.../draggable.directive.ts)\n                        \n                    \n                \n            \n        \n    \n\n\n    src/draggable.directive.ts\n    \n        \n            \n                \n                    \n                        \n                        ValidateDrag\n                    \n                \n                \n                    \n                        ValidateDrag:     function\n\n                    \n                \n            \n        \n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"},"miscellaneous/variables.html":{"url":"miscellaneous/variables.html","title":"miscellaneous-variables - variables","body":"\n                   \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Miscellaneous\n  Variables\n\n\n\n    Index\n    \n        \n            \n                \n                    \n                        \n                            MOVE_CURSOR   (src/.../draggable.directive.ts)\n                        \n                    \n                \n            \n        \n    \n\n\n    src/draggable.directive.ts\n    \n            \n            \n                \n                    \n                        \n                        \n                            \n                            MOVE_CURSOR\n                            \n                            \n                        \n                    \n                \n                \n                    \n                        MOVE_CURSOR:     string\n\n                    \n                \n                    \n                        \n                            Type :     string\n\n                        \n                    \n                    \n                        \n                            Default value : 'move'\n                        \n                    \n\n\n            \n        \n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"}}
-}
+  index: {
+    version: '2.1.6',
+    fields: ['title', 'body'],
+    fieldVectors: [
+      ['title/interfaces/Coordinates.html', [0, 0.619, 1, 1.311]],
+      [
+        'body/interfaces/Coordinates.html',
+        [
+          0,
+          0.721,
+          1,
+          1.644,
+          2,
+          0.473,
+          3,
+          0.394,
+          4,
+          0.327,
+          5,
+          0.568,
+          6,
+          0.268,
+          7,
+          0.935,
+          8,
+          2.634,
+          9,
+          2.634,
+          10,
+          1.938,
+          11,
+          0.828,
+          12,
+          0.074,
+          13,
+          0.935,
+          14,
+          1.085,
+          15,
+          1.085,
+          16,
+          0.796,
+          17,
+          0.538,
+          18,
+          0.935,
+          19,
+          0.935,
+          20,
+          1.391,
+          21,
+          1.273,
+          22,
+          1.528,
+          23,
+          2.101,
+          24,
+          0.935,
+          25,
+          1.391,
+          26,
+          0.935,
+          27,
+          1.391,
+          28,
+          0.327,
+          29,
+          1.568,
+          30,
+          1.192,
+          31,
+          1.13,
+          32,
+          0.473,
+          33,
+          0.568,
+          34,
+          0.568,
+          35,
+          0.845,
+          36,
+          0.845,
+          37,
+          0.845,
+          38,
+          0.568,
+          39,
+          0.845,
+          40,
+          0.935,
+          41,
+          0.568,
+          42,
+          0.993,
+          43,
+          0.538,
+          44,
+          0.473,
+          45,
+          1.987,
+          46,
+          1.441,
+          47,
+          1.738,
+          48,
+          1.13,
+          49,
+          1.192,
+          50,
+          2.274,
+          51,
+          1.615,
+          52,
+          1.615,
+          53,
+          1.458,
+          54,
+          2.447,
+          55,
+          2.587,
+          56,
+          1.738,
+          57,
+          1.13,
+          58,
+          1.192,
+          59,
+          0.649,
+          60,
+          0.568,
+          61,
+          0.686,
+          62,
+          0.568,
+          63,
+          0.686,
+          64,
+          0.568,
+          65,
+          0.845,
+          66,
+          0.686,
+          67,
+          0.845,
+          68,
+          0.394,
+          69,
+          0.779,
+          70,
+          1.13,
+          71,
+          1.391,
+          72,
+          1.568,
+          73,
+          1.382,
+          74,
+          0.686,
+          75,
+          1.346,
+          76,
+          0.686,
+          77,
+          0.686,
+          78,
+          1.391,
+          79,
+          0.686,
+          80,
+          0.686,
+          81,
+          0.686,
+          82,
+          0.845,
+          83,
+          0.686,
+          84,
+          0.845,
+          85,
+          1.13,
+          86,
+          0.473,
+          87,
+          0.845,
+          88,
+          1.273,
+          89,
+          1.391,
+          90,
+          1.13,
+          91,
+          0.686,
+          92,
+          0.686,
+          93,
+          0.845,
+          94,
+          0.686,
+          95,
+          1.514,
+          96,
+          0.268,
+          97,
+          0.686,
+          98,
+          0.686,
+          99,
+          0.686,
+          100,
+          0.686,
+          101,
+          2.057,
+          102,
+          0.845,
+          103,
+          1.774,
+          104,
+          0.845,
+          105,
+          2.128,
+          106,
+          0.845,
+          107,
+          1.391,
+          108,
+          2.27,
+          109,
+          1.13,
+          110,
+          1.13,
+          111,
+          1.391,
+          112,
+          1.391,
+          113,
+          1.391,
+          114,
+          1.391,
+          115,
+          1.391,
+          116,
+          1.391,
+          117,
+          0.568,
+          118,
+          0.845,
+          119,
+          0.845,
+          120,
+          0.473,
+          121,
+          0.568,
+          122,
+          1.391,
+          123,
+          0.845,
+          124,
+          1.391,
+          125,
+          0.845,
+          126,
+          1.391,
+          127,
+          1.644,
+          128,
+          0.845,
+          129,
+          1.774,
+          130,
+          1.382,
+          131,
+          0.845,
+          132,
+          2.587,
+          133,
+          0.845,
+          134,
+          0.845,
+          135,
+          0.845,
+          136,
+          1.448,
+          137,
+          1.391,
+          138,
+          0.845,
+          139,
+          1.391,
+          140,
+          0.845,
+          141,
+          1.391,
+          142,
+          1.774,
+          143,
+          1.391,
+          144,
+          0.845,
+          145,
+          1.774,
+          146,
+          1.391,
+          147,
+          0.845,
+          148,
+          1.391,
+          149,
+          1.391,
+          150,
+          1.391,
+          151,
+          1.391,
+          152,
+          0.845,
+          153,
+          1.391,
+          154,
+          0.845,
+          155,
+          0.845,
+          156,
+          0.845,
+          157,
+          1.391,
+          158,
+          0.845,
+          159,
+          0.845,
+          160,
+          0.845,
+          161,
+          0.845,
+          162,
+          0.845,
+          163,
+          1.774,
+          164,
+          1.774,
+          165,
+          2.587,
+          166,
+          1.774,
+          167,
+          0.845,
+          168,
+          1.441,
+          169,
+          0.845,
+          170,
+          0.845,
+          171,
+          1.774,
+          172,
+          0.845,
+          173,
+          0.845,
+          174,
+          0.845,
+          175,
+          0.845,
+          176,
+          0.845,
+          177,
+          0.845,
+          178,
+          0.568,
+          179,
+          0.845,
+          180,
+          0.845,
+          181,
+          0.845,
+          182,
+          0.845,
+          183,
+          0.845,
+          184,
+          0.845,
+          185,
+          0.845,
+          186,
+          0.845,
+          187,
+          0.568,
+          188,
+          1.391,
+          189,
+          0.845,
+          190,
+          0.845,
+          191,
+          0.845,
+          192,
+          0.845,
+          193,
+          2.057,
+          194,
+          1.774,
+          195,
+          0.845,
+          196,
+          0.845,
+          197,
+          0.845,
+          198,
+          2.801,
+          199,
+          0.845,
+          200,
+          0.845,
+          201,
+          1.273,
+          202,
+          0.845,
+          203,
+          0.845,
+          204,
+          0.845,
+          205,
+          0.845,
+          206,
+          1.391,
+          207,
+          0.845,
+          208,
+          0.845,
+          209,
+          0.845,
+          210,
+          0.845,
+          211,
+          0.845,
+          212,
+          0.845,
+          213,
+          2.274,
+          214,
+          1.391,
+          215,
+          1.391,
+          216,
+          0.845,
+          217,
+          0.845,
+          218,
+          1.391,
+          219,
+          1.391,
+          220,
+          1.391,
+          221,
+          0.845,
+          222,
+          1.774,
+          223,
+          1.391,
+          224,
+          0.845,
+          225,
+          2.274,
+          226,
+          1.391,
+          227,
+          0.845,
+          228,
+          0.845,
+          229,
+          0.845,
+          230,
+          0.845,
+          231,
+          0.845,
+          232,
+          0.845,
+          233,
+          0.845,
+          234,
+          0.845,
+          235,
+          0.845,
+          236,
+          0.845,
+          237,
+          0.845,
+          238,
+          1.391,
+          239,
+          2.274,
+          240,
+          0.845,
+          241,
+          0.845,
+          242,
+          0.845,
+          243,
+          0.845,
+          244,
+          0.845,
+          245,
+          0.845,
+          246,
+          0.845,
+          247,
+          0.845,
+          248,
+          0.845,
+          249,
+          1.391,
+          250,
+          0.026,
+          251,
+          0.026
+        ]
+      ],
+      ['title/modules/DragAndDropModule.html', [252, 0.911, 253, 1.093]],
+      [
+        'body/modules/DragAndDropModule.html',
+        [
+          2,
+          1.434,
+          3,
+          1.195,
+          4,
+          0.99,
+          12,
+          0.072,
+          16,
+          1.344,
+          28,
+          0.99,
+          42,
+          1.738,
+          43,
+          0.99,
+          44,
+          1.434,
+          45,
+          2.713,
+          62,
+          1.72,
+          63,
+          2.89,
+          136,
+          1.434,
+          250,
+          0.059,
+          251,
+          0.059,
+          252,
+          1.195,
+          253,
+          1.871,
+          254,
+          3.29,
+          255,
+          3.29,
+          256,
+          3.104,
+          257,
+          2.89,
+          258,
+          3.341,
+          259,
+          3.989,
+          260,
+          3.29,
+          261,
+          3.29,
+          262,
+          3.29,
+          263,
+          2.56,
+          264,
+          2.56
+        ]
+      ],
+      ['title/interfaces/DragAxis.html', [0, 0.619, 46, 1.585]],
+      [
+        'body/interfaces/DragAxis.html',
+        [
+          0,
+          0.721,
+          1,
+          1.528,
+          2,
+          0.473,
+          3,
+          0.394,
+          4,
+          0.327,
+          5,
+          0.568,
+          6,
+          0.268,
+          7,
+          0.935,
+          8,
+          2.634,
+          9,
+          2.634,
+          10,
+          1.644,
+          11,
+          0.828,
+          12,
+          0.074,
+          13,
+          0.935,
+          16,
+          0.796,
+          17,
+          0.538,
+          18,
+          0.935,
+          19,
+          0.935,
+          20,
+          1.391,
+          21,
+          1.273,
+          22,
+          1.528,
+          23,
+          2.101,
+          24,
+          0.935,
+          25,
+          1.391,
+          26,
+          0.935,
+          27,
+          1.391,
+          28,
+          0.327,
+          29,
+          1.568,
+          30,
+          1.192,
+          31,
+          1.13,
+          32,
+          0.473,
+          33,
+          0.568,
+          34,
+          0.568,
+          35,
+          0.845,
+          36,
+          0.845,
+          37,
+          0.845,
+          38,
+          0.568,
+          39,
+          0.845,
+          40,
+          0.935,
+          41,
+          0.568,
+          42,
+          0.993,
+          43,
+          0.538,
+          44,
+          0.473,
+          45,
+          1.987,
+          46,
+          1.67,
+          47,
+          1.987,
+          48,
+          1.13,
+          49,
+          1.192,
+          50,
+          2.274,
+          51,
+          1.615,
+          52,
+          1.615,
+          53,
+          1.458,
+          54,
+          2.447,
+          55,
+          2.587,
+          56,
+          1.738,
+          57,
+          1.13,
+          58,
+          1.192,
+          59,
+          0.649,
+          60,
+          0.568,
+          61,
+          0.686,
+          62,
+          0.568,
+          63,
+          0.686,
+          64,
+          0.568,
+          65,
+          0.845,
+          66,
+          0.686,
+          67,
+          0.845,
+          68,
+          0.394,
+          69,
+          0.779,
+          70,
+          1.13,
+          71,
+          1.391,
+          72,
+          1.568,
+          73,
+          1.382,
+          74,
+          0.686,
+          75,
+          1.346,
+          76,
+          0.686,
+          77,
+          0.686,
+          78,
+          1.391,
+          79,
+          0.686,
+          80,
+          0.686,
+          81,
+          0.686,
+          82,
+          0.845,
+          83,
+          0.686,
+          84,
+          0.845,
+          85,
+          1.13,
+          86,
+          0.473,
+          87,
+          0.845,
+          88,
+          1.273,
+          89,
+          1.391,
+          90,
+          1.13,
+          91,
+          0.686,
+          92,
+          0.686,
+          93,
+          0.845,
+          94,
+          0.686,
+          95,
+          1.514,
+          96,
+          0.268,
+          97,
+          0.686,
+          98,
+          0.686,
+          99,
+          0.686,
+          100,
+          0.686,
+          101,
+          2.057,
+          102,
+          0.845,
+          103,
+          1.774,
+          104,
+          0.845,
+          105,
+          2.128,
+          106,
+          0.845,
+          107,
+          1.391,
+          108,
+          2.27,
+          109,
+          1.13,
+          110,
+          1.13,
+          111,
+          1.391,
+          112,
+          1.391,
+          113,
+          1.391,
+          114,
+          1.391,
+          115,
+          1.391,
+          116,
+          1.391,
+          117,
+          0.568,
+          118,
+          0.845,
+          119,
+          0.845,
+          120,
+          0.473,
+          121,
+          0.568,
+          122,
+          1.391,
+          123,
+          0.845,
+          124,
+          1.391,
+          125,
+          0.845,
+          126,
+          1.391,
+          127,
+          1.644,
+          128,
+          0.845,
+          129,
+          1.774,
+          130,
+          1.382,
+          131,
+          0.845,
+          132,
+          2.587,
+          133,
+          0.845,
+          134,
+          0.845,
+          135,
+          0.845,
+          136,
+          1.448,
+          137,
+          1.391,
+          138,
+          0.845,
+          139,
+          1.391,
+          140,
+          0.845,
+          141,
+          1.391,
+          142,
+          1.774,
+          143,
+          1.391,
+          144,
+          0.845,
+          145,
+          1.774,
+          146,
+          1.391,
+          147,
+          0.845,
+          148,
+          1.391,
+          149,
+          1.391,
+          150,
+          1.391,
+          151,
+          1.391,
+          152,
+          0.845,
+          153,
+          1.391,
+          154,
+          0.845,
+          155,
+          0.845,
+          156,
+          0.845,
+          157,
+          1.391,
+          158,
+          0.845,
+          159,
+          0.845,
+          160,
+          0.845,
+          161,
+          0.845,
+          162,
+          0.845,
+          163,
+          1.774,
+          164,
+          1.774,
+          165,
+          2.587,
+          166,
+          1.774,
+          167,
+          0.845,
+          168,
+          1.441,
+          169,
+          0.845,
+          170,
+          0.845,
+          171,
+          1.774,
+          172,
+          0.845,
+          173,
+          0.845,
+          174,
+          0.845,
+          175,
+          0.845,
+          176,
+          0.845,
+          177,
+          0.845,
+          178,
+          0.568,
+          179,
+          0.845,
+          180,
+          0.845,
+          181,
+          0.845,
+          182,
+          0.845,
+          183,
+          0.845,
+          184,
+          0.845,
+          185,
+          0.845,
+          186,
+          0.845,
+          187,
+          0.568,
+          188,
+          1.391,
+          189,
+          0.845,
+          190,
+          0.845,
+          191,
+          0.845,
+          192,
+          0.845,
+          193,
+          2.057,
+          194,
+          1.774,
+          195,
+          0.845,
+          196,
+          0.845,
+          197,
+          0.845,
+          198,
+          2.801,
+          199,
+          0.845,
+          200,
+          0.845,
+          201,
+          1.273,
+          202,
+          0.845,
+          203,
+          0.845,
+          204,
+          0.845,
+          205,
+          0.845,
+          206,
+          1.391,
+          207,
+          0.845,
+          208,
+          0.845,
+          209,
+          0.845,
+          210,
+          0.845,
+          211,
+          0.845,
+          212,
+          0.845,
+          213,
+          2.274,
+          214,
+          1.391,
+          215,
+          1.391,
+          216,
+          0.845,
+          217,
+          0.845,
+          218,
+          1.391,
+          219,
+          1.391,
+          220,
+          1.391,
+          221,
+          0.845,
+          222,
+          1.774,
+          223,
+          1.391,
+          224,
+          0.845,
+          225,
+          2.274,
+          226,
+          1.391,
+          227,
+          0.845,
+          228,
+          0.845,
+          229,
+          0.845,
+          230,
+          0.845,
+          231,
+          0.845,
+          232,
+          0.845,
+          233,
+          0.845,
+          234,
+          0.845,
+          235,
+          0.845,
+          236,
+          0.845,
+          237,
+          0.845,
+          238,
+          1.391,
+          239,
+          2.274,
+          240,
+          0.845,
+          241,
+          0.845,
+          242,
+          0.845,
+          243,
+          0.845,
+          244,
+          0.845,
+          245,
+          0.845,
+          246,
+          0.845,
+          247,
+          0.845,
+          248,
+          0.845,
+          249,
+          1.391,
+          250,
+          0.026,
+          251,
+          0.026,
+          265,
+          1.085,
+          266,
+          1.085
+        ]
+      ],
+      ['title/interfaces/DropData.html', [0, 0.619, 69, 1.093]],
+      [
+        'body/interfaces/DropData.html',
+        [
+          0,
+          0.753,
+          2,
+          0.953,
+          3,
+          0.794,
+          4,
+          0.658,
+          6,
+          0.539,
+          7,
+          1.597,
+          10,
+          1.993,
+          11,
+          0.794,
+          12,
+          0.074,
+          13,
+          1.143,
+          16,
+          1.147,
+          17,
+          0.658,
+          18,
+          1.143,
+          19,
+          1.597,
+          21,
+          1.661,
+          22,
+          1.993,
+          24,
+          1.143,
+          26,
+          1.597,
+          28,
+          0.658,
+          29,
+          1.331,
+          32,
+          1.331,
+          33,
+          1.597,
+          34,
+          1.143,
+          38,
+          1.143,
+          40,
+          1.143,
+          41,
+          1.143,
+          42,
+          1.534,
+          43,
+          1.147,
+          44,
+          0.953,
+          47,
+          1.597,
+          51,
+          1.81,
+          52,
+          1.747,
+          56,
+          1.841,
+          59,
+          0.794,
+          68,
+          1.109,
+          69,
+          1.971,
+          72,
+          1.858,
+          73,
+          1.143,
+          75,
+          0.794,
+          88,
+          1.534,
+          95,
+          1.534,
+          105,
+          1.841,
+          108,
+          1.597,
+          117,
+          1.143,
+          120,
+          0.953,
+          121,
+          1.143,
+          127,
+          1.143,
+          130,
+          1.993,
+          136,
+          1.331,
+          178,
+          1.597,
+          187,
+          1.143,
+          250,
+          0.045,
+          251,
+          0.045,
+          267,
+          1.382,
+          268,
+          2.186,
+          269,
+          2.377,
+          270,
+          1.701,
+          271,
+          0.953,
+          272,
+          1.93,
+          273,
+          1.382,
+          274,
+          2.377,
+          275,
+          1.701,
+          276,
+          1.701,
+          277,
+          1.701,
+          278,
+          2.377,
+          279,
+          1.701,
+          280,
+          1.701,
+          281,
+          1.701,
+          282,
+          1.701,
+          283,
+          1.701,
+          284,
+          1.701,
+          285,
+          1.701,
+          286,
+          2.377,
+          287,
+          1.701,
+          288,
+          3.232,
+          289,
+          1.701,
+          290,
+          2.739,
+          291,
+          1.701,
+          292,
+          2.965,
+          293,
+          1.701,
+          294,
+          1.382,
+          295,
+          1.701,
+          296,
+          1.701,
+          297,
+          1.701,
+          298,
+          1.701,
+          299,
+          1.701,
+          300,
+          2.739,
+          301,
+          1.701,
+          302,
+          1.701,
+          303,
+          1.701,
+          304,
+          1.701,
+          305,
+          1.701,
+          306,
+          1.701,
+          307,
+          1.701,
+          308,
+          1.701,
+          309,
+          1.701,
+          310,
+          1.701,
+          311,
+          1.701,
+          312,
+          1.382,
+          313,
+          1.701,
+          314,
+          1.701
+        ]
+      ],
+      ['title/directives/DroppableDirective.html', [17, 0.755, 257, 1.585]],
+      [
+        'body/directives/DroppableDirective.html',
+        [
+          0,
+          0.479,
+          2,
+          0.845,
+          3,
+          0.705,
+          4,
+          0.584,
+          6,
+          0.479,
+          7,
+          1.467,
+          10,
+          1.888,
+          11,
+          1.45,
+          12,
+          0.073,
+          13,
+          2.088,
+          16,
+          1.087,
+          17,
+          0.845,
+          18,
+          1.467,
+          19,
+          1.888,
+          21,
+          1.74,
+          22,
+          2.205,
+          24,
+          1.467,
+          26,
+          1.888,
+          28,
+          0.584,
+          29,
+          1.222,
+          32,
+          1.222,
+          33,
+          1.467,
+          34,
+          1.014,
+          38,
+          1.014,
+          40,
+          1.014,
+          41,
+          1.014,
+          42,
+          1.794,
+          43,
+          1.269,
+          44,
+          0.845,
+          47,
+          1.467,
+          51,
+          1.74,
+          52,
+          1.669,
+          53,
+          1.311,
+          56,
+          1.723,
+          59,
+          1.019,
+          60,
+          1.014,
+          64,
+          1.014,
+          68,
+          1.391,
+          69,
+          1.794,
+          72,
+          2.005,
+          73,
+          1.014,
+          75,
+          0.705,
+          88,
+          1.794,
+          95,
+          1.436,
+          96,
+          0.479,
+          105,
+          1.723,
+          108,
+          1.467,
+          117,
+          1.467,
+          120,
+          1.436,
+          121,
+          1.014,
+          127,
+          1.014,
+          130,
+          1.888,
+          136,
+          1.222,
+          178,
+          1.467,
+          187,
+          1.014,
+          250,
+          0.041,
+          251,
+          0.041,
+          257,
+          1.226,
+          267,
+          1.226,
+          269,
+          2.81,
+          270,
+          1.51,
+          271,
+          0.845,
+          272,
+          1.773,
+          273,
+          1.226,
+          274,
+          2.183,
+          275,
+          1.51,
+          276,
+          1.51,
+          277,
+          2.183,
+          278,
+          2.81,
+          279,
+          2.565,
+          280,
+          2.183,
+          281,
+          2.565,
+          282,
+          2.81,
+          283,
+          1.51,
+          284,
+          1.51,
+          285,
+          1.51,
+          286,
+          2.183,
+          287,
+          1.51,
+          288,
+          3.107,
+          289,
+          1.51,
+          290,
+          2.565,
+          291,
+          1.51,
+          292,
+          2.81,
+          293,
+          1.51,
+          294,
+          1.226,
+          295,
+          1.51,
+          296,
+          1.51,
+          297,
+          1.51,
+          298,
+          1.51,
+          299,
+          1.51,
+          300,
+          2.565,
+          301,
+          1.51,
+          302,
+          1.51,
+          303,
+          1.51,
+          304,
+          1.51,
+          305,
+          1.51,
+          306,
+          1.51,
+          307,
+          1.51,
+          308,
+          1.51,
+          309,
+          1.51,
+          310,
+          1.51,
+          311,
+          1.51,
+          312,
+          1.226,
+          313,
+          1.51,
+          314,
+          1.51,
+          315,
+          1.94,
+          316,
+          1.51,
+          317,
+          2.806,
+          318,
+          1.94,
+          319,
+          2.806,
+          320,
+          1.51,
+          321,
+          1.51,
+          322,
+          1.226,
+          323,
+          1.94,
+          324,
+          1.94,
+          325,
+          1.94,
+          326,
+          1.94
+        ]
+      ],
+      ['title/changelog.html', [96, 0.525, 327, 1.345, 328, 2.128]],
+      [
+        'body/changelog.html',
+        [
+          1,
+          0.797,
+          4,
+          0.459,
+          8,
+          0.963,
+          9,
+          0.963,
+          12,
+          0.042,
+          16,
+          0.459,
+          17,
+          0.705,
+          21,
+          1.244,
+          23,
+          1.804,
+          30,
+          1.225,
+          32,
+          1.396,
+          43,
+          1.4,
+          48,
+          2.025,
+          49,
+          1.493,
+          53,
+          1.578,
+          59,
+          1.256,
+          61,
+          0.963,
+          64,
+          1.225,
+          68,
+          1.037,
+          70,
+          0.963,
+          72,
+          1.396,
+          74,
+          0.963,
+          75,
+          1.639,
+          76,
+          0.963,
+          77,
+          1.481,
+          79,
+          0.963,
+          80,
+          0.963,
+          81,
+          2.404,
+          83,
+          1.481,
+          85,
+          2.025,
+          86,
+          1.591,
+          88,
+          1.021,
+          90,
+          1.481,
+          91,
+          0.963,
+          92,
+          0.963,
+          94,
+          0.963,
+          95,
+          0.664,
+          96,
+          0.578,
+          97,
+          0.963,
+          98,
+          0.963,
+          99,
+          0.963,
+          100,
+          1.804,
+          109,
+          0.963,
+          110,
+          0.963,
+          120,
+          0.664,
+          201,
+          0.664,
+          250,
+          0.035,
+          251,
+          0.035,
+          252,
+          0.554,
+          253,
+          1.244,
+          263,
+          1.824,
+          294,
+          0.963,
+          312,
+          0.963,
+          316,
+          1.186,
+          322,
+          2.186,
+          329,
+          4.111,
+          330,
+          1.524,
+          331,
+          1.524,
+          332,
+          1.524,
+          333,
+          1.524,
+          334,
+          1.524,
+          335,
+          1.524,
+          336,
+          1.524,
+          337,
+          1.524,
+          338,
+          1.524,
+          339,
+          1.524,
+          340,
+          3.205,
+          341,
+          4.111,
+          342,
+          3.205,
+          343,
+          3.255,
+          344,
+          3.205,
+          345,
+          1.524,
+          346,
+          4.298,
+          347,
+          1.524,
+          348,
+          3.652,
+          349,
+          3.205,
+          350,
+          3.652,
+          351,
+          3.205,
+          352,
+          2.222,
+          353,
+          1.524,
+          354,
+          4.182,
+          355,
+          4.182,
+          356,
+          1.524,
+          357,
+          4.345,
+          358,
+          4.386,
+          359,
+          2.344,
+          360,
+          2.344,
+          361,
+          1.524,
+          362,
+          2.855,
+          363,
+          1.524,
+          364,
+          2.494,
+          365,
+          1.524,
+          366,
+          1.524,
+          367,
+          2.344,
+          368,
+          1.524,
+          369,
+          1.524,
+          370,
+          1.524,
+          371,
+          1.524,
+          372,
+          1.524,
+          373,
+          3.803,
+          374,
+          1.524,
+          375,
+          2.344,
+          376,
+          1.524,
+          377,
+          1.524,
+          378,
+          1.524,
+          379,
+          1.524,
+          380,
+          1.524,
+          381,
+          1.524,
+          382,
+          1.524,
+          383,
+          1.524,
+          384,
+          2.344,
+          385,
+          1.524,
+          386,
+          1.524,
+          387,
+          1.524,
+          388,
+          1.524,
+          389,
+          1.524,
+          390,
+          1.524,
+          391,
+          1.524,
+          392,
+          1.524,
+          393,
+          1.524,
+          394,
+          3.205,
+          395,
+          1.824,
+          396,
+          1.493,
+          397,
+          1.524,
+          398,
+          1.524,
+          399,
+          1.524,
+          400,
+          1.524,
+          401,
+          1.524,
+          402,
+          1.524,
+          403,
+          2.855,
+          404,
+          2.855,
+          405,
+          1.524,
+          406,
+          1.524,
+          407,
+          1.524,
+          408,
+          3.205,
+          409,
+          1.524,
+          410,
+          2.344,
+          411,
+          1.524,
+          412,
+          1.524,
+          413,
+          1.524,
+          414,
+          1.524,
+          415,
+          1.524,
+          416,
+          3.459,
+          417,
+          1.524,
+          418,
+          2.344,
+          419,
+          2.855,
+          420,
+          1.524,
+          421,
+          1.524,
+          422,
+          1.524,
+          423,
+          1.524,
+          424,
+          1.524,
+          425,
+          1.524,
+          426,
+          2.344,
+          427,
+          2.855,
+          428,
+          1.524,
+          429,
+          1.524,
+          430,
+          2.344,
+          431,
+          2.344,
+          432,
+          2.344,
+          433,
+          2.344,
+          434,
+          2.855,
+          435,
+          1.524,
+          436,
+          1.524,
+          437,
+          1.186,
+          438,
+          1.524,
+          439,
+          1.524,
+          440,
+          1.524,
+          441,
+          1.524,
+          442,
+          1.524,
+          443,
+          1.186,
+          444,
+          1.524,
+          445,
+          1.524,
+          446,
+          1.524,
+          447,
+          1.524,
+          448,
+          1.524,
+          449,
+          1.524,
+          450,
+          1.524,
+          451,
+          1.524,
+          452,
+          3.199,
+          453,
+          2.344,
+          454,
+          1.524,
+          455,
+          1.524,
+          456,
+          2.855,
+          457,
+          2.855,
+          458,
+          1.524,
+          459,
+          1.524,
+          460,
+          1.524,
+          461,
+          1.524,
+          462,
+          1.524,
+          463,
+          1.524,
+          464,
+          1.524,
+          465,
+          1.524,
+          466,
+          1.524,
+          467,
+          1.524,
+          468,
+          2.855,
+          469,
+          1.524,
+          470,
+          1.524,
+          471,
+          1.524,
+          472,
+          1.524,
+          473,
+          1.524,
+          474,
+          2.344,
+          475,
+          1.186,
+          476,
+          1.524,
+          477,
+          1.524,
+          478,
+          1.524,
+          479,
+          2.344,
+          480,
+          1.524,
+          481,
+          1.524,
+          482,
+          1.524,
+          483,
+          1.524,
+          484,
+          1.524,
+          485,
+          1.524,
+          486,
+          1.524,
+          487,
+          1.524,
+          488,
+          1.524,
+          489,
+          1.524,
+          490,
+          1.524,
+          491,
+          2.855,
+          492,
+          1.524,
+          493,
+          2.494,
+          494,
+          2.344,
+          495,
+          1.524,
+          496,
+          1.186,
+          497,
+          1.524,
+          498,
+          1.524,
+          499,
+          1.524,
+          500,
+          1.524,
+          501,
+          2.344,
+          502,
+          1.524,
+          503,
+          1.524,
+          504,
+          1.524,
+          505,
+          1.524,
+          506,
+          1.524,
+          507,
+          1.524,
+          508,
+          1.524,
+          509,
+          1.524,
+          510,
+          1.524,
+          511,
+          1.524,
+          512,
+          1.524,
+          513,
+          1.524,
+          514,
+          1.524,
+          515,
+          1.524,
+          516,
+          1.524,
+          517,
+          1.186,
+          518,
+          1.524,
+          519,
+          1.524,
+          520,
+          1.186,
+          521,
+          1.524,
+          522,
+          1.524,
+          523,
+          1.524,
+          524,
+          1.524,
+          525,
+          1.524,
+          526,
+          1.186,
+          527,
+          1.524,
+          528,
+          1.524,
+          529,
+          1.186,
+          530,
+          1.524,
+          531,
+          1.524,
+          532,
+          1.524,
+          533,
+          1.524
+        ]
+      ],
+      ['title/dependencies.html', [352, 1.656, 396, 1.567]],
+      [
+        'body/dependencies.html',
+        [
+          12,
+          0.067,
+          28,
+          1.138,
+          250,
+          0.064,
+          251,
+          0.064,
+          395,
+          2.942,
+          396,
+          1.977,
+          534,
+          3.78
+        ]
+      ],
+      ['title/miscellaneous/functions.html', [271, 1.306, 535, 0.773]],
+      [
+        'body/miscellaneous/functions.html',
+        [
+          6,
+          0.896,
+          12,
+          0.066,
+          51,
+          1.583,
+          52,
+          1.844,
+          250,
+          0.062,
+          251,
+          0.062,
+          267,
+          2.296,
+          271,
+          1.583,
+          272,
+          2.674,
+          273,
+          2.674,
+          320,
+          2.827,
+          321,
+          2.827,
+          322,
+          2.296,
+          535,
+          1.319,
+          536,
+          3.633,
+          537,
+          3.633,
+          538,
+          4.477
+        ]
+      ],
+      ['title/index.html', [6, 0.525, 96, 0.525, 327, 1.345]],
+      [
+        'body/index.html',
+        [
+          3,
+          1.287,
+          12,
+          0.071,
+          16,
+          1.185,
+          28,
+          0.82,
+          30,
+          1.425,
+          43,
+          1.255,
+          53,
+          0.989,
+          58,
+          1.425,
+          60,
+          1.425,
+          62,
+          1.853,
+          66,
+          1.722,
+          68,
+          1.514,
+          75,
+          1.514,
+          86,
+          1.544,
+          96,
+          0.874,
+          201,
+          1.716,
+          250,
+          0.052,
+          251,
+          0.052,
+          253,
+          1.187,
+          256,
+          2.12,
+          258,
+          2.757,
+          343,
+          3.245,
+          396,
+          1.425,
+          437,
+          2.12,
+          443,
+          3.448,
+          475,
+          2.12,
+          493,
+          2.12,
+          496,
+          2.757,
+          517,
+          2.757,
+          539,
+          3.543,
+          540,
+          3.938,
+          541,
+          3.543,
+          542,
+          2.724,
+          543,
+          2.724,
+          544,
+          2.724,
+          545,
+          4.512,
+          546,
+          4.17,
+          547,
+          1.722,
+          548,
+          2.724,
+          549,
+          2.724,
+          550,
+          4.574,
+          551,
+          2.724,
+          552,
+          2.724,
+          553,
+          3.543,
+          554,
+          3.938,
+          555,
+          2.724,
+          556,
+          2.724,
+          557,
+          2.724,
+          558,
+          2.724,
+          559,
+          3.938,
+          560,
+          2.724,
+          561,
+          3.543,
+          562,
+          2.724,
+          563,
+          2.724,
+          564,
+          2.724,
+          565,
+          3.543,
+          566,
+          2.724,
+          567,
+          2.724,
+          568,
+          2.724,
+          569,
+          2.724,
+          570,
+          2.724,
+          571,
+          2.724,
+          572,
+          2.724,
+          573,
+          2.724,
+          574,
+          2.724,
+          575,
+          2.724,
+          576,
+          3.543,
+          577,
+          2.724,
+          578,
+          2.724,
+          579,
+          2.724,
+          580,
+          4.323,
+          581,
+          2.724,
+          582,
+          2.724,
+          583,
+          2.724,
+          584,
+          2.724,
+          585,
+          2.12
+        ]
+      ],
+      ['title/license.html', [96, 0.525, 327, 1.345, 547, 1.345]],
+      [
+        'body/license.html',
+        [
+          4,
+          0.917,
+          12,
+          0.056,
+          29,
+          1.327,
+          31,
+          1.925,
+          53,
+          1.106,
+          86,
+          1.658,
+          201,
+          1.327,
+          250,
+          0.056,
+          251,
+          0.056,
+          264,
+          2.37,
+          452,
+          2.37,
+          547,
+          1.925,
+          585,
+          2.96,
+          586,
+          4.149,
+          587,
+          3.046,
+          588,
+          3.046,
+          589,
+          3.046,
+          590,
+          3.804,
+          591,
+          3.046,
+          592,
+          3.046,
+          593,
+          3.046,
+          594,
+          3.046,
+          595,
+          3.804,
+          596,
+          3.046,
+          597,
+          4.345,
+          598,
+          4.718,
+          599,
+          3.046,
+          600,
+          3.804,
+          601,
+          4.149,
+          602,
+          3.046,
+          603,
+          4.149,
+          604,
+          3.804,
+          605,
+          3.046,
+          606,
+          3.046,
+          607,
+          3.046,
+          608,
+          3.046,
+          609,
+          3.046,
+          610,
+          3.046,
+          611,
+          3.046,
+          612,
+          3.046,
+          613,
+          3.046,
+          614,
+          3.046,
+          615,
+          3.046,
+          616,
+          3.046,
+          617,
+          3.804,
+          618,
+          3.804,
+          619,
+          3.046,
+          620,
+          3.046,
+          621,
+          3.804,
+          622,
+          3.046,
+          623,
+          3.046,
+          624,
+          3.046,
+          625,
+          3.046,
+          626,
+          3.046,
+          627,
+          3.046,
+          628,
+          3.046,
+          629,
+          3.046,
+          630,
+          3.046,
+          631,
+          3.046,
+          632,
+          3.046,
+          633,
+          3.046,
+          634,
+          3.046,
+          635,
+          3.046,
+          636,
+          3.046,
+          637,
+          3.046,
+          638,
+          3.046,
+          639,
+          3.046,
+          640,
+          3.046,
+          641,
+          3.046,
+          642,
+          3.046,
+          643,
+          3.046
+        ]
+      ],
+      ['title/modules.html', [252, 1.218]],
+      [
+        'body/modules.html',
+        [12, 0.064, 250, 0.064, 251, 0.064, 252, 1.38, 253, 1.656, 644, 3.801]
+      ],
+      ['title/overview.html', [645, 2.611]],
+      [
+        'body/overview.html',
+        [
+          0,
+          0.928,
+          12,
+          0.064,
+          17,
+          1.132,
+          250,
+          0.064,
+          251,
+          0.064,
+          252,
+          1.366,
+          364,
+          2.926,
+          526,
+          2.926,
+          529,
+          2.926,
+          645,
+          2.926
+        ]
+      ],
+      ['title/miscellaneous/typealiases.html', [535, 0.773, 646, 2.997]],
+      [
+        'body/miscellaneous/typealiases.html',
+        [
+          5,
+          1.95,
+          6,
+          0.92,
+          11,
+          1.355,
+          12,
+          0.063,
+          49,
+          2.366,
+          250,
+          0.063,
+          251,
+          0.063,
+          271,
+          1.625,
+          535,
+          1.355,
+          647,
+          3.73,
+          648,
+          2.902
+        ]
+      ],
+      ['title/miscellaneous/variables.html', [535, 0.773, 649, 2.332]],
+      [
+        'body/miscellaneous/variables.html',
+        [
+          5,
+          1.92,
+          6,
+          0.906,
+          11,
+          1.333,
+          12,
+          0.068,
+          57,
+          2.842,
+          58,
+          2.226,
+          59,
+          1.333,
+          168,
+          2.32,
+          250,
+          0.063,
+          251,
+          0.063,
+          520,
+          2.857,
+          535,
+          1.333,
+          648,
+          2.857,
+          649,
+          2.857
+        ]
+      ]
+    ],
+    invertedIndex: [
+      [
+        '',
+        {
+          _index: 12,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'modules/DragAndDropModule.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {},
+            'dependencies.html': {},
+            'miscellaneous/functions.html': {},
+            'index.html': {},
+            'license.html': {},
+            'modules.html': {},
+            'overview.html': {},
+            'miscellaneous/typealiases.html': {},
+            'miscellaneous/variables.html': {}
+          }
+        }
+      ],
+      [
+        '0',
+        {
+          _index: 132,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['0.1.0', { _index: 514, title: {}, body: { 'changelog.html': {} } }],
+      ['0.1.1', { _index: 512, title: {}, body: { 'changelog.html': {} } }],
+      ['0.2.0', { _index: 484, title: {}, body: { 'changelog.html': {} } }],
+      ['0.2.1', { _index: 477, title: {}, body: { 'changelog.html': {} } }],
+      ['0.2.2', { _index: 473, title: {}, body: { 'changelog.html': {} } }],
+      ['0.2.3', { _index: 467, title: {}, body: { 'changelog.html': {} } }],
+      ['0.3.0', { _index: 465, title: {}, body: { 'changelog.html': {} } }],
+      ['0.3.1', { _index: 462, title: {}, body: { 'changelog.html': {} } }],
+      ['0.4.0', { _index: 455, title: {}, body: { 'changelog.html': {} } }],
+      ['0.5.0', { _index: 451, title: {}, body: { 'changelog.html': {} } }],
+      ['0.5.1', { _index: 446, title: {}, body: { 'changelog.html': {} } }],
+      ['0.5.2', { _index: 439, title: {}, body: { 'changelog.html': {} } }],
+      ['0.5.3', { _index: 436, title: {}, body: { 'changelog.html': {} } }],
+      ['0.5.4', { _index: 429, title: {}, body: { 'changelog.html': {} } }],
+      ['0.6.0', { _index: 424, title: {}, body: { 'changelog.html': {} } }],
+      ['00f6989', { _index: 454, title: {}, body: { 'changelog.html': {} } }],
+      ['01', { _index: 447, title: {}, body: { 'changelog.html': {} } }],
+      ['03', { _index: 416, title: {}, body: { 'changelog.html': {} } }],
+      ['04', { _index: 408, title: {}, body: { 'changelog.html': {} } }],
+      ['05', { _index: 339, title: {}, body: { 'changelog.html': {} } }],
+      ['06', { _index: 448, title: {}, body: { 'changelog.html': {} } }],
+      ['09', { _index: 340, title: {}, body: { 'changelog.html': {} } }],
+      [
+        '1',
+        {
+          _index: 529,
+          title: {},
+          body: { 'changelog.html': {}, 'overview.html': {} }
+        }
+      ],
+      ['1.0.0', { _index: 415, title: {}, body: { 'changelog.html': {} } }],
+      ['1.0.1', { _index: 407, title: {}, body: { 'changelog.html': {} } }],
+      ['1.0.2', { _index: 402, title: {}, body: { 'changelog.html': {} } }],
+      ['1.1.0', { _index: 398, title: {}, body: { 'changelog.html': {} } }],
+      ['1.1.1', { _index: 393, title: {}, body: { 'changelog.html': {} } }],
+      ['10', { _index: 394, title: {}, body: { 'changelog.html': {} } }],
+      ['11', { _index: 468, title: {}, body: { 'changelog.html': {} } }],
+      ['12', { _index: 355, title: {}, body: { 'changelog.html': {} } }],
+      ['1265bee', { _index: 397, title: {}, body: { 'changelog.html': {} } }],
+      ['14', { _index: 409, title: {}, body: { 'changelog.html': {} } }],
+      ['16a3df8', { _index: 533, title: {}, body: { 'changelog.html': {} } }],
+      ['17', { _index: 406, title: {}, body: { 'changelog.html': {} } }],
+      ['17a2ccc', { _index: 438, title: {}, body: { 'changelog.html': {} } }],
+      ['18', { _index: 403, title: {}, body: { 'changelog.html': {} } }],
+      [
+        '2',
+        {
+          _index: 526,
+          title: {},
+          body: { 'changelog.html': {}, 'overview.html': {} }
+        }
+      ],
+      ['2.0.0', { _index: 353, title: {}, body: { 'changelog.html': {} } }],
+      ['20', { _index: 363, title: {}, body: { 'changelog.html': {} } }],
+      [
+        '2016',
+        {
+          _index: 452,
+          title: {},
+          body: { 'changelog.html': {}, 'license.html': {} }
+        }
+      ],
+      ['2017', { _index: 354, title: {}, body: { 'changelog.html': {} } }],
+      ['2018', { _index: 338, title: {}, body: { 'changelog.html': {} } }],
+      ['21', { _index: 362, title: {}, body: { 'changelog.html': {} } }],
+      ['22', { _index: 399, title: {}, body: { 'changelog.html': {} } }],
+      ['222914b', { _index: 490, title: {}, body: { 'changelog.html': {} } }],
+      ['23', { _index: 425, title: {}, body: { 'changelog.html': {} } }],
+      ['24', { _index: 417, title: {}, body: { 'changelog.html': {} } }],
+      ['26', { _index: 356, title: {}, body: { 'changelog.html': {} } }],
+      ['26cfa7e', { _index: 464, title: {}, body: { 'changelog.html': {} } }],
+      ['27', { _index: 515, title: {}, body: { 'changelog.html': {} } }],
+      ['3', { _index: 532, title: {}, body: { 'changelog.html': {} } }],
+      ['3.0.0', { _index: 337, title: {}, body: { 'changelog.html': {} } }],
+      ['31', { _index: 347, title: {}, body: { 'changelog.html': {} } }],
+      ['3445337', { _index: 487, title: {}, body: { 'changelog.html': {} } }],
+      ['38fd4b5', { _index: 525, title: {}, body: { 'changelog.html': {} } }],
+      ['3c99d40', { _index: 435, title: {}, body: { 'changelog.html': {} } }],
+      ['4', { _index: 419, title: {}, body: { 'changelog.html': {} } }],
+      ['4.0', { _index: 421, title: {}, body: { 'changelog.html': {} } }],
+      ['4159ce2', { _index: 365, title: {}, body: { 'changelog.html': {} } }],
+      ['42631bc', { _index: 420, title: {}, body: { 'changelog.html': {} } }],
+      ['44ea67', { _index: 450, title: {}, body: { 'changelog.html': {} } }],
+      ['45c6b5f', { _index: 361, title: {}, body: { 'changelog.html': {} } }],
+      ['4a58c61', { _index: 376, title: {}, body: { 'changelog.html': {} } }],
+      [
+        '5',
+        {
+          _index: 364,
+          title: {},
+          body: { 'changelog.html': {}, 'overview.html': {} }
+        }
+      ],
+      ['5.5.x', { _index: 391, title: {}, body: { 'changelog.html': {} } }],
+      ['50d1962', { _index: 499, title: {}, body: { 'changelog.html': {} } }],
+      ['52e9a22', { _index: 476, title: {}, body: { 'changelog.html': {} } }],
+      ['57dd436', { _index: 372, title: {}, body: { 'changelog.html': {} } }],
+      ['5aca67d', { _index: 458, title: {}, body: { 'changelog.html': {} } }],
+      ['6', { _index: 344, title: {}, body: { 'changelog.html': {} } }],
+      ['6.0', { _index: 539, title: {}, body: { 'index.html': {} } }],
+      ['6.0.0', { _index: 534, title: {}, body: { 'dependencies.html': {} } }],
+      ['6016f12', { _index: 528, title: {}, body: { 'changelog.html': {} } }],
+      ['652d632', { _index: 495, title: {}, body: { 'changelog.html': {} } }],
+      ['7', { _index: 503, title: {}, body: { 'changelog.html': {} } }],
+      ['709327c', { _index: 531, title: {}, body: { 'changelog.html': {} } }],
+      ['710c7f7', { _index: 519, title: {}, body: { 'changelog.html': {} } }],
+      ['729f24e', { _index: 492, title: {}, body: { 'changelog.html': {} } }],
+      ['73d65d7', { _index: 405, title: {}, body: { 'changelog.html': {} } }],
+      ['7476301', { _index: 483, title: {}, body: { 'changelog.html': {} } }],
+      ['7831903', { _index: 472, title: {}, body: { 'changelog.html': {} } }],
+      ['7d859c1', { _index: 414, title: {}, body: { 'changelog.html': {} } }],
+      ['8', { _index: 506, title: {}, body: { 'changelog.html': {} } }],
+      ['8000', { _index: 578, title: {}, body: { 'index.html': {} } }],
+      ['897b3fe', { _index: 401, title: {}, body: { 'changelog.html': {} } }],
+      ['9', { _index: 500, title: {}, body: { 'changelog.html': {} } }],
+      ['9e5ac95', { _index: 505, title: {}, body: { 'changelog.html': {} } }],
+      ['9fca12a', { _index: 368, title: {}, body: { 'changelog.html': {} } }],
+      ['a77d07a', { _index: 502, title: {}, body: { 'changelog.html': {} } }],
+      ['abov', { _index: 616, title: {}, body: { 'license.html': {} } }],
+      ['action', { _index: 637, title: {}, body: { 'license.html': {} } }],
+      ['actual', { _index: 360, title: {}, body: { 'changelog.html': {} } }],
+      ['ad', { _index: 389, title: {}, body: { 'changelog.html': {} } }],
+      ['add', { _index: 373, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'alias',
+        {
+          _index: 647,
+          title: {},
+          body: { 'miscellaneous/typealiases.html': {} }
+        }
+      ],
+      [
+        'allow',
+        {
+          _index: 81,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'along',
+        {
+          _index: 71,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['and/or', { _index: 610, title: {}, body: { 'license.html': {} } }],
+      [
+        'angular',
+        {
+          _index: 343,
+          title: {},
+          body: { 'changelog.html': {}, 'index.html': {} }
+        }
+      ],
+      [
+        'angular/cor',
+        {
+          _index: 28,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'modules/DragAndDropModule.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'dependencies.html': {},
+            'index.html': {}
+          }
+        }
+      ],
+      [
+        'any).eventlistenersubscriptions[typ',
+        {
+          _index: 249,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['app', { _index: 553, title: {}, body: { 'index.html': {} } }],
+      ['appli', { _index: 485, title: {}, body: { 'changelog.html': {} } }],
+      ['aris', { _index: 641, title: {}, body: { 'license.html': {} } }],
+      ['associ', { _index: 599, title: {}, body: { 'license.html': {} } }],
+      ['author', { _index: 630, title: {}, body: { 'license.html': {} } }],
+      [
+        'auto',
+        {
+          _index: 496,
+          title: {},
+          body: { 'changelog.html': {}, 'index.html': {} }
+        }
+      ],
+      [
+        'axi',
+        {
+          _index: 70,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      ['back', { _index: 469, title: {}, body: { 'changelog.html': {} } }],
+      ['bcc9080', { _index: 441, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'be',
+        {
+          _index: 99,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      ['bebd925', { _index: 442, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'behaviour',
+        {
+          _index: 83,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'boolean',
+        {
+          _index: 47,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      ['bootstrap', { _index: 556, title: {}, body: { 'index.html': {} } }],
+      ['break', { _index: 348, title: {}, body: { 'changelog.html': {} } }],
+      ['brows', { _index: 644, title: {}, body: { 'modules.html': {} } }],
+      ['bug', { _index: 357, title: {}, body: { 'changelog.html': {} } }],
+      ['build', { _index: 371, title: {}, body: { 'changelog.html': {} } }],
+      ['c', { _index: 587, title: {}, body: { 'license.html': {} } }],
+      ['c6771eb', { _index: 527, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'call',
+        {
+          _index: 88,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'candrag',
+        {
+          _index: 193,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['case', { _index: 460, title: {}, body: { 'changelog.html': {} } }],
+      ['caus', { _index: 480, title: {}, body: { 'changelog.html': {} } }],
+      ['chang', { _index: 329, title: {}, body: { 'changelog.html': {} } }],
+      ['changelog', { _index: 328, title: { 'changelog.html': {} }, body: {} }],
+      [
+        "changes['dragaxi",
+        {
+          _index: 186,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['charg', { _index: 594, title: {}, body: { 'license.html': {} } }],
+      [
+        'checkeventlisten',
+        {
+          _index: 192,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['claim', { _index: 633, title: {}, body: { 'license.html': {} } }],
+      [
+        'class',
+        {
+          _index: 62,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'modules/DragAndDropModule.html': {},
+            'interfaces/DragAxis.html': {},
+            'index.html': {}
+          }
+        }
+      ],
+      ['click', { _index: 449, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'clienti',
+        {
+          _index: 52,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'miscellaneous/functions.html': {}
+          }
+        }
+      ],
+      [
+        'clientrect',
+        {
+          _index: 274,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'clientx',
+        {
+          _index: 51,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'miscellaneous/functions.html': {}
+          }
+        }
+      ],
+      ['close', { _index: 346, title: {}, body: { 'changelog.html': {} } }],
+      ['come', { _index: 571, title: {}, body: { 'index.html': {} } }],
+      ['commit', { _index: 335, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'complet',
+        {
+          _index: 312,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'compon',
+        {
+          _index: 517,
+          title: {},
+          body: { 'changelog.html': {}, 'index.html': {} }
+        }
+      ],
+      ['condit', { _index: 615, title: {}, body: { 'license.html': {} } }],
+      ['config', { _index: 387, title: {}, body: { 'changelog.html': {} } }],
+      ['connect', { _index: 643, title: {}, body: { 'license.html': {} } }],
+      [
+        "console.log('el",
+        { _index: 563, title: {}, body: { 'index.html': {} } }
+      ],
+      [
+        'const',
+        {
+          _index: 56,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'constructor',
+        {
+          _index: 117,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'constructor(el',
+        {
+          _index: 318,
+          title: {},
+          body: { 'directives/DroppableDirective.html': {} }
+        }
+      ],
+      ['content', { _index: 544, title: {}, body: { 'index.html': {} } }],
+      ['continu', { _index: 582, title: {}, body: { 'index.html': {} } }],
+      ['contract', { _index: 638, title: {}, body: { 'license.html': {} } }],
+      [
+        'control',
+        {
+          _index: 84,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'coordin',
+        {
+          _index: 1,
+          title: { 'interfaces/Coordinates.html': {} },
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      ['copi', { _index: 597, title: {}, body: { 'license.html': {} } }],
+      ['copyright', { _index: 586, title: {}, body: { 'license.html': {} } }],
+      ['creat', { _index: 433, title: {}, body: { 'changelog.html': {} } }],
+      ['current', { _index: 573, title: {}, body: { 'index.html': {} } }],
+      [
+        'currentdrag',
+        {
+          _index: 129,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'currentdrag.complet',
+        {
+          _index: 161,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'currentdrag.next',
+        {
+          _index: 183,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'currentdragdata',
+        {
+          _index: 283,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'currentdragdropdata',
+        {
+          _index: 288,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'currentdragsubscript',
+        {
+          _index: 282,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'cursor',
+        {
+          _index: 85,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'custom',
+        {
+          _index: 82,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['customis', { _index: 400, title: {}, body: { 'changelog.html': {} } }],
+      ['d2fdcde', { _index: 522, title: {}, body: { 'changelog.html': {} } }],
+      ['d7c9256', { _index: 445, title: {}, body: { 'changelog.html': {} } }],
+      ['d96c26e', { _index: 345, title: {}, body: { 'changelog.html': {} } }],
+      ['damag', { _index: 634, title: {}, body: { 'license.html': {} } }],
+      [
+        'data',
+        {
+          _index: 66,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'index.html': {}
+          }
+        }
+      ],
+      ['dc0f863', { _index: 428, title: {}, body: { 'changelog.html': {} } }],
+      ['deal', { _index: 600, title: {}, body: { 'license.html': {} } }],
+      [
+        'declar',
+        {
+          _index: 256,
+          title: {},
+          body: { 'modules/DragAndDropModule.html': {}, 'index.html': {} }
+        }
+      ],
+      [
+        'default',
+        {
+          _index: 520,
+          title: {},
+          body: { 'changelog.html': {}, 'miscellaneous/variables.html': {} }
+        }
+      ],
+      [
+        'defin',
+        {
+          _index: 13,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'delet',
+        {
+          _index: 222,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['demo', { _index: 540, title: {}, body: { 'index.html': {} } }],
+      ['demoapp', { _index: 554, title: {}, body: { 'index.html': {} } }],
+      ['demomodul', { _index: 557, title: {}, body: { 'index.html': {} } }],
+      [
+        'depend',
+        {
+          _index: 396,
+          title: { 'dependencies.html': {} },
+          body: {
+            'changelog.html': {},
+            'dependencies.html': {},
+            'index.html': {}
+          }
+        }
+      ],
+      ['destroy', { _index: 518, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'dev',
+        {
+          _index: 437,
+          title: {},
+          body: { 'changelog.html': {}, 'index.html': {} }
+        }
+      ],
+      ['develop', { _index: 546, title: {}, body: { 'index.html': {} } }],
+      [
+        'devic',
+        {
+          _index: 92,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      ["didn't", { _index: 459, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'didoverlap',
+        {
+          _index: 307,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'direct',
+        {
+          _index: 17,
+          title: { 'directives/DroppableDirective.html': {} },
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {},
+            'overview.html': {}
+          }
+        }
+      ],
+      ['directori', { _index: 574, title: {}, body: { 'index.html': {} } }],
+      ['disabl', { _index: 491, title: {}, body: { 'changelog.html': {} } }],
+      ['dispos', { _index: 516, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'distinctuntilchang',
+        {
+          _index: 270,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      ['distribut', { _index: 608, title: {}, body: { 'license.html': {} } }],
+      [
+        'do',
+        {
+          _index: 297,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'document',
+        {
+          _index: 201,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {},
+            'index.html': {},
+            'license.html': {}
+          }
+        }
+      ],
+      ['dont', { _index: 488, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'drag',
+        {
+          _index: 75,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {},
+            'index.html': {}
+          }
+        }
+      ],
+      [
+        'drag.pip',
+        {
+          _index: 289,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'drag.pipe(mergemap',
+        {
+          _index: 310,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'draganddropmodul',
+        {
+          _index: 253,
+          title: { 'modules/DragAndDropModule.html': {} },
+          body: {
+            'modules/DragAndDropModule.html': {},
+            'changelog.html': {},
+            'index.html': {},
+            'modules.html': {}
+          }
+        }
+      ],
+      [
+        'draganddropmodule.forroot',
+        { _index: 555, title: {}, body: { 'index.html': {} } }
+      ],
+      [
+        'dragaxi',
+        {
+          _index: 46,
+          title: { 'interfaces/DragAxis.html': {} },
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['dragaxix', { _index: 523, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'dragcontain',
+        { _index: 457, title: {}, body: { 'changelog.html': {} } }
+      ],
+      [
+        'dragcursor',
+        {
+          _index: 87,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'dragend',
+        {
+          _index: 100,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      ['dragend(ev', { _index: 562, title: {}, body: { 'index.html': {} } }],
+      [
+        'dragent',
+        {
+          _index: 317,
+          title: {},
+          body: { 'directives/DroppableDirective.html': {} }
+        }
+      ],
+      [
+        'draggabl',
+        {
+          _index: 43,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'modules/DragAndDropModule.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {},
+            'index.html': {}
+          }
+        }
+      ],
+      [
+        'draggable.direct',
+        {
+          _index: 260,
+          title: {},
+          body: { 'modules/DragAndDropModule.html': {} }
+        }
+      ],
+      [
+        'draggabledirect',
+        {
+          _index: 63,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'modules/DragAndDropModule.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'draggablehelp',
+        {
+          _index: 42,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'modules/DragAndDropModule.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'dragleav',
+        {
+          _index: 279,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'dragov',
+        {
+          _index: 281,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'dragoveract',
+        {
+          _index: 292,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'dragpointerdown',
+        {
+          _index: 94,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'dragsnapgrid',
+        {
+          _index: 77,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'dragstart',
+        {
+          _index: 98,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'drop',
+        {
+          _index: 68,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {},
+            'index.html': {}
+          }
+        }
+      ],
+      [
+        'drop.module.t',
+        {
+          _index: 255,
+          title: {},
+          body: { 'modules/DragAndDropModule.html': {} }
+        }
+      ],
+      [
+        'dropdata',
+        {
+          _index: 69,
+          title: { 'interfaces/DropData.html': {} },
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'droppabl',
+        {
+          _index: 493,
+          title: {},
+          body: { 'changelog.html': {}, 'index.html': {} }
+        }
+      ],
+      [
+        'droppable.direct',
+        {
+          _index: 261,
+          title: {},
+          body: { 'modules/DragAndDropModule.html': {} }
+        }
+      ],
+      [
+        'droppable.j',
+        { _index: 380, title: {}, body: { 'changelog.html': {} } }
+      ],
+      [
+        'droppable.umd.j',
+        { _index: 382, title: {}, body: { 'changelog.html': {} } }
+      ],
+      [
+        'droppable/bundles/angular',
+        { _index: 381, title: {}, body: { 'changelog.html': {} } }
+      ],
+      [
+        'droppable/demo',
+        { _index: 542, title: {}, body: { 'index.html': {} } }
+      ],
+      [
+        'droppable/dist/umd/angular',
+        { _index: 379, title: {}, body: { 'changelog.html': {} } }
+      ],
+      ['droppable/doc', { _index: 567, title: {}, body: { 'index.html': {} } }],
+      [
+        'droppabledirect',
+        {
+          _index: 257,
+          title: { 'directives/DroppableDirective.html': {} },
+          body: {
+            'modules/DragAndDropModule.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'droppablerectangl',
+        {
+          _index: 286,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      ['droppablethen', { _index: 552, title: {}, body: { 'index.html': {} } }],
+      ['droppeddata', { _index: 561, title: {}, body: { 'index.html': {} } }],
+      ['duplic', { _index: 479, title: {}, body: { 'changelog.html': {} } }],
+      ['effect', { _index: 530, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'element',
+        {
+          _index: 72,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'elementref',
+        {
+          _index: 19,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      ['emit', { _index: 474, title: {}, body: { 'changelog.html': {} } }],
+      ['end', { _index: 359, title: {}, body: { 'changelog.html': {} } }],
+      ['enter', { _index: 507, title: {}, body: { 'changelog.html': {} } }],
+      ['environ', { _index: 569, title: {}, body: { 'index.html': {} } }],
+      ['error', { _index: 482, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'event',
+        {
+          _index: 53,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {},
+            'index.html': {},
+            'license.html': {}
+          }
+        }
+      ],
+      [
+        'event.changedtouches[0].clienti',
+        {
+          _index: 233,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'event.changedtouches[0].clientx',
+        {
+          _index: 232,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'event.clienti',
+        {
+          _index: 220,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'event.clientx',
+        {
+          _index: 219,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'event.touches[0].clienti',
+        {
+          _index: 230,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'event.touches[0].clientx',
+        {
+          _index: 229,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'eventemitt',
+        {
+          _index: 22,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'eventlistenersubscript',
+        {
+          _index: 106,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'export',
+        {
+          _index: 45,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'modules/DragAndDropModule.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['express', { _index: 623, title: {}, body: { 'license.html': {} } }],
+      ['f29b424', { _index: 513, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'fals',
+        {
+          _index: 308,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      ['fb75711', { _index: 466, title: {}, body: { 'changelog.html': {} } }],
+      ['featur', { _index: 341, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'file',
+        {
+          _index: 4,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'modules/DragAndDropModule.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {},
+            'license.html': {}
+          }
+        }
+      ],
+      [
+        'filter',
+        {
+          _index: 40,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'filter(([didoverlap',
+        {
+          _index: 306,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'filter(([previ',
+        {
+          _index: 170,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['find', { _index: 564, title: {}, body: { 'index.html': {} } }],
+      ['fire', { _index: 404, title: {}, body: { 'changelog.html': {} } }],
+      ['firefox', { _index: 413, title: {}, body: { 'changelog.html': {} } }],
+      ['fit', { _index: 626, title: {}, body: { 'license.html': {} } }],
+      ['fix', { _index: 358, title: {}, body: { 'changelog.html': {} } }],
+      ['follow', { _index: 614, title: {}, body: { 'license.html': {} } }],
+      [
+        'forroot',
+        {
+          _index: 263,
+          title: {},
+          body: { 'modules/DragAndDropModule.html': {}, 'changelog.html': {} }
+        }
+      ],
+      ['free', { _index: 593, title: {}, body: { 'license.html': {} } }],
+      [
+        'function',
+        {
+          _index: 271,
+          title: { 'miscellaneous/functions.html': {} },
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'miscellaneous/functions.html': {},
+            'miscellaneous/typealiases.html': {}
+          }
+        }
+      ],
+      ['furnish', { _index: 613, title: {}, body: { 'license.html': {} } }],
+      ['gener', { _index: 566, title: {}, body: { 'index.html': {} } }],
+      [
+        'get',
+        {
+          _index: 327,
+          title: { 'changelog.html': {}, 'index.html': {}, 'license.html': {} },
+          body: {}
+        }
+      ],
+      [
+        'ghost',
+        {
+          _index: 79,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'ghostdragen',
+        {
+          _index: 80,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      ['grant', { _index: 592, title: {}, body: { 'license.html': {} } }],
+      [
+        'grid',
+        {
+          _index: 76,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      ['guidelin', { _index: 336, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'haseventlisten',
+        {
+          _index: 194,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'helper.provid',
+        {
+          _index: 44,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'modules/DragAndDropModule.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      ['here', { _index: 559, title: {}, body: { 'index.html': {} } }],
+      ['herebi', { _index: 591, title: {}, body: { 'license.html': {} } }],
+      [
+        'hidden',
+        {
+          _index: 101,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['higher', { _index: 349, title: {}, body: { 'changelog.html': {} } }],
+      ['highlight', { _index: 412, title: {}, body: { 'changelog.html': {} } }],
+      ['holder', { _index: 631, title: {}, body: { 'license.html': {} } }],
+      ['hover', { _index: 498, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'https://mattlewis92.github.io/angular',
+        { _index: 541, title: {}, body: { 'index.html': {} } }
+      ],
+      ['icon', { _index: 497, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'implement',
+        {
+          _index: 64,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      ['impli', { _index: 624, title: {}, body: { 'license.html': {} } }],
+      [
+        'import',
+        {
+          _index: 16,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'modules/DragAndDropModule.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {},
+            'index.html': {}
+          }
+        }
+      ],
+      ['improv', { _index: 431, title: {}, body: { 'changelog.html': {} } }],
+      ['includ', { _index: 603, title: {}, body: { 'license.html': {} } }],
+      [
+        'index',
+        {
+          _index: 6,
+          title: { 'index.html': {} },
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'miscellaneous/functions.html': {},
+            'miscellaneous/typealiases.html': {},
+            'miscellaneous/variables.html': {}
+          }
+        }
+      ],
+      [
+        'info',
+        {
+          _index: 2,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'modules/DragAndDropModule.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'input',
+        {
+          _index: 23,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      ['insid', { _index: 494, title: {}, body: { 'changelog.html': {} } }],
+      ['instal', { _index: 545, title: {}, body: { 'index.html': {} } }],
+      ['interact', { _index: 521, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'interfac',
+        {
+          _index: 0,
+          title: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {}
+          },
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'overview.html': {}
+          }
+        }
+      ],
+      [
+        'iscoordinatewithinrectangl',
+        {
+          _index: 272,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'miscellaneous/functions.html': {}
+          }
+        }
+      ],
+      [
+        'iscoordinatewithinrectangle(clientx',
+        { _index: 537, title: {}, body: { 'miscellaneous/functions.html': {} } }
+      ],
+      ['item', { _index: 560, title: {}, body: { 'index.html': {} } }],
+      ['kind', { _index: 622, title: {}, body: { 'license.html': {} } }],
+      ['lazili', { _index: 432, title: {}, body: { 'changelog.html': {} } }],
+      ['leav', { _index: 508, title: {}, body: { 'changelog.html': {} } }],
+      ['lettabl', { _index: 366, title: {}, body: { 'changelog.html': {} } }],
+      ['lewi', { _index: 589, title: {}, body: { 'license.html': {} } }],
+      ['liabil', { _index: 635, title: {}, body: { 'license.html': {} } }],
+      ['liabl', { _index: 632, title: {}, body: { 'license.html': {} } }],
+      ['librari', { _index: 422, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'licens',
+        {
+          _index: 547,
+          title: { 'license.html': {} },
+          body: { 'index.html': {}, 'license.html': {} }
+        }
+      ],
+      ['limit', { _index: 604, title: {}, body: { 'license.html': {} } }],
+      ['listen', { _index: 434, title: {}, body: { 'changelog.html': {} } }],
+      ['local', { _index: 572, title: {}, body: { 'index.html': {} } }],
+      ['lock', { _index: 524, title: {}, body: { 'changelog.html': {} } }],
+      ['log', { _index: 330, title: {}, body: { 'changelog.html': {} } }],
+      ['longer', { _index: 388, title: {}, body: { 'changelog.html': {} } }],
+      ['loosen', { _index: 440, title: {}, body: { 'changelog.html': {} } }],
+      ['make', { _index: 426, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'map',
+        {
+          _index: 33,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'map((movedata',
+        {
+          _index: 141,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'map((pointermoveev',
+        {
+          _index: 134,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'match',
+        {
+          _index: 251,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'modules/DragAndDropModule.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {},
+            'dependencies.html': {},
+            'miscellaneous/functions.html': {},
+            'index.html': {},
+            'license.html': {},
+            'modules.html': {},
+            'overview.html': {},
+            'miscellaneous/typealiases.html': {},
+            'miscellaneous/variables.html': {}
+          }
+        }
+      ],
+      [
+        'math.floor(movedata.i',
+        {
+          _index: 147,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'math.floor(movedata.x',
+        {
+          _index: 144,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['matt', { _index: 588, title: {}, body: { 'license.html': {} } }],
+      ['merchant', { _index: 625, title: {}, body: { 'license.html': {} } }],
+      [
+        'merg',
+        {
+          _index: 31,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'license.html': {}
+          }
+        }
+      ],
+      [
+        'mergemap',
+        {
+          _index: 34,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'mergemap((pointerdownev',
+        {
+          _index: 128,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'metadata',
+        {
+          _index: 315,
+          title: {},
+          body: { 'directives/DroppableDirective.html': {} }
+        }
+      ],
+      ['method', { _index: 453, title: {}, body: { 'changelog.html': {} } }],
+      ['mimic', { _index: 510, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'miscellan',
+        {
+          _index: 535,
+          title: {
+            'miscellaneous/functions.html': {},
+            'miscellaneous/typealiases.html': {},
+            'miscellaneous/variables.html': {}
+          },
+          body: {
+            'miscellaneous/functions.html': {},
+            'miscellaneous/typealiases.html': {},
+            'miscellaneous/variables.html': {}
+          }
+        }
+      ],
+      [
+        'mit',
+        {
+          _index: 585,
+          title: {},
+          body: { 'index.html': {}, 'license.html': {} }
+        }
+      ],
+      ['modifi', { _index: 606, title: {}, body: { 'license.html': {} } }],
+      [
+        'modul',
+        {
+          _index: 252,
+          title: { 'modules/DragAndDropModule.html': {}, 'modules.html': {} },
+          body: {
+            'modules/DragAndDropModule.html': {},
+            'changelog.html': {},
+            'modules.html': {},
+            'overview.html': {}
+          }
+        }
+      ],
+      [
+        'modulewithprovid',
+        {
+          _index: 259,
+          title: {},
+          body: { 'modules/DragAndDropModule.html': {} }
+        }
+      ],
+      [
+        'mous',
+        {
+          _index: 90,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'mousedown',
+        {
+          _index: 109,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'mouseent',
+        {
+          _index: 111,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'mouseev',
+        {
+          _index: 54,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'mouseleav',
+        {
+          _index: 112,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'mousemov',
+        {
+          _index: 107,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'mousemoveev',
+        {
+          _index: 214,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'mousemoveevent.clienti',
+        {
+          _index: 217,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'mousemoveevent.clientx',
+        {
+          _index: 216,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'mouseup',
+        {
+          _index: 110,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'move',
+        {
+          _index: 59,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {},
+            'miscellaneous/variables.html': {}
+          }
+        }
+      ],
+      [
+        'move_cursor',
+        {
+          _index: 57,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'miscellaneous/variables.html': {}
+          }
+        }
+      ],
+      [
+        'movedata',
+        {
+          _index: 148,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'movedata.i',
+        {
+          _index: 146,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'movedata.x',
+        {
+          _index: 143,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'moz',
+        {
+          _index: 242,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'ms',
+        {
+          _index: 241,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'mwldraggabl',
+        {
+          _index: 61,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'mwldroppabl',
+        {
+          _index: 316,
+          title: {},
+          body: {
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'name',
+        {
+          _index: 321,
+          title: {},
+          body: {
+            'directives/DroppableDirective.html': {},
+            'miscellaneous/functions.html': {}
+          }
+        }
+      ],
+      ['nativ', { _index: 511, title: {}, body: { 'changelog.html': {} } }],
+      ['need', { _index: 385, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'new',
+        {
+          _index: 95,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'next',
+        {
+          _index: 171,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'next.i',
+        {
+          _index: 176,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'next.x',
+        {
+          _index: 174,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['ng', { _index: 369, title: {}, body: { 'changelog.html': {} } }],
+      ['ng4', { _index: 418, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'ngmodul',
+        {
+          _index: 258,
+          title: {},
+          body: { 'modules/DragAndDropModule.html': {}, 'index.html': {} }
+        }
+      ],
+      [
+        'ngonchanges(chang',
+        {
+          _index: 185,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'ngondestroy',
+        {
+          _index: 187,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'ngoninit',
+        {
+          _index: 121,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'ngzone',
+        {
+          _index: 26,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      ['node.j', { _index: 570, title: {}, body: { 'index.html': {} } }],
+      [
+        'none',
+        {
+          _index: 180,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['noninfring', { _index: 629, title: {}, body: { 'license.html': {} } }],
+      ['notabl', { _index: 331, title: {}, body: { 'changelog.html': {} } }],
+      ['notic', { _index: 617, title: {}, body: { 'license.html': {} } }],
+      ['now', { _index: 350, title: {}, body: { 'changelog.html': {} } }],
+      ['npm', { _index: 550, title: {}, body: { 'index.html': {} } }],
+      [
+        'null',
+        {
+          _index: 166,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'number',
+        {
+          _index: 10,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'o',
+        {
+          _index: 243,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'object',
+        {
+          _index: 65,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'object.keys(this.eventlistenersubscriptions).foreach(typ',
+        {
+          _index: 248,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'object.keys(this.eventlistenersubscriptions).length',
+        {
+          _index: 195,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'observ',
+        {
+          _index: 30,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {},
+            'index.html': {}
+          }
+        }
+      ],
+      ['obtain', { _index: 596, title: {}, body: { 'license.html': {} } }],
+      ['old', { _index: 375, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'on',
+        {
+          _index: 89,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'onc',
+        {
+          _index: 475,
+          title: {},
+          body: { 'changelog.html': {}, 'index.html': {} }
+        }
+      ],
+      [
+        'onchang',
+        {
+          _index: 25,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'ondestroy',
+        {
+          _index: 24,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'oninit',
+        {
+          _index: 18,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'onmousedown(ev',
+        {
+          _index: 212,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'onmouseent',
+        {
+          _index: 234,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'onmouseleav',
+        {
+          _index: 235,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'onmouseup(ev',
+        {
+          _index: 221,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'ontouchend(ev',
+        {
+          _index: 231,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'ontouchstart(ev',
+        {
+          _index: 224,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['oper', { _index: 367, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'option',
+        {
+          _index: 322,
+          title: {},
+          body: {
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {},
+            'miscellaneous/functions.html': {}
+          }
+        }
+      ],
+      ['origin', { _index: 470, title: {}, body: { 'changelog.html': {} } }],
+      ['otherwis', { _index: 640, title: {}, body: { 'license.html': {} } }],
+      ['out', { _index: 642, title: {}, body: { 'license.html': {} } }],
+      [
+        'output',
+        {
+          _index: 21,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      ['outsid', { _index: 444, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'over',
+        {
+          _index: 280,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'overlap',
+        {
+          _index: 278,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'overlaps)).subscrib',
+        {
+          _index: 311,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'overlaps.pipe(distinctuntilchang',
+        {
+          _index: 291,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'overlaps.pipe(filter(overlapsnow',
+        {
+          _index: 302,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'overlapschang',
+        {
+          _index: 290,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'overlapsnow',
+        {
+          _index: 300,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'overlapsnow)).subscrib',
+        {
+          _index: 303,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'overview',
+        {
+          _index: 645,
+          title: { 'overview.html': {} },
+          body: { 'overview.html': {} }
+        }
+      ],
+      [
+        'packag',
+        {
+          _index: 352,
+          title: { 'dependencies.html': {} },
+          body: { 'changelog.html': {} }
+        }
+      ],
+      ['packagr', { _index: 370, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'pairwis',
+        {
+          _index: 38,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'paramet',
+        {
+          _index: 320,
+          title: {},
+          body: {
+            'directives/DroppableDirective.html': {},
+            'miscellaneous/functions.html': {}
+          }
+        }
+      ],
+      ['particular', { _index: 627, title: {}, body: { 'license.html': {} } }],
+      [
+        'pass',
+        {
+          _index: 67,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['path', { _index: 378, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'peer',
+        {
+          _index: 395,
+          title: {},
+          body: { 'changelog.html': {}, 'dependencies.html': {} }
+        }
+      ],
+      ['perform', { _index: 430, title: {}, body: { 'changelog.html': {} } }],
+      ['permiss', { _index: 590, title: {}, body: { 'license.html': {} } }],
+      ['permit', { _index: 612, title: {}, body: { 'license.html': {} } }],
+      ['person', { _index: 595, title: {}, body: { 'license.html': {} } }],
+      [
+        'pipe',
+        {
+          _index: 127,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'pipe(filt',
+        {
+          _index: 125,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pipe(filter(overlapsnow',
+        {
+          _index: 299,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'pipe(map(([previ',
+        {
+          _index: 177,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pipe(pairwis',
+        {
+          _index: 305,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'pipe(shar',
+        {
+          _index: 153,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pipe(takeuntil(merge(this.pointerup',
+        {
+          _index: 152,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pointer',
+        {
+          _index: 91,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'pointerdown',
+        {
+          _index: 102,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pointerdownevent.clienti',
+        {
+          _index: 140,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pointerdownevent.clientx',
+        {
+          _index: 138,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pointerdownevent.event.preventdefault',
+        {
+          _index: 155,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pointerdrag',
+        {
+          _index: 123,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pointerdrag.pipe(pairwis',
+        {
+          _index: 169,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pointerdrag.pipe(take(1)).pipe(map(valu',
+        {
+          _index: 167,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pointerev',
+        {
+          _index: 50,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pointermov',
+        {
+          _index: 103,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pointermove.pipe(take(1)).subscrib',
+        {
+          _index: 154,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pointermove.pipe(takelast(1)).subscrib',
+        {
+          _index: 159,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pointermoveevent.clienti',
+        {
+          _index: 139,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pointermoveevent.clientx',
+        {
+          _index: 137,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pointermoveevent.event.preventdefault',
+        {
+          _index: 135,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'pointerup',
+        {
+          _index: 104,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['port', { _index: 577, title: {}, body: { 'index.html': {} } }],
+      ['portion', { _index: 620, title: {}, body: { 'license.html': {} } }],
+      ['posit', { _index: 471, title: {}, body: { 'changelog.html': {} } }],
+      ['power', { _index: 548, title: {}, body: { 'index.html': {} } }],
+      ['prepar', { _index: 568, title: {}, body: { 'index.html': {} } }],
+      [
+        'press',
+        {
+          _index: 93,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['prevent', { _index: 410, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'previou',
+        {
+          _index: 172,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'previous.i',
+        {
+          _index: 175,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'previous.x',
+        {
+          _index: 173,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'privat',
+        {
+          _index: 105,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      ['project', { _index: 332, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'properti',
+        {
+          _index: 7,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      ['prototyp', { _index: 390, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'provid',
+        {
+          _index: 264,
+          title: {},
+          body: { 'modules/DragAndDropModule.html': {}, 'license.html': {} }
+        }
+      ],
+      [
+        'public',
+        {
+          _index: 118,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['publish', { _index: 607, title: {}, body: { 'license.html': {} } }],
+      ['purpos', { _index: 628, title: {}, body: { 'license.html': {} } }],
+      [
+        'rect',
+        {
+          _index: 273,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'miscellaneous/functions.html': {}
+          }
+        }
+      ],
+      [
+        'rect.left',
+        {
+          _index: 275,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'rect.top',
+        {
+          _index: 276,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      ['regular', { _index: 392, title: {}, body: { 'changelog.html': {} } }],
+      ['releas', { _index: 583, title: {}, body: { 'index.html': {} } }],
+      ['releaselicens', { _index: 584, title: {}, body: { 'index.html': {} } }],
+      ['reload', { _index: 579, title: {}, body: { 'index.html': {} } }],
+      ['remov', { _index: 456, title: {}, body: { 'changelog.html': {} } }],
+      ['renam', { _index: 501, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'render',
+        {
+          _index: 119,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'renderer2',
+        {
+          _index: 20,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['repliat', { _index: 374, title: {}, body: { 'changelog.html': {} } }],
+      ['repo', { _index: 575, title: {}, body: { 'index.html': {} } }],
+      ['requir', { _index: 351, title: {}, body: { 'changelog.html': {} } }],
+      ['respect', { _index: 463, title: {}, body: { 'changelog.html': {} } }],
+      ['restrict', { _index: 602, title: {}, body: { 'license.html': {} } }],
+      [
+        'result',
+        {
+          _index: 250,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'modules/DragAndDropModule.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {},
+            'dependencies.html': {},
+            'miscellaneous/functions.html': {},
+            'index.html': {},
+            'license.html': {},
+            'modules.html': {},
+            'overview.html': {},
+            'miscellaneous/typealiases.html': {},
+            'miscellaneous/variables.html': {}
+          }
+        }
+      ],
+      [
+        'return',
+        {
+          _index: 136,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'modules/DragAndDropModule.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      ['revert', { _index: 478, title: {}, body: { 'changelog.html': {} } }],
+      ['right', { _index: 605, title: {}, body: { 'license.html': {} } }],
+      [
+        'run',
+        {
+          _index: 443,
+          title: {},
+          body: { 'changelog.html': {}, 'index.html': {} }
+        }
+      ],
+      [
+        'rxj',
+        {
+          _index: 32,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'rxjs/oper',
+        {
+          _index: 41,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      ['same', { _index: 489, title: {}, body: { 'changelog.html': {} } }],
+      ['save', { _index: 551, title: {}, body: { 'index.html': {} } }],
+      ['seamless', { _index: 423, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'see',
+        {
+          _index: 294,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'selector',
+        {
+          _index: 60,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'directives/DroppableDirective.html': {},
+            'index.html': {}
+          }
+        }
+      ],
+      ['sell', { _index: 611, title: {}, body: { 'license.html': {} } }],
+      ['server', { _index: 576, title: {}, body: { 'index.html': {} } }],
+      [
+        'setcsstransform(valu',
+        {
+          _index: 237,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'setcursor(valu',
+        {
+          _index: 245,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['shall', { _index: 618, title: {}, body: { 'license.html': {} } }],
+      [
+        'share',
+        {
+          _index: 39,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'show',
+        {
+          _index: 78,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'simplechang',
+        {
+          _index: 27,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'snap',
+        {
+          _index: 74,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'snapgrid',
+        {
+          _index: 48,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      ['softwar', { _index: 598, title: {}, body: { 'license.html': {} } }],
+      [
+        'sourc',
+        {
+          _index: 3,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'modules/DragAndDropModule.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'index.html': {}
+          }
+        }
+      ],
+      [
+        'src/.../draggable.directive.t',
+        {
+          _index: 648,
+          title: {},
+          body: {
+            'miscellaneous/typealiases.html': {},
+            'miscellaneous/variables.html': {}
+          }
+        }
+      ],
+      [
+        'src/.../droppable.directive.t',
+        { _index: 536, title: {}, body: { 'miscellaneous/functions.html': {} } }
+      ],
+      [
+        'src/drag',
+        {
+          _index: 254,
+          title: {},
+          body: { 'modules/DragAndDropModule.html': {} }
+        }
+      ],
+      [
+        'src/draggable.directive.t',
+        {
+          _index: 5,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'miscellaneous/typealiases.html': {},
+            'miscellaneous/variables.html': {}
+          }
+        }
+      ],
+      [
+        'src/draggable.directive.ts:28',
+        { _index: 14, title: {}, body: { 'interfaces/Coordinates.html': {} } }
+      ],
+      [
+        'src/draggable.directive.ts:29',
+        { _index: 15, title: {}, body: { 'interfaces/Coordinates.html': {} } }
+      ],
+      [
+        'src/draggable.directive.ts:33',
+        { _index: 265, title: {}, body: { 'interfaces/DragAxis.html': {} } }
+      ],
+      [
+        'src/draggable.directive.ts:34',
+        { _index: 266, title: {}, body: { 'interfaces/DragAxis.html': {} } }
+      ],
+      [
+        'src/droppable.directive.t',
+        {
+          _index: 267,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'miscellaneous/functions.html': {}
+          }
+        }
+      ],
+      [
+        'src/droppable.directive.ts:34',
+        { _index: 268, title: {}, body: { 'interfaces/DropData.html': {} } }
+      ],
+      [
+        'src/droppable.directive.ts:44',
+        {
+          _index: 323,
+          title: {},
+          body: { 'directives/DroppableDirective.html': {} }
+        }
+      ],
+      [
+        'src/droppable.directive.ts:49',
+        {
+          _index: 324,
+          title: {},
+          body: { 'directives/DroppableDirective.html': {} }
+        }
+      ],
+      [
+        'src/droppable.directive.ts:54',
+        {
+          _index: 325,
+          title: {},
+          body: { 'directives/DroppableDirective.html': {} }
+        }
+      ],
+      [
+        'src/droppable.directive.ts:59',
+        {
+          _index: 326,
+          title: {},
+          body: { 'directives/DroppableDirective.html': {} }
+        }
+      ],
+      [
+        'src/droppable.directive.ts:61',
+        {
+          _index: 319,
+          title: {},
+          body: { 'directives/DroppableDirective.html': {} }
+        }
+      ],
+      ['standard', { _index: 333, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'start',
+        {
+          _index: 96,
+          title: { 'changelog.html': {}, 'index.html': {}, 'license.html': {} },
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {},
+            'index.html': {}
+          }
+        }
+      ],
+      [
+        'static',
+        {
+          _index: 262,
+          title: {},
+          body: { 'modules/DragAndDropModule.html': {} }
+        }
+      ],
+      [
+        'stop',
+        {
+          _index: 277,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'string',
+        {
+          _index: 58,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'index.html': {},
+            'miscellaneous/variables.html': {}
+          }
+        }
+      ],
+      ['style', { _index: 486, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'subject',
+        {
+          _index: 29,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'license.html': {}
+          }
+        }
+      ],
+      ['sublicens', { _index: 609, title: {}, body: { 'license.html': {} } }],
+      [
+        'subscrib',
+        {
+          _index: 178,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'subscript',
+        {
+          _index: 269,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      ['substanti', { _index: 619, title: {}, body: { 'license.html': {} } }],
+      ['system.j', { _index: 383, title: {}, body: { 'changelog.html': {} } }],
+      ['tabl', { _index: 543, title: {}, body: { 'index.html': {} } }],
+      [
+        'take',
+        {
+          _index: 36,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'takelast',
+        {
+          _index: 37,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'takeuntil',
+        {
+          _index: 35,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['templat', { _index: 558, title: {}, body: { 'index.html': {} } }],
+      ['test', { _index: 580, title: {}, body: { 'index.html': {} } }],
+      ['test:watch', { _index: 581, title: {}, body: { 'index.html': {} } }],
+      ['text', { _index: 411, title: {}, body: { 'changelog.html': {} } }],
+      [
+        "there'",
+        {
+          _index: 295,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'this.candrag',
+        {
+          _index: 126,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.checkeventlisten',
+        {
+          _index: 122,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.currentdragsubscript',
+        {
+          _index: 284,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'this.currentdragsubscription.unsubscrib',
+        {
+          _index: 314,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'this.dragaxis.i',
+        {
+          _index: 150,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.dragaxis.x',
+        {
+          _index: 149,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.dragend.next',
+        {
+          _index: 160,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.dragenter.next',
+        {
+          _index: 301,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'this.draggablehelper.currentdrag.next(currentdrag',
+        {
+          _index: 158,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.draggablehelper.currentdrag.subscrib',
+        {
+          _index: 285,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'this.dragging.next',
+        {
+          _index: 179,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.dragleave.next',
+        {
+          _index: 309,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'this.dragover.next',
+        {
+          _index: 304,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'this.dragpointerdown.next',
+        {
+          _index: 131,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.dragsnapgrid.i',
+        {
+          _index: 145,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.dragsnapgrid.x',
+        {
+          _index: 142,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.dragstart.next',
+        {
+          _index: 156,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.drop.next',
+        {
+          _index: 313,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'this.dropdata',
+        {
+          _index: 184,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.element.nativeel',
+        {
+          _index: 165,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.element.nativeelement.getboundingclientrect',
+        {
+          _index: 287,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'this.eventlistenersubscriptions.mousedown',
+        {
+          _index: 197,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.eventlistenersubscriptions.mouseent',
+        {
+          _index: 208,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.eventlistenersubscriptions.mouseleav',
+        {
+          _index: 210,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.eventlistenersubscriptions.mousemov',
+        {
+          _index: 213,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.eventlistenersubscriptions.mouseup',
+        {
+          _index: 200,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.eventlistenersubscriptions.touchcancel',
+        {
+          _index: 207,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.eventlistenersubscriptions.touchend',
+        {
+          _index: 205,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.eventlistenersubscriptions.touchmov',
+        {
+          _index: 225,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.eventlistenersubscriptions.touchstart',
+        {
+          _index: 203,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.ghostdragen',
+        {
+          _index: 163,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.onmousedown(ev',
+        {
+          _index: 199,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.onmouseent',
+        {
+          _index: 209,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.onmouseleav',
+        {
+          _index: 211,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.onmouseup(ev',
+        {
+          _index: 202,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.ontouchend(ev',
+        {
+          _index: 206,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.ontouchstart(ev',
+        {
+          _index: 204,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.pointerdown',
+        {
+          _index: 124,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.pointerdown.complet',
+        {
+          _index: 189,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.pointerdown.next',
+        {
+          _index: 218,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.pointermov',
+        {
+          _index: 133,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.pointermove.complet',
+        {
+          _index: 190,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.pointermove.next',
+        {
+          _index: 215,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.pointerup.complet',
+        {
+          _index: 191,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.pointerup.next',
+        {
+          _index: 223,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.renderer.listen',
+        {
+          _index: 198,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.renderer.setstyl',
+        {
+          _index: 164,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.renderer.setstyle(this.element.nativeel',
+        {
+          _index: 246,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.setcsstransform(`translate(${x}px',
+        {
+          _index: 181,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.setcsstransform(nul',
+        {
+          _index: 162,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.setcursor(nul',
+        {
+          _index: 236,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.setcursor(this.dragcursor',
+        {
+          _index: 157,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.unsubscribeeventlisten',
+        {
+          _index: 188,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.validatedrag',
+        {
+          _index: 151,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'this.zone.run',
+        {
+          _index: 130,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'this.zone.runoutsideangular',
+        {
+          _index: 196,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['through', { _index: 549, title: {}, body: { 'index.html': {} } }],
+      [
+        'todo',
+        {
+          _index: 293,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      ['tort', { _index: 639, title: {}, body: { 'license.html': {} } }],
+      [
+        'touch',
+        {
+          _index: 97,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'touchcancel',
+        {
+          _index: 116,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'touchend',
+        {
+          _index: 115,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'touchev',
+        {
+          _index: 55,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'touchmov',
+        {
+          _index: 114,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'touchmoveev',
+        {
+          _index: 226,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'touchmoveevent.targettouches[0].clienti',
+        {
+          _index: 228,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'touchmoveevent.targettouches[0].clientx',
+        {
+          _index: 227,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'touchstart',
+        {
+          _index: 113,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'transform',
+        {
+          _index: 239,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'transformattribut',
+        {
+          _index: 238,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'transformattributes.foreach(transformattribut',
+        {
+          _index: 244,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'true',
+        {
+          _index: 73,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'type',
+        {
+          _index: 11,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'miscellaneous/typealiases.html': {},
+            'miscellaneous/variables.html': {}
+          }
+        }
+      ],
+      [
+        'typealias',
+        {
+          _index: 646,
+          title: { 'miscellaneous/typealiases.html': {} },
+          body: {}
+        }
+      ],
+      ['umd', { _index: 377, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'undefin',
+        { _index: 538, title: {}, body: { 'miscellaneous/functions.html': {} } }
+      ],
+      [
+        'unsubscribeeventlisten',
+        {
+          _index: 247,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['until', { _index: 509, title: {}, body: { 'changelog.html': {} } }],
+      ['updat', { _index: 386, title: {}, body: { 'changelog.html': {} } }],
+      ['upgrad', { _index: 342, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'us',
+        {
+          _index: 86,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {},
+            'index.html': {},
+            'license.html': {}
+          }
+        }
+      ],
+      ['user', { _index: 384, title: {}, body: { 'changelog.html': {} } }],
+      ['valid', { _index: 504, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'validatedrag',
+        {
+          _index: 49,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {},
+            'miscellaneous/typealiases.html': {}
+          }
+        }
+      ],
+      [
+        'valu',
+        {
+          _index: 168,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'miscellaneous/variables.html': {}
+          }
+        }
+      ],
+      [
+        'variabl',
+        {
+          _index: 649,
+          title: { 'miscellaneous/variables.html': {} },
+          body: { 'miscellaneous/variables.html': {} }
+        }
+      ],
+      ['version', { _index: 334, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'via',
+        {
+          _index: 298,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      ['view', { _index: 565, title: {}, body: { 'index.html': {} } }],
+      [
+        'void',
+        {
+          _index: 108,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      ['warranti', { _index: 621, title: {}, body: { 'license.html': {} } }],
+      [
+        'way',
+        {
+          _index: 296,
+          title: {},
+          body: {
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {}
+          }
+        }
+      ],
+      [
+        'webkit',
+        {
+          _index: 240,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      ['whether', { _index: 636, title: {}, body: { 'license.html': {} } }],
+      ['without', { _index: 601, title: {}, body: { 'license.html': {} } }],
+      ['work', { _index: 427, title: {}, body: { 'changelog.html': {} } }],
+      ['wors', { _index: 481, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'x',
+        {
+          _index: 8,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      [
+        'y',
+        {
+          _index: 9,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'changelog.html': {}
+          }
+        }
+      ],
+      ['yourself', { _index: 461, title: {}, body: { 'changelog.html': {} } }],
+      [
+        'y}px',
+        {
+          _index: 182,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {}
+          }
+        }
+      ],
+      [
+        'zone',
+        {
+          _index: 120,
+          title: {},
+          body: {
+            'interfaces/Coordinates.html': {},
+            'interfaces/DragAxis.html': {},
+            'interfaces/DropData.html': {},
+            'directives/DroppableDirective.html': {},
+            'changelog.html': {}
+          }
+        }
+      ]
+    ],
+    pipeline: ['stemmer']
+  },
+  store: {
+    'interfaces/Coordinates.html': {
+      url: 'interfaces/Coordinates.html',
+      title: 'interface - Coordinates',
+      body:
+        "\n                   \n\n\n\n\n\n\n\n\n\n\n\n  Interfaces\n  Coordinates\n\n\n\n    \n        Info\n    \n\n\n    \n        Source\n    \n\n\n\n    \n        \n            File\n        \n        \n            src/draggable.directive.ts\n        \n\n\n\n        \n            Index\n            \n                \n                    \n                        \n                            Properties\n                        \n                    \n                    \n                        \n                            \n                                \n                                        x\n                                \n                                \n                                        y\n                                \n                            \n                        \n                    \n                \n            \n        \n\n\n\n            \n                Properties\n                    \n                        \n                                \n                                    \n                                        \n                                        x\n                                    \n                                \n                                \n                                    \n                                        x:     number\n\n                                    \n                                \n\n\n                                    \n                                        \n                                            Type :     number\n\n                                        \n                                    \n\n\n\n\n                                    \n                                        \n                                            Defined in src/draggable.directive.ts:28\n                                        \n                                    \n\n                        \n                    \n                    \n                        \n                                \n                                    \n                                        \n                                        y\n                                    \n                                \n                                \n                                    \n                                        y:     number\n\n                                    \n                                \n\n\n                                    \n                                        \n                                            Type :     number\n\n                                        \n                                    \n\n\n\n\n                                    \n                                        \n                                            Defined in src/draggable.directive.ts:29\n                                        \n                                    \n\n                        \n                    \n            \n    \n\n\n    \n        import {\n  Directive,\n  OnInit,\n  ElementRef,\n  Renderer2,\n  Output,\n  EventEmitter,\n  Input,\n  OnDestroy,\n  OnChanges,\n  NgZone,\n  SimpleChanges\n} from '@angular/core';\nimport { Subject, Observable, merge } from 'rxjs';\nimport {\n  map,\n  mergeMap,\n  takeUntil,\n  take,\n  takeLast,\n  pairwise,\n  share,\n  filter\n} from 'rxjs/operators';\nimport { DraggableHelper } from './draggable-helper.provider';\n\nexport interface Coordinates {\n  x: number;\n  y: number;\n}\n\nexport interface DragAxis {\n  x: boolean;\n  y: boolean;\n}\n\nexport interface SnapGrid {\n  x?: number;\n  y?: number;\n}\n\nexport type ValidateDrag = (coordinates: Coordinates) => boolean;\n\nexport interface PointerEvent {\n  clientX: number;\n  clientY: number;\n  event: MouseEvent | TouchEvent;\n}\n\nconst MOVE_CURSOR: string = 'move';\n\n@Directive({\n  selector: '[mwlDraggable]'\n})\nexport class DraggableDirective implements OnInit, OnChanges, OnDestroy {\n  /**\n   * an object of data you can pass to the drop event\n   */\n  @Input() dropData: any;\n\n  /**\n   * The axis along which the element is draggable\n   */\n  @Input() dragAxis: DragAxis = { x: true, y: true };\n\n  /**\n   * Snap all drags to an x / y grid\n   */\n  @Input() dragSnapGrid: SnapGrid = {};\n\n  /**\n   * Show a ghost element that shows the drag when dragging\n   */\n  @Input() ghostDragEnabled: boolean = true;\n\n  /**\n   * Allow custom behaviour to control when the element is dragged\n   */\n  @Input() validateDrag: ValidateDrag;\n\n  /**\n   * The cursor to use when dragging the element\n   */\n  @Input() dragCursor = MOVE_CURSOR;\n\n  /**\n   * Called when the element can be dragged along one axis and has the mouse or pointer device pressed on it\n   */\n  @Output() dragPointerDown = new EventEmitter();\n\n  /**\n   * Called when the element has started to be dragged.\n   * Only called after at least one mouse or touch move event\n   */\n  @Output() dragStart = new EventEmitter();\n\n  /**\n   * Called when the element is being dragged\n   */\n  @Output() dragging = new EventEmitter();\n\n  /**\n   * Called after the element is dragged\n   */\n  @Output() dragEnd = new EventEmitter();\n\n  /**\n   * @hidden\n   */\n  pointerDown: Subject = new Subject();\n\n  /**\n   * @hidden\n   */\n  pointerMove: Subject = new Subject();\n\n  /**\n   * @hidden\n   */\n  pointerUp: Subject = new Subject();\n\n  private eventListenerSubscriptions: {\n    mousemove?: () => void;\n    mousedown?: () => void;\n    mouseup?: () => void;\n    mouseenter?: () => void;\n    mouseleave?: () => void;\n    touchstart?: () => void;\n    touchmove?: () => void;\n    touchend?: () => void;\n    touchcancel?: () => void;\n  } = {};\n\n  /**\n   * @hidden\n   */\n  constructor(\n    public element: ElementRef,\n    private renderer: Renderer2,\n    private draggableHelper: DraggableHelper,\n    private zone: NgZone\n  ) {}\n\n  ngOnInit(): void {\n    this.checkEventListeners();\n\n    const pointerDrag: Observable = this.pointerDown\n      .pipe(filter(() => this.canDrag()))\n      .pipe(\n        mergeMap((pointerDownEvent: PointerEvent) => {\n          const currentDrag: Subject = new Subject();\n\n          this.zone.run(() => {\n            this.dragPointerDown.next({ x: 0, y: 0 });\n          });\n\n          const pointerMove: Observable = this.pointerMove\n            .pipe(\n              map((pointerMoveEvent: PointerEvent) => {\n                pointerMoveEvent.event.preventDefault();\n\n                return {\n                  currentDrag,\n                  x: pointerMoveEvent.clientX - pointerDownEvent.clientX,\n                  y: pointerMoveEvent.clientY - pointerDownEvent.clientY,\n                  clientX: pointerMoveEvent.clientX,\n                  clientY: pointerMoveEvent.clientY\n                };\n              })\n            )\n            .pipe(\n              map((moveData: Coordinates) => {\n                if (this.dragSnapGrid.x) {\n                  moveData.x =\n                    Math.floor(moveData.x / this.dragSnapGrid.x) *\n                    this.dragSnapGrid.x;\n                }\n\n                if (this.dragSnapGrid.y) {\n                  moveData.y =\n                    Math.floor(moveData.y / this.dragSnapGrid.y) *\n                    this.dragSnapGrid.y;\n                }\n\n                return moveData;\n              })\n            )\n            .pipe(\n              map((moveData: Coordinates) => {\n                if (!this.dragAxis.x) {\n                  moveData.x = 0;\n                }\n\n                if (!this.dragAxis.y) {\n                  moveData.y = 0;\n                }\n\n                return moveData;\n              })\n            )\n            .pipe(\n              filter(\n                ({ x, y }) => !this.validateDrag || this.validateDrag({ x, y })\n              )\n            )\n            .pipe(takeUntil(merge(this.pointerUp, this.pointerDown)))\n            .pipe(share());\n\n          pointerMove.pipe(take(1)).subscribe(() => {\n            pointerDownEvent.event.preventDefault();\n\n            this.zone.run(() => {\n              this.dragStart.next({ x: 0, y: 0 });\n            });\n\n            this.setCursor(this.dragCursor);\n\n            this.draggableHelper.currentDrag.next(currentDrag);\n          });\n\n          pointerMove.pipe(takeLast(1)).subscribe(({ x, y }) => {\n            this.zone.run(() => {\n              this.dragEnd.next({ x, y });\n            });\n            currentDrag.complete();\n            this.setCssTransform(null);\n            if (this.ghostDragEnabled) {\n              this.renderer.setStyle(\n                this.element.nativeElement,\n                'pointerEvents',\n                null\n              );\n            }\n          });\n\n          return pointerMove;\n        })\n      )\n      .pipe(share());\n\n    merge(\n      pointerDrag.pipe(take(1)).pipe(map(value => [, value])),\n      pointerDrag.pipe(pairwise())\n    )\n      .pipe(\n        filter(([previous, next]) => {\n          if (!previous) {\n            return true;\n          }\n          return previous.x !== next.x || previous.y !== next.y;\n        })\n      )\n      .pipe(map(([previous, next]) => next))\n      .subscribe(({ x, y, currentDrag, clientX, clientY }) => {\n        this.zone.run(() => {\n          this.dragging.next({ x, y });\n        });\n        if (this.ghostDragEnabled) {\n          this.renderer.setStyle(\n            this.element.nativeElement,\n            'pointerEvents',\n            'none'\n          );\n        }\n        this.setCssTransform(`translate(${x}px, ${y}px)`);\n        currentDrag.next({\n          clientX,\n          clientY,\n          dropData: this.dropData\n        });\n      });\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    if (changes['dragAxis']) {\n      this.checkEventListeners();\n    }\n  }\n\n  ngOnDestroy(): void {\n    this.unsubscribeEventListeners();\n    this.pointerDown.complete();\n    this.pointerMove.complete();\n    this.pointerUp.complete();\n  }\n\n  private checkEventListeners(): void {\n    const canDrag: boolean = this.canDrag();\n    const hasEventListeners: boolean =\n      Object.keys(this.eventListenerSubscriptions).length > 0;\n\n    if (canDrag && !hasEventListeners) {\n      this.zone.runOutsideAngular(() => {\n        this.eventListenerSubscriptions.mousedown = this.renderer.listen(\n          this.element.nativeElement,\n          'mousedown',\n          (event: MouseEvent) => {\n            this.onMouseDown(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.mouseup = this.renderer.listen(\n          'document',\n          'mouseup',\n          (event: MouseEvent) => {\n            this.onMouseUp(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.touchstart = this.renderer.listen(\n          this.element.nativeElement,\n          'touchstart',\n          (event: TouchEvent) => {\n            this.onTouchStart(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.touchend = this.renderer.listen(\n          'document',\n          'touchend',\n          (event: TouchEvent) => {\n            this.onTouchEnd(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.touchcancel = this.renderer.listen(\n          'document',\n          'touchcancel',\n          (event: TouchEvent) => {\n            this.onTouchEnd(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.mouseenter = this.renderer.listen(\n          this.element.nativeElement,\n          'mouseenter',\n          () => {\n            this.onMouseEnter();\n          }\n        );\n\n        this.eventListenerSubscriptions.mouseleave = this.renderer.listen(\n          this.element.nativeElement,\n          'mouseleave',\n          () => {\n            this.onMouseLeave();\n          }\n        );\n      });\n    } else if (!canDrag && hasEventListeners) {\n      this.unsubscribeEventListeners();\n    }\n  }\n\n  private onMouseDown(event: MouseEvent): void {\n    if (!this.eventListenerSubscriptions.mousemove) {\n      this.eventListenerSubscriptions.mousemove = this.renderer.listen(\n        'document',\n        'mousemove',\n        (mouseMoveEvent: MouseEvent) => {\n          this.pointerMove.next({\n            event: mouseMoveEvent,\n            clientX: mouseMoveEvent.clientX,\n            clientY: mouseMoveEvent.clientY\n          });\n        }\n      );\n    }\n    this.pointerDown.next({\n      event,\n      clientX: event.clientX,\n      clientY: event.clientY\n    });\n  }\n\n  private onMouseUp(event: MouseEvent): void {\n    if (this.eventListenerSubscriptions.mousemove) {\n      this.eventListenerSubscriptions.mousemove();\n      delete this.eventListenerSubscriptions.mousemove;\n    }\n    this.pointerUp.next({\n      event,\n      clientX: event.clientX,\n      clientY: event.clientY\n    });\n  }\n\n  private onTouchStart(event: TouchEvent): void {\n    if (!this.eventListenerSubscriptions.touchmove) {\n      this.eventListenerSubscriptions.touchmove = this.renderer.listen(\n        'document',\n        'touchmove',\n        (touchMoveEvent: TouchEvent) => {\n          this.pointerMove.next({\n            event: touchMoveEvent,\n            clientX: touchMoveEvent.targetTouches[0].clientX,\n            clientY: touchMoveEvent.targetTouches[0].clientY\n          });\n        }\n      );\n    }\n    this.pointerDown.next({\n      event,\n      clientX: event.touches[0].clientX,\n      clientY: event.touches[0].clientY\n    });\n  }\n\n  private onTouchEnd(event: TouchEvent): void {\n    if (this.eventListenerSubscriptions.touchmove) {\n      this.eventListenerSubscriptions.touchmove();\n      delete this.eventListenerSubscriptions.touchmove;\n    }\n    this.pointerUp.next({\n      event,\n      clientX: event.changedTouches[0].clientX,\n      clientY: event.changedTouches[0].clientY\n    });\n  }\n\n  private onMouseEnter(): void {\n    this.setCursor(this.dragCursor);\n  }\n\n  private onMouseLeave(): void {\n    this.setCursor(null);\n  }\n\n  private setCssTransform(value: string | null): void {\n    if (this.ghostDragEnabled) {\n      const transformAttributes = [\n        'transform',\n        '-webkit-transform',\n        '-ms-transform',\n        '-moz-transform',\n        '-o-transform'\n      ];\n      transformAttributes.forEach(transformAttribute => {\n        this.renderer.setStyle(\n          this.element.nativeElement,\n          transformAttribute,\n          value\n        );\n      });\n    }\n  }\n\n  private canDrag(): boolean {\n    return this.dragAxis.x || this.dragAxis.y;\n  }\n\n  private setCursor(value: string | null): void {\n    this.renderer.setStyle(this.element.nativeElement, 'cursor', value);\n  }\n\n  private unsubscribeEventListeners(): void {\n    Object.keys(this.eventListenerSubscriptions).forEach(type => {\n      (this as any).eventListenerSubscriptions[type]();\n      delete (this as any).eventListenerSubscriptions[type];\n    });\n  }\n}\n\n    \n\n\n\n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"
+    },
+    'modules/DragAndDropModule.html': {
+      url: 'modules/DragAndDropModule.html',
+      title: 'module - DragAndDropModule',
+      body:
+        "\n                   \n\n\n\n\n  Modules\n  DragAndDropModule\n\n\n\n\n    \n        Info\n    \n\n\n    \n        Source\n    \n\n\n\n    \n\n        \n            File\n        \n        \n            src/drag-and-drop.module.ts\n        \n\n\n        \n\n        \n            \n                \n                    Declarations\n                    \n                            \n                                DraggableDirective\n                            \n                            \n                                DroppableDirective\n                            \n                    \n                \n                \n                    Exports\n                    \n                            \n                                    DraggableDirective\n                            \n                            \n                                    DroppableDirective\n                            \n                    \n                \n            \n        \n    \n\n\n    \n        import { NgModule, ModuleWithProviders } from '@angular/core';\nimport { DraggableDirective } from './draggable.directive';\nimport { DroppableDirective } from './droppable.directive';\nimport { DraggableHelper } from './draggable-helper.provider';\n\n@NgModule({\n  declarations: [DraggableDirective, DroppableDirective],\n  exports: [DraggableDirective, DroppableDirective]\n})\nexport class DragAndDropModule {\n  static forRoot(): ModuleWithProviders {\n    return {\n      ngModule: DragAndDropModule,\n      providers: [DraggableHelper]\n    };\n  }\n}\n\n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"
+    },
+    'interfaces/DragAxis.html': {
+      url: 'interfaces/DragAxis.html',
+      title: 'interface - DragAxis',
+      body:
+        "\n                   \n\n\n\n\n\n\n\n\n\n\n\n  Interfaces\n  DragAxis\n\n\n\n    \n        Info\n    \n\n\n    \n        Source\n    \n\n\n\n    \n        \n            File\n        \n        \n            src/draggable.directive.ts\n        \n\n\n\n        \n            Index\n            \n                \n                    \n                        \n                            Properties\n                        \n                    \n                    \n                        \n                            \n                                \n                                        x\n                                \n                                \n                                        y\n                                \n                            \n                        \n                    \n                \n            \n        \n\n\n\n            \n                Properties\n                    \n                        \n                                \n                                    \n                                        \n                                        x\n                                    \n                                \n                                \n                                    \n                                        x:     boolean\n\n                                    \n                                \n\n\n                                    \n                                        \n                                            Type :     boolean\n\n                                        \n                                    \n\n\n\n\n                                    \n                                        \n                                            Defined in src/draggable.directive.ts:33\n                                        \n                                    \n\n                        \n                    \n                    \n                        \n                                \n                                    \n                                        \n                                        y\n                                    \n                                \n                                \n                                    \n                                        y:     boolean\n\n                                    \n                                \n\n\n                                    \n                                        \n                                            Type :     boolean\n\n                                        \n                                    \n\n\n\n\n                                    \n                                        \n                                            Defined in src/draggable.directive.ts:34\n                                        \n                                    \n\n                        \n                    \n            \n    \n\n\n    \n        import {\n  Directive,\n  OnInit,\n  ElementRef,\n  Renderer2,\n  Output,\n  EventEmitter,\n  Input,\n  OnDestroy,\n  OnChanges,\n  NgZone,\n  SimpleChanges\n} from '@angular/core';\nimport { Subject, Observable, merge } from 'rxjs';\nimport {\n  map,\n  mergeMap,\n  takeUntil,\n  take,\n  takeLast,\n  pairwise,\n  share,\n  filter\n} from 'rxjs/operators';\nimport { DraggableHelper } from './draggable-helper.provider';\n\nexport interface Coordinates {\n  x: number;\n  y: number;\n}\n\nexport interface DragAxis {\n  x: boolean;\n  y: boolean;\n}\n\nexport interface SnapGrid {\n  x?: number;\n  y?: number;\n}\n\nexport type ValidateDrag = (coordinates: Coordinates) => boolean;\n\nexport interface PointerEvent {\n  clientX: number;\n  clientY: number;\n  event: MouseEvent | TouchEvent;\n}\n\nconst MOVE_CURSOR: string = 'move';\n\n@Directive({\n  selector: '[mwlDraggable]'\n})\nexport class DraggableDirective implements OnInit, OnChanges, OnDestroy {\n  /**\n   * an object of data you can pass to the drop event\n   */\n  @Input() dropData: any;\n\n  /**\n   * The axis along which the element is draggable\n   */\n  @Input() dragAxis: DragAxis = { x: true, y: true };\n\n  /**\n   * Snap all drags to an x / y grid\n   */\n  @Input() dragSnapGrid: SnapGrid = {};\n\n  /**\n   * Show a ghost element that shows the drag when dragging\n   */\n  @Input() ghostDragEnabled: boolean = true;\n\n  /**\n   * Allow custom behaviour to control when the element is dragged\n   */\n  @Input() validateDrag: ValidateDrag;\n\n  /**\n   * The cursor to use when dragging the element\n   */\n  @Input() dragCursor = MOVE_CURSOR;\n\n  /**\n   * Called when the element can be dragged along one axis and has the mouse or pointer device pressed on it\n   */\n  @Output() dragPointerDown = new EventEmitter();\n\n  /**\n   * Called when the element has started to be dragged.\n   * Only called after at least one mouse or touch move event\n   */\n  @Output() dragStart = new EventEmitter();\n\n  /**\n   * Called when the element is being dragged\n   */\n  @Output() dragging = new EventEmitter();\n\n  /**\n   * Called after the element is dragged\n   */\n  @Output() dragEnd = new EventEmitter();\n\n  /**\n   * @hidden\n   */\n  pointerDown: Subject = new Subject();\n\n  /**\n   * @hidden\n   */\n  pointerMove: Subject = new Subject();\n\n  /**\n   * @hidden\n   */\n  pointerUp: Subject = new Subject();\n\n  private eventListenerSubscriptions: {\n    mousemove?: () => void;\n    mousedown?: () => void;\n    mouseup?: () => void;\n    mouseenter?: () => void;\n    mouseleave?: () => void;\n    touchstart?: () => void;\n    touchmove?: () => void;\n    touchend?: () => void;\n    touchcancel?: () => void;\n  } = {};\n\n  /**\n   * @hidden\n   */\n  constructor(\n    public element: ElementRef,\n    private renderer: Renderer2,\n    private draggableHelper: DraggableHelper,\n    private zone: NgZone\n  ) {}\n\n  ngOnInit(): void {\n    this.checkEventListeners();\n\n    const pointerDrag: Observable = this.pointerDown\n      .pipe(filter(() => this.canDrag()))\n      .pipe(\n        mergeMap((pointerDownEvent: PointerEvent) => {\n          const currentDrag: Subject = new Subject();\n\n          this.zone.run(() => {\n            this.dragPointerDown.next({ x: 0, y: 0 });\n          });\n\n          const pointerMove: Observable = this.pointerMove\n            .pipe(\n              map((pointerMoveEvent: PointerEvent) => {\n                pointerMoveEvent.event.preventDefault();\n\n                return {\n                  currentDrag,\n                  x: pointerMoveEvent.clientX - pointerDownEvent.clientX,\n                  y: pointerMoveEvent.clientY - pointerDownEvent.clientY,\n                  clientX: pointerMoveEvent.clientX,\n                  clientY: pointerMoveEvent.clientY\n                };\n              })\n            )\n            .pipe(\n              map((moveData: Coordinates) => {\n                if (this.dragSnapGrid.x) {\n                  moveData.x =\n                    Math.floor(moveData.x / this.dragSnapGrid.x) *\n                    this.dragSnapGrid.x;\n                }\n\n                if (this.dragSnapGrid.y) {\n                  moveData.y =\n                    Math.floor(moveData.y / this.dragSnapGrid.y) *\n                    this.dragSnapGrid.y;\n                }\n\n                return moveData;\n              })\n            )\n            .pipe(\n              map((moveData: Coordinates) => {\n                if (!this.dragAxis.x) {\n                  moveData.x = 0;\n                }\n\n                if (!this.dragAxis.y) {\n                  moveData.y = 0;\n                }\n\n                return moveData;\n              })\n            )\n            .pipe(\n              filter(\n                ({ x, y }) => !this.validateDrag || this.validateDrag({ x, y })\n              )\n            )\n            .pipe(takeUntil(merge(this.pointerUp, this.pointerDown)))\n            .pipe(share());\n\n          pointerMove.pipe(take(1)).subscribe(() => {\n            pointerDownEvent.event.preventDefault();\n\n            this.zone.run(() => {\n              this.dragStart.next({ x: 0, y: 0 });\n            });\n\n            this.setCursor(this.dragCursor);\n\n            this.draggableHelper.currentDrag.next(currentDrag);\n          });\n\n          pointerMove.pipe(takeLast(1)).subscribe(({ x, y }) => {\n            this.zone.run(() => {\n              this.dragEnd.next({ x, y });\n            });\n            currentDrag.complete();\n            this.setCssTransform(null);\n            if (this.ghostDragEnabled) {\n              this.renderer.setStyle(\n                this.element.nativeElement,\n                'pointerEvents',\n                null\n              );\n            }\n          });\n\n          return pointerMove;\n        })\n      )\n      .pipe(share());\n\n    merge(\n      pointerDrag.pipe(take(1)).pipe(map(value => [, value])),\n      pointerDrag.pipe(pairwise())\n    )\n      .pipe(\n        filter(([previous, next]) => {\n          if (!previous) {\n            return true;\n          }\n          return previous.x !== next.x || previous.y !== next.y;\n        })\n      )\n      .pipe(map(([previous, next]) => next))\n      .subscribe(({ x, y, currentDrag, clientX, clientY }) => {\n        this.zone.run(() => {\n          this.dragging.next({ x, y });\n        });\n        if (this.ghostDragEnabled) {\n          this.renderer.setStyle(\n            this.element.nativeElement,\n            'pointerEvents',\n            'none'\n          );\n        }\n        this.setCssTransform(`translate(${x}px, ${y}px)`);\n        currentDrag.next({\n          clientX,\n          clientY,\n          dropData: this.dropData\n        });\n      });\n  }\n\n  ngOnChanges(changes: SimpleChanges): void {\n    if (changes['dragAxis']) {\n      this.checkEventListeners();\n    }\n  }\n\n  ngOnDestroy(): void {\n    this.unsubscribeEventListeners();\n    this.pointerDown.complete();\n    this.pointerMove.complete();\n    this.pointerUp.complete();\n  }\n\n  private checkEventListeners(): void {\n    const canDrag: boolean = this.canDrag();\n    const hasEventListeners: boolean =\n      Object.keys(this.eventListenerSubscriptions).length > 0;\n\n    if (canDrag && !hasEventListeners) {\n      this.zone.runOutsideAngular(() => {\n        this.eventListenerSubscriptions.mousedown = this.renderer.listen(\n          this.element.nativeElement,\n          'mousedown',\n          (event: MouseEvent) => {\n            this.onMouseDown(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.mouseup = this.renderer.listen(\n          'document',\n          'mouseup',\n          (event: MouseEvent) => {\n            this.onMouseUp(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.touchstart = this.renderer.listen(\n          this.element.nativeElement,\n          'touchstart',\n          (event: TouchEvent) => {\n            this.onTouchStart(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.touchend = this.renderer.listen(\n          'document',\n          'touchend',\n          (event: TouchEvent) => {\n            this.onTouchEnd(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.touchcancel = this.renderer.listen(\n          'document',\n          'touchcancel',\n          (event: TouchEvent) => {\n            this.onTouchEnd(event);\n          }\n        );\n\n        this.eventListenerSubscriptions.mouseenter = this.renderer.listen(\n          this.element.nativeElement,\n          'mouseenter',\n          () => {\n            this.onMouseEnter();\n          }\n        );\n\n        this.eventListenerSubscriptions.mouseleave = this.renderer.listen(\n          this.element.nativeElement,\n          'mouseleave',\n          () => {\n            this.onMouseLeave();\n          }\n        );\n      });\n    } else if (!canDrag && hasEventListeners) {\n      this.unsubscribeEventListeners();\n    }\n  }\n\n  private onMouseDown(event: MouseEvent): void {\n    if (!this.eventListenerSubscriptions.mousemove) {\n      this.eventListenerSubscriptions.mousemove = this.renderer.listen(\n        'document',\n        'mousemove',\n        (mouseMoveEvent: MouseEvent) => {\n          this.pointerMove.next({\n            event: mouseMoveEvent,\n            clientX: mouseMoveEvent.clientX,\n            clientY: mouseMoveEvent.clientY\n          });\n        }\n      );\n    }\n    this.pointerDown.next({\n      event,\n      clientX: event.clientX,\n      clientY: event.clientY\n    });\n  }\n\n  private onMouseUp(event: MouseEvent): void {\n    if (this.eventListenerSubscriptions.mousemove) {\n      this.eventListenerSubscriptions.mousemove();\n      delete this.eventListenerSubscriptions.mousemove;\n    }\n    this.pointerUp.next({\n      event,\n      clientX: event.clientX,\n      clientY: event.clientY\n    });\n  }\n\n  private onTouchStart(event: TouchEvent): void {\n    if (!this.eventListenerSubscriptions.touchmove) {\n      this.eventListenerSubscriptions.touchmove = this.renderer.listen(\n        'document',\n        'touchmove',\n        (touchMoveEvent: TouchEvent) => {\n          this.pointerMove.next({\n            event: touchMoveEvent,\n            clientX: touchMoveEvent.targetTouches[0].clientX,\n            clientY: touchMoveEvent.targetTouches[0].clientY\n          });\n        }\n      );\n    }\n    this.pointerDown.next({\n      event,\n      clientX: event.touches[0].clientX,\n      clientY: event.touches[0].clientY\n    });\n  }\n\n  private onTouchEnd(event: TouchEvent): void {\n    if (this.eventListenerSubscriptions.touchmove) {\n      this.eventListenerSubscriptions.touchmove();\n      delete this.eventListenerSubscriptions.touchmove;\n    }\n    this.pointerUp.next({\n      event,\n      clientX: event.changedTouches[0].clientX,\n      clientY: event.changedTouches[0].clientY\n    });\n  }\n\n  private onMouseEnter(): void {\n    this.setCursor(this.dragCursor);\n  }\n\n  private onMouseLeave(): void {\n    this.setCursor(null);\n  }\n\n  private setCssTransform(value: string | null): void {\n    if (this.ghostDragEnabled) {\n      const transformAttributes = [\n        'transform',\n        '-webkit-transform',\n        '-ms-transform',\n        '-moz-transform',\n        '-o-transform'\n      ];\n      transformAttributes.forEach(transformAttribute => {\n        this.renderer.setStyle(\n          this.element.nativeElement,\n          transformAttribute,\n          value\n        );\n      });\n    }\n  }\n\n  private canDrag(): boolean {\n    return this.dragAxis.x || this.dragAxis.y;\n  }\n\n  private setCursor(value: string | null): void {\n    this.renderer.setStyle(this.element.nativeElement, 'cursor', value);\n  }\n\n  private unsubscribeEventListeners(): void {\n    Object.keys(this.eventListenerSubscriptions).forEach(type => {\n      (this as any).eventListenerSubscriptions[type]();\n      delete (this as any).eventListenerSubscriptions[type];\n    });\n  }\n}\n\n    \n\n\n\n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"
+    },
+    'interfaces/DropData.html': {
+      url: 'interfaces/DropData.html',
+      title: 'interface - DropData',
+      body:
+        "\n                   \n\n\n\n\n\n\n\n\n\n\n\n  Interfaces\n  DropData\n\n\n\n    \n        Info\n    \n\n\n    \n        Source\n    \n\n\n\n    \n        \n            File\n        \n        \n            src/droppable.directive.ts\n        \n\n\n\n        \n            Index\n            \n                \n                    \n                        \n                            Properties\n                        \n                    \n                    \n                        \n                            \n                                \n                                        dropData\n                                \n                            \n                        \n                    \n                \n            \n        \n\n\n\n            \n                Properties\n                    \n                        \n                                \n                                    \n                                        \n                                        dropData\n                                    \n                                \n                                \n                                    \n                                        dropData:     any\n\n                                    \n                                \n\n\n                                    \n                                        \n                                            Type :     any\n\n                                        \n                                    \n\n\n\n\n                                    \n                                        \n                                            Defined in src/droppable.directive.ts:34\n                                        \n                                    \n\n                        \n                    \n            \n    \n\n\n    \n        import {\n  Directive,\n  OnInit,\n  ElementRef,\n  OnDestroy,\n  Output,\n  EventEmitter,\n  NgZone\n} from '@angular/core';\nimport { Subject, Subscription } from 'rxjs';\nimport {\n  distinctUntilChanged,\n  pairwise,\n  filter,\n  map,\n  mergeMap\n} from 'rxjs/operators';\nimport { DraggableHelper } from './draggable-helper.provider';\n\nfunction isCoordinateWithinRectangle(\n  clientX: number,\n  clientY: number,\n  rect: ClientRect\n): boolean {\n  return (\n    clientX >= rect.left &&\n    clientX = rect.top &&\n    clientY ();\n\n  /**\n   * Called when a draggable element stops overlapping the element\n   */\n  @Output() dragLeave = new EventEmitter();\n\n  /**\n   * Called when a draggable element is moved over the element\n   */\n  @Output() dragOver = new EventEmitter();\n\n  /**\n   * Called when a draggable element is dropped on this element\n   */\n  @Output() drop = new EventEmitter();\n\n  currentDragSubscription: Subscription;\n\n  constructor(\n    private element: ElementRef,\n    private draggableHelper: DraggableHelper,\n    private zone: NgZone\n  ) {}\n\n  ngOnInit(): void {\n    interface CurrentDragData {\n      clientX: number;\n      clientY: number;\n      dropData: any;\n    }\n\n    this.currentDragSubscription = this.draggableHelper.currentDrag.subscribe(\n      (drag: Subject) => {\n        const droppableRectangle: ClientRect = this.element.nativeElement.getBoundingClientRect();\n\n        let currentDragDropData: any;\n        const overlaps = drag.pipe(\n          map(({ clientX, clientY, dropData }) => {\n            currentDragDropData = dropData;\n            return isCoordinateWithinRectangle(\n              clientX,\n              clientY,\n              droppableRectangle\n            );\n          })\n        );\n\n        const overlapsChanged = overlaps.pipe(distinctUntilChanged());\n\n        let dragOverActive: boolean; // TODO - see if there's a way of doing this via rxjs\n\n        overlapsChanged\n          .pipe(filter(overlapsNow => overlapsNow))\n          .subscribe(() => {\n            dragOverActive = true;\n            this.zone.run(() => {\n              this.dragEnter.next({\n                dropData: currentDragDropData\n              });\n            });\n          });\n\n        overlaps.pipe(filter(overlapsNow => overlapsNow)).subscribe(() => {\n          this.zone.run(() => {\n            this.dragOver.next({\n              dropData: currentDragDropData\n            });\n          });\n        });\n\n        overlapsChanged\n          .pipe(pairwise())\n          .pipe(\n            filter(([didOverlap, overlapsNow]) => didOverlap && !overlapsNow)\n          )\n          .subscribe(() => {\n            dragOverActive = false;\n            this.zone.run(() => {\n              this.dragLeave.next({\n                dropData: currentDragDropData\n              });\n            });\n          });\n\n        drag.pipe(mergeMap(() => overlaps)).subscribe({\n          complete: () => {\n            if (dragOverActive) {\n              this.zone.run(() => {\n                this.drop.next({\n                  dropData: currentDragDropData\n                });\n              });\n            }\n          }\n        });\n      }\n    );\n  }\n\n  ngOnDestroy(): void {\n    this.currentDragSubscription.unsubscribe();\n  }\n}\n\n    \n\n\n\n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"
+    },
+    'directives/DroppableDirective.html': {
+      url: 'directives/DroppableDirective.html',
+      title: 'directive - DroppableDirective',
+      body:
+        "\n                   \n\n\n\n\n\n\n  Directives\n  DroppableDirective\n\n\n\n    \n        Info\n    \n\n\n    \n        Source\n    \n\n\n\n\n    \n        \n            File\n        \n        \n            src/droppable.directive.ts\n        \n\n\n            \n                Implements\n            \n            \n                        OnInit\n                        OnDestroy\n            \n\n\n        \n            Metadata\n            \n                \n\n                    \n                        selector\n                        [mwlDroppable]\n                    \n\n                \n            \n        \n\n            \n    Index\n    \n        \n                \n                    \n                        Properties\n                    \n                \n                \n                    \n                        \n                            \n                                currentDragSubscription\n                            \n                        \n                    \n                \n\n\n\n                \n                    \n                        Outputs\n                    \n                \n                \n                    \n                        \n                            \n                                dragEnter\n                            \n                            \n                                dragLeave\n                            \n                            \n                                dragOver\n                            \n                            \n                                drop\n                            \n                        \n                    \n                \n\n\n\n        \n    \n\n\n            \n    Constructor\n        \n            \n                \n                    \nconstructor(element: ElementRef, draggableHelper: DraggableHelper, zone: NgZone)\n                    \n                \n                        \n                            \n                                Defined in src/droppable.directive.ts:61\n                            \n                        \n\n                \n                    \n                            \n                                    Parameters :\n                                    \n                                        \n                                            \n                                                Name\n                                                    Type\n                                                Optional\n                                            \n                                        \n                                        \n                                                \n                                                    element\n                                                  \n                                                        \n                                                                    ElementRef\n                                                        \n                                                  \n                                                    \n                                                            no\n                                                    \n                                                    \n                                                \n                                                \n                                                    draggableHelper\n                                                  \n                                                        \n                                                                    DraggableHelper\n                                                        \n                                                  \n                                                    \n                                                            no\n                                                    \n                                                    \n                                                \n                                                \n                                                    zone\n                                                  \n                                                        \n                                                                    NgZone\n                                                        \n                                                  \n                                                    \n                                                            no\n                                                    \n                                                    \n                                                \n                                        \n                                    \n                            \n                    \n                \n            \n        \n\n\n\n            \n    Outputs\n        \n            \n                \n                    \n                        \n                        dragEnter\n                    \n                    \n                        Called when a draggable element starts overlapping the element\n\n                        $event type:    EventEmitter\n\n                    \n                \n                        \n                            \n                                    Defined in src/droppable.directive.ts:44\n                            \n                        \n            \n        \n        \n            \n                \n                    \n                        \n                        dragLeave\n                    \n                    \n                        Called when a draggable element stops overlapping the element\n\n                        $event type:    EventEmitter\n\n                    \n                \n                        \n                            \n                                    Defined in src/droppable.directive.ts:49\n                            \n                        \n            \n        \n        \n            \n                \n                    \n                        \n                        dragOver\n                    \n                    \n                        Called when a draggable element is moved over the element\n\n                        $event type:    EventEmitter\n\n                    \n                \n                        \n                            \n                                    Defined in src/droppable.directive.ts:54\n                            \n                        \n            \n        \n        \n            \n                \n                    \n                        \n                        drop\n                    \n                    \n                        Called when a draggable element is dropped on this element\n\n                        $event type:    EventEmitter\n\n                    \n                \n                        \n                            \n                                    Defined in src/droppable.directive.ts:59\n                            \n                        \n            \n        \n\n\n\n\n            \n    \n        \n            Properties\n        \n        \n            \n                \n                    \n                        \n                        \n                            \n                            currentDragSubscription\n                            \n                            \n                        \n                    \n                \n                \n                    \n                        currentDragSubscription:     Subscription\n\n                    \n                \n                    \n                        \n                            Type :     Subscription\n\n                        \n                    \n                        \n                            \n                                    Defined in src/droppable.directive.ts:61\n                            \n                        \n\n\n            \n        \n\n\n\n    \n\n\n    \n        import {\n  Directive,\n  OnInit,\n  ElementRef,\n  OnDestroy,\n  Output,\n  EventEmitter,\n  NgZone\n} from '@angular/core';\nimport { Subject, Subscription } from 'rxjs';\nimport {\n  distinctUntilChanged,\n  pairwise,\n  filter,\n  map,\n  mergeMap\n} from 'rxjs/operators';\nimport { DraggableHelper } from './draggable-helper.provider';\n\nfunction isCoordinateWithinRectangle(\n  clientX: number,\n  clientY: number,\n  rect: ClientRect\n): boolean {\n  return (\n    clientX >= rect.left &&\n    clientX = rect.top &&\n    clientY ();\n\n  /**\n   * Called when a draggable element stops overlapping the element\n   */\n  @Output() dragLeave = new EventEmitter();\n\n  /**\n   * Called when a draggable element is moved over the element\n   */\n  @Output() dragOver = new EventEmitter();\n\n  /**\n   * Called when a draggable element is dropped on this element\n   */\n  @Output() drop = new EventEmitter();\n\n  currentDragSubscription: Subscription;\n\n  constructor(\n    private element: ElementRef,\n    private draggableHelper: DraggableHelper,\n    private zone: NgZone\n  ) {}\n\n  ngOnInit(): void {\n    interface CurrentDragData {\n      clientX: number;\n      clientY: number;\n      dropData: any;\n    }\n\n    this.currentDragSubscription = this.draggableHelper.currentDrag.subscribe(\n      (drag: Subject) => {\n        const droppableRectangle: ClientRect = this.element.nativeElement.getBoundingClientRect();\n\n        let currentDragDropData: any;\n        const overlaps = drag.pipe(\n          map(({ clientX, clientY, dropData }) => {\n            currentDragDropData = dropData;\n            return isCoordinateWithinRectangle(\n              clientX,\n              clientY,\n              droppableRectangle\n            );\n          })\n        );\n\n        const overlapsChanged = overlaps.pipe(distinctUntilChanged());\n\n        let dragOverActive: boolean; // TODO - see if there's a way of doing this via rxjs\n\n        overlapsChanged\n          .pipe(filter(overlapsNow => overlapsNow))\n          .subscribe(() => {\n            dragOverActive = true;\n            this.zone.run(() => {\n              this.dragEnter.next({\n                dropData: currentDragDropData\n              });\n            });\n          });\n\n        overlaps.pipe(filter(overlapsNow => overlapsNow)).subscribe(() => {\n          this.zone.run(() => {\n            this.dragOver.next({\n              dropData: currentDragDropData\n            });\n          });\n        });\n\n        overlapsChanged\n          .pipe(pairwise())\n          .pipe(\n            filter(([didOverlap, overlapsNow]) => didOverlap && !overlapsNow)\n          )\n          .subscribe(() => {\n            dragOverActive = false;\n            this.zone.run(() => {\n              this.dragLeave.next({\n                dropData: currentDragDropData\n              });\n            });\n          });\n\n        drag.pipe(mergeMap(() => overlaps)).subscribe({\n          complete: () => {\n            if (dragOverActive) {\n              this.zone.run(() => {\n                this.drop.next({\n                  dropData: currentDragDropData\n                });\n              });\n            }\n          }\n        });\n      }\n    );\n  }\n\n  ngOnDestroy(): void {\n    this.currentDragSubscription.unsubscribe();\n  }\n}\n\n    \n\n\n\n\n\n\n\n\n\n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"
+    },
+    'changelog.html': {
+      url: 'changelog.html',
+      title: 'getting-started - changelog',
+      body:
+        '\n                   \n\nChange Log\nAll notable changes to this project will be documented in this file. See standard-version for commit guidelines.\n\n3.0.0 (2018-05-09)\nFeatures\n\nupgrade to angular 6 (d96c26e), closes #31\n\nBREAKING CHANGES\n\nangular 6 and rxjs 6 or higher are now required to use this package\n\n\n2.0.0 (2017-12-26)\nBug Fixes\n\nonly call drag start and end outputs when the element is actually dragged (45c6b5f), closes #21 #20\n\nFeatures\n\nupgrade to angular 5 (4159ce2)\nuse lettable rxjs operators (9fca12a)\nuse ng-packagr for building the package (57dd436)\ndragPointerDown: add a new output to repliate the old dragStart behaviour (4a58c61)\n\nBREAKING CHANGES\n\nThe UMD module path has changed from\nangular-draggable-droppable/dist/umd/angular-draggable-droppable.js to\nangular-draggable-droppable/bundles/angular-draggable-droppable.umd.js. System.js users will need\nto update their config.\nrxjs operators will now no longer be added to the observable prototype. Also rxjs\n= 5.5.x or higher is required\n\n\nAngular 5 or higher is now required to use this package\ndrag start and end events are now only called when the element is actually dragged,\nuse regular mousedown and mouseup events to get the old behaviour\n\n\n1.1.1 (2017-10-21)\nBug Fixes\n\nallow angular 5 peer dependency (1265bee)\n\n\n1.1.0 (2017-09-22)\nFeatures\n\ndraggable: allow the draggable cursor to be customised (897b3fe)\n\n\n1.0.2 (2017-09-18)\nBug Fixes\n\ndraggable: fire dragEnd event when the event was not dragged (73d65d7), closes #17\n\n\n1.0.1 (2017-04-14)\nBug Fixes\n\ndraggable: prevent text from being highlighted in firefox (7d859c1)\n\n\n1.0.0 (2017-03-24)\nFeatures\n\nng4: upgrade to angular 4 (42631bc)\n\nBREAKING CHANGES\n\nng4: angular 4.0 or higher is now required to use this library. The upgrade should be seamless for most users\n\n\n0.6.0 (2017-03-23)\nFeatures\n\ndraggable: make dragging work on touch devices (dc0f863)\n\n\n0.5.4 (2017-03-04)\nPerformance Improvements\n\ndraggable: lazily create all mouse event listeners (3c99d40)\n\n\n0.5.3 (2017-03-04)\nBug Fixes\n\nmove dependencies to dev (17a2ccc)\n\n\n0.5.2 (2017-03-04)\nBug Fixes\n\nloosen peer dependency to allow angular 4 (bcc9080)\n\nPerformance Improvements\n\ndraggable: lazily create the mouse move listener (bebd925)\nrun all event listeners outside of angulars zone (d7c9256)\n\n\n0.5.1 (2017-01-06)\nBug Fixes\n\ndraggable: allow draggable events to be clicked (44ea67e)\n\n\n0.5.0 (2016-12-21)\nFeatures\n\ndragAndDropModule: add forRoot method (00f6989)\n\nBREAKING CHANGES\n\ndragAndDropModule: You must now import the DragAndDropModule with the forRoot method\n\n\n0.4.0 (2016-12-18)\nFeatures\n\ndraggable: remove the dragContainer option (5aca67d)\n\nBREAKING CHANGES\n\ndraggable: the dragContainer option has been removed as it didn\'t work in all cases and can be\n\nimplemented yourself with the validateDrag option\n\n0.3.1 (2016-12-18)\nBug Fixes\n\ndraggable: make the dragEnd output respect the validateDrag input (26cfa7e)\n\n\n0.3.0 (2016-12-12)\nFeatures\n\ndraggable: add dragContainer option (fb75711), closes #10\n\n\n0.2.3 (2016-12-11)\nBug Fixes\n\ndraggable: allow events to be dragged back into their original positions (7831903)\n\n\n0.2.2 (2016-12-11)\nBug Fixes\n\ndraggable: only emit the dragEnd event once (52e9a22)\n\n\n0.2.1 (2016-12-10)\nBug Fixes\n\nrevert duplicate dragging fix as it caused worse errors (7476301)\n\n\n0.2.0 (2016-12-10)\nBug Fixes\n\ncompletely remove applied styled after dragging (3445337)\ndraggable: dont fire duplicate dragging events with the same coordinates (222914b), closes #6\ndraggable: when dragging is disabled, no drag events should be emitted (729f24e)\ndroppable: only allow dropping of events when the cursor is inside (652d632), closes #5\n\nFeatures\n\ndraggable: auto change the cursor to the move icon on hover (50d1962), closes #9\nsnapGrid: rename to dragSnapGrid (a77d07a), closes #7\nvalidateDrag: add the validate drag input (9e5ac95), closes #8\n\nBREAKING CHANGES\n\ndroppable: the drag enter, leave and drop events will not fire until cursor is inside the droppable element. This is to mimic how native drag and drop works\nsnapGrid: The snapGrid input has been renamed to dragSnapGrid\n\n\n0.1.1 (2016-12-09)\nBug Fixes\n\ndraggable: disable pointer events on the element when dragging (f29b424)\n\n\n0.1.0 (2016-11-27)\nBug Fixes\n\ndraggable: dispose of observables when the component is destroyed (710c7f7)\nprevent the default move move interaction on dragging (d2fdcde)\n\nFeatures\n\ndragAxix: allow the drag axis to be locked to just x and y (38fd4b5), closes #2\ndraggable: add mwlDraggable directive (c6771eb)\ndroppable: add the mwlDroppable directive (6016f12), closes #1\nghostDragEnabled: add option to disable the ghost dragging effect (709327c), closes #3\nsnapGrid: implement draggable snap grids (16a3df8), closes #4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                   \n    \n         results matching ""\n        \n    \n    \n        No results matching ""\n    \n\n'
+    },
+    'dependencies.html': {
+      url: 'dependencies.html',
+      title: 'package-dependencies - dependencies',
+      body:
+        '\n                   \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    \n        Peer Dependencies\n    \n    \n        \n            @angular/core : >=6.0.0 \n    \n\n\n\n                   \n    \n         results matching ""\n        \n    \n    \n        No results matching ""\n    \n\n'
+    },
+    'miscellaneous/functions.html': {
+      url: 'miscellaneous/functions.html',
+      title: 'miscellaneous-functions - functions',
+      body:
+        '\n                   \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Miscellaneous\n  Functions\n\n\n\n    Index\n    \n        \n            \n                \n                    \n                        \n                            isCoordinateWithinRectangle   (src/.../droppable.directive.ts)\n                        \n                    \n                \n            \n        \n    \n\n\n    src/droppable.directive.ts\n    \n            \n            \n                \n                    \n                        \n                        \n                            \n                            isCoordinateWithinRectangle\n                            \n                            \n                        \n                    \n                \n                \n                    \nisCoordinateWithinRectangle(clientX: undefined, clientY: undefined, rect: undefined)\n                    \n                \n\n\n\n                \n                    \n\n                            \n                                    Parameters :\n                                    \n                                        \n                                            \n                                                Name\n                                                Optional\n                                            \n                                        \n                                        \n                                                \n                                                        clientX\n                                                    \n                                                    \n                                                            no\n                                                    \n                                                    \n\n                                                \n                                                \n                                                        clientY\n                                                    \n                                                    \n                                                            no\n                                                    \n                                                    \n\n                                                \n                                                \n                                                        rect\n                                                    \n                                                    \n                                                            no\n                                                    \n                                                    \n\n                                                \n                                        \n                                    \n                            \n                            \n                            \n                    \n                \n            \n        \n\n\n\n                   \n    \n         results matching ""\n        \n    \n    \n        No results matching ""\n    \n\n'
+    },
+    'index.html': {
+      url: 'index.html',
+      title: 'getting-started - index',
+      body:
+        "\n                   \n\nangular 6.0+ drag and drop\n\n\n\n\n\n\n\nDemo\nhttps://mattlewis92.github.io/angular-draggable-droppable/demo/\nTable of contents\n\nAbout\nInstallation\nDocumentation\nDevelopment\nLicense\n\nAbout\nObservable powered drag and drop for angular 6.0+\nInstallation\nInstall through npm:\nnpm install --save angular-draggable-droppableThen use it in your app like so:\nimport { Component, NgModule } from '@angular/core';\nimport { DragAndDropModule } from 'angular-draggable-droppable';\n\n@NgModule({\n  declarations: [DemoApp],\n  imports: [DragAndDropModule.forRoot()],\n  bootstrap: [DemoApp]\n})\nclass DemoModule {}\n\n@Component({\n  selector: 'demo-app',\n  template: `\n    Drag me!\n    \n      Drop here\n      Item dropped here with data: \"{{ droppedData }}\"!\n    \n  `\n})\nclass DemoApp {\n  droppedData: string;\n\n  dragEnd(event) {\n    console.log('Element was dragged', event);\n  }\n}You may also find it useful to view the demo source.\nDocumentation\nAll documentation is auto-generated from the source and can be viewed here:\nhttps://mattlewis92.github.io/angular-draggable-droppable/docs/\nDevelopment\nPrepare your environment\n\nInstall Node.js and NPM (should come with)\nInstall local dev dependencies: npm install while current directory is this repo\n\nDevelopment server\nRun npm start to start a development server on port 8000 with auto reload + tests.\nTesting\nRun npm test to run tests once or npm run test:watch to continually run tests.\nRelease\nnpm run releaseLicense\nMIT\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                   \n    \n         results matching \"\"\n        \n    \n    \n        No results matching \"\"\n    \n\n"
+    },
+    'license.html': {
+      url: 'license.html',
+      title: 'getting-started - license',
+      body:
+        '\n                   \n\nThe MIT License (MIT)\nCopyright (c) 2016 Matt Lewis\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the "Software"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                   \n    \n         results matching ""\n        \n    \n    \n        No results matching ""\n    \n\n'
+    },
+    'modules.html': {
+      url: 'modules.html',
+      title: 'modules - modules',
+      body:
+        '\n                   \n\n\n\n\n    Modules\n\n\n    \n            \n                \n                    \n                        DragAndDropModule\n                    \n                    \n                        \n                            Browse\n                        \n                    \n                \n            \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n                   \n    \n         results matching ""\n        \n    \n    \n        No results matching ""\n    \n\n'
+    },
+    'overview.html': {
+      url: 'overview.html',
+      title: 'overview - overview',
+      body:
+        '\n                   \n\n\n\n    Overview\n\n\n    \n            \n                \n                    \n                        \n                        \n                            1 module\n                        \n                    \n                \n            \n            \n                \n                    \n                        \n                        2 directives\n                    \n                \n            \n            \n                \n                    \n                        \n                        5 interfaces\n                    \n                \n            \n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n                   \n    \n         results matching ""\n        \n    \n    \n        No results matching ""\n    \n\n'
+    },
+    'miscellaneous/typealiases.html': {
+      url: 'miscellaneous/typealiases.html',
+      title: 'miscellaneous-typealiases - typealiases',
+      body:
+        '\n                   \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Miscellaneous\n  Type aliases\n\n\n\n    Index\n    \n        \n            \n                \n                    \n                        \n                            ValidateDrag   (src/.../draggable.directive.ts)\n                        \n                    \n                \n            \n        \n    \n\n\n    src/draggable.directive.ts\n    \n        \n            \n                \n                    \n                        \n                        ValidateDrag\n                    \n                \n                \n                    \n                        ValidateDrag:     function\n\n                    \n                \n            \n        \n\n\n\n                   \n    \n         results matching ""\n        \n    \n    \n        No results matching ""\n    \n\n'
+    },
+    'miscellaneous/variables.html': {
+      url: 'miscellaneous/variables.html',
+      title: 'miscellaneous-variables - variables',
+      body:
+        '\n                   \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Miscellaneous\n  Variables\n\n\n\n    Index\n    \n        \n            \n                \n                    \n                        \n                            MOVE_CURSOR   (src/.../draggable.directive.ts)\n                        \n                    \n                \n            \n        \n    \n\n\n    src/draggable.directive.ts\n    \n            \n            \n                \n                    \n                        \n                        \n                            \n                            MOVE_CURSOR\n                            \n                            \n                        \n                    \n                \n                \n                    \n                        MOVE_CURSOR:     string\n\n                    \n                \n                    \n                        \n                            Type :     string\n\n                        \n                    \n                    \n                        \n                            Default value : \'move\'\n                        \n                    \n\n\n            \n        \n\n\n\n                   \n    \n         results matching ""\n        \n    \n    \n        No results matching ""\n    \n\n'
+    }
+  }
+};
