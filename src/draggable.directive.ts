@@ -11,17 +11,17 @@ import {
   NgZone,
   SimpleChanges
 } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
-import { merge } from 'rxjs/observable/merge';
-import { map } from 'rxjs/operators/map';
-import { mergeMap } from 'rxjs/operators/mergeMap';
-import { takeUntil } from 'rxjs/operators/takeUntil';
-import { take } from 'rxjs/operators/take';
-import { takeLast } from 'rxjs/operators/takeLast';
-import { pairwise } from 'rxjs/operators/pairwise';
-import { share } from 'rxjs/operators/share';
-import { filter } from 'rxjs/operators/filter';
+import { Subject, Observable, merge } from 'rxjs';
+import {
+  map,
+  mergeMap,
+  takeUntil,
+  take,
+  takeLast,
+  pairwise,
+  share,
+  filter
+} from 'rxjs/operators';
 import { DraggableHelper } from './draggable-helper.provider';
 
 export interface Coordinates {

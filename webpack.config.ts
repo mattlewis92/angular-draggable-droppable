@@ -11,28 +11,32 @@ export default {
     path: isDevServer ? __dirname : __dirname + '/demo'
   },
   module: {
-    rules: [{
-      test: /\.ts$/,
-      loader: 'tslint-loader',
-      exclude: /node_modules/,
-      enforce: 'pre',
-      options: {
-        emitErrors: false,
-        failOnHint: false
+    rules: [
+      {
+        test: /\.ts$/,
+        loader: 'tslint-loader',
+        exclude: /node_modules/,
+        enforce: 'pre',
+        options: {
+          emitErrors: false,
+          failOnHint: false
+        }
+      },
+      {
+        test: /\.ts$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          transpileOnly: isDevServer
+        }
+      },
+      {
+        test: /node_modules\/@angular\/core\/.+\/core\.js$/,
+        parser: {
+          system: true // disable `System.import() is deprecated and will be removed soon. Use import() instead.` warning
+        }
       }
-    }, {
-      test: /\.ts$/,
-      loader: 'ts-loader',
-      exclude: /node_modules/,
-      options: {
-        transpileOnly: isDevServer
-      }
-    }, {
-      test: /node_modules\/@angular\/core\/.+\/core\.js$/,
-      parser: {
-        system: true // disable `System.import() is deprecated and will be removed soon. Use import() instead.` warning
-      }
-    }]
+    ]
   },
   resolve: {
     extensions: ['.ts', '.js']
@@ -45,15 +49,17 @@ export default {
     contentBase: 'demo'
   },
   plugins: [
-    ...(isDevServer ? [
-      new webpack.HotModuleReplacementPlugin(),
-      new ForkTsCheckerWebpackPlugin({
-        watch: ['./src', './demo'],
-        formatter: 'codeframe'
-      })
-    ] : []),
+    ...(isDevServer
+      ? [
+          new webpack.HotModuleReplacementPlugin(),
+          new ForkTsCheckerWebpackPlugin({
+            watch: ['./src', './demo'],
+            formatter: 'codeframe'
+          })
+        ]
+      : []),
     new webpack.ContextReplacementPlugin(
-      /angular(\\|\/)core(\\|\/)esm5/,
+      /angular(\\|\/)core(\\|\/)fesm5/,
       __dirname + '/src'
     )
   ]
