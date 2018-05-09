@@ -7,14 +7,14 @@ import {
   EventEmitter,
   NgZone
 } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
-import { Subscription } from 'rxjs/Subscription';
-import { Observable } from 'rxjs/Observable';
-import { distinctUntilChanged } from 'rxjs/operators/distinctUntilChanged';
-import { pairwise } from 'rxjs/operators/pairwise';
-import { filter } from 'rxjs/operators/filter';
-import { map } from 'rxjs/operators/map';
-import { mergeMap } from 'rxjs/operators/mergeMap';
+import { Subject, Subscription } from 'rxjs';
+import {
+  distinctUntilChanged,
+  pairwise,
+  filter,
+  map,
+  mergeMap
+} from 'rxjs/operators';
 import { DraggableHelper } from './draggable-helper.provider';
 
 function isCoordinateWithinRectangle(

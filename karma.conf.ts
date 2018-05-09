@@ -2,7 +2,6 @@ import * as webpack from 'webpack';
 
 export default function(config: any) {
   config.set({
-
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: './',
 
@@ -11,9 +10,7 @@ export default function(config: any) {
     frameworks: ['mocha'],
 
     // list of files / patterns to load in the browser
-    files: [
-      'test/entry.ts'
-    ],
+    files: ['test/entry.ts'],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
@@ -27,30 +24,35 @@ export default function(config: any) {
         extensions: ['.ts', '.js']
       },
       module: {
-        rules: [{
-          test: /\.ts$/,
-          loader: 'tslint-loader',
-          exclude: /node_modules/,
-          enforce: 'pre',
-          options: {
-            emitErrors: config.singleRun,
-            failOnHint: config.singleRun
+        rules: [
+          {
+            test: /\.ts$/,
+            loader: 'tslint-loader',
+            exclude: /node_modules/,
+            enforce: 'pre',
+            options: {
+              emitErrors: config.singleRun,
+              failOnHint: config.singleRun
+            }
+          },
+          {
+            test: /\.ts$/,
+            loader: 'ts-loader',
+            exclude: /node_modules/
+          },
+          {
+            test: /src\/.+\.ts$/,
+            exclude: /(test|node_modules)/,
+            loader: 'istanbul-instrumenter-loader',
+            enforce: 'post'
+          },
+          {
+            test: /node_modules\/@angular\/core\/.+\/core\.js$/,
+            parser: {
+              system: true // disable `System.import() is deprecated and will be removed soon. Use import() instead.` warning
+            }
           }
-        }, {
-          test: /\.ts$/,
-          loader: 'ts-loader',
-          exclude: /node_modules/
-        }, {
-          test: /src\/.+\.ts$/,
-          exclude: /(test|node_modules)/,
-          loader: 'istanbul-instrumenter-loader',
-          enforce: 'post'
-        }, {
-          test: /node_modules\/@angular\/core\/.+\/core\.js$/,
-          parser: {
-            system: true // disable `System.import() is deprecated and will be removed soon. Use import() instead.` warning
-          }
-        }]
+        ]
       },
       plugins: [
         new webpack.SourceMapDevToolPlugin({
@@ -58,7 +60,7 @@ export default function(config: any) {
           test: /\.(ts|js)($|\?)/i
         }),
         new webpack.ContextReplacementPlugin(
-          /angular(\\|\/)core(\\|\/)esm5/,
+          /angular(\\|\/)core(\\|\/)fesm5/,
           __dirname + '/src'
         )
       ],
@@ -91,4 +93,4 @@ export default function(config: any) {
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['ChromeHeadless']
   });
-};
+}
