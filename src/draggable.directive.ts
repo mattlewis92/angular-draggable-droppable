@@ -223,12 +223,12 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               this.dragEnd.next({ x, y });
             });
             currentDrag.complete();
-            this.setCssTransform(null);
+            this.setCssTransform('');
             if (this.ghostDragEnabled) {
               this.renderer.setStyle(
                 this.element.nativeElement,
                 'pointerEvents',
-                null
+                ''
               );
             }
           });
