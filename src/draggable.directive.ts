@@ -423,10 +423,10 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   private onMouseLeave(): void {
-    this.setCursor(null);
+    this.setCursor('');
   }
 
-  private setCssTransform(value: string | null): void {
+  private setCssTransform(value: string): void {
     if (this.ghostDragEnabled) {
       const transformAttributes = [
         'transform',
@@ -449,7 +449,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     return this.dragAxis.x || this.dragAxis.y;
   }
 
-  private setCursor(value: string | null): void {
+  private setCursor(value: string): void {
     this.renderer.setStyle(this.element.nativeElement, 'cursor', value);
   }
 
