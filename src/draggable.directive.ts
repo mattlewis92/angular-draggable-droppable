@@ -135,7 +135,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
    * @hidden
    */
   constructor(
-    public element: ElementRef,
+    public element: ElementRef<HTMLElement>,
     private renderer: Renderer2,
     private draggableHelper: DraggableHelper,
     private zone: NgZone
@@ -206,19 +206,47 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             .pipe(takeUntil(merge(this.pointerUp, this.pointerDown)))
             .pipe(share());
 
-          pointerMove.pipe(take(1)).subscribe(() => {
+          const dragStart$ = pointerMove.pipe(take(1)).pipe(share());
+          const dragEnd$ = pointerMove.pipe(takeLast(1)).pipe(share());
+
+          dragStart$.subscribe(() => {
             pointerDownEvent.event.preventDefault();
 
             this.zone.run(() => {
               this.dragStart.next({ x: 0, y: 0 });
             });
 
+            if (this.ghostDragEnabled) {
+              const rect = this.element.nativeElement.getBoundingClientRect();
+              const clone = this.element.nativeElement.cloneNode(true);
+              this.renderer.setStyle(clone, 'visibility', 'hidden');
+              this.element.nativeElement.parentNode!.insertBefore(
+                clone,
+                this.element.nativeElement
+              );
+
+              this.setElementStyles({
+                position: 'fixed',
+                top: `${rect.top}px`,
+                left: `${rect.left}px`
+              });
+
+              dragEnd$.subscribe(() => {
+                clone.parentElement!.removeChild(clone);
+                this.setElementStyles({
+                  position: '',
+                  top: '',
+                  left: ''
+                });
+              });
+            }
+
             this.setCursor(this.dragCursor);
 
             this.draggableHelper.currentDrag.next(currentDrag);
           });
 
-          pointerMove.pipe(takeLast(1)).subscribe(({ x, y }) => {
+          dragEnd$.subscribe(({ x, y }) => {
             this.zone.run(() => {
               this.dragEnd.next({ x, y });
             });
@@ -272,7 +300,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['dragAxis']) {
+    if (changes.dragAxis) {
       this.checkEventListeners();
     }
   }
@@ -457,6 +485,12 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     Object.keys(this.eventListenerSubscriptions).forEach(type => {
       (this as any).eventListenerSubscriptions[type]();
       delete (this as any).eventListenerSubscriptions[type];
+    });
+  }
+
+  private setElementStyles(styles: { [key: string]: string }) {
+    Object.keys(styles).forEach(key => {
+      this.renderer.setStyle(this.element.nativeElement, key, styles[key]);
     });
   }
 }

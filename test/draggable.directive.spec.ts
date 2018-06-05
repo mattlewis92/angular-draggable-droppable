@@ -564,4 +564,37 @@ describe('draggable directive', () => {
       fixture.componentInstance.dragEnd
     );
   });
+
+  it('should create a clone of the element and make the host static', () => {
+    const draggableElement: HTMLElement =
+      fixture.componentInstance.draggable.element.nativeElement;
+    expect(
+      (draggableElement.previousElementSibling as HTMLElement).hasAttribute(
+        'mwldraggable'
+      )
+    ).to.be.false;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
+    expect(draggableElement.style.position).to.equal('fixed');
+    expect(draggableElement.style.top).to.be.ok;
+    expect(draggableElement.style.left).to.be.ok;
+    expect(draggableElement.previousSibling).to.be.ok;
+    expect(
+      (draggableElement.previousElementSibling as HTMLElement).style.visibility
+    ).to.equal('hidden');
+    expect(
+      (draggableElement.previousElementSibling as HTMLElement).hasAttribute(
+        'mwldraggable'
+      )
+    ).to.be.true;
+    triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 8 });
+    expect(draggableElement.style.position).not.to.be.ok;
+    expect(draggableElement.style.top).not.to.be.ok;
+    expect(draggableElement.style.left).not.to.be.ok;
+    expect(
+      (draggableElement.previousElementSibling as HTMLElement).hasAttribute(
+        'mwldraggable'
+      )
+    ).to.be.false;
+  });
 });
