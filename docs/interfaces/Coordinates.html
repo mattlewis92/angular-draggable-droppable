@@ -86,14 +86,14 @@
                         <a href="modules/DragAndDropModule.html" data-type="entity-link">DragAndDropModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-directives-links-module-DragAndDropModule-84ef33c0-422e-4f22-a6c6-1e63b38a4603"
+                                        data-target="#xs-directives-links-module-DragAndDropModule-325b3bf3cb227421fa2d82e0981f982e"
                                     >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-directives-links-module-DragAndDropModule-84ef33c0-422e-4f22-a6c6-1e63b38a4603"
+                                        id="xs-directives-links-module-DragAndDropModule-325b3bf3cb227421fa2d82e0981f982e"
                                     >
                                         <li class="link">
                                             <a href="directives/DraggableDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">DraggableDirective</a>
@@ -250,14 +250,14 @@
                         <a href="modules/DragAndDropModule.html" data-type="entity-link">DragAndDropModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#directives-links-module-DragAndDropModule-84ef33c0-422e-4f22-a6c6-1e63b38a4603"
+                                        data-target="#directives-links-module-DragAndDropModule-325b3bf3cb227421fa2d82e0981f982e"
 >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="directives-links-module-DragAndDropModule-84ef33c0-422e-4f22-a6c6-1e63b38a4603"
+                                        id="directives-links-module-DragAndDropModule-325b3bf3cb227421fa2d82e0981f982e"
 >
                                         <li class="link">
                                             <a href="directives/DraggableDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">DraggableDirective</a>
@@ -361,14 +361,12 @@
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-    <li class="active">
-        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
-    </li>
-
-
-    <li>
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-    </li>
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
 </ul>
 
 <div class="tab-content">
@@ -437,11 +435,6 @@
 
 
 
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/draggable.directive.ts:28</a></div>
-                                        </td>
-                                    </tr>
 
                         </tbody>
                     </table>
@@ -471,11 +464,6 @@
 
 
 
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/draggable.directive.ts:29</a></div>
-                                        </td>
-                                    </tr>
 
                         </tbody>
                     </table>
@@ -483,7 +471,7 @@
     </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
   Directive,
   OnInit,
@@ -709,12 +697,12 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               this.dragEnd.next({ x, y });
             });
             currentDrag.complete();
-            this.setCssTransform(null);
+            this.setCssTransform(&#x27;&#x27;);
             if (this.ghostDragEnabled) {
               this.renderer.setStyle(
                 this.element.nativeElement,
                 &#x27;pointerEvents&#x27;,
-                null
+                &#x27;&#x27;
               );
             }
           });
@@ -909,10 +897,10 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   private onMouseLeave(): void {
-    this.setCursor(null);
+    this.setCursor(&#x27;&#x27;);
   }
 
-  private setCssTransform(value: string | null): void {
+  private setCssTransform(value: string): void {
     if (this.ghostDragEnabled) {
       const transformAttributes &#x3D; [
         &#x27;transform&#x27;,
@@ -935,7 +923,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     return this.dragAxis.x || this.dragAxis.y;
   }
 
-  private setCursor(value: string | null): void {
+  private setCursor(value: string): void {
     this.renderer.setStyle(this.element.nativeElement, &#x27;cursor&#x27;, value);
   }
 
@@ -979,6 +967,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
         <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
             var COMPODOC_CURRENT_PAGE_URL = 'Coordinates.html';
         </script>
 
