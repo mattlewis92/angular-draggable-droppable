@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.1"></a>
+## [3.0.1](https://github.com/mattlewis92/angular-draggable-droppable/compare/v3.0.0...v3.0.1) (2018-06-05)
+
+
+### Bug Fixes
+
+* **drag:** style assignment for dragged element on IE ([#33](https://github.com/mattlewis92/angular-draggable-droppable/issues/33)) ([d0372ec](https://github.com/mattlewis92/angular-draggable-droppable/commit/d0372ec)), closes [#29](https://github.com/mattlewis92/angular-draggable-droppable/issues/29)
+
+
+
 <a name="3.0.0"></a>
 
 # [3.0.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v2.0.0...v3.0.0) (2018-05-09)
