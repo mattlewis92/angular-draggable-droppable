@@ -16,6 +16,7 @@ describe('draggable directive', () => {
         [ghostDragEnabled]="ghostDragEnabled"
         [validateDrag]="validateDrag"
         [dragCursor]="dragCursor"
+        [dragActiveClass]="dragActiveClass"
         (dragPointerDown)="dragPointerDown($event)"
         (dragStart)="dragStart($event)"
         (dragging)="dragging($event)"
@@ -34,6 +35,7 @@ describe('draggable directive', () => {
     ghostDragEnabled: boolean = true;
     validateDrag: ValidateDrag;
     dragCursor = 'move';
+    dragActiveClass: string;
   }
 
   beforeEach(() => {
@@ -602,5 +604,17 @@ describe('draggable directive', () => {
         'mwldraggable'
       )
     ).to.be.false;
+  });
+
+  it('should add and remove the drag active class', () => {
+    fixture.componentInstance.dragActiveClass = 'drag-active';
+    fixture.detectChanges();
+    const draggableElement: HTMLElement =
+      fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
+    expect(draggableElement.classList.contains('drag-active')).to.be.true;
+    triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 8 });
+    expect(draggableElement.classList.contains('drag-active')).to.be.false;
   });
 });

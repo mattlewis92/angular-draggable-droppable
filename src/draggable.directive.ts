@@ -84,6 +84,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   @Input() dragCursor = MOVE_CURSOR;
 
   /**
+   * The css class to apply when the element is being dragged
+   */
+  @Input() dragActiveClass: string;
+
+  /**
    * Called when the element can be dragged along one axis and has the mouse or pointer device pressed on it
    */
   @Output() dragPointerDown = new EventEmitter<Coordinates>();
@@ -216,6 +221,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               this.dragStart.next({ x: 0, y: 0 });
             });
 
+            this.renderer.addClass(
+              this.element.nativeElement,
+              this.dragActiveClass
+            );
+
             if (this.ghostDragEnabled) {
               const rect = this.element.nativeElement.getBoundingClientRect();
               const clone = this.element.nativeElement.cloneNode(true);
@@ -265,6 +275,10 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
                 ''
               );
             }
+            this.renderer.removeClass(
+              this.element.nativeElement,
+              this.dragActiveClass
+            );
           });
 
           return pointerMove;
