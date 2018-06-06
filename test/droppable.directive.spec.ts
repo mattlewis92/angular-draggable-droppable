@@ -1,51 +1,55 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { expect } from 'chai';
 import * as sinon from 'sinon';
 import { triggerDomEvent } from './util';
 import { DragAndDropModule } from '../src/index';
 import { DraggableDirective } from '../src/draggable.directive';
+import { DroppableDirective } from '../src/droppable.directive';
 
 describe('droppable directive', () => {
   @Component({
     template: `
       <div mwlDraggable [dropData]="dropData">Drag me!</div>
       <div
+        #droppableElement
         mwlDroppable
         (dragEnter)="dragEvent('enter', $event)"
         (dragOver)="dragEvent('over', $event)"
         (dragLeave)="dragEvent('leave', $event)"
-        (drop)="drop($event)">
+        (drop)="drop($event)"
+        [dragOverClass]="dragOverClass">
         Drop here
       </div>
     `,
     styles: [
       `
-      [mwlDraggable] {
-        position: relative;
-        width: 50px;
-        height: 50px;
-        z-index: 1;
-        margin-top: -200px;
-      }
-      [mwlDroppable] {
-        position: relative;
-        top: 100px;
-        left: 0;
-        width: 200px;
-        height: 200px;
-      }
-    `
+        [mwlDraggable] {
+          position: relative;
+          width: 50px;
+          height: 50px;
+          z-index: 1;
+          margin-top: -200px;
+        }
+        [mwlDroppable] {
+          position: relative;
+          top: 100px;
+          left: 0;
+          width: 200px;
+          height: 200px;
+        }
+      `
     ]
   })
   class TestComponent {
-    @ViewChild(DraggableDirective) public draggable: DraggableDirective;
-    public dragEvent: sinon.SinonSpy = sinon.spy();
-    public drop: sinon.SinonSpy = sinon.spy();
-
-    public dropData: {
+    @ViewChild(DraggableDirective) draggable: DraggableDirective;
+    @ViewChild('droppableElement') droppableElement: ElementRef;
+    dragEvent: sinon.SinonSpy = sinon.spy();
+    drop: sinon.SinonSpy = sinon.spy();
+    dropData: {
       foo: 'bar';
     };
+    dragOverClass: string;
   }
 
   beforeEach(() => {
@@ -151,5 +155,24 @@ describe('droppable directive', () => {
       'over',
       { dropData: { foo: 'bar' } }
     ]);
+  });
+
+  it('should add a class to the droppable element when an element is dragged over it', () => {
+    fixture.componentInstance.dragOverClass = 'drag-over';
+    fixture.detectChanges();
+    const draggableElement: HTMLElement =
+      fixture.componentInstance.draggable.element.nativeElement;
+    const droppableElement: HTMLElement =
+      fixture.componentInstance.droppableElement.nativeElement;
+    expect(droppableElement.classList.contains('drag-over')).to.be.false;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    expect(droppableElement.classList.contains('drag-over')).to.be.false;
+    triggerDomEvent('mousemove', draggableElement, {
+      clientX: 5,
+      clientY: 100
+    });
+    expect(droppableElement.classList.contains('drag-over')).to.be.true;
+    triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 120 });
+    expect(droppableElement.classList.contains('drag-over')).to.be.false;
   });
 });

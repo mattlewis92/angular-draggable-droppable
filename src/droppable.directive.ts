@@ -5,7 +5,9 @@ import {
   OnDestroy,
   Output,
   EventEmitter,
-  NgZone
+  NgZone,
+  Input,
+  Renderer2
 } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
 import {
@@ -39,6 +41,11 @@ export interface DropData {
 })
 export class DroppableDirective implements OnInit, OnDestroy {
   /**
+   * Added to the element when an element is dragged over it
+   */
+  @Input() dragOverClass: string;
+
+  /**
    * Called when a draggable element starts overlapping the element
    */
   @Output() dragEnter = new EventEmitter<DropData>();
@@ -63,7 +70,8 @@ export class DroppableDirective implements OnInit, OnDestroy {
   constructor(
     private element: ElementRef,
     private draggableHelper: DraggableHelper,
-    private zone: NgZone
+    private zone: NgZone,
+    private renderer: Renderer2
   ) {}
 
   ngOnInit(): void {
@@ -97,6 +105,10 @@ export class DroppableDirective implements OnInit, OnDestroy {
           .pipe(filter(overlapsNow => overlapsNow))
           .subscribe(() => {
             dragOverActive = true;
+            this.renderer.addClass(
+              this.element.nativeElement,
+              this.dragOverClass
+            );
             this.zone.run(() => {
               this.dragEnter.next({
                 dropData: currentDragDropData
@@ -119,6 +131,10 @@ export class DroppableDirective implements OnInit, OnDestroy {
           )
           .subscribe(() => {
             dragOverActive = false;
+            this.renderer.removeClass(
+              this.element.nativeElement,
+              this.dragOverClass
+            );
             this.zone.run(() => {
               this.dragLeave.next({
                 dropData: currentDragDropData
@@ -129,6 +145,10 @@ export class DroppableDirective implements OnInit, OnDestroy {
         drag.pipe(mergeMap(() => overlaps)).subscribe({
           complete: () => {
             if (dragOverActive) {
+              this.renderer.removeClass(
+                this.element.nativeElement,
+                this.dragOverClass
+              );
               this.zone.run(() => {
                 this.drop.next({
                   dropData: currentDragDropData
