@@ -228,7 +228,10 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               this.setElementStyles({
                 position: 'fixed',
                 top: `${rect.top}px`,
-                left: `${rect.left}px`
+                left: `${rect.left}px`,
+                width: `${rect.width}px`,
+                height: `${rect.height}px`,
+                zIndex: '10'
               });
 
               dragEnd$.subscribe(() => {
@@ -236,7 +239,10 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
                 this.setElementStyles({
                   position: '',
                   top: '',
-                  left: ''
+                  left: '',
+                  width: '',
+                  height: '',
+                  zIndex: ''
                 });
               });
             }

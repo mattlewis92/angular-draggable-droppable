@@ -578,6 +578,9 @@ describe('draggable directive', () => {
     expect(draggableElement.style.position).to.equal('fixed');
     expect(draggableElement.style.top).to.be.ok;
     expect(draggableElement.style.left).to.be.ok;
+    expect(draggableElement.style.width).to.be.ok;
+    expect(draggableElement.style.height).to.be.ok;
+    expect(draggableElement.style.zIndex).to.equal('10');
     expect(draggableElement.previousSibling).to.be.ok;
     expect(
       (draggableElement.previousElementSibling as HTMLElement).style.visibility
@@ -591,6 +594,9 @@ describe('draggable directive', () => {
     expect(draggableElement.style.position).not.to.be.ok;
     expect(draggableElement.style.top).not.to.be.ok;
     expect(draggableElement.style.left).not.to.be.ok;
+    expect(draggableElement.style.width).not.to.be.ok;
+    expect(draggableElement.style.height).not.to.be.ok;
+    expect(draggableElement.style.zIndex).not.to.be.ok;
     expect(
       (draggableElement.previousElementSibling as HTMLElement).hasAttribute(
         'mwldraggable'
