@@ -125,8 +125,8 @@ export class DroppableDirective implements OnInit, OnDestroy {
         });
 
         overlapsChanged
-          .pipe(pairwise())
           .pipe(
+            pairwise(),
             filter(([didOverlap, overlapsNow]) => didOverlap && !overlapsNow)
           )
           .subscribe(() => {

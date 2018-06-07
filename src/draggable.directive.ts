@@ -149,145 +149,146 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   ngOnInit(): void {
     this.checkEventListeners();
 
-    const pointerDrag: Observable<any> = this.pointerDown
-      .pipe(filter(() => this.canDrag()))
-      .pipe(
-        mergeMap((pointerDownEvent: PointerEvent) => {
-          const currentDrag: Subject<any> = new Subject();
+    const pointerDrag: Observable<any> = this.pointerDown.pipe(
+      filter(() => this.canDrag()),
+      mergeMap((pointerDownEvent: PointerEvent) => {
+        const currentDrag: Subject<any> = new Subject();
+
+        this.zone.run(() => {
+          this.dragPointerDown.next({ x: 0, y: 0 });
+        });
+
+        const pointerMove: Observable<Coordinates> = this.pointerMove.pipe(
+          map((pointerMoveEvent: PointerEvent) => {
+            pointerMoveEvent.event.preventDefault();
+
+            return {
+              currentDrag,
+              x: pointerMoveEvent.clientX - pointerDownEvent.clientX,
+              y: pointerMoveEvent.clientY - pointerDownEvent.clientY,
+              clientX: pointerMoveEvent.clientX,
+              clientY: pointerMoveEvent.clientY
+            };
+          }),
+          map((moveData: Coordinates) => {
+            if (this.dragSnapGrid.x) {
+              moveData.x =
+                Math.floor(moveData.x / this.dragSnapGrid.x) *
+                this.dragSnapGrid.x;
+            }
+
+            if (this.dragSnapGrid.y) {
+              moveData.y =
+                Math.floor(moveData.y / this.dragSnapGrid.y) *
+                this.dragSnapGrid.y;
+            }
+
+            return moveData;
+          }),
+          map((moveData: Coordinates) => {
+            if (!this.dragAxis.x) {
+              moveData.x = 0;
+            }
+
+            if (!this.dragAxis.y) {
+              moveData.y = 0;
+            }
+
+            return moveData;
+          }),
+          filter(
+            ({ x, y }) => !this.validateDrag || this.validateDrag({ x, y })
+          ),
+          takeUntil(merge(this.pointerUp, this.pointerDown)),
+          share()
+        );
+
+        const dragStart$ = pointerMove.pipe(
+          take(1),
+          share()
+        );
+        const dragEnd$ = pointerMove.pipe(
+          takeLast(1),
+          share()
+        );
+
+        dragStart$.subscribe(() => {
+          pointerDownEvent.event.preventDefault();
 
           this.zone.run(() => {
-            this.dragPointerDown.next({ x: 0, y: 0 });
+            this.dragStart.next({ x: 0, y: 0 });
           });
 
-          const pointerMove: Observable<Coordinates> = this.pointerMove
-            .pipe(
-              map((pointerMoveEvent: PointerEvent) => {
-                pointerMoveEvent.event.preventDefault();
+          this.renderer.addClass(
+            this.element.nativeElement,
+            this.dragActiveClass
+          );
 
-                return {
-                  currentDrag,
-                  x: pointerMoveEvent.clientX - pointerDownEvent.clientX,
-                  y: pointerMoveEvent.clientY - pointerDownEvent.clientY,
-                  clientX: pointerMoveEvent.clientX,
-                  clientY: pointerMoveEvent.clientY
-                };
-              })
-            )
-            .pipe(
-              map((moveData: Coordinates) => {
-                if (this.dragSnapGrid.x) {
-                  moveData.x =
-                    Math.floor(moveData.x / this.dragSnapGrid.x) *
-                    this.dragSnapGrid.x;
-                }
-
-                if (this.dragSnapGrid.y) {
-                  moveData.y =
-                    Math.floor(moveData.y / this.dragSnapGrid.y) *
-                    this.dragSnapGrid.y;
-                }
-
-                return moveData;
-              })
-            )
-            .pipe(
-              map((moveData: Coordinates) => {
-                if (!this.dragAxis.x) {
-                  moveData.x = 0;
-                }
-
-                if (!this.dragAxis.y) {
-                  moveData.y = 0;
-                }
-
-                return moveData;
-              })
-            )
-            .pipe(
-              filter(
-                ({ x, y }) => !this.validateDrag || this.validateDrag({ x, y })
-              )
-            )
-            .pipe(takeUntil(merge(this.pointerUp, this.pointerDown)))
-            .pipe(share());
-
-          const dragStart$ = pointerMove.pipe(take(1)).pipe(share());
-          const dragEnd$ = pointerMove.pipe(takeLast(1)).pipe(share());
-
-          dragStart$.subscribe(() => {
-            pointerDownEvent.event.preventDefault();
-
-            this.zone.run(() => {
-              this.dragStart.next({ x: 0, y: 0 });
-            });
-
-            this.renderer.addClass(
-              this.element.nativeElement,
-              this.dragActiveClass
+          if (this.ghostDragEnabled) {
+            const rect = this.element.nativeElement.getBoundingClientRect();
+            const clone = this.element.nativeElement.cloneNode(true);
+            this.renderer.setStyle(clone, 'visibility', 'hidden');
+            this.element.nativeElement.parentNode!.insertBefore(
+              clone,
+              this.element.nativeElement
             );
 
-            if (this.ghostDragEnabled) {
-              const rect = this.element.nativeElement.getBoundingClientRect();
-              const clone = this.element.nativeElement.cloneNode(true);
-              this.renderer.setStyle(clone, 'visibility', 'hidden');
-              this.element.nativeElement.parentNode!.insertBefore(
-                clone,
-                this.element.nativeElement
-              );
+            this.setElementStyles({
+              position: 'fixed',
+              top: `${rect.top}px`,
+              left: `${rect.left}px`,
+              width: `${rect.width}px`,
+              height: `${rect.height}px`,
+              zIndex: '10'
+            });
 
+            dragEnd$.subscribe(() => {
+              clone.parentElement!.removeChild(clone);
               this.setElementStyles({
-                position: 'fixed',
-                top: `${rect.top}px`,
-                left: `${rect.left}px`,
-                width: `${rect.width}px`,
-                height: `${rect.height}px`,
-                zIndex: '10'
+                position: '',
+                top: '',
+                left: '',
+                width: '',
+                height: '',
+                zIndex: ''
               });
-
-              dragEnd$.subscribe(() => {
-                clone.parentElement!.removeChild(clone);
-                this.setElementStyles({
-                  position: '',
-                  top: '',
-                  left: '',
-                  width: '',
-                  height: '',
-                  zIndex: ''
-                });
-              });
-            }
-
-            this.setCursor(this.dragCursor);
-
-            this.draggableHelper.currentDrag.next(currentDrag);
-          });
-
-          dragEnd$.subscribe(({ x, y }) => {
-            currentDrag.complete();
-            this.zone.run(() => {
-              this.dragEnd.next({ x, y });
             });
-            this.setCssTransform('');
-            if (this.ghostDragEnabled) {
-              this.renderer.setStyle(
-                this.element.nativeElement,
-                'pointerEvents',
-                ''
-              );
-            }
-            this.renderer.removeClass(
-              this.element.nativeElement,
-              this.dragActiveClass
-            );
-          });
+          }
 
-          return pointerMove;
-        })
-      )
-      .pipe(share());
+          this.setCursor(this.dragCursor);
+
+          this.draggableHelper.currentDrag.next(currentDrag);
+        });
+
+        dragEnd$.subscribe(({ x, y }) => {
+          currentDrag.complete();
+          this.zone.run(() => {
+            this.dragEnd.next({ x, y });
+          });
+          this.setCssTransform('');
+          if (this.ghostDragEnabled) {
+            this.renderer.setStyle(
+              this.element.nativeElement,
+              'pointerEvents',
+              ''
+            );
+          }
+          this.renderer.removeClass(
+            this.element.nativeElement,
+            this.dragActiveClass
+          );
+        });
+
+        return pointerMove;
+      }),
+      share()
+    );
 
     merge(
-      pointerDrag.pipe(take(1)).pipe(map(value => [, value])),
+      pointerDrag.pipe(
+        take(1),
+        map(value => [, value])
+      ),
       pointerDrag.pipe(pairwise())
     )
       .pipe(
@@ -296,9 +297,9 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             return true;
           }
           return previous.x !== next.x || previous.y !== next.y;
-        })
+        }),
+        map(([previous, next]) => next)
       )
-      .pipe(map(([previous, next]) => next))
       .subscribe(({ x, y, currentDrag, clientX, clientY }) => {
         this.zone.run(() => {
           this.dragging.next({ x, y });
