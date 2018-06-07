@@ -10,7 +10,7 @@ import { DroppableDirective } from '../src/droppable.directive';
 describe('droppable directive', () => {
   @Component({
     template: `
-      <div mwlDraggable [dropData]="dropData">Drag me!</div>
+      <div mwlDraggable [dropData]="dropData" (dragEnd)="dragEnd()">Drag me!</div>
       <div
         #droppableElement
         mwlDroppable
@@ -44,8 +44,9 @@ describe('droppable directive', () => {
   class TestComponent {
     @ViewChild(DraggableDirective) draggable: DraggableDirective;
     @ViewChild('droppableElement') droppableElement: ElementRef;
-    dragEvent: sinon.SinonSpy = sinon.spy();
-    drop: sinon.SinonSpy = sinon.spy();
+    dragEvent = sinon.spy();
+    drop = sinon.spy();
+    dragEnd = sinon.spy();
     dropData: {
       foo: 'bar';
     };
@@ -174,5 +175,20 @@ describe('droppable directive', () => {
     expect(droppableElement.classList.contains('drag-over')).to.be.true;
     triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 120 });
     expect(droppableElement.classList.contains('drag-over')).to.be.false;
+  });
+
+  it('should fire the drag end event after the drop event', () => {
+    const draggableElement: HTMLElement =
+      fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousemove', draggableElement, {
+      clientX: 5,
+      clientY: 120
+    });
+    triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 120 });
+    sinon.assert.callOrder(
+      fixture.componentInstance.drop,
+      fixture.componentInstance.dragEnd
+    );
   });
 });
