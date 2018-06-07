@@ -249,7 +249,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               width: `${rect.width}px`,
               height: `${rect.height}px`,
               zIndex: '10',
-              cursor: this.dragCursor
+              cursor: this.dragCursor,
+              margin: '0'
             });
 
             dragEnd$.subscribe(() => {
