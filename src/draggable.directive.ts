@@ -136,6 +136,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     touchcancel?: () => void;
   } = {};
 
+  private ghostElement: HTMLElement | null;
+
   /**
    * @hidden
    */
@@ -226,36 +228,40 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
           if (this.ghostDragEnabled) {
             const rect = this.element.nativeElement.getBoundingClientRect();
-            const clone = this.element.nativeElement.cloneNode(true);
-            this.renderer.setStyle(clone, 'visibility', 'hidden');
+            const clone = this.element.nativeElement.cloneNode(
+              true
+            ) as HTMLElement;
+            this.renderer.setStyle(
+              this.element.nativeElement,
+              'visibility',
+              'hidden'
+            );
             this.element.nativeElement.parentNode!.insertBefore(
               clone,
-              this.element.nativeElement
+              this.element.nativeElement.nextSibling
             );
+            this.ghostElement = clone;
 
-            this.setElementStyles({
+            this.setElementStyles(clone, {
               position: 'fixed',
               top: `${rect.top}px`,
               left: `${rect.left}px`,
               width: `${rect.width}px`,
               height: `${rect.height}px`,
-              zIndex: '10'
+              zIndex: '10',
+              cursor: this.dragCursor
             });
 
             dragEnd$.subscribe(() => {
               clone.parentElement!.removeChild(clone);
-              this.setElementStyles({
-                position: '',
-                top: '',
-                left: '',
-                width: '',
-                height: '',
-                zIndex: ''
-              });
+              this.ghostElement = null;
+              this.renderer.setStyle(
+                this.element.nativeElement,
+                'visibility',
+                ''
+              );
             });
           }
-
-          this.setCursor(this.dragCursor);
 
           this.draggableHelper.currentDrag.next(currentDrag);
         });
@@ -265,14 +271,6 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           this.zone.run(() => {
             this.dragEnd.next({ x, y });
           });
-          this.setCssTransform('');
-          if (this.ghostDragEnabled) {
-            this.renderer.setStyle(
-              this.element.nativeElement,
-              'pointerEvents',
-              ''
-            );
-          }
           this.renderer.removeClass(
             this.element.nativeElement,
             this.dragActiveClass
@@ -304,14 +302,17 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         this.zone.run(() => {
           this.dragging.next({ x, y });
         });
-        if (this.ghostDragEnabled) {
-          this.renderer.setStyle(
-            this.element.nativeElement,
-            'pointerEvents',
-            'none'
-          );
+        if (this.ghostElement) {
+          const transform = `translate(${x}px, ${y}px)`;
+          this.setElementStyles(this.ghostElement, {
+            pointerEvents: 'none',
+            transform,
+            '-webkit-transform': transform,
+            '-ms-transform': transform,
+            '-moz-transform': transform,
+            '-o-transform': transform
+          });
         }
-        this.setCssTransform(`translate(${x}px, ${y}px)`);
         currentDrag.next({
           clientX,
           clientY,
@@ -475,25 +476,6 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     this.setCursor('');
   }
 
-  private setCssTransform(value: string): void {
-    if (this.ghostDragEnabled) {
-      const transformAttributes = [
-        'transform',
-        '-webkit-transform',
-        '-ms-transform',
-        '-moz-transform',
-        '-o-transform'
-      ];
-      transformAttributes.forEach(transformAttribute => {
-        this.renderer.setStyle(
-          this.element.nativeElement,
-          transformAttribute,
-          value
-        );
-      });
-    }
-  }
-
   private canDrag(): boolean {
     return this.dragAxis.x || this.dragAxis.y;
   }
@@ -509,9 +491,12 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     });
   }
 
-  private setElementStyles(styles: { [key: string]: string }) {
+  private setElementStyles(
+    element: HTMLElement,
+    styles: { [key: string]: string }
+  ) {
     Object.keys(styles).forEach(key => {
-      this.renderer.setStyle(this.element.nativeElement, key, styles[key]);
+      this.renderer.setStyle(element, key, styles[key]);
     });
   }
 }
