@@ -148,7 +148,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     private renderer: Renderer2,
     private draggableHelper: DraggableHelper,
     private zone: NgZone,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: any
   ) {}
 
   ngOnInit(): void {
