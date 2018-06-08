@@ -91,6 +91,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   @Input() dragActiveClass: string;
 
   /**
+   * The element the ghost element will be appended to. Default is document.body
+   */
+  @Input() ghostElementAppendTo: HTMLElement;
+
+  /**
    * Called when the element can be dragged along one axis and has the mouse or pointer device pressed on it
    */
   @Output() dragPointerDown = new EventEmitter<Coordinates>();
@@ -239,7 +244,9 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               'visibility',
               'hidden'
             );
-            this.document.body.appendChild(clone);
+            const appendToElement =
+              this.ghostElementAppendTo || this.document.body;
+            appendToElement.appendChild(clone);
             this.ghostElement = clone;
 
             this.setElementStyles(clone, {
