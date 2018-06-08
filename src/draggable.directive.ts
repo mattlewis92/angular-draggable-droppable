@@ -9,10 +9,8 @@ import {
   OnDestroy,
   OnChanges,
   NgZone,
-  SimpleChanges,
-  Inject
+  SimpleChanges
 } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
 import { Subject, Observable, merge } from 'rxjs';
 import {
   map,
@@ -152,8 +150,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     public element: ElementRef<HTMLElement>,
     private renderer: Renderer2,
     private draggableHelper: DraggableHelper,
-    private zone: NgZone,
-    @Inject(DOCUMENT) private document: any
+    private zone: NgZone
   ) {}
 
   ngOnInit(): void {
@@ -244,9 +241,16 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               'visibility',
               'hidden'
             );
-            const appendToElement =
-              this.ghostElementAppendTo || this.document.body;
-            appendToElement.appendChild(clone);
+
+            if (this.ghostElementAppendTo) {
+              this.ghostElementAppendTo.appendChild(clone);
+            } else {
+              this.element.nativeElement.parentNode!.insertBefore(
+                clone,
+                this.element.nativeElement.nextSibling
+              );
+            }
+
             this.ghostElement = clone;
 
             this.setElementStyles(clone, {
