@@ -9,8 +9,10 @@ import {
   OnDestroy,
   OnChanges,
   NgZone,
-  SimpleChanges
+  SimpleChanges,
+  Inject
 } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { Subject, Observable, merge } from 'rxjs';
 import {
   map,
@@ -145,7 +147,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     public element: ElementRef<HTMLElement>,
     private renderer: Renderer2,
     private draggableHelper: DraggableHelper,
-    private zone: NgZone
+    private zone: NgZone,
+    @Inject(DOCUMENT) private document: Document
   ) {}
 
   ngOnInit(): void {
@@ -236,10 +239,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               'visibility',
               'hidden'
             );
-            this.element.nativeElement.parentNode!.insertBefore(
-              clone,
-              this.element.nativeElement.nextSibling
-            );
+            this.document.body.appendChild(clone);
             this.ghostElement = clone;
 
             this.setElementStyles(clone, {
@@ -248,7 +248,6 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               left: `${rect.left}px`,
               width: `${rect.width}px`,
               height: `${rect.height}px`,
-              zIndex: '1000',
               cursor: this.dragCursor,
               margin: '0'
             });

@@ -578,7 +578,6 @@ describe('draggable directive', () => {
     expect(ghostElement.style.left).to.be.ok;
     expect(ghostElement.style.width).to.be.ok;
     expect(ghostElement.style.height).to.be.ok;
-    expect(ghostElement.style.zIndex).to.equal('1000');
     expect(draggableElement.style.visibility).to.equal('hidden');
     expect((ghostElement as HTMLElement).hasAttribute('mwldraggable')).to.be
       .true;
