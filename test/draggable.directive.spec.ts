@@ -17,6 +17,7 @@ describe('draggable directive', () => {
         [validateDrag]="validateDrag"
         [dragCursor]="dragCursor"
         [dragActiveClass]="dragActiveClass"
+        [ghostElementAppendTo]="ghostElementAppendTo"
         (dragPointerDown)="dragPointerDown($event)"
         (dragStart)="dragStart($event)"
         (dragging)="dragging($event)"
@@ -36,6 +37,7 @@ describe('draggable directive', () => {
     validateDrag: ValidateDrag;
     dragCursor = 'move';
     dragActiveClass: string;
+    ghostElementAppendTo: HTMLElement;
   }
 
   beforeEach(() => {
@@ -595,5 +597,25 @@ describe('draggable directive', () => {
     expect(draggableElement.classList.contains('drag-active')).to.be.true;
     triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 8 });
     expect(draggableElement.classList.contains('drag-active')).to.be.false;
+  });
+
+  it('should append the ghost element to the given element', () => {
+    fixture.componentInstance.ghostElementAppendTo = document.createElement(
+      'div'
+    );
+    fixture.detectChanges();
+    const draggableElement: HTMLElement =
+      fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
+    const ghostElement = fixture.componentInstance.ghostElementAppendTo
+      .children[0] as HTMLElement;
+    expect(ghostElement.style.position).to.equal('fixed');
+    expect(ghostElement.style.top).to.be.ok;
+    expect(ghostElement.style.left).to.be.ok;
+    expect(ghostElement.style.width).to.be.ok;
+    expect(ghostElement.style.height).to.be.ok;
+    expect((ghostElement as HTMLElement).hasAttribute('mwldraggable')).to.be
+      .true;
   });
 });

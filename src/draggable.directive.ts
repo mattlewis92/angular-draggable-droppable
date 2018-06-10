@@ -89,7 +89,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   @Input() dragActiveClass: string;
 
   /**
-   * The element the ghost element will be appended to. Default is document.body
+   * The element the ghost element will be appended to. Default is next to the dragged element
    */
   @Input() ghostElementAppendTo: HTMLElement;
 
