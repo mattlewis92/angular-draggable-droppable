@@ -5,7 +5,6 @@ import * as sinon from 'sinon';
 import { triggerDomEvent } from './util';
 import { DragAndDropModule } from '../src/index';
 import { DraggableDirective } from '../src/draggable.directive';
-import { DroppableDirective } from '../src/droppable.directive';
 
 describe('droppable directive', () => {
   @Component({
@@ -55,7 +54,7 @@ describe('droppable directive', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [DragAndDropModule.forRoot()],
+      imports: [DragAndDropModule],
       declarations: [TestComponent]
     });
   });

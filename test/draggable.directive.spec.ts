@@ -40,7 +40,7 @@ describe('draggable directive', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [DragAndDropModule.forRoot()],
+      imports: [DragAndDropModule],
       declarations: [TestComponent]
     });
   });

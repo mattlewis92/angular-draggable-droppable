@@ -14,11 +14,11 @@ https://mattlewis92.github.io/angular-draggable-droppable/demo/
 
 ## Table of contents
 
-* [About](#about)
-* [Installation](#installation)
-* [Documentation](#documentation)
-* [Development](#development)
-* [License](#licence)
+- [About](#about)
+- [Installation](#installation)
+- [Documentation](#documentation)
+- [Development](#development)
+- [License](#licence)
 
 ## About
 
@@ -40,7 +40,7 @@ import { DragAndDropModule } from 'angular-draggable-droppable';
 
 @NgModule({
   declarations: [DemoApp],
-  imports: [DragAndDropModule.forRoot()],
+  imports: [DragAndDropModule],
   bootstrap: [DemoApp]
 })
 class DemoModule {}
@@ -77,8 +77,8 @@ https://mattlewis92.github.io/angular-draggable-droppable/docs/
 
 ### Prepare your environment
 
-* Install [Node.js](http://nodejs.org/) and NPM (should come with)
-* Install local dev dependencies: `npm install` while current directory is this repo
+- Install [Node.js](http://nodejs.org/) and NPM (should come with)
+- Install local dev dependencies: `npm install` while current directory is this repo
 
 ### Development server
 
