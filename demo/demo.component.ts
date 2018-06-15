@@ -3,16 +3,16 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'mwl-demo-app',
   template: `
-    <div mwlDraggable dropData="foo">
+    <div mwlDraggable dropData="foo" dragActiveClass="drag-active">
       Drag me!
     </div>
-    <div mwlDraggable dropData="bar" [dragSnapGrid]="{x: 100, y: 100}">
+    <div mwlDraggable dropData="bar" dragActiveClass="drag-active" [dragSnapGrid]="{x: 100, y: 100}">
       I snap to a 100 x 100 grid
     </div>
     <div
       mwlDroppable
       (drop)="onDrop($event)"
-      dragOverClass="dropOverActive">
+      dragOverClass="drop-over-active">
       <span [hidden]="droppedData">Drop here</span>
       <span [hidden]="!droppedData">Item dropped here with data: "{{ droppedData }}"!</span>
     </div>
@@ -24,7 +24,7 @@ import { Component } from '@angular/core';
         width: 200px;
         height: 200px;
         position: relative;
-        z-index: 1;
+        z-index: 2;
         float: left;
         margin-right: 10px;
       }
@@ -32,6 +32,7 @@ import { Component } from '@angular/core';
         background-color: green;
         width: 400px;
         height: 400px;
+        z-index: 1;
         position: relative;
         top: 50px;
         left: 100px;
@@ -44,9 +45,12 @@ import { Component } from '@angular/core';
         align-items: center;
         justify-content: center;
       }
-      .dropOverActive {
+      .drop-over-active {
         border: dashed 1px black;
         background-color: lightgreen;
+      }
+      .drag-active {
+        z-index: 3;
       }
     `
   ]
