@@ -58,6 +58,9 @@ describe('draggable directive', () => {
   afterEach(() => {
     fixture.destroy();
     document.body.innerHTML = '';
+    Array.from(document.head.getElementsByTagName('style')).forEach(style => {
+      document.head.removeChild(style);
+    });
   });
 
   it('should make the element draggable', () => {
@@ -617,5 +620,20 @@ describe('draggable directive', () => {
     expect(ghostElement.style.height).to.be.ok;
     expect((ghostElement as HTMLElement).hasAttribute('mwldraggable')).to.be
       .true;
+  });
+
+  it('should make all elements on the page unable to select text while dragging', () => {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = 'foo';
+    document.body.appendChild(tmp);
+    expect(getComputedStyle(tmp).userSelect).to.equal('auto');
+    const draggableElement: HTMLElement =
+      fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    expect(getComputedStyle(tmp).userSelect).to.equal('none');
+    triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
+    expect(getComputedStyle(tmp).userSelect).to.equal('none');
+    triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 8 });
+    expect(getComputedStyle(tmp).userSelect).to.equal('auto');
   });
 });

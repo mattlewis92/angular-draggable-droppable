@@ -9,7 +9,8 @@ import {
   OnDestroy,
   OnChanges,
   NgZone,
-  SimpleChanges
+  SimpleChanges,
+  Inject
 } from '@angular/core';
 import { Subject, Observable, merge } from 'rxjs';
 import {
@@ -23,6 +24,7 @@ import {
   filter
 } from 'rxjs/operators';
 import { DraggableHelper } from './draggable-helper.provider';
+import { DOCUMENT } from '@angular/common';
 
 export interface Coordinates {
   x: number;
@@ -150,11 +152,34 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     public element: ElementRef<HTMLElement>,
     private renderer: Renderer2,
     private draggableHelper: DraggableHelper,
-    private zone: NgZone
+    private zone: NgZone,
+    @Inject(DOCUMENT) private document: any
   ) {}
 
   ngOnInit(): void {
     this.checkEventListeners();
+
+    // hack to prevent text getting selected in safari while dragging
+    this.pointerDown.subscribe(() => {
+      const style: HTMLStyleElement = this.renderer.createElement('style');
+      this.renderer.setAttribute(style, 'type', 'text/css');
+      this.renderer.appendChild(
+        style,
+        this.renderer.createText(`
+          body * {
+           -moz-user-select: none;
+           -ms-user-select: none;
+           -webkit-user-select: none;
+           user-select: none;
+          }
+        `)
+      );
+      this.document.head.appendChild(style);
+
+      this.pointerUp.pipe(take(1)).subscribe(() => {
+        this.document.head.removeChild(style);
+      });
+    });
 
     const pointerDrag: Observable<any> = this.pointerDown.pipe(
       filter(() => this.canDrag()),
@@ -167,8 +192,6 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
         const pointerMove: Observable<Coordinates> = this.pointerMove.pipe(
           map((pointerMoveEvent: PointerEvent) => {
-            pointerMoveEvent.event.preventDefault();
-
             return {
               currentDrag,
               x: pointerMoveEvent.clientX - pointerDownEvent.clientX,
@@ -220,8 +243,6 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         );
 
         dragStart$.subscribe(() => {
-          pointerDownEvent.event.preventDefault();
-
           this.zone.run(() => {
             this.dragStart.next({ x: 0, y: 0 });
           });
