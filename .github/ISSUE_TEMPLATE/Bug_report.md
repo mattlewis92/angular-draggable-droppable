@@ -4,17 +4,7 @@ about: Please search github for a similar issue or PR before submitting
 
 ---
 
-<!---
-
-FAQ (please read!):
-
-Problems with build tooling? Please check the examples folder first: https://github.com/mattlewis92/angular-calendar/tree/master/build-tool-examples
-
-Styling not appearing? Make sure you're including node_modules/angular-calendar/css/angular-calendar.css
-
-Please note that issues that ignore this template will be closed without notice!
-
--->
+<!---Please note that issues that ignore this template will be closed without notice!-->
 
 **Describe the bug**
 
@@ -23,7 +13,7 @@ Please note that issues that ignore this template will be closed without notice!
 
 **Minimal reproduction of the problem with instructions**
 
-<!-- A link to a minimally working stackblitz that reproduces the issue (you can fork a starter from any of the demos by hitting the "Edit in Stackblitz" button) -->
+<!-- A link to a minimally working stackblitz that reproduces the issue -->
 
 **Screenshots**
 
@@ -34,5 +24,5 @@ Please note that issues that ignore this template will be closed without notice!
 <!-- Please complete the following information -->
 
 - `@angular/core`:
-- `angular-calendar`:
+- `angular-draggable-droppable`:
 - Browser name and version:
