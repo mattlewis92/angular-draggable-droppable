@@ -159,7 +159,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   ngOnInit(): void {
     this.checkEventListeners();
 
-    const pointerDrag: Observable<any> = this.pointerDown.pipe(
+    const pointerDragged$: Observable<any> = this.pointerDown.pipe(
       filter(() => this.canDrag()),
       mergeMap((pointerDownEvent: PointerEvent) => {
         // hack to prevent text getting selected in safari while dragging
@@ -180,7 +180,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         );
         this.document.head.appendChild(globalDragStyle);
 
-        const currentDrag = new Subject<CurrentDragData>();
+        const currentDrag$ = new Subject<CurrentDragData>();
 
         this.zone.run(() => {
           this.dragPointerDown.next({ x: 0, y: 0 });
@@ -189,7 +189,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         const pointerMove = this.pointerMove.pipe(
           map((pointerMoveEvent: PointerEvent) => {
             return {
-              currentDrag,
+              currentDrag$,
               x: pointerMoveEvent.clientX - pointerDownEvent.clientX,
               y: pointerMoveEvent.clientY - pointerDownEvent.clientY,
               clientX: pointerMoveEvent.clientX,
@@ -229,16 +229,16 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           share()
         );
 
-        const dragStart$ = pointerMove.pipe(
+        const dragStarted$ = pointerMove.pipe(
           take(1),
           share()
         );
-        const dragEnd$ = pointerMove.pipe(
+        const dragEnded$ = pointerMove.pipe(
           takeLast(1),
           share()
         );
 
-        dragStart$.subscribe(() => {
+        dragStarted$.subscribe(() => {
           this.zone.run(() => {
             this.dragStart.next({ x: 0, y: 0 });
           });
@@ -280,7 +280,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               margin: '0'
             });
 
-            dragEnd$.subscribe(() => {
+            dragEnded$.subscribe(() => {
               clone.parentElement!.removeChild(clone);
               this.ghostElement = null;
               this.renderer.setStyle(
@@ -291,12 +291,12 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             });
           }
 
-          this.draggableHelper.currentDrag.next(currentDrag);
+          this.draggableHelper.currentDrag.next(currentDrag$);
         });
 
-        dragEnd$.subscribe(({ x, y }) => {
+        dragEnded$.subscribe(({ x, y }) => {
           this.document.head.removeChild(globalDragStyle);
-          currentDrag.complete();
+          currentDrag$.complete();
           this.zone.run(() => {
             this.dragEnd.next({ x, y });
           });
@@ -312,11 +312,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     );
 
     merge(
-      pointerDrag.pipe(
+      pointerDragged$.pipe(
         take(1),
         map(value => [, value])
       ),
-      pointerDrag.pipe(pairwise())
+      pointerDragged$.pipe(pairwise())
     )
       .pipe(
         filter(([previous, next]) => {
@@ -327,7 +327,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         }),
         map(([previous, next]) => next)
       )
-      .subscribe(({ x, y, currentDrag, clientX, clientY }) => {
+      .subscribe(({ x, y, currentDrag$, clientX, clientY }) => {
         this.zone.run(() => {
           this.dragging.next({ x, y });
         });
@@ -342,7 +342,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             '-o-transform': transform
           });
         }
-        currentDrag.next({
+        currentDrag$.next({
           clientX,
           clientY,
           dropData: this.dropData
