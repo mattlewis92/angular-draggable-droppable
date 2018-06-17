@@ -77,6 +77,13 @@ export class DroppableDirective implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.currentDragSubscription = this.draggableHelper.currentDrag.subscribe(
       drag$ => {
+        let droppableRectangle = this.element.nativeElement.getBoundingClientRect();
+
+        /* istanbul ignore next */
+        this.renderer.listen('window', 'scroll', () => {
+          droppableRectangle = this.element.nativeElement.getBoundingClientRect();
+        });
+
         let currentDragDropData: any;
         const overlaps$ = drag$.pipe(
           map(({ clientX, clientY, dropData }) => {
@@ -84,7 +91,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
             return isCoordinateWithinRectangle(
               clientX,
               clientY,
-              this.element.nativeElement.getBoundingClientRect()
+              droppableRectangle
             );
           })
         );
