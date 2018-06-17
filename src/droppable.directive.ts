@@ -10,13 +10,7 @@ import {
   Renderer2
 } from '@angular/core';
 import { Subscription } from 'rxjs';
-import {
-  distinctUntilChanged,
-  pairwise,
-  filter,
-  map,
-  mergeMap
-} from 'rxjs/operators';
+import { distinctUntilChanged, pairwise, filter, map } from 'rxjs/operators';
 import { DraggableHelper } from './draggable-helper.provider';
 
 function isCoordinateWithinRectangle(
@@ -80,9 +74,13 @@ export class DroppableDirective implements OnInit, OnDestroy {
         let droppableRectangle = this.element.nativeElement.getBoundingClientRect();
 
         /* istanbul ignore next */
-        this.renderer.listen('window', 'scroll', () => {
-          droppableRectangle = this.element.nativeElement.getBoundingClientRect();
-        });
+        const deregisterScrollListener = this.renderer.listen(
+          'window',
+          'scroll',
+          () => {
+            droppableRectangle = this.element.nativeElement.getBoundingClientRect();
+          }
+        );
 
         let currentDragDropData: any;
         const overlaps$ = drag$.pipe(
@@ -141,8 +139,9 @@ export class DroppableDirective implements OnInit, OnDestroy {
             });
           });
 
-        drag$.pipe(mergeMap(() => overlaps$)).subscribe({
+        drag$.subscribe({
           complete: () => {
+            deregisterScrollListener();
             if (dragOverActive) {
               this.renderer.removeClass(
                 this.element.nativeElement,
