@@ -23,7 +23,7 @@ import {
   share,
   filter
 } from 'rxjs/operators';
-import { DraggableHelper } from './draggable-helper.provider';
+import { CurrentDragData, DraggableHelper } from './draggable-helper.provider';
 import { DOCUMENT } from '@angular/common';
 
 export interface Coordinates {
@@ -184,7 +184,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     const pointerDrag: Observable<any> = this.pointerDown.pipe(
       filter(() => this.canDrag()),
       mergeMap((pointerDownEvent: PointerEvent) => {
-        const currentDrag: Subject<any> = new Subject();
+        const currentDrag = new Subject<CurrentDragData>();
 
         this.zone.run(() => {
           this.dragPointerDown.next({ x: 0, y: 0 });

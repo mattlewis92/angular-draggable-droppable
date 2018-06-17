@@ -75,14 +75,8 @@ export class DroppableDirective implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    interface CurrentDragData {
-      clientX: number;
-      clientY: number;
-      dropData: any;
-    }
-
     this.currentDragSubscription = this.draggableHelper.currentDrag.subscribe(
-      (drag: Subject<CurrentDragData>) => {
+      drag => {
         const droppableRectangle: ClientRect = this.element.nativeElement.getBoundingClientRect();
 
         let currentDragDropData: any;
