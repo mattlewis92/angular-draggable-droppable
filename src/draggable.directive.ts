@@ -159,13 +159,17 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   ngOnInit(): void {
     this.checkEventListeners();
 
-    // hack to prevent text getting selected in safari while dragging
-    this.pointerDown.subscribe(() => {
-      const style: HTMLStyleElement = this.renderer.createElement('style');
-      this.renderer.setAttribute(style, 'type', 'text/css');
-      this.renderer.appendChild(
-        style,
-        this.renderer.createText(`
+    const pointerDrag: Observable<any> = this.pointerDown.pipe(
+      filter(() => this.canDrag()),
+      mergeMap((pointerDownEvent: PointerEvent) => {
+        // hack to prevent text getting selected in safari while dragging
+        const globalDragStyle: HTMLStyleElement = this.renderer.createElement(
+          'style'
+        );
+        this.renderer.setAttribute(globalDragStyle, 'type', 'text/css');
+        this.renderer.appendChild(
+          globalDragStyle,
+          this.renderer.createText(`
           body * {
            -moz-user-select: none;
            -ms-user-select: none;
@@ -173,24 +177,16 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
            user-select: none;
           }
         `)
-      );
-      this.document.head.appendChild(style);
+        );
+        this.document.head.appendChild(globalDragStyle);
 
-      this.pointerUp.pipe(take(1)).subscribe(() => {
-        this.document.head.removeChild(style);
-      });
-    });
-
-    const pointerDrag: Observable<any> = this.pointerDown.pipe(
-      filter(() => this.canDrag()),
-      mergeMap((pointerDownEvent: PointerEvent) => {
         const currentDrag = new Subject<CurrentDragData>();
 
         this.zone.run(() => {
           this.dragPointerDown.next({ x: 0, y: 0 });
         });
 
-        const pointerMove: Observable<Coordinates> = this.pointerMove.pipe(
+        const pointerMove = this.pointerMove.pipe(
           map((pointerMoveEvent: PointerEvent) => {
             return {
               currentDrag,
@@ -200,7 +196,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               clientY: pointerMoveEvent.clientY
             };
           }),
-          map((moveData: Coordinates) => {
+          map(moveData => {
             if (this.dragSnapGrid.x) {
               moveData.x =
                 Math.floor(moveData.x / this.dragSnapGrid.x) *
@@ -215,7 +211,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
             return moveData;
           }),
-          map((moveData: Coordinates) => {
+          map(moveData => {
             if (!this.dragAxis.x) {
               moveData.x = 0;
             }
@@ -299,6 +295,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         });
 
         dragEnd$.subscribe(({ x, y }) => {
+          this.document.head.removeChild(globalDragStyle);
           currentDrag.complete();
           this.zone.run(() => {
             this.dragEnd.next({ x, y });
