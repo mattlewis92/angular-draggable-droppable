@@ -9,7 +9,7 @@ import {
   Input,
   Renderer2
 } from '@angular/core';
-import { Subject, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 import {
   distinctUntilChanged,
   pairwise,
