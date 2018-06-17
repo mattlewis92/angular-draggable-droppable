@@ -40,6 +40,11 @@ export class DroppableDirective implements OnInit, OnDestroy {
   @Input() dragOverClass: string;
 
   /**
+   * Added to the element any time a draggable element is being dragged
+   */
+  @Input() dragActiveClass: string;
+
+  /**
    * Called when a draggable element starts overlapping the element
    */
   @Output() dragEnter = new EventEmitter<DropData>();
@@ -71,6 +76,10 @@ export class DroppableDirective implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.currentDragSubscription = this.draggableHelper.currentDrag.subscribe(
       drag$ => {
+        this.renderer.addClass(
+          this.element.nativeElement,
+          this.dragActiveClass
+        );
         let droppableRectangle = this.element.nativeElement.getBoundingClientRect();
 
         /* istanbul ignore next */
@@ -142,6 +151,10 @@ export class DroppableDirective implements OnInit, OnDestroy {
         drag$.subscribe({
           complete: () => {
             deregisterScrollListener();
+            this.renderer.removeClass(
+              this.element.nativeElement,
+              this.dragActiveClass
+            );
             if (dragOverActive) {
               this.renderer.removeClass(
                 this.element.nativeElement,

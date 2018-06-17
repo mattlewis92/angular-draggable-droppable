@@ -5,6 +5,7 @@ import * as sinon from 'sinon';
 import { triggerDomEvent } from './util';
 import { DragAndDropModule } from '../src/index';
 import { DraggableDirective } from '../src/draggable.directive';
+import { st } from '@angular/core/src/render3';
 
 describe('droppable directive', () => {
   @Component({
@@ -17,7 +18,8 @@ describe('droppable directive', () => {
         (dragOver)="dragEvent('over', $event)"
         (dragLeave)="dragEvent('leave', $event)"
         (drop)="drop($event)"
-        [dragOverClass]="dragOverClass">
+        [dragOverClass]="dragOverClass"
+        [dragActiveClass]="dragActiveClass">
         Drop here
       </div>
     `,
@@ -50,6 +52,7 @@ describe('droppable directive', () => {
       foo: 'bar';
     };
     dragOverClass: string;
+    dragActiveClass: string;
   }
 
   beforeEach(() => {
@@ -166,6 +169,7 @@ describe('droppable directive', () => {
       fixture.componentInstance.droppableElement.nativeElement;
     expect(droppableElement.classList.contains('drag-over')).to.be.false;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 10 });
     expect(droppableElement.classList.contains('drag-over')).to.be.false;
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
@@ -189,5 +193,25 @@ describe('droppable directive', () => {
       fixture.componentInstance.drop,
       fixture.componentInstance.dragEnd
     );
+  });
+
+  it('should add a class to the droppable element when an element is being dragged anywhere', () => {
+    fixture.componentInstance.dragActiveClass = 'drag-active';
+    fixture.detectChanges();
+    const draggableElement: HTMLElement =
+      fixture.componentInstance.draggable.element.nativeElement;
+    const droppableElement: HTMLElement =
+      fixture.componentInstance.droppableElement.nativeElement;
+    expect(droppableElement.classList.contains('drag-active')).to.be.false;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 10 });
+    expect(droppableElement.classList.contains('drag-active')).to.be.true;
+    triggerDomEvent('mousemove', draggableElement, {
+      clientX: 5,
+      clientY: 100
+    });
+    expect(droppableElement.classList.contains('drag-active')).to.be.true;
+    triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 120 });
+    expect(droppableElement.classList.contains('drag-active')).to.be.false;
   });
 });
