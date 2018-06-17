@@ -12,7 +12,7 @@ import {
   SimpleChanges,
   Inject
 } from '@angular/core';
-import { Subject, Observable, merge } from 'rxjs';
+import { Subject, Observable, merge, ReplaySubject } from 'rxjs';
 import {
   map,
   mergeMap,
@@ -21,7 +21,8 @@ import {
   takeLast,
   pairwise,
   share,
-  filter
+  filter,
+  count
 } from 'rxjs/operators';
 import { CurrentDragData, DraggableHelper } from './draggable-helper.provider';
 import { DOCUMENT } from '@angular/common';
@@ -39,6 +40,14 @@ export interface DragAxis {
 export interface SnapGrid {
   x?: number;
   y?: number;
+}
+
+export interface DragStart {
+  cancelDrag$: ReplaySubject<void>;
+}
+
+export interface DragEnd extends Coordinates {
+  dragCancelled: boolean;
 }
 
 export type ValidateDrag = (coordinates: Coordinates) => boolean;
@@ -102,9 +111,10 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
   /**
    * Called when the element has started to be dragged.
-   * Only called after at least one mouse or touch move event
+   * Only called after at least one mouse or touch move event.
+   * If you call $event.cancelDrag$.emit() it will cancel the current drag
    */
-  @Output() dragStart = new EventEmitter<Coordinates>();
+  @Output() dragStart = new EventEmitter<DragStart>();
 
   /**
    * Called when the element is being dragged
@@ -114,7 +124,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   /**
    * Called after the element is dragged
    */
-  @Output() dragEnd = new EventEmitter<Coordinates>();
+  @Output() dragEnd = new EventEmitter<DragEnd>();
 
   /**
    * @hidden
@@ -181,6 +191,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         this.document.head.appendChild(globalDragStyle);
 
         const currentDrag$ = new Subject<CurrentDragData>();
+        const cancelDrag$ = new ReplaySubject<void>();
 
         this.zone.run(() => {
           this.dragPointerDown.next({ x: 0, y: 0 });
@@ -225,7 +236,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           filter(
             ({ x, y }) => !this.validateDrag || this.validateDrag({ x, y })
           ),
-          takeUntil(merge(this.pointerUp, this.pointerDown)),
+          takeUntil(merge(this.pointerUp, this.pointerDown, cancelDrag$)),
           share()
         );
 
@@ -240,7 +251,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
         dragStarted$.subscribe(() => {
           this.zone.run(() => {
-            this.dragStart.next({ x: 0, y: 0 });
+            this.dragStart.next({ cancelDrag$ });
           });
 
           this.renderer.addClass(
@@ -294,17 +305,32 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           this.draggableHelper.currentDrag.next(currentDrag$);
         });
 
-        dragEnded$.subscribe(({ x, y }) => {
-          this.document.head.removeChild(globalDragStyle);
-          currentDrag$.complete();
-          this.zone.run(() => {
-            this.dragEnd.next({ x, y });
+        dragEnded$
+          .pipe(
+            mergeMap(dragEndData => {
+              const dragEndData$ = cancelDrag$.pipe(
+                count(),
+                take(1),
+                map(calledCount => ({
+                  ...dragEndData,
+                  dragCancelled: calledCount > 0
+                }))
+              );
+              cancelDrag$.complete();
+              return dragEndData$;
+            })
+          )
+          .subscribe(({ x, y, dragCancelled }) => {
+            this.document.head.removeChild(globalDragStyle);
+            currentDrag$.complete();
+            this.zone.run(() => {
+              this.dragEnd.next({ x, y, dragCancelled });
+            });
+            this.renderer.removeClass(
+              this.element.nativeElement,
+              this.dragActiveClass
+            );
           });
-          this.renderer.removeClass(
-            this.element.nativeElement,
-            this.dragActiveClass
-          );
-        });
 
         return pointerMove;
       }),

@@ -72,10 +72,7 @@ describe('draggable directive', () => {
       y: 0
     });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
-    expect(fixture.componentInstance.dragStart).to.have.been.calledWith({
-      x: 0,
-      y: 0
-    });
+    expect(fixture.componentInstance.dragStart).to.have.been.calledOnce;
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({
       x: 2,
       y: 0
@@ -91,7 +88,8 @@ describe('draggable directive', () => {
     triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 8 });
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
       x: 2,
-      y: -2
+      y: -2,
+      dragCancelled: false
     });
   });
 
@@ -132,7 +130,8 @@ describe('draggable directive', () => {
     triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 12 });
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
       x: 0,
-      y: 2
+      y: 2,
+      dragCancelled: false
     });
   });
 
@@ -152,7 +151,8 @@ describe('draggable directive', () => {
     triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 12 });
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
       x: 2,
-      y: 0
+      y: 0,
+      dragCancelled: false
     });
   });
 
@@ -217,7 +217,8 @@ describe('draggable directive', () => {
     triggerDomEvent('mouseup', draggableElement, { clientX: 16, clientY: 22 });
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
       x: 10,
-      y: 12
+      y: 12,
+      dragCancelled: false
     });
   });
 
@@ -259,7 +260,8 @@ describe('draggable directive', () => {
     triggerDomEvent('mouseup', draggableElement, { clientX: 22, clientY: 16 });
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
       x: 12,
-      y: 10
+      y: 10,
+      dragCancelled: false
     });
   });
 
@@ -288,7 +290,8 @@ describe('draggable directive', () => {
     triggerDomEvent('mouseup', draggableElement, { clientX: 22, clientY: 16 });
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
       x: 10,
-      y: 10
+      y: 10,
+      dragCancelled: false
     });
   });
 
@@ -299,10 +302,7 @@ describe('draggable directive', () => {
       fixture.componentInstance.draggable.element.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
-    expect(fixture.componentInstance.dragStart).to.have.been.calledWith({
-      x: 0,
-      y: 0
-    });
+    expect(fixture.componentInstance.dragStart).to.have.been.calledOnce;
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({
       x: 2,
       y: 0
@@ -317,7 +317,8 @@ describe('draggable directive', () => {
     triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 8 });
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
       x: 2,
-      y: -2
+      y: -2,
+      dragCancelled: false
     });
     expect(draggableElement.nextSibling).not.to.ok;
   });
@@ -381,10 +382,7 @@ describe('draggable directive', () => {
       y: -2
     });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 12 });
-    expect(fixture.componentInstance.dragStart).to.have.been.calledWith({
-      x: 0,
-      y: 0
-    });
+    expect(fixture.componentInstance.dragStart).to.have.been.calledOnce;
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({
       x: 2,
       y: 2
@@ -397,7 +395,8 @@ describe('draggable directive', () => {
     triggerDomEvent('mouseup', draggableElement, { clientX: 3, clientY: 10 });
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
       x: 2,
-      y: 2
+      y: 2,
+      dragCancelled: false
     });
   });
 
@@ -443,10 +442,7 @@ describe('draggable directive', () => {
     triggerDomEvent('touchmove', draggableElement, {
       targetTouches: [{ clientX: 7, clientY: 10 }]
     });
-    expect(fixture.componentInstance.dragStart).to.have.been.calledWith({
-      x: 0,
-      y: 0
-    });
+    expect(fixture.componentInstance.dragStart).to.have.been.calledOnce;
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({
       x: 2,
       y: 0
@@ -466,7 +462,8 @@ describe('draggable directive', () => {
     });
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
       x: 2,
-      y: -2
+      y: -2,
+      dragCancelled: false
     });
   });
 
@@ -479,10 +476,7 @@ describe('draggable directive', () => {
     triggerDomEvent('touchmove', draggableElement, {
       targetTouches: [{ clientX: 7, clientY: 10 }]
     });
-    expect(fixture.componentInstance.dragStart).to.have.been.calledWith({
-      x: 0,
-      y: 0
-    });
+    expect(fixture.componentInstance.dragStart).to.have.been.calledOnce;
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({
       x: 2,
       y: 0
@@ -502,7 +496,8 @@ describe('draggable directive', () => {
     });
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
       x: 2,
-      y: -2
+      y: -2,
+      dragCancelled: false
     });
   });
 
@@ -635,5 +630,36 @@ describe('draggable directive', () => {
     expect(getComputedStyle(tmp).userSelect).to.equal('none');
     triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 8 });
     expect(getComputedStyle(tmp).userSelect).to.equal('auto');
+  });
+
+  it('should cancel the drag', () => {
+    const draggableElement: HTMLElement =
+      fixture.componentInstance.draggable.element.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    expect(fixture.componentInstance.dragPointerDown).to.have.been.calledWith({
+      x: 0,
+      y: 0
+    });
+    triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
+    expect(fixture.componentInstance.dragStart).to.have.been.calledOnce;
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({
+      x: 2,
+      y: 0
+    });
+    const ghostElement = draggableElement.nextSibling as HTMLElement;
+    expect(ghostElement.style.transform).to.equal('translate(2px, 0px)');
+    triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 8 });
+    expect(fixture.componentInstance.dragging).to.have.been.calledWith({
+      x: 2,
+      y: -2
+    });
+    expect(ghostElement.style.transform).to.equal('translate(2px, -2px)');
+    fixture.componentInstance.dragStart.getCall(0).args[0].cancelDrag$.next();
+    expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
+      x: 2,
+      y: -2,
+      dragCancelled: true
+    });
+    expect(draggableElement.nextSibling).to.not.equal(ghostElement);
   });
 });
