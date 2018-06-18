@@ -223,4 +223,9 @@ describe('droppable directive', () => {
     triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 120 });
     expect(droppableElement.classList.contains('drag-active')).to.be.false;
   });
+
+  it('should not throw when destroying an immediately created element', () => {
+    fixture = TestBed.createComponent(TestComponent);
+    expect(() => fixture.destroy()).not.to.throw();
+  });
 });

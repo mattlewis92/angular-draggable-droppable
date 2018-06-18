@@ -172,7 +172,9 @@ export class DroppableDirective implements OnInit, OnDestroy {
     );
   }
 
-  ngOnDestroy(): void {
-    this.currentDragSubscription.unsubscribe();
+  ngOnDestroy() {
+    if (this.currentDragSubscription) {
+      this.currentDragSubscription.unsubscribe();
+    }
   }
 }
