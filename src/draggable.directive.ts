@@ -360,7 +360,6 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         if (this.ghostElement) {
           const transform = `translate(${x}px, ${y}px)`;
           this.setElementStyles(this.ghostElement, {
-            pointerEvents: 'none',
             transform,
             '-webkit-transform': transform,
             '-ms-transform': transform,
