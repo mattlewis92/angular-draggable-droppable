@@ -73,7 +73,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
     private renderer: Renderer2
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.currentDragSubscription = this.draggableHelper.currentDrag.subscribe(
       drag$ => {
         this.renderer.addClass(

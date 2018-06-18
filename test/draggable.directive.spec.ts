@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { expect } from 'chai';
 import * as sinon from 'sinon';
@@ -11,6 +11,7 @@ describe('draggable directive', () => {
     template: `
       <div
         mwlDraggable
+        #draggableElement
         [dragAxis]="dragAxis"
         [dragSnapGrid]="dragSnapGrid"
         [ghostDragEnabled]="ghostDragEnabled"
@@ -27,6 +28,7 @@ describe('draggable directive', () => {
   })
   class TestComponent {
     @ViewChild(DraggableDirective) draggable: DraggableDirective;
+    @ViewChild('draggableElement') draggableElement: ElementRef<HTMLDivElement>;
     dragPointerDown = sinon.spy();
     dragStart = sinon.spy();
     dragging = sinon.spy();
@@ -64,8 +66,8 @@ describe('draggable directive', () => {
   });
 
   it('should make the element draggable', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     expect(fixture.componentInstance.dragPointerDown).to.have.been.calledWith({
       x: 0,
@@ -117,8 +119,8 @@ describe('draggable directive', () => {
   it('should disable dragging along the x axis', () => {
     fixture.componentInstance.dragAxis = { x: false, y: true };
     fixture.detectChanges();
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 12 });
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({
@@ -138,8 +140,8 @@ describe('draggable directive', () => {
   it('should disable dragging along the y axis', () => {
     fixture.componentInstance.dragAxis = { x: true, y: false };
     fixture.detectChanges();
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 12 });
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({
@@ -169,8 +171,8 @@ describe('draggable directive', () => {
         fixture.componentInstance.draggable['eventListenerSubscriptions']
       ).length
     ).to.equal(0);
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 12 });
     expect(fixture.componentInstance.dragStart).not.to.have.been.called;
@@ -182,8 +184,8 @@ describe('draggable directive', () => {
   it('should snap all horizontal drags to a grid', () => {
     fixture.componentInstance.dragSnapGrid = { x: 10 };
     fixture.detectChanges();
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 12 });
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({
@@ -225,8 +227,8 @@ describe('draggable directive', () => {
   it('should snap all vertical drags to a grid', () => {
     fixture.componentInstance.dragSnapGrid = { y: 10 };
     fixture.detectChanges();
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 10, clientY: 5 });
     triggerDomEvent('mousemove', draggableElement, { clientX: 12, clientY: 7 });
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({
@@ -268,8 +270,8 @@ describe('draggable directive', () => {
   it('should snap all vertical and horizontal drags to a grid', () => {
     fixture.componentInstance.dragSnapGrid = { y: 10, x: 10 };
     fixture.detectChanges();
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 10, clientY: 5 });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 20,
@@ -298,8 +300,8 @@ describe('draggable directive', () => {
   it('should disable the ghost dragging effect', () => {
     fixture.componentInstance.ghostDragEnabled = false;
     fixture.detectChanges();
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
     expect(fixture.componentInstance.dragStart).to.have.been.calledOnce;
@@ -324,8 +326,8 @@ describe('draggable directive', () => {
   });
 
   it('should auto set the mouse cursor to the move icon on hover', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mouseenter', draggableElement);
     expect(draggableElement.style.cursor).to.equal('move');
     triggerDomEvent('mouseleave', draggableElement);
@@ -335,8 +337,8 @@ describe('draggable directive', () => {
   it('should not set the mouse cursor when the element cant be dragged', () => {
     fixture.componentInstance.dragAxis = { x: false, y: false };
     fixture.detectChanges();
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mouseenter', draggableElement);
     expect(draggableElement.style.cursor).not.to.be.ok;
   });
@@ -344,8 +346,8 @@ describe('draggable directive', () => {
   it('should not call the dragging event multiple times with the same values', () => {
     fixture.componentInstance.dragSnapGrid = { y: 10, x: 10 };
     fixture.detectChanges();
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 10, clientY: 5 });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 12,
@@ -366,8 +368,8 @@ describe('draggable directive', () => {
   it('should allow drags to be validated', () => {
     fixture.componentInstance.validateDrag = ({ x, y }) => x > 0 && y > 0;
     fixture.detectChanges();
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, { clientX: 3, clientY: 10 });
     expect(fixture.componentInstance.dragStart).not.to.have.been.called;
@@ -401,8 +403,8 @@ describe('draggable directive', () => {
   });
 
   it('should only call the dragEnd event once', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 8 });
     triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 8 });
@@ -410,8 +412,8 @@ describe('draggable directive', () => {
   });
 
   it('should only unregister the mouse move listener if it exists', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 8 });
     expect(
       fixture.componentInstance.draggable['eventListenerSubscriptions']
@@ -420,8 +422,8 @@ describe('draggable directive', () => {
   });
 
   it('should not register multiple mouse move listeners', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 7, clientY: 8 });
     const mouseMoveUnsubscribe =
       fixture.componentInstance.draggable['eventListenerSubscriptions']
@@ -434,8 +436,8 @@ describe('draggable directive', () => {
   });
 
   it('should work with touch events', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('touchstart', draggableElement, {
       touches: [{ clientX: 5, clientY: 10 }]
     });
@@ -468,8 +470,8 @@ describe('draggable directive', () => {
   });
 
   it('should work use the touch cancel event to end the drag', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('touchstart', draggableElement, {
       touches: [{ clientX: 5, clientY: 10 }]
     });
@@ -502,8 +504,8 @@ describe('draggable directive', () => {
   });
 
   it('should only unregister the touch move listener if it exists', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('touchend', draggableElement, {
       changedTouches: [{ clientX: 7, clientY: 8 }]
     });
@@ -514,8 +516,8 @@ describe('draggable directive', () => {
   });
 
   it('should not register multiple touch move listeners', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('touchstart', draggableElement, {
       touches: [{ clientX: 7, clientY: 8 }]
     });
@@ -534,8 +536,8 @@ describe('draggable directive', () => {
   it('should disable the mouse move cursor', () => {
     fixture.componentInstance.dragCursor = '';
     fixture.detectChanges();
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mouseenter', draggableElement);
     expect(draggableElement.style.cursor).not.to.be.ok;
     triggerDomEvent('mouseleave', draggableElement);
@@ -543,8 +545,8 @@ describe('draggable directive', () => {
   });
 
   it('should not call dragStart and dragEnd events when clicking on the draggable', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     expect(fixture.componentInstance.dragPointerDown).to.have.been.calledOnce;
     expect(fixture.componentInstance.dragStart).not.to.have.been.called;
@@ -554,8 +556,8 @@ describe('draggable directive', () => {
   });
 
   it('should call the drag start, dragging and end events in order', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
     triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 8 });
@@ -568,8 +570,8 @@ describe('draggable directive', () => {
   });
 
   it('should create a clone of the element', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
     const ghostElement = draggableElement.nextSibling as HTMLElement;
@@ -588,8 +590,8 @@ describe('draggable directive', () => {
   it('should add and remove the drag active class', () => {
     fixture.componentInstance.dragActiveClass = 'drag-active';
     fixture.detectChanges();
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
     expect(draggableElement.classList.contains('drag-active')).to.be.true;
@@ -602,8 +604,8 @@ describe('draggable directive', () => {
       'div'
     );
     fixture.detectChanges();
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
     const ghostElement = fixture.componentInstance.ghostElementAppendTo
@@ -622,8 +624,8 @@ describe('draggable directive', () => {
     tmp.innerHTML = 'foo';
     document.body.appendChild(tmp);
     expect(getComputedStyle(tmp).userSelect).to.equal('auto');
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     expect(getComputedStyle(tmp).userSelect).to.equal('none');
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
@@ -633,8 +635,8 @@ describe('draggable directive', () => {
   });
 
   it('should cancel the drag', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     expect(fixture.componentInstance.dragPointerDown).to.have.been.calledWith({
       x: 0,

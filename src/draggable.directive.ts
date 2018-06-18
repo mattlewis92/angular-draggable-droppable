@@ -159,7 +159,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
    * @hidden
    */
   constructor(
-    public element: ElementRef<HTMLElement>,
+    private element: ElementRef<HTMLElement>,
     private renderer: Renderer2,
     private draggableHelper: DraggableHelper,
     private zone: NgZone,

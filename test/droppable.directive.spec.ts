@@ -6,11 +6,18 @@ import { triggerDomEvent } from './util';
 import { DragAndDropModule } from '../src/index';
 import { DraggableDirective } from '../src/draggable.directive';
 import { st } from '@angular/core/src/render3';
+import { DroppableDirective } from '../src/droppable.directive';
 
 describe('droppable directive', () => {
   @Component({
     template: `
-      <div mwlDraggable [dropData]="dropData" (dragEnd)="dragEnd()">Drag me!</div>
+      <div
+        #draggableElement
+        mwlDraggable
+        [dropData]="dropData"
+        (dragEnd)="dragEnd()">
+        Drag me!
+      </div>
       <div
         #droppableElement
         mwlDroppable
@@ -44,7 +51,9 @@ describe('droppable directive', () => {
   })
   class TestComponent {
     @ViewChild(DraggableDirective) draggable: DraggableDirective;
-    @ViewChild('droppableElement') droppableElement: ElementRef;
+    @ViewChild(DroppableDirective) droppable: DroppableDirective;
+    @ViewChild('droppableElement') droppableElement: ElementRef<HTMLDivElement>;
+    @ViewChild('draggableElement') draggableElement: ElementRef<HTMLDivElement>;
     dragEvent = sinon.spy();
     drop = sinon.spy();
     dragEnd = sinon.spy();
@@ -77,8 +86,8 @@ describe('droppable directive', () => {
   });
 
   it('should fire the drag enter, over and leave events', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     expect(fixture.componentInstance.dragEvent).not.to.have.been.called;
     triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 50 });
@@ -111,8 +120,8 @@ describe('droppable directive', () => {
   });
 
   it('should not fire the drop event', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
@@ -124,8 +133,8 @@ describe('droppable directive', () => {
   });
 
   it('should fire the drop event', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
@@ -138,8 +147,8 @@ describe('droppable directive', () => {
   });
 
   it('should not fire the drag enter event until the mouse cursor is within the element', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     expect(fixture.componentInstance.dragEvent).not.to.have.been.called;
     triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 50 });
@@ -163,9 +172,9 @@ describe('droppable directive', () => {
   it('should add a class to the droppable element when an element is dragged over it', () => {
     fixture.componentInstance.dragOverClass = 'drag-over';
     fixture.detectChanges();
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
-    const droppableElement: HTMLElement =
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
+    const droppableElement =
       fixture.componentInstance.droppableElement.nativeElement;
     expect(droppableElement.classList.contains('drag-over')).to.be.false;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
@@ -181,8 +190,8 @@ describe('droppable directive', () => {
   });
 
   it('should fire the drag end event after the drop event', () => {
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
@@ -198,9 +207,9 @@ describe('droppable directive', () => {
   it('should add a class to the droppable element when an element is being dragged anywhere', () => {
     fixture.componentInstance.dragActiveClass = 'drag-active';
     fixture.detectChanges();
-    const draggableElement: HTMLElement =
-      fixture.componentInstance.draggable.element.nativeElement;
-    const droppableElement: HTMLElement =
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
+    const droppableElement =
       fixture.componentInstance.droppableElement.nativeElement;
     expect(droppableElement.classList.contains('drag-active')).to.be.false;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
