@@ -15,6 +15,7 @@ describe('draggable directive', () => {
         [dragAxis]="dragAxis"
         [dragSnapGrid]="dragSnapGrid"
         [ghostDragEnabled]="ghostDragEnabled"
+        [ghostDragCopyEnabled]="ghostDragCopyEnabled"
         [validateDrag]="validateDrag"
         [dragCursor]="dragCursor"
         [dragActiveClass]="dragActiveClass"
@@ -36,6 +37,7 @@ describe('draggable directive', () => {
     dragAxis: any = { x: true, y: true };
     dragSnapGrid: any = {};
     ghostDragEnabled: boolean = true;
+    ghostDragCopyEnabled: boolean = false;
     validateDrag: ValidateDrag;
     dragCursor = 'move';
     dragActiveClass: string;
@@ -585,6 +587,19 @@ describe('draggable directive', () => {
       .true;
     triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 8 });
     expect(draggableElement.style.visibility).not.to.be.ok;
+  });
+
+  it('should create a clone of the element and leave old element visible', () => {
+    fixture.componentInstance.ghostDragCopyEnabled = true;
+    fixture.detectChanges();
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
+    expect(draggableElement.style.visibility).not.to.be.ok;
+    triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 8 });
+    fixture.componentInstance.ghostDragCopyEnabled = false;
+    fixture.detectChanges();
   });
 
   it('should add and remove the drag active class', () => {
