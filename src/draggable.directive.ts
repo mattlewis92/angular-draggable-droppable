@@ -58,8 +58,6 @@ export interface PointerEvent {
   event: MouseEvent | TouchEvent;
 }
 
-const MOVE_CURSOR: string = 'move';
-
 @Directive({
   selector: '[mwlDraggable]'
 })
@@ -97,7 +95,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   /**
    * The cursor to use when dragging the element
    */
-  @Input() dragCursor = MOVE_CURSOR;
+  @Input() dragCursor: string = '';
 
   /**
    * The css class to apply when the element is being dragged

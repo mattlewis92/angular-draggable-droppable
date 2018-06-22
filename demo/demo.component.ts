@@ -27,6 +27,7 @@ import { Component } from '@angular/core';
         z-index: 2;
         float: left;
         margin-right: 10px;
+        cursor: move;
       }
       [mwlDroppable] {
         background-color: green;
