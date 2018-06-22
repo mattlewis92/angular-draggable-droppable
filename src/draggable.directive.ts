@@ -85,6 +85,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   @Input() ghostDragEnabled: boolean = true;
 
   /**
+   * Show the original element when ghostDragEnabled is true
+   */
+  @Input() showOriginalElementWhileDragging: boolean = false;
+
+  /**
    * Allow custom behaviour to control when the element is dragged
    */
   @Input() validateDrag: ValidateDrag;
@@ -264,11 +269,13 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             const clone = this.element.nativeElement.cloneNode(
               true
             ) as HTMLElement;
-            this.renderer.setStyle(
-              this.element.nativeElement,
-              'visibility',
-              'hidden'
-            );
+            if (!this.showOriginalElementWhileDragging) {
+              this.renderer.setStyle(
+                this.element.nativeElement,
+                'visibility',
+                'hidden'
+              );
+            }
 
             if (this.ghostElementAppendTo) {
               this.ghostElementAppendTo.appendChild(clone);
