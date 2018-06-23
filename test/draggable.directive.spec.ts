@@ -192,7 +192,7 @@ describe('draggable directive', () => {
       clientY: 18
     });
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({
-      x: 0,
+      x: 10,
       y: 8
     });
     triggerDomEvent('mousemove', draggableElement, {
@@ -235,7 +235,7 @@ describe('draggable directive', () => {
     });
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({
       x: 8,
-      y: 0
+      y: 10
     });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 20,
@@ -353,7 +353,7 @@ describe('draggable directive', () => {
       y: 10
     });
     triggerDomEvent('mousemove', draggableElement, {
-      clientX: 18,
+      clientX: 14,
       clientY: 18
     });
     expect(fixture.componentInstance.dragging).to.have.been.calledOnce;
