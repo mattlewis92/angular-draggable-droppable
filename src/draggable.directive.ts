@@ -213,13 +213,13 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           map(moveData => {
             if (this.dragSnapGrid.x) {
               moveData.x =
-                Math.floor(moveData.x / this.dragSnapGrid.x) *
+                Math.round(moveData.x / this.dragSnapGrid.x) *
                 this.dragSnapGrid.x;
             }
 
             if (this.dragSnapGrid.y) {
               moveData.y =
-                Math.floor(moveData.y / this.dragSnapGrid.y) *
+                Math.round(moveData.y / this.dragSnapGrid.y) *
                 this.dragSnapGrid.y;
             }
 
