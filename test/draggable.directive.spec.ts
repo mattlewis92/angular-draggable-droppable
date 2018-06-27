@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, TemplateRef, ViewChild } from '@angular/core';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { expect } from 'chai';
 import * as sinon from 'sinon';
@@ -20,16 +20,21 @@ describe('draggable directive', () => {
         [dragCursor]="dragCursor"
         [dragActiveClass]="dragActiveClass"
         [ghostElementAppendTo]="ghostElementAppendTo"
+        [ghostElementTemplate]="ghostElementTemplate"
         (dragPointerDown)="dragPointerDown($event)"
         (dragStart)="dragStart($event)"
         (dragging)="dragging($event)"
         (dragEnd)="dragEnd($event)">
         Drag me!
-      </div>`
+      </div>
+      <ng-template #ghostElementTemplateRef><span>I'm being dragged!</span></ng-template>
+    `
   })
   class TestComponent {
     @ViewChild(DraggableDirective) draggable: DraggableDirective;
     @ViewChild('draggableElement') draggableElement: ElementRef<HTMLDivElement>;
+    @ViewChild('ghostElementTemplateRef')
+    ghostElementTemplateRef: TemplateRef<any>;
     dragPointerDown = sinon.spy();
     dragStart = sinon.spy();
     dragging = sinon.spy();
@@ -42,6 +47,7 @@ describe('draggable directive', () => {
     dragCursor = 'move';
     dragActiveClass: string;
     ghostElementAppendTo: HTMLElement;
+    ghostElementTemplate: TemplateRef<any>;
   }
 
   beforeEach(() => {
@@ -696,5 +702,17 @@ describe('draggable directive', () => {
     expect(getComputedStyle(document.body.children[0]).userSelect).to.equal(
       'auto'
     );
+  });
+
+  it('should use the contents of the ghost element template as the inner html of the ghost element', () => {
+    fixture.componentInstance.ghostElementTemplate =
+      fixture.componentInstance.ghostElementTemplateRef;
+    fixture.detectChanges();
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
+    const ghostElement = draggableElement.nextSibling as HTMLElement;
+    expect(ghostElement.innerHTML).to.equal("<span>I'm being dragged!</span>");
   });
 });

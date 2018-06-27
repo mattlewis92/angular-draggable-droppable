@@ -10,7 +10,9 @@ import {
   OnChanges,
   NgZone,
   SimpleChanges,
-  Inject
+  Inject,
+  TemplateRef,
+  ViewContainerRef
 } from '@angular/core';
 import { Subject, Observable, merge, ReplaySubject } from 'rxjs';
 import {
@@ -108,6 +110,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   @Input() ghostElementAppendTo: HTMLElement;
 
   /**
+   * An ng-template to be inserted into the parent element of the ghost element. It will overwrite any child nodes.
+   */
+  @Input() ghostElementTemplate: TemplateRef<any>;
+
+  /**
    * Called when the element can be dragged along one axis and has the mouse or pointer device pressed on it
    */
   @Output() dragPointerDown = new EventEmitter<Coordinates>();
@@ -166,6 +173,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     private renderer: Renderer2,
     private draggableHelper: DraggableHelper,
     private zone: NgZone,
+    private vcr: ViewContainerRef,
     @Inject(DOCUMENT) private document: any
   ) {}
 
@@ -295,6 +303,17 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               cursor: this.dragCursor,
               margin: '0'
             });
+
+            if (this.ghostElementTemplate) {
+              const viewRef = this.vcr.createEmbeddedView(
+                this.ghostElementTemplate
+              );
+              clone.innerHTML = '';
+              clone.appendChild(viewRef.rootNodes[0]);
+              dragEnded$.subscribe(() => {
+                this.vcr.remove(this.vcr.indexOf(viewRef));
+              });
+            }
 
             dragEnded$.subscribe(() => {
               clone.parentElement!.removeChild(clone);
