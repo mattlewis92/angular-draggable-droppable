@@ -677,4 +677,24 @@ describe('draggable directive', () => {
     });
     expect(draggableElement.nextSibling).to.not.equal(ghostElement);
   });
+
+  it('should trigger the drag end event when the component is destroyed', () => {
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
+    expect(getComputedStyle(document.body.children[0]).userSelect).to.equal(
+      'none'
+    );
+    triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 8 });
+    fixture.destroy();
+    expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
+      x: 2,
+      y: -2,
+      dragCancelled: false
+    });
+    expect(getComputedStyle(document.body.children[0]).userSelect).to.equal(
+      'auto'
+    );
+  });
 });
