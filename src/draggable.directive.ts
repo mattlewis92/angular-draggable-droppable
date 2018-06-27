@@ -127,6 +127,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   @Output() dragStart = new EventEmitter<DragStart>();
 
   /**
+   * Called after the ghost element has been created
+   */
+  @Output() ghostElementCreated = new EventEmitter();
+
+  /**
    * Called when the element is being dragged
    */
   @Output() dragging = new EventEmitter<Coordinates>();
@@ -309,11 +314,19 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
                 this.ghostElementTemplate
               );
               clone.innerHTML = '';
-              clone.appendChild(viewRef.rootNodes[0]);
+              viewRef.rootNodes
+                .filter(node => node instanceof Node)
+                .forEach(node => {
+                  clone.appendChild(node);
+                });
               dragEnded$.subscribe(() => {
                 this.vcr.remove(this.vcr.indexOf(viewRef));
               });
             }
+
+            this.zone.run(() => {
+              this.ghostElementCreated.emit();
+            });
 
             dragEnded$.subscribe(() => {
               clone.parentElement!.removeChild(clone);

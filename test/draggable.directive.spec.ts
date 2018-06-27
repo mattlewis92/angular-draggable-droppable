@@ -23,11 +23,14 @@ describe('draggable directive', () => {
         [ghostElementTemplate]="ghostElementTemplate"
         (dragPointerDown)="dragPointerDown($event)"
         (dragStart)="dragStart($event)"
+        (ghostElementCreated)="ghostElementCreated($event)"
         (dragging)="dragging($event)"
         (dragEnd)="dragEnd($event)">
         Drag me!
       </div>
-      <ng-template #ghostElementTemplateRef><span>I'm being dragged!</span></ng-template>
+      <ng-template #ghostElementTemplateRef>
+        <span>{{ 1 + 1 }} test</span>
+      </ng-template>
     `
   })
   class TestComponent {
@@ -37,6 +40,7 @@ describe('draggable directive', () => {
     ghostElementTemplateRef: TemplateRef<any>;
     dragPointerDown = sinon.spy();
     dragStart = sinon.spy();
+    ghostElementCreated = sinon.spy();
     dragging = sinon.spy();
     dragEnd = sinon.spy();
     dragAxis: any = { x: true, y: true };
@@ -313,6 +317,8 @@ describe('draggable directive', () => {
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
     expect(fixture.componentInstance.dragStart).to.have.been.calledOnce;
+    expect(fixture.componentInstance.ghostElementCreated).not.to.have.been
+      .called;
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({
       x: 2,
       y: 0
@@ -563,7 +569,7 @@ describe('draggable directive', () => {
     expect(fixture.componentInstance.dragEnd).not.to.have.been.called;
   });
 
-  it('should call the drag start, dragging and end events in order', () => {
+  it('should call the drag lifecycle events in order', () => {
     const draggableElement =
       fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
@@ -572,6 +578,7 @@ describe('draggable directive', () => {
     sinon.assert.callOrder(
       fixture.componentInstance.dragPointerDown,
       fixture.componentInstance.dragStart,
+      fixture.componentInstance.ghostElementCreated,
       fixture.componentInstance.dragging,
       fixture.componentInstance.dragEnd
     );
@@ -712,7 +719,8 @@ describe('draggable directive', () => {
       fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
+    fixture.detectChanges();
     const ghostElement = draggableElement.nextSibling as HTMLElement;
-    expect(ghostElement.innerHTML).to.equal("<span>I'm being dragged!</span>");
+    expect(ghostElement.innerHTML).to.equal('<span>2 test</span>');
   });
 });
