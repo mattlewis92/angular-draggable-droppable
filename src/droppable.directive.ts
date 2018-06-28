@@ -85,7 +85,6 @@ export class DroppableDirective implements OnInit, OnDestroy {
         );
         let droppableRectangle = this.element.nativeElement.getBoundingClientRect();
 
-        /* istanbul ignore next */
         const deregisterScrollListener = this.renderer.listen(
           this.scrollContainer
             ? this.scrollContainer.elementRef.nativeElement

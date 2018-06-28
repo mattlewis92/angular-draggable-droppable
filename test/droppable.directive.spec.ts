@@ -7,6 +7,7 @@ import { DragAndDropModule } from '../src/index';
 import { DraggableDirective } from '../src/draggable.directive';
 import { DroppableDirective } from '../src/droppable.directive';
 import { DraggableScrollContainerDirective } from '../src/draggable-scroll-container.directive';
+import { By } from '@angular/platform-browser';
 
 describe('droppable directive', () => {
   @Component({
@@ -57,8 +58,8 @@ describe('droppable directive', () => {
     dragEvent = sinon.spy();
     drop = sinon.spy();
     dragEnd = sinon.spy();
-    dropData: {
-      foo: 'bar';
+    dropData = {
+      foo: 'bar'
     };
     dragOverClass: string;
     dragActiveClass: string;
@@ -69,15 +70,51 @@ describe('droppable directive', () => {
     template: `
       <div mwlDraggableScrollContainer>
         <div
+          #draggableElement
+          mwlDraggable
+          [dropData]="dropData"
+          (dragEnd)="dragEnd()">
+          Drag me!
+        </div>
+        <div
           #droppableElement
-          mwlDroppable>
+          mwlDroppable
+          (dragEnter)="dragEvent('enter', $event)"
+          (dragOver)="dragEvent('over', $event)"
+          (dragLeave)="dragEvent('leave', $event)"
+          (drop)="drop($event)"
+          [dragOverClass]="dragOverClass"
+          [dragActiveClass]="dragActiveClass">
           Drop here
         </div>
       </div>
-    `
+    `,
+    styles: [
+      `
+        [mwlDraggableScrollContainer] {
+          height: 25px;
+          overflow: scroll;
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+        [mwlDraggable] {
+          position: relative;
+          width: 50px;
+          height: 50px;
+          z-index: 1;
+        }
+        [mwlDroppable] {
+          position: relative;
+          top: 100px;
+          left: 0;
+          width: 200px;
+          height: 200px;
+        }
+      `
+    ]
   })
-  class ScrollTestComponent {
-    @ViewChild(DroppableDirective) droppable: DroppableDirective;
+  class ScrollTestComponent extends TestComponent {
     @ViewChild(DraggableScrollContainerDirective)
     scrollContainer: DraggableScrollContainerDirective;
   }
@@ -253,5 +290,30 @@ describe('droppable directive', () => {
     expect(
       scrollFixture.componentInstance.droppable['scrollContainer']
     ).to.equal(scrollFixture.componentInstance.scrollContainer);
+  });
+
+  it('should handle the scroll container being scrolled while dragging', () => {
+    const scrollFixture = TestBed.createComponent(ScrollTestComponent);
+    scrollFixture.detectChanges();
+    document.body.appendChild(scrollFixture.nativeElement);
+    const draggableElement =
+      scrollFixture.componentInstance.draggableElement.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousemove', draggableElement, {
+      clientX: 5,
+      clientY: 60
+    });
+    scrollFixture.componentInstance.scrollContainer.elementRef.nativeElement.scrollTop = 100;
+    scrollFixture.debugElement
+      .query(By.directive(DraggableScrollContainerDirective))
+      .triggerEventHandler('scroll', {});
+    triggerDomEvent('mousemove', draggableElement, {
+      clientX: 5,
+      clientY: 61
+    });
+    triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 61 });
+    expect(scrollFixture.componentInstance.drop).to.have.been.calledWith({
+      dropData: { foo: 'bar' }
+    });
   });
 });
