@@ -7,11 +7,13 @@ import {
   EventEmitter,
   NgZone,
   Input,
-  Renderer2
+  Renderer2,
+  Optional
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { distinctUntilChanged, pairwise, filter, map } from 'rxjs/operators';
 import { DraggableHelper } from './draggable-helper.provider';
+import { DraggableScrollContainerDirective } from './draggable-scroll-container.directive';
 
 function isCoordinateWithinRectangle(
   clientX: number,
@@ -70,7 +72,8 @@ export class DroppableDirective implements OnInit, OnDestroy {
     private element: ElementRef<HTMLElement>,
     private draggableHelper: DraggableHelper,
     private zone: NgZone,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    @Optional() private scrollContainer: DraggableScrollContainerDirective
   ) {}
 
   ngOnInit() {
@@ -84,7 +87,9 @@ export class DroppableDirective implements OnInit, OnDestroy {
 
         /* istanbul ignore next */
         const deregisterScrollListener = this.renderer.listen(
-          'window',
+          this.scrollContainer
+            ? this.scrollContainer.elementRef.nativeElement
+            : 'window',
           'scroll',
           () => {
             droppableRectangle = this.element.nativeElement.getBoundingClientRect();

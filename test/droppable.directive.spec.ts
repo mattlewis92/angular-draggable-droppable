@@ -5,8 +5,8 @@ import * as sinon from 'sinon';
 import { triggerDomEvent } from './util';
 import { DragAndDropModule } from '../src/index';
 import { DraggableDirective } from '../src/draggable.directive';
-import { st } from '@angular/core/src/render3';
 import { DroppableDirective } from '../src/droppable.directive';
+import { DraggableScrollContainerDirective } from '../src/draggable-scroll-container.directive';
 
 describe('droppable directive', () => {
   @Component({
@@ -64,10 +64,28 @@ describe('droppable directive', () => {
     dragActiveClass: string;
   }
 
+  @Component({
+    // tslint:disable-line max-classes-per-file
+    template: `
+      <div mwlDraggableScrollContainer>
+        <div
+          #droppableElement
+          mwlDroppable>
+          Drop here
+        </div>
+      </div>
+    `
+  })
+  class ScrollTestComponent {
+    @ViewChild(DroppableDirective) droppable: DroppableDirective;
+    @ViewChild(DraggableScrollContainerDirective)
+    scrollContainer: DraggableScrollContainerDirective;
+  }
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [DragAndDropModule],
-      declarations: [TestComponent]
+      declarations: [TestComponent, ScrollTestComponent]
     });
   });
 
@@ -227,5 +245,13 @@ describe('droppable directive', () => {
   it('should not throw when destroying an immediately created element', () => {
     fixture = TestBed.createComponent(TestComponent);
     expect(() => fixture.destroy()).not.to.throw();
+  });
+
+  it('should link the droppable element to the scroll container', () => {
+    const scrollFixture = TestBed.createComponent(ScrollTestComponent);
+    scrollFixture.detectChanges();
+    expect(
+      scrollFixture.componentInstance.droppable['scrollContainer']
+    ).to.equal(scrollFixture.componentInstance.scrollContainer);
   });
 });
