@@ -83,7 +83,12 @@ export class DroppableDirective implements OnInit, OnDestroy {
           this.element.nativeElement,
           this.dragActiveClass
         );
-        let droppableRectangle = this.element.nativeElement.getBoundingClientRect();
+        const droppableRectangle: {
+          cache?: ClientRect;
+          updateCache: boolean;
+        } = {
+          updateCache: true
+        };
 
         const deregisterScrollListener = this.renderer.listen(
           this.scrollContainer
@@ -91,7 +96,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
             : 'window',
           'scroll',
           () => {
-            droppableRectangle = this.element.nativeElement.getBoundingClientRect();
+            droppableRectangle.updateCache = true;
           }
         );
 
@@ -99,10 +104,14 @@ export class DroppableDirective implements OnInit, OnDestroy {
         const overlaps$ = drag$.pipe(
           map(({ clientX, clientY, dropData }) => {
             currentDragDropData = dropData;
+            if (droppableRectangle.updateCache) {
+              droppableRectangle.cache = this.element.nativeElement.getBoundingClientRect();
+              droppableRectangle.updateCache = false;
+            }
             return isCoordinateWithinRectangle(
               clientX,
               clientY,
-              droppableRectangle
+              droppableRectangle.cache as ClientRect
             );
           })
         );
