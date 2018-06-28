@@ -44,11 +44,15 @@ export interface SnapGrid {
   y?: number;
 }
 
-export interface DragStart {
+export interface DragPointerDownEvent extends Coordinates {}
+
+export interface DragStartEvent {
   cancelDrag$: ReplaySubject<void>;
 }
 
-export interface DragEnd extends Coordinates {
+export interface DragMoveEvent extends Coordinates {}
+
+export interface DragEndEvent extends Coordinates {
   dragCancelled: boolean;
 }
 
@@ -117,14 +121,14 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   /**
    * Called when the element can be dragged along one axis and has the mouse or pointer device pressed on it
    */
-  @Output() dragPointerDown = new EventEmitter<Coordinates>();
+  @Output() dragPointerDown = new EventEmitter<DragPointerDownEvent>();
 
   /**
    * Called when the element has started to be dragged.
    * Only called after at least one mouse or touch move event.
    * If you call $event.cancelDrag$.emit() it will cancel the current drag
    */
-  @Output() dragStart = new EventEmitter<DragStart>();
+  @Output() dragStart = new EventEmitter<DragStartEvent>();
 
   /**
    * Called after the ghost element has been created
@@ -134,27 +138,27 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   /**
    * Called when the element is being dragged
    */
-  @Output() dragging = new EventEmitter<Coordinates>();
+  @Output() dragging = new EventEmitter<DragMoveEvent>();
 
   /**
    * Called after the element is dragged
    */
-  @Output() dragEnd = new EventEmitter<DragEnd>();
+  @Output() dragEnd = new EventEmitter<DragEndEvent>();
 
   /**
    * @hidden
    */
-  pointerDown: Subject<PointerEvent> = new Subject();
+  pointerDown = new Subject<PointerEvent>();
 
   /**
    * @hidden
    */
-  pointerMove: Subject<PointerEvent> = new Subject();
+  pointerMove = new Subject<PointerEvent>();
 
   /**
    * @hidden
    */
-  pointerUp: Subject<PointerEvent> = new Subject();
+  pointerUp = new Subject<PointerEvent>();
 
   private eventListenerSubscriptions: {
     mousemove?: () => void;

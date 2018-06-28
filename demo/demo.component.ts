@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DropEvent } from '../src';
 
 @Component({
   selector: 'mwl-demo-app',
@@ -59,7 +60,7 @@ import { Component } from '@angular/core';
 export class DemoComponent {
   droppedData: string = '';
 
-  onDrop({ dropData }: { dropData: any }): void {
+  onDrop({ dropData }: DropEvent<string>): void {
     this.droppedData = dropData;
     setTimeout(() => {
       this.droppedData = '';

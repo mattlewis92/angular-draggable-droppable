@@ -26,8 +26,8 @@ function isCoordinateWithinRectangle(
   );
 }
 
-export interface DropData {
-  dropData: any;
+export interface DropEvent<T = any> {
+  dropData: T;
 }
 
 @Directive({
@@ -47,22 +47,22 @@ export class DroppableDirective implements OnInit, OnDestroy {
   /**
    * Called when a draggable element starts overlapping the element
    */
-  @Output() dragEnter = new EventEmitter<DropData>();
+  @Output() dragEnter = new EventEmitter<DropEvent>();
 
   /**
    * Called when a draggable element stops overlapping the element
    */
-  @Output() dragLeave = new EventEmitter<DropData>();
+  @Output() dragLeave = new EventEmitter<DropEvent>();
 
   /**
    * Called when a draggable element is moved over the element
    */
-  @Output() dragOver = new EventEmitter<DropData>();
+  @Output() dragOver = new EventEmitter<DropEvent>();
 
   /**
    * Called when a draggable element is dropped on this element
    */
-  @Output() drop = new EventEmitter<DropData>(); // tslint:disable-line no-output-named-after-standard-event
+  @Output() drop = new EventEmitter<DropEvent>(); // tslint:disable-line no-output-named-after-standard-event
 
   currentDragSubscription: Subscription;
 

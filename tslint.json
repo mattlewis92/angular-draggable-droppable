@@ -5,6 +5,7 @@
     "no-unused-expression": [false],
     "max-inline-declarations": false,
     "enforce-component-selector": false,
-    "no-unused-css": false
+    "no-unused-css": false,
+    "no-empty-interface": false
   }
 }
