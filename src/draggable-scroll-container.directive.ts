@@ -4,5 +4,5 @@ import { Directive, ElementRef } from '@angular/core';
   selector: '[mwlDraggableScrollContainer]'
 })
 export class DraggableScrollContainerDirective {
-  constructor(public elementRef: ElementRef) {}
+  constructor(public elementRef: ElementRef<HTMLElement>) {}
 }
