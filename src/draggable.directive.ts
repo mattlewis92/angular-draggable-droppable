@@ -151,17 +151,17 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   /**
    * @hidden
    */
-  pointerDown = new Subject<PointerEvent>();
+  pointerDown$ = new Subject<PointerEvent>();
 
   /**
    * @hidden
    */
-  pointerMove = new Subject<PointerEvent>();
+  pointerMove$ = new Subject<PointerEvent>();
 
   /**
    * @hidden
    */
-  pointerUp = new Subject<PointerEvent>();
+  pointerUp$ = new Subject<PointerEvent>();
 
   private eventListenerSubscriptions: {
     mousemove?: () => void;
@@ -195,7 +195,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   ngOnInit(): void {
     this.checkEventListeners();
 
-    const pointerDragged$: Observable<any> = this.pointerDown.pipe(
+    const pointerDragged$: Observable<any> = this.pointerDown$.pipe(
       filter(() => this.canDrag()),
       mergeMap((pointerDownEvent: PointerEvent) => {
         // hack to prevent text getting selected in safari while dragging
@@ -240,7 +240,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         const pointerMove = combineLatest<
           PointerEvent,
           { top: number; left: number }
-        >(this.pointerMove, scrollContainerScroll$).pipe(
+        >(this.pointerMove$, scrollContainerScroll$).pipe(
           map(([pointerMoveEvent, scroll]) => {
             return {
               currentDrag$,
@@ -291,7 +291,12 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             ({ x, y }) => !this.validateDrag || this.validateDrag({ x, y })
           ),
           takeUntil(
-            merge(this.pointerUp, this.pointerDown, cancelDrag$, this.destroy$)
+            merge(
+              this.pointerUp$,
+              this.pointerDown$,
+              cancelDrag$,
+              this.destroy$
+            )
           ),
           share()
         );
@@ -462,9 +467,9 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
   ngOnDestroy(): void {
     this.unsubscribeEventListeners();
-    this.pointerDown.complete();
-    this.pointerMove.complete();
-    this.pointerUp.complete();
+    this.pointerDown$.complete();
+    this.pointerMove$.complete();
+    this.pointerUp$.complete();
     this.destroy$.next();
   }
 
@@ -542,7 +547,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         'document',
         'mousemove',
         (mouseMoveEvent: MouseEvent) => {
-          this.pointerMove.next({
+          this.pointerMove$.next({
             event: mouseMoveEvent,
             clientX: mouseMoveEvent.clientX,
             clientY: mouseMoveEvent.clientY
@@ -550,7 +555,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         }
       );
     }
-    this.pointerDown.next({
+    this.pointerDown$.next({
       event,
       clientX: event.clientX,
       clientY: event.clientY
@@ -562,7 +567,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
       this.eventListenerSubscriptions.mousemove();
       delete this.eventListenerSubscriptions.mousemove;
     }
-    this.pointerUp.next({
+    this.pointerUp$.next({
       event,
       clientX: event.clientX,
       clientY: event.clientY
@@ -575,7 +580,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         'document',
         'touchmove',
         (touchMoveEvent: TouchEvent) => {
-          this.pointerMove.next({
+          this.pointerMove$.next({
             event: touchMoveEvent,
             clientX: touchMoveEvent.targetTouches[0].clientX,
             clientY: touchMoveEvent.targetTouches[0].clientY
@@ -583,7 +588,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         }
       );
     }
-    this.pointerDown.next({
+    this.pointerDown$.next({
       event,
       clientX: event.touches[0].clientX,
       clientY: event.touches[0].clientY
@@ -595,7 +600,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
       this.eventListenerSubscriptions.touchmove();
       delete this.eventListenerSubscriptions.touchmove;
     }
-    this.pointerUp.next({
+    this.pointerUp$.next({
       event,
       clientX: event.changedTouches[0].clientX,
       clientY: event.changedTouches[0].clientY

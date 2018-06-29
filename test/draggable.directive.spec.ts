@@ -149,23 +149,23 @@ describe('draggable directive', () => {
     });
   });
 
-  it('should end the pointerUp observable when the component is destroyed', () => {
+  it('should end the pointerUp$ observable when the component is destroyed', () => {
     const complete = sinon.spy();
-    fixture.componentInstance.draggable.pointerUp.subscribe({ complete });
+    fixture.componentInstance.draggable.pointerUp$.subscribe({ complete });
     fixture.destroy();
     expect(complete).to.have.been.calledOnce;
   });
 
-  it('should end the pointerDown observable when the component is destroyed', () => {
+  it('should end the pointerDown$ observable when the component is destroyed', () => {
     const complete = sinon.spy();
-    fixture.componentInstance.draggable.pointerDown.subscribe({ complete });
+    fixture.componentInstance.draggable.pointerDown$.subscribe({ complete });
     fixture.destroy();
     expect(complete).to.have.been.calledOnce;
   });
 
-  it('should end the pointerMove observable when the component is destroyed', () => {
+  it('should end the pointerMove$ observable when the component is destroyed', () => {
     const complete = sinon.spy();
-    fixture.componentInstance.draggable.pointerMove.subscribe({ complete });
+    fixture.componentInstance.draggable.pointerMove$.subscribe({ complete });
     fixture.destroy();
     expect(complete).to.have.been.calledOnce;
   });
