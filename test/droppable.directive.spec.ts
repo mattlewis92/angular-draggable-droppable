@@ -244,7 +244,7 @@ describe('droppable directive', () => {
     expect(droppableElement.classList.contains('drag-over')).to.be.false;
   });
 
-  it('should fire the drag end event after the drop event', () => {
+  it('should fire the drag end event before the drop event', () => {
     const draggableElement =
       fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
@@ -254,8 +254,8 @@ describe('droppable directive', () => {
     });
     triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 120 });
     sinon.assert.callOrder(
-      fixture.componentInstance.drop,
-      fixture.componentInstance.dragEnd
+      fixture.componentInstance.dragEnd,
+      fixture.componentInstance.drop
     );
   });
 

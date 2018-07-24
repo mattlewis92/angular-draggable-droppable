@@ -404,7 +404,6 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           )
           .subscribe(({ x, y, dragCancelled }) => {
             this.document.head.removeChild(globalDragStyle);
-            currentDrag$.complete();
             this.zone.run(() => {
               this.dragEnd.next({ x, y, dragCancelled });
             });
@@ -412,6 +411,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               this.element.nativeElement,
               this.dragActiveClass
             );
+            currentDrag$.complete();
           });
 
         return pointerMove;
