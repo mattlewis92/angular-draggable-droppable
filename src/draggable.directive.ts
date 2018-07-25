@@ -237,6 +237,13 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           this.dragPointerDown.next({ x: 0, y: 0 });
         });
 
+        const dragComplete$ = merge(
+          this.pointerUp$,
+          this.pointerDown$,
+          cancelDrag$,
+          this.destroy$
+        ).pipe(share());
+
         const pointerMove = combineLatest<
           PointerEvent,
           { top: number; left: number }
@@ -290,14 +297,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           filter(
             ({ x, y }) => !this.validateDrag || this.validateDrag({ x, y })
           ),
-          takeUntil(
-            merge(
-              this.pointerUp$,
-              this.pointerDown$,
-              cancelDrag$,
-              this.destroy$
-            )
-          ),
+          takeUntil(dragComplete$),
           share()
         );
 
@@ -403,7 +403,6 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             })
           )
           .subscribe(({ x, y, dragCancelled }) => {
-            this.document.head.removeChild(globalDragStyle);
             this.zone.run(() => {
               this.dragEnd.next({ x, y, dragCancelled });
             });
@@ -412,6 +411,12 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               this.dragActiveClass
             );
             currentDrag$.complete();
+          });
+
+        merge(dragComplete$, dragEnded$)
+          .pipe(take(1))
+          .subscribe(() => {
+            this.document.head.removeChild(globalDragStyle);
           });
 
         return pointerMove;

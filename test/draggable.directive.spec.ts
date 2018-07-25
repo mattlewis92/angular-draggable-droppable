@@ -804,4 +804,17 @@ describe('draggable directive', () => {
       dragCancelled: false
     });
   });
+
+  it('should allow elements to be selected if clicking but not dragging the element', () => {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = 'foo';
+    document.body.appendChild(tmp);
+    expect(getComputedStyle(tmp).userSelect).to.equal('auto');
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    expect(getComputedStyle(tmp).userSelect).to.equal('none');
+    triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 10 });
+    expect(getComputedStyle(tmp).userSelect).to.equal('auto');
+  });
 });
