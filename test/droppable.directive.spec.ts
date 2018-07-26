@@ -301,19 +301,34 @@ describe('droppable directive', () => {
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
-      clientY: 60
+      clientY: 11
     });
-    scrollFixture.componentInstance.scrollContainer.elementRef.nativeElement.scrollTop = 100;
+    scrollFixture.componentInstance.scrollContainer.elementRef.nativeElement.scrollTop = 150;
     scrollFixture.debugElement
       .query(By.directive(DraggableScrollContainerDirective))
       .triggerEventHandler('scroll', {});
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
-      clientY: 61
+      clientY: 10
     });
-    triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 61 });
+    triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 10 });
     expect(scrollFixture.componentInstance.drop).to.have.been.calledWith({
       dropData: { foo: 'bar' }
     });
+  });
+
+  it('should not fire drop events when the element is scrolled out of the view', () => {
+    const scrollFixture = TestBed.createComponent(ScrollTestComponent);
+    scrollFixture.detectChanges();
+    document.body.appendChild(scrollFixture.nativeElement);
+    const draggableElement =
+      scrollFixture.componentInstance.draggableElement.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousemove', draggableElement, {
+      clientX: 5,
+      clientY: 150
+    });
+    triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 150 });
+    expect(scrollFixture.componentInstance.drop).not.to.have.been.called;
   });
 });

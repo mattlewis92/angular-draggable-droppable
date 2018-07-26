@@ -83,9 +83,10 @@ export class DroppableDirective implements OnInit, OnDestroy {
           this.element.nativeElement,
           this.dragActiveClass
         );
-        const droppableRectangle: {
-          cache?: ClientRect;
+        const droppableElement: {
+          rect?: ClientRect;
           updateCache: boolean;
+          scrollContainerRect?: ClientRect;
         } = {
           updateCache: true
         };
@@ -96,7 +97,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
             : 'window',
           'scroll',
           () => {
-            droppableRectangle.updateCache = true;
+            droppableElement.updateCache = true;
           }
         );
 
@@ -104,15 +105,30 @@ export class DroppableDirective implements OnInit, OnDestroy {
         const overlaps$ = drag$.pipe(
           map(({ clientX, clientY, dropData }) => {
             currentDragDropData = dropData;
-            if (droppableRectangle.updateCache) {
-              droppableRectangle.cache = this.element.nativeElement.getBoundingClientRect();
-              droppableRectangle.updateCache = false;
+            if (droppableElement.updateCache) {
+              droppableElement.rect = this.element.nativeElement.getBoundingClientRect();
+              if (this.scrollContainer) {
+                droppableElement.scrollContainerRect = this.scrollContainer.elementRef.nativeElement.getBoundingClientRect();
+              }
+              droppableElement.updateCache = false;
             }
-            return isCoordinateWithinRectangle(
+            const isWithinElement = isCoordinateWithinRectangle(
               clientX,
               clientY,
-              droppableRectangle.cache as ClientRect
+              droppableElement.rect as ClientRect
             );
+            if (droppableElement.scrollContainerRect) {
+              return (
+                isWithinElement &&
+                isCoordinateWithinRectangle(
+                  clientX,
+                  clientY,
+                  droppableElement.scrollContainerRect as ClientRect
+                )
+              );
+            } else {
+              return isWithinElement;
+            }
           })
         );
 
