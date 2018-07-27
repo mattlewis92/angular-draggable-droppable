@@ -1,0 +1,38 @@
+[mwlDraggable] {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  z-index: 2;
+  float: left;
+  margin-right: 10px;
+  cursor: move;
+}
+
+[mwlDroppable] {
+  background-color: green;
+  width: 400px;
+  height: 400px;
+  z-index: 1;
+  position: relative;
+  top: 50px;
+  left: 100px;
+}
+
+[mwlDraggable],
+[mwlDroppable] {
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drop-over-active {
+  border: dashed 1px black;
+  background-color: lightgreen;
+}
+
+.drag-active {
+  z-index: 3;
+}
