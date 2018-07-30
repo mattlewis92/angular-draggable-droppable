@@ -3,10 +3,11 @@ import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { expect } from 'chai';
 import * as sinon from 'sinon';
 import { triggerDomEvent } from './util';
-import { DragAndDropModule } from '../src/index';
-import { DraggableDirective, ValidateDrag } from '../src/draggable.directive';
-import { DraggableScrollContainerDirective } from '../src/draggable-scroll-container.directive';
+
 import { By } from '@angular/platform-browser';
+import { DraggableDirective, ValidateDrag } from '../draggable.directive';
+import { DraggableScrollContainerDirective } from '../draggable-scroll-container.directive';
+import { DraggableDroppableModule } from '../draggable-droppable.module';
 
 describe('draggable directive', () => {
   @Component({
@@ -47,8 +48,8 @@ describe('draggable directive', () => {
     dragEnd = sinon.spy();
     dragAxis: any = { x: true, y: true };
     dragSnapGrid: any = {};
-    ghostDragEnabled: boolean = true;
-    showOriginalElementWhileDragging: boolean = false;
+    ghostDragEnabled = true;
+    showOriginalElementWhileDragging = false;
     validateDrag: ValidateDrag;
     dragCursor = 'move';
     dragActiveClass: string;
@@ -98,7 +99,7 @@ describe('draggable directive', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [DragAndDropModule],
+      imports: [DraggableDroppableModule],
       declarations: [TestComponent, ScrollTestComponent]
     });
   });

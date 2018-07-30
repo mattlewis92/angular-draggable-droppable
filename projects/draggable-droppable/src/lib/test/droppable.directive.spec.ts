@@ -2,12 +2,12 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { expect } from 'chai';
 import * as sinon from 'sinon';
-import { triggerDomEvent } from './util';
-import { DragAndDropModule } from '../src/index';
-import { DraggableDirective } from '../src/draggable.directive';
-import { DroppableDirective } from '../src/droppable.directive';
-import { DraggableScrollContainerDirective } from '../src/draggable-scroll-container.directive';
 import { By } from '@angular/platform-browser';
+import { triggerDomEvent } from './util';
+import { DraggableDirective } from '../draggable.directive';
+import { DroppableDirective } from '../droppable.directive';
+import { DraggableScrollContainerDirective } from '../draggable-scroll-container.directive';
+import { DraggableDroppableModule } from '../draggable-droppable.module';
 
 describe('droppable directive', () => {
   @Component({
@@ -121,7 +121,7 @@ describe('droppable directive', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [DragAndDropModule],
+      imports: [DraggableDroppableModule],
       declarations: [TestComponent, ScrollTestComponent]
     });
   });
