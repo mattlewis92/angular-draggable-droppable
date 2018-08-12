@@ -51,10 +51,14 @@ describe('droppable directive', () => {
     ]
   })
   class TestComponent {
-    @ViewChild(DraggableDirective) draggable: DraggableDirective;
-    @ViewChild(DroppableDirective) droppable: DroppableDirective;
-    @ViewChild('droppableElement') droppableElement: ElementRef<HTMLDivElement>;
-    @ViewChild('draggableElement') draggableElement: ElementRef<HTMLDivElement>;
+    @ViewChild(DraggableDirective)
+    draggable: DraggableDirective;
+    @ViewChild(DroppableDirective)
+    droppable: DroppableDirective;
+    @ViewChild('droppableElement')
+    droppableElement: ElementRef<HTMLDivElement>;
+    @ViewChild('draggableElement')
+    draggableElement: ElementRef<HTMLDivElement>;
     dragEvent = sinon.spy();
     drop = sinon.spy();
     dragEnd = sinon.spy();

@@ -74,79 +74,94 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   /**
    * an object of data you can pass to the drop event
    */
-  @Input() dropData: any;
+  @Input()
+  dropData: any;
 
   /**
    * The axis along which the element is draggable
    */
-  @Input() dragAxis: DragAxis = { x: true, y: true };
+  @Input()
+  dragAxis: DragAxis = { x: true, y: true };
 
   /**
    * Snap all drags to an x / y grid
    */
-  @Input() dragSnapGrid: SnapGrid = {};
+  @Input()
+  dragSnapGrid: SnapGrid = {};
 
   /**
    * Show a ghost element that shows the drag when dragging
    */
-  @Input() ghostDragEnabled: boolean = true;
+  @Input()
+  ghostDragEnabled: boolean = true;
 
   /**
    * Show the original element when ghostDragEnabled is true
    */
-  @Input() showOriginalElementWhileDragging: boolean = false;
+  @Input()
+  showOriginalElementWhileDragging: boolean = false;
 
   /**
    * Allow custom behaviour to control when the element is dragged
    */
-  @Input() validateDrag: ValidateDrag;
+  @Input()
+  validateDrag: ValidateDrag;
 
   /**
    * The cursor to use when dragging the element
    */
-  @Input() dragCursor: string = '';
+  @Input()
+  dragCursor: string = '';
 
   /**
    * The css class to apply when the element is being dragged
    */
-  @Input() dragActiveClass: string;
+  @Input()
+  dragActiveClass: string;
 
   /**
    * The element the ghost element will be appended to. Default is next to the dragged element
    */
-  @Input() ghostElementAppendTo: HTMLElement;
+  @Input()
+  ghostElementAppendTo: HTMLElement;
 
   /**
    * An ng-template to be inserted into the parent element of the ghost element. It will overwrite any child nodes.
    */
-  @Input() ghostElementTemplate: TemplateRef<any>;
+  @Input()
+  ghostElementTemplate: TemplateRef<any>;
 
   /**
    * Called when the element can be dragged along one axis and has the mouse or pointer device pressed on it
    */
-  @Output() dragPointerDown = new EventEmitter<DragPointerDownEvent>();
+  @Output()
+  dragPointerDown = new EventEmitter<DragPointerDownEvent>();
 
   /**
    * Called when the element has started to be dragged.
    * Only called after at least one mouse or touch move event.
    * If you call $event.cancelDrag$.emit() it will cancel the current drag
    */
-  @Output() dragStart = new EventEmitter<DragStartEvent>();
+  @Output()
+  dragStart = new EventEmitter<DragStartEvent>();
 
   /**
    * Called after the ghost element has been created
    */
-  @Output() ghostElementCreated = new EventEmitter();
+  @Output()
+  ghostElementCreated = new EventEmitter();
 
   /**
    * Called when the element is being dragged
    */
-  @Output() dragging = new EventEmitter<DragMoveEvent>();
+  @Output()
+  dragging = new EventEmitter<DragMoveEvent>();
 
   /**
    * Called after the element is dragged
    */
-  @Output() dragEnd = new EventEmitter<DragEndEvent>();
+  @Output()
+  dragEnd = new EventEmitter<DragEndEvent>();
 
   /**
    * @hidden

@@ -36,8 +36,10 @@ describe('draggable directive', () => {
     `
   })
   class TestComponent {
-    @ViewChild(DraggableDirective) draggable: DraggableDirective;
-    @ViewChild('draggableElement') draggableElement: ElementRef<HTMLDivElement>;
+    @ViewChild(DraggableDirective)
+    draggable: DraggableDirective;
+    @ViewChild('draggableElement')
+    draggableElement: ElementRef<HTMLDivElement>;
     @ViewChild('ghostElementTemplateRef')
     ghostElementTemplateRef: TemplateRef<any>;
     dragPointerDown = sinon.spy();
