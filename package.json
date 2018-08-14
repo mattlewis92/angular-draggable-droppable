@@ -20,8 +20,8 @@
     "release:git": "standard-version && git push --follow-tags origin master",
     "release:npm": "npm run build:lib && npm publish dist/angular-draggable-droppable",
     "release": "npm run release:git && npm run release:npm",
-    "postrelease": "npm run build:clean && npm run gh-pages",
-    "gh-pages": "npm run build:clean && npm run build:demo && npm run compodoc && ngh"
+    "postrelease": "npm run gh-pages",
+    "gh-pages": "npm run build:clean && npm run build:demo && npm run compodoc && npm run build:clean"
   },
   "repository": {
     "type": "git",
