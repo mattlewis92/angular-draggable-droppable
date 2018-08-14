@@ -10,7 +10,7 @@
 
 ## Demo
 
-https://mattlewis92.github.io/angular-draggable-droppable/demo/
+https://mattlewis92.github.io/angular-draggable-droppable/
 
 ## Table of contents
 
@@ -66,7 +66,7 @@ class DemoApp {
 }
 ```
 
-You may also find it useful to view the [demo source](https://github.com/mattlewis92/angular-draggable-droppable/blob/master/demo/demo.component.ts).
+You may also find it useful to view the [demo source](https://github.com/mattlewis92/angular-draggable-droppable/tree/master/src/demo).
 
 ## Documentation
 
