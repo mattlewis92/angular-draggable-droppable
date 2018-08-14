@@ -15,13 +15,13 @@
     "commitmsg": "validate-commit-msg",
     "codecov": "cat coverage/lcov.info | codecov",
     "precommit": "pretty-quick --staged",
-    "compodoc": "compodoc -p tsconfig-compodoc.json -d dist/docs --disableGraph --disableCoverage --disablePrivate --disableInternal --disableLifeCycleHooks --disableProtected",
+    "compodoc": "compodoc -p tsconfig-compodoc.json -d dist/demo/docs --disableGraph --disableCoverage --disablePrivate --disableInternal --disableLifeCycleHooks --disableProtected",
     "prerelease": "npm test",
     "release:git": "standard-version && git push --follow-tags origin master",
     "release:npm": "npm run build:lib && npm publish dist/angular-draggable-droppable",
     "release": "npm run release:git && npm run release:npm",
     "postrelease": "npm run gh-pages",
-    "gh-pages": "npm run build:clean && npm run build:demo && npm run compodoc && ngh && npm run build:clean"
+    "gh-pages": "npm run build:clean && npm run build:demo && npm run compodoc && ngh --dir=dist/demo && npm run build:clean"
   },
   "repository": {
     "type": "git",
