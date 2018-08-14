@@ -86,14 +86,14 @@
                         <a href="modules/DragAndDropModule.html" data-type="entity-link">DragAndDropModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-directives-links-module-DragAndDropModule-325b3bf3cb227421fa2d82e0981f982e"
+                                        data-target="#xs-directives-links-module-DragAndDropModule-2905988a537ded9832ee843486692992"
                                     >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-directives-links-module-DragAndDropModule-325b3bf3cb227421fa2d82e0981f982e"
+                                        id="xs-directives-links-module-DragAndDropModule-2905988a537ded9832ee843486692992"
                                     >
                                         <li class="link">
                                             <a href="directives/DraggableDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">DraggableDirective</a>
@@ -130,7 +130,19 @@
                         <a href="interfaces/DragAxis.html" data-type="entity-link">DragAxis</a>
                     </li>
                     <li class="link">
-                        <a href="interfaces/DropData.html" data-type="entity-link">DropData</a>
+                        <a href="interfaces/DragEndEvent.html" data-type="entity-link">DragEndEvent</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/DragMoveEvent.html" data-type="entity-link">DragMoveEvent</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/DragPointerDownEvent.html" data-type="entity-link">DragPointerDownEvent</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/DragStartEvent.html" data-type="entity-link">DragStartEvent</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/DropEvent.html" data-type="entity-link">DropEvent</a>
                     </li>
                     <li class="link">
                         <a href="interfaces/PointerEvent.html" data-type="entity-link">PointerEvent</a>
@@ -158,9 +170,6 @@
                     </li>
                     <li class="link">
                       <a href="miscellaneous/typealiases.html" data-type="entity-link">Type aliases</a>
-                    </li>
-                    <li class="link">
-                      <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>
                     </li>
             </ul>
         </li>
@@ -250,14 +259,14 @@
                         <a href="modules/DragAndDropModule.html" data-type="entity-link">DragAndDropModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#directives-links-module-DragAndDropModule-325b3bf3cb227421fa2d82e0981f982e"
+                                        data-target="#directives-links-module-DragAndDropModule-2905988a537ded9832ee843486692992"
 >
                                     <span class="fa fa-fw fa-code"></span>
                                     <span>Directives</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="directives-links-module-DragAndDropModule-325b3bf3cb227421fa2d82e0981f982e"
+                                        id="directives-links-module-DragAndDropModule-2905988a537ded9832ee843486692992"
 >
                                         <li class="link">
                                             <a href="directives/DraggableDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">DraggableDirective</a>
@@ -294,7 +303,19 @@
                         <a href="interfaces/DragAxis.html" data-type="entity-link">DragAxis</a>
                     </li>
                     <li class="link">
-                        <a href="interfaces/DropData.html" data-type="entity-link">DropData</a>
+                        <a href="interfaces/DragEndEvent.html" data-type="entity-link">DragEndEvent</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/DragMoveEvent.html" data-type="entity-link">DragMoveEvent</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/DragPointerDownEvent.html" data-type="entity-link">DragPointerDownEvent</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/DragStartEvent.html" data-type="entity-link">DragStartEvent</a>
+                    </li>
+                    <li class="link">
+                        <a href="interfaces/DropEvent.html" data-type="entity-link">DropEvent</a>
                     </li>
                     <li class="link">
                         <a href="interfaces/PointerEvent.html" data-type="entity-link">PointerEvent</a>
@@ -322,9 +343,6 @@
                     </li>
                     <li class="link">
                       <a href="miscellaneous/typealiases.html" data-type="entity-link">Type aliases</a>
-                    </li>
-                    <li class="link">
-                      <a href="miscellaneous/variables.html" data-type="entity-link">Variables</a>
                     </li>
             </ul>
         </li>
@@ -370,7 +388,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/droppable.directive.ts</code>
+            <code>projects/angular-draggable-droppable/src/lib/droppable.directive.ts</code>
         </p>
 
 
@@ -417,6 +435,23 @@
                 </tr>
 
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#dragActiveClass">dragActiveClass</a>
+                            </li>
+                            <li>
+                                <a href="#dragOverClass">dragOverClass</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -454,12 +489,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(element: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>, draggableHelper: DraggableHelper, zone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>)</code>
+<code>constructor(element: ElementRef<HTMLElement>, draggableHelper: DraggableHelper, zone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>, renderer: <a href="https://angular.io/api/core/Renderer2" target="_blank">Renderer2</a>, scrollContainer: DraggableScrollContainerDirective)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/droppable.directive.ts:61</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:75</a></div>
                             </td>
                         </tr>
 
@@ -480,7 +515,7 @@
                                                         <td>element</td>
                                                   
                                                         <td>
-                                                                    <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+                                                                    <code>ElementRef&lt;HTMLElement&gt;</code>
                                                         </td>
                                                   
                                                     <td>
@@ -512,6 +547,30 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>renderer</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/Renderer2" target="_blank" >Renderer2</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>scrollContainer</td>
+                                                  
+                                                        <td>
+                                                                    <code>DraggableScrollContainerDirective</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -521,7 +580,55 @@
         </table>
 </section>
 
+            <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="dragActiveClass"></a>
+                        <code>dragActiveClass</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Added to the element any time a draggable element is being dragged</p>
+</div>
+                            <p>
+                            <em>Type:</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:49</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="dragOverClass"></a>
+                        <code>dragOverClass</code>
+                    </td>
+                    <td class="col-md-10">
+                        <div><p>Added to the element when an element is dragged over it</p>
+</div>
+                            <p>
+                            <em>Type:</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:43</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
             <section>
     <h3 id="outputs">Outputs</h3>
         <table class="table table-sm table-bordered">
@@ -540,7 +647,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/droppable.directive.ts:44</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:55</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -561,7 +668,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/droppable.directive.ts:49</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:61</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -582,7 +689,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/droppable.directive.ts:54</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:67</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -603,7 +710,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/droppable.directive.ts:59</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:73</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -644,7 +751,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/droppable.directive.ts:61</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:75</a></div>
                             </td>
                         </tr>
 
@@ -665,17 +772,15 @@
   OnDestroy,
   Output,
   EventEmitter,
-  NgZone
+  NgZone,
+  Input,
+  Renderer2,
+  Optional
 } from &#x27;@angular/core&#x27;;
-import { Subject, Subscription } from &#x27;rxjs&#x27;;
-import {
-  distinctUntilChanged,
-  pairwise,
-  filter,
-  map,
-  mergeMap
-} from &#x27;rxjs/operators&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { distinctUntilChanged, pairwise, filter, map } from &#x27;rxjs/operators&#x27;;
 import { DraggableHelper } from &#x27;./draggable-helper.provider&#x27;;
+import { DraggableScrollContainerDirective } from &#x27;./draggable-scroll-container.directive&#x27;;
 
 function isCoordinateWithinRectangle(
   clientX: number,
@@ -690,8 +795,8 @@ function isCoordinateWithinRectangle(
   );
 }
 
-export interface DropData {
-  dropData: any;
+export interface DropEvent&lt;T &#x3D; any&gt; {
+  dropData: T;
 }
 
 @Directive({
@@ -699,64 +804,119 @@ export interface DropData {
 })
 export class DroppableDirective implements OnInit, OnDestroy {
   /**
+   * Added to the element when an element is dragged over it
+   */
+  @Input()
+  dragOverClass: string;
+
+  /**
+   * Added to the element any time a draggable element is being dragged
+   */
+  @Input()
+  dragActiveClass: string;
+
+  /**
    * Called when a draggable element starts overlapping the element
    */
-  @Output() dragEnter &#x3D; new EventEmitter&lt;DropData&gt;();
+  @Output()
+  dragEnter &#x3D; new EventEmitter&lt;DropEvent&gt;();
 
   /**
    * Called when a draggable element stops overlapping the element
    */
-  @Output() dragLeave &#x3D; new EventEmitter&lt;DropData&gt;();
+  @Output()
+  dragLeave &#x3D; new EventEmitter&lt;DropEvent&gt;();
 
   /**
    * Called when a draggable element is moved over the element
    */
-  @Output() dragOver &#x3D; new EventEmitter&lt;DropData&gt;();
+  @Output()
+  dragOver &#x3D; new EventEmitter&lt;DropEvent&gt;();
 
   /**
    * Called when a draggable element is dropped on this element
    */
-  @Output() drop &#x3D; new EventEmitter&lt;DropData&gt;();
+  @Output()
+  drop &#x3D; new EventEmitter&lt;DropEvent&gt;(); // tslint:disable-line no-output-named-after-standard-event
 
   currentDragSubscription: Subscription;
 
   constructor(
-    private element: ElementRef,
+    private element: ElementRef&lt;HTMLElement&gt;,
     private draggableHelper: DraggableHelper,
-    private zone: NgZone
+    private zone: NgZone,
+    private renderer: Renderer2,
+    @Optional() private scrollContainer: DraggableScrollContainerDirective
   ) {}
 
-  ngOnInit(): void {
-    interface CurrentDragData {
-      clientX: number;
-      clientY: number;
-      dropData: any;
-    }
-
+  ngOnInit() {
     this.currentDragSubscription &#x3D; this.draggableHelper.currentDrag.subscribe(
-      (drag: Subject&lt;CurrentDragData&gt;) &#x3D;&gt; {
-        const droppableRectangle: ClientRect &#x3D; this.element.nativeElement.getBoundingClientRect();
+      drag$ &#x3D;&gt; {
+        this.renderer.addClass(
+          this.element.nativeElement,
+          this.dragActiveClass
+        );
+        const droppableElement: {
+          rect?: ClientRect;
+          updateCache: boolean;
+          scrollContainerRect?: ClientRect;
+        } &#x3D; {
+          updateCache: true
+        };
+
+        const deregisterScrollListener &#x3D; this.renderer.listen(
+          this.scrollContainer
+            ? this.scrollContainer.elementRef.nativeElement
+            : &#x27;window&#x27;,
+          &#x27;scroll&#x27;,
+          () &#x3D;&gt; {
+            droppableElement.updateCache &#x3D; true;
+          }
+        );
 
         let currentDragDropData: any;
-        const overlaps &#x3D; drag.pipe(
+        const overlaps$ &#x3D; drag$.pipe(
           map(({ clientX, clientY, dropData }) &#x3D;&gt; {
             currentDragDropData &#x3D; dropData;
-            return isCoordinateWithinRectangle(
+            if (droppableElement.updateCache) {
+              droppableElement.rect &#x3D; this.element.nativeElement.getBoundingClientRect();
+              if (this.scrollContainer) {
+                droppableElement.scrollContainerRect &#x3D; this.scrollContainer.elementRef.nativeElement.getBoundingClientRect();
+              }
+              droppableElement.updateCache &#x3D; false;
+            }
+            const isWithinElement &#x3D; isCoordinateWithinRectangle(
               clientX,
               clientY,
-              droppableRectangle
+              droppableElement.rect as ClientRect
             );
+            if (droppableElement.scrollContainerRect) {
+              return (
+                isWithinElement &amp;&amp;
+                isCoordinateWithinRectangle(
+                  clientX,
+                  clientY,
+                  droppableElement.scrollContainerRect as ClientRect
+                )
+              );
+            } else {
+              return isWithinElement;
+            }
           })
         );
 
-        const overlapsChanged &#x3D; overlaps.pipe(distinctUntilChanged());
+        const overlapsChanged$ &#x3D; overlaps$.pipe(distinctUntilChanged());
 
         let dragOverActive: boolean; // TODO - see if there&#x27;s a way of doing this via rxjs
 
-        overlapsChanged
+        overlapsChanged$
           .pipe(filter(overlapsNow &#x3D;&gt; overlapsNow))
           .subscribe(() &#x3D;&gt; {
             dragOverActive &#x3D; true;
+            this.renderer.addClass(
+              this.element.nativeElement,
+              this.dragOverClass
+            );
             this.zone.run(() &#x3D;&gt; {
               this.dragEnter.next({
                 dropData: currentDragDropData
@@ -764,7 +924,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
             });
           });
 
-        overlaps.pipe(filter(overlapsNow &#x3D;&gt; overlapsNow)).subscribe(() &#x3D;&gt; {
+        overlaps$.pipe(filter(overlapsNow &#x3D;&gt; overlapsNow)).subscribe(() &#x3D;&gt; {
           this.zone.run(() &#x3D;&gt; {
             this.dragOver.next({
               dropData: currentDragDropData
@@ -772,13 +932,17 @@ export class DroppableDirective implements OnInit, OnDestroy {
           });
         });
 
-        overlapsChanged
-          .pipe(pairwise())
+        overlapsChanged$
           .pipe(
+            pairwise(),
             filter(([didOverlap, overlapsNow]) &#x3D;&gt; didOverlap &amp;&amp; !overlapsNow)
           )
           .subscribe(() &#x3D;&gt; {
             dragOverActive &#x3D; false;
+            this.renderer.removeClass(
+              this.element.nativeElement,
+              this.dragOverClass
+            );
             this.zone.run(() &#x3D;&gt; {
               this.dragLeave.next({
                 dropData: currentDragDropData
@@ -786,9 +950,18 @@ export class DroppableDirective implements OnInit, OnDestroy {
             });
           });
 
-        drag.pipe(mergeMap(() &#x3D;&gt; overlaps)).subscribe({
+        drag$.subscribe({
           complete: () &#x3D;&gt; {
+            deregisterScrollListener();
+            this.renderer.removeClass(
+              this.element.nativeElement,
+              this.dragActiveClass
+            );
             if (dragOverActive) {
+              this.renderer.removeClass(
+                this.element.nativeElement,
+                this.dragOverClass
+              );
               this.zone.run(() &#x3D;&gt; {
                 this.drop.next({
                   dropData: currentDragDropData
@@ -801,8 +974,10 @@ export class DroppableDirective implements OnInit, OnDestroy {
     );
   }
 
-  ngOnDestroy(): void {
-    this.currentDragSubscription.unsubscribe();
+  ngOnDestroy() {
+    if (this.currentDragSubscription) {
+      this.currentDragSubscription.unsubscribe();
+    }
   }
 }
 </code></pre>
