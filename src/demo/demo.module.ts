@@ -1,6 +1,7 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { DragAndDropModule } from '../src';
+import { NgModule } from '@angular/core';
+import { DragAndDropModule } from 'angular-draggable-droppable';
+
 import { DemoComponent } from './demo.component';
 
 @NgModule({

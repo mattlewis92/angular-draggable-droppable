@@ -2,10 +2,10 @@ import { Component, ElementRef, TemplateRef, ViewChild } from '@angular/core';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { expect } from 'chai';
 import * as sinon from 'sinon';
-import { triggerDomEvent } from './util';
-import { DragAndDropModule } from '../src/index';
-import { DraggableDirective, ValidateDrag } from '../src/draggable.directive';
-import { DraggableScrollContainerDirective } from '../src/draggable-scroll-container.directive';
+import { triggerDomEvent } from '../test-utils';
+import { DragAndDropModule } from 'angular-draggable-droppable';
+import { DraggableDirective, ValidateDrag } from './draggable.directive';
+import { DraggableScrollContainerDirective } from './draggable-scroll-container.directive';
 import { By } from '@angular/platform-browser';
 
 describe('draggable directive', () => {

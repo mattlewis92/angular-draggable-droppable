@@ -1,0 +1,13 @@
+<div mwlDraggable dropData="foo" dragActiveClass="drag-active">
+  Drag me!
+</div>
+<div mwlDraggable dropData="bar" dragActiveClass="drag-active" [dragSnapGrid]="{x: 100, y: 100}">
+  I snap to a 100 x 100 grid
+</div>
+<div
+  mwlDroppable
+  (drop)="onDrop($event)"
+  dragOverClass="drop-over-active">
+  <span [hidden]="droppedData">Drop here</span>
+  <span [hidden]="!droppedData">Item dropped here with data: "{{ droppedData }}"!</span>
+</div>
