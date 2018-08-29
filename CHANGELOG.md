@@ -2,6 +2,74 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v3.0.1...v4.0.0) (2018-08-29)
+
+
+### Bug Fixes
+
+* account for the window being scrolled whilst dragging ([566bf78](https://github.com/mattlewis92/angular-draggable-droppable/commit/566bf78))
+* allow dragging the element inside a scrollable container ([6e0a1a3](https://github.com/mattlewis92/angular-draggable-droppable/commit/6e0a1a3)), closes [#25](https://github.com/mattlewis92/angular-draggable-droppable/issues/25)
+* always remove global styles when clicking draggable elements ([c428eed](https://github.com/mattlewis92/angular-draggable-droppable/commit/c428eed)), closes [#44](https://github.com/mattlewis92/angular-draggable-droppable/issues/44)
+* append the ghost element to the body ([4f23661](https://github.com/mattlewis92/angular-draggable-droppable/commit/4f23661))
+* bump up z-index of element being dragged ([9d0f754](https://github.com/mattlewis92/angular-draggable-droppable/commit/9d0f754))
+* call drag end event after the drop event ([317d914](https://github.com/mattlewis92/angular-draggable-droppable/commit/317d914))
+* don't fire drop events when the droppable element is scrolled out of the view ([4c9224b](https://github.com/mattlewis92/angular-draggable-droppable/commit/4c9224b))
+* don't highlight text when dragging elements ([67d3a5e](https://github.com/mattlewis92/angular-draggable-droppable/commit/67d3a5e)), closes [#28](https://github.com/mattlewis92/angular-draggable-droppable/issues/28)
+* fire the drag end event before the drop event ([4bb3fde](https://github.com/mattlewis92/angular-draggable-droppable/commit/4bb3fde))
+* maintain old ghost element behaviour by default ([cf1bc61](https://github.com/mattlewis92/angular-draggable-droppable/commit/cf1bc61))
+* preserve original element styles after dragging ([f36ed2d](https://github.com/mattlewis92/angular-draggable-droppable/commit/f36ed2d))
+* remove automatic pointer-events:none on dragged element ([bfe9bb4](https://github.com/mattlewis92/angular-draggable-droppable/commit/bfe9bb4))
+* remove margin on the ghost element ([06396e6](https://github.com/mattlewis92/angular-draggable-droppable/commit/06396e6))
+* remove the drag helper provider from the public api ([48d4fe6](https://github.com/mattlewis92/angular-draggable-droppable/commit/48d4fe6))
+* round snap grids so dragging from each side is even ([fa8434b](https://github.com/mattlewis92/angular-draggable-droppable/commit/fa8434b))
+* set dimensions and z-index on ghost element ([9b5a6b0](https://github.com/mattlewis92/angular-draggable-droppable/commit/9b5a6b0))
+* **dragCursor:** don't default the drag cursor to `move` ([0a95ac7](https://github.com/mattlewis92/angular-draggable-droppable/commit/0a95ac7))
+* **droppable:** correctly account for scroll events when dragging elements ([c5ef775](https://github.com/mattlewis92/angular-draggable-droppable/commit/c5ef775)), closes [#23](https://github.com/mattlewis92/angular-draggable-droppable/issues/23)
+* **droppable:** dont throw when immediately destroying the directive ([dd3e89e](https://github.com/mattlewis92/angular-draggable-droppable/commit/dd3e89e))
+
+
+### Features
+
+* **dragActiveClass:** add class when dragging element ([ee1d06c](https://github.com/mattlewis92/angular-draggable-droppable/commit/ee1d06c))
+* **dragCancel$:** allow the drag to be cancelled ([538f9b7](https://github.com/mattlewis92/angular-draggable-droppable/commit/538f9b7)), closes [#30](https://github.com/mattlewis92/angular-draggable-droppable/issues/30)
+* **draggable:** add option to show the original element while dragging ([d010733](https://github.com/mattlewis92/angular-draggable-droppable/commit/d010733))
+* **dragOverClass:** add a class when an element is dragged over it ([76852bc](https://github.com/mattlewis92/angular-draggable-droppable/commit/76852bc))
+* **droppable:** add css class when any element is being dragged ([5995f81](https://github.com/mattlewis92/angular-draggable-droppable/commit/5995f81))
+* add a way of setting the scroll container if not the window ([9831d36](https://github.com/mattlewis92/angular-draggable-droppable/commit/9831d36))
+* **ghostElementAppendTo:** allow the ghost element parent to be customised ([f51214e](https://github.com/mattlewis92/angular-draggable-droppable/commit/f51214e))
+* **ghostElementCreated:** emit new event after the ghost element is created ([22530b9](https://github.com/mattlewis92/angular-draggable-droppable/commit/22530b9))
+* **ghostElementTemplate:** allow changing the ghost element contents ([ecc96ec](https://github.com/mattlewis92/angular-draggable-droppable/commit/ecc96ec))
+* expose interfaces for all events ([c174023](https://github.com/mattlewis92/angular-draggable-droppable/commit/c174023))
+* remove the DragAndDropModule.forRoot method ([5ae52a7](https://github.com/mattlewis92/angular-draggable-droppable/commit/5ae52a7))
+
+
+### Performance Improvements
+
+* deregister scroll listener once drag complete ([7e50d74](https://github.com/mattlewis92/angular-draggable-droppable/commit/7e50d74))
+* only recalculate the bounding rectangle once after scrolling ([d72e16b](https://github.com/mattlewis92/angular-draggable-droppable/commit/d72e16b))
+* only recompute draggable position on window scroll ([f6a5cde](https://github.com/mattlewis92/angular-draggable-droppable/commit/f6a5cde))
+
+
+### BREAKING CHANGES
+
+* The dragEnd event will now always fire before the drop event and not after
+* **dragCursor:** The drag cursor will no longer be set to `move` by default, to restore the
+behaviour set `dragCursor="move"` or use CSS on the draggable elements to change the cursor
+* To migrate use the `dragActiveClass` option and set this yourself with css
+* **dragCancel$:** The `dragStart` `$event.x` and `$event.y` values were removed as these were always
+`0`
+* the drag helper provider is now no longer exported as part of the public api, just
+remove it from your code to migrate
+* The `DragAndDropModule.forRoot` method was removed. To migrate just import the
+`DragAndDropModule` module directly
+* the drag end event is now called after the drop event to mimic how html5 drag and
+drop works
+* A cloned element is now created when the element is being dragged, and the dragged
+element is set to be positioned fixed. This may break some apps in some edge cases.
+
+
+
 <a name="3.0.1"></a>
 ## [3.0.1](https://github.com/mattlewis92/angular-draggable-droppable/compare/v3.0.0...v3.0.1) (2018-06-05)
 
