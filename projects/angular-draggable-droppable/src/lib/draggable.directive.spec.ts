@@ -98,10 +98,51 @@ describe('draggable directive', () => {
     scrollContainer: DraggableScrollContainerDirective;
   }
 
+  @Component({
+    // tslint:disable-line max-classes-per-file
+    template: `
+      <div
+        mwlDraggable
+        [dragAxis]="{x: true, y: true}"
+        (dragPointerDown)="outerDrag($event)"
+        (dragStart)="outerDrag($event)"
+        (ghostElementCreated)="outerDrag($event)"
+        (dragging)="outerDrag($event)"
+        (dragEnd)="outerDrag($event)"
+      >
+        <button
+          #draggableElement
+          mwlDraggable
+          [dragAxis]="{x: true, y: true}"
+          (dragPointerDown)="dragPointerDown($event)"
+          (dragStart)="dragStart($event)"
+          (ghostElementCreated)="ghostElementCreated($event)"
+          (dragging)="dragging($event)"
+          (dragEnd)="dragEnd($event)"
+        >
+          Drag me as well
+        </button>
+      </div>
+    `,
+    styles: [
+      `
+        div[mwlDraggable] {
+          position: relative;
+          width: 50px;
+          height: 50px;
+          z-index: 1;
+        }
+      `
+    ]
+  })
+  class InnerDragTestComponent extends TestComponent {
+    outerDrag = sinon.spy();
+  }
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [DragAndDropModule],
-      declarations: [TestComponent, ScrollTestComponent]
+      declarations: [TestComponent, ScrollTestComponent, InnerDragTestComponent]
     });
   });
 
@@ -496,9 +537,11 @@ describe('draggable directive', () => {
   it('should work with touch events', () => {
     const draggableElement =
       fixture.componentInstance.draggableElement.nativeElement;
-    triggerDomEvent('touchstart', draggableElement, {
-      touches: [{ clientX: 5, clientY: 10 }]
-    });
+    fixture.debugElement
+      .query(By.directive(DraggableDirective))
+      .triggerEventHandler('touchstart', {
+        touches: [{ clientX: 5, clientY: 10 }]
+      });
     triggerDomEvent('touchmove', draggableElement, {
       targetTouches: [{ clientX: 7, clientY: 10 }]
     });
@@ -818,5 +861,24 @@ describe('draggable directive', () => {
     expect(getComputedStyle(tmp).userSelect).to.equal('none');
     triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 10 });
     expect(getComputedStyle(tmp).userSelect).to.equal('auto');
+  });
+
+  it('should allow for draggable elements to be inside other draggable elements', () => {
+    const innerDragFixture = TestBed.createComponent(InnerDragTestComponent);
+    innerDragFixture.detectChanges();
+    document.body.appendChild(innerDragFixture.nativeElement);
+    const draggableElement =
+      innerDragFixture.componentInstance.draggableElement.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    expect(innerDragFixture.componentInstance.dragPointerDown).to.have.been
+      .calledOnce;
+    triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 12 });
+    expect(innerDragFixture.componentInstance.dragStart).to.have.been
+      .calledOnce;
+    expect(innerDragFixture.componentInstance.dragging).to.have.been.calledOnce;
+    triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 14 });
+    expect(innerDragFixture.componentInstance.dragEnd).to.have.been.calledOnce;
+    expect(innerDragFixture.componentInstance.outerDrag).not.to.have.been
+      .called;
   });
 });

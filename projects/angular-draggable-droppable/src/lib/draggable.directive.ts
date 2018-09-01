@@ -213,6 +213,12 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     const pointerDragged$: Observable<any> = this.pointerDown$.pipe(
       filter(() => this.canDrag()),
       mergeMap((pointerDownEvent: PointerEvent) => {
+        // fix for https://github.com/mattlewis92/angular-draggable-droppable/issues/61
+        // stop mouse events propagating up the chain
+        if (pointerDownEvent.event.stopPropagation) {
+          pointerDownEvent.event.stopPropagation();
+        }
+
         // hack to prevent text getting selected in safari while dragging
         const globalDragStyle: HTMLStyleElement = this.renderer.createElement(
           'style'
