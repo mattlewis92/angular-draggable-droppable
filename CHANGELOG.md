@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.1"></a>
+## [4.0.1](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.0.0...v4.0.1) (2018-09-01)
+
+
+### Bug Fixes
+
+* allow draggable elements insider other draggable elements to be dragged ([700fef1](https://github.com/mattlewis92/angular-draggable-droppable/commit/700fef1)), closes [#61](https://github.com/mattlewis92/angular-draggable-droppable/issues/61)
+
+
+
 <a name="4.0.0"></a>
 # [4.0.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v3.0.1...v4.0.0) (2018-08-29)
 

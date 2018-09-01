@@ -1,6 +1,6 @@
 {
   "name": "angular-draggable-droppable",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Drag and drop for angular 6.0+",
   "scripts": {
     "start": "concurrently --raw \"ng serve --open\" \"npm run test:watch\"",
