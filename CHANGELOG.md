@@ -13,10 +13,8 @@ All notable changes to this project will be documented in this file. See [standa
 * always remove global styles when clicking draggable elements ([c428eed](https://github.com/mattlewis92/angular-draggable-droppable/commit/c428eed)), closes [#44](https://github.com/mattlewis92/angular-draggable-droppable/issues/44)
 * append the ghost element to the body ([4f23661](https://github.com/mattlewis92/angular-draggable-droppable/commit/4f23661))
 * bump up z-index of element being dragged ([9d0f754](https://github.com/mattlewis92/angular-draggable-droppable/commit/9d0f754))
-* call drag end event after the drop event ([317d914](https://github.com/mattlewis92/angular-draggable-droppable/commit/317d914))
 * don't fire drop events when the droppable element is scrolled out of the view ([4c9224b](https://github.com/mattlewis92/angular-draggable-droppable/commit/4c9224b))
 * don't highlight text when dragging elements ([67d3a5e](https://github.com/mattlewis92/angular-draggable-droppable/commit/67d3a5e)), closes [#28](https://github.com/mattlewis92/angular-draggable-droppable/issues/28)
-* fire the drag end event before the drop event ([4bb3fde](https://github.com/mattlewis92/angular-draggable-droppable/commit/4bb3fde))
 * maintain old ghost element behaviour by default ([cf1bc61](https://github.com/mattlewis92/angular-draggable-droppable/commit/cf1bc61))
 * preserve original element styles after dragging ([f36ed2d](https://github.com/mattlewis92/angular-draggable-droppable/commit/f36ed2d))
 * remove automatic pointer-events:none on dragged element ([bfe9bb4](https://github.com/mattlewis92/angular-draggable-droppable/commit/bfe9bb4))
@@ -53,22 +51,17 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### BREAKING CHANGES
 
-* The dragEnd event will now always fire before the drop event and not after
-* **dragCursor:** The drag cursor will no longer be set to `move` by default, to restore the
-behaviour set `dragCursor="move"` or use CSS on the draggable elements to change the cursor
-* To migrate use the `dragActiveClass` option and set this yourself with css
-* **dragCancel$:** The `dragStart` `$event.x` and `$event.y` values were removed as these were always
-`0`
-* the drag helper provider is now no longer exported as part of the public api, just
-remove it from your code to migrate
 * The `DragAndDropModule.forRoot` method was removed. To migrate just import the
 `DragAndDropModule` module directly
-* the drag end event is now called after the drop event to mimic how html5 drag and
-drop works
+* the drag helper provider is now no longer exported as part of the public api, just
+remove it from your code to migrate
 * A cloned element is now created when the element is being dragged, and the dragged
 element is set to be positioned fixed. This may break some apps in some edge cases.
-
-
+* The `dragStart` `$event.x` and `$event.y` values were removed as these were always
+`0`
+* `pointer-events:none` is no longer automatically applied to elements while they are being dragged. To migrate use the `dragActiveClass` option and set this yourself with css
+* **dragCursor:** The drag cursor will no longer be set to `move` by default, to restore the
+behaviour set `dragCursor="move"` or use CSS on the draggable elements to change the cursor
 
 <a name="3.0.1"></a>
 ## [3.0.1](https://github.com/mattlewis92/angular-draggable-droppable/compare/v3.0.0...v3.0.1) (2018-06-05)
