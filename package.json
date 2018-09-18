@@ -7,7 +7,7 @@
     "build:demo": "ng build --prod",
     "build:lib": "copyfiles package.json projects/angular-draggable-droppable && ng build angular-draggable-droppable && npm run copyfiles",
     "build:clean": "rm -rf dist",
-    "copyfiles": "copyfiles CHANGELOG.md dist/angular-draggable-droppable",
+    "copyfiles": "copyfiles CHANGELOG.md README.md LICENSE dist/angular-draggable-droppable",
     "test": "npm run lint && ng test angular-draggable-droppable --watch=false --code-coverage && npm run build:lib && npm run build:clean",
     "test:watch": "ng test angular-draggable-droppable",
     "lint": "ng lint && ng lint angular-draggable-droppable",
