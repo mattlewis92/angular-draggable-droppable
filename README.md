@@ -77,7 +77,7 @@ https://mattlewis92.github.io/angular-draggable-droppable/docs/
 
 I wrote this library because I needed drag and drop whilst snapping to a grid. If you don't need this feature then I recommend checking out one of these other awesome drag and drop libraries:
 
-- [Angular material CDK drag and drop](https://beta-angular-material-io.firebaseapp.com/cdk/drag-drop/overview)
+- [Angular CDK drag and drop](https://material.angular.io/cdk/drag-drop/overview)
 - [angular-skyhook](https://github.com/cormacrelf/angular-skyhook)
 - [ng-drag-drop](https://github.com/ObaidUrRehman/ng-drag-drop)
 
