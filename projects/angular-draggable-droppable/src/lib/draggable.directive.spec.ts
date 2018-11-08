@@ -61,7 +61,7 @@ describe('draggable directive', () => {
   @Component({
     // tslint:disable-line max-classes-per-file
     template: `
-      <div mwlDraggableScrollContainer>
+      <div mwlDraggableScrollContainer [activeLongPressDrag]="true">
         <div
           #draggableElement
           mwlDraggable
@@ -880,5 +880,70 @@ describe('draggable directive', () => {
     expect(innerDragFixture.componentInstance.dragEnd).to.have.been.calledOnce;
     expect(innerDragFixture.componentInstance.outerDrag).not.to.have.been
       .called;
+  });
+
+  const clock = sinon.useFakeTimers();
+
+  it('should not start dragging with long touch', () => {
+    const scrollFixture = TestBed.createComponent(ScrollTestComponent);
+    scrollFixture.detectChanges();
+    document.body.appendChild(scrollFixture.nativeElement);
+    const draggableElement =
+      scrollFixture.componentInstance.draggableElement.nativeElement;
+    triggerDomEvent('touchstart', draggableElement, {
+      touches: [{ clientX: 5, clientY: 10 }]
+    });
+    clock.tick(200);
+
+    // Touch is too short
+    triggerDomEvent('touchmove', draggableElement, {
+      targetTouches: [{ clientX: 5, clientY: 10 }]
+    });
+    expect(scrollFixture.componentInstance.dragStart).not.to.have.been.called;
+
+    // Touch is too far from touchstart position
+    clock.tick(200);
+    triggerDomEvent('touchmove', draggableElement, {
+      targetTouches: [{ clientX: 30, clientY: 20 }]
+    });
+    expect(scrollFixture.componentInstance.dragStart).not.to.have.been.called;
+
+    // Scroll begin so drag can't start
+    clock.tick(400);
+    scrollFixture.componentInstance.scrollContainer.elementRef.nativeElement.scrollTop = 5;
+    triggerDomEvent('touchmove', draggableElement, {
+      targetTouches: [{ clientX: 5, clientY: 5 }]
+    });
+    expect(scrollFixture.componentInstance.dragStart).not.to.have.been.called;
+    triggerDomEvent('touchend', draggableElement, {
+      changedTouches: [{ clientX: 10, clientY: 18 }]
+    });
+  });
+
+  it('should start dragging with long touch', () => {
+    const scrollFixture = TestBed.createComponent(ScrollTestComponent);
+    scrollFixture.detectChanges();
+    document.body.appendChild(scrollFixture.nativeElement);
+    const draggableElement =
+      scrollFixture.componentInstance.draggableElement.nativeElement;
+    triggerDomEvent('touchstart', draggableElement, {
+      touches: [{ clientX: 5, clientY: 10 }]
+    });
+    clock.tick(400);
+    triggerDomEvent('touchmove', draggableElement, {
+      targetTouches: [{ clientX: 5, clientY: 10 }]
+    });
+    expect(scrollFixture.componentInstance.dragStart).to.have.been.calledOnce;
+
+    triggerDomEvent('touchmove', draggableElement, {
+      targetTouches: [{ clientX: 7, clientY: 12 }]
+    });
+    expect(scrollFixture.componentInstance.dragging).to.have.been.calledWith({
+      x: 2,
+      y: 2
+    });
+    triggerDomEvent('touchend', draggableElement, {
+      changedTouches: [{ clientX: 10, clientY: 18 }]
+    });
   });
 });
