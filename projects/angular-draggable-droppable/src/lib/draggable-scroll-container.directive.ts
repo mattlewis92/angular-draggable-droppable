@@ -6,7 +6,6 @@ import {
   OnInit,
   Renderer2
 } from '@angular/core';
-import { LongPressConfig } from './draggable.directive';
 
 @Directive({
   selector: '[mwlDraggableScrollContainer]'
@@ -24,7 +23,7 @@ export class DraggableScrollContainerDirective implements OnInit {
    * Delta of the
    */
   @Input()
-  longPressConfig: LongPressConfig = { duration: 300, delta: 30 };
+  longPressConfig = { duration: 300, delta: 30 };
 
   private cancelledScroll = false;
 

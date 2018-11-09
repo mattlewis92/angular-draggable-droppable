@@ -72,11 +72,6 @@ export interface TimeLongPress {
   timerEnd: number;
 }
 
-export interface LongPressConfig {
-  duration: number;
-  delta: number;
-}
-
 @Directive({
   selector: '[mwlDraggable]'
 })
