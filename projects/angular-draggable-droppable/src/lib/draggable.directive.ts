@@ -642,6 +642,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           if (
             !this.scrollContainer ||
             !this.scrollContainer.activeLongPressDrag ||
+            !hasContainerScrollbar ||
             isDragActivated
           ) {
             this.pointerMove$.next({
