@@ -222,7 +222,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
       mergeMap((pointerDownEvent: PointerEvent) => {
         // fix for https://github.com/mattlewis92/angular-draggable-droppable/issues/61
         // stop mouse events propagating up the chain
-        if (pointerDownEvent.event.stopPropagation) {
+        if (pointerDownEvent.event.stopPropagation && !this.scrollContainer) {
           pointerDownEvent.event.stopPropagation();
         }
 
@@ -608,6 +608,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   private onTouchStart(event: TouchEvent): void {
+    if (!this.scrollContainer) {
+      try {
+        event.preventDefault();
+      } catch (e) {}
+    }
     let hasContainerScrollbar: boolean;
     let startScrollPosition: any;
     let isDragActivated: boolean;
