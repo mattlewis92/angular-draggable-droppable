@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.1.0"></a>
+# [4.1.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.0.2...v4.1.0) (2019-02-17)
+
+
+### Bug Fixes
+
+* allow angular 8 peer dependency ([f936805](https://github.com/mattlewis92/angular-draggable-droppable/commit/f936805))
+
+
+### Features
+
+* **draggable-scroll-container:** Added input activeLongPressDrag ([#79](https://github.com/mattlewis92/angular-draggable-droppable/issues/79)) ([f98f586](https://github.com/mattlewis92/angular-draggable-droppable/commit/f98f586)), closes [#78](https://github.com/mattlewis92/angular-draggable-droppable/issues/78)
+
+
+
 <a name="4.0.2"></a>
 ## [4.0.2](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.0.1...v4.0.2) (2018-09-18)
 
