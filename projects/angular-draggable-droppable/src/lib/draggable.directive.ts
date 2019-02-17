@@ -67,6 +67,11 @@ export interface PointerEvent {
   event: MouseEvent | TouchEvent;
 }
 
+export interface TimeLongPress {
+  timerBegin: number;
+  timerEnd: number;
+}
+
 @Directive({
   selector: '[mwlDraggable]'
 })
@@ -194,6 +199,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
   private destroy$ = new Subject();
 
+  private timeLongPress: TimeLongPress = { timerBegin: 0, timerEnd: 0 };
+
   /**
    * @hidden
    */
@@ -215,7 +222,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
       mergeMap((pointerDownEvent: PointerEvent) => {
         // fix for https://github.com/mattlewis92/angular-draggable-droppable/issues/61
         // stop mouse events propagating up the chain
-        if (pointerDownEvent.event.stopPropagation) {
+        if (pointerDownEvent.event.stopPropagation && !this.scrollContainer) {
           pointerDownEvent.event.stopPropagation();
         }
 
@@ -601,16 +608,49 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   private onTouchStart(event: TouchEvent): void {
+    if (!this.scrollContainer) {
+      try {
+        event.preventDefault();
+      } catch (e) {}
+    }
+    let hasContainerScrollbar: boolean;
+    let startScrollPosition: any;
+    let isDragActivated: boolean;
+    if (this.scrollContainer && this.scrollContainer.activeLongPressDrag) {
+      this.timeLongPress.timerBegin = Date.now();
+      isDragActivated = false;
+      hasContainerScrollbar = this.scrollContainer.hasScrollbar();
+      startScrollPosition = this.getScrollPosition();
+    }
     if (!this.eventListenerSubscriptions.touchmove) {
       this.eventListenerSubscriptions.touchmove = this.renderer.listen(
         'document',
         'touchmove',
         (touchMoveEvent: TouchEvent) => {
-          this.pointerMove$.next({
-            event: touchMoveEvent,
-            clientX: touchMoveEvent.targetTouches[0].clientX,
-            clientY: touchMoveEvent.targetTouches[0].clientY
-          });
+          if (
+            this.scrollContainer &&
+            this.scrollContainer.activeLongPressDrag &&
+            !isDragActivated &&
+            hasContainerScrollbar
+          ) {
+            isDragActivated = this.shouldBeginDrag(
+              event,
+              touchMoveEvent,
+              startScrollPosition
+            );
+          }
+          if (
+            !this.scrollContainer ||
+            !this.scrollContainer.activeLongPressDrag ||
+            !hasContainerScrollbar ||
+            isDragActivated
+          ) {
+            this.pointerMove$.next({
+              event: touchMoveEvent,
+              clientX: touchMoveEvent.targetTouches[0].clientX,
+              clientY: touchMoveEvent.targetTouches[0].clientY
+            });
+          }
         }
       );
     }
@@ -625,6 +665,9 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     if (this.eventListenerSubscriptions.touchmove) {
       this.eventListenerSubscriptions.touchmove();
       delete this.eventListenerSubscriptions.touchmove;
+      if (this.scrollContainer && this.scrollContainer.activeLongPressDrag) {
+        this.scrollContainer.enableScroll();
+      }
     }
     this.pointerUp$.next({
       event,
@@ -677,5 +720,41 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         left: window.pageXOffset || document.documentElement.scrollLeft
       };
     }
+  }
+
+  private shouldBeginDrag(
+    event: TouchEvent,
+    touchMoveEvent: TouchEvent,
+    startScrollPosition: any
+  ): boolean {
+    const moveScrollPosition = this.getScrollPosition();
+    const deltaScroll = {
+      top: Math.abs(moveScrollPosition.top - startScrollPosition.top),
+      left: Math.abs(moveScrollPosition.left - startScrollPosition.left)
+    };
+    const deltaX =
+      Math.abs(
+        touchMoveEvent.targetTouches[0].clientX - event.touches[0].clientX
+      ) - deltaScroll.left;
+    const deltaY =
+      Math.abs(
+        touchMoveEvent.targetTouches[0].clientY - event.touches[0].clientY
+      ) - deltaScroll.top;
+    const deltaTotal = deltaX + deltaY;
+    if (
+      deltaTotal > this.scrollContainer.longPressConfig.delta ||
+      deltaScroll.top > 0 ||
+      deltaScroll.left > 0
+    ) {
+      this.timeLongPress.timerBegin = Date.now();
+    }
+    this.timeLongPress.timerEnd = Date.now();
+    const duration =
+      this.timeLongPress.timerEnd - this.timeLongPress.timerBegin;
+    if (duration >= this.scrollContainer.longPressConfig.duration) {
+      this.scrollContainer.disableScroll();
+      return true;
+    }
+    return false;
   }
 }
