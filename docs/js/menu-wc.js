@@ -123,6 +123,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                     <li class="link">
                         <a href="interfaces/SnapGrid.html" data-type="entity-link">SnapGrid</a>
                     </li>
+                    <li class="link">
+                        <a href="interfaces/TimeLongPress.html" data-type="entity-link">TimeLongPress</a>
+                    </li>
             </ul>
         </li>
         <li class="chapter">
