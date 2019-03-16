@@ -3,10 +3,11 @@
 [![Build Status](https://travis-ci.org/mattlewis92/angular-draggable-droppable.svg?branch=master)](https://travis-ci.org/mattlewis92/angular-draggable-droppable)
 [![codecov](https://codecov.io/gh/mattlewis92/angular-draggable-droppable/branch/master/graph/badge.svg)](https://codecov.io/gh/mattlewis92/angular-draggable-droppable)
 [![npm version](https://badge.fury.io/js/angular-draggable-droppable.svg)](http://badge.fury.io/js/angular-draggable-droppable)
-[![devDependency Status](https://david-dm.org/mattlewis92/angular-draggable-droppable/dev-status.svg)](https://david-dm.org/mattlewis92/angular-draggable-droppable#info=devDependencies)
-[![GitHub issues](https://img.shields.io/github/issues/mattlewis92/angular-draggable-droppable.svg)](https://github.com/mattlewis92/angular-draggable-droppable/issues)
-[![GitHub stars](https://img.shields.io/github/stars/mattlewis92/angular-draggable-droppable.svg)](https://github.com/mattlewis92/angular-draggable-droppable/stargazers)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/mattlewis92/angular-draggable-droppable/master/LICENSE)
+[![Twitter Follow](https://img.shields.io/twitter/follow/mattlewis92_.svg)](https://twitter.com/mattlewis92_)
+
+<a href="https://www.patreon.com/mattlewis92">
+	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
+</a>
 
 ## Demo
 
