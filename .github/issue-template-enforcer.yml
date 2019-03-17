@@ -1,10 +1,8 @@
 closeComment: >
-  This issue has been closed automatically as it did not follow the issue template, please **open a new issue** that follows the bug report or feature request template.
+  While the project is free to use under the MIT licence, if you'd like to file an issue to receive support about a bug you found, a feature you'd like or if you just have a question, you'll need to be a [Bronze sponsor or higher on Patreon](https://www.patreon.com/mattlewis92) to do this.<br><br>
 
-  If you would like to submit a support issue or get a faster reply, please consider [supporting me on Patreon](https://www.patreon.com/mattlewis92). Thank you! ✌️
+  Thank you! ✌️
 
-skipAuthors:
-  - mattlewis92
+lockOnClose: true
 
-matchComment: >
-  Thanks so much for opening an issue! If you'd like me to give priority to answering your issue or would just like to support this project, then please consider [supporting me on Patreon](https://www.patreon.com/mattlewis92)
+allowNoTemplates: true
