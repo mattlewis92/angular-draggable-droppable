@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.2.0"></a>
+# [4.2.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.1.0...v4.2.0) (2019-03-17)
+
+
+### Features
+
+* expose ghost element and starting mouse position on ghost element created event ([d233788](https://github.com/mattlewis92/angular-draggable-droppable/commit/d233788)), closes [#81](https://github.com/mattlewis92/angular-draggable-droppable/issues/81) [#85](https://github.com/mattlewis92/angular-draggable-droppable/issues/85)
+
+
+
 <a name="4.1.0"></a>
 # [4.1.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.0.2...v4.1.0) (2019-02-17)
 
