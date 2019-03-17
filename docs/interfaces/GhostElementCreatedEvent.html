@@ -46,7 +46,7 @@
 
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li>TimeLongPress</li>
+  <li>GhostElementCreatedEvent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -82,10 +82,13 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#timerBegin">timerBegin</a>
+                                        <a href="#clientX">clientX</a>
                                 </li>
                                 <li>
-                                        <a href="#timerEnd">timerEnd</a>
+                                        <a href="#clientY">clientY</a>
+                                </li>
+                                <li>
+                                        <a href="#element">element</a>
                                 </li>
                             </ul>
                         </td>
@@ -102,13 +105,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="timerBegin"></a>
-                                        <span class="name"><b>timerBegin</b><a href="#timerBegin"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="clientX"></a>
+                                        <span class="name"><b>clientX</b><a href="#clientX"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>timerBegin:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                        <code>clientX:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -131,13 +134,13 @@
                         <tbody>
                                 <tr>
                                     <td class="col-md-4">
-                                        <a name="timerEnd"></a>
-                                        <span class="name"><b>timerEnd</b><a href="#timerEnd"><span class="icon ion-ios-link"></span></a></span>
+                                        <a name="clientY"></a>
+                                        <span class="name"><b>clientY</b><a href="#clientY"><span class="icon ion-ios-link"></span></a></span>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <code>timerEnd:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                        <code>clientY:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
 </code>
                                     </td>
                                 </tr>
@@ -146,6 +149,35 @@
                                     <tr>
                                         <td class="col-md-4">
                                             <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="element"></a>
+                                        <span class="name"><b>element</b><a href="#element"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>element:     <code>HTMLElement</code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code>HTMLElement</code>
 
                                         </td>
                                     </tr>
@@ -957,7 +989,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
-            var COMPODOC_CURRENT_PAGE_URL = 'TimeLongPress.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'GhostElementCreatedEvent.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

@@ -118,6 +118,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <a href="interfaces/DropEvent.html" data-type="entity-link">DropEvent</a>
                     </li>
                     <li class="link">
+                        <a href="interfaces/GhostElementCreatedEvent.html" data-type="entity-link">GhostElementCreatedEvent</a>
+                    </li>
+                    <li class="link">
                         <a href="interfaces/PointerEvent.html" data-type="entity-link">PointerEvent</a>
                     </li>
                     <li class="link">
