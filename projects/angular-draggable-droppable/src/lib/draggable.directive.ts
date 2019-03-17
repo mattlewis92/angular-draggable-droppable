@@ -72,6 +72,12 @@ export interface TimeLongPress {
   timerEnd: number;
 }
 
+export interface GhostElementCreatedEvent {
+  clientX: number;
+  clientY: number;
+  element: HTMLElement;
+}
+
 @Directive({
   selector: '[mwlDraggable]'
 })
@@ -154,7 +160,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
    * Called after the ghost element has been created
    */
   @Output()
-  ghostElementCreated = new EventEmitter();
+  ghostElementCreated = new EventEmitter<GhostElementCreatedEvent>();
 
   /**
    * Called when the element is being dragged
@@ -338,7 +344,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           share()
         );
 
-        dragStarted$.subscribe(() => {
+        dragStarted$.subscribe(({ clientX, clientY, x, y }) => {
           this.zone.run(() => {
             this.dragStart.next({ cancelDrag$ });
           });
@@ -398,7 +404,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             }
 
             this.zone.run(() => {
-              this.ghostElementCreated.emit();
+              this.ghostElementCreated.emit({
+                clientX: clientX - x,
+                clientY: clientY - y,
+                element: clone
+              });
             });
 
             dragEnded$.subscribe(() => {

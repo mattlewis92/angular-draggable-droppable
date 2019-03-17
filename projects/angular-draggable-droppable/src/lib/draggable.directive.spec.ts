@@ -689,6 +689,21 @@ describe('draggable directive', () => {
     expect(draggableElement.style.visibility).not.to.be.ok;
   });
 
+  it('should expose the mouse coordinates and ghost element', () => {
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousemove', draggableElement, { clientX: 6, clientY: 10 });
+    const ghostElement = draggableElement.nextSibling as HTMLElement;
+    expect(
+      fixture.componentInstance.ghostElementCreated
+    ).to.have.been.calledWith({
+      element: ghostElement,
+      clientX: 5,
+      clientY: 10
+    });
+  });
+
   it('should create a clone of the element and leave old element visible', () => {
     fixture.componentInstance.showOriginalElementWhileDragging = true;
     fixture.detectChanges();

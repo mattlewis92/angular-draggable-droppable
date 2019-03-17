@@ -8,5 +8,6 @@ export {
   DragPointerDownEvent,
   DragStartEvent,
   DragMoveEvent,
-  DragEndEvent
+  DragEndEvent,
+  GhostElementCreatedEvent
 } from './lib/draggable.directive';
