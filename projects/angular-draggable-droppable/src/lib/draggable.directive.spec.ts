@@ -66,6 +66,7 @@ describe('draggable directive', () => {
           #draggableElement
           mwlDraggable
           [dragAxis]="{x: true, y: true}"
+          [validateDrag]="validateDrag"
           (dragPointerDown)="dragPointerDown($event)"
           (dragStart)="dragStart($event)"
           (ghostElementCreated)="ghostElementCreated($event)"
@@ -959,6 +960,32 @@ describe('draggable directive', () => {
     });
     triggerDomEvent('touchend', draggableElement, {
       changedTouches: [{ clientX: 10, clientY: 18 }]
+    });
+  });
+
+  it('should expose the css transform on the validate drag function', () => {
+    const scrollFixture = TestBed.createComponent(ScrollTestComponent);
+    scrollFixture.componentInstance.validateDrag = sinon.stub().returns(true);
+    scrollFixture.detectChanges();
+    document.body.appendChild(scrollFixture.nativeElement);
+    const draggableElement =
+      scrollFixture.componentInstance.draggableElement.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 12 });
+    scrollFixture.componentInstance.scrollContainer.elementRef.nativeElement.scrollTop = 5;
+    scrollFixture.debugElement
+      .query(By.directive(DraggableScrollContainerDirective))
+      .triggerEventHandler('scroll', {});
+    triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 14 });
+    expect(
+      scrollFixture.componentInstance.validateDrag
+    ).to.have.been.calledWith({
+      x: 0,
+      y: 9,
+      transform: {
+        x: 0,
+        y: 4
+      }
     });
   });
 });

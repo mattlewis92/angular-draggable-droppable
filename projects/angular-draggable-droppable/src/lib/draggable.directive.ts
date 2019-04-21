@@ -60,7 +60,14 @@ export interface DragEndEvent extends Coordinates {
   dragCancelled: boolean;
 }
 
-export type ValidateDrag = (coordinates: Coordinates) => boolean;
+export interface ValidateDragParams extends Coordinates {
+  transform: {
+    x: number;
+    y: number;
+  };
+}
+
+export type ValidateDrag = (params: ValidateDragParams) => boolean;
 
 export interface PointerEvent {
   clientX: number;
@@ -332,7 +339,13 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             };
           }),
           filter(
-            ({ x, y }) => !this.validateDrag || this.validateDrag({ x, y })
+            ({ x, y, transformX, transformY }) =>
+              !this.validateDrag ||
+              this.validateDrag({
+                x,
+                y,
+                transform: { x: transformX, y: transformY }
+              })
           ),
           takeUntil(dragComplete$),
           share()
