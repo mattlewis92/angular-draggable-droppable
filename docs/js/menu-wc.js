@@ -129,6 +129,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                     <li class="link">
                         <a href="interfaces/TimeLongPress.html" data-type="entity-link">TimeLongPress</a>
                     </li>
+                    <li class="link">
+                        <a href="interfaces/ValidateDragParams.html" data-type="entity-link">ValidateDragParams</a>
+                    </li>
             </ul>
         </li>
         <li class="chapter">
