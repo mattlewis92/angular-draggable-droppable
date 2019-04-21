@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.3.0"></a>
+# [4.3.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.2.0...v4.3.0) (2019-04-21)
+
+
+### Bug Fixes
+
+* expose ValidateDrag type ([32f4ce3](https://github.com/mattlewis92/angular-draggable-droppable/commit/32f4ce3))
+
+
+### Features
+
+* expose css transform on validate drag function ([3c5c5b9](https://github.com/mattlewis92/angular-draggable-droppable/commit/3c5c5b9))
+* support auto scrolling when dragging ([78bdeb5](https://github.com/mattlewis92/angular-draggable-droppable/commit/78bdeb5))
+
+
+
 <a name="4.2.0"></a>
 # [4.2.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.1.0...v4.2.0) (2019-03-17)
 
