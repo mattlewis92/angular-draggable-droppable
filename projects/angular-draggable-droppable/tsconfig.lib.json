@@ -12,10 +12,8 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "types": [],
-    "lib": [
-      "dom",
-      "es2015"
-    ]
+    "lib": ["dom", "es2015"],
+    "noImplicitAny": false
   },
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
@@ -25,9 +23,6 @@
     "strictInjectionParameters": true,
     "enableResourceInlining": true
   },
-  "exclude": [
-    "src/test.ts",
-    "src/test-utils.ts",
-    "**/*.spec.ts"
-  ]
+  "include": ["custom-typings.d.ts", "src/**/*.ts"],
+  "exclude": ["src/test.ts", "src/test-utils.ts", "**/*.spec.ts"]
 }

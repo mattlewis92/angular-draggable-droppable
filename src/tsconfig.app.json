@@ -6,6 +6,12 @@
   },
   "exclude": [
     "src/test.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "../projects/**/*.spec.ts"
+  ],
+  "include": [
+    "**/*.ts",
+    "../projects/angular-draggable-droppable/custom-typings.d.ts",
+    "../projects/src/**/*.ts"
   ]
 }

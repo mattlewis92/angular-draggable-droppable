@@ -3,5 +3,9 @@
   "dest": "../../dist/angular-draggable-droppable",
   "lib": {
     "entryFile": "src/public_api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "tslib",
+    "dom-autoscroller"
+  ]
 }

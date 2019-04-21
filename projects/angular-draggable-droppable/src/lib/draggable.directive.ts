@@ -30,6 +30,7 @@ import {
 } from 'rxjs/operators';
 import { CurrentDragData, DraggableHelper } from './draggable-helper.provider';
 import { DOCUMENT } from '@angular/common';
+import autoScroll from 'dom-autoscroller';
 import { DraggableScrollContainerDirective } from './draggable-scroll-container.directive';
 
 export interface Coordinates {
@@ -207,6 +208,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
   private timeLongPress: TimeLongPress = { timerBegin: 0, timerEnd: 0 };
 
+  private scroller: { destroy: () => void };
+
   /**
    * @hidden
    */
@@ -349,6 +352,20 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             this.dragStart.next({ cancelDrag$ });
           });
 
+          this.scroller = autoScroll(
+            [
+              this.scrollContainer
+                ? this.scrollContainer.elementRef.nativeElement
+                : this.document.defaultView
+            ],
+            {
+              margin: 20,
+              autoScroll() {
+                return true;
+              }
+            }
+          );
+
           this.renderer.addClass(
             this.element.nativeElement,
             this.dragActiveClass
@@ -441,6 +458,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             })
           )
           .subscribe(({ x, y, dragCancelled }) => {
+            this.scroller.destroy();
             this.zone.run(() => {
               this.dragEnd.next({ x, y, dragCancelled });
             });
