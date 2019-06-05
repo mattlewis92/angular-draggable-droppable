@@ -1,6 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
+import * as insert from 'rollup-plugin-insert';
 
 const input =
   'dist/angular-draggable-droppable/bundles/angular-draggable-droppable.umd.js';
@@ -20,7 +21,10 @@ const base = {
       '@angular/common': 'ng.common'
     }
   },
-  plugins: [resolve({ module: true }), commonjs()],
+  plugins: [
+    insert.prepend('var window = typeof window !== "object" ? window = {} : window;'),
+    resolve({ module: true }), commonjs()
+  ],
   external: ['@angular/core', '@angular/common', 'rxjs', 'rxjs/operators']
 };
 
