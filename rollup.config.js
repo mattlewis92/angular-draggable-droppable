@@ -23,7 +23,9 @@ const base = {
   },
   plugins: [
     replace({
-      'var requestAnimationFrame': "var window = typeof window === \"undefined\" ? {} : window;\nvar requestAnimationFrame"
+      'var requestAnimationFrame': "var window = typeof window !== \"undefined\" ? window : {};\nvar requestAnimationFrame",
+      'window\.setTimeout': 'setTimeout',
+      'window\.clearTimeout': 'clearTimeout'
     }),
     resolve({ module: true }),
     commonjs()
