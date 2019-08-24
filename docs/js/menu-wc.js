@@ -80,6 +80,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             <a href="directives/DraggableDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">DraggableDirective</a>
                                         </li>
                                         <li class="link">
+                                            <a href="directives/DraggableScrollContainerDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">DraggableScrollContainerDirective</a>
+                                        </li>
+                                        <li class="link">
                                             <a href="directives/DroppableDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">DroppableDirective</a>
                                         </li>
                                 </ul>
