@@ -6,6 +6,7 @@
     "max-inline-declarations": false,
     "enforce-component-selector": false,
     "no-unused-css": false,
-    "no-empty-interface": false
+    "no-empty-interface": false,
+    "jsdoc-format": false
   }
 }

@@ -67,6 +67,8 @@ class DemoApp {
 }
 ```
 
+Note: if draggable elements are inside a scrollable element then you will need to add `mwlDraggableScrollContainer` as an attribute to the scrollable container.
+
 You may also find it useful to view the [demo source](https://github.com/mattlewis92/angular-draggable-droppable/tree/master/src/demo).
 
 ## Documentation

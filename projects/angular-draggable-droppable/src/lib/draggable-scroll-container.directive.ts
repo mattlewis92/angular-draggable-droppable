@@ -7,6 +7,14 @@ import {
   Renderer2
 } from '@angular/core';
 
+/**
+ * If the window isn't scrollable, then place this on the scrollable container that draggable elements are inside. e.g.
+ * ```html
+  <div style="overflow: scroll" mwlDraggableScrollContainer>
+    <div mwlDraggable>Drag me!</div>
+  </div>
+  ```
+ */
 @Directive({
   selector: '[mwlDraggableScrollContainer]'
 })
@@ -27,6 +35,9 @@ export class DraggableScrollContainerDirective implements OnInit {
 
   private cancelledScroll = false;
 
+  /**
+   * @hidden
+   */
   constructor(
     public elementRef: ElementRef<HTMLElement>,
     private renderer: Renderer2,
@@ -47,16 +58,25 @@ export class DraggableScrollContainerDirective implements OnInit {
     });
   }
 
+  /**
+   * @hidden
+   */
   disableScroll(): void {
     this.cancelledScroll = true;
     this.renderer.setStyle(this.elementRef.nativeElement, 'overflow', 'hidden');
   }
 
+  /**
+   * @hidden
+   */
   enableScroll(): void {
     this.cancelledScroll = false;
     this.renderer.setStyle(this.elementRef.nativeElement, 'overflow', 'auto');
   }
 
+  /**
+   * @hidden
+   */
   hasScrollbar(): boolean {
     const containerHasHorizontalScroll =
       this.elementRef.nativeElement.scrollWidth -

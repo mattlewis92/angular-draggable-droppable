@@ -2,7 +2,8 @@
   "extends": "./tsconfig.json",
   "files": [
     "projects/angular-draggable-droppable/src/lib/drag-and-drop.module.ts",
-    "projects/angular-draggable-droppable/src/lib//draggable.directive.ts",
-    "projects/angular-draggable-droppable/src/lib//droppable.directive.ts"
+    "projects/angular-draggable-droppable/src/lib/draggable.directive.ts",
+    "projects/angular-draggable-droppable/src/lib/droppable.directive.ts",
+    "projects/angular-draggable-droppable/src/lib/draggable-scroll-container.directive.ts"
   ]
 }
