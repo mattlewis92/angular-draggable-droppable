@@ -18,10 +18,7 @@
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
-                <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search">
-</div>
-            <compodoc-menu></compodoc-menu>
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
         </div>
 
         <div class="container-fluid main">
@@ -36,18 +33,18 @@
 
 
 <ol class="breadcrumb">
-  <li>Modules</li>
-  <li>DragAndDropModule</li>
+    <li>Modules</li>
+    <li>DragAndDropModule</li>
 </ol>
 
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
-        </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
+    <li  class="active" >
+        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+    <li >
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
 </ul>
 
 <div class="tab-content">
@@ -61,40 +58,44 @@
         </p>
 
 
-        
+
 
         <div class="container-fluid module">
             <div class="row">
                 <div class="col-sm-3">
-                    <h3>Declarations<a href="https://angular.io/api/core/NgModule#declarations" target="_blank" title="Official documentation about module declarations"><span class="icon ion-ios-information-circle-outline"></span></a></h3>
+                    <h3>Declarations<a href="https://angular.io/api/core/NgModule#declarations" target="_blank"
+                            title="Official documentation about module declarations"><span class="icon ion-ios-information-circle-outline"></span></a></h3>
                     <ul class="list-group">
-                            <li class="list-group-item">
-                                <a href="../directives/DraggableDirective.html">DraggableDirective</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../directives/DraggableScrollContainerDirective.html">DraggableScrollContainerDirective</a>
-                            </li>
-                            <li class="list-group-item">
-                                <a href="../directives/DroppableDirective.html">DroppableDirective</a>
-                            </li>
+                        <li class="list-group-item">
+                            <a href="../directives/DraggableDirective.html">DraggableDirective</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="../directives/DraggableScrollContainerDirective.html">DraggableScrollContainerDirective</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="../directives/DroppableDirective.html">DroppableDirective</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h3>Exports<a href="https://angular.io/api/core/NgModule#exports" target="_blank" title="Official documentation about module exports"><span class="icon ion-ios-information-circle-outline"></a></h3>
+                    <h3>Exports<a href="https://angular.io/api/core/NgModule#exports" target="_blank" title="Official documentation about module exports"><span
+                                class="icon ion-ios-information-circle-outline"></a></h3>
                     <ul class="list-group">
-                            <li class="list-group-item">
-                                    <a href="../directives/DraggableDirective.html" >DraggableDirective</a>
-                            </li>
-                            <li class="list-group-item">
-                                    <a href="../directives/DraggableScrollContainerDirective.html" >DraggableScrollContainerDirective</a>
-                            </li>
-                            <li class="list-group-item">
-                                    <a href="../directives/DroppableDirective.html" >DroppableDirective</a>
-                            </li>
+                        <li class="list-group-item">
+                            <a href="../directives/DraggableDirective.html">DraggableDirective</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="../directives/DraggableScrollContainerDirective.html">DraggableScrollContainerDirective</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="../directives/DroppableDirective.html">DroppableDirective</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
+
+
     </div>
 
 
@@ -130,7 +131,7 @@ export class DragAndDropModule {}
 
 
 
-
+                   
 
 
 
@@ -157,7 +158,9 @@ export class DragAndDropModule {}
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <script src="../js/menu-wc.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
