@@ -178,13 +178,15 @@ describe('draggable directive', () => {
       y: 0
     });
     const ghostElement = draggableElement.nextSibling as HTMLElement;
-    expect(ghostElement.style.transform).to.equal('translate(2px, 0px)');
+    expect(ghostElement.style.transform).to.equal('translate3d(2px, 0px, 0px)');
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 8 });
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({
       x: 2,
       y: -2
     });
-    expect(ghostElement.style.transform).to.equal('translate(2px, -2px)');
+    expect(ghostElement.style.transform).to.equal(
+      'translate3d(2px, -2px, 0px)'
+    );
     triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 8 });
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
       x: 2,
@@ -226,7 +228,7 @@ describe('draggable directive', () => {
       y: 2
     });
     const ghostElement = draggableElement.nextSibling as HTMLElement;
-    expect(ghostElement.style.transform).to.equal('translate(0px, 2px)');
+    expect(ghostElement.style.transform).to.equal('translate3d(0px, 2px, 0px)');
     triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 12 });
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
       x: 0,
@@ -247,7 +249,7 @@ describe('draggable directive', () => {
       y: 0
     });
     const ghostElement = draggableElement.nextSibling as HTMLElement;
-    expect(ghostElement.style.transform).to.equal('translate(2px, 0px)');
+    expect(ghostElement.style.transform).to.equal('translate3d(2px, 0px, 0px)');
     triggerDomEvent('mouseup', draggableElement, { clientX: 7, clientY: 12 });
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
       x: 2,
@@ -552,7 +554,7 @@ describe('draggable directive', () => {
       y: 0
     });
     const ghostElement = draggableElement.nextSibling as HTMLElement;
-    expect(ghostElement.style.transform).to.equal('translate(2px, 0px)');
+    expect(ghostElement.style.transform).to.equal('translate3d(2px, 0px, 0px)');
     triggerDomEvent('touchmove', draggableElement, {
       targetTouches: [{ clientX: 7, clientY: 8 }]
     });
@@ -560,7 +562,9 @@ describe('draggable directive', () => {
       x: 2,
       y: -2
     });
-    expect(ghostElement.style.transform).to.equal('translate(2px, -2px)');
+    expect(ghostElement.style.transform).to.equal(
+      'translate3d(2px, -2px, 0px)'
+    );
     triggerDomEvent('touchend', draggableElement, {
       changedTouches: [{ clientX: 7, clientY: 8 }]
     });
@@ -586,7 +590,7 @@ describe('draggable directive', () => {
       y: 0
     });
     const ghostElement = draggableElement.nextSibling as HTMLElement;
-    expect(ghostElement.style.transform).to.equal('translate(2px, 0px)');
+    expect(ghostElement.style.transform).to.equal('translate3d(2px, 0px, 0px)');
     triggerDomEvent('touchmove', draggableElement, {
       targetTouches: [{ clientX: 7, clientY: 8 }]
     });
@@ -594,7 +598,9 @@ describe('draggable directive', () => {
       x: 2,
       y: -2
     });
-    expect(ghostElement.style.transform).to.equal('translate(2px, -2px)');
+    expect(ghostElement.style.transform).to.equal(
+      'translate3d(2px, -2px, 0px)'
+    );
     triggerDomEvent('touchcancel', draggableElement, {
       changedTouches: [{ clientX: 7, clientY: 8 }]
     });
@@ -778,13 +784,15 @@ describe('draggable directive', () => {
       y: 0
     });
     const ghostElement = draggableElement.nextSibling as HTMLElement;
-    expect(ghostElement.style.transform).to.equal('translate(2px, 0px)');
+    expect(ghostElement.style.transform).to.equal('translate3d(2px, 0px, 0px)');
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 8 });
     expect(fixture.componentInstance.dragging).to.have.been.calledWith({
       x: 2,
       y: -2
     });
-    expect(ghostElement.style.transform).to.equal('translate(2px, -2px)');
+    expect(ghostElement.style.transform).to.equal(
+      'translate3d(2px, -2px, 0px)'
+    );
     fixture.componentInstance.dragStart.getCall(0).args[0].cancelDrag$.next();
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
       x: 2,
@@ -847,7 +855,7 @@ describe('draggable directive', () => {
       y: 2
     });
     const ghostElement = draggableElement.nextSibling as HTMLElement;
-    expect(ghostElement.style.transform).to.equal('translate(0px, 2px)');
+    expect(ghostElement.style.transform).to.equal('translate3d(0px, 2px, 0px)');
     scrollFixture.componentInstance.scrollContainer.elementRef.nativeElement.scrollTop = 5;
     scrollFixture.debugElement
       .query(By.directive(DraggableScrollContainerDirective))
@@ -857,7 +865,7 @@ describe('draggable directive', () => {
       x: 0,
       y: 9
     });
-    expect(ghostElement.style.transform).to.equal('translate(0px, 4px)');
+    expect(ghostElement.style.transform).to.equal('translate3d(0px, 4px, 0px)');
     triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 14 });
     expect(scrollFixture.componentInstance.dragEnd).to.have.been.calledWith({
       x: 0,

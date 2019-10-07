@@ -415,7 +415,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               width: `${rect.width}px`,
               height: `${rect.height}px`,
               cursor: this.dragCursor,
-              margin: '0'
+              margin: '0',
+              willChange: 'transform'
             });
 
             if (this.ghostElementTemplate) {
@@ -515,7 +516,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             this.dragging.next({ x, y });
           });
           if (this.ghostElement) {
-            const transform = `translate(${transformX}px, ${transformY}px)`;
+            const transform = `translate3d(${transformX}px, ${transformY}px, 0px)`;
             this.setElementStyles(this.ghostElement, {
               transform,
               '-webkit-transform': transform,
