@@ -1,6 +1,13 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [4.3.3](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.2...v4.3.3) (2019-10-07)
+
+
+### Bug Fixes
+
+* allow angular 9 peer dependency ([cb7cf2e](https://github.com/mattlewis92/angular-draggable-droppable/commit/cb7cf2e))
 
 <a name="4.3.2"></a>
 ## [4.3.2](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.1...v4.3.2) (2019-06-26)
