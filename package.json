@@ -12,9 +12,7 @@
     "test:watch": "ng test angular-draggable-droppable",
     "lint": "ng lint && ng lint angular-draggable-droppable",
     "commit": "git-cz",
-    "commitmsg": "validate-commit-msg",
     "codecov": "cat coverage/lcov.info | codecov",
-    "precommit": "pretty-quick --staged",
     "compodoc": "compodoc -p tsconfig-compodoc.json -d dist/demo/docs --disableGraph --disableCoverage --disablePrivate --disableInternal --disableLifeCycleHooks --disableProtected",
     "prerelease": "npm test",
     "release:git": "standard-version && git push --follow-tags origin master",
@@ -105,5 +103,11 @@
   },
   "dependencies": {
     "dom-autoscroller": "^2.3.4"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "validate-commit-msg",
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
