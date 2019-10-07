@@ -16,7 +16,8 @@ describe('droppable directive', () => {
         #draggableElement
         mwlDraggable
         [dropData]="dropData"
-        (dragEnd)="dragEnd()">
+        (dragEnd)="dragEnd()"
+      >
         Drag me!
       </div>
       <div
@@ -27,7 +28,8 @@ describe('droppable directive', () => {
         (dragLeave)="dragEvent('leave', $event)"
         (drop)="drop($event)"
         [dragOverClass]="dragOverClass"
-        [dragActiveClass]="dragActiveClass">
+        [dragActiveClass]="dragActiveClass"
+      >
         Drop here
       </div>
     `,
@@ -51,13 +53,13 @@ describe('droppable directive', () => {
     ]
   })
   class TestComponent {
-    @ViewChild(DraggableDirective)
+    @ViewChild(DraggableDirective, { static: true })
     draggable: DraggableDirective;
-    @ViewChild(DroppableDirective)
+    @ViewChild(DroppableDirective, { static: true })
     droppable: DroppableDirective;
-    @ViewChild('droppableElement')
+    @ViewChild('droppableElement', { static: true })
     droppableElement: ElementRef<HTMLDivElement>;
-    @ViewChild('draggableElement')
+    @ViewChild('draggableElement', { static: true })
     draggableElement: ElementRef<HTMLDivElement>;
     dragEvent = sinon.spy();
     drop = sinon.spy();
@@ -77,7 +79,8 @@ describe('droppable directive', () => {
           #draggableElement
           mwlDraggable
           [dropData]="dropData"
-          (dragEnd)="dragEnd()">
+          (dragEnd)="dragEnd()"
+        >
           Drag me!
         </div>
         <div
@@ -88,7 +91,8 @@ describe('droppable directive', () => {
           (dragLeave)="dragEvent('leave', $event)"
           (drop)="drop($event)"
           [dragOverClass]="dragOverClass"
-          [dragActiveClass]="dragActiveClass">
+          [dragActiveClass]="dragActiveClass"
+        >
           Drop here
         </div>
       </div>
@@ -119,7 +123,7 @@ describe('droppable directive', () => {
     ]
   })
   class ScrollTestComponent extends TestComponent {
-    @ViewChild(DraggableScrollContainerDirective)
+    @ViewChild(DraggableScrollContainerDirective, { static: true })
     scrollContainer: DraggableScrollContainerDirective;
   }
 

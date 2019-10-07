@@ -27,7 +27,8 @@ describe('draggable directive', () => {
         (dragStart)="dragStart($event)"
         (ghostElementCreated)="ghostElementCreated($event)"
         (dragging)="dragging($event)"
-        (dragEnd)="dragEnd($event)">
+        (dragEnd)="dragEnd($event)"
+      >
         Drag me!
       </div>
       <ng-template #ghostElementTemplateRef>
@@ -36,11 +37,11 @@ describe('draggable directive', () => {
     `
   })
   class TestComponent {
-    @ViewChild(DraggableDirective)
+    @ViewChild(DraggableDirective, { static: true })
     draggable: DraggableDirective;
-    @ViewChild('draggableElement')
+    @ViewChild('draggableElement', { static: true })
     draggableElement: ElementRef<HTMLDivElement>;
-    @ViewChild('ghostElementTemplateRef')
+    @ViewChild('ghostElementTemplateRef', { static: true })
     ghostElementTemplateRef: TemplateRef<any>;
     dragPointerDown = sinon.spy();
     dragStart = sinon.spy();
@@ -65,13 +66,14 @@ describe('draggable directive', () => {
         <div
           #draggableElement
           mwlDraggable
-          [dragAxis]="{x: true, y: true}"
+          [dragAxis]="{ x: true, y: true }"
           [validateDrag]="validateDrag"
           (dragPointerDown)="dragPointerDown($event)"
           (dragStart)="dragStart($event)"
           (ghostElementCreated)="ghostElementCreated($event)"
           (dragging)="dragging($event)"
-          (dragEnd)="dragEnd($event)">
+          (dragEnd)="dragEnd($event)"
+        >
           Drag me!
         </div>
       </div>
@@ -95,7 +97,7 @@ describe('draggable directive', () => {
     ]
   })
   class ScrollTestComponent extends TestComponent {
-    @ViewChild(DraggableScrollContainerDirective)
+    @ViewChild(DraggableScrollContainerDirective, { static: true })
     scrollContainer: DraggableScrollContainerDirective;
   }
 
@@ -104,7 +106,7 @@ describe('draggable directive', () => {
     template: `
       <div
         mwlDraggable
-        [dragAxis]="{x: true, y: true}"
+        [dragAxis]="{ x: true, y: true }"
         (dragPointerDown)="outerDrag($event)"
         (dragStart)="outerDrag($event)"
         (ghostElementCreated)="outerDrag($event)"
@@ -114,7 +116,7 @@ describe('draggable directive', () => {
         <button
           #draggableElement
           mwlDraggable
-          [dragAxis]="{x: true, y: true}"
+          [dragAxis]="{ x: true, y: true }"
           (dragPointerDown)="dragPointerDown($event)"
           (dragStart)="dragStart($event)"
           (ghostElementCreated)="ghostElementCreated($event)"

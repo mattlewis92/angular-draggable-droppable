@@ -288,10 +288,10 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           this.destroy$
         ).pipe(share());
 
-        const pointerMove = combineLatest<
-          PointerEvent,
-          { top: number; left: number }
-        >(this.pointerMove$, scrollContainerScroll$).pipe(
+        const pointerMove = combineLatest([
+          this.pointerMove$,
+          scrollContainerScroll$
+        ]).pipe(
           map(([pointerMoveEvent, scroll]) => {
             return {
               currentDrag$,
