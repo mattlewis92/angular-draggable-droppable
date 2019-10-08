@@ -70,7 +70,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
    * Called when a draggable element is dropped on this element
    */
   @Output()
-  drop = new EventEmitter<DropEvent>(); // tslint:disable-line no-output-native
+  drop = new EventEmitter<DropEvent>(); // tslint:disable-line no-output-named-after-standard-event
 
   currentDragSubscription: Subscription;
 
