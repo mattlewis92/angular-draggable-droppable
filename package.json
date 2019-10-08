@@ -93,7 +93,9 @@
     "validate-commit-msg": "^2.14.0",
     "zone.js": "^0.8.29"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "@angular/core": ">=6.0.0 <10.0.0"
+  },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
