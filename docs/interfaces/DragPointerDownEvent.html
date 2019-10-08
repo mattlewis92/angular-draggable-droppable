@@ -812,7 +812,9 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   private setCursor(value: string): void {
-    this.renderer.setStyle(this.element.nativeElement, &#x27;cursor&#x27;, value);
+    if (!this.eventListenerSubscriptions.mousemove) {
+      this.renderer.setStyle(this.element.nativeElement, &#x27;cursor&#x27;, value);
+    }
   }
 
   private unsubscribeEventListeners(): void {
