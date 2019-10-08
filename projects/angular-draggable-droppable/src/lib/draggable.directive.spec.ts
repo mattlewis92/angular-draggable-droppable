@@ -447,6 +447,14 @@ describe('draggable directive', () => {
     expect(draggableElement.style.cursor).not.to.be.ok;
   });
 
+  it('should not set the mouse cursor when the element is being dragged', () => {
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, { clientX: 10, clientY: 5 });
+    triggerDomEvent('mouseenter', draggableElement);
+    expect(draggableElement.style.cursor).not.to.be.ok;
+  });
+
   it('should not call the dragging event multiple times with the same values', () => {
     fixture.componentInstance.dragSnapGrid = { y: 10, x: 10 };
     fixture.detectChanges();
