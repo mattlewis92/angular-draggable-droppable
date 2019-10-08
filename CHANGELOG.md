@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.4](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.3...v4.3.4) (2019-10-08)
+
+
+### Bug Fixes
+
+* restore compatibility with angular 6 and 7 ([f110c8e](https://github.com/mattlewis92/angular-draggable-droppable/commit/f110c8e)), closes [#97](https://github.com/mattlewis92/angular-draggable-droppable/issues/97)
+
 ### [4.3.3](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.2...v4.3.3) (2019-10-07)
 
 
