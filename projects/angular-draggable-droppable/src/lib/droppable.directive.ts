@@ -14,6 +14,7 @@ import { Subscription } from 'rxjs';
 import { distinctUntilChanged, pairwise, filter, map } from 'rxjs/operators';
 import { DraggableHelper } from './draggable-helper.provider';
 import { DraggableScrollContainerDirective } from './draggable-scroll-container.directive';
+import { addClass, removeClass } from './util';
 
 function isCoordinateWithinRectangle(
   clientX: number,
@@ -85,7 +86,8 @@ export class DroppableDirective implements OnInit, OnDestroy {
   ngOnInit() {
     this.currentDragSubscription = this.draggableHelper.currentDrag.subscribe(
       drag$ => {
-        this.renderer.addClass(
+        addClass(
+          this.renderer,
           this.element.nativeElement,
           this.dragActiveClass
         );
@@ -146,24 +148,33 @@ export class DroppableDirective implements OnInit, OnDestroy {
           .pipe(filter(overlapsNow => overlapsNow))
           .subscribe(() => {
             dragOverActive = true;
-            this.renderer.addClass(
+            addClass(
+              this.renderer,
               this.element.nativeElement,
               this.dragOverClass
             );
+            if (this.dragEnter.observers.length > 0) {
+              this.zone.run(() => {
+                this.dragEnter.next({
+                  dropData: currentDragDropData
+                });
+              });
+            }
+          });
+
+        overlaps$
+          .pipe(
+            filter(
+              overlapsNow => overlapsNow && this.dragOver.observers.length > 0
+            )
+          )
+          .subscribe(() => {
             this.zone.run(() => {
-              this.dragEnter.next({
+              this.dragOver.next({
                 dropData: currentDragDropData
               });
             });
           });
-
-        overlaps$.pipe(filter(overlapsNow => overlapsNow)).subscribe(() => {
-          this.zone.run(() => {
-            this.dragOver.next({
-              dropData: currentDragDropData
-            });
-          });
-        });
 
         overlapsChanged$
           .pipe(
@@ -172,34 +183,41 @@ export class DroppableDirective implements OnInit, OnDestroy {
           )
           .subscribe(() => {
             dragOverActive = false;
-            this.renderer.removeClass(
+            removeClass(
+              this.renderer,
               this.element.nativeElement,
               this.dragOverClass
             );
-            this.zone.run(() => {
-              this.dragLeave.next({
-                dropData: currentDragDropData
+            if (this.dragLeave.observers.length > 0) {
+              this.zone.run(() => {
+                this.dragLeave.next({
+                  dropData: currentDragDropData
+                });
               });
-            });
+            }
           });
 
         drag$.subscribe({
           complete: () => {
             deregisterScrollListener();
-            this.renderer.removeClass(
+            removeClass(
+              this.renderer,
               this.element.nativeElement,
               this.dragActiveClass
             );
             if (dragOverActive) {
-              this.renderer.removeClass(
+              removeClass(
+                this.renderer,
                 this.element.nativeElement,
                 this.dragOverClass
               );
-              this.zone.run(() => {
-                this.drop.next({
-                  dropData: currentDragDropData
+              if (this.drop.observers.length > 0) {
+                this.zone.run(() => {
+                  this.drop.next({
+                    dropData: currentDragDropData
+                  });
                 });
-              });
+              }
             }
           }
         });

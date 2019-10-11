@@ -32,6 +32,7 @@ import { CurrentDragData, DraggableHelper } from './draggable-helper.provider';
 import { DOCUMENT } from '@angular/common';
 import autoScroll from 'dom-autoscroller';
 import { DraggableScrollContainerDirective } from './draggable-scroll-container.directive';
+import { addClass, removeClass } from './util';
 
 export interface Coordinates {
   x: number;
@@ -379,7 +380,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             }
           );
 
-          this.renderer.addClass(
+          addClass(
+            this.renderer,
             this.element.nativeElement,
             this.dragActiveClass
           );
@@ -476,7 +478,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             this.zone.run(() => {
               this.dragEnd.next({ x, y, dragCancelled });
             });
-            this.renderer.removeClass(
+            removeClass(
+              this.renderer,
               this.element.nativeElement,
               this.dragActiveClass
             );
@@ -512,9 +515,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
       )
       .subscribe(
         ({ x, y, currentDrag$, clientX, clientY, transformX, transformY }) => {
-          this.zone.run(() => {
-            this.dragging.next({ x, y });
-          });
+          if (this.dragging.observers.length > 0) {
+            this.zone.run(() => {
+              this.dragging.next({ x, y });
+            });
+          }
           if (this.ghostElement) {
             const transform = `translate3d(${transformX}px, ${transformY}px, 0px)`;
             this.setElementStyles(this.ghostElement, {
