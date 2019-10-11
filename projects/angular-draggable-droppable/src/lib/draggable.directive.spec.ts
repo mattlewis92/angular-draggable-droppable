@@ -694,7 +694,7 @@ describe('draggable directive', () => {
     triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
     const ghostElement = draggableElement.nextSibling as HTMLElement;
-    expect(ghostElement.style.position).to.equal('fixed');
+    expect(ghostElement.style.position).to.equal('absolute');
     expect(ghostElement.style.top).to.be.ok;
     expect(ghostElement.style.left).to.be.ok;
     expect(ghostElement.style.width).to.be.ok;
@@ -755,7 +755,7 @@ describe('draggable directive', () => {
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
     const ghostElement = fixture.componentInstance.ghostElementAppendTo
       .children[0] as HTMLElement;
-    expect(ghostElement.style.position).to.equal('fixed');
+    expect(ghostElement.style.position).to.equal('absolute');
     expect(ghostElement.style.top).to.be.ok;
     expect(ghostElement.style.left).to.be.ok;
     expect(ghostElement.style.width).to.be.ok;

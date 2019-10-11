@@ -15,7 +15,14 @@ import {
   ViewContainerRef,
   Optional
 } from '@angular/core';
-import { Subject, Observable, merge, ReplaySubject, combineLatest } from 'rxjs';
+import {
+  Subject,
+  Observable,
+  merge,
+  ReplaySubject,
+  combineLatest,
+  animationFrameScheduler
+} from 'rxjs';
 import {
   map,
   mergeMap,
@@ -26,7 +33,8 @@ import {
   share,
   filter,
   count,
-  startWith
+  startWith,
+  auditTime
 } from 'rxjs/operators';
 import { CurrentDragData, DraggableHelper } from './draggable-helper.provider';
 import { DOCUMENT } from '@angular/common';
@@ -127,7 +135,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   validateDrag: ValidateDrag;
 
   /**
-   * The cursor to use when dragging the element
+   * The cursor to use when hovering over a draggable element
    */
   @Input()
   dragCursor: string = '';
@@ -408,15 +416,18 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
             this.ghostElement = clone;
 
+            document.body.style.cursor = this.dragCursor;
+
             this.setElementStyles(clone, {
-              position: 'fixed',
+              position: 'absolute',
               top: `${rect.top}px`,
               left: `${rect.left}px`,
               width: `${rect.width}px`,
               height: `${rect.height}px`,
               cursor: this.dragCursor,
               margin: '0',
-              willChange: 'transform'
+              willChange: 'transform',
+              pointerEvents: 'none'
             });
 
             if (this.ghostElementTemplate) {
@@ -508,7 +519,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           }
           return previous.x !== next.x || previous.y !== next.y;
         }),
-        map(([previous, next]) => next)
+        map(([previous, next]) => next),
+        auditTime(0, animationFrameScheduler)
       )
       .subscribe(
         ({ x, y, currentDrag$, clientX, clientY, transformX, transformY }) => {

@@ -14,9 +14,19 @@ import {
   platformBrowserDynamicTesting
 } from '@angular/platform-browser-dynamic/testing';
 import { use } from 'chai';
+import * as sinon from 'sinon';
 import * as sinonChai from 'sinon-chai';
 
 use(sinonChai);
+
+let rafStub: sinon.SinonStub<any, any>;
+beforeEach(() => {
+  rafStub = sinon.stub(window, 'requestAnimationFrame').callsArg(0);
+});
+
+afterEach(() => {
+  rafStub.restore();
+});
 
 declare const require: any;
 
