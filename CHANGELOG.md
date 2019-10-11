@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.7](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.6...v4.3.7) (2019-10-11)
+
+
+### Bug Fixes
+
+* revert change to ghost element positioning ([e0128e5](https://github.com/mattlewis92/angular-draggable-droppable/commit/e0128e5))
+
 ### [4.3.6](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.5...v4.3.6) (2019-10-11)
 
 ### [4.3.5](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.4...v4.3.5) (2019-10-08)
