@@ -419,7 +419,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             document.body.style.cursor = this.dragCursor;
 
             this.setElementStyles(clone, {
-              position: 'absolute',
+              position: 'fixed',
               top: `${rect.top}px`,
               left: `${rect.left}px`,
               width: `${rect.width}px`,
