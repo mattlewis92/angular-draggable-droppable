@@ -207,7 +207,14 @@
   ViewContainerRef,
   Optional
 } from &#x27;@angular/core&#x27;;
-import { Subject, Observable, merge, ReplaySubject, combineLatest } from &#x27;rxjs&#x27;;
+import {
+  Subject,
+  Observable,
+  merge,
+  ReplaySubject,
+  combineLatest,
+  animationFrameScheduler
+} from &#x27;rxjs&#x27;;
 import {
   map,
   mergeMap,
@@ -218,7 +225,8 @@ import {
   share,
   filter,
   count,
-  startWith
+  startWith,
+  auditTime
 } from &#x27;rxjs/operators&#x27;;
 import { CurrentDragData, DraggableHelper } from &#x27;./draggable-helper.provider&#x27;;
 import { DOCUMENT } from &#x27;@angular/common&#x27;;
@@ -319,7 +327,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   validateDrag: ValidateDrag;
 
   /**
-   * The cursor to use when dragging the element
+   * The cursor to use when hovering over a draggable element
    */
   @Input()
   dragCursor: string &#x3D; &#x27;&#x27;;
@@ -600,15 +608,18 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
             this.ghostElement &#x3D; clone;
 
+            document.body.style.cursor &#x3D; this.dragCursor;
+
             this.setElementStyles(clone, {
-              position: &#x27;fixed&#x27;,
+              position: &#x27;absolute&#x27;,
               top: &#x60;${rect.top}px&#x60;,
               left: &#x60;${rect.left}px&#x60;,
               width: &#x60;${rect.width}px&#x60;,
               height: &#x60;${rect.height}px&#x60;,
               cursor: this.dragCursor,
               margin: &#x27;0&#x27;,
-              willChange: &#x27;transform&#x27;
+              willChange: &#x27;transform&#x27;,
+              pointerEvents: &#x27;none&#x27;
             });
 
             if (this.ghostElementTemplate) {
@@ -700,7 +711,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           }
           return previous.x !&#x3D;&#x3D; next.x || previous.y !&#x3D;&#x3D; next.y;
         }),
-        map(([previous, next]) &#x3D;&gt; next)
+        map(([previous, next]) &#x3D;&gt; next),
+        auditTime(0, animationFrameScheduler)
       )
       .subscribe(
         ({ x, y, currentDrag$, clientX, clientY, transformX, transformY }) &#x3D;&gt; {
