@@ -1,13 +1,10 @@
 # angular 6.0+ drag and drop
 
+[![Sponsorship](https://img.shields.io/badge/funding-github-%23EA4AAA)](https://github.com/users/mattlewis92/sponsorship)
 [![Build Status](https://travis-ci.org/mattlewis92/angular-draggable-droppable.svg?branch=master)](https://travis-ci.org/mattlewis92/angular-draggable-droppable)
 [![codecov](https://codecov.io/gh/mattlewis92/angular-draggable-droppable/branch/master/graph/badge.svg)](https://codecov.io/gh/mattlewis92/angular-draggable-droppable)
 [![npm version](https://badge.fury.io/js/angular-draggable-droppable.svg)](http://badge.fury.io/js/angular-draggable-droppable)
 [![Twitter Follow](https://img.shields.io/twitter/follow/mattlewis92_.svg)](https://twitter.com/mattlewis92_)
-
-<a href="https://www.patreon.com/mattlewis92">
-	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
 
 ## Demo
 
@@ -50,11 +47,11 @@ class DemoModule {}
   selector: 'demo-app',
   template: `
     <div mwlDraggable (dragEnd)="dragEnd($event)">Drag me!</div>
-    <div
-      mwlDroppable
-      (drop)="this.droppedData = $event.dropData">
+    <div mwlDroppable (drop)="this.droppedData = $event.dropData">
       <span [hidden]="droppedData">Drop here</span>
-      <span [hidden]="!droppedData">Item dropped here with data: "{{ droppedData }}"!</span>
+      <span [hidden]="!droppedData"
+        >Item dropped here with data: "{{ droppedData }}"!</span
+      >
     </div>
   `
 })
