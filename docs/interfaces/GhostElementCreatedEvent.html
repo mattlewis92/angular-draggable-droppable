@@ -442,24 +442,6 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           pointerDownEvent.event.stopPropagation();
         }
 
-        // hack to prevent text getting selected in safari while dragging
-        const globalDragStyle: HTMLStyleElement &#x3D; this.renderer.createElement(
-          &#x27;style&#x27;
-        );
-        this.renderer.setAttribute(globalDragStyle, &#x27;type&#x27;, &#x27;text/css&#x27;);
-        this.renderer.appendChild(
-          globalDragStyle,
-          this.renderer.createText(&#x60;
-          body * {
-           -moz-user-select: none;
-           -ms-user-select: none;
-           -webkit-user-select: none;
-           user-select: none;
-          }
-        &#x60;)
-        );
-        this.document.head.appendChild(globalDragStyle);
-
         const startScrollPosition &#x3D; this.getScrollPosition();
 
         const scrollContainerScroll$ &#x3D; new Observable(observer &#x3D;&gt; {
@@ -686,10 +668,17 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             currentDrag$.complete();
           });
 
-        merge(dragComplete$, dragEnded$)
-          .pipe(take(1))
-          .subscribe(() &#x3D;&gt; {
-            this.document.head.removeChild(globalDragStyle);
+        const selectionStart$ &#x3D; new Observable&lt;Event&gt;(observer &#x3D;&gt; {
+          return this.renderer.listen(&#x27;document&#x27;, &#x27;selectstart&#x27;, e &#x3D;&gt;
+            observer.next(e)
+          );
+        });
+
+        // hack to prevent text getting selected in safari while dragging
+        selectionStart$
+          .pipe(takeUntil(merge(dragComplete$, dragEnded$)))
+          .subscribe(event &#x3D;&gt; {
+            event.preventDefault();
           });
 
         return pointerMove;
@@ -1034,6 +1023,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
             var COMPODOC_CURRENT_PAGE_URL = 'GhostElementCreatedEvent.html';
+            var MAX_SEARCH_RESULTS = 15;
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>
