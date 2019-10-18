@@ -250,24 +250,6 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           pointerDownEvent.event.stopPropagation();
         }
 
-        // hack to prevent text getting selected in safari while dragging
-        const globalDragStyle: HTMLStyleElement = this.renderer.createElement(
-          'style'
-        );
-        this.renderer.setAttribute(globalDragStyle, 'type', 'text/css');
-        this.renderer.appendChild(
-          globalDragStyle,
-          this.renderer.createText(`
-          body * {
-           -moz-user-select: none;
-           -ms-user-select: none;
-           -webkit-user-select: none;
-           user-select: none;
-          }
-        `)
-        );
-        this.document.head.appendChild(globalDragStyle);
-
         const startScrollPosition = this.getScrollPosition();
 
         const scrollContainerScroll$ = new Observable(observer => {
@@ -494,10 +476,17 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             currentDrag$.complete();
           });
 
-        merge(dragComplete$, dragEnded$)
-          .pipe(take(1))
-          .subscribe(() => {
-            this.document.head.removeChild(globalDragStyle);
+        const selectionStart$ = new Observable<Event>(observer => {
+          return this.renderer.listen('document', 'selectstart', e =>
+            observer.next(e)
+          );
+        });
+
+        // hack to prevent text getting selected in safari while dragging
+        selectionStart$
+          .pipe(takeUntil(merge(dragComplete$, dragEnded$)))
+          .subscribe(event => {
+            event.preventDefault();
           });
 
         return pointerMove;
