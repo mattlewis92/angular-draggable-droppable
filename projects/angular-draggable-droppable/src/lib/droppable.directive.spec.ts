@@ -151,7 +151,11 @@ describe('droppable directive', () => {
   it('should fire the drag enter, over and leave events', () => {
     const draggableElement =
       fixture.componentInstance.draggableElement.nativeElement;
-    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousedown', draggableElement, {
+      clientX: 5,
+      clientY: 10,
+      button: 0
+    });
     expect(fixture.componentInstance.dragEvent).not.to.have.been.called;
     triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 50 });
     expect(fixture.componentInstance.dragEvent).not.to.have.been.called;
@@ -185,25 +189,41 @@ describe('droppable directive', () => {
   it('should not fire the drop event', () => {
     const draggableElement =
       fixture.componentInstance.draggableElement.nativeElement;
-    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousedown', draggableElement, {
+      clientX: 5,
+      clientY: 10,
+      button: 0
+    });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
       clientY: 120
     });
     triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 50 });
-    triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 50 });
+    triggerDomEvent('mouseup', draggableElement, {
+      clientX: 5,
+      clientY: 50,
+      button: 0
+    });
     expect(fixture.componentInstance.drop).not.to.have.been.called;
   });
 
   it('should fire the drop event', () => {
     const draggableElement =
       fixture.componentInstance.draggableElement.nativeElement;
-    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousedown', draggableElement, {
+      clientX: 5,
+      clientY: 10,
+      button: 0
+    });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
       clientY: 120
     });
-    triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 120 });
+    triggerDomEvent('mouseup', draggableElement, {
+      clientX: 5,
+      clientY: 120,
+      button: 0
+    });
     expect(fixture.componentInstance.drop).to.have.been.calledWith({
       dropData: { foo: 'bar' }
     });
@@ -212,7 +232,11 @@ describe('droppable directive', () => {
   it('should not fire the drag enter event until the mouse cursor is within the element', () => {
     const draggableElement =
       fixture.componentInstance.draggableElement.nativeElement;
-    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousedown', draggableElement, {
+      clientX: 5,
+      clientY: 10,
+      button: 0
+    });
     expect(fixture.componentInstance.dragEvent).not.to.have.been.called;
     triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 50 });
     expect(fixture.componentInstance.dragEvent).not.to.have.been.called;
@@ -240,7 +264,11 @@ describe('droppable directive', () => {
     const droppableElement =
       fixture.componentInstance.droppableElement.nativeElement;
     expect(droppableElement.classList.contains('drag-over')).to.be.false;
-    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousedown', draggableElement, {
+      clientX: 5,
+      clientY: 10,
+      button: 0
+    });
     triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 10 });
     expect(droppableElement.classList.contains('drag-over')).to.be.false;
     triggerDomEvent('mousemove', draggableElement, {
@@ -248,19 +276,31 @@ describe('droppable directive', () => {
       clientY: 100
     });
     expect(droppableElement.classList.contains('drag-over')).to.be.true;
-    triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 120 });
+    triggerDomEvent('mouseup', draggableElement, {
+      clientX: 5,
+      clientY: 120,
+      button: 0
+    });
     expect(droppableElement.classList.contains('drag-over')).to.be.false;
   });
 
   it('should fire the drag end event before the drop event', () => {
     const draggableElement =
       fixture.componentInstance.draggableElement.nativeElement;
-    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousedown', draggableElement, {
+      clientX: 5,
+      clientY: 10,
+      button: 0
+    });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
       clientY: 120
     });
-    triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 120 });
+    triggerDomEvent('mouseup', draggableElement, {
+      clientX: 5,
+      clientY: 120,
+      button: 0
+    });
     sinon.assert.callOrder(
       fixture.componentInstance.dragEnd,
       fixture.componentInstance.drop
@@ -275,7 +315,11 @@ describe('droppable directive', () => {
     const droppableElement =
       fixture.componentInstance.droppableElement.nativeElement;
     expect(droppableElement.classList.contains('drag-active')).to.be.false;
-    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousedown', draggableElement, {
+      clientX: 5,
+      clientY: 10,
+      button: 0
+    });
     triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 10 });
     expect(droppableElement.classList.contains('drag-active')).to.be.true;
     triggerDomEvent('mousemove', draggableElement, {
@@ -283,7 +327,11 @@ describe('droppable directive', () => {
       clientY: 100
     });
     expect(droppableElement.classList.contains('drag-active')).to.be.true;
-    triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 120 });
+    triggerDomEvent('mouseup', draggableElement, {
+      clientX: 5,
+      clientY: 120,
+      button: 0
+    });
     expect(droppableElement.classList.contains('drag-active')).to.be.false;
   });
 
@@ -306,7 +354,11 @@ describe('droppable directive', () => {
     document.body.appendChild(scrollFixture.nativeElement);
     const draggableElement =
       scrollFixture.componentInstance.draggableElement.nativeElement;
-    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousedown', draggableElement, {
+      clientX: 5,
+      clientY: 10,
+      button: 0
+    });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
       clientY: 11
@@ -319,7 +371,11 @@ describe('droppable directive', () => {
       clientX: 5,
       clientY: 10
     });
-    triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mouseup', draggableElement, {
+      clientX: 5,
+      clientY: 10,
+      button: 0
+    });
     expect(scrollFixture.componentInstance.drop).to.have.been.calledWith({
       dropData: { foo: 'bar' }
     });
@@ -331,12 +387,20 @@ describe('droppable directive', () => {
     document.body.appendChild(scrollFixture.nativeElement);
     const draggableElement =
       scrollFixture.componentInstance.draggableElement.nativeElement;
-    triggerDomEvent('mousedown', draggableElement, { clientX: 5, clientY: 10 });
+    triggerDomEvent('mousedown', draggableElement, {
+      clientX: 5,
+      clientY: 10,
+      button: 0
+    });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
       clientY: 150
     });
-    triggerDomEvent('mouseup', draggableElement, { clientX: 5, clientY: 150 });
+    triggerDomEvent('mouseup', draggableElement, {
+      clientX: 5,
+      clientY: 150,
+      button: 0
+    });
     expect(scrollFixture.componentInstance.drop).not.to.have.been.called;
   });
 });

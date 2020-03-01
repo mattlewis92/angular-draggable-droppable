@@ -618,36 +618,40 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   private onMouseDown(event: MouseEvent): void {
-    if (!this.eventListenerSubscriptions.mousemove) {
-      this.eventListenerSubscriptions.mousemove = this.renderer.listen(
-        'document',
-        'mousemove',
-        (mouseMoveEvent: MouseEvent) => {
-          this.pointerMove$.next({
-            event: mouseMoveEvent,
-            clientX: mouseMoveEvent.clientX,
-            clientY: mouseMoveEvent.clientY
-          });
-        }
-      );
+    if (event.button === 0) {
+      if (!this.eventListenerSubscriptions.mousemove) {
+        this.eventListenerSubscriptions.mousemove = this.renderer.listen(
+          'document',
+          'mousemove',
+          (mouseMoveEvent: MouseEvent) => {
+            this.pointerMove$.next({
+              event: mouseMoveEvent,
+              clientX: mouseMoveEvent.clientX,
+              clientY: mouseMoveEvent.clientY
+            });
+          }
+        );
+      }
+      this.pointerDown$.next({
+        event,
+        clientX: event.clientX,
+        clientY: event.clientY
+      });
     }
-    this.pointerDown$.next({
-      event,
-      clientX: event.clientX,
-      clientY: event.clientY
-    });
   }
 
   private onMouseUp(event: MouseEvent): void {
-    if (this.eventListenerSubscriptions.mousemove) {
-      this.eventListenerSubscriptions.mousemove();
-      delete this.eventListenerSubscriptions.mousemove;
+    if (event.button === 0) {
+      if (this.eventListenerSubscriptions.mousemove) {
+        this.eventListenerSubscriptions.mousemove();
+        delete this.eventListenerSubscriptions.mousemove;
+      }
+      this.pointerUp$.next({
+        event,
+        clientX: event.clientX,
+        clientY: event.clientY
+      });
     }
-    this.pointerUp$.next({
-      event,
-      clientX: event.clientX,
-      clientY: event.clientY
-    });
   }
 
   private onTouchStart(event: TouchEvent): void {
