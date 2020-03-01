@@ -752,36 +752,40 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   private onMouseDown(event: MouseEvent): void {
-    if (!this.eventListenerSubscriptions.mousemove) {
-      this.eventListenerSubscriptions.mousemove &#x3D; this.renderer.listen(
-        &#x27;document&#x27;,
-        &#x27;mousemove&#x27;,
-        (mouseMoveEvent: MouseEvent) &#x3D;&gt; {
-          this.pointerMove$.next({
-            event: mouseMoveEvent,
-            clientX: mouseMoveEvent.clientX,
-            clientY: mouseMoveEvent.clientY
-          });
-        }
-      );
+    if (event.button &#x3D;&#x3D;&#x3D; 0) {
+      if (!this.eventListenerSubscriptions.mousemove) {
+        this.eventListenerSubscriptions.mousemove &#x3D; this.renderer.listen(
+          &#x27;document&#x27;,
+          &#x27;mousemove&#x27;,
+          (mouseMoveEvent: MouseEvent) &#x3D;&gt; {
+            this.pointerMove$.next({
+              event: mouseMoveEvent,
+              clientX: mouseMoveEvent.clientX,
+              clientY: mouseMoveEvent.clientY
+            });
+          }
+        );
+      }
+      this.pointerDown$.next({
+        event,
+        clientX: event.clientX,
+        clientY: event.clientY
+      });
     }
-    this.pointerDown$.next({
-      event,
-      clientX: event.clientX,
-      clientY: event.clientY
-    });
   }
 
   private onMouseUp(event: MouseEvent): void {
-    if (this.eventListenerSubscriptions.mousemove) {
-      this.eventListenerSubscriptions.mousemove();
-      delete this.eventListenerSubscriptions.mousemove;
+    if (event.button &#x3D;&#x3D;&#x3D; 0) {
+      if (this.eventListenerSubscriptions.mousemove) {
+        this.eventListenerSubscriptions.mousemove();
+        delete this.eventListenerSubscriptions.mousemove;
+      }
+      this.pointerUp$.next({
+        event,
+        clientX: event.clientX,
+        clientY: event.clientY
+      });
     }
-    this.pointerUp$.next({
-      event,
-      clientX: event.clientX,
-      clientY: event.clientY
-    });
   }
 
   private onTouchStart(event: TouchEvent): void {
