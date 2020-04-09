@@ -370,8 +370,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           );
           this.dragActiveClass
             .split(' ')
-            .forEach(x =>
-              this.renderer.addClass(this.element.nativeElement, x)
+            .forEach(_dragActiveClass =>
+              this.renderer.addClass(
+                this.element.nativeElement,
+                _dragActiveClass
+              )
             );
 
           if (this.ghostDragEnabled) {
@@ -471,8 +474,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             });
             this.dragActiveClass
               .split(' ')
-              .forEach(x =>
-                this.renderer.removeClass(this.element.nativeElement, x)
+              .forEach(_dragActiveClass =>
+                this.renderer.removeClass(
+                  this.element.nativeElement,
+                  _dragActiveClass
+                )
               );
             currentDrag$.complete();
           });
