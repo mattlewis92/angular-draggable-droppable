@@ -909,8 +909,8 @@ describe('draggable directive', () => {
       button: 0
     });
     expect([
-      draggableElement.classList.contains('drag-active'),
-      draggableElement.classList.contains('drag-active-secondary')
+      !draggableElement.classList.contains('drag-active'),
+      !draggableElement.classList.contains('drag-active-secondary')
     ]).to.be.eq([true, true]);
   });
 
