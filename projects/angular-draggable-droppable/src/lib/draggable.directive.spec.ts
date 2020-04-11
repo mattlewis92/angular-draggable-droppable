@@ -899,19 +899,17 @@ describe('draggable directive', () => {
       button: 0
     });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
-    expect([
-      draggableElement.classList.contains('drag-active'),
-      draggableElement.classList.contains('drag-active-secondary')
-    ]).to.be.eq([true, true]);
+    expect(draggableElement.classList.contains('drag-active')).to.be.true;
+    expect(draggableElement.classList.contains('drag-active-secondary')).to.be
+      .true;
     triggerDomEvent('mouseup', draggableElement, {
       clientX: 7,
       clientY: 8,
       button: 0
     });
-    expect([
-      !draggableElement.classList.contains('drag-active'),
-      !draggableElement.classList.contains('drag-active-secondary')
-    ]).to.be.eq([true, true]);
+    expect(draggableElement.classList.contains('drag-active')).to.be.false;
+    expect(draggableElement.classList.contains('drag-active-secondary')).to.be
+      .false;
   });
 
   it('should append the ghost element to the given element', () => {
