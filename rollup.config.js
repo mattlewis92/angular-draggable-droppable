@@ -1,7 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
-import replace from 'rollup-plugin-replace';
 
 const input =
   'dist/angular-draggable-droppable/bundles/angular-draggable-droppable.umd.js';
@@ -22,11 +21,6 @@ const base = {
     }
   },
   plugins: [
-    replace({
-      'var requestAnimationFrame': "var window = typeof window !== \"undefined\" ? window : {};\nvar requestAnimationFrame",
-      'window\.setTimeout': 'setTimeout',
-      'window\.clearTimeout': 'clearTimeout'
-    }),
     resolve({ module: true }),
     commonjs()
   ],

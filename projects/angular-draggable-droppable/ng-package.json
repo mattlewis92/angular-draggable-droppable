@@ -6,6 +6,6 @@
   },
   "whitelistedNonPeerDependencies": [
     "tslib",
-    "dom-autoscroller"
+    "@mattlewis92/dom-autoscroller"
   ]
 }

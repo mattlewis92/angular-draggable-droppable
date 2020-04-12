@@ -38,7 +38,7 @@ import {
 } from 'rxjs/operators';
 import { CurrentDragData, DraggableHelper } from './draggable-helper.provider';
 import { DOCUMENT } from '@angular/common';
-import autoScroll from 'dom-autoscroller';
+import autoScroll from '@mattlewis92/dom-autoscroller';
 import { DraggableScrollContainerDirective } from './draggable-scroll-container.directive';
 import { addClass, removeClass } from './util';
 

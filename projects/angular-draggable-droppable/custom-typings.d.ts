@@ -1,1 +1,1 @@
-declare module 'dom-autoscroller';
+declare module '@mattlewis92/dom-autoscroller';
