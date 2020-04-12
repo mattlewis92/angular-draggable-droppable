@@ -887,6 +887,30 @@ describe('draggable directive', () => {
     });
     expect(draggableElement.classList.contains('drag-active')).to.be.false;
   });
+  it('should add and remove multiple drag active class', () => {
+    fixture.componentInstance.dragActiveClass =
+      'drag-active drag-active-secondary';
+    fixture.detectChanges();
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, {
+      clientX: 5,
+      clientY: 10,
+      button: 0
+    });
+    triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
+    expect(draggableElement.classList.contains('drag-active')).to.be.true;
+    expect(draggableElement.classList.contains('drag-active-secondary')).to.be
+      .true;
+    triggerDomEvent('mouseup', draggableElement, {
+      clientX: 7,
+      clientY: 8,
+      button: 0
+    });
+    expect(draggableElement.classList.contains('drag-active')).to.be.false;
+    expect(draggableElement.classList.contains('drag-active-secondary')).to.be
+      .false;
+  });
 
   it('should append the ghost element to the given element', () => {
     fixture.componentInstance.ghostElementAppendTo = document.createElement(
