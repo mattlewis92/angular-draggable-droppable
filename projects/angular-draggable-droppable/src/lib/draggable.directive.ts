@@ -40,6 +40,7 @@ import { CurrentDragData, DraggableHelper } from './draggable-helper.provider';
 import { DOCUMENT } from '@angular/common';
 import autoScroll from 'dom-autoscroller';
 import { DraggableScrollContainerDirective } from './draggable-scroll-container.directive';
+import { addClass, removeClass } from './util';
 
 export interface Coordinates {
   x: number;
@@ -368,16 +369,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               }
             }
           );
-          if (this.dragActiveClass) {
-            this.dragActiveClass
-              .split(' ')
-              .forEach(dragActiveClass =>
-                this.renderer.addClass(
-                  this.element.nativeElement,
-                  dragActiveClass
-                )
-              );
-          }
+          addClass(this.renderer, this.element, this.dragActiveClass);
 
           if (this.ghostDragEnabled) {
             const rect = this.element.nativeElement.getBoundingClientRect();
@@ -474,16 +466,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             this.zone.run(() => {
               this.dragEnd.next({ x, y, dragCancelled });
             });
-            if (this.dragActiveClass) {
-              this.dragActiveClass
-                .split(' ')
-                .forEach(dragActiveClass =>
-                  this.renderer.removeClass(
-                    this.element.nativeElement,
-                    dragActiveClass
-                  )
-                );
-            }
+            removeClass(this.renderer, this.element, this.dragActiveClass);
             currentDrag$.complete();
           });
 

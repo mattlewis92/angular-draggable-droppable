@@ -14,6 +14,7 @@ import { Subscription } from 'rxjs';
 import { distinctUntilChanged, pairwise, filter, map } from 'rxjs/operators';
 import { DraggableHelper } from './draggable-helper.provider';
 import { DraggableScrollContainerDirective } from './draggable-scroll-container.directive';
+import { addClass, removeClass } from './util';
 
 function isCoordinateWithinRectangle(
   clientX: number,
@@ -85,10 +86,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
   ngOnInit() {
     this.currentDragSubscription = this.draggableHelper.currentDrag.subscribe(
       drag$ => {
-        this.renderer.addClass(
-          this.element.nativeElement,
-          this.dragActiveClass
-        );
+        addClass(this.renderer, this.element, this.dragActiveClass);
         const droppableElement: {
           rect?: ClientRect;
           updateCache: boolean;
@@ -146,10 +144,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
           .pipe(filter(overlapsNow => overlapsNow))
           .subscribe(() => {
             dragOverActive = true;
-            this.renderer.addClass(
-              this.element.nativeElement,
-              this.dragOverClass
-            );
+            addClass(this.renderer, this.element, this.dragOverClass);
             this.zone.run(() => {
               this.dragEnter.next({
                 dropData: currentDragDropData
@@ -172,10 +167,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
           )
           .subscribe(() => {
             dragOverActive = false;
-            this.renderer.removeClass(
-              this.element.nativeElement,
-              this.dragOverClass
-            );
+            removeClass(this.renderer, this.element, this.dragOverClass);
             this.zone.run(() => {
               this.dragLeave.next({
                 dropData: currentDragDropData
@@ -186,15 +178,9 @@ export class DroppableDirective implements OnInit, OnDestroy {
         drag$.subscribe({
           complete: () => {
             deregisterScrollListener();
-            this.renderer.removeClass(
-              this.element.nativeElement,
-              this.dragActiveClass
-            );
+            removeClass(this.renderer, this.element, this.dragActiveClass);
             if (dragOverActive) {
-              this.renderer.removeClass(
-                this.element.nativeElement,
-                this.dragOverClass
-              );
+              removeClass(this.renderer, this.element, this.dragOverClass);
               this.zone.run(() => {
                 this.drop.next({
                   dropData: currentDragDropData
