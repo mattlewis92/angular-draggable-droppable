@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.3.11](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.10...v4.3.11) (2020-04-12)
+
+
+### Bug Fixes
+
+* allow multiple dragActiveClass ([60844ec](https://github.com/mattlewis92/angular-draggable-droppable/commit/60844ec))
+* support multiple drag over and drag active classes ([ad50f0e](https://github.com/mattlewis92/angular-draggable-droppable/commit/ad50f0e))
+
 ### [4.3.10](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.9...v4.3.10) (2020-03-01)
 
 ### [4.3.9](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.8...v4.3.9) (2020-03-01)
