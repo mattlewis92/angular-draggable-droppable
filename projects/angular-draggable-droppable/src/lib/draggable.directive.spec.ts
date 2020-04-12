@@ -887,6 +887,7 @@ describe('draggable directive', () => {
     });
     expect(draggableElement.classList.contains('drag-active')).to.be.false;
   });
+
   it('should add and remove multiple drag active class', () => {
     fixture.componentInstance.dragActiveClass =
       'drag-active drag-active-secondary';

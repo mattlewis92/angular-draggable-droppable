@@ -368,15 +368,16 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               }
             }
           );
-          this.dragActiveClass &&
+          if (this.dragActiveClass) {
             this.dragActiveClass
               .split(' ')
-              .forEach(_dragActiveClass =>
+              .forEach(dragActiveClass =>
                 this.renderer.addClass(
                   this.element.nativeElement,
-                  _dragActiveClass
+                  dragActiveClass
                 )
               );
+          }
 
           if (this.ghostDragEnabled) {
             const rect = this.element.nativeElement.getBoundingClientRect();
@@ -473,15 +474,16 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             this.zone.run(() => {
               this.dragEnd.next({ x, y, dragCancelled });
             });
-            this.dragActiveClass &&
+            if (this.dragActiveClass) {
               this.dragActiveClass
                 .split(' ')
-                .forEach(_dragActiveClass =>
+                .forEach(dragActiveClass =>
                   this.renderer.removeClass(
                     this.element.nativeElement,
-                    _dragActiveClass
+                    dragActiveClass
                   )
                 );
+            }
             currentDrag$.complete();
           });
 
