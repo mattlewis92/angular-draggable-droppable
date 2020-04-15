@@ -5,7 +5,7 @@
   "scripts": {
     "start": "concurrently --raw \"ng serve --open\" \"npm run test:watch\"",
     "build:demo": "ng build --prod",
-    "build:lib": "copyfiles package.json projects/angular-draggable-droppable && ng build angular-draggable-droppable --prod && rollup -c rollup.config.js && npm run copyfiles",
+    "build:lib": "copyfiles package.json projects/angular-draggable-droppable && ng build angular-draggable-droppable && rollup -c rollup.config.js && npm run copyfiles",
     "build:clean": "rm -rf dist",
     "copyfiles": "copyfiles CHANGELOG.md README.md LICENSE dist/angular-draggable-droppable",
     "test": "npm run lint && ng test angular-draggable-droppable --watch=false --code-coverage && npm run build:lib && npm run build:clean",
