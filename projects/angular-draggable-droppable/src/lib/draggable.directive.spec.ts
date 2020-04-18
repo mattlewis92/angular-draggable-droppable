@@ -62,12 +62,13 @@ describe('draggable directive', () => {
   @Component({
     // tslint:disable-line max-classes-per-file
     template: `
-      <div mwlDraggableScrollContainer [activeLongPressDrag]="true">
+      <div mwlDraggableScrollContainer>
         <div
           #draggableElement
           mwlDraggable
           [dragAxis]="{ x: true, y: true }"
           [validateDrag]="validateDrag"
+          [touchStartLongPress]="{ delay: 300, delta: 30 }"
           (dragPointerDown)="dragPointerDown($event)"
           (dragStart)="dragStart($event)"
           (ghostElementCreated)="ghostElementCreated($event)"
@@ -1226,5 +1227,31 @@ describe('draggable directive', () => {
       button: 2
     });
     expect(fixture.componentInstance.dragEnd).not.to.have.been.called;
+  });
+
+  it('should disable right click events on touch events', () => {
+    const scrollFixture = TestBed.createComponent(ScrollTestComponent);
+    scrollFixture.detectChanges();
+    document.body.appendChild(scrollFixture.nativeElement);
+    const draggableElement =
+      scrollFixture.componentInstance.draggableElement.nativeElement;
+
+    const preventDefault = sinon.spy();
+
+    triggerDomEvent('contextmenu', document.body, {
+      preventDefault
+    });
+
+    expect(preventDefault).not.to.have.been.called;
+
+    triggerDomEvent('touchstart', draggableElement, {
+      touches: [{ clientX: 5, clientY: 10 }]
+    });
+
+    triggerDomEvent('contextmenu', document.body, {
+      preventDefault
+    });
+
+    expect(preventDefault).to.have.been.calledOnce;
   });
 });

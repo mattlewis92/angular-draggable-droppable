@@ -21,7 +21,8 @@ import {
   merge,
   ReplaySubject,
   combineLatest,
-  animationFrameScheduler
+  animationFrameScheduler,
+  fromEvent
 } from 'rxjs';
 import {
   map,
@@ -158,6 +159,12 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
    */
   @Input()
   ghostElementTemplate: TemplateRef<any>;
+
+  /**
+   * Amount of milliseconds to wait on touch devices before starting to drag the element (so that you can scroll the page by touching a draggable element)
+   */
+  @Input()
+  touchStartLongPress: { delay: number; delta: number };
 
   /**
    * Called when the element can be dragged along one axis and has the mouse or pointer device pressed on it
@@ -649,51 +656,56 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   private onTouchStart(event: TouchEvent): void {
-    if (!this.scrollContainer) {
-      try {
-        event.preventDefault();
-      } catch (e) {}
-    }
-    let hasContainerScrollbar: boolean;
     let startScrollPosition: any;
     let isDragActivated: boolean;
-    if (this.scrollContainer && this.scrollContainer.activeLongPressDrag) {
+    if (
+      (this.scrollContainer && this.scrollContainer.activeLongPressDrag) ||
+      this.touchStartLongPress
+    ) {
       this.timeLongPress.timerBegin = Date.now();
       isDragActivated = false;
-      hasContainerScrollbar = this.scrollContainer.hasScrollbar();
       startScrollPosition = this.getScrollPosition();
     }
     if (!this.eventListenerSubscriptions.touchmove) {
-      this.eventListenerSubscriptions.touchmove = this.renderer.listen(
-        'document',
-        'touchmove',
-        (touchMoveEvent: TouchEvent) => {
-          if (
-            this.scrollContainer &&
-            this.scrollContainer.activeLongPressDrag &&
-            !isDragActivated &&
-            hasContainerScrollbar
-          ) {
-            isDragActivated = this.shouldBeginDrag(
-              event,
-              touchMoveEvent,
-              startScrollPosition
-            );
-          }
-          if (
-            !this.scrollContainer ||
-            !this.scrollContainer.activeLongPressDrag ||
-            !hasContainerScrollbar ||
-            isDragActivated
-          ) {
-            this.pointerMove$.next({
-              event: touchMoveEvent,
-              clientX: touchMoveEvent.targetTouches[0].clientX,
-              clientY: touchMoveEvent.targetTouches[0].clientY
-            });
-          }
+      const contextMenuListener = fromEvent(document, 'contextmenu').subscribe(
+        e => {
+          e.preventDefault();
         }
       );
+
+      const touchMoveListener = fromEvent<TouchEvent>(document, 'touchmove', {
+        passive: false
+      }).subscribe(touchMoveEvent => {
+        if (
+          ((this.scrollContainer && this.scrollContainer.activeLongPressDrag) ||
+            this.touchStartLongPress) &&
+          !isDragActivated
+        ) {
+          isDragActivated = this.shouldBeginDrag(
+            event,
+            touchMoveEvent,
+            startScrollPosition
+          );
+        }
+        if (
+          ((!this.scrollContainer ||
+            !this.scrollContainer.activeLongPressDrag) &&
+            !this.touchStartLongPress) ||
+          isDragActivated
+        ) {
+          touchMoveEvent.preventDefault();
+          this.pointerMove$.next({
+            event: touchMoveEvent,
+            clientX: touchMoveEvent.targetTouches[0].clientX,
+            clientY: touchMoveEvent.targetTouches[0].clientY
+          });
+        }
+      });
+
+      this.eventListenerSubscriptions.touchmove = () => {
+        contextMenuListener.unsubscribe();
+        touchMoveListener.unsubscribe();
+      };
     }
     this.pointerDown$.next({
       event,
@@ -706,9 +718,6 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     if (this.eventListenerSubscriptions.touchmove) {
       this.eventListenerSubscriptions.touchmove();
       delete this.eventListenerSubscriptions.touchmove;
-      if (this.scrollContainer && this.scrollContainer.activeLongPressDrag) {
-        this.scrollContainer.enableScroll();
-      }
     }
     this.pointerUp$.next({
       event,
@@ -768,7 +777,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   private shouldBeginDrag(
     event: TouchEvent,
     touchMoveEvent: TouchEvent,
-    startScrollPosition: any
+    startScrollPosition: { top: number; left: number }
   ): boolean {
     const moveScrollPosition = this.getScrollPosition();
     const deltaScroll = {
@@ -784,8 +793,15 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         touchMoveEvent.targetTouches[0].clientY - event.touches[0].clientY
       ) - deltaScroll.top;
     const deltaTotal = deltaX + deltaY;
+    const longPressConfig = this.touchStartLongPress
+      ? this.touchStartLongPress
+      : /* istanbul ignore next */
+        {
+          delta: this.scrollContainer.longPressConfig.delta,
+          delay: this.scrollContainer.longPressConfig.duration
+        };
     if (
-      deltaTotal > this.scrollContainer.longPressConfig.delta ||
+      deltaTotal > longPressConfig.delta ||
       deltaScroll.top > 0 ||
       deltaScroll.left > 0
     ) {
@@ -794,10 +810,6 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     this.timeLongPress.timerEnd = Date.now();
     const duration =
       this.timeLongPress.timerEnd - this.timeLongPress.timerBegin;
-    if (duration >= this.scrollContainer.longPressConfig.duration) {
-      this.scrollContainer.disableScroll();
-      return true;
-    }
-    return false;
+    return duration >= longPressConfig.delay;
   }
 }

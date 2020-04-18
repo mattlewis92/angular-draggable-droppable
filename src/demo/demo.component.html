@@ -1,13 +1,23 @@
-<div mwlDraggable dropData="foo" dragActiveClass="drag-active">
+<div
+  mwlDraggable
+  dropData="foo"
+  dragActiveClass="drag-active"
+  [touchStartLongPress]="{ delay: 300, delta: 30 }"
+>
   Drag me!
 </div>
-<div mwlDraggable dropData="bar" dragActiveClass="drag-active" [dragSnapGrid]="{x: 100, y: 100}">
+<div
+  mwlDraggable
+  dropData="bar"
+  dragActiveClass="drag-active"
+  [dragSnapGrid]="{ x: 100, y: 100 }"
+  [touchStartLongPress]="{ delay: 300, delta: 30 }"
+>
   I snap to a 100 x 100 grid
 </div>
-<div
-  mwlDroppable
-  (drop)="onDrop($event)"
-  dragOverClass="drop-over-active">
+<div mwlDroppable (drop)="onDrop($event)" dragOverClass="drop-over-active">
   <span [hidden]="droppedData">Drop here</span>
-  <span [hidden]="!droppedData">Item dropped here with data: "{{ droppedData }}"!</span>
+  <span [hidden]="!droppedData"
+    >Item dropped here with data: "{{ droppedData }}"!</span
+  >
 </div>
