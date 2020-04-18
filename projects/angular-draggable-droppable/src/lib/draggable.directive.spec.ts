@@ -938,6 +938,33 @@ describe('draggable directive', () => {
       .true;
   });
 
+  it('should make all elements on the page unable to select text while dragging', () => {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = 'foo';
+    document.body.appendChild(tmp);
+    expect(getComputedStyle(tmp).userSelect).to.equal('auto');
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
+    triggerDomEvent('mousedown', draggableElement, {
+      clientX: 5,
+      clientY: 10,
+      button: 0
+    });
+    expect(getComputedStyle(tmp).userSelect).to.equal('none');
+    triggerDomEvent('mousemove', draggableElement, {
+      clientX: 7,
+      clientY: 10,
+      button: 0
+    });
+    expect(getComputedStyle(tmp).userSelect).to.equal('none');
+    triggerDomEvent('mouseup', draggableElement, {
+      clientX: 7,
+      clientY: 8,
+      button: 0
+    });
+    expect(getComputedStyle(tmp).userSelect).to.equal('auto');
+  });
+
   it('should cancel the drag', () => {
     const draggableElement =
       fixture.componentInstance.draggableElement.nativeElement;
@@ -984,6 +1011,9 @@ describe('draggable directive', () => {
       button: 0
     });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
+    expect(getComputedStyle(document.body.children[0]).userSelect).to.equal(
+      'none'
+    );
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 8 });
     fixture.destroy();
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
@@ -991,6 +1021,9 @@ describe('draggable directive', () => {
       y: -2,
       dragCancelled: false
     });
+    expect(getComputedStyle(document.body.children[0]).userSelect).to.equal(
+      'auto'
+    );
   });
 
   it('should use the contents of the ghost element template as the inner html of the ghost element', () => {
@@ -1057,15 +1090,11 @@ describe('draggable directive', () => {
     });
   });
 
-  it('should prevent text from being selected while dragging', () => {
+  it('should allow elements to be selected if clicking but not dragging the element', () => {
     const tmp = document.createElement('div');
     tmp.innerHTML = 'foo';
     document.body.appendChild(tmp);
-    const preventDefault = sinon.spy();
-    triggerDomEvent('selectstart', tmp, {
-      preventDefault
-    });
-    expect(preventDefault).not.to.have.been.called;
+    expect(getComputedStyle(tmp).userSelect).to.equal('auto');
     const draggableElement =
       fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, {
@@ -1073,19 +1102,13 @@ describe('draggable directive', () => {
       clientY: 10,
       button: 0
     });
-    triggerDomEvent('selectstart', tmp, {
-      preventDefault
-    });
-    expect(preventDefault).to.have.been.calledOnce;
+    expect(getComputedStyle(tmp).userSelect).to.equal('none');
     triggerDomEvent('mouseup', draggableElement, {
       clientX: 5,
       clientY: 10,
       button: 0
     });
-    triggerDomEvent('selectstart', tmp, {
-      preventDefault
-    });
-    expect(preventDefault).to.have.been.calledOnce;
+    expect(getComputedStyle(tmp).userSelect).to.equal('auto');
   });
 
   it('should allow for draggable elements to be inside other draggable elements', () => {
