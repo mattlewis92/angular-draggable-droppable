@@ -68,12 +68,6 @@
   &lt;/div&gt;</code></pre></div>
             </p>
 
-            <p class="comment">
-                <h3>Implements</h3>
-            </p>
-            <p class="comment">
-                            <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-            </p>
 
 
         <section>
@@ -215,76 +209,25 @@ Delta of the</p>
 @Directive({
   selector: &#x27;[mwlDraggableScrollContainer]&#x27;
 })
-export class DraggableScrollContainerDirective implements OnInit {
+export class DraggableScrollContainerDirective {
   /**
    * Trigger the DragStart after a long touch in scrollable container when true
+   * @deprecated will be removed in v5 (use [touchStartLongPress]&#x3D;&quot;{delay: 300, delta: 30}&quot; on the mwlDraggable element instead)
    */
-  @Input()
-  activeLongPressDrag: boolean &#x3D; false;
+  @Input() activeLongPressDrag: boolean &#x3D; false;
 
   /**
    * Configuration of a long touch
    * Duration in ms of a long touch before activating DragStart
    * Delta of the
+   * @deprecated will be removed in v5 (use [touchStartLongPress]&#x3D;&quot;{delay: 300, delta: 30}&quot; on the mwlDraggable element instead)
    */
-  @Input()
-  longPressConfig &#x3D; { duration: 300, delta: 30 };
-
-  private cancelledScroll &#x3D; false;
+  @Input() longPressConfig &#x3D; { duration: 300, delta: 30 };
 
   /**
    * @hidden
    */
-  constructor(
-    public elementRef: ElementRef&lt;HTMLElement&gt;,
-    private renderer: Renderer2,
-    private zone: NgZone
-  ) {}
-
-  ngOnInit() {
-    this.zone.runOutsideAngular(() &#x3D;&gt; {
-      this.renderer.listen(
-        this.elementRef.nativeElement,
-        &#x27;touchmove&#x27;,
-        (event: TouchEvent) &#x3D;&gt; {
-          if (this.cancelledScroll &amp;&amp; event.cancelable) {
-            event.preventDefault();
-          }
-        }
-      );
-    });
-  }
-
-  /**
-   * @hidden
-   */
-  disableScroll(): void {
-    this.cancelledScroll &#x3D; true;
-    this.renderer.setStyle(this.elementRef.nativeElement, &#x27;overflow&#x27;, &#x27;hidden&#x27;);
-  }
-
-  /**
-   * @hidden
-   */
-  enableScroll(): void {
-    this.cancelledScroll &#x3D; false;
-    this.renderer.setStyle(this.elementRef.nativeElement, &#x27;overflow&#x27;, &#x27;auto&#x27;);
-  }
-
-  /**
-   * @hidden
-   */
-  hasScrollbar(): boolean {
-    const containerHasHorizontalScroll &#x3D;
-      this.elementRef.nativeElement.scrollWidth -
-        this.elementRef.nativeElement.clientWidth &gt;
-      0;
-    const containerHasVerticalScroll &#x3D;
-      this.elementRef.nativeElement.scrollHeight -
-        this.elementRef.nativeElement.clientHeight &gt;
-      0;
-    return containerHasHorizontalScroll || containerHasVerticalScroll;
-  }
+  constructor(public elementRef: ElementRef&lt;HTMLElement&gt;) {}
 }
 </code></pre>
     </div>
