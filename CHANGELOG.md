@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.4.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.12...v4.4.0) (2020-04-18)
+
+
+### Features
+
+* allow setting drag start delay on touch devices ([c9b28a5](https://github.com/mattlewis92/angular-draggable-droppable/commit/c9b28a59e1f8f822226e2b72d2ee7e034f9c7c71))
+
+
+### Bug Fixes
+
+* disable text selection when dragging on ios safari ([ca83a33](https://github.com/mattlewis92/angular-draggable-droppable/commit/ca83a33b7b8e370e5707f0fb21784fa592237e73))
+
 ### [4.3.12](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.11...v4.3.12) (2020-04-12)
 
 
