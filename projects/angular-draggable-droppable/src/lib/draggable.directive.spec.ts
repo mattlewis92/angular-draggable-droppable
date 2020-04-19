@@ -206,27 +206,6 @@ describe('draggable directive', () => {
     });
   });
 
-  it('should end the pointerUp$ observable when the component is destroyed', () => {
-    const complete = sinon.spy();
-    fixture.componentInstance.draggable.pointerUp$.subscribe({ complete });
-    fixture.destroy();
-    expect(complete).to.have.been.calledOnce;
-  });
-
-  it('should end the pointerDown$ observable when the component is destroyed', () => {
-    const complete = sinon.spy();
-    fixture.componentInstance.draggable.pointerDown$.subscribe({ complete });
-    fixture.destroy();
-    expect(complete).to.have.been.calledOnce;
-  });
-
-  it('should end the pointerMove$ observable when the component is destroyed', () => {
-    const complete = sinon.spy();
-    fixture.componentInstance.draggable.pointerMove$.subscribe({ complete });
-    fixture.destroy();
-    expect(complete).to.have.been.calledOnce;
-  });
-
   it('should disable dragging along the x axis', () => {
     fixture.componentInstance.dragAxis = { x: false, y: true };
     fixture.detectChanges();
@@ -286,18 +265,8 @@ describe('draggable directive', () => {
   });
 
   it('should disable dragging', () => {
-    expect(
-      Object.keys(
-        fixture.componentInstance.draggable['eventListenerSubscriptions']
-      ).length
-    ).to.equal(7);
     fixture.componentInstance.dragAxis = { x: false, y: false };
     fixture.detectChanges();
-    expect(
-      Object.keys(
-        fixture.componentInstance.draggable['eventListenerSubscriptions']
-      ).length
-    ).to.equal(0);
     const draggableElement =
       fixture.componentInstance.draggableElement.nativeElement;
     triggerDomEvent('mousedown', draggableElement, {
@@ -620,10 +589,6 @@ describe('draggable directive', () => {
       clientY: 8,
       button: 0
     });
-    expect(
-      fixture.componentInstance.draggable['eventListenerSubscriptions']
-        .mousemove
-    ).not.to.be.ok;
   });
 
   it('should not register multiple mouse move listeners', () => {
@@ -634,18 +599,11 @@ describe('draggable directive', () => {
       clientY: 8,
       button: 0
     });
-    const mouseMoveUnsubscribe =
-      fixture.componentInstance.draggable['eventListenerSubscriptions']
-        .mousemove;
     triggerDomEvent('mousedown', draggableElement, {
       clientX: 7,
       clientY: 8,
       button: 0
     });
-    expect(
-      fixture.componentInstance.draggable['eventListenerSubscriptions']
-        .mousemove
-    ).to.equal(mouseMoveUnsubscribe);
   });
 
   it('should work with touch events', () => {
@@ -728,10 +686,6 @@ describe('draggable directive', () => {
     triggerDomEvent('touchend', draggableElement, {
       changedTouches: [{ clientX: 7, clientY: 8 }]
     });
-    expect(
-      fixture.componentInstance.draggable['eventListenerSubscriptions']
-        .touchmove
-    ).not.to.be.ok;
   });
 
   it('should not register multiple touch move listeners', () => {
@@ -740,16 +694,9 @@ describe('draggable directive', () => {
     triggerDomEvent('touchstart', draggableElement, {
       touches: [{ clientX: 7, clientY: 8 }]
     });
-    const touchMoveUnsubscribe =
-      fixture.componentInstance.draggable['eventListenerSubscriptions']
-        .touchmove;
     triggerDomEvent('touchstart', draggableElement, {
       touches: [{ clientX: 7, clientY: 8 }]
     });
-    expect(
-      fixture.componentInstance.draggable['eventListenerSubscriptions']
-        .touchmove
-    ).to.equal(touchMoveUnsubscribe);
   });
 
   it('should disable the mouse move cursor', () => {
