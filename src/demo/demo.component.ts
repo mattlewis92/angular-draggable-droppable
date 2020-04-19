@@ -4,7 +4,7 @@ import { DropEvent } from 'angular-draggable-droppable';
 @Component({
   selector: 'mwl-demo-app',
   templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.css']
+  styleUrls: ['./demo.component.css'],
 })
 export class DemoComponent {
   droppedData: string = '';

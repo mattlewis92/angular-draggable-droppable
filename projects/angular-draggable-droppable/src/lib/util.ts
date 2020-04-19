@@ -8,7 +8,7 @@ export function addClass(
   if (classToAdd) {
     classToAdd
       .split(' ')
-      .forEach(className =>
+      .forEach((className) =>
         renderer.addClass(element.nativeElement, className)
       );
   }
@@ -22,7 +22,7 @@ export function removeClass(
   if (classToRemove) {
     classToRemove
       .split(' ')
-      .forEach(className =>
+      .forEach((className) =>
         renderer.removeClass(element.nativeElement, className)
       );
   }

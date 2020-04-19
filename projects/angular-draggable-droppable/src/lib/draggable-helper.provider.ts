@@ -8,7 +8,7 @@ export interface CurrentDragData {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DraggableHelper {
   currentDrag = new Subject<Subject<CurrentDragData>>();

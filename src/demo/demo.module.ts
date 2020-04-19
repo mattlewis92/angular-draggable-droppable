@@ -7,6 +7,6 @@ import { DemoComponent } from './demo.component';
 @NgModule({
   declarations: [DemoComponent],
   imports: [BrowserModule, DragAndDropModule],
-  bootstrap: [DemoComponent]
+  bootstrap: [DemoComponent],
 })
 export class DemoModule {}

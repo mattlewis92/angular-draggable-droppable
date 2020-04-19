@@ -39,7 +39,7 @@ import { DragAndDropModule } from 'angular-draggable-droppable';
 @NgModule({
   declarations: [DemoApp],
   imports: [DragAndDropModule],
-  bootstrap: [DemoApp]
+  bootstrap: [DemoApp],
 })
 class DemoModule {}
 
@@ -53,7 +53,7 @@ class DemoModule {}
         >Item dropped here with data: "{{ droppedData }}"!</span
       >
     </div>
-  `
+  `,
 })
 class DemoApp {
   droppedData: string;

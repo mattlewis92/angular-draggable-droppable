@@ -11,7 +11,7 @@ import 'zone.js/dist/mocha-patch';
 import { getTestBed } from '@angular/core/testing';
 import {
   BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting
+  platformBrowserDynamicTesting,
 } from '@angular/platform-browser-dynamic/testing';
 import { use } from 'chai';
 import * as sinon from 'sinon';

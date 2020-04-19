@@ -9,7 +9,7 @@ module.exports = (config: any) => {
       require('karma-mocha'),
       require('karma-chrome-launcher'),
       require('karma-coverage-istanbul-reporter'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('@angular-devkit/build-angular/plugins/karma'),
     ],
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, '../../coverage'),
@@ -19,8 +19,8 @@ module.exports = (config: any) => {
         statements: 100,
         lines: 100,
         branches: 100,
-        functions: 100
-      }
+        functions: 100,
+      },
     },
     reporters: ['progress'],
     port: 9876,
@@ -30,7 +30,7 @@ module.exports = (config: any) => {
     browsers: ['ChromeHeadless'],
     singleRun: false,
     mime: {
-      'text/x-typescript': ['ts']
-    }
+      'text/x-typescript': ['ts'],
+    },
   });
 };

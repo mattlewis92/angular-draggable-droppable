@@ -7,12 +7,12 @@ import { DraggableScrollContainerDirective } from './draggable-scroll-container.
   declarations: [
     DraggableDirective,
     DroppableDirective,
-    DraggableScrollContainerDirective
+    DraggableScrollContainerDirective,
   ],
   exports: [
     DraggableDirective,
     DroppableDirective,
-    DraggableScrollContainerDirective
-  ]
+    DraggableScrollContainerDirective,
+  ],
 })
 export class DragAndDropModule {}

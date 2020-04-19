@@ -8,7 +8,7 @@ import {
   NgZone,
   Input,
   Renderer2,
-  Optional
+  Optional,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { distinctUntilChanged, pairwise, filter, map } from 'rxjs/operators';
@@ -34,7 +34,7 @@ export interface DropEvent<T = any> {
 }
 
 @Directive({
-  selector: '[mwlDroppable]'
+  selector: '[mwlDroppable]',
 })
 export class DroppableDirective implements OnInit, OnDestroy {
   /**
@@ -79,14 +79,14 @@ export class DroppableDirective implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.currentDragSubscription = this.draggableHelper.currentDrag.subscribe(
-      drag$ => {
+      (drag$) => {
         addClass(this.renderer, this.element, this.dragActiveClass);
         const droppableElement: {
           rect?: ClientRect;
           updateCache: boolean;
           scrollContainerRect?: ClientRect;
         } = {
-          updateCache: true
+          updateCache: true,
         };
 
         const deregisterScrollListener = this.renderer.listen(
@@ -135,21 +135,21 @@ export class DroppableDirective implements OnInit, OnDestroy {
         let dragOverActive: boolean; // TODO - see if there's a way of doing this via rxjs
 
         overlapsChanged$
-          .pipe(filter(overlapsNow => overlapsNow))
+          .pipe(filter((overlapsNow) => overlapsNow))
           .subscribe(() => {
             dragOverActive = true;
             addClass(this.renderer, this.element, this.dragOverClass);
             this.zone.run(() => {
               this.dragEnter.next({
-                dropData: currentDragDropData
+                dropData: currentDragDropData,
               });
             });
           });
 
-        overlaps$.pipe(filter(overlapsNow => overlapsNow)).subscribe(() => {
+        overlaps$.pipe(filter((overlapsNow) => overlapsNow)).subscribe(() => {
           this.zone.run(() => {
             this.dragOver.next({
-              dropData: currentDragDropData
+              dropData: currentDragDropData,
             });
           });
         });
@@ -164,7 +164,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
             removeClass(this.renderer, this.element, this.dragOverClass);
             this.zone.run(() => {
               this.dragLeave.next({
-                dropData: currentDragDropData
+                dropData: currentDragDropData,
               });
             });
           });
@@ -177,11 +177,11 @@ export class DroppableDirective implements OnInit, OnDestroy {
               removeClass(this.renderer, this.element, this.dragOverClass);
               this.zone.run(() => {
                 this.drop.next({
-                  dropData: currentDragDropData
+                  dropData: currentDragDropData,
                 });
               });
             }
-          }
+          },
         });
       }
     );

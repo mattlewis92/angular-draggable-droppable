@@ -11,5 +11,5 @@ export {
   DragEndEvent,
   GhostElementCreatedEvent,
   ValidateDrag,
-  ValidateDragParams
+  ValidateDragParams,
 } from './lib/draggable.directive';

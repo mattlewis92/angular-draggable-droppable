@@ -4,7 +4,7 @@ import {
   Input,
   NgZone,
   OnInit,
-  Renderer2
+  Renderer2,
 } from '@angular/core';
 
 /**
@@ -16,7 +16,7 @@ import {
   ```
  */
 @Directive({
-  selector: '[mwlDraggableScrollContainer]'
+  selector: '[mwlDraggableScrollContainer]',
 })
 export class DraggableScrollContainerDirective {
   /**

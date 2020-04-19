@@ -49,8 +49,8 @@ describe('droppable directive', () => {
           width: 200px;
           height: 200px;
         }
-      `
-    ]
+      `,
+    ],
   })
   class TestComponent {
     @ViewChild(DraggableDirective)
@@ -65,7 +65,7 @@ describe('droppable directive', () => {
     drop = sinon.spy();
     dragEnd = sinon.spy();
     dropData = {
-      foo: 'bar'
+      foo: 'bar',
     };
     dragOverClass: string;
     dragActiveClass: string;
@@ -119,8 +119,8 @@ describe('droppable directive', () => {
           width: 200px;
           height: 200px;
         }
-      `
-    ]
+      `,
+    ],
   })
   class ScrollTestComponent extends TestComponent {
     @ViewChild(DraggableScrollContainerDirective)
@@ -130,7 +130,7 @@ describe('droppable directive', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [DragAndDropModule],
-      declarations: [TestComponent, ScrollTestComponent]
+      declarations: [TestComponent, ScrollTestComponent],
     });
   });
 
@@ -154,35 +154,35 @@ describe('droppable directive', () => {
     triggerDomEvent('mousedown', draggableElement, {
       clientX: 5,
       clientY: 10,
-      button: 0
+      button: 0,
     });
     expect(fixture.componentInstance.dragEvent).not.to.have.been.called;
     triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 50 });
     expect(fixture.componentInstance.dragEvent).not.to.have.been.called;
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
-      clientY: 120
+      clientY: 120,
     });
     expect(fixture.componentInstance.dragEvent.getCall(0).args).to.deep.equal([
       'enter',
-      { dropData: { foo: 'bar' } }
+      { dropData: { foo: 'bar' } },
     ]);
     expect(fixture.componentInstance.dragEvent.getCall(1).args).to.deep.equal([
       'over',
-      { dropData: { foo: 'bar' } }
+      { dropData: { foo: 'bar' } },
     ]);
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
-      clientY: 125
+      clientY: 125,
     });
     expect(fixture.componentInstance.dragEvent.getCall(2).args).to.deep.equal([
       'over',
-      { dropData: { foo: 'bar' } }
+      { dropData: { foo: 'bar' } },
     ]);
     triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 50 });
     expect(fixture.componentInstance.dragEvent.getCall(3).args).to.deep.equal([
       'leave',
-      { dropData: { foo: 'bar' } }
+      { dropData: { foo: 'bar' } },
     ]);
   });
 
@@ -192,17 +192,17 @@ describe('droppable directive', () => {
     triggerDomEvent('mousedown', draggableElement, {
       clientX: 5,
       clientY: 10,
-      button: 0
+      button: 0,
     });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
-      clientY: 120
+      clientY: 120,
     });
     triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 50 });
     triggerDomEvent('mouseup', draggableElement, {
       clientX: 5,
       clientY: 50,
-      button: 0
+      button: 0,
     });
     expect(fixture.componentInstance.drop).not.to.have.been.called;
   });
@@ -213,19 +213,19 @@ describe('droppable directive', () => {
     triggerDomEvent('mousedown', draggableElement, {
       clientX: 5,
       clientY: 10,
-      button: 0
+      button: 0,
     });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
-      clientY: 120
+      clientY: 120,
     });
     triggerDomEvent('mouseup', draggableElement, {
       clientX: 5,
       clientY: 120,
-      button: 0
+      button: 0,
     });
     expect(fixture.componentInstance.drop).to.have.been.calledWith({
-      dropData: { foo: 'bar' }
+      dropData: { foo: 'bar' },
     });
   });
 
@@ -235,7 +235,7 @@ describe('droppable directive', () => {
     triggerDomEvent('mousedown', draggableElement, {
       clientX: 5,
       clientY: 10,
-      button: 0
+      button: 0,
     });
     expect(fixture.componentInstance.dragEvent).not.to.have.been.called;
     triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 50 });
@@ -244,15 +244,15 @@ describe('droppable directive', () => {
     expect(fixture.componentInstance.dragEvent).not.to.have.been.called;
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
-      clientY: 100
+      clientY: 100,
     });
     expect(fixture.componentInstance.dragEvent.getCall(0).args).to.deep.equal([
       'enter',
-      { dropData: { foo: 'bar' } }
+      { dropData: { foo: 'bar' } },
     ]);
     expect(fixture.componentInstance.dragEvent.getCall(1).args).to.deep.equal([
       'over',
-      { dropData: { foo: 'bar' } }
+      { dropData: { foo: 'bar' } },
     ]);
   });
 
@@ -268,21 +268,21 @@ describe('droppable directive', () => {
     triggerDomEvent('mousedown', draggableElement, {
       clientX: 5,
       clientY: 10,
-      button: 0
+      button: 0,
     });
     triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 10 });
     expect(droppableElement.classList.contains('drag-over')).to.be.false;
     expect(droppableElement.classList.contains('drag-over-2')).to.be.false;
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
-      clientY: 100
+      clientY: 100,
     });
     expect(droppableElement.classList.contains('drag-over')).to.be.true;
     expect(droppableElement.classList.contains('drag-over-2')).to.be.true;
     triggerDomEvent('mouseup', draggableElement, {
       clientX: 5,
       clientY: 120,
-      button: 0
+      button: 0,
     });
     expect(droppableElement.classList.contains('drag-over')).to.be.false;
     expect(droppableElement.classList.contains('drag-over-2')).to.be.false;
@@ -294,16 +294,16 @@ describe('droppable directive', () => {
     triggerDomEvent('mousedown', draggableElement, {
       clientX: 5,
       clientY: 10,
-      button: 0
+      button: 0,
     });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
-      clientY: 120
+      clientY: 120,
     });
     triggerDomEvent('mouseup', draggableElement, {
       clientX: 5,
       clientY: 120,
-      button: 0
+      button: 0,
     });
     sinon.assert.callOrder(
       fixture.componentInstance.dragEnd,
@@ -323,21 +323,21 @@ describe('droppable directive', () => {
     triggerDomEvent('mousedown', draggableElement, {
       clientX: 5,
       clientY: 10,
-      button: 0
+      button: 0,
     });
     triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 10 });
     expect(droppableElement.classList.contains('drag-active')).to.be.true;
     expect(droppableElement.classList.contains('drag-active-2')).to.be.true;
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
-      clientY: 100
+      clientY: 100,
     });
     expect(droppableElement.classList.contains('drag-active')).to.be.true;
     expect(droppableElement.classList.contains('drag-active-2')).to.be.true;
     triggerDomEvent('mouseup', draggableElement, {
       clientX: 5,
       clientY: 120,
-      button: 0
+      button: 0,
     });
     expect(droppableElement.classList.contains('drag-active')).to.be.false;
     expect(droppableElement.classList.contains('drag-active-2')).to.be.false;
@@ -365,11 +365,11 @@ describe('droppable directive', () => {
     triggerDomEvent('mousedown', draggableElement, {
       clientX: 5,
       clientY: 10,
-      button: 0
+      button: 0,
     });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
-      clientY: 11
+      clientY: 11,
     });
     scrollFixture.componentInstance.scrollContainer.elementRef.nativeElement.scrollTop = 150;
     scrollFixture.debugElement
@@ -377,15 +377,15 @@ describe('droppable directive', () => {
       .triggerEventHandler('scroll', {});
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
-      clientY: 10
+      clientY: 10,
     });
     triggerDomEvent('mouseup', draggableElement, {
       clientX: 5,
       clientY: 10,
-      button: 0
+      button: 0,
     });
     expect(scrollFixture.componentInstance.drop).to.have.been.calledWith({
-      dropData: { foo: 'bar' }
+      dropData: { foo: 'bar' },
     });
   });
 
@@ -398,16 +398,16 @@ describe('droppable directive', () => {
     triggerDomEvent('mousedown', draggableElement, {
       clientX: 5,
       clientY: 10,
-      button: 0
+      button: 0,
     });
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
-      clientY: 150
+      clientY: 150,
     });
     triggerDomEvent('mouseup', draggableElement, {
       clientX: 5,
       clientY: 150,
-      button: 0
+      button: 0,
     });
     expect(scrollFixture.componentInstance.drop).not.to.have.been.called;
   });
