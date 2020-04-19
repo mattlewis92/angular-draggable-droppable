@@ -669,14 +669,17 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   private onTouchStart(event: TouchEvent): void {
     let startScrollPosition: any;
     let isDragActivated: boolean;
+    let hasContainerScrollbar: boolean;
     if (
       (this.scrollContainer && this.scrollContainer.activeLongPressDrag) ||
       this.touchStartLongPress
     ) {
       this.timeLongPress.timerBegin = Date.now();
       isDragActivated = false;
+      hasContainerScrollbar = this.hasScrollbar();
       startScrollPosition = this.getScrollPosition();
     }
+
     if (!this.eventListenerSubscriptions.touchmove) {
       const contextMenuListener = fromEvent(document, 'contextmenu').subscribe(
         e => {
@@ -690,7 +693,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         if (
           ((this.scrollContainer && this.scrollContainer.activeLongPressDrag) ||
             this.touchStartLongPress) &&
-          !isDragActivated
+          !isDragActivated &&
+          hasContainerScrollbar
         ) {
           isDragActivated = this.shouldBeginDrag(
             event,
@@ -702,6 +706,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           ((!this.scrollContainer ||
             !this.scrollContainer.activeLongPressDrag) &&
             !this.touchStartLongPress) ||
+          !hasContainerScrollbar ||
           isDragActivated
         ) {
           touchMoveEvent.preventDefault();
@@ -849,5 +854,14 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
   private disableScroll() {
     this.renderer.setStyle(this.getScrollElement(), 'overflow', 'hidden');
+  }
+
+  private hasScrollbar(): boolean {
+    const scrollContainer = this.getScrollElement();
+    const containerHasHorizontalScroll =
+      scrollContainer.scrollWidth > scrollContainer.clientWidth;
+    const containerHasVerticalScroll =
+      scrollContainer.scrollHeight > scrollContainer.clientHeight;
+    return containerHasHorizontalScroll || containerHasVerticalScroll;
   }
 }
