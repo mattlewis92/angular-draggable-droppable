@@ -1476,11 +1476,26 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   private enableScroll() {
-    this.renderer.setStyle(this.getScrollElement(), &#x27;overflow&#x27;, &#x27;&#x27;);
+    if (this.scrollContainer) {
+      this.renderer.setStyle(
+        this.scrollContainer.elementRef.nativeElement,
+        &#x27;overflow&#x27;,
+        &#x27;&#x27;
+      );
+    }
+    this.renderer.setStyle(this.document.body, &#x27;overflow&#x27;, &#x27;&#x27;);
   }
 
   private disableScroll() {
-    this.renderer.setStyle(this.getScrollElement(), &#x27;overflow&#x27;, &#x27;hidden&#x27;);
+    /* istanbul ignore next */
+    if (this.scrollContainer) {
+      this.renderer.setStyle(
+        this.scrollContainer.elementRef.nativeElement,
+        &#x27;overflow&#x27;,
+        &#x27;hidden&#x27;
+      );
+    }
+    this.renderer.setStyle(this.document.body, &#x27;overflow&#x27;, &#x27;hidden&#x27;);
   }
 
   private hasScrollbar(): boolean {
