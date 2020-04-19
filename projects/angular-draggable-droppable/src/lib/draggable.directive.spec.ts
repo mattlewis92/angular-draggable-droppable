@@ -62,7 +62,7 @@ describe('draggable directive', () => {
   @Component({
     // tslint:disable-line max-classes-per-file
     template: `
-      <div mwlDraggableScrollContainer>
+      <div mwlDraggableScrollContainer *ngIf="!useBodyScroll; else contents">
         <div
           #draggableElement
           mwlDraggable
@@ -78,6 +78,23 @@ describe('draggable directive', () => {
           Drag me!
         </div>
       </div>
+
+      <ng-template #contents>
+        <div
+          #draggableElement
+          mwlDraggable
+          [dragAxis]="{ x: true, y: true }"
+          [validateDrag]="validateDrag"
+          [touchStartLongPress]="{ delay: 300, delta: 30 }"
+          (dragPointerDown)="dragPointerDown($event)"
+          (dragStart)="dragStart($event)"
+          (ghostElementCreated)="ghostElementCreated($event)"
+          (dragging)="dragging($event)"
+          (dragEnd)="dragEnd($event)"
+        >
+          Drag me!
+        </div>
+      </ng-template>
     `,
     styles: [
       `
@@ -100,6 +117,7 @@ describe('draggable directive', () => {
   class ScrollTestComponent extends TestComponent {
     @ViewChild(DraggableScrollContainerDirective)
     scrollContainer: DraggableScrollContainerDirective;
+    useBodyScroll = false;
   }
 
   @Component({
@@ -1155,6 +1173,34 @@ describe('draggable directive', () => {
 
   it('should start dragging with long touch', () => {
     const scrollFixture = TestBed.createComponent(ScrollTestComponent);
+    scrollFixture.detectChanges();
+    document.body.appendChild(scrollFixture.nativeElement);
+    const draggableElement =
+      scrollFixture.componentInstance.draggableElement.nativeElement;
+    triggerDomEvent('touchstart', draggableElement, {
+      touches: [{ clientX: 5, clientY: 10 }]
+    });
+    clock.tick(400);
+    triggerDomEvent('touchmove', draggableElement, {
+      targetTouches: [{ clientX: 5, clientY: 10 }]
+    });
+    expect(scrollFixture.componentInstance.dragStart).to.have.been.calledOnce;
+
+    triggerDomEvent('touchmove', draggableElement, {
+      targetTouches: [{ clientX: 7, clientY: 12 }]
+    });
+    expect(scrollFixture.componentInstance.dragging).to.have.been.calledWith({
+      x: 2,
+      y: 2
+    });
+    triggerDomEvent('touchend', draggableElement, {
+      changedTouches: [{ clientX: 10, clientY: 18 }]
+    });
+  });
+
+  it('should start dragging with long touch when the document is scrollable', () => {
+    const scrollFixture = TestBed.createComponent(ScrollTestComponent);
+    scrollFixture.componentInstance.useBodyScroll = true;
     scrollFixture.detectChanges();
     document.body.appendChild(scrollFixture.nativeElement);
     const draggableElement =
