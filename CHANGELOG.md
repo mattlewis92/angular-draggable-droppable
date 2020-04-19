@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.4.2](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.0...v4.4.2) (2020-04-19)
+
+
+### Bug Fixes
+
+* only enable long press drag delay if inside a scrollable element ([0a30e09](https://github.com/mattlewis92/angular-draggable-droppable/commit/0a30e09ce2e69be88b2a426aa64ae3ffabe16dde))
+* remove scroll glitch on touch devices when dragging ([fe9bd5e](https://github.com/mattlewis92/angular-draggable-droppable/commit/fe9bd5ec6d7338bdb3fee96295c2aad48d90ab1d))
+
 ## [4.4.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.12...v4.4.0) (2020-04-18)
 
 
