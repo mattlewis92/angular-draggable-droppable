@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.4.3](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.2...v4.4.3) (2020-04-19)
+
+
+### Bug Fixes
+
+* disable text selection in safari ([d044523](https://github.com/mattlewis92/angular-draggable-droppable/commit/d044523d6324839f13434eab274fdf119c6a1580))
+
 ### [4.4.2](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.0...v4.4.2) (2020-04-19)
 
 
