@@ -729,6 +729,13 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     if (this.eventListenerSubscriptions.touchmove) {
       this.eventListenerSubscriptions.touchmove();
       delete this.eventListenerSubscriptions.touchmove;
+
+      if (
+        (this.scrollContainer && this.scrollContainer.activeLongPressDrag) ||
+        this.touchStartLongPress
+      ) {
+        this.enableScroll();
+      }
     }
     this.pointerUp$.next({
       event,
@@ -769,6 +776,14 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     Object.keys(styles).forEach(key => {
       this.renderer.setStyle(element, key, styles[key]);
     });
+  }
+
+  private getScrollElement() {
+    if (this.scrollContainer) {
+      return this.scrollContainer.elementRef.nativeElement;
+    } else {
+      return this.document.body;
+    }
   }
 
   private getScrollPosition() {
@@ -821,6 +836,18 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     this.timeLongPress.timerEnd = Date.now();
     const duration =
       this.timeLongPress.timerEnd - this.timeLongPress.timerBegin;
-    return duration >= longPressConfig.delay;
+    if (duration >= longPressConfig.delay) {
+      this.disableScroll();
+      return true;
+    }
+    return false;
+  }
+
+  private enableScroll() {
+    this.renderer.setStyle(this.getScrollElement(), 'overflow', '');
+  }
+
+  private disableScroll() {
+    this.renderer.setStyle(this.getScrollElement(), 'overflow', 'hidden');
   }
 }
