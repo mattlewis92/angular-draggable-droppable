@@ -3,8 +3,8 @@
   "rules": {
     "no-inferrable-types": false,
     "no-unused-expression": [false],
-    "max-inline-declarations": false,
-    "enforce-component-selector": false,
+    "component-max-inline-declarations": false,
+    "use-component-selector": false,
     "no-unused-css": false,
     "no-empty-interface": false,
     "jsdoc-format": false
