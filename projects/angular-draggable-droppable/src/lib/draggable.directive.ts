@@ -402,7 +402,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
             this.ghostElement = clone;
 
-            document.body.style.cursor = this.dragCursor;
+            this.document.body.style.cursor = this.dragCursor;
 
             this.setElementStyles(clone, {
               position: 'fixed',
@@ -674,15 +674,20 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     }
 
     if (!this.eventListenerSubscriptions.touchmove) {
-      const contextMenuListener = fromEvent(document, 'contextmenu').subscribe(
-        e => {
-          e.preventDefault();
-        }
-      );
+      const contextMenuListener = fromEvent<Event>(
+        this.document,
+        'contextmenu'
+      ).subscribe(e => {
+        e.preventDefault();
+      });
 
-      const touchMoveListener = fromEvent<TouchEvent>(document, 'touchmove', {
-        passive: false
-      }).subscribe(touchMoveEvent => {
+      const touchMoveListener = fromEvent<TouchEvent>(
+        this.document,
+        'touchmove',
+        {
+          passive: false
+        }
+      ).subscribe(touchMoveEvent => {
         if (
           ((this.scrollContainer && this.scrollContainer.activeLongPressDrag) ||
             this.touchStartLongPress) &&
@@ -792,8 +797,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
       };
     } else {
       return {
-        top: window.pageYOffset || document.documentElement.scrollTop,
-        left: window.pageXOffset || document.documentElement.scrollLeft
+        top: window.pageYOffset || this.document.documentElement.scrollTop,
+        left: window.pageXOffset || this.document.documentElement.scrollLeft
       };
     }
   }
