@@ -40,38 +40,32 @@ export class DroppableDirective implements OnInit, OnDestroy {
   /**
    * Added to the element when an element is dragged over it
    */
-  @Input()
-  dragOverClass: string;
+  @Input() dragOverClass: string;
 
   /**
    * Added to the element any time a draggable element is being dragged
    */
-  @Input()
-  dragActiveClass: string;
+  @Input() dragActiveClass: string;
 
   /**
    * Called when a draggable element starts overlapping the element
    */
-  @Output()
-  dragEnter = new EventEmitter<DropEvent>();
+  @Output() dragEnter = new EventEmitter<DropEvent>();
 
   /**
    * Called when a draggable element stops overlapping the element
    */
-  @Output()
-  dragLeave = new EventEmitter<DropEvent>();
+  @Output() dragLeave = new EventEmitter<DropEvent>();
 
   /**
    * Called when a draggable element is moved over the element
    */
-  @Output()
-  dragOver = new EventEmitter<DropEvent>();
+  @Output() dragOver = new EventEmitter<DropEvent>();
 
   /**
    * Called when a draggable element is dropped on this element
    */
-  @Output()
-  drop = new EventEmitter<DropEvent>(); // tslint:disable-line no-output-named-after-standard-event
+  @Output() drop = new EventEmitter<DropEvent>(); // tslint:disable-line no-output-named-after-standard-event
 
   currentDragSubscription: Subscription;
 
