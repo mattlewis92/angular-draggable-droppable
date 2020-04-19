@@ -141,7 +141,7 @@
   Inject,
   TemplateRef,
   ViewContainerRef,
-  Optional
+  Optional,
 } from &#x27;@angular/core&#x27;;
 import {
   Subject,
@@ -150,7 +150,7 @@ import {
   ReplaySubject,
   combineLatest,
   animationFrameScheduler,
-  fromEvent
+  fromEvent,
 } from &#x27;rxjs&#x27;;
 import {
   map,
@@ -163,7 +163,7 @@ import {
   filter,
   count,
   startWith,
-  auditTime
+  auditTime,
 } from &#x27;rxjs/operators&#x27;;
 import { CurrentDragData, DraggableHelper } from &#x27;./draggable-helper.provider&#x27;;
 import { DOCUMENT } from &#x27;@angular/common&#x27;;
@@ -225,106 +225,90 @@ export interface GhostElementCreatedEvent {
 }
 
 @Directive({
-  selector: &#x27;[mwlDraggable]&#x27;
+  selector: &#x27;[mwlDraggable]&#x27;,
 })
 export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   /**
    * an object of data you can pass to the drop event
    */
-  @Input()
-  dropData: any;
+  @Input() dropData: any;
 
   /**
    * The axis along which the element is draggable
    */
-  @Input()
-  dragAxis: DragAxis &#x3D; { x: true, y: true };
+  @Input() dragAxis: DragAxis &#x3D; { x: true, y: true };
 
   /**
    * Snap all drags to an x / y grid
    */
-  @Input()
-  dragSnapGrid: SnapGrid &#x3D; {};
+  @Input() dragSnapGrid: SnapGrid &#x3D; {};
 
   /**
    * Show a ghost element that shows the drag when dragging
    */
-  @Input()
-  ghostDragEnabled: boolean &#x3D; true;
+  @Input() ghostDragEnabled: boolean &#x3D; true;
 
   /**
    * Show the original element when ghostDragEnabled is true
    */
-  @Input()
-  showOriginalElementWhileDragging: boolean &#x3D; false;
+  @Input() showOriginalElementWhileDragging: boolean &#x3D; false;
 
   /**
    * Allow custom behaviour to control when the element is dragged
    */
-  @Input()
-  validateDrag: ValidateDrag;
+  @Input() validateDrag: ValidateDrag;
 
   /**
    * The cursor to use when hovering over a draggable element
    */
-  @Input()
-  dragCursor: string &#x3D; &#x27;&#x27;;
+  @Input() dragCursor: string &#x3D; &#x27;&#x27;;
 
   /**
    * The css class to apply when the element is being dragged
    */
-  @Input()
-  dragActiveClass: string;
+  @Input() dragActiveClass: string;
 
   /**
    * The element the ghost element will be appended to. Default is next to the dragged element
    */
-  @Input()
-  ghostElementAppendTo: HTMLElement;
+  @Input() ghostElementAppendTo: HTMLElement;
 
   /**
    * An ng-template to be inserted into the parent element of the ghost element. It will overwrite any child nodes.
    */
-  @Input()
-  ghostElementTemplate: TemplateRef&lt;any&gt;;
+  @Input() ghostElementTemplate: TemplateRef&lt;any&gt;;
 
   /**
    * Amount of milliseconds to wait on touch devices before starting to drag the element (so that you can scroll the page by touching a draggable element)
    */
-  @Input()
-  touchStartLongPress: { delay: number; delta: number };
+  @Input() touchStartLongPress: { delay: number; delta: number };
 
   /**
    * Called when the element can be dragged along one axis and has the mouse or pointer device pressed on it
    */
-  @Output()
-  dragPointerDown &#x3D; new EventEmitter&lt;DragPointerDownEvent&gt;();
+  @Output() dragPointerDown &#x3D; new EventEmitter&lt;DragPointerDownEvent&gt;();
 
   /**
    * Called when the element has started to be dragged.
    * Only called after at least one mouse or touch move event.
    * If you call $event.cancelDrag$.emit() it will cancel the current drag
    */
-  @Output()
-  dragStart &#x3D; new EventEmitter&lt;DragStartEvent&gt;();
+  @Output() dragStart &#x3D; new EventEmitter&lt;DragStartEvent&gt;();
 
   /**
    * Called after the ghost element has been created
    */
-  @Output()
-  ghostElementCreated &#x3D; new EventEmitter&lt;GhostElementCreatedEvent&gt;();
+  @Output() ghostElementCreated &#x3D; new EventEmitter&lt;GhostElementCreatedEvent&gt;();
 
   /**
    * Called when the element is being dragged
    */
-  @Output()
-  dragging &#x3D; new EventEmitter&lt;DragMoveEvent&gt;();
+  @Output() dragging &#x3D; new EventEmitter&lt;DragMoveEvent&gt;();
 
   /**
    * Called after the element is dragged
    */
-  @Output()
-  dragEnd &#x3D; new EventEmitter&lt;DragEndEvent&gt;();
+  @Output() dragEnd &#x3D; new EventEmitter&lt;DragEndEvent&gt;();
 
   /**
    * @hidden
@@ -386,31 +370,13 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           pointerDownEvent.event.stopPropagation();
         }
 
-        // hack to prevent text getting selected in safari while dragging
-        const globalDragStyle: HTMLStyleElement &#x3D; this.renderer.createElement(
-          &#x27;style&#x27;
-        );
-        this.renderer.setAttribute(globalDragStyle, &#x27;type&#x27;, &#x27;text/css&#x27;);
-        this.renderer.appendChild(
-          globalDragStyle,
-          this.renderer.createText(&#x60;
-          body * {
-           -moz-user-select: none;
-           -ms-user-select: none;
-           -webkit-user-select: none;
-           user-select: none;
-          }
-        &#x60;)
-        );
-        this.document.head.appendChild(globalDragStyle);
-
         const startScrollPosition &#x3D; this.getScrollPosition();
 
-        const scrollContainerScroll$ &#x3D; new Observable(observer &#x3D;&gt; {
+        const scrollContainerScroll$ &#x3D; new Observable((observer) &#x3D;&gt; {
           const scrollContainer &#x3D; this.scrollContainer
             ? this.scrollContainer.elementRef.nativeElement
             : &#x27;window&#x27;;
-          return this.renderer.listen(scrollContainer, &#x27;scroll&#x27;, e &#x3D;&gt;
+          return this.renderer.listen(scrollContainer, &#x27;scroll&#x27;, (e) &#x3D;&gt;
             observer.next(e)
           );
         }).pipe(
@@ -434,7 +400,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
         const pointerMove &#x3D; combineLatest([
           this.pointerMove$,
-          scrollContainerScroll$
+          scrollContainerScroll$,
         ]).pipe(
           map(([pointerMoveEvent, scroll]) &#x3D;&gt; {
             return {
@@ -444,10 +410,10 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               clientX: pointerMoveEvent.clientX,
               clientY: pointerMoveEvent.clientY,
               scrollLeft: scroll.left,
-              scrollTop: scroll.top
+              scrollTop: scroll.top,
             };
           }),
-          map(moveData &#x3D;&gt; {
+          map((moveData) &#x3D;&gt; {
             if (this.dragSnapGrid.x) {
               moveData.transformX &#x3D;
                 Math.round(moveData.transformX / this.dragSnapGrid.x) *
@@ -462,7 +428,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
             return moveData;
           }),
-          map(moveData &#x3D;&gt; {
+          map((moveData) &#x3D;&gt; {
             if (!this.dragAxis.x) {
               moveData.transformX &#x3D; 0;
             }
@@ -473,13 +439,13 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
             return moveData;
           }),
-          map(moveData &#x3D;&gt; {
+          map((moveData) &#x3D;&gt; {
             const scrollX &#x3D; moveData.scrollLeft - startScrollPosition.left;
             const scrollY &#x3D; moveData.scrollTop - startScrollPosition.top;
             return {
               ...moveData,
               x: moveData.transformX + scrollX,
-              y: moveData.transformY + scrollY
+              y: moveData.transformY + scrollY,
             };
           }),
           filter(
@@ -488,21 +454,15 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               this.validateDrag({
                 x,
                 y,
-                transform: { x: transformX, y: transformY }
+                transform: { x: transformX, y: transformY },
               })
           ),
           takeUntil(dragComplete$),
           share()
         );
 
-        const dragStarted$ &#x3D; pointerMove.pipe(
-          take(1),
-          share()
-        );
-        const dragEnded$ &#x3D; pointerMove.pipe(
-          takeLast(1),
-          share()
-        );
+        const dragStarted$ &#x3D; pointerMove.pipe(take(1), share());
+        const dragEnded$ &#x3D; pointerMove.pipe(takeLast(1), share());
 
         dragStarted$.subscribe(({ clientX, clientY, x, y }) &#x3D;&gt; {
           this.zone.run(() &#x3D;&gt; {
@@ -513,13 +473,13 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             [
               this.scrollContainer
                 ? this.scrollContainer.elementRef.nativeElement
-                : this.document.defaultView
+                : this.document.defaultView,
             ],
             {
               margin: 20,
               autoScroll() {
                 return true;
-              }
+              },
             }
           );
           addClass(this.renderer, this.element, this.dragActiveClass);
@@ -548,7 +508,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
             this.ghostElement &#x3D; clone;
 
-            document.body.style.cursor &#x3D; this.dragCursor;
+            this.document.body.style.cursor &#x3D; this.dragCursor;
 
             this.setElementStyles(clone, {
               position: &#x27;fixed&#x27;,
@@ -559,7 +519,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               cursor: this.dragCursor,
               margin: &#x27;0&#x27;,
               willChange: &#x27;transform&#x27;,
-              pointerEvents: &#x27;none&#x27;
+              pointerEvents: &#x27;none&#x27;,
+              userSelect: &#x27;none&#x27;,
+              touchAction: &#x27;none&#x27;,
+              &#x27;-webkit-user-drag&#x27;: &#x27;none&#x27;,
+              &#x27;-webkit-tap-highlight-color&#x27;: &#x27;transparant&#x27;,
             });
 
             if (this.ghostElementTemplate) {
@@ -568,8 +532,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               );
               clone.innerHTML &#x3D; &#x27;&#x27;;
               viewRef.rootNodes
-                .filter(node &#x3D;&gt; node instanceof Node)
-                .forEach(node &#x3D;&gt; {
+                .filter((node) &#x3D;&gt; node instanceof Node)
+                .forEach((node) &#x3D;&gt; {
                   clone.appendChild(node);
                 });
               dragEnded$.subscribe(() &#x3D;&gt; {
@@ -581,7 +545,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               this.ghostElementCreated.emit({
                 clientX: clientX - x,
                 clientY: clientY - y,
-                element: clone
+                element: clone,
               });
             });
 
@@ -601,13 +565,13 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
         dragEnded$
           .pipe(
-            mergeMap(dragEndData &#x3D;&gt; {
+            mergeMap((dragEndData) &#x3D;&gt; {
               const dragEndData$ &#x3D; cancelDrag$.pipe(
                 count(),
                 take(1),
-                map(calledCount &#x3D;&gt; ({
+                map((calledCount) &#x3D;&gt; ({
                   ...dragEndData,
-                  dragCancelled: calledCount &gt; 0
+                  dragCancelled: calledCount &gt; 0,
                 }))
               );
               cancelDrag$.complete();
@@ -623,10 +587,17 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             currentDrag$.complete();
           });
 
-        merge(dragComplete$, dragEnded$)
-          .pipe(take(1))
-          .subscribe(() &#x3D;&gt; {
-            this.document.head.removeChild(globalDragStyle);
+        const selectionStart$ &#x3D; new Observable&lt;Event&gt;((observer) &#x3D;&gt; {
+          return this.renderer.listen(&#x27;document&#x27;, &#x27;selectstart&#x27;, (e) &#x3D;&gt;
+            observer.next(e)
+          );
+        });
+
+        // hack to prevent text getting selected in safari while dragging
+        selectionStart$
+          .pipe(takeUntil(merge(dragComplete$, dragEnded$)))
+          .subscribe((event) &#x3D;&gt; {
+            event.preventDefault();
           });
 
         return pointerMove;
@@ -637,7 +608,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     merge(
       pointerDragged$.pipe(
         take(1),
-        map(value &#x3D;&gt; [, value])
+        map((value) &#x3D;&gt; [, value])
       ),
       pointerDragged$.pipe(pairwise())
     )
@@ -663,13 +634,13 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               &#x27;-webkit-transform&#x27;: transform,
               &#x27;-ms-transform&#x27;: transform,
               &#x27;-moz-transform&#x27;: transform,
-              &#x27;-o-transform&#x27;: transform
+              &#x27;-o-transform&#x27;: transform,
             });
           }
           currentDrag$.next({
             clientX,
             clientY,
-            dropData: this.dropData
+            dropData: this.dropData,
           });
         }
       );
@@ -767,7 +738,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             this.pointerMove$.next({
               event: mouseMoveEvent,
               clientX: mouseMoveEvent.clientX,
-              clientY: mouseMoveEvent.clientY
+              clientY: mouseMoveEvent.clientY,
             });
           }
         );
@@ -775,7 +746,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
       this.pointerDown$.next({
         event,
         clientX: event.clientX,
-        clientY: event.clientY
+        clientY: event.clientY,
       });
     }
   }
@@ -789,7 +760,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
       this.pointerUp$.next({
         event,
         clientX: event.clientX,
-        clientY: event.clientY
+        clientY: event.clientY,
       });
     }
   }
@@ -797,28 +768,37 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   private onTouchStart(event: TouchEvent): void {
     let startScrollPosition: any;
     let isDragActivated: boolean;
+    let hasContainerScrollbar: boolean;
     if (
       (this.scrollContainer &amp;&amp; this.scrollContainer.activeLongPressDrag) ||
       this.touchStartLongPress
     ) {
       this.timeLongPress.timerBegin &#x3D; Date.now();
       isDragActivated &#x3D; false;
+      hasContainerScrollbar &#x3D; this.hasScrollbar();
       startScrollPosition &#x3D; this.getScrollPosition();
     }
-    if (!this.eventListenerSubscriptions.touchmove) {
-      const contextMenuListener &#x3D; fromEvent(document, &#x27;contextmenu&#x27;).subscribe(
-        e &#x3D;&gt; {
-          e.preventDefault();
-        }
-      );
 
-      const touchMoveListener &#x3D; fromEvent&lt;TouchEvent&gt;(document, &#x27;touchmove&#x27;, {
-        passive: false
-      }).subscribe(touchMoveEvent &#x3D;&gt; {
+    if (!this.eventListenerSubscriptions.touchmove) {
+      const contextMenuListener &#x3D; fromEvent&lt;Event&gt;(
+        this.document,
+        &#x27;contextmenu&#x27;
+      ).subscribe((e) &#x3D;&gt; {
+        e.preventDefault();
+      });
+
+      const touchMoveListener &#x3D; fromEvent&lt;TouchEvent&gt;(
+        this.document,
+        &#x27;touchmove&#x27;,
+        {
+          passive: false,
+        }
+      ).subscribe((touchMoveEvent) &#x3D;&gt; {
         if (
           ((this.scrollContainer &amp;&amp; this.scrollContainer.activeLongPressDrag) ||
             this.touchStartLongPress) &amp;&amp;
-          !isDragActivated
+          !isDragActivated &amp;&amp;
+          hasContainerScrollbar
         ) {
           isDragActivated &#x3D; this.shouldBeginDrag(
             event,
@@ -830,13 +810,14 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           ((!this.scrollContainer ||
             !this.scrollContainer.activeLongPressDrag) &amp;&amp;
             !this.touchStartLongPress) ||
+          !hasContainerScrollbar ||
           isDragActivated
         ) {
           touchMoveEvent.preventDefault();
           this.pointerMove$.next({
             event: touchMoveEvent,
             clientX: touchMoveEvent.targetTouches[0].clientX,
-            clientY: touchMoveEvent.targetTouches[0].clientY
+            clientY: touchMoveEvent.targetTouches[0].clientY,
           });
         }
       });
@@ -849,7 +830,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     this.pointerDown$.next({
       event,
       clientX: event.touches[0].clientX,
-      clientY: event.touches[0].clientY
+      clientY: event.touches[0].clientY,
     });
   }
 
@@ -857,11 +838,18 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     if (this.eventListenerSubscriptions.touchmove) {
       this.eventListenerSubscriptions.touchmove();
       delete this.eventListenerSubscriptions.touchmove;
+
+      if (
+        (this.scrollContainer &amp;&amp; this.scrollContainer.activeLongPressDrag) ||
+        this.touchStartLongPress
+      ) {
+        this.enableScroll();
+      }
     }
     this.pointerUp$.next({
       event,
       clientX: event.changedTouches[0].clientX,
-      clientY: event.changedTouches[0].clientY
+      clientY: event.changedTouches[0].clientY,
     });
   }
 
@@ -884,7 +872,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   private unsubscribeEventListeners(): void {
-    Object.keys(this.eventListenerSubscriptions).forEach(type &#x3D;&gt; {
+    Object.keys(this.eventListenerSubscriptions).forEach((type) &#x3D;&gt; {
       (this as any).eventListenerSubscriptions[type]();
       delete (this as any).eventListenerSubscriptions[type];
     });
@@ -894,21 +882,29 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     element: HTMLElement,
     styles: { [key: string]: string }
   ) {
-    Object.keys(styles).forEach(key &#x3D;&gt; {
+    Object.keys(styles).forEach((key) &#x3D;&gt; {
       this.renderer.setStyle(element, key, styles[key]);
     });
+  }
+
+  private getScrollElement() {
+    if (this.scrollContainer) {
+      return this.scrollContainer.elementRef.nativeElement;
+    } else {
+      return this.document.body;
+    }
   }
 
   private getScrollPosition() {
     if (this.scrollContainer) {
       return {
         top: this.scrollContainer.elementRef.nativeElement.scrollTop,
-        left: this.scrollContainer.elementRef.nativeElement.scrollLeft
+        left: this.scrollContainer.elementRef.nativeElement.scrollLeft,
       };
     } else {
       return {
-        top: window.pageYOffset || document.documentElement.scrollTop,
-        left: window.pageXOffset || document.documentElement.scrollLeft
+        top: window.pageYOffset || this.document.documentElement.scrollTop,
+        left: window.pageXOffset || this.document.documentElement.scrollLeft,
       };
     }
   }
@@ -921,7 +917,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     const moveScrollPosition &#x3D; this.getScrollPosition();
     const deltaScroll &#x3D; {
       top: Math.abs(moveScrollPosition.top - startScrollPosition.top),
-      left: Math.abs(moveScrollPosition.left - startScrollPosition.left)
+      left: Math.abs(moveScrollPosition.left - startScrollPosition.left),
     };
     const deltaX &#x3D;
       Math.abs(
@@ -937,7 +933,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
       : /* istanbul ignore next */
         {
           delta: this.scrollContainer.longPressConfig.delta,
-          delay: this.scrollContainer.longPressConfig.duration
+          delay: this.scrollContainer.longPressConfig.duration,
         };
     if (
       deltaTotal &gt; longPressConfig.delta ||
@@ -949,7 +945,28 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     this.timeLongPress.timerEnd &#x3D; Date.now();
     const duration &#x3D;
       this.timeLongPress.timerEnd - this.timeLongPress.timerBegin;
-    return duration &gt;&#x3D; longPressConfig.delay;
+    if (duration &gt;&#x3D; longPressConfig.delay) {
+      this.disableScroll();
+      return true;
+    }
+    return false;
+  }
+
+  private enableScroll() {
+    this.renderer.setStyle(this.getScrollElement(), &#x27;overflow&#x27;, &#x27;&#x27;);
+  }
+
+  private disableScroll() {
+    this.renderer.setStyle(this.getScrollElement(), &#x27;overflow&#x27;, &#x27;hidden&#x27;);
+  }
+
+  private hasScrollbar(): boolean {
+    const scrollContainer &#x3D; this.getScrollElement();
+    const containerHasHorizontalScroll &#x3D;
+      scrollContainer.scrollWidth &gt; scrollContainer.clientWidth;
+    const containerHasVerticalScroll &#x3D;
+      scrollContainer.scrollHeight &gt; scrollContainer.clientHeight;
+    return containerHasHorizontalScroll || containerHasVerticalScroll;
   }
 }
 </code></pre>

@@ -65,13 +65,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/DragAndDropModule.html" data-type="entity-link">DragAndDropModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-DragAndDropModule-2905988a537ded9832ee843486692992"' : 'data-target="#xs-directives-links-module-DragAndDropModule-2905988a537ded9832ee843486692992"' }>
+                                        'data-target="#directives-links-module-DragAndDropModule-82ff8a539d6cacdb582c8e0cd54ac261"' : 'data-target="#xs-directives-links-module-DragAndDropModule-82ff8a539d6cacdb582c8e0cd54ac261"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-DragAndDropModule-2905988a537ded9832ee843486692992"' :
-                                        'id="xs-directives-links-module-DragAndDropModule-2905988a537ded9832ee843486692992"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-DragAndDropModule-82ff8a539d6cacdb582c8e0cd54ac261"' :
+                                        'id="xs-directives-links-module-DragAndDropModule-82ff8a539d6cacdb582c8e0cd54ac261"' }>
                                         <li class="link">
                                             <a href="directives/DraggableDirective.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules">DraggableDirective</a>

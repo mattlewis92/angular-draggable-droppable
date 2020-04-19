@@ -161,7 +161,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:76</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:70</a></div>
                             </td>
                         </tr>
 
@@ -265,7 +265,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:50</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:48</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -292,7 +292,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:44</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:43</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -322,7 +322,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:56</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:53</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -349,7 +349,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:62</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:58</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -376,7 +376,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:68</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:63</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -403,7 +403,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:74</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:68</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -443,7 +443,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:76</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:70</a></div>
                             </td>
                         </tr>
 
@@ -467,7 +467,7 @@
   NgZone,
   Input,
   Renderer2,
-  Optional
+  Optional,
 } from &#x27;@angular/core&#x27;;
 import { Subscription } from &#x27;rxjs&#x27;;
 import { distinctUntilChanged, pairwise, filter, map } from &#x27;rxjs/operators&#x27;;
@@ -493,44 +493,38 @@ export interface DropEvent&lt;T &#x3D; any&gt; {
 }
 
 @Directive({
-  selector: &#x27;[mwlDroppable]&#x27;
+  selector: &#x27;[mwlDroppable]&#x27;,
 })
 export class DroppableDirective implements OnInit, OnDestroy {
   /**
    * Added to the element when an element is dragged over it
    */
-  @Input()
-  dragOverClass: string;
+  @Input() dragOverClass: string;
 
   /**
    * Added to the element any time a draggable element is being dragged
    */
-  @Input()
-  dragActiveClass: string;
+  @Input() dragActiveClass: string;
 
   /**
    * Called when a draggable element starts overlapping the element
    */
-  @Output()
-  dragEnter &#x3D; new EventEmitter&lt;DropEvent&gt;();
+  @Output() dragEnter &#x3D; new EventEmitter&lt;DropEvent&gt;();
 
   /**
    * Called when a draggable element stops overlapping the element
    */
-  @Output()
-  dragLeave &#x3D; new EventEmitter&lt;DropEvent&gt;();
+  @Output() dragLeave &#x3D; new EventEmitter&lt;DropEvent&gt;();
 
   /**
    * Called when a draggable element is moved over the element
    */
-  @Output()
-  dragOver &#x3D; new EventEmitter&lt;DropEvent&gt;();
+  @Output() dragOver &#x3D; new EventEmitter&lt;DropEvent&gt;();
 
   /**
    * Called when a draggable element is dropped on this element
    */
-  @Output()
-  drop &#x3D; new EventEmitter&lt;DropEvent&gt;(); // tslint:disable-line no-output-named-after-standard-event
+  @Output() drop &#x3D; new EventEmitter&lt;DropEvent&gt;(); // tslint:disable-line no-output-named-after-standard-event
 
   currentDragSubscription: Subscription;
 
@@ -544,14 +538,14 @@ export class DroppableDirective implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.currentDragSubscription &#x3D; this.draggableHelper.currentDrag.subscribe(
-      drag$ &#x3D;&gt; {
+      (drag$) &#x3D;&gt; {
         addClass(this.renderer, this.element, this.dragActiveClass);
         const droppableElement: {
           rect?: ClientRect;
           updateCache: boolean;
           scrollContainerRect?: ClientRect;
         } &#x3D; {
-          updateCache: true
+          updateCache: true,
         };
 
         const deregisterScrollListener &#x3D; this.renderer.listen(
@@ -600,21 +594,21 @@ export class DroppableDirective implements OnInit, OnDestroy {
         let dragOverActive: boolean; // TODO - see if there&#x27;s a way of doing this via rxjs
 
         overlapsChanged$
-          .pipe(filter(overlapsNow &#x3D;&gt; overlapsNow))
+          .pipe(filter((overlapsNow) &#x3D;&gt; overlapsNow))
           .subscribe(() &#x3D;&gt; {
             dragOverActive &#x3D; true;
             addClass(this.renderer, this.element, this.dragOverClass);
             this.zone.run(() &#x3D;&gt; {
               this.dragEnter.next({
-                dropData: currentDragDropData
+                dropData: currentDragDropData,
               });
             });
           });
 
-        overlaps$.pipe(filter(overlapsNow &#x3D;&gt; overlapsNow)).subscribe(() &#x3D;&gt; {
+        overlaps$.pipe(filter((overlapsNow) &#x3D;&gt; overlapsNow)).subscribe(() &#x3D;&gt; {
           this.zone.run(() &#x3D;&gt; {
             this.dragOver.next({
-              dropData: currentDragDropData
+              dropData: currentDragDropData,
             });
           });
         });
@@ -629,7 +623,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
             removeClass(this.renderer, this.element, this.dragOverClass);
             this.zone.run(() &#x3D;&gt; {
               this.dragLeave.next({
-                dropData: currentDragDropData
+                dropData: currentDragDropData,
               });
             });
           });
@@ -642,11 +636,11 @@ export class DroppableDirective implements OnInit, OnDestroy {
               removeClass(this.renderer, this.element, this.dragOverClass);
               this.zone.run(() &#x3D;&gt; {
                 this.drop.next({
-                  dropData: currentDragDropData
+                  dropData: currentDragDropData,
                 });
               });
             }
-          }
+          },
         });
       }
     );
