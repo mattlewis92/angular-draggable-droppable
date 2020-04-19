@@ -37,11 +37,11 @@ describe('draggable directive', () => {
     `
   })
   class TestComponent {
-    @ViewChild(DraggableDirective, { static: false })
+    @ViewChild(DraggableDirective)
     draggable: DraggableDirective;
-    @ViewChild('draggableElement', { static: false })
+    @ViewChild('draggableElement')
     draggableElement: ElementRef<HTMLDivElement>;
-    @ViewChild('ghostElementTemplateRef', { static: false })
+    @ViewChild('ghostElementTemplateRef')
     ghostElementTemplateRef: TemplateRef<any>;
     dragPointerDown = sinon.spy();
     dragStart = sinon.spy();
@@ -98,7 +98,7 @@ describe('draggable directive', () => {
     ]
   })
   class ScrollTestComponent extends TestComponent {
-    @ViewChild(DraggableScrollContainerDirective, { static: false })
+    @ViewChild(DraggableScrollContainerDirective)
     scrollContainer: DraggableScrollContainerDirective;
   }
 

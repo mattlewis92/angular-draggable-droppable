@@ -53,13 +53,13 @@ describe('droppable directive', () => {
     ]
   })
   class TestComponent {
-    @ViewChild(DraggableDirective, { static: false })
+    @ViewChild(DraggableDirective)
     draggable: DraggableDirective;
-    @ViewChild(DroppableDirective, { static: false })
+    @ViewChild(DroppableDirective)
     droppable: DroppableDirective;
-    @ViewChild('droppableElement', { static: false })
+    @ViewChild('droppableElement')
     droppableElement: ElementRef<HTMLDivElement>;
-    @ViewChild('draggableElement', { static: false })
+    @ViewChild('draggableElement')
     draggableElement: ElementRef<HTMLDivElement>;
     dragEvent = sinon.spy();
     drop = sinon.spy();
@@ -123,7 +123,7 @@ describe('droppable directive', () => {
     ]
   })
   class ScrollTestComponent extends TestComponent {
-    @ViewChild(DraggableScrollContainerDirective, { static: false })
+    @ViewChild(DraggableScrollContainerDirective)
     scrollContainer: DraggableScrollContainerDirective;
   }
 
