@@ -843,6 +843,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   }
 
   private disableScroll() {
+    /* istanbul ignore next */
     if (this.scrollContainer) {
       this.renderer.setStyle(
         this.scrollContainer.elementRef.nativeElement,
