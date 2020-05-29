@@ -1,6 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
+import sourcemaps from 'rollup-plugin-sourcemaps';
 
 const input =
   'dist/angular-draggable-droppable/bundles/angular-draggable-droppable.umd.js';
@@ -21,8 +22,9 @@ const base = {
     }
   },
   plugins: [
-    resolve({ module: true }),
-    commonjs()
+    resolve(),
+    commonjs(),
+    sourcemaps()
   ],
   external: ['@angular/core', '@angular/common', 'rxjs', 'rxjs/operators']
 };
