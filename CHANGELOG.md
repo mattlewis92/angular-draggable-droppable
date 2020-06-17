@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.5.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.6...v4.5.0) (2020-06-17)
+
+
+### Features
+
+* allow auto scroll options to be configured ([46892ac](https://github.com/mattlewis92/angular-draggable-droppable/commit/46892aca0ba321a5db927c36022811da3256ca63))
+
 ### [4.4.6](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.5...v4.4.6) (2020-05-29)
 
 
