@@ -155,6 +155,21 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
    */
   @Input() touchStartLongPress: { delay: number; delta: number };
 
+  /*
+   * Options used to control the behaviour of auto scrolling: https://www.npmjs.com/package/dom-autoscroller
+   */
+  @Input() autoScroll: {
+    margin:
+      | number
+      | { top?: number; left?: number; right?: number; bottom?: number };
+    maxSpeed?:
+      | number
+      | { top?: number; left?: number; right?: number; bottom?: number };
+    scrollWhenOutside?: boolean;
+  } = {
+    margin: 20,
+  };
+
   /**
    * Called when the element can be dragged along one axis and has the mouse or pointer device pressed on it
    */
@@ -366,7 +381,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
                 : this.document.defaultView,
             ],
             {
-              margin: 20,
+              ...this.autoScroll,
               autoScroll() {
                 return true;
               },
