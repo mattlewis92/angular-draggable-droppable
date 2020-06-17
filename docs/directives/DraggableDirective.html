@@ -98,6 +98,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#autoScroll">autoScroll</a>
+                            </li>
+                            <li>
                                 <a href="#dragActiveClass">dragActiveClass</a>
                             </li>
                             <li>
@@ -170,6 +173,34 @@
 
             <section>
     <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="autoScroll"></a>
+                        <b>autoScroll</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>literal type</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+    margin: 20,
+  }</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="161" class="link-to-prism">projects/angular-draggable-droppable/src/lib/draggable.directive.ts:161</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -511,7 +542,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="183" class="link-to-prism">projects/angular-draggable-droppable/src/lib/draggable.directive.ts:183</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="198" class="link-to-prism">projects/angular-draggable-droppable/src/lib/draggable.directive.ts:198</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -538,7 +569,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="178" class="link-to-prism">projects/angular-draggable-droppable/src/lib/draggable.directive.ts:178</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="193" class="link-to-prism">projects/angular-draggable-droppable/src/lib/draggable.directive.ts:193</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -565,7 +596,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="161" class="link-to-prism">projects/angular-draggable-droppable/src/lib/draggable.directive.ts:161</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="176" class="link-to-prism">projects/angular-draggable-droppable/src/lib/draggable.directive.ts:176</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -592,7 +623,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="168" class="link-to-prism">projects/angular-draggable-droppable/src/lib/draggable.directive.ts:168</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="183" class="link-to-prism">projects/angular-draggable-droppable/src/lib/draggable.directive.ts:183</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -621,7 +652,7 @@ If you call $event.cancelDrag$.emit() it will cancel the current drag</p>
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="173" class="link-to-prism">projects/angular-draggable-droppable/src/lib/draggable.directive.ts:173</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="188" class="link-to-prism">projects/angular-draggable-droppable/src/lib/draggable.directive.ts:188</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -798,6 +829,21 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
    * Amount of milliseconds to wait on touch devices before starting to drag the element (so that you can scroll the page by touching a draggable element)
    */
   @Input() touchStartLongPress: { delay: number; delta: number };
+
+  /*
+   * Options used to control the behaviour of auto scrolling: https://www.npmjs.com/package/dom-autoscroller
+   */
+  @Input() autoScroll: {
+    margin:
+      | number
+      | { top?: number; left?: number; right?: number; bottom?: number };
+    maxSpeed?:
+      | number
+      | { top?: number; left?: number; right?: number; bottom?: number };
+    scrollWhenOutside?: boolean;
+  } &#x3D; {
+    margin: 20,
+  };
 
   /**
    * Called when the element can be dragged along one axis and has the mouse or pointer device pressed on it
@@ -1010,7 +1056,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
                 : this.document.defaultView,
             ],
             {
-              margin: 20,
+              ...this.autoScroll,
               autoScroll() {
                 return true;
               },
