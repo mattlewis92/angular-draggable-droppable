@@ -354,7 +354,9 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           }
         &#x60;)
         );
-        this.document.head.appendChild(globalDragStyle);
+        requestAnimationFrame(() &#x3D;&gt; {
+          this.document.head.appendChild(globalDragStyle);
+        });
 
         const startScrollPosition &#x3D; this.getScrollPosition();
 
@@ -572,7 +574,9 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         merge(dragComplete$, dragEnded$)
           .pipe(take(1))
           .subscribe(() &#x3D;&gt; {
-            this.document.head.removeChild(globalDragStyle);
+            requestAnimationFrame(() &#x3D;&gt; {
+              this.document.head.removeChild(globalDragStyle);
+            });
           });
 
         return pointerMove;
