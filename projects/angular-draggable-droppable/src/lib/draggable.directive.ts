@@ -248,6 +248,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   ngOnInit(): void {
     this.checkEventListeners();
 
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
     const pointerDragged$: Observable<any> = this.pointerDown$.pipe(
       filter(() => this.canDrag()),
       mergeMap((pointerDownEvent: PointerEvent) => {
@@ -257,14 +259,15 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           pointerDownEvent.event.stopPropagation();
         }
 
-        // hack to prevent text getting selected in safari while dragging
-        const globalDragStyle: HTMLStyleElement = this.renderer.createElement(
-          'style'
-        );
-        this.renderer.setAttribute(globalDragStyle, 'type', 'text/css');
-        this.renderer.appendChild(
-          globalDragStyle,
-          this.renderer.createText(`
+        let globalDragStyle: HTMLStyleElement;
+        if (isSafari) {
+          // hack to prevent text getting selected in safari while dragging
+          // selectstart + preventDefault doesn't work on ios safari
+          globalDragStyle = this.renderer.createElement('style');
+          this.renderer.setAttribute(globalDragStyle, 'type', 'text/css');
+          this.renderer.appendChild(
+            globalDragStyle,
+            this.renderer.createText(`
           body * {
            -moz-user-select: none;
            -ms-user-select: none;
@@ -272,10 +275,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
            user-select: none;
           }
         `)
-        );
-        requestAnimationFrame(() => {
-          this.document.head.appendChild(globalDragStyle);
-        });
+          );
+          requestAnimationFrame(() => {
+            this.document.head.appendChild(globalDragStyle);
+          });
+        }
 
         const startScrollPosition = this.getScrollPosition();
 
@@ -490,13 +494,28 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             currentDrag$.complete();
           });
 
-        merge(dragComplete$, dragEnded$)
-          .pipe(take(1))
-          .subscribe(() => {
-            requestAnimationFrame(() => {
-              this.document.head.removeChild(globalDragStyle);
-            });
+        const selectionStart$ = new Observable<Event>((observer) => {
+          return this.renderer.listen('document', 'selectstart', (e) =>
+            observer.next(e)
+          );
+        });
+
+        // prevent text getting selected while dragging
+        selectionStart$
+          .pipe(takeUntil(merge(dragComplete$, dragEnded$)))
+          .subscribe((event) => {
+            event.preventDefault();
           });
+
+        if (isSafari) {
+          merge(dragComplete$, dragEnded$)
+            .pipe(take(1))
+            .subscribe(() => {
+              requestAnimationFrame(() => {
+                this.document.head.removeChild(globalDragStyle);
+              });
+            });
+        }
 
         return pointerMove;
       }),
