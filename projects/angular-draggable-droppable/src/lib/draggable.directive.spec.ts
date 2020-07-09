@@ -173,13 +173,7 @@ describe('draggable directive', () => {
   });
 
   let fixture: ComponentFixture<TestComponent>;
-  let userAgentStub: sinon.SinonStub;
   beforeEach(() => {
-    userAgentStub = sinon
-      .stub(navigator, 'userAgent')
-      .value(
-        'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Safari/605.1.15'
-      );
     document.body.style.margin = '0px';
     fixture = TestBed.createComponent(TestComponent);
     fixture.detectChanges();
@@ -188,7 +182,6 @@ describe('draggable directive', () => {
 
   afterEach(() => {
     fixture.destroy();
-    userAgentStub.restore();
     document.body.innerHTML = '';
     Array.from(document.head.getElementsByTagName('style')).forEach((style) => {
       document.head.removeChild(style);
@@ -1332,37 +1325,6 @@ describe('draggable directive', () => {
       preventDefault,
     });
 
-    expect(preventDefault).to.have.been.calledOnce;
-  });
-
-  it('should prevent text from being selected while dragging', () => {
-    const tmp = document.createElement('div');
-    tmp.innerHTML = 'foo';
-    document.body.appendChild(tmp);
-    const preventDefault = sinon.spy();
-    triggerDomEvent('selectstart', tmp, {
-      preventDefault,
-    });
-    expect(preventDefault).not.to.have.been.called;
-    const draggableElement =
-      fixture.componentInstance.draggableElement.nativeElement;
-    triggerDomEvent('mousedown', draggableElement, {
-      clientX: 5,
-      clientY: 10,
-      button: 0,
-    });
-    triggerDomEvent('selectstart', tmp, {
-      preventDefault,
-    });
-    expect(preventDefault).to.have.been.calledOnce;
-    triggerDomEvent('mouseup', draggableElement, {
-      clientX: 5,
-      clientY: 10,
-      button: 0,
-    });
-    triggerDomEvent('selectstart', tmp, {
-      preventDefault,
-    });
     expect(preventDefault).to.have.been.calledOnce;
   });
 });
