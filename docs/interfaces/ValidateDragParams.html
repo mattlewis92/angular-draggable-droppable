@@ -155,7 +155,6 @@ import {
   merge,
   ReplaySubject,
   combineLatest,
-  animationFrameScheduler,
   fromEvent,
 } from &#x27;rxjs&#x27;;
 import {
@@ -169,7 +168,6 @@ import {
   filter,
   count,
   startWith,
-  auditTime,
 } from &#x27;rxjs/operators&#x27;;
 import { CurrentDragData, DraggableHelper } from &#x27;./draggable-helper.provider&#x27;;
 import { DOCUMENT } from &#x27;@angular/common&#x27;;
@@ -651,8 +649,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           }
           return previous.x !&#x3D;&#x3D; next.x || previous.y !&#x3D;&#x3D; next.y;
         }),
-        map(([previous, next]) &#x3D;&gt; next),
-        auditTime(0, animationFrameScheduler)
+        map(([previous, next]) &#x3D;&gt; next)
       )
       .subscribe(
         ({ x, y, currentDrag$, clientX, clientY, transformX, transformY }) &#x3D;&gt; {
@@ -661,12 +658,14 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           });
           if (this.ghostElement) {
             const transform &#x3D; &#x60;translate3d(${transformX}px, ${transformY}px, 0px)&#x60;;
-            this.setElementStyles(this.ghostElement, {
-              transform,
-              &#x27;-webkit-transform&#x27;: transform,
-              &#x27;-ms-transform&#x27;: transform,
-              &#x27;-moz-transform&#x27;: transform,
-              &#x27;-o-transform&#x27;: transform,
+            requestAnimationFrame(() &#x3D;&gt; {
+              this.setElementStyles(this.ghostElement as HTMLElement, {
+                transform,
+                &#x27;-webkit-transform&#x27;: transform,
+                &#x27;-ms-transform&#x27;: transform,
+                &#x27;-moz-transform&#x27;: transform,
+                &#x27;-o-transform&#x27;: transform,
+              });
             });
           }
           currentDrag$.next({
