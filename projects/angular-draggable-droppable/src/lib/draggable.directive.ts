@@ -21,7 +21,6 @@ import {
   merge,
   ReplaySubject,
   combineLatest,
-  animationFrameScheduler,
   fromEvent,
 } from 'rxjs';
 import {
@@ -35,7 +34,6 @@ import {
   filter,
   count,
   startWith,
-  auditTime,
 } from 'rxjs/operators';
 import { CurrentDragData, DraggableHelper } from './draggable-helper.provider';
 import { DOCUMENT } from '@angular/common';
@@ -517,8 +515,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           }
           return previous.x !== next.x || previous.y !== next.y;
         }),
-        map(([previous, next]) => next),
-        auditTime(0, animationFrameScheduler)
+        map(([previous, next]) => next)
       )
       .subscribe(
         ({ x, y, currentDrag$, clientX, clientY, transformX, transformY }) => {
@@ -527,12 +524,14 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           });
           if (this.ghostElement) {
             const transform = `translate3d(${transformX}px, ${transformY}px, 0px)`;
-            this.setElementStyles(this.ghostElement, {
-              transform,
-              '-webkit-transform': transform,
-              '-ms-transform': transform,
-              '-moz-transform': transform,
-              '-o-transform': transform,
+            requestAnimationFrame(() => {
+              this.setElementStyles(this.ghostElement as HTMLElement, {
+                transform,
+                '-webkit-transform': transform,
+                '-ms-transform': transform,
+                '-moz-transform': transform,
+                '-o-transform': transform,
+              });
             });
           }
           currentDrag$.next({
