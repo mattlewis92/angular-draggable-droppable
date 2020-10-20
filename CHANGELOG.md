@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.5.5](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.4...v4.5.5) (2020-10-20)
+
+
+### Bug Fixes
+
+* ensure dragging output is never called unless dragging an item ([1661d72](https://github.com/mattlewis92/angular-draggable-droppable/commit/1661d726066674325486ff2534fa11e6eb733b32))
+
 ### [4.5.4](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.3...v4.5.4) (2020-09-12)
 
 
