@@ -714,18 +714,18 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           this.zone.run(() &#x3D;&gt; {
             this.dragging.next({ x, y });
           });
-          if (this.ghostElement) {
-            const transform &#x3D; &#x60;translate3d(${transformX}px, ${transformY}px, 0px)&#x60;;
-            requestAnimationFrame(() &#x3D;&gt; {
-              this.setElementStyles(this.ghostElement as HTMLElement, {
+          requestAnimationFrame(() &#x3D;&gt; {
+            if (this.ghostElement) {
+              const transform &#x3D; &#x60;translate3d(${transformX}px, ${transformY}px, 0px)&#x60;;
+              this.setElementStyles(this.ghostElement, {
                 transform,
                 &#x27;-webkit-transform&#x27;: transform,
                 &#x27;-ms-transform&#x27;: transform,
                 &#x27;-moz-transform&#x27;: transform,
                 &#x27;-o-transform&#x27;: transform,
               });
-            });
-          }
+            }
+          });
           currentDrag$.next({
             clientX,
             clientY,
