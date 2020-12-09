@@ -316,6 +316,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               clientY: pointerMoveEvent.clientY,
               scrollLeft: scroll.left,
               scrollTop: scroll.top,
+              target: pointerMoveEvent.event.target,
             };
           }),
           map((moveData) => {
@@ -518,7 +519,16 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         map(([previous, next]) => next)
       )
       .subscribe(
-        ({ x, y, currentDrag$, clientX, clientY, transformX, transformY }) => {
+        ({
+          x,
+          y,
+          currentDrag$,
+          clientX,
+          clientY,
+          transformX,
+          transformY,
+          target,
+        }) => {
           this.zone.run(() => {
             this.dragging.next({ x, y });
           });
@@ -538,6 +548,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             clientX,
             clientY,
             dropData: this.dropData,
+            target,
           });
         }
       );

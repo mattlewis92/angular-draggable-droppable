@@ -29,6 +29,7 @@ describe('droppable directive', () => {
         (drop)="drop($event)"
         [dragOverClass]="dragOverClass"
         [dragActiveClass]="dragActiveClass"
+        [restrictByEventTarget]="restrictByEventTarget"
       >
         Drop here
       </div>
@@ -69,6 +70,7 @@ describe('droppable directive', () => {
     };
     dragOverClass: string;
     dragActiveClass: string;
+    restrictByEventTarget: boolean;
   }
 
   @Component({
@@ -410,5 +412,55 @@ describe('droppable directive', () => {
       button: 0,
     });
     expect(scrollFixture.componentInstance.drop).not.to.have.been.called;
+  });
+
+  it('should fire drop events when the event target is within the droppable', () => {
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
+    const droppableElement =
+      fixture.componentInstance.droppableElement.nativeElement;
+    const elementInsideDroppableArea = document.createElement('div');
+    droppableElement.appendChild(elementInsideDroppableArea);
+    fixture.componentInstance.restrictByEventTarget = true;
+    fixture.detectChanges();
+    triggerDomEvent('mousedown', draggableElement, {
+      clientX: 5,
+      clientY: 10,
+      button: 0,
+    });
+    triggerDomEvent('mousemove', elementInsideDroppableArea, {
+      clientX: 5,
+      clientY: 120,
+    });
+    triggerDomEvent('mouseup', draggableElement, {
+      clientX: 5,
+      clientY: 120,
+      button: 0,
+    });
+    expect(fixture.componentInstance.drop).to.have.been.called;
+  });
+
+  it('should not fire drop events when the event target is not within the droppable', () => {
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
+    const elementOutsideDroppableArea = document.createElement('div');
+    document.body.appendChild(elementOutsideDroppableArea);
+    fixture.componentInstance.restrictByEventTarget = true;
+    fixture.detectChanges();
+    triggerDomEvent('mousedown', draggableElement, {
+      clientX: 5,
+      clientY: 10,
+      button: 0,
+    });
+    triggerDomEvent('mousemove', elementOutsideDroppableArea, {
+      clientX: 5,
+      clientY: 120,
+    });
+    triggerDomEvent('mouseup', draggableElement, {
+      clientX: 5,
+      clientY: 120,
+      button: 0,
+    });
+    expect(fixture.componentInstance.drop).not.to.have.been.called;
   });
 });
