@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.6.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.6...v4.6.0) (2020-12-10)
+
+
+### Features
+
+* add droppable restrictByEventTarget option ([aa9b0cf](https://github.com/mattlewis92/angular-draggable-droppable/commit/aa9b0cf861061f84aa11f8822b955340f5681f4e))
+
 ### [4.5.6](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.5...v4.5.6) (2020-10-22)
 
 
