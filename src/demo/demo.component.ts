@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { DropEvent } from 'angular-draggable-droppable';
+import {
+  DroppableDirective,
+  ValidateDrop,
+} from 'projects/angular-draggable-droppable/src/lib/droppable.directive';
 
 @Component({
   selector: 'mwl-demo-app',
@@ -9,6 +13,9 @@ import { DropEvent } from 'angular-draggable-droppable';
 export class DemoComponent {
   droppedData: string = '';
   droppedData2: string = '';
+
+  @ViewChild(DroppableDirective, { read: ElementRef })
+  droppableElement: ElementRef;
 
   onDrop({ dropData }: DropEvent<string>): void {
     this.droppedData = dropData;
@@ -23,4 +30,7 @@ export class DemoComponent {
       this.droppedData2 = '';
     }, 2000);
   }
+
+  validateDrop: ValidateDrop = ({ target }) =>
+    this.droppableElement.nativeElement.contains(target as Node);
 }

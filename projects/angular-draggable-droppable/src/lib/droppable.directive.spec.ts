@@ -5,7 +5,7 @@ import * as sinon from 'sinon';
 import { triggerDomEvent } from '../test-utils';
 import { DragAndDropModule } from 'angular-draggable-droppable';
 import { DraggableDirective } from './draggable.directive';
-import { DroppableDirective } from './droppable.directive';
+import { DroppableDirective, ValidateDrop } from './droppable.directive';
 import { DraggableScrollContainerDirective } from './draggable-scroll-container.directive';
 import { By } from '@angular/platform-browser';
 
@@ -29,7 +29,7 @@ describe('droppable directive', () => {
         (drop)="drop($event)"
         [dragOverClass]="dragOverClass"
         [dragActiveClass]="dragActiveClass"
-        [restrictByEventTarget]="restrictByEventTarget"
+        [validateDrop]="validateDrop"
       >
         Drop here
       </div>
@@ -70,7 +70,7 @@ describe('droppable directive', () => {
     };
     dragOverClass: string;
     dragActiveClass: string;
-    restrictByEventTarget: boolean;
+    validateDrop: ValidateDrop;
   }
 
   @Component({
@@ -414,14 +414,14 @@ describe('droppable directive', () => {
     expect(scrollFixture.componentInstance.drop).not.to.have.been.called;
   });
 
-  it('should fire drop events when the event target is within the droppable', () => {
+  it('should fire drop events when validateDrop returns true', () => {
     const draggableElement =
       fixture.componentInstance.draggableElement.nativeElement;
     const droppableElement =
       fixture.componentInstance.droppableElement.nativeElement;
     const elementInsideDroppableArea = document.createElement('div');
     droppableElement.appendChild(elementInsideDroppableArea);
-    fixture.componentInstance.restrictByEventTarget = true;
+    fixture.componentInstance.validateDrop = () => true;
     fixture.detectChanges();
     triggerDomEvent('mousedown', draggableElement, {
       clientX: 5,
@@ -440,12 +440,14 @@ describe('droppable directive', () => {
     expect(fixture.componentInstance.drop).to.have.been.called;
   });
 
-  it('should not fire drop events when the event target is not within the droppable', () => {
+  it('should not fire drop events when validateDrop returns false', () => {
     const draggableElement =
       fixture.componentInstance.draggableElement.nativeElement;
+    const droppableElement =
+      fixture.componentInstance.droppableElement.nativeElement;
     const elementOutsideDroppableArea = document.createElement('div');
     document.body.appendChild(elementOutsideDroppableArea);
-    fixture.componentInstance.restrictByEventTarget = true;
+    fixture.componentInstance.validateDrop = () => false;
     fixture.detectChanges();
     triggerDomEvent('mousedown', draggableElement, {
       clientX: 5,

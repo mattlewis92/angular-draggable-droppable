@@ -25,8 +25,8 @@
   mwlDroppable
   (drop)="onDrop2($event)"
   dragOverClass="drop-over-active"
-  [restrictByEventTarget]="true"
-  class="restrictByEventTarget"
+  [validateDrop]="validateDrop"
+  class="validate-drop"
 >
   <span [hidden]="droppedData2">Drop here</span>
   <span [hidden]="!droppedData2"

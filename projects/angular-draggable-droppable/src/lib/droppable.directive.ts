@@ -33,6 +33,23 @@ export interface DropEvent<T = any> {
   dropData: T;
 }
 
+export interface ValidateDropParams {
+  /**
+   * CientX value of the mouse location where the drop occurred
+   */
+  clientX: number;
+  /**
+   * CientY value of the mouse location where the drop occurred
+   */
+  clientY: number;
+  /**
+   * The target of the event where the drop occurred
+   */
+  target: EventTarget;
+}
+
+export type ValidateDrop = (params: ValidateDropParams) => boolean;
+
 @Directive({
   selector: '[mwlDroppable]',
 })
@@ -48,11 +65,9 @@ export class DroppableDirective implements OnInit, OnDestroy {
   @Input() dragActiveClass: string;
 
   /**
-   * If set to true, will check the mouse event target to restrict dropping.
-   * This is useful if you would like to prevent dropping when there are floating
-   * elements (e.g. absolutely positioned) above the `mwlDroppable` element
+   * Allow custom behaviour to control when the element is dropped
    */
-  @Input() restrictByEventTarget = false;
+  @Input() validateDrop: ValidateDrop;
 
   /**
    * Called when a draggable element starts overlapping the element
@@ -123,12 +138,14 @@ export class DroppableDirective implements OnInit, OnDestroy {
               droppableElement.rect as ClientRect
             );
 
-            const isTargetAllowed = this.isTargetAllowed(target);
+            const isDropAllowed =
+              !this.validateDrop ||
+              this.validateDrop({ clientX, clientY, target });
 
             if (droppableElement.scrollContainerRect) {
               return (
                 isWithinElement &&
-                isTargetAllowed &&
+                isDropAllowed &&
                 isCoordinateWithinRectangle(
                   clientX,
                   clientY,
@@ -136,7 +153,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
                 )
               );
             } else {
-              return isWithinElement && isTargetAllowed;
+              return isWithinElement && isDropAllowed;
             }
           })
         );
@@ -202,17 +219,5 @@ export class DroppableDirective implements OnInit, OnDestroy {
     if (this.currentDragSubscription) {
       this.currentDragSubscription.unsubscribe();
     }
-  }
-
-  private isTargetAllowed(target: EventTarget): boolean {
-    if (!this.restrictByEventTarget) {
-      return true;
-    }
-
-    const closestDroppableElement = (target as Element).closest(
-      '[mwlDroppable]'
-    );
-
-    return closestDroppableElement === this.element.nativeElement;
   }
 }
