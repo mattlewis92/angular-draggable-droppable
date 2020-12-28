@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.6.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.6...v4.6.0) (2020-12-28)
+
+
+### Features
+
+* add validateDrop to mwlDroppable directive ([#111](https://github.com/mattlewis92/angular-draggable-droppable/issues/111)) ([8850ddf](https://github.com/mattlewis92/angular-draggable-droppable/commit/8850ddfd79f60bd5efd469ec5f99650fb02199e0))
+
 ### [4.5.6](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.5...v4.5.6) (2020-10-22)
 
 
