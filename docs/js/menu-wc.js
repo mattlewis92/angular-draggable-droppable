@@ -133,6 +133,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             <li class="link">
                                 <a href="interfaces/ValidateDragParams.html" data-type="entity-link">ValidateDragParams</a>
                             </li>
+                            <li class="link">
+                                <a href="interfaces/ValidateDropParams.html" data-type="entity-link">ValidateDropParams</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="chapter">
