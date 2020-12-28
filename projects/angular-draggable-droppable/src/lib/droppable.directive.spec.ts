@@ -5,7 +5,7 @@ import * as sinon from 'sinon';
 import { triggerDomEvent } from '../test-utils';
 import { DragAndDropModule } from 'angular-draggable-droppable';
 import { DraggableDirective } from './draggable.directive';
-import { DroppableDirective } from './droppable.directive';
+import { DroppableDirective, ValidateDrop } from './droppable.directive';
 import { DraggableScrollContainerDirective } from './draggable-scroll-container.directive';
 import { By } from '@angular/platform-browser';
 
@@ -29,6 +29,7 @@ describe('droppable directive', () => {
         (drop)="drop($event)"
         [dragOverClass]="dragOverClass"
         [dragActiveClass]="dragActiveClass"
+        [validateDrop]="validateDrop"
       >
         Drop here
       </div>
@@ -69,6 +70,7 @@ describe('droppable directive', () => {
     };
     dragOverClass: string;
     dragActiveClass: string;
+    validateDrop: ValidateDrop;
   }
 
   @Component({
@@ -410,5 +412,57 @@ describe('droppable directive', () => {
       button: 0,
     });
     expect(scrollFixture.componentInstance.drop).not.to.have.been.called;
+  });
+
+  it('should fire drop events when validateDrop returns true', () => {
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
+    const droppableElement =
+      fixture.componentInstance.droppableElement.nativeElement;
+    const elementInsideDroppableArea = document.createElement('div');
+    droppableElement.appendChild(elementInsideDroppableArea);
+    fixture.componentInstance.validateDrop = () => true;
+    fixture.detectChanges();
+    triggerDomEvent('mousedown', draggableElement, {
+      clientX: 5,
+      clientY: 10,
+      button: 0,
+    });
+    triggerDomEvent('mousemove', elementInsideDroppableArea, {
+      clientX: 5,
+      clientY: 120,
+    });
+    triggerDomEvent('mouseup', draggableElement, {
+      clientX: 5,
+      clientY: 120,
+      button: 0,
+    });
+    expect(fixture.componentInstance.drop).to.have.been.called;
+  });
+
+  it('should not fire drop events when validateDrop returns false', () => {
+    const draggableElement =
+      fixture.componentInstance.draggableElement.nativeElement;
+    const droppableElement =
+      fixture.componentInstance.droppableElement.nativeElement;
+    const elementOutsideDroppableArea = document.createElement('div');
+    document.body.appendChild(elementOutsideDroppableArea);
+    fixture.componentInstance.validateDrop = () => false;
+    fixture.detectChanges();
+    triggerDomEvent('mousedown', draggableElement, {
+      clientX: 5,
+      clientY: 10,
+      button: 0,
+    });
+    triggerDomEvent('mousemove', elementOutsideDroppableArea, {
+      clientX: 5,
+      clientY: 120,
+    });
+    triggerDomEvent('mouseup', draggableElement, {
+      clientX: 5,
+      clientY: 120,
+      button: 0,
+    });
+    expect(fixture.componentInstance.drop).not.to.have.been.called;
   });
 });

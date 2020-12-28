@@ -33,6 +33,23 @@ export interface DropEvent<T = any> {
   dropData: T;
 }
 
+export interface ValidateDropParams {
+  /**
+   * ClientX value of the mouse location where the drop occurred
+   */
+  clientX: number;
+  /**
+   * ClientY value of the mouse location where the drop occurred
+   */
+  clientY: number;
+  /**
+   * The target of the event where the drop occurred
+   */
+  target: EventTarget;
+}
+
+export type ValidateDrop = (params: ValidateDropParams) => boolean;
+
 @Directive({
   selector: '[mwlDroppable]',
 })
@@ -46,6 +63,11 @@ export class DroppableDirective implements OnInit, OnDestroy {
    * Added to the element any time a draggable element is being dragged
    */
   @Input() dragActiveClass: string;
+
+  /**
+   * Allow custom behaviour to control when the element is dropped
+   */
+  @Input() validateDrop: ValidateDrop;
 
   /**
    * Called when a draggable element starts overlapping the element
@@ -101,7 +123,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
 
         let currentDragDropData: any;
         const overlaps$ = drag$.pipe(
-          map(({ clientX, clientY, dropData }) => {
+          map(({ clientX, clientY, dropData, target }) => {
             currentDragDropData = dropData;
             if (droppableElement.updateCache) {
               droppableElement.rect = this.element.nativeElement.getBoundingClientRect();
@@ -115,9 +137,15 @@ export class DroppableDirective implements OnInit, OnDestroy {
               clientY,
               droppableElement.rect as ClientRect
             );
+
+            const isDropAllowed =
+              !this.validateDrop ||
+              this.validateDrop({ clientX, clientY, target });
+
             if (droppableElement.scrollContainerRect) {
               return (
                 isWithinElement &&
+                isDropAllowed &&
                 isCoordinateWithinRectangle(
                   clientX,
                   clientY,
@@ -125,7 +153,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
                 )
               );
             } else {
-              return isWithinElement;
+              return isWithinElement && isDropAllowed;
             }
           })
         );

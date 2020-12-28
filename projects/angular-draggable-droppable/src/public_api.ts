@@ -3,7 +3,11 @@
  */
 
 export * from './lib/drag-and-drop.module';
-export { DropEvent } from './lib/droppable.directive';
+export {
+  DropEvent,
+  ValidateDrop,
+  ValidateDropParams,
+} from './lib/droppable.directive';
 export {
   DragPointerDownEvent,
   DragStartEvent,

@@ -1,3 +1,7 @@
+:host {
+  display: flex;
+}
+
 [mwlDraggable] {
   background-color: red;
   width: 200px;
@@ -19,6 +23,10 @@
   left: 100px;
 }
 
+.validate-drop {
+  left: 150px;
+}
+
 [mwlDraggable],
 [mwlDroppable] {
   color: white;
@@ -35,4 +43,24 @@
 
 .drag-active {
   z-index: 3;
+}
+
+.floating-toolbar {
+  position: absolute;
+  top: 140px;
+  z-index: 2;
+  width: 250px;
+  height: 75px;
+  background: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-toolbar-1 {
+  left: 600px;
+}
+
+.floating-toolbar-2 {
+  left: 1050px;
 }

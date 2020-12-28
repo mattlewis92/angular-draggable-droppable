@@ -21,3 +21,22 @@
     >Item dropped here with data: "{{ droppedData }}"!</span
   >
 </div>
+<div
+  mwlDroppable
+  (drop)="onDrop2($event)"
+  dragOverClass="drop-over-active"
+  [validateDrop]="validateDrop"
+  class="validate-drop"
+>
+  <span [hidden]="droppedData2">Drop here</span>
+  <span [hidden]="!droppedData2"
+    >Item dropped here with data: "{{ droppedData2 }}"!</span
+  >
+</div>
+
+<div class="floating-toolbar floating-toolbar-1">
+  Floating toolbar, drop here too!
+</div>
+<div class="floating-toolbar floating-toolbar-2">
+  Floating toolbar, can't drop here!
+</div>
