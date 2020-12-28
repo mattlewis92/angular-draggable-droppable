@@ -35,11 +35,11 @@ export interface DropEvent<T = any> {
 
 export interface ValidateDropParams {
   /**
-   * CientX value of the mouse location where the drop occurred
+   * ClientX value of the mouse location where the drop occurred
    */
   clientX: number;
   /**
-   * CientY value of the mouse location where the drop occurred
+   * ClientY value of the mouse location where the drop occurred
    */
   clientY: number;
   /**
