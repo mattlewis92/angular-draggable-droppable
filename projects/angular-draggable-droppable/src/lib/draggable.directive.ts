@@ -224,7 +224,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
   private ghostElement: HTMLElement | null;
 
-  private destroy$ = new Subject();
+  private destroy$ = new Subject<void>();
 
   private timeLongPress: TimeLongPress = { timerBegin: 0, timerEnd: 0 };
 
