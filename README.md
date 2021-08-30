@@ -27,7 +27,7 @@ Observable powered drag and drop for angular 10.0+
 Install through npm:
 
 ```
-npm install --save angular-draggable-droppable
+npm install angular-draggable-droppable
 ```
 
 Then use it in your app like so:
