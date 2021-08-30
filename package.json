@@ -19,7 +19,8 @@
     "release:npm": "npm run build:lib && npm publish dist/angular-draggable-droppable",
     "release": "npm run release:git && npm run release:npm",
     "postrelease": "npm run gh-pages",
-    "gh-pages": "npm run build:clean && npm run build:demo && npm run compodoc && ng deploy && npm run build:clean"
+    "gh-pages": "npm run build:clean && npm run build:demo && npm run compodoc && ng deploy && npm run build:clean",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -64,7 +65,7 @@
     "concurrently": "^6.2.1",
     "copyfiles": "^2.4.1",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^4.3.8",
+    "husky": "^7.0.0",
     "karma": "~6.3.4",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "^2.0.3",
@@ -95,11 +96,5 @@
   "dependencies": {
     "@mattlewis92/dom-autoscroller": "^2.4.2",
     "tslib": "^2.3.1"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "validate-commit-msg",
-      "pre-commit": "pretty-quick --staged"
-    }
   }
 }
