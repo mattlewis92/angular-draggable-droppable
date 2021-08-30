@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.6.0...v5.0.0) (2021-08-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* The `activeLongPressDrag` and `longPressConfig` inputs have been removed on the `mwlDraggableScrollContainer` directive.
+
+To migrate use `[touchStartLongPress]="{delay: 300, delta: 30}"` on the `mwlDraggable` element instead.
+* if you were using the UMD bundle @mattlewis92/dom-autoscroller will no longer be bundled inside it and you may need to adjust your system.js config accordingly
+* angular 10 or higher is now required to use this package
+
+### Features
+
+* remove deprecated inputs on mwlDraggableScrollContainer directive ([2766f33](https://github.com/mattlewis92/angular-draggable-droppable/commit/2766f33dd9d3c0df0c0eddc3dc7706ef41387ce8))
+
+
+### build
+
+* don't bundle @mattlewis92/dom-autoscroller anymore ([3c41375](https://github.com/mattlewis92/angular-draggable-droppable/commit/3c41375e998f7aff6d80f4243f2044b348e8fb14))
+* upgrade to angular 10 ([907f637](https://github.com/mattlewis92/angular-draggable-droppable/commit/907f637d2684b4d5299893b68acc9a55e0e0bc13))
+
 ## [4.6.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.6...v4.6.0) (2020-12-28)
 
 
