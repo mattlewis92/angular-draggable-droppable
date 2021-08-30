@@ -676,10 +676,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     let startScrollPosition: any;
     let isDragActivated: boolean;
     let hasContainerScrollbar: boolean;
-    if (
-      (this.scrollContainer && this.scrollContainer.activeLongPressDrag) ||
-      this.touchStartLongPress
-    ) {
+    if (this.touchStartLongPress) {
       this.timeLongPress.timerBegin = Date.now();
       isDragActivated = false;
       hasContainerScrollbar = this.hasScrollbar();
@@ -702,8 +699,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         }
       ).subscribe((touchMoveEvent) => {
         if (
-          ((this.scrollContainer && this.scrollContainer.activeLongPressDrag) ||
-            this.touchStartLongPress) &&
+          this.touchStartLongPress &&
           !isDragActivated &&
           hasContainerScrollbar
         ) {
@@ -714,9 +710,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           );
         }
         if (
-          ((!this.scrollContainer ||
-            !this.scrollContainer.activeLongPressDrag) &&
-            !this.touchStartLongPress) ||
+          !this.touchStartLongPress ||
           !hasContainerScrollbar ||
           isDragActivated
         ) {
@@ -746,10 +740,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
       this.eventListenerSubscriptions.touchmove();
       delete this.eventListenerSubscriptions.touchmove;
 
-      if (
-        (this.scrollContainer && this.scrollContainer.activeLongPressDrag) ||
-        this.touchStartLongPress
-      ) {
+      if (this.touchStartLongPress) {
         this.enableScroll();
       }
     }
@@ -835,13 +826,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         touchMoveEvent.targetTouches[0].clientY - event.touches[0].clientY
       ) - deltaScroll.top;
     const deltaTotal = deltaX + deltaY;
-    const longPressConfig = this.touchStartLongPress
-      ? this.touchStartLongPress
-      : /* istanbul ignore next */
-        {
-          delta: this.scrollContainer.longPressConfig.delta,
-          delay: this.scrollContainer.longPressConfig.duration,
-        };
+    const longPressConfig = this.touchStartLongPress;
     if (
       deltaTotal > longPressConfig.delta ||
       deltaScroll.top > 0 ||
