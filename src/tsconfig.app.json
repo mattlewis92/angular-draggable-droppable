@@ -4,13 +4,12 @@
     "outDir": "../out-tsc/app",
     "types": []
   },
-  "exclude": [
-    "src/test.ts",
-    "**/*.spec.ts",
-    "../projects/**/*.spec.ts"
+  "files": [
+    "main.ts",
+    "polyfills.ts"
   ],
   "include": [
-    "**/*.ts",
+    "**/*.d.ts",
     "../projects/angular-draggable-droppable/custom-typings.d.ts",
     "../projects/src/**/*.ts"
   ]
