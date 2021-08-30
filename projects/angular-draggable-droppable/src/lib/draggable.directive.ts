@@ -256,9 +256,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         }
 
         // hack to prevent text getting selected in safari while dragging
-        const globalDragStyle: HTMLStyleElement = this.renderer.createElement(
-          'style'
-        );
+        const globalDragStyle: HTMLStyleElement =
+          this.renderer.createElement('style');
         this.renderer.setAttribute(globalDragStyle, 'type', 'text/css');
         this.renderer.appendChild(
           globalDragStyle,
