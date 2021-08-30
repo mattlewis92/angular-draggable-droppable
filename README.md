@@ -1,4 +1,4 @@
-# angular 6.0+ drag and drop
+# angular 10.0+ drag and drop
 
 [![Sponsorship](https://img.shields.io/badge/funding-github-%23EA4AAA)](https://github.com/users/mattlewis92/sponsorship)
 [![Build Status](https://travis-ci.org/mattlewis92/angular-draggable-droppable.svg?branch=master)](https://travis-ci.org/mattlewis92/angular-draggable-droppable)
@@ -20,7 +20,7 @@ https://mattlewis92.github.io/angular-draggable-droppable/
 
 ## About
 
-Observable powered drag and drop for angular 6.0+
+Observable powered drag and drop for angular 10.0+
 
 ## Installation
 
