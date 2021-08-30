@@ -940,9 +940,8 @@ describe('draggable directive', () => {
   });
 
   it('should append the ghost element to the given element', () => {
-    fixture.componentInstance.ghostElementAppendTo = document.createElement(
-      'div'
-    );
+    fixture.componentInstance.ghostElementAppendTo =
+      document.createElement('div');
     fixture.detectChanges();
     const draggableElement =
       fixture.componentInstance.draggableElement.nativeElement;
