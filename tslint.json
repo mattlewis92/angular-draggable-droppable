@@ -2,6 +2,9 @@
   "extends": "tslint-config-mwl",
   "rules": {
     "no-inferrable-types": false,
+    "deprecation": {
+      "severity": "warning"
+    },
     "no-unused-expression": [false],
     "component-max-inline-declarations": false,
     "use-component-selector": false,
