@@ -74,7 +74,7 @@ describe('droppable directive', () => {
   }
 
   @Component({
-    // tslint:disable-line max-classes-per-file
+    // eslint-disable-line  max-classes-per-file
     template: `
       <div mwlDraggableScrollContainer>
         <div
