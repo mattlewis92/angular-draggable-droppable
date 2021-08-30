@@ -8,18 +8,24 @@ module.exports = (config: any) => {
     plugins: [
       require('karma-mocha'),
       require('karma-chrome-launcher'),
-      require('karma-coverage-istanbul-reporter'),
+      require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma'),
     ],
-    coverageIstanbulReporter: {
+    coverageReporter: {
       dir: require('path').join(__dirname, '../../coverage'),
-      reports: ['text-summary', 'html', 'lcovonly'],
-      fixWebpackSourcePaths: true,
-      thresholds: {
-        statements: 100,
-        lines: 100,
-        branches: 100,
-        functions: 100,
+      reporters: [
+        { type: 'text-summary' },
+        { type: 'html' },
+        { type: 'lcovonly' },
+      ],
+      check: {
+        emitWarning: false,
+        global: {
+          statements: 100,
+          lines: 100,
+          branches: 100,
+          functions: 100,
+        },
       },
     },
     reporters: ['progress'],
