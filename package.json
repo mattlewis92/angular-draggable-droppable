@@ -12,7 +12,7 @@
     "test:watch": "ng test angular-draggable-droppable",
     "lint": "ng lint",
     "commit": "git-cz",
-    "codecov": "cat coverage/lcov.info | codecov",
+    "codecov": "codecov",
     "compodoc": "compodoc -p tsconfig-compodoc.json -d dist/demo/docs --disableGraph --disableCoverage --disablePrivate --disableInternal --disableLifeCycleHooks --disableProtected",
     "prerelease": "npm test",
     "release:git": "standard-version && git push --follow-tags origin master",
