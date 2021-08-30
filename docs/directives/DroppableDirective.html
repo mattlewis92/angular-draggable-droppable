@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
@@ -37,7 +38,7 @@
 
 <ol class="breadcrumb">
   <li>Directives</li>
-  <li>DroppableDirective</li>
+  <li >DroppableDirective</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -57,6 +58,7 @@
         <p class="comment">
             <code>projects/angular-draggable-droppable/src/lib/droppable.directive.ts</code>
         </p>
+
 
 
             <p class="comment">
@@ -95,7 +97,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#currentDragSubscription">currentDragSubscription</a>
+                                <a href="#currentDragSubscription" >currentDragSubscription</a>
                             </li>
                         </ul>
                     </td>
@@ -111,13 +113,13 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#dragActiveClass">dragActiveClass</a>
+                                <a href="#dragActiveClass" >dragActiveClass</a>
                             </li>
                             <li>
-                                <a href="#dragOverClass">dragOverClass</a>
+                                <a href="#dragOverClass" >dragOverClass</a>
                             </li>
                             <li>
-                                <a href="#validateDrop">validateDrop</a>
+                                <a href="#validateDrop" >validateDrop</a>
                             </li>
                         </ul>
                     </td>
@@ -132,16 +134,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#dragEnter">dragEnter</a>
+                                <a href="#dragEnter" >dragEnter</a>
                             </li>
                             <li>
-                                <a href="#dragLeave">dragLeave</a>
+                                <a href="#dragLeave" >dragLeave</a>
                             </li>
                             <li>
-                                <a href="#dragOver">dragOver</a>
+                                <a href="#dragOver" >dragOver</a>
                             </li>
                             <li>
-                                <a href="#drop">drop</a>
+                                <a href="#drop" >drop</a>
                             </li>
                         </ul>
                     </td>
@@ -159,7 +161,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(element: ElementRef<HTMLElement>, draggableHelper: DraggableHelper, zone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>, renderer: <a href="https://angular.io/api/core/Renderer2" target="_blank">Renderer2</a>, scrollContainer: DraggableScrollContainerDirective)</code>
+<code>constructor(element: ElementRef<HTMLElement>, draggableHelper: DraggableHelper, zone: <a href="https://angular.io/api/core/NgZone" target="_blank">NgZone</a>, renderer: <a href="https://angular.io/api/core/Renderer2" target="_blank">Renderer2</a>, scrollContainer: <a href="../directives/DraggableScrollContainerDirective.html" target="_self">DraggableScrollContainerDirective</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -233,7 +235,7 @@
                                                         <td>scrollContainer</td>
                                                   
                                                         <td>
-                                                                    <code>DraggableScrollContainerDirective</code>
+                                                                        <code><a href="../directives/DraggableScrollContainerDirective.html" target="_self" >DraggableScrollContainerDirective</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -450,36 +452,35 @@
 
             <section>
     
-        <h3 id="inputs">
-            Properties
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentDragSubscription"></a>
+                    <span class="name">
+                        <span ><b>currentDragSubscription</b></span>
+                        <a href="#currentDragSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                        <a name="currentDragSubscription"></a>
-                        <span class="name">
-                            <b>
-                            currentDragSubscription</b>
-                            <a href="#currentDragSubscription"><span class="icon ion-ios-link"></span></a>
-                        </span>
+                        <i>Type : </i>    <code>Subscription</code>
+
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code>Subscription</code>
-
+                                <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:92</a></div>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">projects/angular-draggable-droppable/src/lib/droppable.directive.ts:92</a></div>
-                            </td>
-                        </tr>
 
 
-            </tbody>
-        </table>
+        </tbody>
+    </table>
 </section>
 
 
@@ -576,7 +577,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
   /**
    * Called when a draggable element is dropped on this element
    */
-  @Output() drop &#x3D; new EventEmitter&lt;DropEvent&gt;(); // tslint:disable-line no-output-named-after-standard-event
+  @Output() drop &#x3D; new EventEmitter&lt;DropEvent&gt;(); // eslint-disable-line  @angular-eslint/no-output-native
 
   currentDragSubscription: Subscription;
 
@@ -615,9 +616,11 @@ export class DroppableDirective implements OnInit, OnDestroy {
           map(({ clientX, clientY, dropData, target }) &#x3D;&gt; {
             currentDragDropData &#x3D; dropData;
             if (droppableElement.updateCache) {
-              droppableElement.rect &#x3D; this.element.nativeElement.getBoundingClientRect();
+              droppableElement.rect &#x3D;
+                this.element.nativeElement.getBoundingClientRect();
               if (this.scrollContainer) {
-                droppableElement.scrollContainerRect &#x3D; this.scrollContainer.elementRef.nativeElement.getBoundingClientRect();
+                droppableElement.scrollContainerRect &#x3D;
+                  this.scrollContainer.elementRef.nativeElement.getBoundingClientRect();
               }
               droppableElement.updateCache &#x3D; false;
             }
@@ -750,9 +753,9 @@ export class DroppableDirective implements OnInit, OnDestroy {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

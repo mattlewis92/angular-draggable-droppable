@@ -62,7 +62,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </a>
                         <ul class="links collapse " ${ isNormalMode ? 'id="modules-links"' : 'id="xs-modules-links"' }>
                             <li class="link">
-                                <a href="modules/DragAndDropModule.html" data-type="entity-link">DragAndDropModule</a>
+                                <a href="modules/DragAndDropModule.html" data-type="entity-link" >DragAndDropModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
                                         'data-target="#directives-links-module-DragAndDropModule-82ff8a539d6cacdb582c8e0cd54ac261"' : 'data-target="#xs-directives-links-module-DragAndDropModule-82ff8a539d6cacdb582c8e0cd54ac261"' }>
@@ -73,16 +73,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-DragAndDropModule-82ff8a539d6cacdb582c8e0cd54ac261"' :
                                         'id="xs-directives-links-module-DragAndDropModule-82ff8a539d6cacdb582c8e0cd54ac261"' }>
                                         <li class="link">
-                                            <a href="directives/DraggableDirective.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules">DraggableDirective</a>
+                                            <a href="directives/DraggableDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DraggableDirective</a>
                                         </li>
                                         <li class="link">
-                                            <a href="directives/DraggableScrollContainerDirective.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules">DraggableScrollContainerDirective</a>
+                                            <a href="directives/DraggableScrollContainerDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DraggableScrollContainerDirective</a>
                                         </li>
                                         <li class="link">
-                                            <a href="directives/DroppableDirective.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules">DroppableDirective</a>
+                                            <a href="directives/DroppableDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DroppableDirective</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -98,43 +95,43 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? ' id="interfaces-links"' : 'id="xs-interfaces-links"' }>
                             <li class="link">
-                                <a href="interfaces/Coordinates.html" data-type="entity-link">Coordinates</a>
+                                <a href="interfaces/Coordinates.html" data-type="entity-link" >Coordinates</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/DragAxis.html" data-type="entity-link">DragAxis</a>
+                                <a href="interfaces/DragAxis.html" data-type="entity-link" >DragAxis</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/DragEndEvent.html" data-type="entity-link">DragEndEvent</a>
+                                <a href="interfaces/DragEndEvent.html" data-type="entity-link" >DragEndEvent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/DragMoveEvent.html" data-type="entity-link">DragMoveEvent</a>
+                                <a href="interfaces/DragMoveEvent.html" data-type="entity-link" >DragMoveEvent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/DragPointerDownEvent.html" data-type="entity-link">DragPointerDownEvent</a>
+                                <a href="interfaces/DragPointerDownEvent.html" data-type="entity-link" >DragPointerDownEvent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/DragStartEvent.html" data-type="entity-link">DragStartEvent</a>
+                                <a href="interfaces/DragStartEvent.html" data-type="entity-link" >DragStartEvent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/DropEvent.html" data-type="entity-link">DropEvent</a>
+                                <a href="interfaces/DropEvent.html" data-type="entity-link" >DropEvent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/GhostElementCreatedEvent.html" data-type="entity-link">GhostElementCreatedEvent</a>
+                                <a href="interfaces/GhostElementCreatedEvent.html" data-type="entity-link" >GhostElementCreatedEvent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/PointerEvent.html" data-type="entity-link">PointerEvent</a>
+                                <a href="interfaces/PointerEvent.html" data-type="entity-link" >PointerEvent</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/SnapGrid.html" data-type="entity-link">SnapGrid</a>
+                                <a href="interfaces/SnapGrid.html" data-type="entity-link" >SnapGrid</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/TimeLongPress.html" data-type="entity-link">TimeLongPress</a>
+                                <a href="interfaces/TimeLongPress.html" data-type="entity-link" >TimeLongPress</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ValidateDragParams.html" data-type="entity-link">ValidateDragParams</a>
+                                <a href="interfaces/ValidateDragParams.html" data-type="entity-link" >ValidateDragParams</a>
                             </li>
                             <li class="link">
-                                <a href="interfaces/ValidateDropParams.html" data-type="entity-link">ValidateDropParams</a>
+                                <a href="interfaces/ValidateDropParams.html" data-type="entity-link" >ValidateDropParams</a>
                             </li>
                         </ul>
                     </li>

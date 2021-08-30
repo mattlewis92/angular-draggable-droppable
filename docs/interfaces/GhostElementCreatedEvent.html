@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
@@ -43,7 +44,9 @@
 
 <ol class="breadcrumb">
   <li>Interfaces</li>
-  <li>GhostElementCreatedEvent</li>
+  <li
+  >
+  GhostElementCreatedEvent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -66,6 +69,7 @@
 
 
 
+
         <section>
             <h3 id="index">Index</h3>
             <table class="table table-sm table-bordered index-table">
@@ -79,13 +83,22 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#clientX">clientX</a>
+                                        <a href="#clientX" 
+>
+                                            clientX
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#clientY">clientY</a>
+                                        <a href="#clientY" 
+>
+                                            clientY
+                                        </a>
                                 </li>
                                 <li>
-                                        <a href="#element">element</a>
+                                        <a href="#element" 
+>
+                                            element
+                                        </a>
                                 </li>
                             </ul>
                         </td>
@@ -103,7 +116,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="clientX"></a>
-                                        <span class="name"><b>clientX</b><a href="#clientX"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>clientX</b>
+                                            <a href="#clientX">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -132,7 +149,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="clientY"></a>
-                                        <span class="name"><b>clientY</b><a href="#clientY"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>clientY</b>
+                                            <a href="#clientY">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -161,7 +182,11 @@
                                 <tr>
                                     <td class="col-md-4">
                                         <a name="element"></a>
-                                        <span class="name"><b>element</b><a href="#element"><span class="icon ion-ios-link"></span></a></span>
+                                        <span class="name "><b>element</b>
+                                            <a href="#element">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -416,7 +441,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
   private ghostElement: HTMLElement | null;
 
-  private destroy$ &#x3D; new Subject();
+  private destroy$ &#x3D; new Subject&lt;void&gt;();
 
   private timeLongPress: TimeLongPress &#x3D; { timerBegin: 0, timerEnd: 0 };
 
@@ -448,9 +473,8 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         }
 
         // hack to prevent text getting selected in safari while dragging
-        const globalDragStyle: HTMLStyleElement &#x3D; this.renderer.createElement(
-          &#x27;style&#x27;
-        );
+        const globalDragStyle: HTMLStyleElement &#x3D;
+          this.renderer.createElement(&#x27;style&#x27;);
         this.renderer.setAttribute(globalDragStyle, &#x27;type&#x27;, &#x27;text/css&#x27;);
         this.renderer.appendChild(
           globalDragStyle,
@@ -869,10 +893,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     let startScrollPosition: any;
     let isDragActivated: boolean;
     let hasContainerScrollbar: boolean;
-    if (
-      (this.scrollContainer &amp;&amp; this.scrollContainer.activeLongPressDrag) ||
-      this.touchStartLongPress
-    ) {
+    if (this.touchStartLongPress) {
       this.timeLongPress.timerBegin &#x3D; Date.now();
       isDragActivated &#x3D; false;
       hasContainerScrollbar &#x3D; this.hasScrollbar();
@@ -895,8 +916,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         }
       ).subscribe((touchMoveEvent) &#x3D;&gt; {
         if (
-          ((this.scrollContainer &amp;&amp; this.scrollContainer.activeLongPressDrag) ||
-            this.touchStartLongPress) &amp;&amp;
+          this.touchStartLongPress &amp;&amp;
           !isDragActivated &amp;&amp;
           hasContainerScrollbar
         ) {
@@ -907,9 +927,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           );
         }
         if (
-          ((!this.scrollContainer ||
-            !this.scrollContainer.activeLongPressDrag) &amp;&amp;
-            !this.touchStartLongPress) ||
+          !this.touchStartLongPress ||
           !hasContainerScrollbar ||
           isDragActivated
         ) {
@@ -939,10 +957,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
       this.eventListenerSubscriptions.touchmove();
       delete this.eventListenerSubscriptions.touchmove;
 
-      if (
-        (this.scrollContainer &amp;&amp; this.scrollContainer.activeLongPressDrag) ||
-        this.touchStartLongPress
-      ) {
+      if (this.touchStartLongPress) {
         this.enableScroll();
       }
     }
@@ -1028,13 +1043,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         touchMoveEvent.targetTouches[0].clientY - event.touches[0].clientY
       ) - deltaScroll.top;
     const deltaTotal &#x3D; deltaX + deltaY;
-    const longPressConfig &#x3D; this.touchStartLongPress
-      ? this.touchStartLongPress
-      : /* istanbul ignore next */
-        {
-          delta: this.scrollContainer.longPressConfig.delta,
-          delay: this.scrollContainer.longPressConfig.duration,
-        };
+    const longPressConfig &#x3D; this.touchStartLongPress;
     if (
       deltaTotal &gt; longPressConfig.delta ||
       deltaScroll.top &gt; 0 ||
@@ -1117,9 +1126,9 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 

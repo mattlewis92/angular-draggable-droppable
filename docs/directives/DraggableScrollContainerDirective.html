@@ -8,7 +8,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-	      <link rel="stylesheet" href="../styles/style.css">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
     </head>
     <body>
 
@@ -37,7 +38,7 @@
 
 <ol class="breadcrumb">
   <li>Directives</li>
-  <li>DraggableScrollContainerDirective</li>
+  <li >DraggableScrollContainerDirective</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,14 +59,15 @@
             <code>projects/angular-draggable-droppable/src/lib/draggable-scroll-container.directive.ts</code>
         </p>
 
+
             <p class="comment">
                 <h3>Description</h3>
             </p>
             <p class="comment">
                 <p>If the window isn&#39;t scrollable, then place this on the scrollable container that draggable elements are inside. e.g.</p>
-<div><pre class="line-numbers"><code class="language-html">  &lt;div style=&quot;overflow: scroll&quot; mwlDraggableScrollContainer&gt;
-    &lt;div mwlDraggable&gt;Drag me!&lt;/div&gt;
-  &lt;/div&gt;</code></pre></div>
+<div><pre class="line-numbers"><code class="language-html">&lt;div style=&quot;overflow: scroll&quot; mwlDraggableScrollContainer&gt;
+&lt;div mwlDraggable&gt;Drag me!&lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
             </p>
 
 
@@ -84,101 +86,9 @@
             </table>
         </section>
 
-            <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
-        <tbody>
-
-
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Inputs</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#activeLongPressDrag">activeLongPressDrag</a>
-                            </li>
-                            <li>
-                                <a href="#longPressConfig">longPressConfig</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
 
 
-
-        </tbody>
-    </table>
-</section>
-
-
-            <section>
-    <h3 id="inputs">Inputs</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="activeLongPressDrag"></a>
-                        <b>activeLongPressDrag</b>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>false</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">projects/angular-draggable-droppable/src/lib/draggable-scroll-container.directive.ts:26</a></div>
-                            </td>
-                        </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Trigger the DragStart after a long touch in scrollable container when true</p>
-</div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="longPressConfig"></a>
-                        <b>longPressConfig</b>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Default value : </i><code>{ duration: 300, delta: 30 }</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">projects/angular-draggable-droppable/src/lib/draggable-scroll-container.directive.ts:34</a></div>
-                            </td>
-                        </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>Configuration of a long touch
-Duration in ms of a long touch before activating DragStart
-Delta of the</p>
-</div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
 
 
 
@@ -189,14 +99,7 @@ Delta of the</p>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-  Directive,
-  ElementRef,
-  Input,
-  NgZone,
-  OnInit,
-  Renderer2,
-} from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Directive, ElementRef } from &#x27;@angular/core&#x27;;
 
 /**
  * If the window isn&#x27;t scrollable, then place this on the scrollable container that draggable elements are inside. e.g.
@@ -210,20 +113,6 @@ Delta of the</p>
   selector: &#x27;[mwlDraggableScrollContainer]&#x27;,
 })
 export class DraggableScrollContainerDirective {
-  /**
-   * Trigger the DragStart after a long touch in scrollable container when true
-   * @deprecated will be removed in v5 (use [touchStartLongPress]&#x3D;&quot;{delay: 300, delta: 30}&quot; on the mwlDraggable element instead)
-   */
-  @Input() activeLongPressDrag: boolean &#x3D; false;
-
-  /**
-   * Configuration of a long touch
-   * Duration in ms of a long touch before activating DragStart
-   * Delta of the
-   * @deprecated will be removed in v5 (use [touchStartLongPress]&#x3D;&quot;{delay: 300, delta: 30}&quot; on the mwlDraggable element instead)
-   */
-  @Input() longPressConfig &#x3D; { duration: 300, delta: 30 };
-
   /**
    * @hidden
    */
@@ -269,9 +158,9 @@ export class DraggableScrollContainerDirective {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
-       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
-       <script src="../js/menu-wc.js" defer></script>
+       
+       <script type="module" src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
 
