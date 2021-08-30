@@ -1,11 +1,4 @@
-import {
-  Directive,
-  ElementRef,
-  Input,
-  NgZone,
-  OnInit,
-  Renderer2,
-} from '@angular/core';
+import { Directive, ElementRef, Input } from '@angular/core';
 
 /**
  * If the window isn't scrollable, then place this on the scrollable container that draggable elements are inside. e.g.

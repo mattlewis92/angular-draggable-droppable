@@ -8,6 +8,7 @@ import 'zone.js/dist/fake-async-test';
 import 'zone.js/dist/sync-test';
 import 'zone.js/dist/proxy';
 import 'zone.js/dist/mocha-patch';
+import './test-polyfills';
 import { getTestBed } from '@angular/core/testing';
 import {
   BrowserDynamicTestingModule,
