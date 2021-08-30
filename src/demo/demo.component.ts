@@ -14,7 +14,7 @@ export class DemoComponent {
   droppedData: string = '';
   droppedData2: string = '';
 
-  @ViewChild(DroppableDirective, { read: ElementRef })
+  @ViewChild(DroppableDirective, { read: ElementRef, static: true })
   droppableElement: ElementRef;
 
   onDrop({ dropData }: DropEvent<string>): void {
