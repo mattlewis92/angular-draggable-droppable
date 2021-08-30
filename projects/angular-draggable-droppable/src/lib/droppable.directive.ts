@@ -87,7 +87,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
   /**
    * Called when a draggable element is dropped on this element
    */
-  @Output() drop = new EventEmitter<DropEvent>(); // tslint:disable-line no-output-named-after-standard-event
+  @Output() drop = new EventEmitter<DropEvent>(); // tslint:disable-line no-output-native
 
   currentDragSubscription: Subscription;
 
@@ -126,9 +126,11 @@ export class DroppableDirective implements OnInit, OnDestroy {
           map(({ clientX, clientY, dropData, target }) => {
             currentDragDropData = dropData;
             if (droppableElement.updateCache) {
-              droppableElement.rect = this.element.nativeElement.getBoundingClientRect();
+              droppableElement.rect =
+                this.element.nativeElement.getBoundingClientRect();
               if (this.scrollContainer) {
-                droppableElement.scrollContainerRect = this.scrollContainer.elementRef.nativeElement.getBoundingClientRect();
+                droppableElement.scrollContainerRect =
+                  this.scrollContainer.elementRef.nativeElement.getBoundingClientRect();
               }
               droppableElement.updateCache = false;
             }
