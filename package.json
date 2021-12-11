@@ -1,7 +1,7 @@
 {
   "name": "angular-draggable-droppable",
   "version": "5.0.0",
-  "description": "Drag and drop for angular 10.0+",
+  "description": "Drag and drop for angular 12.0+",
   "scripts": {
     "start": "concurrently --raw \"ng serve --open\" \"npm run test:watch\"",
     "build:demo": "ng build --configuration production",
@@ -92,7 +92,7 @@
     "zone.js": "~0.11.4"
   },
   "peerDependencies": {
-    "@angular/core": ">=10.0.0"
+    "@angular/core": ">=12.0.0"
   },
   "config": {
     "commitizen": {
