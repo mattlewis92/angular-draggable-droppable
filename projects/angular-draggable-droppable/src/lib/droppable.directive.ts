@@ -31,9 +31,6 @@ function isCoordinateWithinRectangle(
 
 export interface DropEvent<T = any> {
   dropData: T;
-}
-
-export interface ValidateDropParams {
   /**
    * ClientX value of the mouse location where the drop occurred
    */
@@ -47,6 +44,10 @@ export interface ValidateDropParams {
    */
   target: EventTarget;
 }
+
+export interface DragEvent<T = any> extends DropEvent<T> {}
+
+export interface ValidateDropParams extends DropEvent {}
 
 export type ValidateDrop = (params: ValidateDropParams) => boolean;
 
@@ -121,10 +122,10 @@ export class DroppableDirective implements OnInit, OnDestroy {
           }
         );
 
-        let currentDragDropData: any;
+        let currentDragEvent: DragEvent;
         const overlaps$ = drag$.pipe(
           map(({ clientX, clientY, dropData, target }) => {
-            currentDragDropData = dropData;
+            currentDragEvent = { clientX, clientY, dropData, target };
             if (droppableElement.updateCache) {
               droppableElement.rect =
                 this.element.nativeElement.getBoundingClientRect();
@@ -142,7 +143,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
 
             const isDropAllowed =
               !this.validateDrop ||
-              this.validateDrop({ clientX, clientY, target });
+              this.validateDrop({ clientX, clientY, target, dropData });
 
             if (droppableElement.scrollContainerRect) {
               return (
@@ -171,9 +172,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
             addClass(this.renderer, this.element, this.dragOverClass);
             if (this.dragEnter.observers.length > 0) {
               this.zone.run(() => {
-                this.dragEnter.next({
-                  dropData: currentDragDropData,
-                });
+                this.dragEnter.next(currentDragEvent);
               });
             }
           });
@@ -181,9 +180,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
         overlaps$.pipe(filter((overlapsNow) => overlapsNow)).subscribe(() => {
           if (this.dragOver.observers.length > 0) {
             this.zone.run(() => {
-              this.dragOver.next({
-                dropData: currentDragDropData,
-              });
+              this.dragOver.next(currentDragEvent);
             });
           }
         });
@@ -198,9 +195,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
             removeClass(this.renderer, this.element, this.dragOverClass);
             if (this.dragLeave.observers.length > 0) {
               this.zone.run(() => {
-                this.dragLeave.next({
-                  dropData: currentDragDropData,
-                });
+                this.dragLeave.next(currentDragEvent);
               });
             }
           });
@@ -213,9 +208,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
               removeClass(this.renderer, this.element, this.dragOverClass);
               if (this.drop.observers.length > 0) {
                 this.zone.run(() => {
-                  this.drop.next({
-                    dropData: currentDragDropData,
-                  });
+                  this.drop.next(currentDragEvent);
                 });
               }
             }
