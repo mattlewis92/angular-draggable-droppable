@@ -169,19 +169,23 @@ export class DroppableDirective implements OnInit, OnDestroy {
           .subscribe(() => {
             dragOverActive = true;
             addClass(this.renderer, this.element, this.dragOverClass);
-            this.zone.run(() => {
-              this.dragEnter.next({
-                dropData: currentDragDropData,
+            if (this.dragEnter.observers.length > 0) {
+              this.zone.run(() => {
+                this.dragEnter.next({
+                  dropData: currentDragDropData,
+                });
               });
-            });
+            }
           });
 
         overlaps$.pipe(filter((overlapsNow) => overlapsNow)).subscribe(() => {
-          this.zone.run(() => {
-            this.dragOver.next({
-              dropData: currentDragDropData,
+          if (this.dragOver.observers.length > 0) {
+            this.zone.run(() => {
+              this.dragOver.next({
+                dropData: currentDragDropData,
+              });
             });
-          });
+          }
         });
 
         overlapsChanged$
@@ -192,11 +196,13 @@ export class DroppableDirective implements OnInit, OnDestroy {
           .subscribe(() => {
             dragOverActive = false;
             removeClass(this.renderer, this.element, this.dragOverClass);
-            this.zone.run(() => {
-              this.dragLeave.next({
-                dropData: currentDragDropData,
+            if (this.dragLeave.observers.length > 0) {
+              this.zone.run(() => {
+                this.dragLeave.next({
+                  dropData: currentDragDropData,
+                });
               });
-            });
+            }
           });
 
         drag$.subscribe({
@@ -205,11 +211,13 @@ export class DroppableDirective implements OnInit, OnDestroy {
             removeClass(this.renderer, this.element, this.dragActiveClass);
             if (dragOverActive) {
               removeClass(this.renderer, this.element, this.dragOverClass);
-              this.zone.run(() => {
-                this.drop.next({
-                  dropData: currentDragDropData,
+              if (this.drop.observers.length > 0) {
+                this.zone.run(() => {
+                  this.drop.next({
+                    dropData: currentDragDropData,
+                  });
                 });
-              });
+              }
             }
           },
         });

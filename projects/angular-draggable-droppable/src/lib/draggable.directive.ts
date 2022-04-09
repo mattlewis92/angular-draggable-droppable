@@ -291,9 +291,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         const currentDrag$ = new Subject<CurrentDragData>();
         const cancelDrag$ = new ReplaySubject<void>();
 
-        this.zone.run(() => {
-          this.dragPointerDown.next({ x: 0, y: 0 });
-        });
+        if (this.dragPointerDown.observers.length > 0) {
+          this.zone.run(() => {
+            this.dragPointerDown.next({ x: 0, y: 0 });
+          });
+        }
 
         const dragComplete$ = merge(
           this.pointerUp$,
@@ -370,9 +372,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         const dragEnded$ = pointerMove.pipe(takeLast(1), share());
 
         dragStarted$.subscribe(({ clientX, clientY, x, y }) => {
-          this.zone.run(() => {
-            this.dragStart.next({ cancelDrag$ });
-          });
+          if (this.dragStart.observers.length > 0) {
+            this.zone.run(() => {
+              this.dragStart.next({ cancelDrag$ });
+            });
+          }
 
           this.scroller = autoScroll(
             [
@@ -442,13 +446,15 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               });
             }
 
-            this.zone.run(() => {
-              this.ghostElementCreated.emit({
-                clientX: clientX - x,
-                clientY: clientY - y,
-                element: clone,
+            if (this.ghostElementCreated.observers.length > 0) {
+              this.zone.run(() => {
+                this.ghostElementCreated.emit({
+                  clientX: clientX - x,
+                  clientY: clientY - y,
+                  element: clone,
+                });
               });
-            });
+            }
 
             dragEnded$.subscribe(() => {
               clone.parentElement!.removeChild(clone);
@@ -481,9 +487,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           )
           .subscribe(({ x, y, dragCancelled }) => {
             this.scroller.destroy();
-            this.zone.run(() => {
-              this.dragEnd.next({ x, y, dragCancelled });
-            });
+            if (this.dragEnd.observers.length > 0) {
+              this.zone.run(() => {
+                this.dragEnd.next({ x, y, dragCancelled });
+              });
+            }
             removeClass(this.renderer, this.element, this.dragActiveClass);
             currentDrag$.complete();
           });
@@ -528,9 +536,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           transformY,
           target,
         }) => {
-          this.zone.run(() => {
-            this.dragging.next({ x, y });
-          });
+          if (this.dragging.observers.length > 0) {
+            this.zone.run(() => {
+              this.dragging.next({ x, y });
+            });
+          }
           requestAnimationFrame(() => {
             if (this.ghostElement) {
               const transform = `translate3d(${transformX}px, ${transformY}px, 0px)`;
