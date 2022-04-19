@@ -104,6 +104,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="interfaces/DragEndEvent.html" data-type="entity-link" >DragEndEvent</a>
                             </li>
                             <li class="link">
+                                <a href="interfaces/DragEvent.html" data-type="entity-link" >DragEvent</a>
+                            </li>
+                            <li class="link">
                                 <a href="interfaces/DragMoveEvent.html" data-type="entity-link" >DragMoveEvent</a>
                             </li>
                             <li class="link">
