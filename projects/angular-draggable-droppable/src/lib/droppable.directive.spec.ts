@@ -165,27 +165,47 @@ describe('droppable directive', () => {
       clientX: 5,
       clientY: 120,
     });
-    expect(fixture.componentInstance.dragEvent.getCall(0).args).to.deep.equal([
-      'enter',
-      { dropData: { foo: 'bar' } },
+    const firstCallArgs = fixture.componentInstance.dragEvent.getCall(0).args;
+    expect(firstCallArgs[0]).to.equal('enter');
+    expect(Object.keys(firstCallArgs[1])).to.deep.equal([
+      'clientX',
+      'clientY',
+      'dropData',
+      'target',
     ]);
-    expect(fixture.componentInstance.dragEvent.getCall(1).args).to.deep.equal([
-      'over',
-      { dropData: { foo: 'bar' } },
+    expect(firstCallArgs[1]).to.deep.include({ dropData: { foo: 'bar' } });
+    const secondCallArgs = fixture.componentInstance.dragEvent.getCall(1).args;
+    expect(secondCallArgs[0]).to.equal('over');
+    expect(secondCallArgs[1]).to.deep.include({ dropData: { foo: 'bar' } });
+    expect(Object.keys(secondCallArgs[1])).to.deep.equal([
+      'clientX',
+      'clientY',
+      'dropData',
+      'target',
     ]);
     triggerDomEvent('mousemove', draggableElement, {
       clientX: 5,
       clientY: 125,
     });
-    expect(fixture.componentInstance.dragEvent.getCall(2).args).to.deep.equal([
-      'over',
-      { dropData: { foo: 'bar' } },
+    const thirdCallArgs = fixture.componentInstance.dragEvent.getCall(2).args;
+    expect(thirdCallArgs[0]).to.equal('over');
+    expect(Object.keys(thirdCallArgs[1])).to.deep.equal([
+      'clientX',
+      'clientY',
+      'dropData',
+      'target',
     ]);
+    expect(thirdCallArgs[1]).to.deep.include({ dropData: { foo: 'bar' } });
     triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 50 });
-    expect(fixture.componentInstance.dragEvent.getCall(3).args).to.deep.equal([
-      'leave',
-      { dropData: { foo: 'bar' } },
+    const fourthCallArgs = fixture.componentInstance.dragEvent.getCall(3).args;
+    expect(fourthCallArgs[0]).to.equal('leave');
+    expect(Object.keys(fourthCallArgs[1])).to.deep.equal([
+      'clientX',
+      'clientY',
+      'dropData',
+      'target',
     ]);
+    expect(fourthCallArgs[1]).to.deep.include({ dropData: { foo: 'bar' } });
   });
 
   it('should not fire the drop event', () => {
@@ -226,9 +246,11 @@ describe('droppable directive', () => {
       clientY: 120,
       button: 0,
     });
-    expect(fixture.componentInstance.drop).to.have.been.calledWith({
-      dropData: { foo: 'bar' },
-    });
+    expect(fixture.componentInstance.drop).to.have.been.calledWithMatch(
+      sinon.match({
+        dropData: { foo: 'bar' },
+      })
+    );
   });
 
   it('should not fire the drag enter event until the mouse cursor is within the element', () => {
@@ -248,14 +270,12 @@ describe('droppable directive', () => {
       clientX: 5,
       clientY: 100,
     });
-    expect(fixture.componentInstance.dragEvent.getCall(0).args).to.deep.equal([
-      'enter',
-      { dropData: { foo: 'bar' } },
-    ]);
-    expect(fixture.componentInstance.dragEvent.getCall(1).args).to.deep.equal([
-      'over',
-      { dropData: { foo: 'bar' } },
-    ]);
+    const firstCallArgs = fixture.componentInstance.dragEvent.getCall(0).args;
+    expect(firstCallArgs[0]).to.equal('enter');
+    expect(firstCallArgs[1]).to.deep.include({ dropData: { foo: 'bar' } });
+    const secondCallArgs = fixture.componentInstance.dragEvent.getCall(1).args;
+    expect(secondCallArgs[0]).to.equal('over');
+    expect(secondCallArgs[1]).to.deep.include({ dropData: { foo: 'bar' } });
   });
 
   it('should add a class to the droppable element when an element is dragged over it', () => {
@@ -386,9 +406,11 @@ describe('droppable directive', () => {
       clientY: 10,
       button: 0,
     });
-    expect(scrollFixture.componentInstance.drop).to.have.been.calledWith({
-      dropData: { foo: 'bar' },
-    });
+    expect(scrollFixture.componentInstance.drop).to.have.been.calledWithMatch(
+      sinon.match({
+        dropData: { foo: 'bar' },
+      })
+    );
   });
 
   it('should not fire drop events when the element is scrolled out of the view', () => {
