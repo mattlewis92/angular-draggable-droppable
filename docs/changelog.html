@@ -9,7 +9,7 @@
 
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
 	   <link rel="stylesheet" href="./styles/style.css">
-        <link rel="stylesheet" href="./styles/dark.css" media="(prefers-color-scheme: dark)">
+        <link rel="stylesheet" href="./styles/dark.css">
     </head>
     <body>
 
@@ -33,6 +33,15 @@
 
 <h1 id="changelog">Changelog</h1>
 <p>All notable changes to this project will be documented in this file. See <a href="https://github.com/conventional-changelog/standard-version">standard-version</a> for commit guidelines.</p>
+<h2 id="700-2022-08-02"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v6.1.0...v7.0.0">7.0.0</a> (2022-08-02)</h2>
+<h3 id="⚠-breaking-changes">⚠ BREAKING CHANGES</h3>
+<ul>
+<li>angular 14 or higher is now required to use this package</li>
+</ul>
+<h3 id="build">build</h3>
+<ul>
+<li>upgrade to angular 14 (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/cc5285603afd2a31546056d82ef52fcca486a983">cc52856</a>)</li>
+</ul>
 <h2 id="610-2022-04-19"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v6.0.1...v6.1.0">6.1.0</a> (2022-04-19)</h2>
 <h3 id="features">Features</h3>
 <ul>
@@ -40,7 +49,7 @@
 </ul>
 <h3 id="601-2022-04-12"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v6.0.0...v6.0.1">6.0.1</a> (2022-04-12)</h3>
 <h2 id="600-2021-12-11"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v5.0.0...v6.0.0">6.0.0</a> (2021-12-11)</h2>
-<h3 id="⚠-breaking-changes">⚠ BREAKING CHANGES</h3>
+<h3 id="⚠-breaking-changes-1">⚠ BREAKING CHANGES</h3>
 <ul>
 <li>angular 12 or higher is now required to use this package</li>
 </ul>
@@ -49,7 +58,7 @@
 <li>publish package in ivy partial compilation mode (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/2c37cc96fd62008eb6c3e8bcbc05df5c8422c176">2c37cc9</a>)</li>
 </ul>
 <h2 id="500-2021-08-30"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.6.0...v5.0.0">5.0.0</a> (2021-08-30)</h2>
-<h3 id="⚠-breaking-changes-1">⚠ BREAKING CHANGES</h3>
+<h3 id="⚠-breaking-changes-2">⚠ BREAKING CHANGES</h3>
 <ul>
 <li>The <code>activeLongPressDrag</code> and <code>longPressConfig</code> inputs have been removed on the <code>mwlDraggableScrollContainer</code> directive.</li>
 </ul>
@@ -62,7 +71,7 @@
 <ul>
 <li>remove deprecated inputs on mwlDraggableScrollContainer directive (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/2766f33dd9d3c0df0c0eddc3dc7706ef41387ce8">2766f33</a>)</li>
 </ul>
-<h3 id="build">build</h3>
+<h3 id="build-1">build</h3>
 <ul>
 <li>don&#39;t bundle @mattlewis92/dom-autoscroller anymore (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/3c41375e998f7aff6d80f4243f2044b348e8fb14">3c41375</a>)</li>
 <li>upgrade to angular 10 (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/907f637d2684b4d5299893b68acc9a55e0e0bc13">907f637</a>)</li>
@@ -490,14 +499,16 @@ use regular mousedown and mouseup events to get the old behaviour</li>
 
 
 
-                   
+
+
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -509,6 +520,15 @@ use regular mousedown and mouseup events to get the old behaviour</li>
            </div>
        </div>
 
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 0;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
@@ -518,8 +538,8 @@ use regular mousedown and mouseup events to get the old behaviour</li>
 
        <script src="./js/libs/custom-elements.min.js"></script>
        <script src="./js/libs/lit-html.js"></script>
-       
-       <script type="module" src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/menu-wc.js" defer></script>
        <script nomodule src="./js/menu-wc_es5.js" defer></script>
 
        <script src="./js/libs/bootstrap-native.js"></script>

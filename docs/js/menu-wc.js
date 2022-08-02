@@ -1,6 +1,5 @@
 'use strict';
 
-
 customElements.define('compodoc-menu', class extends HTMLElement {
     constructor() {
         super();
@@ -49,6 +48,11 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                         <span class="icon ion-ios-list"></span>Dependencies
                                     </a>
                                 </li>
+                                <li class="link">
+                                    <a href="properties.html" data-type="chapter-link">
+                                        <span class="icon ion-ios-apps"></span>Properties
+                                    </a>
+                                </li>
                     </ul>
                 </li>
                     <li class="chapter modules">
@@ -65,13 +69,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/DragAndDropModule.html" data-type="entity-link" >DragAndDropModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-DragAndDropModule-82ff8a539d6cacdb582c8e0cd54ac261"' : 'data-target="#xs-directives-links-module-DragAndDropModule-82ff8a539d6cacdb582c8e0cd54ac261"' }>
+                                        'data-target="#directives-links-module-DragAndDropModule-a8fe6d5f9125d18ed3d062390f00027f457b1924af0837881ca58e2dd1d9bf39b04c4bb7b25a08e120ed762fa7268d453fd6971372a7317531c8568a15380310"' : 'data-target="#xs-directives-links-module-DragAndDropModule-a8fe6d5f9125d18ed3d062390f00027f457b1924af0837881ca58e2dd1d9bf39b04c4bb7b25a08e120ed762fa7268d453fd6971372a7317531c8568a15380310"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-DragAndDropModule-82ff8a539d6cacdb582c8e0cd54ac261"' :
-                                        'id="xs-directives-links-module-DragAndDropModule-82ff8a539d6cacdb582c8e0cd54ac261"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-DragAndDropModule-a8fe6d5f9125d18ed3d062390f00027f457b1924af0837881ca58e2dd1d9bf39b04c4bb7b25a08e120ed762fa7268d453fd6971372a7317531c8568a15380310"' :
+                                        'id="xs-directives-links-module-DragAndDropModule-a8fe6d5f9125d18ed3d062390f00027f457b1924af0837881ca58e2dd1d9bf39b04c4bb7b25a08e120ed762fa7268d453fd6971372a7317531c8568a15380310"' }>
                                         <li class="link">
                                             <a href="directives/DraggableDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DraggableDirective</a>
                                         </li>
