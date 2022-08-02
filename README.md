@@ -1,8 +1,8 @@
 # angular 12.0+ drag and drop
 
 [![Sponsorship](https://img.shields.io/badge/funding-github-%23EA4AAA)](https://github.com/users/mattlewis92/sponsorship)
-[![Build Status](https://travis-ci.org/mattlewis92/angular-draggable-droppable.svg?branch=master)](https://travis-ci.org/mattlewis92/angular-draggable-droppable)
-[![codecov](https://codecov.io/gh/mattlewis92/angular-draggable-droppable/branch/master/graph/badge.svg)](https://codecov.io/gh/mattlewis92/angular-draggable-droppable)
+[![Build Status](https://github.com/mattlewis92/angular-resizable-element/actions/workflows/ci.yml/badge.svg)](https://github.com/mattlewis92/angular-resizable-element/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/mattlewis92/angular-draggable-droppable/branch/main/graph/badge.svg)](https://codecov.io/gh/mattlewis92/angular-draggable-droppable)
 [![npm version](https://badge.fury.io/js/angular-draggable-droppable.svg)](http://badge.fury.io/js/angular-draggable-droppable)
 [![Twitter Follow](https://img.shields.io/twitter/follow/mattlewis92_.svg)](https://twitter.com/mattlewis92_)
 
@@ -66,7 +66,7 @@ class DemoApp {
 
 Note: if draggable elements are inside a scrollable element then you will need to add `mwlDraggableScrollContainer` as an attribute to the scrollable container.
 
-You may also find it useful to view the [demo source](https://github.com/mattlewis92/angular-draggable-droppable/tree/master/src/demo).
+You may also find it useful to view the [demo source](https://github.com/mattlewis92/angular-draggable-droppable/tree/main/src/demo).
 
 ## Documentation
 
