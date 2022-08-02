@@ -1,4 +1,4 @@
-# angular 13.0+ drag and drop
+# angular 14.0+ drag and drop
 
 [![Sponsorship](https://img.shields.io/badge/funding-github-%23EA4AAA)](https://github.com/users/mattlewis92/sponsorship)
 [![Build Status](https://github.com/mattlewis92/angular-resizable-element/actions/workflows/ci.yml/badge.svg)](https://github.com/mattlewis92/angular-resizable-element/actions/workflows/ci.yml)
@@ -20,7 +20,7 @@ https://mattlewis92.github.io/angular-draggable-droppable/
 
 ## About
 
-Observable powered drag and drop for angular 13.0+
+Observable powered drag and drop for angular 14.0+
 
 ## Installation
 
