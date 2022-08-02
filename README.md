@@ -1,7 +1,7 @@
 # angular 14.0+ drag and drop
 
 [![Sponsorship](https://img.shields.io/badge/funding-github-%23EA4AAA)](https://github.com/users/mattlewis92/sponsorship)
-[![Build Status](https://github.com/mattlewis92/angular-resizable-element/actions/workflows/ci.yml/badge.svg)](https://github.com/mattlewis92/angular-resizable-element/actions/workflows/ci.yml)
+[![Build Status](https://github.com/mattlewis92/angular-draggable-droppable/actions/workflows/ci.yml/badge.svg)](https://github.com/mattlewis92/angular-draggable-droppable/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/mattlewis92/angular-draggable-droppable/branch/main/graph/badge.svg)](https://codecov.io/gh/mattlewis92/angular-draggable-droppable)
 [![npm version](https://badge.fury.io/js/angular-draggable-droppable.svg)](http://badge.fury.io/js/angular-draggable-droppable)
 [![Twitter Follow](https://img.shields.io/twitter/follow/mattlewis92_.svg)](https://twitter.com/mattlewis92_)
