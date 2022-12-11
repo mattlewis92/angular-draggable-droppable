@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.0.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v7.0.0...v8.0.0) (2022-12-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* angular 15 or higher is now required to use this package
+
+### build
+
+* upgrade to angular 15 ([87c556b](https://github.com/mattlewis92/angular-draggable-droppable/commit/87c556b6de06a7777e17f3cd05750640f5fc9e2d))
+
 ## [7.0.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v6.1.0...v7.0.0) (2022-08-02)
 
 
