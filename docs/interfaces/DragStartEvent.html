@@ -12,10 +12,61 @@
         <link rel="stylesheet" href="../styles/dark.css">
     </head>
     <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="../" class="navbar-brand">angular-draggable-droppable documentation</a>
-            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">angular-draggable-droppable documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
@@ -24,7 +75,7 @@
 
         <div class="container-fluid main">
            <div class="row main">
-               <div class="hidden-xs menu">
+               <div class="d-none d-md-block menu">
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
@@ -44,23 +95,29 @@
 
 
 <ol class="breadcrumb">
-  <li>Interfaces</li>
-  <li
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
   >
   DragStartEvent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
+    <div class="tab-pane fade active in" id="info">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -71,7 +128,7 @@
 
 
 
-        <section>
+        <section data-compodoc="block-index">
             <h3 id="index">Index</h3>
             <table class="table table-sm table-bordered index-table">
                 <tbody>
@@ -98,7 +155,7 @@
 
 
 
-            <section>
+            <section data-compodoc="block-properties">
                 <h3 id="inputs">Properties</h3>
                     <table class="table table-sm table-bordered">
                         <tbody>
@@ -137,7 +194,7 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
   Directive,
   OnInit,
@@ -150,10 +207,10 @@
   OnChanges,
   NgZone,
   SimpleChanges,
-  Inject,
   TemplateRef,
   ViewContainerRef,
-  Optional,
+  DOCUMENT,
+  inject,
 } from &#x27;@angular/core&#x27;;
 import {
   Subject,
@@ -176,7 +233,7 @@ import {
   startWith,
 } from &#x27;rxjs/operators&#x27;;
 import { CurrentDragData, DraggableHelper } from &#x27;./draggable-helper.provider&#x27;;
-import { DOCUMENT } from &#x27;@angular/common&#x27;;
+
 import autoScroll from &#x27;@mattlewis92/dom-autoscroller&#x27;;
 import { DraggableScrollContainerDirective } from &#x27;./draggable-scroll-container.directive&#x27;;
 import { addClass, removeClass } from &#x27;./util&#x27;;
@@ -370,18 +427,15 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
   private scroller: { destroy: () &#x3D;&gt; void };
 
-  /**
-   * @hidden
-   */
-  constructor(
-    private element: ElementRef&lt;HTMLElement&gt;,
-    private renderer: Renderer2,
-    private draggableHelper: DraggableHelper,
-    private zone: NgZone,
-    private vcr: ViewContainerRef,
-    @Optional() private scrollContainer: DraggableScrollContainerDirective,
-    @Inject(DOCUMENT) private document: any
-  ) {}
+  private element &#x3D; inject&lt;ElementRef&lt;HTMLElement&gt;&gt;(ElementRef);
+  private renderer &#x3D; inject(Renderer2);
+  private draggableHelper &#x3D; inject(DraggableHelper);
+  private zone &#x3D; inject(NgZone);
+  private vcr &#x3D; inject(ViewContainerRef);
+  private scrollContainer &#x3D; inject(DraggableScrollContainerDirective, {
+    optional: true,
+  });
+  private document &#x3D; inject(DOCUMENT);
 
   ngOnInit(): void {
     this.checkEventListeners();
@@ -408,7 +462,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
            -webkit-user-select: none;
            user-select: none;
           }
-        &#x60;)
+        &#x60;),
         );
         requestAnimationFrame(() &#x3D;&gt; {
           this.document.head.appendChild(globalDragStyle);
@@ -421,11 +475,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             ? this.scrollContainer.elementRef.nativeElement
             : &#x27;window&#x27;;
           return this.renderer.listen(scrollContainer, &#x27;scroll&#x27;, (e) &#x3D;&gt;
-            observer.next(e)
+            observer.next(e),
           );
         }).pipe(
           startWith(startScrollPosition),
-          map(() &#x3D;&gt; this.getScrollPosition())
+          map(() &#x3D;&gt; this.getScrollPosition()),
         );
 
         const currentDrag$ &#x3D; new Subject&lt;CurrentDragData&gt;();
@@ -441,7 +495,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           this.pointerUp$,
           this.pointerDown$,
           cancelDrag$,
-          this.destroy$
+          this.destroy$,
         ).pipe(share());
 
         const pointerMove &#x3D; combineLatest([
@@ -502,10 +556,10 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
                 x,
                 y,
                 transform: { x: transformX, y: transformY },
-              })
+              }),
           ),
           takeUntil(dragComplete$),
-          share()
+          share(),
         );
 
         const dragStarted$ &#x3D; pointerMove.pipe(take(1), share());
@@ -529,20 +583,20 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               autoScroll() {
                 return true;
               },
-            }
+            },
           );
           addClass(this.renderer, this.element, this.dragActiveClass);
 
           if (this.ghostDragEnabled) {
             const rect &#x3D; this.element.nativeElement.getBoundingClientRect();
             const clone &#x3D; this.element.nativeElement.cloneNode(
-              true
+              true,
             ) as HTMLElement;
             if (!this.showOriginalElementWhileDragging) {
               this.renderer.setStyle(
                 this.element.nativeElement,
                 &#x27;visibility&#x27;,
-                &#x27;hidden&#x27;
+                &#x27;hidden&#x27;,
               );
             }
 
@@ -551,7 +605,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             } else {
               this.element.nativeElement.parentNode!.insertBefore(
                 clone,
-                this.element.nativeElement.nextSibling
+                this.element.nativeElement.nextSibling,
               );
             }
 
@@ -573,7 +627,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
             if (this.ghostElementTemplate) {
               const viewRef &#x3D; this.vcr.createEmbeddedView(
-                this.ghostElementTemplate
+                this.ghostElementTemplate,
               );
               clone.innerHTML &#x3D; &#x27;&#x27;;
               viewRef.rootNodes
@@ -602,7 +656,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               this.renderer.setStyle(
                 this.element.nativeElement,
                 &#x27;visibility&#x27;,
-                &#x27;&#x27;
+                &#x27;&#x27;,
               );
             });
           }
@@ -619,11 +673,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
                 map((calledCount) &#x3D;&gt; ({
                   ...dragEndData,
                   dragCancelled: calledCount &gt; 0,
-                }))
+                })),
               );
               cancelDrag$.complete();
               return dragEndData$;
-            })
+            }),
           )
           .subscribe(({ x, y, dragCancelled }) &#x3D;&gt; {
             this.scroller.destroy();
@@ -646,15 +700,15 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
         return pointerMove;
       }),
-      share()
+      share(),
     );
 
     merge(
       pointerDragged$.pipe(
         take(1),
-        map((value) &#x3D;&gt; [, value])
+        map((value) &#x3D;&gt; [, value]),
       ),
-      pointerDragged$.pipe(pairwise())
+      pointerDragged$.pipe(pairwise()),
     )
       .pipe(
         filter(([previous, next]) &#x3D;&gt; {
@@ -663,7 +717,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           }
           return previous.x !&#x3D;&#x3D; next.x || previous.y !&#x3D;&#x3D; next.y;
         }),
-        map(([previous, next]) &#x3D;&gt; next)
+        map(([previous, next]) &#x3D;&gt; next),
       )
       .subscribe(
         ({
@@ -699,7 +753,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             dropData: this.dropData,
             target,
           });
-        }
+        },
       );
   }
 
@@ -729,7 +783,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           &#x27;mousedown&#x27;,
           (event: MouseEvent) &#x3D;&gt; {
             this.onMouseDown(event);
-          }
+          },
         );
 
         this.eventListenerSubscriptions.mouseup &#x3D; this.renderer.listen(
@@ -737,7 +791,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           &#x27;mouseup&#x27;,
           (event: MouseEvent) &#x3D;&gt; {
             this.onMouseUp(event);
-          }
+          },
         );
 
         this.eventListenerSubscriptions.touchstart &#x3D; this.renderer.listen(
@@ -745,7 +799,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           &#x27;touchstart&#x27;,
           (event: TouchEvent) &#x3D;&gt; {
             this.onTouchStart(event);
-          }
+          },
         );
 
         this.eventListenerSubscriptions.touchend &#x3D; this.renderer.listen(
@@ -753,7 +807,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           &#x27;touchend&#x27;,
           (event: TouchEvent) &#x3D;&gt; {
             this.onTouchEnd(event);
-          }
+          },
         );
 
         this.eventListenerSubscriptions.touchcancel &#x3D; this.renderer.listen(
@@ -761,7 +815,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           &#x27;touchcancel&#x27;,
           (event: TouchEvent) &#x3D;&gt; {
             this.onTouchEnd(event);
-          }
+          },
         );
 
         this.eventListenerSubscriptions.mouseenter &#x3D; this.renderer.listen(
@@ -769,7 +823,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           &#x27;mouseenter&#x27;,
           () &#x3D;&gt; {
             this.onMouseEnter();
-          }
+          },
         );
 
         this.eventListenerSubscriptions.mouseleave &#x3D; this.renderer.listen(
@@ -777,7 +831,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           &#x27;mouseleave&#x27;,
           () &#x3D;&gt; {
             this.onMouseLeave();
-          }
+          },
         );
       });
     } else if (!canDrag &amp;&amp; hasEventListeners) {
@@ -797,7 +851,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
               clientX: mouseMoveEvent.clientX,
               clientY: mouseMoveEvent.clientY,
             });
-          }
+          },
         );
       }
       this.pointerDown$.next({
@@ -836,7 +890,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     if (!this.eventListenerSubscriptions.touchmove) {
       const contextMenuListener &#x3D; fromEvent&lt;Event&gt;(
         this.document,
-        &#x27;contextmenu&#x27;
+        &#x27;contextmenu&#x27;,
       ).subscribe((e) &#x3D;&gt; {
         e.preventDefault();
       });
@@ -846,7 +900,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
         &#x27;touchmove&#x27;,
         {
           passive: false,
-        }
+        },
       ).subscribe((touchMoveEvent) &#x3D;&gt; {
         if (
           this.touchStartLongPress &amp;&amp;
@@ -856,7 +910,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
           isDragActivated &#x3D; this.shouldBeginDrag(
             event,
             touchMoveEvent,
-            startScrollPosition
+            startScrollPosition,
           );
         }
         if (
@@ -928,7 +982,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
   private setElementStyles(
     element: HTMLElement,
-    styles: { [key: string]: string }
+    styles: { [key: string]: string },
   ) {
     Object.keys(styles).forEach((key) &#x3D;&gt; {
       this.renderer.setStyle(element, key, styles[key]);
@@ -960,7 +1014,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   private shouldBeginDrag(
     event: TouchEvent,
     touchMoveEvent: TouchEvent,
-    startScrollPosition: { top: number; left: number }
+    startScrollPosition: { top: number; left: number },
   ): boolean {
     const moveScrollPosition &#x3D; this.getScrollPosition();
     const deltaScroll &#x3D; {
@@ -969,11 +1023,11 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
     };
     const deltaX &#x3D;
       Math.abs(
-        touchMoveEvent.targetTouches[0].clientX - event.touches[0].clientX
+        touchMoveEvent.targetTouches[0].clientX - event.touches[0].clientX,
       ) - deltaScroll.left;
     const deltaY &#x3D;
       Math.abs(
-        touchMoveEvent.targetTouches[0].clientY - event.touches[0].clientY
+        touchMoveEvent.targetTouches[0].clientY - event.touches[0].clientY,
       ) - deltaScroll.top;
     const deltaTotal &#x3D; deltaX + deltaY;
     const longPressConfig &#x3D; this.touchStartLongPress;
@@ -999,7 +1053,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
       this.renderer.setStyle(
         this.scrollContainer.elementRef.nativeElement,
         &#x27;overflow&#x27;,
-        &#x27;&#x27;
+        &#x27;&#x27;,
       );
     }
     this.renderer.setStyle(this.document.body, &#x27;overflow&#x27;, &#x27;&#x27;);
@@ -1011,7 +1065,7 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
       this.renderer.setStyle(
         this.scrollContainer.elementRef.nativeElement,
         &#x27;overflow&#x27;,
-        &#x27;hidden&#x27;
+        &#x27;hidden&#x27;,
       );
     }
     this.renderer.setStyle(this.document.body, &#x27;overflow&#x27;, &#x27;hidden&#x27;);
@@ -1067,6 +1121,19 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
 
@@ -1078,7 +1145,6 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
        <script src="../js/libs/es6-shim.min.js"></script>
        <script src="../js/libs/EventDispatcher.js"></script>
        <script src="../js/libs/promise.min.js"></script>
-       <script src="../js/libs/zepto.min.js"></script>
 
        <script src="../js/compodoc.js"></script>
 

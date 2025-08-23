@@ -12,10 +12,61 @@
         <link rel="stylesheet" href="./styles/dark.css">
     </head>
     <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">angular-draggable-droppable documentation</a>
-            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="./" class="navbar-brand">angular-draggable-droppable documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
@@ -24,22 +75,22 @@
 
         <div class="container-fluid main">
            <div class="row main">
-               <div class="hidden-xs menu">
+               <div class="d-none d-md-block menu">
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1 id="angular-150-drag-and-drop">angular 15.0+ drag and drop</h1>
+<h1>angular 20.0+ drag and drop</h1>
 <p><a href="https://github.com/users/mattlewis92/sponsorship"><img src="https://img.shields.io/badge/funding-github-%23EA4AAA" alt="Sponsorship" class="img-responsive"></a>
 <a href="https://github.com/mattlewis92/angular-draggable-droppable/actions/workflows/ci.yml"><img src="https://github.com/mattlewis92/angular-draggable-droppable/actions/workflows/ci.yml/badge.svg" alt="Build Status" class="img-responsive"></a>
 <a href="https://codecov.io/gh/mattlewis92/angular-draggable-droppable"><img src="https://codecov.io/gh/mattlewis92/angular-draggable-droppable/branch/main/graph/badge.svg" alt="codecov" class="img-responsive"></a>
 <a href="http://badge.fury.io/js/angular-draggable-droppable"><img src="https://badge.fury.io/js/angular-draggable-droppable.svg" alt="npm version" class="img-responsive"></a>
 <a href="https://twitter.com/mattlewis92_"><img src="https://img.shields.io/twitter/follow/mattlewis92_.svg" alt="Twitter Follow" class="img-responsive"></a></p>
-<h2 id="demo">Demo</h2>
+<h2>Demo</h2>
 <p><a href="https://mattlewis92.github.io/angular-draggable-droppable/">https://mattlewis92.github.io/angular-draggable-droppable/</a></p>
-<h2 id="table-of-contents">Table of contents</h2>
+<h2>Table of contents</h2>
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#installation">Installation</a></li>
@@ -47,30 +98,22 @@
 <li><a href="#development">Development</a></li>
 <li><a href="#licence">License</a></li>
 </ul>
-<h2 id="about">About</h2>
-<p>Observable powered drag and drop for angular 15.0+</p>
-<h2 id="installation">Installation</h2>
+<h2>About</h2>
+<p>Observable powered drag and drop for angular 20.0+</p>
+<h2>Installation</h2>
 <p>Install through npm:</p>
-<div><pre class="line-numbers"><code class="language-none">npm install angular-draggable-droppable</code></pre></div><p>Then use it in your app like so:</p>
-<div><pre class="line-numbers"><code class="language-typescript">import { Component, NgModule } from &#39;&#64;angular/core&#39;;
-import { DragAndDropModule } from &#39;angular-draggable-droppable&#39;;
-
-&#64;NgModule({
-  declarations: [DemoApp],
-  imports: [DragAndDropModule],
-  bootstrap: [DemoApp],
-})
-class DemoModule {}
+<b>Example :</b><div><pre class="line-numbers"><code class="language-none">npm install angular-draggable-droppable</code></pre></div><p>Then use it in your app like so:</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-typescript">import { Component, NgModule } from &#39;&#64;angular/core&#39;;
+import { DraggableDirective, DroppableDirective } from &#39;angular-draggable-droppable&#39;;
 
 &#64;Component({
   selector: &#39;demo-app&#39;,
+  imports: [DraggableDirective, DroppableDirective],
   template: `
     &lt;div mwlDraggable (dragEnd)=&quot;dragEnd($event)&quot;&gt;Drag me!&lt;/div&gt;
     &lt;div mwlDroppable (drop)=&quot;this.droppedData = $event.dropData&quot;&gt;
       &lt;span [hidden]=&quot;droppedData&quot;&gt;Drop here&lt;/span&gt;
-      &lt;span [hidden]=&quot;!droppedData&quot;
-        &gt;Item dropped here with data: &quot;{{ droppedData }}&quot;!&lt;/span
-      &gt;
+      &lt;span [hidden]=&quot;!droppedData&quot;&gt;Item dropped here with data: &quot;{{ droppedData }}&quot;!&lt;/span&gt;
     &lt;/div&gt;
   `,
 })
@@ -82,29 +125,29 @@ class DemoApp {
   }
 }</code></pre></div><p>Note: if draggable elements are inside a scrollable element then you will need to add <code>mwlDraggableScrollContainer</code> as an attribute to the scrollable container.</p>
 <p>You may also find it useful to view the <a href="https://github.com/mattlewis92/angular-draggable-droppable/tree/main/src/demo">demo source</a>.</p>
-<h2 id="documentation">Documentation</h2>
+<h2>Documentation</h2>
 <p>All documentation is auto-generated from the source and can be viewed here:
 <a href="https://mattlewis92.github.io/angular-draggable-droppable/docs/">https://mattlewis92.github.io/angular-draggable-droppable/docs/</a></p>
-<h2 id="alternatives">Alternatives</h2>
+<h2>Alternatives</h2>
 <p>I wrote this library because I needed drag and drop whilst snapping to a grid. If you don&#39;t need this feature then I recommend checking out one of these other awesome drag and drop libraries:</p>
 <ul>
 <li><a href="https://material.angular.io/cdk/drag-drop/overview">Angular CDK drag and drop</a></li>
 <li><a href="https://github.com/cormacrelf/angular-skyhook">angular-skyhook</a></li>
 <li><a href="https://github.com/ObaidUrRehman/ng-drag-drop">ng-drag-drop</a></li>
 </ul>
-<h2 id="development">Development</h2>
-<h3 id="prepare-your-environment">Prepare your environment</h3>
+<h2>Development</h2>
+<h3>Prepare your environment</h3>
 <ul>
-<li>Install <a href="http://nodejs.org/">Node.js (&gt;=14.19.0 or &gt;=16.9.0)</a></li>
+<li>Install <a href="http://nodejs.org/">Node.js (&gt;=24.5.0)</a></li>
 <li>Install pnpm: <code>corepack enable</code></li>
 <li>Install local dev dependencies: <code>pnpm install</code> while current directory is this repo</li>
 </ul>
-<h3 id="development-server">Development server</h3>
+<h3>Development server</h3>
 <p>Run <code>pnpm start</code> to start a development server on port 8000 with auto reload + tests.</p>
-<h3 id="testing">Testing</h3>
+<h3>Testing</h3>
 <p>Run <code>pnpm test</code> to run tests once or <code>pnpm test:watch</code> to continually run tests.</p>
-<h3 id="release">Release</h3>
-<div><pre class="line-numbers"><code class="language-bash">pnpm release</code></pre></div><h2 id="license">License</h2>
+<h3>Release</h3>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-bash">pnpm release</code></pre></div><h2>License</h2>
 <p>MIT</p>
 
 
@@ -157,6 +200,19 @@ class DemoApp {
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
        <script src="./js/libs/custom-elements.min.js"></script>
        <script src="./js/libs/lit-html.js"></script>
 
@@ -168,7 +224,6 @@ class DemoApp {
        <script src="./js/libs/es6-shim.min.js"></script>
        <script src="./js/libs/EventDispatcher.js"></script>
        <script src="./js/libs/promise.min.js"></script>
-       <script src="./js/libs/zepto.min.js"></script>
 
        <script src="./js/compodoc.js"></script>
 

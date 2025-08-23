@@ -12,10 +12,61 @@
         <link rel="stylesheet" href="./styles/dark.css">
     </head>
     <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">angular-draggable-droppable documentation</a>
-            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="./" class="navbar-brand">angular-draggable-droppable documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
         </div>
 
         <div class="xs-menu menu" id="mobile-menu">
@@ -24,50 +75,63 @@
 
         <div class="container-fluid main">
            <div class="row main">
-               <div class="hidden-xs menu">
+               <div class="d-none d-md-block menu">
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
                <div class="content getting-started">
                    <div class="content-data">
 
-<h1 id="changelog">Changelog</h1>
+<h1>Changelog</h1>
 <p>All notable changes to this project will be documented in this file. See <a href="https://github.com/conventional-changelog/standard-version">standard-version</a> for commit guidelines.</p>
-<h2 id="800-2022-12-11"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v7.0.0...v8.0.0">8.0.0</a> (2022-12-11)</h2>
-<h3 id="⚠-breaking-changes">⚠ BREAKING CHANGES</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v8.0.0...v9.0.0">9.0.0</a> (2025-08-23)</h2>
+<h3>⚠ BREAKING CHANGES</h3>
+<ul>
+<li>angular 20 or higher is now required to use this package</li>
+</ul>
+<h3>Features</h3>
+<ul>
+<li>convert to standalone (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/8e4cc53e79cb9b97d8ab56fa4f96d38515d415df">8e4cc53</a>)</li>
+</ul>
+<h3>build</h3>
+<ul>
+<li>upgrade to angular 20 (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/dabc4aebc1ae63d6ef873abef01ec32784bbf2e1">dabc4ae</a>)</li>
+</ul>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v7.0.0...v8.0.0">8.0.0</a> (2022-12-11)</h2>
+<h3>⚠ BREAKING CHANGES</h3>
 <ul>
 <li>angular 15 or higher is now required to use this package</li>
 </ul>
-<h3 id="build">build</h3>
+<h3>build</h3>
 <ul>
 <li>upgrade to angular 15 (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/87c556b6de06a7777e17f3cd05750640f5fc9e2d">87c556b</a>)</li>
 </ul>
-<h2 id="700-2022-08-02"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v6.1.0...v7.0.0">7.0.0</a> (2022-08-02)</h2>
-<h3 id="⚠-breaking-changes-1">⚠ BREAKING CHANGES</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v6.1.0...v7.0.0">7.0.0</a> (2022-08-02)</h2>
+<h3>⚠ BREAKING CHANGES</h3>
 <ul>
 <li>angular 14 or higher is now required to use this package</li>
 </ul>
-<h3 id="build-1">build</h3>
+<h3>build</h3>
 <ul>
 <li>upgrade to angular 14 (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/cc5285603afd2a31546056d82ef52fcca486a983">cc52856</a>)</li>
 </ul>
-<h2 id="610-2022-04-19"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v6.0.1...v6.1.0">6.1.0</a> (2022-04-19)</h2>
-<h3 id="features">Features</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v6.0.1...v6.1.0">6.1.0</a> (2022-04-19)</h2>
+<h3>Features</h3>
 <ul>
 <li><strong>droppable:</strong> add clientX, clientY and target to all output events (<a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/113">#113</a>) (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/0e8e0a8bb1c82c3f6691c996defc7ff9a8e85153">0e8e0a8</a>)</li>
 </ul>
-<h3 id="601-2022-04-12"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v6.0.0...v6.0.1">6.0.1</a> (2022-04-12)</h3>
-<h2 id="600-2021-12-11"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v5.0.0...v6.0.0">6.0.0</a> (2021-12-11)</h2>
-<h3 id="⚠-breaking-changes-2">⚠ BREAKING CHANGES</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v6.0.0...v6.0.1">6.0.1</a> (2022-04-12)</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v5.0.0...v6.0.0">6.0.0</a> (2021-12-11)</h2>
+<h3>⚠ BREAKING CHANGES</h3>
 <ul>
 <li>angular 12 or higher is now required to use this package</li>
 </ul>
-<h3 id="features-1">Features</h3>
+<h3>Features</h3>
 <ul>
 <li>publish package in ivy partial compilation mode (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/2c37cc96fd62008eb6c3e8bcbc05df5c8422c176">2c37cc9</a>)</li>
 </ul>
-<h2 id="500-2021-08-30"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.6.0...v5.0.0">5.0.0</a> (2021-08-30)</h2>
-<h3 id="⚠-breaking-changes-3">⚠ BREAKING CHANGES</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.6.0...v5.0.0">5.0.0</a> (2021-08-30)</h2>
+<h3>⚠ BREAKING CHANGES</h3>
 <ul>
 <li>The <code>activeLongPressDrag</code> and <code>longPressConfig</code> inputs have been removed on the <code>mwlDraggableScrollContainer</code> directive.</li>
 </ul>
@@ -76,167 +140,167 @@
 <li>if you were using the UMD bundle @mattlewis92/dom-autoscroller will no longer be bundled inside it and you may need to adjust your system.js config accordingly</li>
 <li>angular 10 or higher is now required to use this package</li>
 </ul>
-<h3 id="features-2">Features</h3>
+<h3>Features</h3>
 <ul>
 <li>remove deprecated inputs on mwlDraggableScrollContainer directive (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/2766f33dd9d3c0df0c0eddc3dc7706ef41387ce8">2766f33</a>)</li>
 </ul>
-<h3 id="build-2">build</h3>
+<h3>build</h3>
 <ul>
 <li>don&#39;t bundle @mattlewis92/dom-autoscroller anymore (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/3c41375e998f7aff6d80f4243f2044b348e8fb14">3c41375</a>)</li>
 <li>upgrade to angular 10 (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/907f637d2684b4d5299893b68acc9a55e0e0bc13">907f637</a>)</li>
 </ul>
-<h2 id="460-2020-12-28"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.6...v4.6.0">4.6.0</a> (2020-12-28)</h2>
-<h3 id="features-3">Features</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.6...v4.6.0">4.6.0</a> (2020-12-28)</h2>
+<h3>Features</h3>
 <ul>
 <li>add validateDrop to mwlDroppable directive (<a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/111">#111</a>) (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/8850ddfd79f60bd5efd469ec5f99650fb02199e0">8850ddf</a>)</li>
 </ul>
-<h3 id="456-2020-10-22"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.5...v4.5.6">4.5.6</a> (2020-10-22)</h3>
-<h3 id="bug-fixes">Bug Fixes</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.5...v4.5.6">4.5.6</a> (2020-10-22)</h3>
+<h3>Bug Fixes</h3>
 <ul>
 <li>prevent error on drag end (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/4a6bdbba53c0252b56eff4b5918605e3f5c07bf6">4a6bdbb</a>)</li>
 </ul>
-<h3 id="455-2020-10-20"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.4...v4.5.5">4.5.5</a> (2020-10-20)</h3>
-<h3 id="bug-fixes-1">Bug Fixes</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.4...v4.5.5">4.5.5</a> (2020-10-20)</h3>
+<h3>Bug Fixes</h3>
 <ul>
 <li>ensure dragging output is never called unless dragging an item (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/1661d726066674325486ff2534fa11e6eb733b32">1661d72</a>)</li>
 </ul>
-<h3 id="454-2020-09-12"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.3...v4.5.4">4.5.4</a> (2020-09-12)</h3>
-<h3 id="bug-fixes-2">Bug Fixes</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.3...v4.5.4">4.5.4</a> (2020-09-12)</h3>
+<h3>Bug Fixes</h3>
 <ul>
 <li>upgrade dom auto scroller library to prevent commonjs warnings (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/3f079fec81e29ce4fa1a43b8803bd9c133fccdd7">3f079fe</a>)</li>
 </ul>
-<h3 id="453-2020-07-09"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.2...v4.5.3">4.5.3</a> (2020-07-09)</h3>
-<h3 id="452-2020-07-09"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.1...v4.5.2">4.5.2</a> (2020-07-09)</h3>
-<h3 id="451-2020-06-19"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.0...v4.5.1">4.5.1</a> (2020-06-19)</h3>
-<h2 id="450-2020-06-17"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.6...v4.5.0">4.5.0</a> (2020-06-17)</h2>
-<h3 id="features-4">Features</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.2...v4.5.3">4.5.3</a> (2020-07-09)</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.1...v4.5.2">4.5.2</a> (2020-07-09)</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.5.0...v4.5.1">4.5.1</a> (2020-06-19)</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.6...v4.5.0">4.5.0</a> (2020-06-17)</h2>
+<h3>Features</h3>
 <ul>
 <li>allow auto scroll options to be configured (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/46892aca0ba321a5db927c36022811da3256ca63">46892ac</a>)</li>
 </ul>
-<h3 id="446-2020-05-29"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.5...v4.4.6">4.4.6</a> (2020-05-29)</h3>
-<h3 id="bug-fixes-3">Bug Fixes</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.5...v4.4.6">4.4.6</a> (2020-05-29)</h3>
+<h3>Bug Fixes</h3>
 <ul>
 <li><strong>umd:</strong> use correct sourcemaps in umd bundle (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/30cfca3eb96944bf0fec0795a412349efc278301">30cfca3</a>)</li>
 </ul>
-<h3 id="445-2020-05-22"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.4...v4.4.5">4.4.5</a> (2020-05-22)</h3>
-<h3 id="bug-fixes-4">Bug Fixes</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.4...v4.4.5">4.4.5</a> (2020-05-22)</h3>
+<h3>Bug Fixes</h3>
 <ul>
 <li>allow any angular version above 6 (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/2aff5f0dfef05d3c0f8d7cb1c58c1cc6a5ed5ef2">2aff5f0</a>)</li>
 </ul>
-<h3 id="444-2020-04-19"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.3...v4.4.4">4.4.4</a> (2020-04-19)</h3>
-<h3 id="bug-fixes-5">Bug Fixes</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.3...v4.4.4">4.4.4</a> (2020-04-19)</h3>
+<h3>Bug Fixes</h3>
 <ul>
 <li>always disable document scroll when dragging (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/7276caba3c2a06d61f359f2acd643d937d1f41a9">7276cab</a>)</li>
 </ul>
-<h3 id="443-2020-04-19"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.2...v4.4.3">4.4.3</a> (2020-04-19)</h3>
-<h3 id="bug-fixes-6">Bug Fixes</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.2...v4.4.3">4.4.3</a> (2020-04-19)</h3>
+<h3>Bug Fixes</h3>
 <ul>
 <li>disable text selection in safari (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/d044523d6324839f13434eab274fdf119c6a1580">d044523</a>)</li>
 </ul>
-<h3 id="442-2020-04-19"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.0...v4.4.2">4.4.2</a> (2020-04-19)</h3>
-<h3 id="bug-fixes-7">Bug Fixes</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.4.0...v4.4.2">4.4.2</a> (2020-04-19)</h3>
+<h3>Bug Fixes</h3>
 <ul>
 <li>only enable long press drag delay if inside a scrollable element (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/0a30e09ce2e69be88b2a426aa64ae3ffabe16dde">0a30e09</a>)</li>
 <li>remove scroll glitch on touch devices when dragging (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/fe9bd5ec6d7338bdb3fee96295c2aad48d90ab1d">fe9bd5e</a>)</li>
 </ul>
-<h2 id="440-2020-04-18"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.12...v4.4.0">4.4.0</a> (2020-04-18)</h2>
-<h3 id="features-5">Features</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.12...v4.4.0">4.4.0</a> (2020-04-18)</h2>
+<h3>Features</h3>
 <ul>
 <li>allow setting drag start delay on touch devices (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/c9b28a59e1f8f822226e2b72d2ee7e034f9c7c71">c9b28a5</a>)</li>
 </ul>
-<h3 id="bug-fixes-8">Bug Fixes</h3>
+<h3>Bug Fixes</h3>
 <ul>
 <li>disable text selection when dragging on ios safari (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/ca83a33b7b8e370e5707f0fb21784fa592237e73">ca83a33</a>)</li>
 </ul>
-<h3 id="4312-2020-04-12"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.11...v4.3.12">4.3.12</a> (2020-04-12)</h3>
-<h3 id="bug-fixes-9">Bug Fixes</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.11...v4.3.12">4.3.12</a> (2020-04-12)</h3>
+<h3>Bug Fixes</h3>
 <ul>
 <li>remove need for server side rendering hacks (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/7c96113">7c96113</a>)</li>
 </ul>
-<h3 id="4311-2020-04-12"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.10...v4.3.11">4.3.11</a> (2020-04-12)</h3>
-<h3 id="bug-fixes-10">Bug Fixes</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.10...v4.3.11">4.3.11</a> (2020-04-12)</h3>
+<h3>Bug Fixes</h3>
 <ul>
 <li>allow multiple dragActiveClass (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/60844ec">60844ec</a>)</li>
 <li>support multiple drag over and drag active classes (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/ad50f0e">ad50f0e</a>)</li>
 </ul>
-<h3 id="4310-2020-03-01"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.9...v4.3.10">4.3.10</a> (2020-03-01)</h3>
-<h3 id="439-2020-03-01"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.8...v4.3.9">4.3.9</a> (2020-03-01)</h3>
-<h3 id="bug-fixes-11">Bug Fixes</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.9...v4.3.10">4.3.10</a> (2020-03-01)</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.8...v4.3.9">4.3.9</a> (2020-03-01)</h3>
+<h3>Bug Fixes</h3>
 <ul>
 <li>only allow dragging when using a left click (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/d3eecde">d3eecde</a>)</li>
 </ul>
-<h3 id="438-2019-10-18"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.7...v4.3.8">4.3.8</a> (2019-10-18)</h3>
-<h3 id="437-2019-10-11"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.6...v4.3.7">4.3.7</a> (2019-10-11)</h3>
-<h3 id="bug-fixes-12">Bug Fixes</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.7...v4.3.8">4.3.8</a> (2019-10-18)</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.6...v4.3.7">4.3.7</a> (2019-10-11)</h3>
+<h3>Bug Fixes</h3>
 <ul>
 <li>revert change to ghost element positioning (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/e0128e5">e0128e5</a>)</li>
 </ul>
-<h3 id="436-2019-10-11"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.5...v4.3.6">4.3.6</a> (2019-10-11)</h3>
-<h3 id="435-2019-10-08"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.4...v4.3.5">4.3.5</a> (2019-10-08)</h3>
-<h3 id="434-2019-10-08"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.3...v4.3.4">4.3.4</a> (2019-10-08)</h3>
-<h3 id="bug-fixes-13">Bug Fixes</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.5...v4.3.6">4.3.6</a> (2019-10-11)</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.4...v4.3.5">4.3.5</a> (2019-10-08)</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.3...v4.3.4">4.3.4</a> (2019-10-08)</h3>
+<h3>Bug Fixes</h3>
 <ul>
 <li>restore compatibility with angular 6 and 7 (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/f110c8e">f110c8e</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/97">#97</a></li>
 </ul>
-<h3 id="433-2019-10-07"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.2...v4.3.3">4.3.3</a> (2019-10-07)</h3>
-<h3 id="bug-fixes-14">Bug Fixes</h3>
+<h3><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.2...v4.3.3">4.3.3</a> (2019-10-07)</h3>
+<h3>Bug Fixes</h3>
 <ul>
 <li>allow angular 9 peer dependency (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/cb7cf2e">cb7cf2e</a>)</li>
 </ul>
 <p><a name="4.3.2"></a></p>
-<h2 id="432-2019-06-26"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.1...v4.3.2">4.3.2</a> (2019-06-26)</h2>
-<h3 id="bug-fixes-15">Bug Fixes</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.1...v4.3.2">4.3.2</a> (2019-06-26)</h2>
+<h3>Bug Fixes</h3>
 <ul>
 <li>restore compatibility with stackblitz (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/ee94dc5">ee94dc5</a>)</li>
 </ul>
 <p><a name="4.3.1"></a></p>
-<h2 id="431-2019-06-05"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.0...v4.3.1">4.3.1</a> (2019-06-05)</h2>
-<h3 id="bug-fixes-16">Bug Fixes</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.3.0...v4.3.1">4.3.1</a> (2019-06-05)</h2>
+<h3>Bug Fixes</h3>
 <ul>
 <li>restore compatibility with angular universal (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/7fbaa2a">7fbaa2a</a>)</li>
 </ul>
 <p><a name="4.3.0"></a></p>
-<h1 id="430-2019-04-21"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.2.0...v4.3.0">4.3.0</a> (2019-04-21)</h1>
-<h3 id="bug-fixes-17">Bug Fixes</h3>
+<h1><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.2.0...v4.3.0">4.3.0</a> (2019-04-21)</h1>
+<h3>Bug Fixes</h3>
 <ul>
 <li>expose ValidateDrag type (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/32f4ce3">32f4ce3</a>)</li>
 </ul>
-<h3 id="features-6">Features</h3>
+<h3>Features</h3>
 <ul>
 <li>expose css transform on validate drag function (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/3c5c5b9">3c5c5b9</a>)</li>
 <li>support auto scrolling when dragging (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/78bdeb5">78bdeb5</a>)</li>
 </ul>
 <p><a name="4.2.0"></a></p>
-<h1 id="420-2019-03-17"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.1.0...v4.2.0">4.2.0</a> (2019-03-17)</h1>
-<h3 id="features-7">Features</h3>
+<h1><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.1.0...v4.2.0">4.2.0</a> (2019-03-17)</h1>
+<h3>Features</h3>
 <ul>
 <li>expose ghost element and starting mouse position on ghost element created event (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/d233788">d233788</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/81">#81</a> <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/85">#85</a></li>
 </ul>
 <p><a name="4.1.0"></a></p>
-<h1 id="410-2019-02-17"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.0.2...v4.1.0">4.1.0</a> (2019-02-17)</h1>
-<h3 id="bug-fixes-18">Bug Fixes</h3>
+<h1><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.0.2...v4.1.0">4.1.0</a> (2019-02-17)</h1>
+<h3>Bug Fixes</h3>
 <ul>
 <li>allow angular 8 peer dependency (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/f936805">f936805</a>)</li>
 </ul>
-<h3 id="features-8">Features</h3>
+<h3>Features</h3>
 <ul>
 <li><strong>draggable-scroll-container:</strong> Added input activeLongPressDrag (<a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/79">#79</a>) (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/f98f586">f98f586</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/78">#78</a></li>
 </ul>
 <p><a name="4.0.2"></a></p>
-<h2 id="402-2018-09-18"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.0.1...v4.0.2">4.0.2</a> (2018-09-18)</h2>
-<h3 id="bug-fixes-19">Bug Fixes</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.0.1...v4.0.2">4.0.2</a> (2018-09-18)</h2>
+<h3>Bug Fixes</h3>
 <ul>
 <li>include readme and licence in npm (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/cfff617">cfff617</a>)</li>
 </ul>
 <p><a name="4.0.1"></a></p>
-<h2 id="401-2018-09-01"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.0.0...v4.0.1">4.0.1</a> (2018-09-01)</h2>
-<h3 id="bug-fixes-20">Bug Fixes</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v4.0.0...v4.0.1">4.0.1</a> (2018-09-01)</h2>
+<h3>Bug Fixes</h3>
 <ul>
 <li>allow draggable elements insider other draggable elements to be dragged (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/700fef1">700fef1</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/61">#61</a></li>
 </ul>
 <p><a name="4.0.0"></a></p>
-<h1 id="400-2018-08-29"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v3.0.1...v4.0.0">4.0.0</a> (2018-08-29)</h1>
-<h3 id="bug-fixes-21">Bug Fixes</h3>
+<h1><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v3.0.1...v4.0.0">4.0.0</a> (2018-08-29)</h1>
+<h3>Bug Fixes</h3>
 <ul>
 <li>account for the window being scrolled whilst dragging (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/566bf78">566bf78</a>)</li>
 <li>allow dragging the element inside a scrollable container (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/6e0a1a3">6e0a1a3</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/25">#25</a></li>
@@ -256,7 +320,7 @@
 <li><strong>droppable:</strong> correctly account for scroll events when dragging elements (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/c5ef775">c5ef775</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/23">#23</a></li>
 <li><strong>droppable:</strong> dont throw when immediately destroying the directive (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/dd3e89e">dd3e89e</a>)</li>
 </ul>
-<h3 id="features-9">Features</h3>
+<h3>Features</h3>
 <ul>
 <li><strong>dragActiveClass:</strong> add class when dragging element (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/ee1d06c">ee1d06c</a>)</li>
 <li><strong>dragCancel$:</strong> allow the drag to be cancelled (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/538f9b7">538f9b7</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/30">#30</a></li>
@@ -270,13 +334,13 @@
 <li>expose interfaces for all events (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/c174023">c174023</a>)</li>
 <li>remove the DragAndDropModule.forRoot method (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/5ae52a7">5ae52a7</a>)</li>
 </ul>
-<h3 id="performance-improvements">Performance Improvements</h3>
+<h3>Performance Improvements</h3>
 <ul>
 <li>deregister scroll listener once drag complete (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/7e50d74">7e50d74</a>)</li>
 <li>only recalculate the bounding rectangle once after scrolling (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/d72e16b">d72e16b</a>)</li>
 <li>only recompute draggable position on window scroll (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/f6a5cde">f6a5cde</a>)</li>
 </ul>
-<h3 id="breaking-changes">BREAKING CHANGES</h3>
+<h3>BREAKING CHANGES</h3>
 <ul>
 <li>The <code>DragAndDropModule.forRoot</code> method was removed. To migrate just import the
 <code>DragAndDropModule</code> module directly</li>
@@ -291,35 +355,35 @@ element is set to be positioned fixed. This may break some apps in some edge cas
 behaviour set <code>dragCursor=&quot;move&quot;</code> or use CSS on the draggable elements to change the cursor</li>
 </ul>
 <p><a name="3.0.1"></a></p>
-<h2 id="301-2018-06-05"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v3.0.0...v3.0.1">3.0.1</a> (2018-06-05)</h2>
-<h3 id="bug-fixes-22">Bug Fixes</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v3.0.0...v3.0.1">3.0.1</a> (2018-06-05)</h2>
+<h3>Bug Fixes</h3>
 <ul>
 <li><strong>drag:</strong> style assignment for dragged element on IE (<a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/33">#33</a>) (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/d0372ec">d0372ec</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/29">#29</a></li>
 </ul>
 <p><a name="3.0.0"></a></p>
-<h1 id="300-2018-05-09"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v2.0.0...v3.0.0">3.0.0</a> (2018-05-09)</h1>
-<h3 id="features-10">Features</h3>
+<h1><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v2.0.0...v3.0.0">3.0.0</a> (2018-05-09)</h1>
+<h3>Features</h3>
 <ul>
 <li>upgrade to angular 6 (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/d96c26e">d96c26e</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/31">#31</a></li>
 </ul>
-<h3 id="breaking-changes-1">BREAKING CHANGES</h3>
+<h3>BREAKING CHANGES</h3>
 <ul>
 <li>angular 6 and rxjs 6 or higher are now required to use this package</li>
 </ul>
 <p><a name="2.0.0"></a></p>
-<h1 id="200-2017-12-26"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.1.1...v2.0.0">2.0.0</a> (2017-12-26)</h1>
-<h3 id="bug-fixes-23">Bug Fixes</h3>
+<h1><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.1.1...v2.0.0">2.0.0</a> (2017-12-26)</h1>
+<h3>Bug Fixes</h3>
 <ul>
 <li>only call drag start and end outputs when the element is actually dragged (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/45c6b5f">45c6b5f</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/21">#21</a> <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/20">#20</a></li>
 </ul>
-<h3 id="features-11">Features</h3>
+<h3>Features</h3>
 <ul>
 <li>upgrade to angular 5 (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/4159ce2">4159ce2</a>)</li>
 <li>use lettable rxjs operators (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/9fca12a">9fca12a</a>)</li>
 <li>use ng-packagr for building the package (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/57dd436">57dd436</a>)</li>
 <li><strong>dragPointerDown:</strong> add a new output to repliate the old dragStart behaviour (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/4a58c61">4a58c61</a>)</li>
 </ul>
-<h3 id="breaking-changes-2">BREAKING CHANGES</h3>
+<h3>BREAKING CHANGES</h3>
 <ul>
 <li>The UMD module path has changed from
 <code>angular-draggable-droppable/dist/umd/angular-draggable-droppable.js</code> to
@@ -334,159 +398,159 @@ to update their config.</li>
 use regular mousedown and mouseup events to get the old behaviour</li>
 </ul>
 <p><a name="1.1.1"></a></p>
-<h2 id="111-2017-10-21"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.1.0...v1.1.1">1.1.1</a> (2017-10-21)</h2>
-<h3 id="bug-fixes-24">Bug Fixes</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.1.0...v1.1.1">1.1.1</a> (2017-10-21)</h2>
+<h3>Bug Fixes</h3>
 <ul>
 <li>allow angular 5 peer dependency (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/1265bee">1265bee</a>)</li>
 </ul>
 <p><a name="1.1.0"></a></p>
-<h1 id="110-2017-09-22"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.0.2...v1.1.0">1.1.0</a> (2017-09-22)</h1>
-<h3 id="features-12">Features</h3>
+<h1><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.0.2...v1.1.0">1.1.0</a> (2017-09-22)</h1>
+<h3>Features</h3>
 <ul>
 <li><strong>draggable:</strong> allow the draggable cursor to be customised (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/897b3fe">897b3fe</a>)</li>
 </ul>
 <p><a name="1.0.2"></a></p>
-<h2 id="102-2017-09-18"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.0.1...v1.0.2">1.0.2</a> (2017-09-18)</h2>
-<h3 id="bug-fixes-25">Bug Fixes</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.0.1...v1.0.2">1.0.2</a> (2017-09-18)</h2>
+<h3>Bug Fixes</h3>
 <ul>
 <li><strong>draggable:</strong> fire dragEnd event when the event was not dragged (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/73d65d7">73d65d7</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/17">#17</a></li>
 </ul>
 <p><a name="1.0.1"></a></p>
-<h2 id="101-2017-04-14"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.0.0...v1.0.1">1.0.1</a> (2017-04-14)</h2>
-<h3 id="bug-fixes-26">Bug Fixes</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v1.0.0...v1.0.1">1.0.1</a> (2017-04-14)</h2>
+<h3>Bug Fixes</h3>
 <ul>
 <li><strong>draggable:</strong> prevent text from being highlighted in firefox (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/7d859c1">7d859c1</a>)</li>
 </ul>
 <p><a name="1.0.0"></a></p>
-<h1 id="100-2017-03-24"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.6.0...v1.0.0">1.0.0</a> (2017-03-24)</h1>
-<h3 id="features-13">Features</h3>
+<h1><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.6.0...v1.0.0">1.0.0</a> (2017-03-24)</h1>
+<h3>Features</h3>
 <ul>
 <li><strong>ng4:</strong> upgrade to angular 4 (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/42631bc">42631bc</a>)</li>
 </ul>
-<h3 id="breaking-changes-3">BREAKING CHANGES</h3>
+<h3>BREAKING CHANGES</h3>
 <ul>
 <li><strong>ng4:</strong> angular 4.0 or higher is now required to use this library. The <a href="http://angularjs.blogspot.co.uk/2017/03/angular-400-now-available.html">upgrade</a> should be seamless for most users</li>
 </ul>
 <p><a name="0.6.0"></a></p>
-<h1 id="060-2017-03-23"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.4...v0.6.0">0.6.0</a> (2017-03-23)</h1>
-<h3 id="features-14">Features</h3>
+<h1><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.4...v0.6.0">0.6.0</a> (2017-03-23)</h1>
+<h3>Features</h3>
 <ul>
 <li><strong>draggable:</strong> make dragging work on touch devices (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/dc0f863">dc0f863</a>)</li>
 </ul>
 <p><a name="0.5.4"></a></p>
-<h2 id="054-2017-03-04"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.3...v0.5.4">0.5.4</a> (2017-03-04)</h2>
-<h3 id="performance-improvements-1">Performance Improvements</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.3...v0.5.4">0.5.4</a> (2017-03-04)</h2>
+<h3>Performance Improvements</h3>
 <ul>
 <li><strong>draggable:</strong> lazily create all mouse event listeners (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/3c99d40">3c99d40</a>)</li>
 </ul>
 <p><a name="0.5.3"></a></p>
-<h2 id="053-2017-03-04"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.2...v0.5.3">0.5.3</a> (2017-03-04)</h2>
-<h3 id="bug-fixes-27">Bug Fixes</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.2...v0.5.3">0.5.3</a> (2017-03-04)</h2>
+<h3>Bug Fixes</h3>
 <ul>
 <li>move dependencies to dev (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/17a2ccc">17a2ccc</a>)</li>
 </ul>
 <p><a name="0.5.2"></a></p>
-<h2 id="052-2017-03-04"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.1...v0.5.2">0.5.2</a> (2017-03-04)</h2>
-<h3 id="bug-fixes-28">Bug Fixes</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.1...v0.5.2">0.5.2</a> (2017-03-04)</h2>
+<h3>Bug Fixes</h3>
 <ul>
 <li>loosen peer dependency to allow angular 4 (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/bcc9080">bcc9080</a>)</li>
 </ul>
-<h3 id="performance-improvements-2">Performance Improvements</h3>
+<h3>Performance Improvements</h3>
 <ul>
 <li><strong>draggable:</strong> lazily create the mouse move listener (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/bebd925">bebd925</a>)</li>
 <li>run all event listeners outside of angulars zone (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/d7c9256">d7c9256</a>)</li>
 </ul>
 <p><a name="0.5.1"></a></p>
-<h2 id="051-2017-01-06"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.0...v0.5.1">0.5.1</a> (2017-01-06)</h2>
-<h3 id="bug-fixes-29">Bug Fixes</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.5.0...v0.5.1">0.5.1</a> (2017-01-06)</h2>
+<h3>Bug Fixes</h3>
 <ul>
 <li><strong>draggable:</strong> allow draggable events to be clicked (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/44ea67e">44ea67e</a>)</li>
 </ul>
 <p><a name="0.5.0"></a></p>
-<h1 id="050-2016-12-21"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.4.0...v0.5.0">0.5.0</a> (2016-12-21)</h1>
-<h3 id="features-15">Features</h3>
+<h1><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.4.0...v0.5.0">0.5.0</a> (2016-12-21)</h1>
+<h3>Features</h3>
 <ul>
 <li><strong>dragAndDropModule:</strong> add forRoot method (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/00f6989">00f6989</a>)</li>
 </ul>
-<h3 id="breaking-changes-4">BREAKING CHANGES</h3>
+<h3>BREAKING CHANGES</h3>
 <ul>
 <li>dragAndDropModule: You must now import the DragAndDropModule with the forRoot method</li>
 </ul>
 <p><a name="0.4.0"></a></p>
-<h1 id="040-2016-12-18"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.3.1...v0.4.0">0.4.0</a> (2016-12-18)</h1>
-<h3 id="features-16">Features</h3>
+<h1><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.3.1...v0.4.0">0.4.0</a> (2016-12-18)</h1>
+<h3>Features</h3>
 <ul>
 <li><strong>draggable:</strong> remove the dragContainer option (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/5aca67d">5aca67d</a>)</li>
 </ul>
-<h3 id="breaking-changes-5">BREAKING CHANGES</h3>
+<h3>BREAKING CHANGES</h3>
 <ul>
 <li>draggable: the dragContainer option has been removed as it didn&#39;t work in all cases and can be</li>
 </ul>
 <p>implemented yourself with the validateDrag option</p>
 <p><a name="0.3.1"></a></p>
-<h2 id="031-2016-12-18"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.3.0...v0.3.1">0.3.1</a> (2016-12-18)</h2>
-<h3 id="bug-fixes-30">Bug Fixes</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.3.0...v0.3.1">0.3.1</a> (2016-12-18)</h2>
+<h3>Bug Fixes</h3>
 <ul>
 <li><strong>draggable:</strong> make the dragEnd output respect the validateDrag input (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/26cfa7e">26cfa7e</a>)</li>
 </ul>
 <p><a name="0.3.0"></a></p>
-<h1 id="030-2016-12-12"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.2.3...v0.3.0">0.3.0</a> (2016-12-12)</h1>
-<h3 id="features-17">Features</h3>
+<h1><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.2.3...v0.3.0">0.3.0</a> (2016-12-12)</h1>
+<h3>Features</h3>
 <ul>
 <li><strong>draggable:</strong> add dragContainer option (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/fb75711">fb75711</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/10">#10</a></li>
 </ul>
 <p><a name="0.2.3"></a></p>
-<h2 id="023-2016-12-11"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.2.2...v0.2.3">0.2.3</a> (2016-12-11)</h2>
-<h3 id="bug-fixes-31">Bug Fixes</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.2.2...v0.2.3">0.2.3</a> (2016-12-11)</h2>
+<h3>Bug Fixes</h3>
 <ul>
 <li><strong>draggable:</strong> allow events to be dragged back into their original positions (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/7831903">7831903</a>)</li>
 </ul>
 <p><a name="0.2.2"></a></p>
-<h2 id="022-2016-12-11"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.2.1...v0.2.2">0.2.2</a> (2016-12-11)</h2>
-<h3 id="bug-fixes-32">Bug Fixes</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.2.1...v0.2.2">0.2.2</a> (2016-12-11)</h2>
+<h3>Bug Fixes</h3>
 <ul>
 <li><strong>draggable:</strong> only emit the dragEnd event once (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/52e9a22">52e9a22</a>)</li>
 </ul>
 <p><a name="0.2.1"></a></p>
-<h2 id="021-2016-12-10"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.2.0...v0.2.1">0.2.1</a> (2016-12-10)</h2>
-<h3 id="bug-fixes-33">Bug Fixes</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.2.0...v0.2.1">0.2.1</a> (2016-12-10)</h2>
+<h3>Bug Fixes</h3>
 <ul>
 <li>revert duplicate dragging fix as it caused worse errors (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/7476301">7476301</a>)</li>
 </ul>
 <p><a name="0.2.0"></a></p>
-<h1 id="020-2016-12-10"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.1.1...v0.2.0">0.2.0</a> (2016-12-10)</h1>
-<h3 id="bug-fixes-34">Bug Fixes</h3>
+<h1><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.1.1...v0.2.0">0.2.0</a> (2016-12-10)</h1>
+<h3>Bug Fixes</h3>
 <ul>
 <li>completely remove applied styled after dragging (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/3445337">3445337</a>)</li>
 <li><strong>draggable:</strong> dont fire duplicate dragging events with the same coordinates (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/222914b">222914b</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/6">#6</a></li>
 <li><strong>draggable:</strong> when dragging is disabled, no drag events should be emitted (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/729f24e">729f24e</a>)</li>
 <li><strong>droppable:</strong> only allow dropping of events when the cursor is inside (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/652d632">652d632</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/5">#5</a></li>
 </ul>
-<h3 id="features-18">Features</h3>
+<h3>Features</h3>
 <ul>
 <li><strong>draggable:</strong> auto change the cursor to the move icon on hover (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/50d1962">50d1962</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/9">#9</a></li>
 <li><strong>snapGrid:</strong> rename to dragSnapGrid (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/a77d07a">a77d07a</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/7">#7</a></li>
 <li><strong>validateDrag:</strong> add the validate drag input (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/9e5ac95">9e5ac95</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/8">#8</a></li>
 </ul>
-<h3 id="breaking-changes-6">BREAKING CHANGES</h3>
+<h3>BREAKING CHANGES</h3>
 <ul>
 <li>droppable: the drag enter, leave and drop events will not fire until cursor is inside the droppable element. This is to mimic how native drag and drop works</li>
 <li>snapGrid: The snapGrid input has been renamed to dragSnapGrid</li>
 </ul>
 <p><a name="0.1.1"></a></p>
-<h2 id="011-2016-12-09"><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.1.0...v0.1.1">0.1.1</a> (2016-12-09)</h2>
-<h3 id="bug-fixes-35">Bug Fixes</h3>
+<h2><a href="https://github.com/mattlewis92/angular-draggable-droppable/compare/v0.1.0...v0.1.1">0.1.1</a> (2016-12-09)</h2>
+<h3>Bug Fixes</h3>
 <ul>
 <li><strong>draggable:</strong> disable pointer events on the element when dragging (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/f29b424">f29b424</a>)</li>
 </ul>
 <p><a name="0.1.0"></a></p>
-<h1 id="010-2016-11-27">0.1.0 (2016-11-27)</h1>
-<h3 id="bug-fixes-36">Bug Fixes</h3>
+<h1>0.1.0 (2016-11-27)</h1>
+<h3>Bug Fixes</h3>
 <ul>
 <li><strong>draggable:</strong> dispose of observables when the component is destroyed (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/710c7f7">710c7f7</a>)</li>
 <li>prevent the default move move interaction on dragging (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/d2fdcde">d2fdcde</a>)</li>
 </ul>
-<h3 id="features-19">Features</h3>
+<h3>Features</h3>
 <ul>
 <li><strong>dragAxix:</strong> allow the drag axis to be locked to just x and y (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/38fd4b5">38fd4b5</a>), closes <a href="https://github.com/mattlewis92/angular-draggable-droppable/issues/2">#2</a></li>
 <li><strong>draggable:</strong> add mwlDraggable directive (<a href="https://github.com/mattlewis92/angular-draggable-droppable/commit/c6771eb">c6771eb</a>)</li>
@@ -545,6 +609,19 @@ use regular mousedown and mouseup events to get the old behaviour</li>
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
        <script src="./js/libs/custom-elements.min.js"></script>
        <script src="./js/libs/lit-html.js"></script>
 
@@ -556,7 +633,6 @@ use regular mousedown and mouseup events to get the old behaviour</li>
        <script src="./js/libs/es6-shim.min.js"></script>
        <script src="./js/libs/EventDispatcher.js"></script>
        <script src="./js/libs/promise.min.js"></script>
-       <script src="./js/libs/zepto.min.js"></script>
 
        <script src="./js/compodoc.js"></script>
 
