@@ -34,17 +34,11 @@ Then use it in your app like so:
 
 ```typescript
 import { Component, NgModule } from '@angular/core';
-import { DragAndDropModule } from 'angular-draggable-droppable';
-
-@NgModule({
-  declarations: [DemoApp],
-  imports: [DragAndDropModule],
-  bootstrap: [DemoApp],
-})
-class DemoModule {}
+import { DraggableDirective, DroppableDirective } from 'angular-draggable-droppable';
 
 @Component({
   selector: 'demo-app',
+  imports: [DraggableDirective, DroppableDirective],
   template: `
     <div mwlDraggable (dragEnd)="dragEnd($event)">Drag me!</div>
     <div mwlDroppable (drop)="this.droppedData = $event.dropData">

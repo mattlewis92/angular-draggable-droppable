@@ -4,11 +4,15 @@ import {
   DroppableDirective,
   ValidateDrop,
 } from 'projects/angular-draggable-droppable/src/lib/droppable.directive';
+import { DraggableDirective } from '../../projects/angular-draggable-droppable/src/lib/draggable.directive';
+import { DroppableDirective as DroppableDirective_1 } from '../../projects/angular-draggable-droppable/src/lib/droppable.directive';
 
 @Component({
   selector: 'mwl-demo-app',
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.css'],
+  standalone: true,
+  imports: [DraggableDirective, DroppableDirective_1],
 })
 export class DemoComponent {
   droppedData: string = '';

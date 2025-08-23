@@ -3,7 +3,7 @@ import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { expect } from 'chai';
 import * as sinon from 'sinon';
 import { triggerDomEvent } from '../test-utils';
-import { DragAndDropModule } from 'angular-draggable-droppable';
+import { DroppableDirective } from 'angular-draggable-droppable';
 import { DraggableDirective, ValidateDrag } from './draggable.directive';
 import { DraggableScrollContainerDirective } from './draggable-scroll-container.directive';
 import { By } from '@angular/platform-browser';
@@ -35,6 +35,12 @@ describe('draggable directive', () => {
         <span>{{ 1 + 1 }} test</span>
       </ng-template>
     `,
+    standalone: true,
+    imports: [
+      DraggableDirective,
+      DroppableDirective,
+      DraggableScrollContainerDirective,
+    ],
   })
   class TestComponent {
     @ViewChild(DraggableDirective)
@@ -60,9 +66,26 @@ describe('draggable directive', () => {
   }
 
   @Component({
-    // eslint-disable-line  max-classes-per-file
+    // eslint-disable-line max-classes-per-file
     template: `
-      <div mwlDraggableScrollContainer *ngIf="!useBodyScroll; else contents">
+      @if (!useBodyScroll) {
+        <div mwlDraggableScrollContainer>
+          <div
+            #draggableElement
+            mwlDraggable
+            [dragAxis]="{ x: true, y: true }"
+            [validateDrag]="validateDrag"
+            [touchStartLongPress]="{ delay: 300, delta: 30 }"
+            (dragPointerDown)="dragPointerDown($event)"
+            (dragStart)="dragStart($event)"
+            (ghostElementCreated)="ghostElementCreated($event)"
+            (dragging)="dragging($event)"
+            (dragEnd)="dragEnd($event)"
+          >
+            Drag me!
+          </div>
+        </div>
+      } @else {
         <div
           #draggableElement
           mwlDraggable
@@ -77,24 +100,7 @@ describe('draggable directive', () => {
         >
           Drag me!
         </div>
-      </div>
-
-      <ng-template #contents>
-        <div
-          #draggableElement
-          mwlDraggable
-          [dragAxis]="{ x: true, y: true }"
-          [validateDrag]="validateDrag"
-          [touchStartLongPress]="{ delay: 300, delta: 30 }"
-          (dragPointerDown)="dragPointerDown($event)"
-          (dragStart)="dragStart($event)"
-          (ghostElementCreated)="ghostElementCreated($event)"
-          (dragging)="dragging($event)"
-          (dragEnd)="dragEnd($event)"
-        >
-          Drag me!
-        </div>
-      </ng-template>
+      }
     `,
     styles: [
       `
@@ -112,6 +118,12 @@ describe('draggable directive', () => {
           z-index: 1;
         }
       `,
+    ],
+    standalone: true,
+    imports: [
+      DraggableDirective,
+      DroppableDirective,
+      DraggableScrollContainerDirective,
     ],
   })
   class ScrollTestComponent extends TestComponent {
@@ -156,6 +168,12 @@ describe('draggable directive', () => {
         }
       `,
     ],
+    standalone: true,
+    imports: [
+      DraggableDirective,
+      DroppableDirective,
+      DraggableScrollContainerDirective,
+    ],
   })
   class InnerDragTestComponent extends TestComponent {
     outerDrag = sinon.spy();
@@ -163,8 +181,10 @@ describe('draggable directive', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [DragAndDropModule],
-      declarations: [
+      imports: [
+        DraggableDirective,
+        DroppableDirective,
+        DraggableScrollContainerDirective,
         TestComponent,
         ScrollTestComponent,
         InnerDragTestComponent,

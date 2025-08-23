@@ -3,7 +3,6 @@ import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { expect } from 'chai';
 import * as sinon from 'sinon';
 import { triggerDomEvent } from '../test-utils';
-import { DragAndDropModule } from 'angular-draggable-droppable';
 import { DraggableDirective } from './draggable.directive';
 import { DroppableDirective, ValidateDrop } from './droppable.directive';
 import { DraggableScrollContainerDirective } from './draggable-scroll-container.directive';
@@ -52,6 +51,12 @@ describe('droppable directive', () => {
         }
       `,
     ],
+    standalone: true,
+    imports: [
+      DraggableDirective,
+      DroppableDirective,
+      DraggableScrollContainerDirective,
+    ],
   })
   class TestComponent {
     @ViewChild(DraggableDirective)
@@ -74,7 +79,7 @@ describe('droppable directive', () => {
   }
 
   @Component({
-    // eslint-disable-line  max-classes-per-file
+    // eslint-disable-line max-classes-per-file
     template: `
       <div mwlDraggableScrollContainer>
         <div
@@ -123,6 +128,12 @@ describe('droppable directive', () => {
         }
       `,
     ],
+    standalone: true,
+    imports: [
+      DraggableDirective,
+      DroppableDirective,
+      DraggableScrollContainerDirective,
+    ],
   })
   class ScrollTestComponent extends TestComponent {
     @ViewChild(DraggableScrollContainerDirective)
@@ -131,8 +142,13 @@ describe('droppable directive', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [DragAndDropModule],
-      declarations: [TestComponent, ScrollTestComponent],
+      imports: [
+        DraggableDirective,
+        DroppableDirective,
+        DraggableScrollContainerDirective,
+        TestComponent,
+        ScrollTestComponent,
+      ],
     });
   });
 
