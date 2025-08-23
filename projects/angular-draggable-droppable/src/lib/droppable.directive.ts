@@ -8,7 +8,7 @@ import {
   NgZone,
   Input,
   Renderer2,
-  Optional,
+  inject,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { distinctUntilChanged, pairwise, filter, map } from 'rxjs/operators';
@@ -92,13 +92,13 @@ export class DroppableDirective implements OnInit, OnDestroy {
 
   currentDragSubscription: Subscription;
 
-  constructor(
-    private element: ElementRef<HTMLElement>,
-    private draggableHelper: DraggableHelper,
-    private zone: NgZone,
-    private renderer: Renderer2,
-    @Optional() private scrollContainer: DraggableScrollContainerDirective,
-  ) {}
+  private element = inject<ElementRef<HTMLElement>>(ElementRef);
+  private draggableHelper = inject(DraggableHelper);
+  private zone = inject(NgZone);
+  private renderer = inject(Renderer2);
+  private scrollContainer = inject(DraggableScrollContainerDirective, {
+    optional: true,
+  });
 
   ngOnInit() {
     this.currentDragSubscription = this.draggableHelper.currentDrag.subscribe(

@@ -1,4 +1,4 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, inject } from '@angular/core';
 
 /**
  * If the window isn't scrollable, then place this on the scrollable container that draggable elements are inside. e.g.
@@ -12,8 +12,5 @@ import { Directive, ElementRef } from '@angular/core';
   selector: '[mwlDraggableScrollContainer]',
 })
 export class DraggableScrollContainerDirective {
-  /**
-   * @hidden
-   */
-  constructor(public elementRef: ElementRef<HTMLElement>) {}
+  elementRef = inject<ElementRef<HTMLElement>>(ElementRef);
 }

@@ -10,10 +10,10 @@ import {
   OnChanges,
   NgZone,
   SimpleChanges,
-  Inject,
   TemplateRef,
   ViewContainerRef,
-  Optional,
+  DOCUMENT,
+  inject,
 } from '@angular/core';
 import {
   Subject,
@@ -36,7 +36,7 @@ import {
   startWith,
 } from 'rxjs/operators';
 import { CurrentDragData, DraggableHelper } from './draggable-helper.provider';
-import { DOCUMENT } from '@angular/common';
+
 import autoScroll from '@mattlewis92/dom-autoscroller';
 import { DraggableScrollContainerDirective } from './draggable-scroll-container.directive';
 import { addClass, removeClass } from './util';
@@ -230,18 +230,15 @@ export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
 
   private scroller: { destroy: () => void };
 
-  /**
-   * @hidden
-   */
-  constructor(
-    private element: ElementRef<HTMLElement>,
-    private renderer: Renderer2,
-    private draggableHelper: DraggableHelper,
-    private zone: NgZone,
-    private vcr: ViewContainerRef,
-    @Optional() private scrollContainer: DraggableScrollContainerDirective,
-    @Inject(DOCUMENT) private document: any,
-  ) {}
+  private element = inject<ElementRef<HTMLElement>>(ElementRef);
+  private renderer = inject(Renderer2);
+  private draggableHelper = inject(DraggableHelper);
+  private zone = inject(NgZone);
+  private vcr = inject(ViewContainerRef);
+  private scrollContainer = inject(DraggableScrollContainerDirective, {
+    optional: true,
+  });
+  private document = inject(DOCUMENT);
 
   ngOnInit(): void {
     this.checkEventListeners();
