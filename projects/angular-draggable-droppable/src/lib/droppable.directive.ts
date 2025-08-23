@@ -19,7 +19,7 @@ import { addClass, removeClass } from './util';
 function isCoordinateWithinRectangle(
   clientX: number,
   clientY: number,
-  rect: ClientRect
+  rect: ClientRect,
 ): boolean {
   return (
     clientX >= rect.left &&
@@ -97,7 +97,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
     private draggableHelper: DraggableHelper,
     private zone: NgZone,
     private renderer: Renderer2,
-    @Optional() private scrollContainer: DraggableScrollContainerDirective
+    @Optional() private scrollContainer: DraggableScrollContainerDirective,
   ) {}
 
   ngOnInit() {
@@ -119,7 +119,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
           'scroll',
           () => {
             droppableElement.updateCache = true;
-          }
+          },
         );
 
         let currentDragEvent: DragEvent;
@@ -138,7 +138,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
             const isWithinElement = isCoordinateWithinRectangle(
               clientX,
               clientY,
-              droppableElement.rect as ClientRect
+              droppableElement.rect as ClientRect,
             );
 
             const isDropAllowed =
@@ -152,13 +152,13 @@ export class DroppableDirective implements OnInit, OnDestroy {
                 isCoordinateWithinRectangle(
                   clientX,
                   clientY,
-                  droppableElement.scrollContainerRect as ClientRect
+                  droppableElement.scrollContainerRect as ClientRect,
                 )
               );
             } else {
               return isWithinElement && isDropAllowed;
             }
-          })
+          }),
         );
 
         const overlapsChanged$ = overlaps$.pipe(distinctUntilChanged());
@@ -188,7 +188,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
         overlapsChanged$
           .pipe(
             pairwise(),
-            filter(([didOverlap, overlapsNow]) => didOverlap && !overlapsNow)
+            filter(([didOverlap, overlapsNow]) => didOverlap && !overlapsNow),
           )
           .subscribe(() => {
             dragOverActive = false;
@@ -214,7 +214,7 @@ export class DroppableDirective implements OnInit, OnDestroy {
             }
           },
         });
-      }
+      },
     );
   }
 

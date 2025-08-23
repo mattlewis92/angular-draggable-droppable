@@ -214,7 +214,7 @@ describe('draggable directive', () => {
       y: -2,
     });
     expect(ghostElement.style.transform).to.equal(
-      'translate3d(2px, -2px, 0px)'
+      'translate3d(2px, -2px, 0px)',
     );
     triggerDomEvent('mouseup', draggableElement, {
       clientX: 7,
@@ -310,15 +310,15 @@ describe('draggable directive', () => {
   it('should disable dragging', () => {
     expect(
       Object.keys(
-        fixture.componentInstance.draggable['eventListenerSubscriptions']
-      ).length
+        fixture.componentInstance.draggable['eventListenerSubscriptions'],
+      ).length,
     ).to.equal(7);
     fixture.componentInstance.dragAxis = { x: false, y: false };
     fixture.detectChanges();
     expect(
       Object.keys(
-        fixture.componentInstance.draggable['eventListenerSubscriptions']
-      ).length
+        fixture.componentInstance.draggable['eventListenerSubscriptions'],
+      ).length,
     ).to.equal(0);
     const draggableElement =
       fixture.componentInstance.draggableElement.nativeElement;
@@ -644,7 +644,7 @@ describe('draggable directive', () => {
     });
     expect(
       fixture.componentInstance.draggable['eventListenerSubscriptions']
-        .mousemove
+        .mousemove,
     ).not.to.be.ok;
   });
 
@@ -666,7 +666,7 @@ describe('draggable directive', () => {
     });
     expect(
       fixture.componentInstance.draggable['eventListenerSubscriptions']
-        .mousemove
+        .mousemove,
     ).to.equal(mouseMoveUnsubscribe);
   });
 
@@ -696,7 +696,7 @@ describe('draggable directive', () => {
       y: -2,
     });
     expect(ghostElement.style.transform).to.equal(
-      'translate3d(2px, -2px, 0px)'
+      'translate3d(2px, -2px, 0px)',
     );
     triggerDomEvent('touchend', draggableElement, {
       changedTouches: [{ clientX: 7, clientY: 8 }],
@@ -732,7 +732,7 @@ describe('draggable directive', () => {
       y: -2,
     });
     expect(ghostElement.style.transform).to.equal(
-      'translate3d(2px, -2px, 0px)'
+      'translate3d(2px, -2px, 0px)',
     );
     triggerDomEvent('touchcancel', draggableElement, {
       changedTouches: [{ clientX: 7, clientY: 8 }],
@@ -752,7 +752,7 @@ describe('draggable directive', () => {
     });
     expect(
       fixture.componentInstance.draggable['eventListenerSubscriptions']
-        .touchmove
+        .touchmove,
     ).not.to.be.ok;
   });
 
@@ -770,7 +770,7 @@ describe('draggable directive', () => {
     });
     expect(
       fixture.componentInstance.draggable['eventListenerSubscriptions']
-        .touchmove
+        .touchmove,
     ).to.equal(touchMoveUnsubscribe);
   });
 
@@ -823,7 +823,7 @@ describe('draggable directive', () => {
       fixture.componentInstance.dragStart,
       fixture.componentInstance.ghostElementCreated,
       fixture.componentInstance.dragging,
-      fixture.componentInstance.dragEnd
+      fixture.componentInstance.dragEnd,
     );
   });
 
@@ -864,7 +864,7 @@ describe('draggable directive', () => {
     triggerDomEvent('mousemove', draggableElement, { clientX: 6, clientY: 10 });
     const ghostElement = draggableElement.nextSibling as HTMLElement;
     expect(
-      fixture.componentInstance.ghostElementCreated
+      fixture.componentInstance.ghostElementCreated,
     ).to.have.been.calledWith({
       element: ghostElement,
       clientX: 5,
@@ -1012,7 +1012,7 @@ describe('draggable directive', () => {
       y: -2,
     });
     expect(ghostElement.style.transform).to.equal(
-      'translate3d(2px, -2px, 0px)'
+      'translate3d(2px, -2px, 0px)',
     );
     fixture.componentInstance.dragStart.getCall(0).args[0].cancelDrag$.next();
     expect(fixture.componentInstance.dragEnd).to.have.been.calledWith({
@@ -1033,7 +1033,7 @@ describe('draggable directive', () => {
     });
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 10 });
     expect(getComputedStyle(document.body.children[0]).userSelect).to.equal(
-      'none'
+      'none',
     );
     triggerDomEvent('mousemove', draggableElement, { clientX: 7, clientY: 8 });
     fixture.destroy();
@@ -1043,7 +1043,7 @@ describe('draggable directive', () => {
       dragCancelled: false,
     });
     expect(getComputedStyle(document.body.children[0]).userSelect).to.equal(
-      'auto'
+      'auto',
     );
   });
 
@@ -1076,7 +1076,7 @@ describe('draggable directive', () => {
       button: 0,
     });
     expect(
-      scrollFixture.componentInstance.dragPointerDown
+      scrollFixture.componentInstance.dragPointerDown,
     ).to.have.been.calledWith({
       x: 0,
       y: 0,
@@ -1271,7 +1271,7 @@ describe('draggable directive', () => {
       .triggerEventHandler('scroll', {});
     triggerDomEvent('mousemove', draggableElement, { clientX: 5, clientY: 14 });
     expect(
-      scrollFixture.componentInstance.validateDrag
+      scrollFixture.componentInstance.validateDrag,
     ).to.have.been.calledWith({
       x: 0,
       y: 9,

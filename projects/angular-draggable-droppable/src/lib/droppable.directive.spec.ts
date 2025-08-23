@@ -249,7 +249,7 @@ describe('droppable directive', () => {
     expect(fixture.componentInstance.drop).to.have.been.calledWithMatch(
       sinon.match({
         dropData: { foo: 'bar' },
-      })
+      }),
     );
   });
 
@@ -329,7 +329,7 @@ describe('droppable directive', () => {
     });
     sinon.assert.callOrder(
       fixture.componentInstance.dragEnd,
-      fixture.componentInstance.drop
+      fixture.componentInstance.drop,
     );
   });
 
@@ -374,7 +374,7 @@ describe('droppable directive', () => {
     const scrollFixture = TestBed.createComponent(ScrollTestComponent);
     scrollFixture.detectChanges();
     expect(
-      scrollFixture.componentInstance.droppable['scrollContainer']
+      scrollFixture.componentInstance.droppable['scrollContainer'],
     ).to.equal(scrollFixture.componentInstance.scrollContainer);
   });
 
@@ -409,7 +409,7 @@ describe('droppable directive', () => {
     expect(scrollFixture.componentInstance.drop).to.have.been.calledWithMatch(
       sinon.match({
         dropData: { foo: 'bar' },
-      })
+      }),
     );
   });
 
