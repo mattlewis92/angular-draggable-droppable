@@ -10,8 +10,8 @@ import {
   platformBrowserDynamicTesting,
 } from '@angular/platform-browser-dynamic/testing';
 import { use } from 'chai';
-import * as sinon from 'sinon';
-import * as sinonChai from 'sinon-chai';
+import sinon from 'sinon';
+import sinonChai from 'sinon-chai';
 
 use(sinonChai);
 
