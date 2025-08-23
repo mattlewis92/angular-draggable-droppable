@@ -49,9 +49,7 @@ class DemoModule {}
     <div mwlDraggable (dragEnd)="dragEnd($event)">Drag me!</div>
     <div mwlDroppable (drop)="this.droppedData = $event.dropData">
       <span [hidden]="droppedData">Drop here</span>
-      <span [hidden]="!droppedData"
-        >Item dropped here with data: "{{ droppedData }}"!</span
-      >
+      <span [hidden]="!droppedData">Item dropped here with data: "{{ droppedData }}"!</span>
     </div>
   `,
 })
@@ -85,7 +83,7 @@ I wrote this library because I needed drag and drop whilst snapping to a grid. I
 
 ### Prepare your environment
 
-- Install [Node.js (>=14.19.0 or >=16.9.0)](http://nodejs.org/)
+- Install [Node.js (>=24.5.0)](http://nodejs.org/)
 - Install pnpm: `corepack enable`
 - Install local dev dependencies: `pnpm install` while current directory is this repo
 
