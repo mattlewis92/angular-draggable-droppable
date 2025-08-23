@@ -51,7 +51,6 @@ describe('droppable directive', () => {
         }
       `,
     ],
-    standalone: true,
     imports: [
       DraggableDirective,
       DroppableDirective,
@@ -128,7 +127,6 @@ describe('droppable directive', () => {
         }
       `,
     ],
-    standalone: true,
     imports: [
       DraggableDirective,
       DroppableDirective,

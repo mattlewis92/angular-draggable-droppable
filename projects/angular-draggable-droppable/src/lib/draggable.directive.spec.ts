@@ -35,7 +35,6 @@ describe('draggable directive', () => {
         <span>{{ 1 + 1 }} test</span>
       </ng-template>
     `,
-    standalone: true,
     imports: [
       DraggableDirective,
       DroppableDirective,
@@ -119,7 +118,6 @@ describe('draggable directive', () => {
         }
       `,
     ],
-    standalone: true,
     imports: [
       DraggableDirective,
       DroppableDirective,
@@ -168,7 +166,6 @@ describe('draggable directive', () => {
         }
       `,
     ],
-    standalone: true,
     imports: [
       DraggableDirective,
       DroppableDirective,

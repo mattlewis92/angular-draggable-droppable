@@ -11,7 +11,6 @@ import { DroppableDirective as DroppableDirective_1 } from '../../projects/angul
   selector: 'mwl-demo-app',
   templateUrl: './demo.component.html',
   styleUrls: ['./demo.component.css'],
-  standalone: true,
   imports: [DraggableDirective, DroppableDirective_1],
 })
 export class DemoComponent {

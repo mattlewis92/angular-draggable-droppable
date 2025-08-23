@@ -53,7 +53,6 @@ export type ValidateDrop = (params: ValidateDropParams) => boolean;
 
 @Directive({
   selector: '[mwlDroppable]',
-  standalone: true,
 })
 export class DroppableDirective implements OnInit, OnDestroy {
   /**

@@ -96,7 +96,6 @@ export interface GhostElementCreatedEvent {
 
 @Directive({
   selector: '[mwlDraggable]',
-  standalone: true,
 })
 export class DraggableDirective implements OnInit, OnChanges, OnDestroy {
   /**
