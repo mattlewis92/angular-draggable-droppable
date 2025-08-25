@@ -3,6 +3,9 @@ import { DraggableDirective } from './draggable.directive';
 import { DroppableDirective } from './droppable.directive';
 import { DraggableScrollContainerDirective } from './draggable-scroll-container.directive';
 
+/**
+ * @deprecated import the standalone `DraggableDirective` and `DroppableDirective` directives instead
+ */
 @NgModule({
   imports: [
     DraggableDirective,
