@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [9.0.1](https://github.com/mattlewis92/angular-draggable-droppable/compare/v9.0.0...v9.0.1) (2025-08-25)
+
+
+### Bug Fixes
+
+* deprecate DragAndDropModule ([1759ac3](https://github.com/mattlewis92/angular-draggable-droppable/commit/1759ac340d53d37adfad5b603fc64a6a461c2748))
+
 ## [9.0.0](https://github.com/mattlewis92/angular-draggable-droppable/compare/v8.0.0...v9.0.0) (2025-08-23)
 
 
