@@ -86,7 +86,9 @@
 
 <ol class="breadcrumb">
     <li class="breadcrumb-item">Modules</li>
-    <li class="breadcrumb-item" >DragAndDropModule</li>
+    <li class="breadcrumb-item" 
+        class="breadcrumb-item deprecated-name"
+    >DragAndDropModule</li>
 </ol>
 
 
@@ -116,6 +118,12 @@
         </p>
 
 
+            <p class="comment">
+                <h3 class="deprecated">Deprecated</h3>
+            </p>
+            <p class="comment">
+                import the standalone `DraggableDirective` and `DroppableDirective` directives instead
+            </p>
 
 
 
@@ -166,6 +174,9 @@ import { DraggableDirective } from &#x27;./draggable.directive&#x27;;
 import { DroppableDirective } from &#x27;./droppable.directive&#x27;;
 import { DraggableScrollContainerDirective } from &#x27;./draggable-scroll-container.directive&#x27;;
 
+/**
+ * @deprecated import the standalone &#x60;DraggableDirective&#x60; and &#x60;DroppableDirective&#x60; directives instead
+ */
 @NgModule({
   imports: [
     DraggableDirective,

@@ -66,16 +66,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </a>
                         <ul class="links collapse " ${ isNormalMode ? 'id="modules-links"' : 'id="xs-modules-links"' }>
                             <li class="link">
-                                <a href="modules/DragAndDropModule.html" data-type="entity-link" >DragAndDropModule</a>
+                                <a href="modules/DragAndDropModule.html" data-type="entity-link" class="deprecated-name">DragAndDropModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
-                                        'data-bs-target="#directives-links-module-DragAndDropModule-46f24ce677710f6100944824bdb5263702641f9b37f8d37cde12e31caf6f35ee6597d2910d46bb561235bcee228812761038320bf2e31bc02ea8977b9f07420f"' : 'data-bs-target="#xs-directives-links-module-DragAndDropModule-46f24ce677710f6100944824bdb5263702641f9b37f8d37cde12e31caf6f35ee6597d2910d46bb561235bcee228812761038320bf2e31bc02ea8977b9f07420f"' }>
+                                        'data-bs-target="#directives-links-module-DragAndDropModule-47c2caf2525674277cf70d8fd9215a311ade66b69489d372962dc581f22a01c5c50ecd97ab55be41419952c1f4948c6df6b44a633a77a76681fd61869e84dbce"' : 'data-bs-target="#xs-directives-links-module-DragAndDropModule-47c2caf2525674277cf70d8fd9215a311ade66b69489d372962dc581f22a01c5c50ecd97ab55be41419952c1f4948c6df6b44a633a77a76681fd61869e84dbce"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-DragAndDropModule-46f24ce677710f6100944824bdb5263702641f9b37f8d37cde12e31caf6f35ee6597d2910d46bb561235bcee228812761038320bf2e31bc02ea8977b9f07420f"' :
-                                        'id="xs-directives-links-module-DragAndDropModule-46f24ce677710f6100944824bdb5263702641f9b37f8d37cde12e31caf6f35ee6597d2910d46bb561235bcee228812761038320bf2e31bc02ea8977b9f07420f"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-DragAndDropModule-47c2caf2525674277cf70d8fd9215a311ade66b69489d372962dc581f22a01c5c50ecd97ab55be41419952c1f4948c6df6b44a633a77a76681fd61869e84dbce"' :
+                                        'id="xs-directives-links-module-DragAndDropModule-47c2caf2525674277cf70d8fd9215a311ade66b69489d372962dc581f22a01c5c50ecd97ab55be41419952c1f4948c6df6b44a633a77a76681fd61869e84dbce"' }>
                                         <li class="link">
                                             <a href="directives/DraggableDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >DraggableDirective</a>
                                         </li>
